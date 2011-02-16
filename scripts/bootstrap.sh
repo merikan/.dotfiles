@@ -69,7 +69,7 @@ apply() {
 # Initialize
 #-----------------------------------------------------------------------------
 
-destdir="$HOME/tmp/dotfiles_test"
+destdir="$HOME"
 DOTFILES_ROOT="$destdir/.dotfiles"
 backupdir="$DOTFILES_ROOT-backup/$(date "+%Y%m%d%H%M.%S")"
 
