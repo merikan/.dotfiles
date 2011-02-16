@@ -42,11 +42,8 @@ backup() {
       rm $dest
     elif [ -f $dest ] || [ -d $dest ] || [ -L "$dest" ]
     then
-      echo "Kommando: mv $dest $backupdir"
       mv $dest $backupdir
       success "moved $dest to $backupdir"
-    else
-      echo "$dest pointing to $(readlink $dest)"
     fi
   done
 }
@@ -58,7 +55,6 @@ apply() {
   for source in "${files[@]}"; do
     local dest="$destdir/.`basename \"${source%.*}\"`"
     # link file
-    echo "ln -s $source $dest"
     ln -s $source $dest
     success "linked $source to $dest"
   done
