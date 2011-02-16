@@ -81,7 +81,6 @@ else
   download
   pushd $DOTFILES_ROOT > /dev/null
 fi
-echo "working directory: $(pwd)"
 
 # backup before applying
 backup
