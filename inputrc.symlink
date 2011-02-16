@@ -1,0 +1,14 @@
+# turn of hardware beep sound
+set bell-style none
+
+# use the arrow keys to flip through command history with prefix eg. curl + up/down
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+# remove the necessity to double-tap
+set show-all-if-ambiguous on
+# ignore caps lock and casing
+set completion-ignore-case on
+# autocompletion: cycle through every possible suggestion
+#TAB: menu-complete
+# autocompletion: shift+tab to list possible suggestion
+#"\e[Z": complete

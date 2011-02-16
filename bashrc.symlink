@@ -1,0 +1,28 @@
+#!/bin/bash
+echo "Running .bashrc"
+
+# OS specific support.  $var _must_ be set to either true or false.
+cygwin=false
+os400=false
+darwin=false
+case "$(uname)" in
+  CYGWIN*) cygwin=true;;
+  OS400*) os400=true;;
+  Darwin*) darwin=true;;
+esac
+
+# Add Mave Home
+export M2_HOME=$HOME/opt/apache-maven-3.0.4 && export PATH=$M2_HOME/bin:$PATH
+
+
+# Add your bin directory to your path
+[ -d ~/bin ] && export PATH=:~/bin:$PATH  
+
+# Java_home
+# Great post about java_home and osx - http://blog.hgomez.net/blog/2012/07/20/understanding-java-from-command-line-on-osx/
+# [ -d "$(/usr/libexec/java_home)" ] && export JAVA_HOME="$(/usr/libexec/java_home)"
+[ -d "$(/usr/libexec/java_home)" ] && export JAVA_HOME=$(/usr/libexec/java_home -v 1.6)
+
+
+#[ -n "$PS1" ] && source ~/.bash_profile
+

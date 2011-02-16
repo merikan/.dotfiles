@@ -1,0 +1,125 @@
+#!/bin/bash
+
+# Notes: ----------------------------------------------------------
+# Invoked as an interactive login shell, or with --login
+#   When Bash is invoked as an interactive login shell, or as a non-interactive shell 
+#   with the --login option, it first reads and executes commands from the file /etc/profile, 
+#   if that file exists. After reading that file, it looks for ~/.bash_profile, ~/.bash_login, 
+#   and ~/.profile, in that order, and reads and executes commands from the first one that 
+#   exists and is readable. The --noprofile option may be used when the shell is started to 
+#   inhibit this behavior.
+#
+# When a login shell exits, Bash reads and executes commands from the file ~/.bash_logout, 
+# if it exists.
+#
+# Invoked as an interactive non-login shell
+#   When an interactive shell that is not a login shell is started, Bash reads and executes 
+#   commands from ~/.bashrc, if that file exists. This may be inhibited by using the --norc 
+#   option. The --rcfile file option will force Bash to read and execute commands from file
+#   instead of ~/.bashrc.
+# -----------------------------------------------------------------
+
+echo "Running .bash_profile"
+# See following for more information: http://www.infinitered.com/blog/?p=19
+
+# Load in .profile ------------------------------------------------
+[ -f ~/.profile ] && source ~/.profile
+
+# Load in .bashrc -------------------------------------------------
+[ -f ~/.bashrc ] && source ~/.bashrc
+
+# Case-insensitive globbing (used in pathname expansion)
+shopt -s nocaseglob
+
+# Append to the Bash history file, rather than overwriting it
+shopt -s histappend
+
+# Autocorrect typos in path names when using `cd`
+shopt -s cdspell
+
+# General Functions  -------------------------------------------------------
+source ~/.bash_functions
+
+# Aliases            -------------------------------------------------------
+source ~/.bash_aliases
+
+# Editors ----------------------------------------------------------
+#export EDITOR='mate -w'  # OS-X SPECIFIC - TextMate, w is to wait for TextMate window to close
+#export EDITOR='gedit'  #Linux/gnome
+export EDITOR='nano'  #Command line
+# Subversion 
+export SVN_EDITOR='${EDITOR}'
+
+
+# Hello Messsage --------------------------------------------------
+echo -e "Kernel Information: " `uname -smr`
+[ -f /etc/system-release ] && echo -e "Linux Distribution: " `cat /etc/system-release`
+#echo -e "${COLOR_BROWN}`bash --version`"
+echo -ne "${COLOR_GRAY}Uptime: "; uptime
+echo -ne "${COLOR_GRAY}Server time is: "; date
+
+# Prompts ----------------------------------------------------------
+PS1="\[${COLOR_GRAY}\]\u@\h:\[${COLOR_GREEN}\]\W\[${COLOR_NC}\] \$ "
+# export PS1="\[${COLOR_GREEN}\]\w > \[${COLOR_NC}\]"  # Primary prompt with only a path    
+# export PS1="\[${COLOR_RED}\]\w > \[${COLOR_NC}\]"  # Primary prompt for root user, to highlight when you're logged in as root
+# export PS1="\[${COLOR_GRAY}\]\u@\h \[${COLOR_GREEN}\]\w > \[${COLOR_NC}\]"  # Primary prompt with user, host, and path 
+
+# This runs before the prompt and sets the title of the xterm* window.  If you set the title in the prompt
+# weird wrapping errors occur on some systems, so this method is superior
+# Turn this off of you are running directly in the console on the machine
+export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*} ${PWD}"; echo -ne "\007"'  # user@host path
+
+export PS2='> '    # Secondary prompt
+export PS3='#? '   # Prompt 3
+export PS4='+'     # Prompt 4
+
+function xtitle {  # change the title of your xterm* window
+  unset PROMPT_COMMAND
+  echo -ne "\033]0;$1\007" 
+}
+
+
+# History ---------------------------------------------------------
+# Change size of history file
+export HISTSIZE=9999
+export HISTFILESIZE=999999
+# Avoid succesive duplicates in the bash command history.
+export HISTCONTROL=ignoredups
+# After each command, checks the windows size and changes lines and columns
+shopt -s checkwinsize 
+# Append commands to the bash command history file (~/.bash_history) instead of overwriting it.
+shopt -s histappend
+# Add date and time to bash history
+export HISTTIMEFORMAT="%h/%d - %H:%M:%S "
+
+# bash completion settings (actually, these are readline settings)
+bind "set completion-ignore-case on" # note: bind used instead of sticking these in .inputrc
+bind "set bell-style none"
+bind "set show-all-if-ambiguous On"
+
+# Turn on advanced bash completion if the file exists (get it here: http://www.caliban.org/bash/index.shtml#completion)
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+fi
+# Turn on local bash completion if the file exists  
+for file in $HOME/.completion.d/*.bash
+do
+  # echo "sourcing file $file"
+  source $file
+done
+unset file
+
+# Look for any unattached screen sessions and automatically attach to the first one found
+if [ $SSH_TTY ] && [ ! $WINDOW ]; then
+  SCREENLIST=`screen -ls | grep 'Attached'`
+  if [ $? -eq "0" ]; then
+    echo -e "Screen is already running and attached:\n ${SCREENLIST}"
+  else
+    screen -U -R
+  fi
+fi
+# Add screen window to prompt, if applicable
+if [ $TERM = "screen" ]; then
+  PS1='window ${WINDOW} '$PS1
+fi
+
