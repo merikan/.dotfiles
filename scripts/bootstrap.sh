@@ -65,7 +65,7 @@ apply() {
     local dest="$destdir/.`basename \"${source%.*}\"`"
     # link file
     ln -s $source $dest
-    success "linked $source to $dest"
+    success "linked $dest to $source"
   done
 }
 
