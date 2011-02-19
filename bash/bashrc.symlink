@@ -26,3 +26,6 @@ export M2_HOME=$HOME/opt/apache-maven-3.0.4 && export PATH=$M2_HOME/bin:$PATH
 
 #[ -n "$PS1" ] && source ~/.bash_profile
 
+
+#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+[[ -s "/Users/peter/.gvm/bin/gvm-init.sh" ]] && source "/Users/peter/.gvm/bin/gvm-init.sh"

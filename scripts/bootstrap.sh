@@ -42,6 +42,8 @@ backup() {
   info "=== Backing up local dotfiles to directory $backupdir"
   mkdir -p $backupdir
 
+
+
   local files=( $(find $DOTFILES_ROOT -maxdepth 2 -name \*.symlink) )
   for source in "${files[@]}"; do
     local dest="$destdir/.`basename \"${source%.*}\"`"
@@ -55,6 +57,18 @@ backup() {
       success "moved $dest to $backupdir"
     fi
   done
+}
+
+cleanup() {
+  info "=== Removing symlinks that targets $DOTFILES_ROOT"
+  # this is done incase we have restructured our dotfiles
+  for file in $HOME/.[^.]*
+  do
+  if [ -L "$file" ] && [[ $(readlink "$file") == $DOTFILES_ROOT* ]]; then
+    rm -rf $file
+ fi 
+
+done
 }
 
 apply() {
@@ -91,6 +105,8 @@ else
   pushd $DOTFILES_ROOT > /dev/null
 fi
 
+# cleanup
+cleanup
 # backup before applying
 backup
 # Apply
