@@ -102,9 +102,9 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 # Turn on local bash completion if the file exists  
-for file in $HOME/.completion.d/*.bash
+for file in $HOME/.dotfiles/**/*.completion.bash
 do
-  # echo "sourcing file $file"
+  #echo "sourcing file $file"
   source $file
 done
 unset file
