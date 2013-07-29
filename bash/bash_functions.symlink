@@ -26,6 +26,9 @@ function ssh-addkeys {
   fi  
 }
 
+#Reconnect or start a tmux or screen session over ssh
+# http://alias.sh/reconnect-or-start-tmux-or-screen-session-over-ssh 
+sssh (){ ssh -t "$1" 'tmux attach || tmux new || screen -DR'; }
 
 # Print machine details
 # http://www.thegeekstuff.com/2010/04/unix-bash-function-examples/

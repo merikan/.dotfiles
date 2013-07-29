@@ -3,9 +3,18 @@
 # Aliases
 
 # Navigation 
-alias ..='cd ..'    
-alias ...='cd .. ; cd ..'
-alias ....='cd .. ; cd .. ; cd ..'
+# get rid of command not found
+alias cd..='cd ..'
+ 
+# a quick way to get out of current directory
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .4='cd ../../../../'
+alias .5='cd ../../../../../'
+alias .6='cd ../../../../../../'
+alias .7='cd ../../../../../../../'
+alias .8='cd ../../../../../../../../'
 
 # sudo and alias. If the last character of the alias value is a blank, 
 # then the next command word following the alias is also checked for alias expansion.
