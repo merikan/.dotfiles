@@ -1,0 +1,75 @@
+[include]
+  # Private config, not to be pushed to repo
+  path = ~/.gitconfig.local
+
+[color]
+  ui = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = blue bold
+  frag = yellow
+  old = red
+  new = green
+[color "status"]
+  added = green
+  changed = yellow
+  untracked = red
+
+[core]
+	excludesfile = ~/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+
+[alias]
+  #--- reassigned ---
+  log = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  
+  #--- new commands ---
+  # stage the changes in a given file.
+  stage = !git add -u
+  # unstage the changes in a given file.
+  unstage = reset HEAD --
+  # view the current changes in the staging area.
+  staged = diff --cached
+  # just the differences between lines.
+  word-diff = diff --word-diff
+  # create and checkout a new branch and keep all your changes.
+  new-branch = checkout -b
+  # git-svn: commit a work-in-progress commit (to use with fix-up-previous-commit)
+  spull = !git-svn fetch && git-svn rebase
+  spush = !git-svn dcommit
+  # show files ignored by git:
+  ignored = ls-files -o -i --exclude-standard
+  frequently = !'history | cut -c 8- | grep git | sort | uniq -c  | sort -n -r | head -n 5'
+  wip-commit = commit -m 'WIP - Undo this commit.'
+  # find deleted file, parameter file name 
+  deleted = !git log --diff-filter=D --summary | grep
+  # undo last commit and unstage them
+  undo = reset HEAD~1
+  # view content of last commit
+  log-last-commit = log --name-status HEAD^..HEAD     
+  # merge branch with squash
+  merge-squash  =  merge --squash
+  #log in pretty format 
+  log-pretty = log --pretty=format:'%C(yellow)%h%Creset %ai |%C(green)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit 
+  #log in pretty format with graph 
+  log-graph = log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s" 
+
+
+  # Shortened commands 
+  ci = commit
+  br = branch
+  co = checkout
+  di = diff
+  st = status
+  lo = !git log-pretty
+  nb = !git new-branch
+  wip = !git wip-commit
+
