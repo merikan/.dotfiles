@@ -128,3 +128,5 @@ fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/Users/peter/.gvm/bin/gvm-init.sh" ]] && source "/Users/peter/.gvm/bin/gvm-init.sh"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

@@ -28,3 +28,5 @@ export PKG_CONFIG_PATH
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/Users/peter/.gvm/bin/gvm-init.sh" ]] && source "/Users/peter/.gvm/bin/gvm-init.sh"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
