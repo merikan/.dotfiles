@@ -1,4 +1,24 @@
 #!/bin/bash
+
+# Notes: ----------------------------------------------------------
+# Invoked as an interactive login shell, or with --login
+#   When Bash is invoked as an interactive login shell, or as a non-interactive shell 
+#   with the --login option, it first reads and executes commands from the file /etc/profile, 
+#   if that file exists. After reading that file, it looks for ~/.bash_profile, ~/.bash_login, 
+#   and ~/.profile, in that order, and reads and executes commands from the first one that 
+#   exists and is readable. The --noprofile option may be used when the shell is started to 
+#   inhibit this behavior.
+#
+# When a login shell exits, Bash reads and executes commands from the file ~/.bash_logout, 
+# if it exists.
+#
+# Invoked as an interactive non-login shell
+#   When an interactive shell that is not a login shell is started, Bash reads and executes 
+#   commands from ~/.bashrc, if that file exists. This may be inhibited by using the --norc 
+#   option. The --rcfile file option will force Bash to read and execute commands from file
+#   instead of ~/.bashrc.
+# -----------------------------------------------------------------
+
 echo "Running .bashrc"
 
 # OS specific support.  $var _must_ be set to either true or false.
@@ -11,23 +31,27 @@ case "$(uname)" in
   Darwin*) darwin=true;;
 esac
 
-# Add Mave Home
-export M2_HOME=$HOME/opt/apache-maven-3.0.4 && export PATH=$M2_HOME/bin:$PATH
+# Add personal bin directory to your path
+[ -d ~/bin ] && export PATH=:~/bin:$PATH
 
 # add local bin before system bin
 export PATH=/usr/local/bin:$PATH  
 
-# Add your bin directory to your path
-[ -d ~/bin ] && export PATH=:~/bin:$PATH
-
 # Java_home
 # Great post about java_home and osx - http://blog.hgomez.net/blog/2012/07/20/understanding-java-from-command-line-on-osx/
 # [ -d "$(/usr/libexec/java_home)" ] && export JAVA_HOME="$(/usr/libexec/java_home)"
-[ -d "$(/usr/libexec/java_home)" ] && export JAVA_HOME=$(/usr/libexec/java_home -v 1.6)
+[ -d "$(/usr/libexec/java_home)" ] && export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
+# run java headless in terminal
+export JAVA_TOOL_OPTIONS='-Djava.awt.headless=true'
+
+# Add Maven Home
+M2_VERSION=3.0.4
+export M2_HOME=$HOME/opt/apache-maven-$M2_VERSION && export PATH=$M2_HOME/bin:$PATH
+# set heap size
+export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=256m" 
 
 
 #[ -n "$PS1" ] && source ~/.bash_profile
-
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/Users/peter/.gvm/bin/gvm-init.sh" ]] && source "/Users/peter/.gvm/bin/gvm-init.sh"

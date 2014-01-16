@@ -42,13 +42,14 @@
   word-diff = diff --word-diff
   # create and checkout a new branch and keep all your changes.
   new-branch = checkout -b
-  # git-svn: commit a work-in-progress commit (to use with fix-up-previous-commit)
+  # git-svn: svn update
   spull = !git-svn fetch && git-svn rebase
+  # git-svn: svn commit
   spush = !git-svn dcommit
   # show files ignored by git:
   ignored = ls-files -o -i --exclude-standard
   frequently = !'history | cut -c 8- | grep git | sort | uniq -c  | sort -n -r | head -n 5'
-  wip-commit = commit -m 'WIP - Undo this commit.'
+  wip = !git add -A :/ && git commit -m 'WIP - Undo this temporary commit.'
   # find deleted file, parameter file name 
   deleted = !git log --diff-filter=D --summary | grep
   # undo last commit and unstage them
@@ -71,5 +72,7 @@
   st = status
   lo = !git log-pretty
   nb = !git new-branch
-  wip = !git wip-commit
 
+
+[push]
+	default = simple
