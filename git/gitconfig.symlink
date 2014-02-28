@@ -61,7 +61,9 @@
   #log in pretty format 
   log-pretty = log --pretty=format:'%C(yellow)%h%Creset %ai |%C(green)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit 
   #log in pretty format with graph 
-  log-graph = log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s" 
+  log-graph = log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"
+  # create a backup of the branch BAK_mybranch
+  bak = !git branch $(git branch | grep '*' | sed -e 's/* /BAK_/') 
 
 
   # Shortened commands 

@@ -42,13 +42,15 @@ export PATH=/usr/local/bin:$PATH
 # [ -d "$(/usr/libexec/java_home)" ] && export JAVA_HOME="$(/usr/libexec/java_home)"
 [ -d "$(/usr/libexec/java_home)" ] && export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
 # run java headless in terminal
-export JAVA_TOOL_OPTIONS='-Djava.awt.headless=true'
+#export JAVA_TOOL_OPTIONS='-Djava.awt.headless=true'
 
 # Add Maven Home
 M2_VERSION=3.0.4
 export M2_HOME=$HOME/opt/apache-maven-$M2_VERSION && export PATH=$M2_HOME/bin:$PATH
 # set heap size
 export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=256m" 
+# with debug
+#export MAVEN_OPTS="$MAVEN_OPTS -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000"
 
 
 #[ -n "$PS1" ] && source ~/.bash_profile

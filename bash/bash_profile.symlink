@@ -123,6 +123,9 @@ if [ $TERM = "screen" ]; then
   PS1='window ${WINDOW} '$PS1
 fi
 
+# AutoJump - https://github.com/joelthelion/autojump#name
+[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+
 # Liquid prompt -- A useful adaptive prompt for Bash & Zsh
 [[ -s "${HOME}/.liquidprompt/liquidprompt" ]] && source "${HOME}/.liquidprompt/liquidprompt"
 
