@@ -69,7 +69,6 @@ alias m='more'
 alias df='df -h'
 alias home='cd ~'
 alias hist='history | grep $1' #Requires one input
-alias ps='ps aux'
 alias pg='ps aux | grep'  #requires an argument
 alias un='tar -zxvf'
 alias mountedinfo='df -hT'
