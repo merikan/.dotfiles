@@ -35,7 +35,7 @@ update() {
 
 download() {
   info "=== Downloading dotfiles"
-  git clone --recursive git://git.merikan.com/dotfiles.git $DOTFILES_ROOT
+  git clone --recursive $dotfiles_repo $DOTFILES_ROOT
 }
 
 backup() {
@@ -91,6 +91,7 @@ apply() {
 destdir="$HOME"
 DOTFILES_ROOT="$destdir/.dotfiles"
 backupdir="$DOTFILES_ROOT-backup/$(date "+%Y%m%d%H%M.%S")"
+dotfiles_repo="git://git.merikan.com/dotfiles.git"
 
 #-----------------------------------------------------------------------------
 # Just do it
