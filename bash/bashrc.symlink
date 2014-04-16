@@ -46,7 +46,7 @@ JAVA_VERSION=1.7
 #export JAVA_TOOL_OPTIONS='-Djava.awt.headless=true'
 
 # Add Maven Home
-M2_VERSION=3.0.4
+M2_VERSION=3.2.1
 export M2_HOME=$HOME/opt/apache-maven-$M2_VERSION && export PATH=$M2_HOME/bin:$PATH
 # set heap size
 export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=512m -Djava.awt.headless=true" 
