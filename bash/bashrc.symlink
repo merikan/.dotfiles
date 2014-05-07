@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Notes: ----------------------------------------------------------
 # Invoked as an interactive login shell, or with --login

@@ -1,8 +1,80 @@
+#!/usr/bin/env zsh
+# This file is sourced by interactive shells. It should define aliases,
+# functions, shell options, and key bindings.
+
+# http://zsh.sourceforge.net/Intro/intro_toc.html#SEC16
+
+echo "Running .zshrc"
+
+# Use zsh framework  -------------------------------------------------------
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  echo "Sourcing prezto"
+  export df_zprezto="yes"
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
+
+# Personal settings below  -------------------------------------------------------
+
+#Change directories with variable names
+setopt cdablevars
+
+#globdots lets files beginning with a . be matched without explicitly specifying the dot.
+setopt globdots
+
+# extendedglob gives ability to do l -l **/*(^U)
+setopt extendedglob
+
+#correct turns on spelling correction for commands
+setopt correct
+
+#Report the status of background jobs immediately, rather than waiting until just before printing a prompt
+setopt notify
+
+#no beep, 
+unsetopt beep 
+
+#If a pattern for filename generation has no matches, print an error,
+#instead of leaving it unchanged in the argument list. This also 
+#applies to file expansion of an initial ~ or =.
+unsetopt nomatch
+
+#use emacs binding
+bindkey -e
+
+#Use up key to search backward in the history for a line beginning with the current line up to the cursor.
+bindkey '\e[A' history-beginning-search-backward
+#Use down key to search forward in the history for a line beginning with the current line up to the cursor.
+bindkey '\e[B' history-beginning-search-forward
+
+# General Functions  -------------------------------------------------------
+[ -f ~/.functions ] && source ~/.functions
+
+# Functions  -------------------------------------------------------
+[ -f ~/.functions ] && source ~/.functions
+[ -f ~/.zsh_functions ] && source ~/.zsh_functions
+
+# Aliases            -------------------------------------------------------
+[ -f ~/.aliases ] && source ~/.aliases
+[ -f ~/.zsh_aliases ] && source ~/.zsh_aliases
+
+
+# Java_home
+# Great post about java_home and osx - http://blog.hgomez.net/blog/2012/07/20/understanding-java-from-command-line-on-osx/
+# [ -d "$(/usr/libexec/java_home)" ] && export JAVA_HOME="$(/usr/libexec/java_home)"
+JAVA_VERSION=1.7
+[ -d "$(/usr/libexec/java_home)" ] && export JAVA_HOME=$(/usr/libexec/java_home -v $JAVA_VERSION)
+# run java headless in terminal
+#export JAVA_TOOL_OPTIONS='-Djava.awt.headless=true'
+
+# Add Maven Home
+M2_VERSION=3.2.1
+export M2_HOME=$HOME/opt/apache-maven-$M2_VERSION && export PATH=$M2_HOME/bin:$PATH
+# set heap size
+export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=512m -Djava.awt.headless=true" 
+# with debug
+#export MAVEN_OPTS="$MAVEN_OPTS -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000"
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/Users/peter/.gvm/bin/gvm-init.sh" ]] && source "/Users/peter/.gvm/bin/gvm-init.sh"

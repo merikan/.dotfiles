@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Notes: ----------------------------------------------------------
 # Invoked as an interactive login shell, or with --login
@@ -37,11 +37,19 @@ shopt -s histappend
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell
 
-# General Functions  -------------------------------------------------------
-source ~/.bash_functions
+#Change directories with variable names
+shopt -s cdable_vars
+
+#lets files beginning with a . be matched without explicitly specifying the dot.
+export GLOBIGNORE=. 
+
+# Functions  -------------------------------------------------------
+[ -f ~/.functions ] && source ~/.functions
+[ -f ~/.bash_functions ] && source ~/.bash_functions
 
 # Aliases            -------------------------------------------------------
-source ~/.bash_aliases
+[ -f ~/.aliases ] && source ~/.aliases
+[ -f ~/.bash_aliases ] && source ~/.bash_aliases
 
 # Editors ----------------------------------------------------------
 #export EDITOR='mate -w'  # OS-X SPECIFIC - TextMate, w is to wait for TextMate window to close

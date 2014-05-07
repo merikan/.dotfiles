@@ -43,7 +43,7 @@ backup() {
   mkdir -p $backupdir
 
 
-
+  # Backup symlinks
   local files=( $(find $DOTFILES_ROOT -maxdepth 2 -name \*.symlink) )
   for source in "${files[@]}"; do
     local dest="$destdir/.`basename \"${source%.*}\"`"
@@ -57,6 +57,17 @@ backup() {
       success "moved $dest to $backupdir"
     fi
   done
+
+# TODO fix this
+  # Backup template files
+  #local files=( $(find $DOTFILES_ROOT -maxdepth 2 -name \*.template) )
+  #for source in "${files[@]}"; do
+  #  local dest="$destdir/.`basename \"${source%.*}\"`"
+  #  if [ -f $dest ] || [ -d $dest ] || [ -L "$dest" ]
+  #    mv $dest $backupdir
+  #    success "moved $dest to $backupdir"
+  #  fi
+  #done
 }
 
 cleanup() {
@@ -79,6 +90,16 @@ apply() {
     local dest="$destdir/.`basename \"${source%.*}\"`"
     # link file
     ln -s $source $dest
+    success "linked $dest to $source"
+  done
+
+  info "=== Copying template files"
+
+  local files=( $(find $DOTFILES_ROOT -maxdepth 2 -name \*.template) )
+  for source in "${files[@]}"; do
+    local dest="$destdir/.`basename \"${source%.*}\"`"
+    # link file
+    cp $source $dest
     success "linked $dest to $source"
   done
 }

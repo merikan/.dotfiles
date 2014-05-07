@@ -1,0 +1,46 @@
+# To use this bundle, just run "brew bundle" 
+
+
+### ---------------------------------------------------- ###
+### Update                                               ###
+### ---------------------------------------------------- ###
+brew update 
+brew upgrade
+
+
+### ---------------------------------------------------- ###
+### Install formulae                                     ###
+### ---------------------------------------------------- ###
+install git
+install subversion
+install ruby 
+install mysql
+install apple-gcc42
+install vagrant-completion
+install python
+install midnight-commander
+install tree
+install tig
+install gibo
+install ssh-copy-id
+install caskroom/cask/brew-cask
+
+
+### ---------------------------------------------------- ###
+### Install casks                                        ###
+### ---------------------------------------------------- ###
+cask install adium
+cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql webp-quicklook suspicious-package
+cask install alfred
+cask alfred link
+cask install google-chrome
+cask install chromecast
+cask install evernote
+cask install virtualbox
+cask install vagrant
+
+### ---------------------------------------------------- ###
+### Cleanup                                              ###
+### ---------------------------------------------------- ###
+cleanup
+

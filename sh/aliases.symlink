@@ -1,0 +1,89 @@
+#!/bin/sh
+#
+# Aliases
+
+# Navigation -----------------------
+# get rid of command not found
+alias cd..='cd ..'
+ 
+# a quick way to get out of current directory
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .4='cd ../../../../'
+alias .5='cd ../../../../../'
+alias .6='cd ../../../../../../'
+alias .7='cd ../../../../../../../'
+alias .8='cd ../../../../../../../../'
+
+# I got the following from, and mod'd it: http://www.macosxhints.com/article.php?story=20020716005123797
+#    The following aliases (save & show) are for saving frequently used directories
+#    You can save a directory using an abbreviation of your choosing. Eg. save ms
+#    You can subsequently move to one of the saved directories by using cd with
+#    the abbreviation you chose. Eg. cd ms 
+# set the cdablevars option so that no '$' is required when using this facility
+# bash:shopt -s cdable_vars, zsh:setopt cdablevars
+if [ ! -f ~/.dirs ]; then  # if doesn't exist, create it
+        touch ~/.dirs
+fi
+
+alias show='cat ~/.dirs'
+save (){
+        command sed "/!$/d" ~/.dirs > ~/.dirs1; mv ~/.dirs1 ~/.dirs; echo "$@"=\"`pwd`\" >> ~/.dirs; source ~/.dirs ;
+}
+source ~/.dirs  # Initialization for the above 'save' facility: source the .sdirs file
+
+# ----------------
+# sudo and alias. If the last character of the alias value is a blank, 
+# then the next command word following the alias is also checked for alias expansion.
+alias sudo='sudo '
+
+# Make some possibly destructive commands more interactive.
+alias rm='rm -i'
+alias mv='mv -i'
+alias cp='cp -i'
+
+# Alias to multiple ls commands
+# Detect which `ls` flavor is in use
+if ls --color > /dev/null 2>&1; then # GNU `ls`
+	colorflag="--color"
+else # OS X `ls`
+	colorflag="-G"
+fi
+alias ls='ls -aF ${colorflag}'   # add colors and file type extensions
+alias ll='ls -Al'                # show hidden files
+alias lx='ls -lXB'               # sort by extension
+alias lk='ls -lSr'               # sort by size
+alias lc='ls -lcr'		         # sort by change time  
+alias lu='ls -lur'		         # sort by access time   
+alias lr='ls -lR'                # recursive ls
+alias lt='ls -ltr'               # sort by date
+alias lm='ls -al |more'          # pipe through 'more'
+alias la='ls -ltraFh'            # show all 
+alias lla='ls -lah'
+
+# Alias's to modified commands
+alias grep='grep --color=auto ' # Highlight matches 
+alias g='grep -i'  # Case insensitive grep
+alias f='find . -iname'
+alias m='more'
+alias df='df -h'
+alias home='cd ~'
+alias hist='history | grep $1' #Requires one input
+alias pg='ps aux | grep'  #requires an argument
+alias un='tar -zxvf'
+alias mountedinfo='df -hT'
+alias openports='netstat -nape --inet'
+alias ns='netstat -alnp --protocol=inet | grep -v CLOSE_WAIT | cut -c-6,21-94 | tail +2'
+alias du1='du -h --max-depth=1'
+alias ducks='du -cksh * | sort -rn|head -11' # Lists folders and files sizes in the current folder
+alias da='date "+%Y-%m-%d %A    %T %Z"'
+alias scp-bash='scp ~/.bashrc ~/.bash_completion ~/.bash_profile ~/.profile ~/.bash_functions ~/.bash_aliases ~/.functions ~/.aliases' # copy bash files to server, requires username@hostname:
+alias veewee='bundle exec veewee'
+
+
+# Shows most used commands, cool script I got this from: http://lifehacker.com/software/how-to/turbocharge-your-terminal-274317.php
+alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' | sort | uniq -c | sort -n | tail -n 20 | sort -nr"
+
+# just for fun
+alias matrix='LC_ALL=C tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS conv=unblock | GREP_COLOR="1;32" grep --color "[^ ]"'
