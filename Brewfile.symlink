@@ -1,46 +1,74 @@
-# To use this bundle, just run "brew bundle" 
+#
+# I am using this file when doing a clean install of Homebrew or when I want to
+# update Homebrew, formulae and casks.
+#
+# To use this bundle, just run 'brew bundle' and Brewfile will be used.
+# You can also use directory-specific bundling with: brew bundle ~/mydir/mybrewfile
+#
+# To install Homebrew - ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 
 
 ### ---------------------------------------------------- ###
 ### Update                                               ###
 ### ---------------------------------------------------- ###
-brew update 
-brew upgrade
+update
+upgrade
 
 
 ### ---------------------------------------------------- ###
 ### Install formulae                                     ###
 ### ---------------------------------------------------- ###
-install git
-install subversion
-install ruby 
-install mysql
-install apple-gcc42
-install vagrant-completion
-install python
-install midnight-commander
-install tree
-install tig
-install gibo
-install ssh-copy-id
+#install apple-gcc42
+install autojump
 install caskroom/cask/brew-cask
+install curl
+install gibo
+install git
+install midnight-commander
+install mysql
+install python
+install ruby
+install ssh-copy-id
+install subversion
+install tig
+install tree
+install vagrant-completion
+install wget
+install youtube-dl
 
 
 ### ---------------------------------------------------- ###
-### Install casks                                        ###
+### Install casks (http://caskroom.io/)                  ###
 ### ---------------------------------------------------- ###
+# Note: Outcommented casks will be installed/updated manually 
+#       Casks with version 'lastest' will not be updated due to no checksum change
 cask install adium
-cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql webp-quicklook suspicious-package
 cask install alfred
 cask alfred link
-cask install google-chrome
+cask install android-file-transfer
+cask install atom
+cask install betterzipql
+cask install calibre
 cask install chromecast
+cask install clementine
 cask install evernote
-cask install virtualbox
-cask install vagrant
+cask install google-chrome
+cask install hyperswitch
+cask install intellij-idea
+cask install kindle
+cask install mplayerx
+cask install picasa
+cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql webp-quicklook suspicious-package
+cask install robomongo
+cask install skype
+cask install sonos
+cask install sourcetree
+# cask install vagrant
+# cask install virtualbox
+cask install vlc  
 
 ### ---------------------------------------------------- ###
 ### Cleanup                                              ###
 ### ---------------------------------------------------- ###
+cask cleanup
 cleanup
-
