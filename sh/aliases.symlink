@@ -68,7 +68,7 @@ alias g='grep -i'  # Case insensitive grep
 alias f='find . -iname'
 alias m='more'
 alias df='df -h'
-alias home='cd ~'
+alias home='cd ~'  # use 'cd' instead
 alias hist='history | grep $1' #Requires one input
 alias pg='ps aux | grep'  #requires an argument
 alias un='tar -zxvf'
@@ -80,7 +80,8 @@ alias ducks='du -cksh * | sort -rn|head -11' # Lists folders and files sizes in 
 alias da='date "+%Y-%m-%d %A    %T %Z"'
 alias scp-bash='scp ~/.bashrc ~/.bash_completion ~/.bash_profile ~/.profile ~/.bash_functions ~/.bash_aliases ~/.functions ~/.aliases' # copy bash files to server, requires username@hostname:
 alias veewee='bundle exec veewee'
-
+alias g='git'
+alias v='vagrant'
 
 # Shows most used commands, cool script I got this from: http://lifehacker.com/software/how-to/turbocharge-your-terminal-274317.php
 alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' | sort | uniq -c | sort -n | tail -n 20 | sort -nr"

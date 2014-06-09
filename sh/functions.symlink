@@ -2,7 +2,8 @@
 #
 # Functions that are nice to have with you 
 
-md() { mkdir -p "$@" && cd "$_"; }
+# easy create and cd into a directory (md -p myproject/src) 
+function md() { mkdir -p "$@" && cd "$_"; }
 
 # SSH
 function ssh-addkeys {
