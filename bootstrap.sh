@@ -21,7 +21,7 @@ success () {
 
 fail () {
   printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n"
-  echo '' 
+  echo ''
   exit
 }
 
@@ -77,7 +77,7 @@ cleanup() {
   do
   if [ -L "$file" ] && [[ $(readlink "$file") == $DOTFILES_ROOT* ]]; then
     rm -rf $file
- fi 
+ fi
 
 done
 }
@@ -100,7 +100,7 @@ apply() {
     local dest="$destdir/.`basename \"${source%.*}\"`"
     # link file
     cp $source $dest
-    success "linked $dest to $source"
+    success "copied $source to $dest"
   done
 }
 

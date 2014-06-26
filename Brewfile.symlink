@@ -22,10 +22,12 @@ upgrade
 install autojump
 install caskroom/cask/brew-cask
 install curl
+install fasd
 install gibo
 install git
 install midnight-commander
 install mysql
+install node
 install python
 install ruby
 install ssh-copy-id
