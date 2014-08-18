@@ -135,7 +135,7 @@ fi
 #[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 
 #Fasd for quick access to files and directories for POSIX shells. https://github.com/clvv/fasd
-[[ -s fasd ]] && eval "$(fasd --init auto)"
+command -v fasd >/dev/null 2>&1  && eval "$(fasd --init auto)"
 
 # Liquid prompt -- A useful adaptive prompt for Bash & Zsh
 [[ -s "${HOME}/.liquidprompt/liquidprompt" ]] && source "${HOME}/.liquidprompt/liquidprompt"
