@@ -43,7 +43,7 @@ install youtube-dl
 ### Install casks (http://caskroom.io/)                  ###
 ### ---------------------------------------------------- ###
 # Note: Outcommented casks will be installed/updated manually 
-#       Casks with version 'lastest' will not be updated due to no checksum change
+#       Casks with version 'latest' will not be updated due to no checksum change
 cask install adium
 cask install alfred
 cask alfred link
@@ -59,6 +59,7 @@ cask install hyperswitch
 cask install intellij-idea
 cask install kindle
 cask install mplayerx
+cask install phoenix-slides
 cask install picasa
 cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql webp-quicklook suspicious-package
 cask install robomongo
@@ -67,7 +68,8 @@ cask install sonos
 cask install sourcetree
 # cask install vagrant
 # cask install virtualbox
-cask install vlc  
+cask install vlc
+
 
 ### ---------------------------------------------------- ###
 ### Cleanup                                              ###
