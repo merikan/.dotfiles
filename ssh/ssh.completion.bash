@@ -7,7 +7,7 @@ _sshcomplete() {
 
     # parse all defined hosts from .ssh/config
     if [ -r $HOME/.ssh/config ]; then
-        COMPREPLY=($(compgen -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" -- ${COMP_WORDS[COMP_CWORD]}))
+        COMPREPLY=($(compgen -W "$(grep -i "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" -- ${COMP_WORDS[COMP_CWORD]}))
     fi
 
     # parse all hosts found in .ssh/known_hosts
