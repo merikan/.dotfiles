@@ -11,18 +11,25 @@ echo
 echo "Installing dotfiles into user's home directory"
 echo
 
-info () {
-  printf "  [ \033[00;34mINFO\033[0m ] $1 \n"
+heading() {
+    printf "\n${yellow}$1${reset}\n"
 }
 
-success () {
-  printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
+info() {
+    printf "  [ ${blue}..${reset} ] $1\n"
 }
 
-fail () {
-  printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n"
-  echo ''
-  exit
+success() {
+    printf "  [ ${green}OK${reset} ] $1\n"
+}
+
+warn() {
+    printf "  [${orange}WARN${reset}] $1\n"
+}
+
+fail() {
+    printf "  [${red}FAIL${reset}] $1\n"
+    exit 1
 }
 
 
