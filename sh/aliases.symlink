@@ -31,7 +31,7 @@ alias show='cat ~/.dirs'
 save (){
         command sed "/!$/d" ~/.dirs > ~/.dirs1; mv ~/.dirs1 ~/.dirs; echo "$@"=\"`pwd`\" >> ~/.dirs; source ~/.dirs ;
 }
-source ~/.dirs  # Initialization for the above 'save' facility: source the .sdirs file
+source ~/.dirs  # Initialization for the above 'save' facility: source the .dirs file
 
 # ----------------
 # sudo and alias. If the last character of the alias value is a blank, 
@@ -88,3 +88,6 @@ alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' 
 
 # just for fun
 alias matrix='LC_ALL=C tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS conv=unblock | GREP_COLOR="1;32" grep --color "[^ ]"'
+
+# Pretty print from clipboard, OS X only 
+alias xmlformatclipboard='pbpaste | xmllint --format -'
