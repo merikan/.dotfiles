@@ -1,8 +1,12 @@
 [include]
-  # Private config, not to be pushed to repo
+  # Load private config, not to be pushed to repo
   path = ~/.gitconfig.local
 
 [color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
   ui = auto
 [color "branch"]
   current = yellow reverse
@@ -26,7 +30,7 @@
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
-	cmd = /opt/homebrew-cask/Caskroom/sourcetree/1.9.7/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /opt/homebrew-cask/Caskroom/sourcetree/1.9.8/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 
 [alias]
@@ -34,28 +38,35 @@
   log = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   
   #--- new commands ---
-  # stage the changes in a given file.
-  stage = !git add -u
-  # unstage the changes in a given file.
-  unstage = reset HEAD --
-  # view the current changes in the staging area.
-  staged = diff --cached
-  # just the differences between lines.
-  word-diff = diff --word-diff
-  # create and checkout a new branch and keep all your changes.
-  new-branch = checkout -b
   # git-svn: svn update
   spull = !git-svn fetch && git-svn rebase
   # git-svn: svn commit
   spush = !git-svn dcommit
+  # Pull and update submouldes
+  up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+  # Push to origin master
+  pom = push origin master
+  # create and checkout a new branch and keep all your changes.
+  cob = checkout -b
+  # stage the changes in a given file.
+  stage = !git add -u
+  # unstage is the opposite of git add. It lets you remove items from the staging area.
+  unstage = reset HEAD
+  # view the current changes in the staging area.
+  staged = diff --cached
+  # work in progress, a quick save before swithing branch
+  wip = !git add -A :/ && git commit -m 'WIP - Undo this temporary commit.'
+  # Send every change to trash. Commit before trashing so we can find it via 'git reflog'
+  trash = !git add -A && git commit -qm 'Trashed @ $(date +"%F %T")' && git reset HEAD~1 --hard
+  # undo last commit and unstage them
+  uncommit = reset HEAD~1
+  # just the differences between lines.
+  word-diff = diff --word-diff
   # show files ignored by git:
   ignored = ls-files -o -i --exclude-standard
   frequently = !'history | cut -c 8- | grep git | sort | uniq -c  | sort -n -r | head -n 5'
-  wip = !git add -A :/ && git commit -m 'WIP - Undo this temporary commit.'
-  # find deleted file, parameter file name 
+  # find deleted file(s), parameter file name 
   deleted = !git log --diff-filter=D --summary | grep
-  # undo last commit and unstage them
-  undo = reset HEAD~1
   # view content of last commit
   log-last-commit = log --name-status HEAD^..HEAD     
   # merge branch with squash
@@ -65,17 +76,24 @@
   #log in pretty format with graph 
   log-graph = log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"
   # create a backup of the branch BAK_mybranch
-  bak = !git branch $(git branch | grep '*' | sed -e 's/* /BAK_/') 
+  bak = !git branch $(git branch | grep '*' | sed -e 's/* /BAK_/')
+  #bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r ; }; f"
+  # credits for some of the above commands: 
+  # http://haacked.com/archive/2014/07/28/github-flow-aliases/
 
 
   # Shortened commands 
   ci = commit
-  br = branch
+  br = branch -v
   co = checkout
   di = diff
   st = status
   lo = !git log-pretty
-  nb = !git new-branch
+  ms = !git merge-squash
+  #
+  b = branch -v
+  r = remote -v
+  t = tag -l
 
 
 [push]
