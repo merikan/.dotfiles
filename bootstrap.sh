@@ -1,18 +1,27 @@
 #!/usr/bin/env bash -e
 #
-echo "      _       _    __ _ _             "
-echo "     | |     | |  / _(_) |            "
-echo "   __| | ___ | |_| |_ _| | ___  ___   "
-echo "  / _\` |/ _ \| __|  _| | |/ _ \/ __|  "
-echo " | (_| | (_) | |_| | | | |  __/\__ \  "
-echo "(_)__,_|\___/ \__|_| |_|_|\___||___/  "
+echo "      _       _    __ _ _                     "
+echo "     | |     | |  / _(_) |                    "
+echo "   __| | ___ | |_| |_ _| | ___  ___           "
+echo "  / _\` |/ _ \| __|  _| | |/ _ \/ __|         "
+echo " | (_| | (_) | |_| | | | |  __/\__ \          "
+echo "(_)__,_|\___/ \__|_| |_|_|\___||___/          "
 echo "______________________________________________"
-echo
+echo "                                              "
 echo "Installing dotfiles into user's home directory"
-echo
+echo "                                              "
+
+reset='\e[0m'           # Text Reset
+red='\e[0;31m'          # Red
+green='\e[0;32m'        # Green
+yellow='\e[0;33m'       # Yellow
+blue='\e[0;34m'         # Blue
+purple='\e[0;35m'       # Purple
+cyan='\e[0;36m'         # Cyan
+white='\e[0;37m'        # White
 
 heading() {
-    printf "\n${yellow}$1${reset}\n"
+    printf "\n${white}$1${reset}\n"
 }
 
 info() {
@@ -24,7 +33,7 @@ success() {
 }
 
 warn() {
-    printf "  [${orange}WARN${reset}] $1\n"
+    printf "  [${yellow}WARN${reset}] $1\n"
 }
 
 fail() {
@@ -79,14 +88,15 @@ backup() {
 
 cleanup() {
   info "=== Removing symlinks that targets $DOTFILES_ROOT"
-  # this is done incase we have restructured our dotfiles
+  # this is done in case we have restructured our dotfiles
   for file in $HOME/.[^.]*
   do
-  if [ -L "$file" ] && [[ $(readlink "$file") == $DOTFILES_ROOT* ]]; then
-    rm -rf $file
- fi
-
-done
+    if [ -L "$file" ] && [[ $(readlink "$file") == $DOTFILES_ROOT* ]]; then
+      rm -rf $file
+    fi
+  done
+  
+  #TODO: purge old backups
 }
 
 apply() {
