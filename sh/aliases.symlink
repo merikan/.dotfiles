@@ -10,11 +10,11 @@ alias cd..='cd ..'
 alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
-alias .4='cd ../../../../'
-alias .5='cd ../../../../../'
-alias .6='cd ../../../../../../'
-alias .7='cd ../../../../../../../'
-alias .8='cd ../../../../../../../../'
+alias .....='cd ../../../../'
+alias ......='cd ../../../../../'
+alias .......='cd ../../../../../../'
+alias ........='cd ../../../../../../../'
+alias .........='cd ../../../../../../../../'
 
 # I got the following from, and mod'd it: http://www.macosxhints.com/article.php?story=20020716005123797
 #    The following aliases (save & show) are for saving frequently used directories
@@ -42,6 +42,20 @@ alias sudo='sudo '
 alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'
+
+# Alias's to modified commands
+alias vi='vim'
+alias grep='grep --color=auto'   # Highlight matches
+alias egrep='egrep --color=auto' # Highlight matches
+alias fgrep='fgrep --color=auto' # Highlight matches
+alias bc='bc -l'
+alias wget='wget -c'
+alias ln='ln -i'
+
+# Some convenient commands
 
 # Alias to multiple ls commands
 # Detect which `ls` flavor is in use
@@ -61,15 +75,12 @@ alias lt='ls -ltr'               # sort by date
 alias lm='ls -al |more'          # pipe through 'more'
 alias la='ls -ltraFh'            # show all 
 alias lla='ls -lah'
-
-# Alias's to modified commands
-alias grep='grep --color=auto ' # Highlight matches 
 alias g='grep -i'  # Case insensitive grep
 alias f='find . -iname'
 alias m='more'
 alias df='df -h'
-alias home='cd ~'  # use 'cd' instead
-alias hist='history | grep $1' #Requires one input
+alias home='cd ~'  # just use 'cd' instead
+alias hist='history | grep $1' #requires an argument
 alias pg='ps aux | grep'  #requires an argument
 alias un='tar -zxvf'
 alias mountedinfo='df -hT'
@@ -82,6 +93,9 @@ alias scp-bash='scp ~/.bashrc ~/.bash_completion ~/.bash_profile ~/.profile ~/.b
 alias veewee='bundle exec veewee'
 alias g='git'
 alias v='vagrant'
+
+# Enumerate every column ()
+alias fields="awk 'NR == 1 { for (i=1;i<=NF;i++) {printf i \" \"} print \"\"} {print}' | column -t"
 
 # Shows most used commands, cool script I got this from: http://lifehacker.com/software/how-to/turbocharge-your-terminal-274317.php
 alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' | sort | uniq -c | sort -n | tail -n 20 | sort -nr"
