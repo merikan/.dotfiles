@@ -1,3 +1,5 @@
+# Credits: see below
+#
 [include]
   # Load private config, not to be pushed to repo
   path = ~/.gitconfig.local
@@ -30,7 +32,7 @@
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
-	cmd = /opt/homebrew-cask/Caskroom/sourcetree/1.9.8/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /opt/homebrew-cask/Caskroom/sourcetree/2.0.4/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 
 [alias]
@@ -42,7 +44,7 @@
   spull = !git-svn fetch && git-svn rebase
   # git-svn: svn commit
   spush = !git-svn dcommit
-  # Pull and update submouldes
+  # Pull with rebase and update submodules
   up = !git pull --rebase --prune $@ && git submodule update --init --recursive
   # Push to origin master
   pom = push origin master
@@ -54,6 +56,8 @@
   unstage = reset HEAD
   # view the current changes in the staging area.
   staged = diff --cached
+  # view the current changes not yet in the staging area.
+  unstaged = diff
   # work in progress, a quick save before swithing branch
   wip = !git add -A :/ && git commit -m 'WIP - Undo this temporary commit.'
   # Send every change to trash. Commit before trashing so we can find it via 'git reflog'
@@ -78,8 +82,8 @@
   # create a backup of the branch BAK_mybranch
   bak = !git branch $(git branch | grep '*' | sed -e 's/* /BAK_/')
   #bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r ; }; f"
-  # credits for some of the above commands: 
-  # http://haacked.com/archive/2014/07/28/github-flow-aliases/
+  # Show git branches by date
+  branch-bydate = "! f() { for k in $(git branch $@ | sed 's/^..//; s/ .*//'); do  echo "$(git log -1 --pretty='%Cgreen%ci %Cblue(%cr)%Creset ' $k) $k" ;  done | sort -r; }; f"
 
 
   # Shortened commands 
@@ -98,3 +102,6 @@
 
 [push]
 	default = simple
+
+# credits:
+# http://haacked.com/archive/2014/07/28/github-flow-aliases/ 
