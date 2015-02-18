@@ -2,7 +2,7 @@
 # I am using this file when doing a clean install of Homebrew or when I want to
 # update Homebrew, formulae and casks.
 #
-# To use this bundle, just run 'brew bundle' and Brewfile will be used.
+# To use this bundle, just run 'brew_bundle' and Brewfile will be used.
 # You can also use directory-specific bundling with: brew bundle ~/mydir/mybrewfile
 #
 # To install Homebrew - ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
@@ -11,68 +11,72 @@
 ### ---------------------------------------------------- ###
 ### Update                                               ###
 ### ---------------------------------------------------- ###
-update
-upgrade
+update || true
+upgrade || true
 
 
 ### ---------------------------------------------------- ###
 ### Install formulae                                     ###
 ### ---------------------------------------------------- ###
-#install apple-gcc42
-install autojump
-install caskroom/cask/brew-cask
-install curl
-install fasd
-install gibo
-install git
-install midnight-commander
-install mysql
-install node
-install python
-install ruby
-install ssh-copy-id
-install subversion
-install tig
-install tree
-install vagrant-completion
-install wget
-install youtube-dl
+#install apple-gcc42 || true
+install autojump || true
+install boot2docker || true
+install caskroom/cask/brew-cask || true
+install curl || true
+install docker || true
+install fasd || true
+install gibo || true
+install git || true
+install midnight-commander || true
+install mysql || true
+install node || true
+install python || true
+install ruby || true
+install ssh-copy-id || true
+install subversion || true
+install tig || true
+install tree || true
+install vagrant-completion || true
+install wget || true
+install youtube-dl || true
 
 
 ### ---------------------------------------------------- ###
 ### Install casks (http://caskroom.io/)                  ###
 ### ---------------------------------------------------- ###
-# Note: Outcommented casks will be installed/updated manually 
+# Note: Outcommented casks must be installed/updated manually 
 #       Casks with version 'latest' will not be updated due to no checksum change
-cask install adium
-cask install alfred
-cask alfred link
-cask install android-file-transfer
-cask install atom
-cask install betterzipql
-cask install calibre
-cask install chromecast
-cask install clementine
-cask install evernote
-cask install google-chrome
-cask install hyperswitch
-cask install intellij-idea
-cask install kindle
-cask install mplayerx
-cask install phoenix-slides
-cask install picasa
-cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql webp-quicklook suspicious-package
-cask install robomongo
-cask install skype
-cask install sonos
-cask install sourcetree
-# cask install vagrant
-# cask install virtualbox
-cask install vlc
+cask install adium || true
+cask install alfred || true
+cask install android-studio || true
+cask alfred link || true
+cask install android-file-transfer || true
+cask install atom || true
+cask install betterzipql || true
+cask install calibre || true
+cask install chromecast || true
+cask install clementine || true
+cask install evernote || true
+cask install google-chrome || true
+cask install hyperswitch || true
+cask install intellij-idea || true
+cask install kindle || true
+cask install mailbox || true
+cask install mplayerx || true
+cask install phoenix-slides || true
+cask install picasa || true
+cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook- || truecsv betterzipql webp-quicklook suspicious-package || true
+cask install robomongo || true
+cask install skype || true
+cask install sonos || true
+cask install sourcetree || true
+# cask install vagrant || true
+# cask install virtualbox || true
+cask install vlc || true
 
 
 ### ---------------------------------------------------- ###
 ### Cleanup                                              ###
 ### ---------------------------------------------------- ###
-cask cleanup
-cleanup
+cask cleanup || true
+cleanup || true
