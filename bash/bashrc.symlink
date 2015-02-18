@@ -31,11 +31,12 @@ case "$(uname)" in
   Darwin*) darwin=true;;
 esac
 
-# Add personal bin directory to your path
-[ -d ~/bin ] && export PATH=:~/bin:$PATH
 
 # add local bin before system bin
-export PATH=/usr/local/bin:$PATH  
+export PATH=/usr/local/bin:$PATH
+
+# Add personal bin directory to the path
+[ -d ~/bin ] && export PATH=:~/bin:$PATH
 
 # Java_home
 # Great post about java_home and osx - http://blog.hgomez.net/blog/2012/07/20/understanding-java-from-command-line-on-osx/
