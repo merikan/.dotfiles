@@ -42,9 +42,10 @@ alias sudo='sudo '
 alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
-alias chown='chown --preserve-root'
-alias chmod='chmod --preserve-root'
-alias chgrp='chgrp --preserve-root'
+#Nice try but it didn't work in OS X
+#alias chown='chown --preserve-root'
+#alias chmod='chmod --preserve-root'
+#alias chgrp='chgrp --preserve-root'
 
 # Alias's to modified commands
 alias vi='vim'
