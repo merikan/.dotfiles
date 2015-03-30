@@ -66,7 +66,7 @@
   uncommit = reset HEAD~1
   # just the differences between lines.
   word-diff = diff --word-diff
-  # show files ignored by git:
+  # show files ignored by git
   ignored = ls-files -o -i --exclude-standard
   frequently = !'history | cut -c 8- | grep git | sort | uniq -c  | sort -n -r | head -n 5'
   # find deleted file(s), parameter file name 
@@ -84,6 +84,8 @@
   #bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r ; }; f"
   # Show git branches by date
   branch-bydate = "! f() { for k in $(git branch $@ | sed 's/^..//; s/ .*//'); do  echo "$(git log -1 --pretty='%Cgreen%ci %Cblue(%cr)%Creset ' $k) $k" ;  done | sort -r; }; f"
+  # List all git aliases
+  alias = config --get-regexp ^alias\\.
 
 
   # Shortened commands 
@@ -94,10 +96,11 @@
   st = status
   lo = !git log-pretty
   ms = !git merge-squash
-  #
+  # and even shorter
   b = branch -v
   r = remote -v
   t = tag -l
+	
 
 
 [push]
