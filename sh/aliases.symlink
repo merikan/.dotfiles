@@ -95,6 +95,10 @@ alias veewee='bundle exec veewee'
 alias g='git'
 alias v='vagrant'
 
+[ $OSX ] && alias setJdk6='export JAVA_HOME=$(/usr/libexec/java_home -v 1.6)'
+[ $OSX ] && alias setJdk7='export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)'
+[ $OSX ] && alias setJdk8='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)'
+
 # Enumerate every column ()
 alias fields="awk 'NR == 1 { for (i=1;i<=NF;i++) {printf i \" \"} print \"\"} {print}' | column -t"
 
