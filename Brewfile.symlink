@@ -27,6 +27,7 @@ install docker || true
 install fasd || true
 install gibo || true
 install git || true
+install git-flow || true
 install midnight-commander || true
 install mysql || true
 install node || true
