@@ -1,0 +1,49 @@
+#!/bin/sh
+# 
+# Script containing shell configuration that works for all shells
+# Use this for interactive non-login shells
+echo "Running .shrc"
+
+# OS variables
+case "$(uname)" in
+  Linux*)  export LINUX=1;;
+  CYGWIN*) export CYGWIN=1;;
+  OS400*)  export OS400=1;;
+  Darwin*) export OSX=1;;
+esac
+
+# Fix systems missing $USER
+[ -z "$USER" ] && export USER=$(whoami)
+
+# Functions  -------------------------------------------------------
+[ -f ~/.functions ] && source ~/.functions
+
+# Aliases            -------------------------------------------------------
+[ -f ~/.aliases ] && source ~/.aliases
+
+
+# Java
+JAVA_VERSION=1.7
+[ $OSX ] && [ -d "$(/usr/libexec/java_home)" ] && export JAVA_HOME=$(/usr/libexec/java_home -v $JAVA_VERSION)
+# run java headless in terminal
+#export JAVA_TOOL_OPTIONS='-Djava.awt.headless=true'
+
+# Maven
+M2_VERSION=3.2.1
+export M2_HOME=$HOME/opt/apache-maven-$M2_VERSION && export PATH=$M2_HOME/bin:$PATH
+# set heap size
+export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=512m -Djava.awt.headless=true" 
+# with debug
+#export MAVEN_OPTS="$MAVEN_OPTS -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000"
+
+# Android
+[ $OSX ] && export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+
+# Homebrew Cask
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+# DRG project
+export DRG_DEPLOY_DIR="/Users/peter/.drg/deploy"
+
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

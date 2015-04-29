@@ -21,16 +21,8 @@
 
 echo "Running .bashrc"
 
-# OS specific support.  $var _must_ be set to either true or false.
-cygwin=false
-os400=false
-darwin=false
-case "$(uname)" in
-  CYGWIN*) cygwin=true;;
-  OS400*) os400=true;;
-  Darwin*) darwin=true;;
-esac
-
+# load shared shell configuration
+[ -f ~/.shrc ] && source ~/.shrc
 
 # add local bin before system bin
 export PATH=/usr/local/bin:$PATH
@@ -38,36 +30,7 @@ export PATH=/usr/local/bin:$PATH
 # Add personal bin directory to the path
 [ -d ~/bin ] && export PATH=:~/bin:$PATH
 
-# Java
-# Great post about java_home and osx - http://blog.hgomez.net/blog/2012/07/20/understanding-java-from-command-line-on-osx/
-# [ -d "$(/usr/libexec/java_home)" ] && export JAVA_HOME="$(/usr/libexec/java_home)"
-JAVA_VERSION=1.7
-[ -d "$(/usr/libexec/java_home)" ] && export JAVA_HOME=$(/usr/libexec/java_home -v $JAVA_VERSION)
-# run java headless in terminal
-#export JAVA_TOOL_OPTIONS='-Djava.awt.headless=true'
-
-# Maven
-M2_VERSION=3.2.1
-export M2_HOME=$HOME/opt/apache-maven-$M2_VERSION && export PATH=$M2_HOME/bin:$PATH
-# set heap size
-export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=512m -Djava.awt.headless=true" 
-# with debug
-#export MAVEN_OPTS="$MAVEN_OPTS -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000"
-
-# Android
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-
-# Homebrew Cask
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-
-# DRG project
-export DRG_DEPLOY_DIR="/Users/peter/.drg/deploy"
-
-
 #[ -n "$PS1" ] && source ~/.bash_profile
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/Users/peter/.gvm/bin/gvm-init.sh" ]] && source "/Users/peter/.gvm/bin/gvm-init.sh"
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

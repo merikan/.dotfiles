@@ -17,15 +17,41 @@
 #   commands from ~/.bashrc, if that file exists. This may be inhibited by using the --norc 
 #   option. The --rcfile file option will force Bash to read and execute commands from file
 #   instead of ~/.bashrc.
+#  
+#  
+#  This is how the files are sourced. 
+#  Read down the appropriate column. Executes A, then B, then C, etc. 
+#  The B1, B2, B3 means it executes only the first of those files found.
+#  
+#  +----------------+-----------+-----------+------+
+#  |                |Interactive|Interactive|Script|
+#  |                |login      |non-login  |      |
+#  +----------------+-----------+-----------+------+
+#  |/etc/profile    |   A       |           |      |
+#  +----------------+-----------+-----------+------+
+#  |/etc/bash.bashrc|           |    A      |      |
+#  +----------------+-----------+-----------+------+
+#  |~/.bashrc       |           |    B      |      |
+#  +----------------+-----------+-----------+------+
+#  |~/.bash_profile |   B1      |           |      |
+#  +----------------+-----------+-----------+------+
+#  |~/.bash_login   |   B2      |           |      |
+#  +----------------+-----------+-----------+------+
+#  |~/.profile      |   B3      |           |      |
+#  +----------------+-----------+-----------+------+
+#  |BASH_ENV        |           |           |  A   |
+#  +----------------+-----------+-----------+------+
+#  |                |           |           |      |
+#  +----------------+-----------+-----------+------+
+#  |                |           |           |      |
+#  +----------------+-----------+-----------+------+
+#  |~/.bash_logout  |    C      |           |      |
+#  +----------------+-----------+-----------+------+
 # -----------------------------------------------------------------
 
 echo "Running .bash_profile"
-# See following for more information: http://www.infinitered.com/blog/?p=19
 
-# Load in .profile ------------------------------------------------
-[ -f ~/.profile ] && source ~/.profile
-
-# Load in .bashrc -------------------------------------------------
+# Load in .bashrc (interactive non-login)
 [ -f ~/.bashrc ] && source ~/.bashrc
 
 # Case-insensitive globbing (used in pathname expansion)
@@ -44,11 +70,9 @@ shopt -s cdable_vars
 export GLOBIGNORE=. 
 
 # Functions  -------------------------------------------------------
-[ -f ~/.functions ] && source ~/.functions
 [ -f ~/.bash_functions ] && source ~/.bash_functions
 
 # Aliases            -------------------------------------------------------
-[ -f ~/.aliases ] && source ~/.aliases
 [ -f ~/.bash_aliases ] && source ~/.bash_aliases
 
 # Editors ----------------------------------------------------------
@@ -107,7 +131,7 @@ bind "set show-all-if-ambiguous On"
 
 # Turn on advanced bash completion if the file exists (get it here: http://www.caliban.org/bash/index.shtml#completion)
 [ -f /etc/bash_completion ] && source /etc/bash_completion
-# Turn on local bash completion if the file exists  
+# Turn on local bash completion if the file exist  
 for file in $HOME/.dotfiles/**/*.completion.bash
 do
   #echo "sourcing file $file"
