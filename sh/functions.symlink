@@ -2,8 +2,8 @@
 #
 # Functions that are nice to have with you 
 
-# easy create and cd into a directory (mkd -p myproject/src) 
-function mcd() { mkdir -p "$@" && cd "$_"; }
+# easy create and cd into a directory (mcd myproject/src)
+function mcd() { mkdir -p "$*" && cd "$_"; }
 
 # SSH
 function ssh-addkeys {
@@ -14,23 +14,23 @@ function ssh-addkeys {
 #  eval `ssh-agent` > /dev/null
 #  fi
 #  ssh-add ~/.ssh/id*
-  
+
   if [ -f ~/.agent.env ] ; then
     . ~/.agent.env > /dev/null
   if ! kill -0 $SSH_AGENT_PID > /dev/null 2>&1; then
-    echo "Stale agent file found. Spawning new agent… "
+    echo "Stale agent file found. Spawning new agentï¿½ "
     eval `ssh-agent | tee ~/.agent.env`
     ssh-add
-  fi 
+  fi
   else
     echo "Starting ssh-agent"
     eval `ssh-agent | tee ~/.agent.env`
     ssh-add
-  fi  
+  fi
 }
 
 #Reconnect or start a tmux or screen session over ssh
-# http://alias.sh/reconnect-or-start-tmux-or-screen-session-over-ssh 
+# http://alias.sh/reconnect-or-start-tmux-or-screen-session-over-ssh
 sssh (){ ssh -t "$1" 'tmux attach || tmux new || screen -DR'; }
 
 # Print machine details
@@ -64,7 +64,7 @@ function memory()
 
 # List Processes based on %CPU and Memory Usage
 # http://www.thegeekstuff.com/2010/07/3-shell-scripts/
-function process() 
+function process()
 {
     #List processes based on %cpu and memory usage
 
@@ -93,7 +93,7 @@ function process()
             echo "Invalid Argument Given \n"
             echo "Usage : $0 mem/cpu"
             exit 1
-        esac	
+        esac
 
     fi
     echo "End Time" `date`
