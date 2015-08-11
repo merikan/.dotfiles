@@ -18,7 +18,7 @@ upgrade || true
 ### ---------------------------------------------------- ###
 ### Install formulae                                     ###
 ### ---------------------------------------------------- ###
-#install apple-gcc42 || true
+install apple-gcc42 || true
 install autojump || true
 install boot2docker || true
 install caskroom/cask/brew-cask || true
@@ -28,10 +28,15 @@ install fasd || true
 install gibo || true
 install git || true
 install git-flow || true
+install gnupg || true
+install imagemagick || true
+install jq || true
 install midnight-commander || true
 install mysql || true
 install node || true
+install potrace || true
 install python || true
+install rest-shell || true
 install ruby || true
 install ssh-copy-id || true
 install subversion || true
@@ -39,13 +44,14 @@ install tig || true
 install tree || true
 install vagrant-completion || true
 install wget || true
+install xee || true
+install ykpers || true
 install youtube-dl || true
-
 
 ### ---------------------------------------------------- ###
 ### Install casks (http://caskroom.io/)                  ###
 ### ---------------------------------------------------- ###
-# Note: Outcommented casks must be installed/updated manually 
+# Note: Outcommented casks must be installed/updated manually
 #       Casks with version 'latest' will not be updated due to no checksum change
 cask install adium || true
 cask install alfred || true
@@ -74,6 +80,9 @@ cask install sourcetree || true
 # cask install vagrant || true
 # cask install virtualbox || true
 cask install vlc || true
+cask install gimp || true
+cask install xquartz || true
+cask install inkscape || true
 
 
 ### ---------------------------------------------------- ###
