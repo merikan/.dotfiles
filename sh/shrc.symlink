@@ -15,6 +15,9 @@ esac
 # Fix systems missing $USER
 [ -z "$USER" ] && export USER=$(whoami)
 
+# require you to press Ctrl-D twice to exit the shell
+export IGNOREEOF=1
+
 # Functions  -------------------------------------------------------
 [ -f ~/.functions ] && source ~/.functions
 
