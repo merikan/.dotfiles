@@ -41,7 +41,22 @@
   # git-svn: svn commit
   spush = !git-svn dcommit
   # Pull with rebase and update submodules
-  up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+  up = !git pull --rebase --prune $@ && git submodule update --init --recursive 
+  # Pull with rebase and update submodules
+  ups = !git pull --rebase --prune $@ && git submodule update --init --recursive
+  # Pull with rebase and update submodules (deep)
+  upd = "!f() { \
+                if [ -d .git ]; then\
+                  git up;\
+                else\
+                   echo "$(pwd) is not a git repository";\
+                   read -p \"Do you want to do a deep update? (Y/n) \" choice;\
+                   choice=${choice:-Y};\
+                   if [ \"$choice\" == \"Y\" ]; then \
+                     find . -name '.git' -exec sh -c '(echo \"== Updating `dirname '{}'`\" && cd `dirname '{}'`  && git up)' ';';\
+                   fi;\
+                fi;\
+              }; f"
   # Push to origin master
   pom = push origin master
   # Checkout
