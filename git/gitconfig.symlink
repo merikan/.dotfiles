@@ -36,10 +36,6 @@
 	trustExitCode = true
 
 [alias]
-  #--- reassigned ---
-  log = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-  
-  #--- new commands ---
   # git-svn: svn update
   spull = !git-svn fetch && git-svn rebase
   # git-svn: svn commit
