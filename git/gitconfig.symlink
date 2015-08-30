@@ -85,10 +85,9 @@
   # Show git branches by date
   branch-bydate = "! f() { for k in $(git branch $@ | sed 's/^..//; s/ .*//'); do  echo "$(git log -1 --pretty='%Cgreen%ci %Cblue(%cr)%Creset ' $k) $k" ;  done | sort -r; }; f"
   # List all git aliases
-  alias = config --get-regexp ^alias\\.
+  alias = config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
   # Change last commit comment
   amend = commit --amend -m 
-
 
   # Shortened commands 
   ci = commit
