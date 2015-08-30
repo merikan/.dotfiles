@@ -44,6 +44,22 @@
   up = !git pull --rebase --prune $@ && git submodule update --init --recursive
   # Push to origin master
   pom = push origin master
+  # Checkout
+  co = "!f() { \
+               trap 'echo ERROR: Operation failed; return' ERR; \
+               git checkout $@; \
+               last_commit=$(git log -1 HEAD --pretty=format:%s);\
+               echo $last_commit;\
+                if [[ $last_commit == *\"WIP\"* ]]; then\
+                  read -p \"You have WIP commit. Do you want to reset? (Y/n) \" choice;\
+                  choice=${choice:-Y};\
+                 if [ \"$choice\" == \"Y\" ]; then \
+                   git uncommit ;\
+                 else\
+                   echo \"Leaving the WIP commit as is.\";\
+                 fi;\
+                fi;\
+              }; f"
   # create and checkout a new branch and keep all your changes.
   cob = checkout -b
   # stage the changes in a given file.
@@ -88,7 +104,7 @@
   # Shortened commands 
   ci = commit
   br = branch -v
-  co = checkout
+  #co = checkout
   di = diff
   st = status
   lo = !git log-pretty
