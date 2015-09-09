@@ -19,8 +19,8 @@ upgrade || true
 ### Install formulae                                     ###
 ### ---------------------------------------------------- ###
 install apple-gcc42 || true
-install autojump || true
-install boot2docker || true
+#install autojump || true
+#install boot2docker || true
 install caskroom/cask/brew-cask || true
 install curl || true
 install docker || true
