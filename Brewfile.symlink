@@ -63,6 +63,7 @@ cask install betterzipql || true
 cask install calibre || true
 cask install chromecast || true
 cask install clementine || true
+cask install dockertoolbox || true
 cask install evernote || true
 cask install google-chrome || true
 cask install hyperswitch || true
