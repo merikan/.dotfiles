@@ -64,7 +64,6 @@
                trap 'echo ERROR: Operation failed; return' ERR; \
                git checkout $@; \
                last_commit=$(git log -1 HEAD --pretty=format:%s);\
-               echo $last_commit;\
                 if [[ $last_commit == *\"WIP\"* ]]; then\
                   read -p \"You have WIP commit. Do you want to reset? (Y/n) \" choice;\
                   choice=${choice:-Y};\
