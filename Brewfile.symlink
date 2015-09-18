@@ -23,7 +23,6 @@ install apple-gcc42 || true
 #install boot2docker || true
 install caskroom/cask/brew-cask || true
 install curl || true
-install docker || true
 install fasd || true
 install gibo || true
 install git || true
