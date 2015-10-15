@@ -1,3 +1,18 @@
 #!/usr/bin/env bash
 #
 # Bash functions that are nice to have with you
+
+bankid-test() {
+  BankIdDir = "$HOME/Library/Application Support/BankID"
+  [[ -d "$BankIdDir/Config.test" ]] || mkdir -p "$BankIdDir/Config.test"
+  echo "kundtest" >> "$HOME/Library/Application Support/BankID/Config.test/CavaServerSelector.txt"
+  [[ -d "$BankIdDir/Config.test" ]] || mv "$HOME/Library/Application Support/BankID/Config{,.prod}"
+  mv "$BankIdDir/Config.test" "$BankIdDir/Config"
+  echo '=== Bankid is now in TEST mode ==='
+}
+bankid-prod() {
+  BankIdDir = "$HOME/Library/Application Support/BankID"
+  rm -rf "$BankIdDir/Config"
+  mv "$BankIDDir/Config.prod" "$BankIDDir/Config"
+  echo '=== Bankid is now in PRODUCTION mode ==='
+}
