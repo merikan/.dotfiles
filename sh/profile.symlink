@@ -27,7 +27,8 @@ export PKG_CONFIG_PATH
 # export CLASSPATH
 
 
-#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-[[ -s "/Users/peter/.gvm/bin/gvm-init.sh" ]] && source "/Users/peter/.gvm/bin/gvm-init.sh"
-
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
