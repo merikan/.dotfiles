@@ -129,13 +129,17 @@
   #            }; f"
 
   # Shortened commands 
-  ci = commit
   br = branch -v
+  ci = commit
   #co = checkout
   di = diff
-  st = status
+  fi = flow init
+  ff = flow feature
+  fr = flow release
+  fh = flow hotfix
   lo = !git log-pretty
   ms = !git merge-squash
+  st = status
   # and even shorter
   b = branch -v
   r = remote -v
