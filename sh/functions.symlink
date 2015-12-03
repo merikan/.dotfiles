@@ -98,3 +98,14 @@ function process()
     fi
     echo "End Time" `date`
 }
+# eval a docker machine
+_docker-machine-eval() { 
+  if [ -z "$1" ]; then
+    echo "Need a machine name to evaluate!" 
+  else
+    eval "$(docker-machine env "$1")"
+    export DOCKER_MACHINE_IP=$(docker-machine ip "$1")
+    echo "Docker environment variables ar set."
+    echo "$(printenv | grep ^DOCKER)"
+  fi
+} 

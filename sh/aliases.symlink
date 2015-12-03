@@ -95,6 +95,15 @@ alias veewee='bundle exec veewee'
 alias g='git'
 alias v='vagrant'
 
+#docker aliases and functions
+alias d='docker'
+alias dm='docker-machine'
+alias dms='docker-machine start' 
+alias dme='_docker-machine-eval'
+alias dc='docker-compose'
+alias dcu='docker-compose up -d'
+alias dck='docker-compose kill'
+
 [ $OSX ] && alias setJdk6='export JAVA_HOME=$(/usr/libexec/java_home -v 1.6)'
 [ $OSX ] && alias setJdk7='export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)'
 [ $OSX ] && alias setJdk8='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)'
