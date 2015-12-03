@@ -43,9 +43,6 @@ export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=512m -Djava.awt.headless=true"
 [ $OSX ] && export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
-# Set env variables for Boot2Docker
-command -v boot2docker >/dev/null 2>&1 && $(boot2docker shellinit 2>/dev/null)
-
 # Homebrew Cask
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
