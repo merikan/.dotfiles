@@ -26,7 +26,7 @@ install curl || true
 install fasd || true
 install gibo || true
 install git || true
-install git-flow || true
+install git-flow-avh || true
 install gnupg || true
 install imagemagick || true
 install jq || true
