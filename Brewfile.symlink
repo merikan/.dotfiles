@@ -28,6 +28,7 @@ install git-flow-avh || true
 install gnupg || true
 install imagemagick || true
 install jq || true
+install keybase || true
 install midnight-commander || true
 install mysql || true
 install mongodb || true
