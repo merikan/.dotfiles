@@ -12,6 +12,7 @@ bankid-test() {
 }
 bankid-prod() {
   BankIdDir = "$HOME/Library/Application Support/BankID"
+  [[ -d "$BankIdDir/Config.prod" ]] && echo "Production config is missing assuming that whe are already in production mode" && exit 0
   rm -rf "$BankIdDir/Config"
   mv "$BankIDDir/Config.prod" "$BankIDDir/Config"
   echo '=== Bankid is now in PRODUCTION mode ==='
