@@ -48,6 +48,8 @@ alias cp='cp -i'
 #alias chgrp='chgrp --preserve-root'
 
 # Alias's to modified commands
+
+alias cd='dotfiles_cd'
 alias vi='vim'
 alias grep='grep --color=auto'   # Highlight matches
 alias egrep='egrep --color=auto' # Highlight matches
@@ -80,7 +82,6 @@ alias g='grep -i'  # Case insensitive grep
 alias f='find . -iname'
 alias m='more'
 alias df='df -h'
-alias home='cd ~'  # just use 'cd' instead
 alias hist='history | grep $1' #requires an argument
 alias pg='ps aux | grep'  #requires an argument
 alias un='tar -zxvf'

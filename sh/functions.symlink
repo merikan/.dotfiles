@@ -98,6 +98,19 @@ function process()
     fi
     echo "End Time" `date`
 }
+
+# added functionality to cd into enclosing directory
+dotfiles_cd () {
+    if [[ -f "$1" ]]; then
+        builtin cd "$(dirname "$1")";
+    else
+        if [[ "$1" == "" ]]; then
+            builtin cd;
+        else
+            builtin cd "$1";
+        fi;
+    fi
+}
 # eval a docker machine
 _docker-machine-eval() { 
   if [ -z "$1" ]; then
