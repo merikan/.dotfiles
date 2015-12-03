@@ -5,9 +5,7 @@
 # Provide links to any relevant tickets, articles or other resources
 
 
-
-
-##################################################
+# ---------------------------------------------------
 # The seven rules of a great git commit message
 # http://chris.beams.io/posts/git-commit/
 # 1. Separate subject from body with a blank line
@@ -17,7 +15,6 @@
 # 5. Use the imperative mood in the subject line
 # 6. Wrap the body at 72 characters
 # 7. Use the body to explain what and why vs. how
+# ---------------------------------------------------
 
-# how to apply this template
-# git config --global commit.template ~/.git_commit_msg.template
-# see: http://codeinthehole.com/writing/a-useful-template-for-commit-messages/
+

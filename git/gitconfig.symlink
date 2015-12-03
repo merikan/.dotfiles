@@ -149,5 +149,9 @@
 [push]
 	default = simple
 
+[commit]
+  template = ~/.git_commit_msg
+
 # credits:
 # http://haacked.com/archive/2014/07/28/github-flow-aliases/ 
+
