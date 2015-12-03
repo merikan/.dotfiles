@@ -30,6 +30,7 @@ install imagemagick || true
 install jq || true
 install midnight-commander || true
 install mysql || true
+install mongodb || true
 install node || true
 install potrace || true
 install python || true
