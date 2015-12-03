@@ -112,6 +112,9 @@ alias dck='docker-compose kill'
 [ $OSX ] && alias brew-update='brew update && brew outdated'
 [ $OSX ] && alias brew-upgrade='brew upgrade && brew cleanup'
 
+# when it's time for a fika
+[ $OSX ] && alias fika="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
 # Enumerate every column ()
 alias fields="awk 'NR == 1 { for (i=1;i<=NF;i++) {printf i \" \"} print \"\"} {print}' | column -t"
 
