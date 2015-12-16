@@ -52,7 +52,7 @@
                    echo "$(pwd) is not a git repository";\
                    read -p \"Do you want to do a deep update? (Y/n) \" choice;\
                    choice=${choice:-Y};\
-                   if [ \"$choice\" == \"Y\" ]; then \
+                   if [[ \"$choice\" =~ ^([Yy])$ ]]; then \
                      find . -name '.git' -exec sh -c '(echo \"== Updating `dirname '{}'`\" && cd `dirname '{}'`  && git up)' ';';\
                    fi;\
                 fi;\
@@ -67,7 +67,7 @@
                 if [[ $last_commit == *\"WIP\"* ]]; then\
                   read -p \"You have WIP commit. Do you want to reset? (Y/n) \" choice;\
                   choice=${choice:-Y};\
-                 if [ \"$choice\" == \"Y\" ]; then \
+                 if [[ \"$choice\" =~ ^([Yy])$ ]]; then \
                    git uncommit ;\
                  else\
                    echo \"Leaving the WIP commit as is.\";\
