@@ -43,6 +43,11 @@ export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=512m -Djava.awt.headless=true"
 [ $OSX ] && export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
+# Golang
+export GOPATH=$HOME/.golang
+export PATH="$GOPATH/bin:$PATH"
+#export PATH="$PATH:/usr/local/opt/go/libexec/bin"
+
 # Homebrew Cask
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 

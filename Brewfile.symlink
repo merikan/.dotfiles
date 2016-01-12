@@ -22,6 +22,7 @@ install apple-gcc42 || true
 install caskroom/cask/brew-cask || true
 install curl || true
 install fasd || true
+install go || true
 install gibo || true
 install git || true
 install git-flow-avh || true
