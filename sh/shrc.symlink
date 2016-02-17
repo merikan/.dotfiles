@@ -18,12 +18,6 @@ esac
 # require you to press Ctrl-D twice to exit the shell
 export IGNOREEOF=1
 
-# Functions  -------------------------------------------------------
-[ -f ~/.functions ] && source ~/.functions
-
-# Aliases            -------------------------------------------------------
-[ -f ~/.aliases ] && source ~/.aliases
-
 
 # Java
 JAVA_VERSION=1.7

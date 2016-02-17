@@ -21,9 +21,6 @@
 
 echo "Running .bashrc"
 
-# load shared shell configuration
-[ -f ~/.shrc ] && source ~/.shrc
-
 # add local bin before system bin
 export PATH=/usr/local/bin:$PATH
 

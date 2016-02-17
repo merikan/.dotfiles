@@ -50,6 +50,16 @@
 # -----------------------------------------------------------------
 
 echo "Running .bash_profile"
+# OS variables
+case "$(uname)" in
+  Linux*)  export LINUX=1;;
+  CYGWIN*) export CYGWIN=1;;
+  OS400*)  export OS400=1;;
+  Darwin*) export OSX=1;;
+esac
+
+# load shared shell configuration
+[ -f ~/.shrc ] && source ~/.shrc
 
 # Load in .bashrc (interactive non-login)
 [ -f ~/.bashrc ] && source ~/.bashrc
@@ -70,10 +80,8 @@ shopt -s cdable_vars
 export GLOBIGNORE=. 
 
 # Functions  -------------------------------------------------------
+[ -f ~/.functions ] && source ~/.functions
 [ -f ~/.bash_functions ] && source ~/.bash_functions
-
-# Aliases            -------------------------------------------------------
-[ -f ~/.bash_aliases ] && source ~/.bash_aliases
 
 # Editors ----------------------------------------------------------
 #export EDITOR='mate -w'  # OS-X SPECIFIC - TextMate, w is to wait for TextMate window to close
@@ -131,7 +139,11 @@ bind "set show-all-if-ambiguous On"
 
 # Turn on advanced bash completion if the file exists (get it here: http://www.caliban.org/bash/index.shtml#completion)
 [ -f /etc/bash_completion ] && source /etc/bash_completion
-# Turn on local bash completion if the file exist  
+# Homebrew bash completions
+if [[ $OSX && -f $(brew --prefix)/etc/bash_completion ]]; then
+    . $(brew --prefix)/etc/bash_completion
+fi
+# Turn on local bash completion if the file exist
 for file in $HOME/.dotfiles/**/*.completion.bash
 do
   #echo "sourcing file $file"
@@ -167,3 +179,8 @@ command -v fasd >/dev/null 2>&1  && eval "$(fasd --init auto)"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
+
+# Aliases    -------------------------------------------------------
+[ -f ~/.aliases ] && source ~/.aliases
+[ -f ~/.bash_aliases ] && source ~/.bash_aliases
+
