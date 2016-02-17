@@ -18,12 +18,12 @@ esac
 # require you to press Ctrl-D twice to exit the shell
 export IGNOREEOF=1
 
-
-# Java
-JAVA_VERSION=1.7
-[ $OSX ] && [ -d "$(/usr/libexec/java_home)" ] && export JAVA_HOME=$(/usr/libexec/java_home -v $JAVA_VERSION)
-# run java headless in terminal
-#export JAVA_TOOL_OPTIONS='-Djava.awt.headless=true'
+# Java: Use jenv
+export PATH="$HOME/.jenv/bin:$PATH"
+command -v jenv >/dev/null 2>&1 && {
+  eval "$(jenv init -)"
+  export JAVA_HOME=$HOME/.jenv/fake-java-home
+}
 
 # Maven
 M2_VERSION=3.2.1
