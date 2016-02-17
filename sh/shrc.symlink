@@ -34,7 +34,7 @@ export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=512m -Djava.awt.headless=true"
 #export MAVEN_OPTS="$MAVEN_OPTS -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000"
 
 # Android
-[ $OSX ] && export ANDROID_HOME=$HOME/Library/Android/sdk
+[ $OSX ] && export ANDROID_HOME=/usr/local/opt/android-sdk
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 # Golang
