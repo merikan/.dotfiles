@@ -87,8 +87,9 @@ cask install robomongo || true
 cask install skype || true
 cask install sonos || true
 cask install sourcetree || true
-# cask install vagrant || true
-# cask install virtualbox || true
+cask install vagrant || true
+install homebrew/completions/vagrant-completion || true
+cask install virtualbox || true
 cask install vlc || true
 cask install gimp || true
 cask install xquartz || true
