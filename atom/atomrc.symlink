@@ -1,0 +1,5 @@
+# .atomrc
+# Invoked before Atom starts so we can set environment variables etc.
+
+# load golang
+[ -f ~/.golangrc ] && source ~/.golangrc
