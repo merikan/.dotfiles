@@ -1,5 +1,5 @@
-# This is a local file to be used on a local computer
-# Just rename this file by removing the suffix .template and you ready to go. 
+# This is a local file loaded by git to be used on a local computer
+# Just copy this file by removing the suffix ".template" and you ready to go.
 
 
 [user]
