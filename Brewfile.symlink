@@ -96,6 +96,9 @@ cask install gimp || true
 cask install xquartz || true
 cask install inkscape || true
 
+tap caskroom/fonts || true
+cask install font-inconsolata || true
+
 
 ### ---------------------------------------------------- ###
 ### Cleanup                                              ###
