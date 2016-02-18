@@ -17,3 +17,15 @@ bankid-prod() {
   mv "$BankIDDir/Config.prod" "$BankIDDir/Config"
   echo '=== Bankid is now in PRODUCTION mode ==='
 }
+
+# show go version
+function go_version {
+    version=$(go version)
+    regex="(go[0-9].[0-9].[0-9])"
+    if [[ $version =~ $regex ]]; then 
+         echo ${BASH_REMATCH[1]}
+    fi
+}
+
+# and add to your PS1, for example
+# PS1="$(go_version) $ "
