@@ -89,7 +89,7 @@ cask install sonos || true
 cask install sourcetree || true
 cask install vagrant || true
 install homebrew/completions/vagrant-completion || true
-cask install virtualbox || true
+#cask install virtualbox || true   # installed via dockertoolbox
 cask install vlc || true
 cask install gimp || true
 cask install xquartz || true
