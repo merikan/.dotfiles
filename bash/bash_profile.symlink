@@ -139,10 +139,7 @@ bind "set show-all-if-ambiguous On"
 
 # Turn on advanced bash completion if the file exists (get it here: http://www.caliban.org/bash/index.shtml#completion)
 [ -f /etc/bash_completion ] && source /etc/bash_completion
-# Homebrew bash completions
-if [[ $OSX && -f $(brew --prefix)/etc/bash_completion ]]; then
-    . $(brew --prefix)/etc/bash_completion
-fi
+
 # Turn on local bash completion if the file exist
 for file in $HOME/.dotfiles/**/*.completion.bash
 do
