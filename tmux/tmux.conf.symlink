@@ -1,0 +1,34 @@
+# Initial setup
+set -g default-terminal xterm-256color
+
+# Prefix
+set-option -g prefix C-a
+unbind-key C-a
+bind-key C-a send-prefix
+
+# Use Alt-arrow keys without prefix key to switch panes
+bind -n M-Left select-pane -L
+bind -n M-Right select-pane -R
+bind -n M-Up select-pane -U
+bind -n M-Down select-pane -D
+
+# Allow the arrow key to be used immediately after changing windows.
+set-option -g repeat-time 0
+
+# Set easier window split keys
+bind-key v split-window -h
+bind-key h split-window -v
+
+# Shift arrow to switch windows
+bind -n S-Left  previous-window
+bind -n S-Right next-window
+
+# Mouse Mode
+set-option -g mouse on
+
+# make scrolling with wheels work
+bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'select-pane -t=; copy-mode -e; send-keys -M'"
+bind -n WheelDownPane select-pane -t= \; send-keys -M
+
+# Easy config reload
+bind-key r source-file ~/.tmux.conf \; display-message "tmux.conf reloaded."

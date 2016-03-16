@@ -49,6 +49,7 @@ install ruby || true
 install ssh-copy-id || true
 install subversion || true
 install tig || true
+install tmux || true
 install tree || true
 install vagrant-completion || true
 install wget || true
