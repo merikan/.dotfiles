@@ -31,6 +31,7 @@ install gibo || true
 install git || true
 install git-flow-avh || true
 install gnupg || true
+install gvm || true
 install homebrew/completions/maven-completion || true
 install homebrew/completions/pip-completion || true
 install imagemagick || true
