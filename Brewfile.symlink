@@ -23,6 +23,7 @@ brew tap homebrew/completions || true
 install apple-gcc42 || true
 install android-sdk || true
 install bash-completion || true
+install brew-cask-completion || true
 install caskroom/cask/brew-cask || true
 install curl || true
 install fasd || true
