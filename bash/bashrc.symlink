@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Notes: ----------------------------------------------------------
+# =============================================================================================
 # Invoked as an interactive login shell, or with --login
 #   When Bash is invoked as an interactive login shell, or as a non-interactive shell 
 #   with the --login option, it first reads and executes commands from the file /etc/profile, 
@@ -17,18 +17,198 @@
 #   commands from ~/.bashrc, if that file exists. This may be inhibited by using the --norc 
 #   option. The --rcfile file option will force Bash to read and execute commands from file
 #   instead of ~/.bashrc.
-# -----------------------------------------------------------------
+#
+# Idomatic usage 
+#  By default, Terminal starts the shell via /usr/bin/login, which makes the shell a 
+#  login shell. On every platform (not just Mac OS X) bash does not use .bashrc 
+#  for login shells (only /etc/profile and the first of .bash_profile, .bash_login, 
+#  .profile that exists and is readable). This is why "put source ~/.bashrc in 
+#  your .bash_profile" is standard advice
+#  
+#  So typically (or sooner or later), what you will encounter are non-login shells. So this 
+#  case is what you should write your config files for. This means putting most of your stuff 
+#  in ~/.bashrc, having exactly one of ~/.bash_profile, ~/.bash_login, and ~/.profile, 
+#  and sourcing ~/.bashrc from it.
+#
+#  On startup, bash executes any script labeled A in the table below, followed by 
+#  the first script B it finds. On exit, it executes any script labeled C.
+#
+#  +----------------+-----------+-----------+-----------+-----------+
+#  |                |Interactive|Interactive|Non-       |Remote     |
+#  |                |login      |non-login  |interactive|shell      |
+#  +----------------+-----------+-----------+-----------+-----------+
+#  |/etc/profile    |   A       |           |           |           |
+#  +----------------+-----------+-----------+-----------+-----------+
+#  |/etc/bash.bashrc|           |    A      |           |           |
+#  +----------------+-----------+-----------+-----------+-----------+
+#  |~/.bashrc       |           |    B      |           |    A      |
+#  +----------------+-----------+-----------+-----------+-----------+
+#  |~/.bash_profile |   B1      |           |           |           |
+#  +----------------+-----------+-----------+-----------+-----------+
+#  |~/.bash_login   |   B2      |           |           |           |
+#  +----------------+-----------+-----------+-----------+-----------+
+#  |~/.profile      |   B3      |           |           |           |
+#  +----------------+-----------+-----------+-----------+-----------+
+#  |BASH_ENV        |           |           |     A     |           |
+#  +----------------+-----------+-----------+-----------+-----------+
+#  |~/.bash_logout  |    C      |           |           |           |
+#  +----------------+-----------+-----------+-----------+-----------+
+# =============================================================================================
 
 echo "Running .bashrc"
 
-# add local bin before system bin
-export PATH=/usr/local/bin:$PATH
+# =============================================================================================
+#  1. These are executed only for interactive shells
+# =============================================================================================
+if [[ -n $PS1 ]]; then
+    : # These are executed only for interactive shells
 
-# Add personal bin directory to the path
-[ -d ~/bin ] && export PATH=:~/bin:$PATH
+    
+# =============================================================================================
+#  2. These are executed only for NON-interactive shells
+# =============================================================================================
+else
+    : # Only for NON-interactive shells
+    
+fi
+# =============================================================================================
+#  3. These are executed only when it is a login shell
+# =============================================================================================
+if shopt -q login_shell ; then
+    : # These are executed only when it is a login shell
+    
+# =============================================================================================
+#  4. These are executed only when it is NOT a login shell
+# =============================================================================================
+else
+    : # Only when it is NOT a login shell
+    
+fi
 
-#[ -n "$PS1" ] && source ~/.bash_profile
+# =============================================================================================
+#  5. General configuration: stuff that always should be executed
+# =============================================================================================
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
+# OS variables
+case "$(uname)" in
+  Linux*)  export LINUX=1;;
+  CYGWIN*) export CYGWIN=1;;
+  OS400*)  export OS400=1;;
+  Darwin*) export OSX=1;;
+esac
+
+# ---------------------------------------------------------------------------------------------
+# Load shared shell run commands
+[ -f ~/.shrc ] && source ~/.shrc
+
+# Case-insensitive globbing (used in pathname expansion)
+shopt -s nocaseglob
+# Autocorrect typos in path names when using `cd`
+shopt -s cdspell
+# Change directories with variable names
+shopt -s cdable_vars
+# Lets files beginning with a . be matched without explicitly specifying the dot.
+export GLOBIGNORE=.
+# After each command, checks the windows size and changes lines and columns
+shopt -s checkwinsize  
+
+# ---------------------------------------------------------------------------------------------
+# Load functions  
+[ -f ~/.functions ] && source ~/.functions
+[ -f ~/.bash_functions ] && source ~/.bash_functions
+
+# ---------------------------------------------------------------------------------------------
+# Editors 
+#export EDITOR='mate -w'  # OS-X SPECIFIC - TextMate, w is to wait for TextMate window to close
+#export EDITOR='gedit'  #Linux/gnome
+export EDITOR='nano'  #Command line
+# Subversion 
+export SVN_EDITOR='${EDITOR}'
+
+# ---------------------------------------------------------------------------------------------
+# Hello messsage 
+echo -e "Kernel Information: " `uname -smr`
+[ -f /etc/system-release ] && echo -e "Linux Distribution: " `cat /etc/system-release`
+#echo -e "${COLOR_BROWN}`bash --version`"
+echo -ne "${COLOR_GRAY}Uptime: "; uptime
+echo -ne "${COLOR_GRAY}Server time is: "; date
+
+# ---------------------------------------------------------------------------------------------
+# Prompts: 
+PS1="\[${COLOR_GRAY}\]\u@\h:\[${COLOR_GREEN}\]\W\[${COLOR_NC}\] \$ "
+# export PS1="\[${COLOR_GREEN}\]\w > \[${COLOR_NC}\]"  # Primary prompt with only a path    
+# export PS1="\[${COLOR_RED}\]\w > \[${COLOR_NC}\]"  # Primary prompt for root user, to highlight when you're logged in as root
+# export PS1="\[${COLOR_GRAY}\]\u@\h \[${COLOR_GREEN}\]\w > \[${COLOR_NC}\]"  # Primary prompt with user, host, and path 
+
+# This runs before the prompt and sets the title of the xterm* window.  If you set the title in the prompt
+# weird wrapping errors occur on some systems, so this method is superior
+# Turn this off of you are running directly in the console on the machine
+export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*} ${PWD}"; echo -ne "\007"'  # user@host path
+export PS2='> '    # Secondary prompt
+export PS3='#? '   # Prompt 3
+export PS4='+'     # Prompt 4
+
+function xtitle {  # change the title of your xterm* window
+  unset PROMPT_COMMAND
+  echo -ne "\033]0;$1\007" 
+}
+
+# ---------------------------------------------------------------------------------------------
+# History: 
+
+# append to the history file when you exit a shell, don't overwrite it
+shopt -s histappend
+# keep the history between multiple bash sessions synced
+PROMPT_COMMAND="history -n; history -a; $PROMPT_COMMAND"  # execute command just before Bash displays a prompt.
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+export HISTSIZE=9999
+export HISTFILESIZE=999999
+# Avoid succesive duplicates in the bash command history.
+HISTCONTROL=ignoredups:ignorespace
+# Add date and time to bash history
+export HISTTIMEFORMAT="%h/%d - %H:%M:%S "
+
+# ---------------------------------------------------------------------------------------------
+# Bash command completion:
+
+# bash completion settings (actually, these are readline settings)
+bind "set completion-ignore-case on" # note: bind used instead of sticking these in .inputrc
+bind "set bell-style none"
+bind "set show-all-if-ambiguous On"
+
+# Turn on advanced bash completion if the file exists (get it here: http://www.caliban.org/bash/index.shtml#completion)
+[ -f /etc/bash_completion ] && source /etc/bash_completion
+
+# Turn on local bash completion if file exist
+for file in $HOME/.dotfiles/**/*.completion.bash
+do
+  #echo "sourcing completion file $file"
+  source $file
+done
+unset file
+
+# ---------------------------------------------------------------------------------------------
+# Screen:
+
+# Look for any unattached screen sessions and automatically attach to the first one found
+if [ $SSH_TTY ] && [ ! $WINDOW ]; then
+  SCREENLIST=`screen -ls | grep 'Attached'`
+  if [ $? -eq "0" ]; then
+    echo -e "Screen is already running and attached:\n ${SCREENLIST}"
+  else
+    screen -U -R
+  fi
+fi
+# Add screen window to prompt, if applicable
+if [ $TERM = "screen" ]; then
+  PS1='window ${WINDOW} '$PS1
+fi
+
+# ---------------------------------------------------------------------------------------------
+# Liquid prompt -- A useful adaptive prompt for Bash & Zsh
+[[ -s "${HOME}/.liquidprompt/liquidprompt" ]] && source "${HOME}/.liquidprompt/liquidprompt"
+
+# ---------------------------------------------------------------------------------------------
+# Aliases 
+[ -f ~/.aliases ] && source ~/.aliases
+[ -f ~/.bash_aliases ] && source ~/.bash_aliases
