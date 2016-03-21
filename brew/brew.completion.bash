@@ -4,6 +4,9 @@ if command -v brew >/dev/null 2>&1; then
   # Turn on bash-completion if it's installed
   if [ -s `brew --prefix`/etc/bash_completion ]; then
     source `brew --prefix`/etc/bash_completion
+    # bash-completion will complete variables (-v) for the cd command; complete -o nospace -v -F _cd cd
+    # don't know why, but I will torn it off 
+    complete -o nospace -F _cd cd
   else
     # Completion file for the brew command itself is installed but not turned on 
     # by default, so we have to give it a little help. 

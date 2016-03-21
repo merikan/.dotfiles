@@ -8,7 +8,10 @@ set bell-style none
 set show-all-if-ambiguous on
 # ignore caps lock and casing
 set completion-ignore-case on
-# autocompletion: cycle through every possible suggestion
+# autocompletion: cycle through every possible suggestion http://goo.gl/kklFOP
 #TAB: menu-complete
 # autocompletion: shift+tab to list possible suggestion
 #"\e[Z": complete
+
+#Turn off the use of the internal pager when returning long completion lists.
+set page-completions off
