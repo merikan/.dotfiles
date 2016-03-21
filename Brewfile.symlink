@@ -82,7 +82,8 @@ cask install kindle || true
 cask install mplayerx || true
 cask install phoenix-slides || true
 cask install picasa || true
-cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook- || truecsv betterzipql webp-quicklook suspicious-package || true
+# https://github.com/sindresorhus/quick-look-plugins
+cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package || true
 cask install robomongo || true
 cask install skype || true
 cask install sonos || true
