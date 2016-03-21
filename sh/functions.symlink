@@ -1,6 +1,10 @@
 #!/bin/sh
 #
-# Functions that are nice to have with you 
+# Functions that are nice to have with you
+#
+# I prefer to alias all my functions too so that I can easily find them 
+# with the alias command. Check out my alias file(s)
+ 
 
 # easy create and cd into a directory (mcd myproject/src)
 function mcd() { mkdir -p "$*" && cd "$_"; }
@@ -99,17 +103,44 @@ function process()
     echo "End Time" `date`
 }
 
-# added functionality to cd into enclosing directory
-dotfiles_cd () {
-    if [[ -f "$1" ]]; then
-        builtin cd "$(dirname "$1")";
-    else
-        if [[ "$1" == "" ]]; then
-            builtin cd;
+# extended cd funtionality
+__cd_() {
+    if [[ "$1" == "" ]]; then
+      if command -v git >/dev/null 2>&1; then
+        local toplevel
+        toplevel="$(git rev-parse --show-toplevel 2>/dev/null)"
+        if [[ -e "$toplevel" ]] && [[ "$toplevel" != "$(pwd)" ]]; then
+            builtin cd "$toplevel"; #toplevel of git repository
         else
-            builtin cd "$1";
-        fi;
+          builtin cd; # normal cd behaviour
+        fi
+      else 
+        builtin cd; # normal cd behaviour
+      fi
+    elif [[ -f "$1" ]]; then # is it a file?
+      builtin cd "$(dirname "$1")"; #cd into enclosing directory
+    else
+      builtin cd "$1";
     fi
+}
+
+# cd to the root of git repository
+__git_cd_() {
+  if [[ "$1" == "" ]]; then
+    local OUTPUT
+    OUTPUT="$(git rev-parse --show-toplevel 2>/dev/null)"
+    if [[ -e "$OUTPUT" ]]; then
+      if [[ "$OUTPUT" != "$(pwd)" ]]; then
+        builtin cd "$OUTPUT"
+      else
+        builtin cd
+      fi
+    else
+      builtin cd 
+    fi
+  else
+    builtin cd "$@"
+  fi
 }
 # eval a docker machine
 _docker-machine-eval() { 
@@ -121,4 +152,11 @@ _docker-machine-eval() {
     echo "Docker environment variables ar set."
     echo "$(printenv | grep ^DOCKER)"
   fi
+} 
+# handle prompt string as command
+__prompt_string_() {
+  shift; # get rid of promt string 
+  local command=$1
+  shift;
+  eval $command "$@"  # run the command
 } 

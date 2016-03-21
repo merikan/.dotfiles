@@ -1,9 +1,12 @@
 #!/bin/sh
 #
-# Aliases
+# My great list of aliases
+#
+# I prefer to alias all my functions too so that I can easily find them 
+# with the alias command.
 
 # Navigation -----------------------
-# get rid of command not found
+# typo; get rid of 'command not found'
 alias cd..='cd ..'
  
 # a quick way to get out of current directory
@@ -16,22 +19,24 @@ alias .......='cd ../../../../../../'
 alias ........='cd ../../../../../../../'
 alias .........='cd ../../../../../../../../'
 
-# I got the following from, and mod'd it: http://www.macosxhints.com/article.php?story=20020716005123797
-#    The following aliases (save & show) are for saving frequently used directories
-#    You can save a directory using an abbreviation of your choosing. Eg. save ms
-#    You can subsequently move to one of the saved directories by using cd with
-#    the abbreviation you chose. Eg. cd ms 
-# set the cdablevars option so that no '$' is required when using this facility
-# bash:shopt -s cdable_vars, zsh:setopt cdablevars
-if [ ! -f ~/.dirs ]; then  # if doesn't exist, create it
-        touch ~/.dirs
+# Poor man's fasd
+if ! command -v fasd2 >/dev/null 2>&1; then # only load when fasd isn't available
+  # I got the following from, and mod'd it: http://www.macosxhints.com/article.php?story=20020716005123797
+  #    The following aliases (save & show) are for saving frequently used directories
+  #    You can save a directory using an abbreviation of your choosing. Eg. save ms
+  #    You can subsequently move to one of the saved directories by using cd with
+  #    the abbreviation you chose. Eg. cd ms 
+  # set the cdablevars option so that no '$' is required when using this facility
+  # bash:shopt -s cdable_vars, zsh:setopt cdablevars
+  
+  [ ! -f ~/.dirs ] && touch ~/.dirs   # if doesn't exist, create it
+  alias show='cat ~/.dirs'
+  alias save='__save_'
+  __save_ (){
+          command sed "/!$/d" ~/.dirs > ~/.dirs1; mv ~/.dirs1 ~/.dirs; echo "$@"=\"`pwd`\" >> ~/.dirs; source ~/.dirs ;
+  }
+  source ~/.dirs  # Initialization for the above 'save' facility: source the .dirs file
 fi
-
-alias show='cat ~/.dirs'
-save (){
-        command sed "/!$/d" ~/.dirs > ~/.dirs1; mv ~/.dirs1 ~/.dirs; echo "$@"=\"`pwd`\" >> ~/.dirs; source ~/.dirs ;
-}
-source ~/.dirs  # Initialization for the above 'save' facility: source the .dirs file
 
 # ----------------
 # sudo and alias. If the last character of the alias value is a blank, 
@@ -49,7 +54,7 @@ alias cp='cp -i'
 
 # Alias's to modified commands
 
-alias cd='dotfiles_cd'
+alias cd='__cd_'
 alias vi='vim'
 alias grep='grep --color=auto'   # Highlight matches
 alias egrep='egrep --color=auto' # Highlight matches
@@ -60,15 +65,20 @@ alias ln='ln -i'
 
 # Some convenient commands
 
+# copy/paste command with prompt string into the shell
+# alias $='__prompt_string_'
+# alias #='__prompt_string_'
+
 # Alias to multiple ls commands
 # Detect which `ls` flavor is in use
-if ls --color > /dev/null 2>&1; then # GNU `ls`
-	colorflag="--color"
-else # OS X `ls`
-	colorflag="-G"
+if ls --color > /dev/null 2>&1; then 
+	colorflag="--color" # GNU `ls`
+else 
+	colorflag="-G"      # OS X `ls`
 fi
 alias ls='ls -aF ${colorflag}'   # add colors and file type extensions
-alias ll='ls -Al'                # show hidden files
+alias ll='ls -Al'                # also show hidden files
+alias l.='ls -d .* ${colorflag}' # show hidden files
 alias lx='ls -lXB'               # sort by extension
 alias lk='ls -lSr'               # sort by size
 alias lc='ls -lcr'		         # sort by change time  
