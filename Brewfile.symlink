@@ -60,8 +60,7 @@ install youtube-dl || true
 ### ---------------------------------------------------- ###
 ### Install casks (http://caskroom.io/)                  ###
 ### ---------------------------------------------------- ###
-# Note: Outcommented casks must be installed/updated manually
-#       Casks with version 'latest' will not be updated due to no checksum change
+# Note: Casks with version 'latest' will not be updated due to no checksum change
 cask install adium || true
 cask install alfred || true
 cask install android-studio || true
