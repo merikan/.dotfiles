@@ -137,6 +137,12 @@ alias dck='docker-compose kill'
 #    see https://github.com/atom/atom/issues/1729 until https://github.com/atom/atom/pull/11184 is accepted
 # $ npm install --global tmpin 
 command -v tmpin >/dev/null 2>&1  && alias atom='tmpin atom'
+
+# HTTPie aliases (https://github.com/jkbrzt/httpie)
+alias GET="http"
+alias POST="http POST"
+alias HEAD="http HEAD" 
+
 # Enumerate every column ()
 alias fields="awk 'NR == 1 { for (i=1;i<=NF;i++) {printf i \" \"} print \"\"} {print}' | column -t"
 
