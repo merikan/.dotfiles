@@ -118,15 +118,20 @@ complete -F _docker_compose dc
 alias dcu='docker-compose up -d'
 alias dck='docker-compose kill'
 
-[ $OSX ] && alias setJdk6='export JAVA_HOME=$(/usr/libexec/java_home -v 1.6)'
-[ $OSX ] && alias setJdk7='export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)'
-[ $OSX ] && alias setJdk8='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)'
-#[ $OSX ] && alias brew-update='sudo chown -R $(whoami):admin /usr/local && brew update && brew outdated'
-[ $OSX ] && alias brew-update='brew update && brew outdated'
-[ $OSX ] && alias brew-upgrade='brew upgrade && brew cleanup'
-
-# when it's time for a fika
-[ $OSX ] && alias fika="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+[ $OSX ] && {
+  # Java (using jenv instead)
+  #alias setJdk6='export JAVA_HOME=$(/usr/libexec/java_home -v 1.6)'
+  #alias setJdk7='export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)'
+  #alias setJdk8='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)'
+  #[ $OSX ] && alias brew-update='sudo chown -R $(whoami):admin /usr/local && brew update && brew outdated'
+  # Homebrew
+  alias brew-update='brew update && brew outdated'
+  alias brew-upgrade='brew upgrade && brew cleanup'
+  # When it's time for a fika
+  alias fika="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+  # Pretty print from clipboard, OS X only 
+  alias xmlformatclipboard='pbpaste | xmllint --format -'
+}
 
 # Enumerate every column ()
 alias fields="awk 'NR == 1 { for (i=1;i<=NF;i++) {printf i \" \"} print \"\"} {print}' | column -t"
