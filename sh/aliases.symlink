@@ -152,3 +152,5 @@ alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' 
 # just for fun
 alias matrix='LC_ALL=C tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS conv=unblock | GREP_COLOR="1;32" grep --color "[^ ]"'
 
+#play youtube videos
+alias play-youtube='__play-youtube_() { youtube-dl -q -o- "${1}" | mplayer -cache 8192 -; }; __play-youtube_'
