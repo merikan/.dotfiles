@@ -146,5 +146,3 @@ alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' 
 # just for fun
 alias matrix='LC_ALL=C tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS conv=unblock | GREP_COLOR="1;32" grep --color "[^ ]"'
 
-# Pretty print from clipboard, OS X only 
-alias xmlformatclipboard='pbpaste | xmllint --format -'
