@@ -92,8 +92,11 @@
   uncommit = reset HEAD~1
   # just the differences between lines.
   word-diff = diff --word-diff
+  # list all authors
+  authors = "!git log --all --format='%aN <%cE>' | sort -u"
   # show files ignored by git
   ignored = ls-files -o -i --exclude-standard
+  # list frequently used git commands
   frequently = !'history | cut -c 8- | grep git | sort | uniq -c  | sort -n -r | head -n 5'
   # find deleted file(s), parameter file name 
   deleted = !git log --diff-filter=D --summary | grep
@@ -101,18 +104,28 @@
   log-last-commit = log --name-status HEAD^..HEAD     
   # merge branch with squash
   merge-squash  =  merge --squash
+  # Inspect history in various ways
+  news = log -p HEAD@{1}..HEAD@{0}
+  sl = shortlog
+  # Show compact history
+  l = "!git log --graph --pretty='tformat:%C(yellow)%h{%C(green)%ar{%C(bold blue)%an{%C(red)%d%C(reset) %s' $* | column -t -s '{' | less -FXRS"
+  # Show commit log using graph notation
+  lg = log --graph --pretty=format:'%Cred%h%Creset %an -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  # List commits showing changed files
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  ra = log --graph --abbrev-commit --date=relative -20 --all --pretty='format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'
+
   #log in pretty format 
   log-pretty = log --pretty=format:'%C(yellow)%h%Creset %ai |%C(green)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit 
   #log in pretty format with graph 
   log-graph = log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"
   # create a backup of the branch BAK_mybranch
-  bbak = !git branch $(git branch | grep '*' | sed -e 's/* /BAK_/')
+  backup = !git branch $(git branch | grep '*' | sed -e 's/* /BAK_/')
   #bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r ; }; f"
   # Show git branches by date
   branch-bydate = "! f() { for k in $(git branch $@ | sed 's/^..//; s/ .*//'); do  echo "$(git log -1 --pretty='%Cgreen%ci %Cblue(%cr)%Creset ' $k) $k" ;  done | sort -r; }; f"
   # List all git aliases
-  #alias = config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
-  alias = config --get-regexp ^alias\\.
+  aliases = "!git config -l | grep alias | cut -c 7-"
   # Change last commit comment
   amend = commit --amend -m
   # Clean up repository
@@ -127,7 +140,12 @@
   #                git prune ;\rm -rf .git/refs/original/*
   #              fi;\
   #            }; f"
-
+  # Easily ignore committed, but changed files that I don't want to commit
+  assume = update-index --assume-unchanged
+  assumed = "!git ls-files -v | grep ^h | cut -c 3-"
+  assumeall = "!git st -s | awk {'print $2'} | xargs git assume"
+  unassume = update-index --no-assume-unchanged
+  unassumeall = "!git assumed | xargs git update-index --no-assume-unchanged"
   # Shortened commands 
   br = branch -v
   ci = commit
@@ -153,5 +171,6 @@
   template = ~/.git_commit_msg
 
 # credits:
-# http://haacked.com/archive/2014/07/28/github-flow-aliases/ 
+# http://haacked.com/archive/2014/07/28/github-flow-aliases/
+# http://nuclearsquid.com/writings/git-tricks-tips-workflows/ 
 
