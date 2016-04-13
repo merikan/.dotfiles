@@ -76,18 +76,18 @@ if ls --color > /dev/null 2>&1; then
 else 
 	colorflag="-G"      # OS X `ls`
 fi
-alias ls='ls -aF ${colorflag}'   # add colors and file type extensions
-alias ll='ls -Al'                # also show hidden files
-alias l.='ls -d .* ${colorflag}' # show hidden files
-alias lx='ls -lXB'               # sort by extension
-alias lk='ls -lSr'               # sort by size
-alias lc='ls -lcr'		         # sort by change time  
-alias lu='ls -lur'		         # sort by access time   
-alias lr='ls -lR'                # recursive ls
-alias lt='ls -ltr'               # sort by date
-alias lm='ls -al |more'          # pipe through 'more'
-alias la='ls -ltraFh'            # show all 
-alias lla='ls -lah'
+alias ls="ls -aF ${colorflag}"    # show hidden and type suffix
+alias ll='ls -ltra'               # show hidden and sort by modified
+alias l.="ls -dl .* ${colorflag}" # show only hidden files
+alias lx='ls -lXB'                # sort by extension
+alias lk='ls -lSr'                # sort by size
+alias lc='ls -lcr'		            # sort by change time  
+alias lu='ls -lur'		            # sort by access time   
+alias lr='ls -lR'                 # recursive ls
+alias lt='ls -ltr'                # sort by date
+alias lm='ls -al |more'           # pipe through 'more'
+alias la='ls -ltraFh'             # show all 
+alias lla='ls -lah'               # list all and human readable
 alias g='grep -i'  # Case insensitive grep
 alias f='find . -iname'
 alias m='more'
