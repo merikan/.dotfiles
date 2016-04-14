@@ -42,6 +42,8 @@ export PATH="${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
 
 # Golang
 [ -f ~/.golangrc ] && source ~/.golangrc
+# use gvm - Go Version Manager
+[[ -s "$HOME/.gvm/scripts/gvm" ]]  && source "$HOME/.gvm/scripts/gvm"
 
 # DRG project
 export DRG_DEPLOY_DIR="/Users/peter/.drg/deploy"
@@ -54,5 +56,9 @@ export DRG_DEPLOY_DIR="/Users/peter/.drg/deploy"
 
 # sdkman
 export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
-
+[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && {
+  # disable GVM alias
+  sed -i.bak 's/^\(sdkman_disable_gvm_alias=\).*/\1true/' "$SDKMAN_DIR/etc/config"
+  # source sdkman  
+  source "$SDKMAN_DIR/bin/sdkman-init.sh" 
+}
