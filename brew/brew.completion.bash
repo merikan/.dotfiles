@@ -4,15 +4,14 @@ if command -v brew >/dev/null 2>&1; then
   # Turn on bash-completion if it's installed
   if [ -s `brew --prefix`/etc/bash_completion ]; then
     source `brew --prefix`/etc/bash_completion
-    # bash-completion will complete variables (-v) for the cd command; complete -o nospace -v -F _cd cd
-    # don't know why, but I will torn it off 
+    # bash-completion will complete variables (-v) for the cd command; 
+    # At least on OS X it looks awful, turn it off (complete -o nospace -v -F _cd cd)
     complete -o nospace -F _cd cd
   else
-    # Completion file for the brew command itself is installed but not turned on 
+    # Completion file for the brew command itself is installed but not activated 
     # by default, so we have to give it a little help. 
     # FYI: If formula bash-completion is installed it will copy this file 
-    # to `brew --prefix`/etc/bash_completion.d. Yes COPY!!
-    # directory. 
+    # to `brew --prefix`/etc/bash_completion.d. directory. Yes COPY, not symlink!!
     if [ -s `brew --prefix`/Library/Contributions/brew_bash_completion.sh ]; then
       source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
     fi 
