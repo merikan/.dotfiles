@@ -5,6 +5,10 @@
 # I prefer to alias all my functions too so that I can easily find them 
 # with the alias command.
 
+function has() {  # has command?
+   command -v $1 >/dev/null 2>&1 && return 0 || return 1 
+}
+
 # Navigation -----------------------
 # typo; get rid of 'command not found'
 alias cd..='cd ..'
@@ -118,7 +122,7 @@ complete -F _docker_compose dc
 alias dcu='docker-compose up -d'
 alias dck='docker-compose kill'
 
-[ $OSX ] && {
+[ $OSX ] && { # OS X Aliases
   # Java (using jenv instead)
   #alias setJdk6='export JAVA_HOME=$(/usr/libexec/java_home -v 1.6)'
   #alias setJdk7='export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)'
@@ -131,6 +135,18 @@ alias dck='docker-compose kill'
   alias fika="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
   # Pretty print from clipboard, OS X only 
   alias xmlformatclipboard='pbpaste | xmllint --format -'
+  # Merge PDF files, usage: 'mergepdf -o output.pdf input{1,2,3}.pdf'
+  alias mergepdf='/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py'
+  # OS X has no `md5sum`, so use `md5` as a fallback
+  has md5sum || alias md5sum="md5"
+  # OS X has no `sha1sum`, so use `shasum` as a fallback
+  has sha1sum || alias sha1sum="shasum"
+  # Show/hide hidden files in Finder
+  alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+  alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+  # Hide/show all desktop icons (useful when presenting)
+  alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+  alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 }
 
 # Enable stin for atom editor until fixed
