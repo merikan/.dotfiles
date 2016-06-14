@@ -26,6 +26,7 @@ install bash-completion || true
 install brew-cask-completion || true
 install curl || true
 install fasd || true
+install ffmpeg || true
 install gibo || true
 install git || true
 install git-flow-avh || true
