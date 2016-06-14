@@ -22,6 +22,7 @@ brew tap homebrew/completions || true
 
 install apple-gcc42 || true
 install android-sdk || true
+install aria2 || true
 install bash-completion || true
 install brew-cask-completion || true
 install curl || true
