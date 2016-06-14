@@ -159,14 +159,23 @@ function xtitle {  # change the title of your xterm* window
 # append to the history file when you exit a shell, don't overwrite it
 shopt -s histappend
 # keep the history between multiple bash sessions synced
-PROMPT_COMMAND="history -n; history -a; $PROMPT_COMMAND"  # execute command just before Bash displays a prompt.
+#PROMPT_COMMAND="history -n; history -a; $PROMPT_COMMAND"  # execute command just before Bash displays a prompt.
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-export HISTSIZE=9999
-export HISTFILESIZE=999999
+#export HISTSIZE=9999
+#export HISTFILESIZE=999999
 # Avoid succesive duplicates in the bash command history.
 HISTCONTROL=ignoredups:ignorespace
 # Add date and time to bash history
-export HISTTIMEFORMAT="%h/%d - %H:%M:%S "
+#export HISTTIMEFORMAT="%h/%d - %H:%M:%S "
+
+# Undocumented feature which sets the size to "unlimited".
+# http://stackoverflow.com/questions/9457233/unlimited-bash-history
+export HISTFILESIZE=
+export HISTSIZE=
+export HISTTIMEFORMAT="[%F %T] "
+# Force prompt to write history after every command.
+# http://superuser.com/questions/20900/bash-history-loss
+PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
 # ---------------------------------------------------------------------------------------------
 # Bash command completion:
