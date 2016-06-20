@@ -102,6 +102,7 @@ alias un='tar -zxvf'
 alias mountedinfo='df -hT'
 alias openports='netstat -nape --inet'
 alias ns='netstat -alnp --protocol=inet | grep -v CLOSE_WAIT | cut -c-6,21-94 | tail +2'
+alias listen="lsof -P -i -n" 
 alias du1='du -h --max-depth=1'
 alias ducks='du -cksh * | sort -rn|head -11' # Lists folders and files sizes in the current folder
 alias da='date "+%Y-%m-%d %A    %T %Z"'
