@@ -79,7 +79,6 @@ cask install google-chrome || true
 cask install hyperswitch || true
 cask install intellij-idea || true
 cask install kindle || true
-cask install mplayerx || true
 cask install phoenix-slides || true
 cask install picasa || true
 # https://github.com/sindresorhus/quick-look-plugins
