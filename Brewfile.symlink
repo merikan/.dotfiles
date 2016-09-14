@@ -77,6 +77,7 @@ install homebrew/completions/docker-machine-completion || true
 cask install evernote || true
 cask install google-chrome || true
 cask install hyperswitch || true
+cask install icolors || true
 cask install intellij-idea || true
 cask install kindle || true
 cask install pencil || true
