@@ -49,6 +49,7 @@ install rest-shell || true
 install ruby || true
 install ssh-copy-id || true
 install subversion || true
+install the_silver_searcher || true   `# ag a code searching tool similar to ack`
 install tig || true
 install tmux || true
 install tree || true

@@ -220,7 +220,11 @@ fi
 # ---------------------------------------------------------------------------------------------
 
 # fzf for fuzzy file mathing
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ~/.fzf.bash ] && {
+  source ~/.fzf.bash
+  # Setting ag as the default source for fzf
+  command -v ag >/dev/null 2>&1 && export FZF_DEFAULT_COMMAND='ag -g ""'
+}
 
 # Aliases 
 [ -f ~/.aliases ] && source ~/.aliases
