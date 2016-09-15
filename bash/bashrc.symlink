@@ -218,6 +218,10 @@ fi
 [[ -s "${HOME}/.liquidprompt/liquidprompt" ]] && source "${HOME}/.liquidprompt/liquidprompt"
 
 # ---------------------------------------------------------------------------------------------
+
+# fzf for fuzzy file mathing
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 # Aliases 
 [ -f ~/.aliases ] && source ~/.aliases
 [ -f ~/.bash_aliases ] && source ~/.bash_aliases

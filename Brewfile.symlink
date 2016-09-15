@@ -27,6 +27,7 @@ install bash-completion || true
 install brew-cask-completion || true
 install curl || true
 install fasd || true
+install fzf || true             `# a command-line fuzzy finder`
 install ffmpeg || true
 install gibo || true
 install git || true
