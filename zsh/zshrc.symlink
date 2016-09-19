@@ -73,8 +73,8 @@ bindkey '\e[A' history-beginning-search-backward
 bindkey '\e[B' history-beginning-search-forward
 
 # fzf for fuzzy file mathing
-[ -f ~/.fzf.bash ] && {
-  source ~/.fzf.bash
+[ -f ~/.fzf.zsh ] && {
+  source ~/.fzf.zsh
   # Setting ag as the default source for fzf
   command -v ag >/dev/null 2>&1 && export FZF_DEFAULT_COMMAND='ag -g ""'
 }
