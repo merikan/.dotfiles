@@ -72,8 +72,12 @@ bindkey '\e[A' history-beginning-search-backward
 #Use down key to search forward in the history for a line beginning with the current line up to the cursor.
 bindkey '\e[B' history-beginning-search-forward
 
-# fzf for fuzzy file matching
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# fzf for fuzzy file mathing
+[ -f ~/.fzf.bash ] && {
+  source ~/.fzf.bash
+  # Setting ag as the default source for fzf
+  command -v ag >/dev/null 2>&1 && export FZF_DEFAULT_COMMAND='ag -g ""'
+}
 
 # Functions  -------------------------------------------------------
 #[ -f ~/.functions ] && source ~/.functions
