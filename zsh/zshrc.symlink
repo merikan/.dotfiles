@@ -33,8 +33,6 @@ echo "Running .zshrc"
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  echo "Sourcing prezto"
-  export df_zprezto="yes"
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
@@ -64,7 +62,7 @@ unsetopt beep
 unsetopt nomatch
 
 #use emacs binding
-bindkey -e
+#bindkey -e
 
 #Use up key to search backward in the history for a line beginning with the current line up to the cursor.
 bindkey '\e[A' history-beginning-search-backward
@@ -75,9 +73,11 @@ bindkey '\e[B' history-beginning-search-forward
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Functions  -------------------------------------------------------
+#[ -f ~/.functions ] && source ~/.functions
 [ -f ~/.zsh_functions ] && source ~/.zsh_functions
 
 # Aliases            -------------------------------------------------------
+#[ -f ~/.aliases ] && source ~/.aliases
 [ -f ~/zsh_aliases ] && source ~/.zsh_aliases
 
 # Java_home
@@ -96,6 +96,9 @@ export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=512m -Djava.awt.headless=true"
 # with debug
 #export MAVEN_OPTS="$MAVEN_OPTS -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000"
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
+##############################################################################
+# Local Config
+##############################################################################
+
+# use .localrc for settings specific to local system
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
