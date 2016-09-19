@@ -87,21 +87,6 @@ bindkey '\e[B' history-beginning-search-forward
 #[ -f ~/.aliases ] && source ~/.aliases
 [ -f ~/zsh_aliases ] && source ~/.zsh_aliases
 
-# Java_home
-# Great post about java_home and osx - http://blog.hgomez.net/blog/2012/07/20/understanding-java-from-command-line-on-osx/
-# [ -d "$(/usr/libexec/java_home)" ] && export JAVA_HOME="$(/usr/libexec/java_home)"
-JAVA_VERSION=1.7
-[ -d "$(/usr/libexec/java_home)" ] && export JAVA_HOME=$(/usr/libexec/java_home -v $JAVA_VERSION)
-# run java headless in terminal
-#export JAVA_TOOL_OPTIONS='-Djava.awt.headless=true'
-
-# Add Maven Home
-M2_VERSION=3.2.1
-export M2_HOME=$HOME/opt/apache-maven-$M2_VERSION && export PATH=$M2_HOME/bin:$PATH
-# set heap size
-export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=512m -Djava.awt.headless=true" 
-# with debug
-#export MAVEN_OPTS="$MAVEN_OPTS -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000"
 
 ##############################################################################
 # Local Config
