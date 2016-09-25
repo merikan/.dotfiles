@@ -41,6 +41,11 @@ fi
 
 # Personal settings below  -------------------------------------------------------
 
+# turn on autocomplete
+autoload -Uz compinit
+compinit
+# autocompletion with an arrow-key driven interface
+zstyle ':completion:*' menu select
 #Change directories with variable names
 setopt cdablevars
 
