@@ -114,14 +114,8 @@ alias v='vagrant'
 #docker aliases and functions
 alias d='docker'
 ! [ -n "$ZSH_VERSION" ] && complete -F _docker d
-alias dm='docker-machine'
-! [ -n "$ZSH_VERSION" ] && complete -F _docker-machine dm
-alias dms='docker-machine start' 
-alias dme='_docker-machine-eval'
 alias dc='docker-compose'
 ! [ -n "$ZSH_VERSION" ] && complete -F _docker_compose dc
-alias dcu='docker-compose up -d'
-alias dck='docker-compose kill'
 
 [ $OSX ] && { # OS X Aliases
   # Java (using jenv instead)
