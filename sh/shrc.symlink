@@ -29,7 +29,7 @@ command -v jenv >/dev/null 2>&1 && {
 }
 
 # Maven
-M2_VERSION=3.2.1
+M2_VERSION=3.3.9
 export M2_HOME="$HOME/opt/apache-maven-$M2_VERSION" && export PATH="$M2_HOME/bin:$PATH"
 # set heap size
 export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=512m -Djava.awt.headless=true"
