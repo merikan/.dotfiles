@@ -101,6 +101,13 @@ esac
 # Load shared shell run commands
 [ -f ~/.shrc ] && source ~/.shrc
 
+# add local bin before system bin
+export PATH=/usr/local/bin:$PATH
+# Add personal bin directory to the path
+[ -d ~/bin ] && export PATH=:~/bin:$PATH
+
+# require you to press Ctrl-D twice to exit the shell, just for safety
+export IGNOREEOF=1
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
 # Autocorrect typos in path names when using `cd`

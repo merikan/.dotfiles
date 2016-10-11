@@ -7,13 +7,6 @@ echo "Running .shrc"
 # Fix systems missing $USER
 [ -z "$USER" ] && export USER=$(whoami)
 
-# add local bin before system bin
-export PATH=/usr/local/bin:$PATH
-# Add personal bin directory to the path
-[ -d ~/bin ] && export PATH=:~/bin:$PATH
-
-# require you to press Ctrl-D twice to exit the shell, just for safety
-export IGNOREEOF=1
 
 #Fasd for quick access to files and directories for POSIX shells. https://github.com/clvv/fasd
 command -v fasd >/dev/null 2>&1  && eval "$(fasd --init auto)"
