@@ -91,6 +91,8 @@ cask install pixate-studio || true
 cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package || true
 cask install robomongo || true
 cask install skype || true
+cask install sketch || true    `# sketchapp - design tool`
+cask install sketch-toolbox || true `# some useful plugins for sketchapp`
 cask install sonos || true
 cask install sourcetree || true
 cask install vagrant || true
