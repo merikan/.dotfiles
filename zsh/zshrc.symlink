@@ -85,11 +85,11 @@ bindkey '\e[B' history-beginning-search-forward
 }
 
 # Functions  -------------------------------------------------------
-#[ -f ~/.functions ] && source ~/.functions
+[ -f ~/.functions ] && source ~/.functions
 [ -f ~/.zsh_functions ] && source ~/.zsh_functions
 
 # Aliases            -------------------------------------------------------
-#[ -f ~/.aliases ] && source ~/.aliases
+[ -f ~/.aliases ] && source ~/.aliases
 [ -f ~/zsh_aliases ] && source ~/.zsh_aliases
 
 
