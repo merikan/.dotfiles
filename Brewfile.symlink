@@ -83,6 +83,7 @@ cask install hyperswitch || true
 cask install icolors || true
 cask install intellij-idea || true
 cask install kindle || true
+cask install paintbrush || true    `# clean and simple paint program`
 cask install pencil || true
 cask install phoenix-slides || true
 cask install picasa || true
