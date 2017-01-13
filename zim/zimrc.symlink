@@ -34,7 +34,7 @@ zmodules=(directory \
 #
 
 # Set your desired prompt here
-zprompt_theme='eriner'
+zprompt_theme='steeef'
 #zprompt_theme='liquidprompt'
 
 #
