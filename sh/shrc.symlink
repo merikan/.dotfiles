@@ -35,8 +35,9 @@ export PATH="${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
 
 # Golang
 [ -f ~/.golangrc ] && source ~/.golangrc
+# Installing go with homebrew instead of gvm
 # use gvm - Go Version Manager
-[[ -s "$HOME/.gvm/scripts/gvm" ]]  && source "$HOME/.gvm/scripts/gvm"
+#[[ -s "$HOME/.gvm/scripts/gvm" ]]  && source "$HOME/.gvm/scripts/gvm"
 
 # DRG project
 export DRG_DEPLOY_DIR="/Users/peter/.drg/deploy"

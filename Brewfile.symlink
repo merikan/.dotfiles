@@ -30,6 +30,7 @@ install curl || true                        `# curl`
 install fasd || true                        `# quick access to files and directories`
 install fzf || true                         `# a command-line fuzzy finder`
 install ffmpeg || true                      `# to record, convert and stream audio and video` 
+install go || true                          `# golang sdk`
 install gibo || true                        `# easily accessing gitignore boilerplates`
 install git || true                         `# cli client for git`
 install git-flow-avh || true                `# git-flow addon for git client`
