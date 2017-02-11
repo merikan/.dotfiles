@@ -7,6 +7,13 @@ echo "Running .shrc"
 # Fix systems missing $USER
 [ -z "$USER" ] && export USER=$(whoami)
 
+# OS variables
+case "$(uname)" in
+  Linux*)  export LINUX=1;;
+  CYGWIN*) export CYGWIN=1;;
+  OS400*)  export OS400=1;;
+  Darwin*) export OSX=1;;
+esac
 
 #Fasd for quick access to files and directories for POSIX shells. https://github.com/clvv/fasd
 command -v fasd >/dev/null 2>&1  && eval "$(fasd --init auto)"
@@ -23,9 +30,9 @@ command -v jenv >/dev/null 2>&1 && {
 
 # Maven
 M2_VERSION=3.3.9
-export M2_HOME="$HOME/opt/apache-maven-$M2_VERSION" && export PATH="$M2_HOME/bin:$PATH"
+export M2_HOME="$HOME/opt/maven/$M2_VERSION" && export PATH="$M2_HOME/bin:$PATH"
 # set heap size
-export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=512m -Djava.awt.headless=true"
+#export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=512m -Djava.awt.headless=true"
 # with debug
 #export MAVEN_OPTS="$MAVEN_OPTS -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000"
 
