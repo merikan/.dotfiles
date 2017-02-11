@@ -1,4 +1,4 @@
 # .golangrc
 
-export GOPATH=$HOME/.golang
+export GOPATH=$HOME/go
 export PATH="$GOPATH/bin:$PATH"
