@@ -116,6 +116,8 @@ alias d='docker'
 ! [ -n "$ZSH_VERSION" ] && complete -F _docker d
 alias dc='docker-compose'
 ! [ -n "$ZSH_VERSION" ] && complete -F _docker_compose dc
+alias dm='docker-machine'
+! [ -n "$ZSH_VERSION" ] && complete -F _docker_machine dm
 
 [ $OSX ] && { # OS X Aliases
   # Java (using jenv instead)

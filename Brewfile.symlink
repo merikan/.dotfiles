@@ -75,9 +75,9 @@ cask install calibre || true                `# e-book reader and library managem
 cask install chromecast || true             `# google chromecast`
 cask install clementine || true             `# music player and radio streamer`
 cask install dockertoolbox || true          `# docker `
-install homebrew/completions/docker-completion || true
-install homebrew/completions/docker-compose-completion || true
-install homebrew/completions/docker-machine-completion || true
+install docker-completion || true
+install docker-compose-completion || true
+install docker-machine-completion || true
 cask install evernote || true               `# taking notes`
 cask install gimp || true                   `# an Image Editor (I probably never be able to learn)`
 cask install google-chrome || true          `# a browser` 
