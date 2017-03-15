@@ -21,6 +21,9 @@ command -v fasd >/dev/null 2>&1  && eval "$(fasd --init auto)"
 # Homebrew Cask
 command -v brew >/dev/null 2>&1  && export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
+# Use openssl from homebrew instead
+command -v brew >/dev/null 2>&1 && export PATH=$(brew --prefix openssl)/bin:$PATH
+
 # Java: Use jenv to handle versions
 command -v jenv >/dev/null 2>&1 && {
   export PATH="$HOME/.jenv/bin:$PATH"
