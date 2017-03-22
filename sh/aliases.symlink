@@ -107,9 +107,9 @@ alias du1='du -h --max-depth=1'
 alias ducks='du -cksh * | sort -rn|head -11' # Lists folders and files sizes in the current folder
 alias da='date "+%Y-%m-%d %A    %T %Z"'
 alias scp-bash='scp ~/.bashrc ~/.bash_completion ~/.bash_profile ~/.profile ~/.bash_functions ~/.bash_aliases ~/.functions ~/.aliases' # copy bash files to server, requires username@hostname:
-alias veewee='bundle exec veewee'
-alias g='git'
-alias v='vagrant'
+alias veewee='bundle exec veewee'  # do the veewee
+alias g='git'     # really short key for git
+alias v='vagrant' # really short key for vagrant
 
 #docker aliases and functions
 alias d='docker'
