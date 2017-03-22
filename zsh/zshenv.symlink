@@ -11,5 +11,7 @@ if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
+# file names to ignore 
+zstyle ':completion:*:*files' ignored-patterns '.DS_Store'
 # Typing EOF (CTRL+D) will not exit interactive sessions
 setopt ignoreeof

@@ -118,6 +118,9 @@ shopt -s cdable_vars
 export GLOBIGNORE=.
 # After each command, checks the windows size and changes lines and columns
 shopt -s checkwinsize  
+# use fignore to hide when tab complete
+export FIGNORE=$FIGNORE:DS_Store
+
 
 # ---------------------------------------------------------------------------------------------
 # Load functions  
