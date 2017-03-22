@@ -9,6 +9,25 @@
 # easy create and cd into a directory (mcd myproject/src)
 function mcd() { mkdir -p "$*" && cd "$_"; }
 
+# uses mvn dependency plugin to show why a certain dependency or dependencies are used
+# https://gist.github.com/meistermeier/b506d225e6ce4b54b904028b767789e8
+function mvnwhy() {
+  CANDIDATES=(`mvn dependency:list | grep $1 | awk '{print $2}'`)
+
+  for CANDIDATE in ${CANDIDATES[@]}; do
+    echo "Why $CANDIDATE?"
+    declare -a CANDIDATE_SEGMENTS
+    CANDIDATE_SEGMENTS=(`echo $CANDIDATE | awk 'BEGIN{FS=":"}{for (i=1; i<=2; i++) print $i}'`)
+    # this just works in zsh for bash use: DEPENDENCY=${CANDIDATE_SEGMENTS[0]}:${CANDIDATE_SEGMENTS[1]}
+    DEPENDENCY=${CANDIDATE_SEGMENTS[1]}:${CANDIDATE_SEGMENTS[2]}
+    # scans and shows dependency tree for every dep (this might get optimized later)
+    # background: no way found to get always the right line before the pattern matches
+    mvn dependency:tree -Dincludes=$DEPENDENCY | grep -B 1 "\\\-"
+  done
+
+}
+
+
 # SSH
 function ssh-addkeys {
 #  if ps | grep -v grep | grep ssh-agent > /dev/null
