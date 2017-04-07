@@ -105,7 +105,13 @@ cask install vlc || true                    `# media player`
 cask install xquartz || true                `# X windows on Mac`
 cask install inkscape || true               `# a vector graphics editor`
 tap caskroom/fonts || true
+## -- fonts
+cask install font-fira-code || true         `# monospaced font with programming ligatures`
+cask install font-go-mono || true           `# golang fonts`   
+cask install font-hasklig || true           `# a code font with monospaced ligatures`
 cask install font-inconsolata || true       `# a great programmers font`
+cask install font-monoid || true            `# a ppen source coding font with ligatures`
+cask install font-monoisome || true         `# monoid with Font Awesome support`
 
 
 ### ---------------------------------------------------- ###
