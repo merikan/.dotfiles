@@ -41,6 +41,7 @@ install imagemagick || true                 `# create, edit, compose, or convert
 install jenv || true                        `# manage your java environment`
 install jq || true                          `# command-line JSON processor, like sed`
 install keybase || true                     `# Crypto for everyone! `
+install mackup || true                      `# keep application settings in sync` 
 install midnight-commander || true          `# visual file manager`
 install mysql || true                       `# RDBMS`
 install mongodb || true                     `# NoSQL database`

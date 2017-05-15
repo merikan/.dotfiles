@@ -1,0 +1,10 @@
+
+# see https://github.com/lra/mackup#user-content-supported-storages
+[storage]
+engine = dropbox
+
+# Applications to sync, $ mackup list
+[applications_to_sync]
+atom
+vscode
+
