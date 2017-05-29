@@ -18,7 +18,8 @@ upgrade || true
 ### ---------------------------------------------------- ###
 ### Install formulae                                     ###
 ### ---------------------------------------------------- ###
-brew tap homebrew/completions || true
+tap homebrew/completions || true            `# completions `
+tap caskroom/drivers || true                `# cask drivers`
 
 install apple-gcc42 || true                 `# gcc for osx` 
 install android-sdk || true                 `# android sdk`
