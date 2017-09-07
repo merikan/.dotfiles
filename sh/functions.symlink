@@ -27,6 +27,41 @@ function mvnwhy() {
 
 }
 
+# run maven wrapper in git toplevel directory or current/parent directories if found, else run native mvn. 
+function mvn {
+    dir=`pwd`
+    if command -v git >/dev/null 2>&1 && [ -e "$(git rev-parse --show-toplevel 2>/dev/null)" ]; then
+        dir=$(git rev-parse --show-toplevel 2>/dev/null);
+    else 
+         while [ -e "$dir" ] && [ -e $dir/pom.xml ] && ! [ -e $dir/mvnw ] ; do dir=${dir%/*}; done
+    fi
+
+    if [ -e $dir/mvnw ]; then
+        echo "Running wrapper at $dir"
+        $dir/mvnw $@
+        return $?
+    fi
+    echo "No wrapper found, running native Maven"
+    command mvn $@
+}
+
+# run gradle wrapper in git toplevel directory or current/parent directories if found, else run native gradle. 
+function gradle {
+    dir=`pwd`
+    if command -v git >/dev/null 2>&1 && [ -e "$(git rev-parse --show-toplevel 2>/dev/null)" ]; then
+        dir=$(git rev-parse --show-toplevel 2>/dev/null);
+    else 
+        while [ -e "$dir" ] && ! [ -e $dir/gradlew ] && [ -n $(find $dir -maxdepth 1 -name '*.gradle' -print -quit) ]; do dir=${dir%/*}; done
+    fi
+
+    if [ -e $dir/gradlew ]; then
+        echo "Running wrapper at $dir"
+        $dir/gradlew $@
+        return $?
+    fi
+    echo "No wrapper found, running native Gradle"
+    command gradle $@
+}
 
 # SSH
 function ssh-addkeys {
