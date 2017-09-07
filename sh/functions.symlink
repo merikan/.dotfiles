@@ -125,14 +125,8 @@ function process()
 # extended cd funtionality
 __cd_() {
     if [[ "$1" == "" ]]; then
-      if command -v git >/dev/null 2>&1; then
-        local toplevel
-        toplevel="$(git rev-parse --show-toplevel 2>/dev/null)"
-        if [[ -e "$toplevel" ]] && [[ "$toplevel" != "$(pwd)" ]]; then
-            builtin cd "$toplevel"; #toplevel of git repository
-        else
-          builtin cd; # normal cd behaviour
-        fi
+      if command -v git >/dev/null 2>&1 && [ -e "$(git rev-parse --show-toplevel 2>/dev/null)" ] && [[ "$(git rev-parse --show-toplevel 2>/dev/null)" != "$(pwd)" ]]; then
+            builtin cd "$(git rev-parse --show-toplevel 2>/dev/null)"; #toplevel of git repository
       else 
         builtin cd; # normal cd behaviour
       fi
@@ -143,24 +137,6 @@ __cd_() {
     fi
 }
 
-# cd to the root of git repository
-__git_cd_() {
-  if [[ "$1" == "" ]]; then
-    local OUTPUT
-    OUTPUT="$(git rev-parse --show-toplevel 2>/dev/null)"
-    if [[ -e "$OUTPUT" ]]; then
-      if [[ "$OUTPUT" != "$(pwd)" ]]; then
-        builtin cd "$OUTPUT"
-      else
-        builtin cd
-      fi
-    else
-      builtin cd 
-    fi
-  else
-    builtin cd "$@"
-  fi
-}
 # eval a docker machine
 _docker-machine-eval() { 
   if [ -z "$1" ]; then
