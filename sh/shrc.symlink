@@ -25,15 +25,15 @@ command -v brew >/dev/null 2>&1  && export HOMEBREW_CASK_OPTS="--appdir=/Applica
 command -v brew >/dev/null 2>&1 && export PATH=$(brew --prefix openssl)/bin:$PATH
 
 # Java: Use jenv to handle versions
-command -v jenv >/dev/null 2>&1 && {
-  export PATH="$HOME/.jenv/bin:$PATH"
-  eval "$(jenv init -)"
-  export JAVA_HOME=$HOME/.jenv/fake-java-home
-}
+#command -v jenv >/dev/null 2>&1 && {
+#  export PATH="$HOME/.jenv/bin:$PATH"
+#  eval "$(jenv init -)"
+#  export JAVA_HOME=$HOME/.jenv/fake-java-home
+#}
 
 # Maven
-M2_VERSION=3.3.9
-export M2_HOME="$HOME/opt/maven/$M2_VERSION" && export PATH="$M2_HOME/bin:$PATH"
+#M2_VERSION=3.3.9
+#export M2_HOME="$HOME/opt/maven/$M2_VERSION" && export PATH="$M2_HOME/bin:$PATH"
 # set heap size
 #export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=512m -Djava.awt.headless=true"
 # with debug
