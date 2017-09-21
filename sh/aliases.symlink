@@ -57,8 +57,6 @@ alias cp='cp -i'
 #alias chgrp='chgrp --preserve-root'
 
 # Alias's to modified commands
-
-alias cd='__cd_'
 alias vi='vim'
 alias grep='grep --color=auto'   # Highlight matches
 alias egrep='egrep --color=auto' # Highlight matches
