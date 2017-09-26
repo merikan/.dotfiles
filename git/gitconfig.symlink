@@ -162,6 +162,8 @@
   b = branch -v
   r = remote -v
   t = tag -l
+	accept-theirs = "!f() { git checkout --theirs -- \"${@:-.}\"; git add -u \"${@:-.}\"; }; f"
+	accept-ours = "!f() { git checkout --ours -- \"${@:-.}\"; git add -u \"${@:-.}\"; }; f"
 	
 
 [push]
