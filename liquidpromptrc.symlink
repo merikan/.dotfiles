@@ -1,0 +1,18 @@
+
+####################################
+# liquidprompt configuration file to override or add settings
+
+# If you want to use different themes and features,
+# you can load the corresponding files here:
+#source ~/code/liquidprompt/nojhan.theme
+#LP_PS1_FILE="~/code/liquidprompt/nojhan.ps1"
+
+
+# \n add new line 
+# \$ if not root, inserts a "$" else use "#"
+if test -n "${BASH_VERSION-}" -a -n "$PS1" ; then
+  LP_PS1_POSTFIX="\n\$ "
+elif test -n "${ZSH_VERSION-}" ; then
+  LP_PS1_POSTFIX=$'\n\$ '
+fi
+
