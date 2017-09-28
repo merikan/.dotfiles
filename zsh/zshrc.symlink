@@ -41,6 +41,15 @@ fi
 
 # Personal settings below  -------------------------------------------------------
 
+# ---------------------------------------------------------------------------------------------
+# Liquid prompt -- A useful adaptive prompt for Bash & Zsh
+# Only load Liquid Prompt in interactive shells, not from a script or from scp
+# Only load if not theme is already set and liquidprompt exists
+if [[ $- = *i* ]] && [[ -z ${zprompt_theme} ]] && [[ -s ${ZDOTDIR:-${HOME}}/.liquidprompt/liquidprompt ]]; then
+  source ~/.liquidprompt/liquidprompt
+fi
+
+
 # turn on autocomplete
 autoload -Uz compinit
 compinit

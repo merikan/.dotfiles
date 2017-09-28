@@ -225,14 +225,17 @@ fi
 
 # ---------------------------------------------------------------------------------------------
 # Liquid prompt -- A useful adaptive prompt for Bash & Zsh
-[[ -s "${HOME}/.liquidprompt/liquidprompt" ]] && source "${HOME}/.liquidprompt/liquidprompt"
+# Only load Liquid Prompt in interactive shells, not from a script or from scp
+if [[ $- = *i* ]] && [[ -s "${HOME}/.liquidprompt/liquidprompt" ]]; then
+  source "${HOME}/.liquidprompt/liquidprompt"
+fi
 
 # ---------------------------------------------------------------------------------------------
 
 # fzf for fuzzy file mathing
 [ -f ~/.fzf.bash ] && {
   source ~/.fzf.bash
-  # Setting ag as the default source for fzf
+  # Set ag as the default source for fzf
   command -v ag >/dev/null 2>&1 && export FZF_DEFAULT_COMMAND='ag -g ""'
 }
 
