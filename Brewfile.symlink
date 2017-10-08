@@ -73,6 +73,7 @@ cask install android-file-transfer || true  `# transfer files from Android devic
 cask install atom || true                   `# yet another editor`
 cask install betterzipql || true
 cask install brave || true
+cask install bitbar || true
 cask install calibre || true                `# e-book reader and library management application`
 cask install chromecast || true             `# google chromecast`
 cask install clementine || true             `# music player and radio streamer`
