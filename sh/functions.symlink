@@ -4,7 +4,6 @@
 #
 # I prefer to alias all my functions too so that I can easily find them 
 # with the alias command. Check out my alias file(s)
- 
 
 # easy create and cd into a directory (mcd myproject/src)
 function mcd() { mkdir -p "$*" && cd "$_"; }
@@ -29,7 +28,7 @@ function mvnwhy() {
 
 # run maven wrapper in git toplevel directory or current/parent directories if found, else run native mvn. 
 function mvn {
-    dir=`pwd`
+    local dir=`pwd`
     if command -v git >/dev/null 2>&1 && [ -e "$(git rev-parse --show-toplevel 2>/dev/null)" ]; then
         dir=$(git rev-parse --show-toplevel 2>/dev/null);
     else 
@@ -47,7 +46,7 @@ function mvn {
 
 # run gradle wrapper in git toplevel directory or current/parent directories if found, else run native gradle. 
 function gradle {
-    dir=`pwd`
+    local dir=`pwd`
     if command -v git >/dev/null 2>&1 && [ -e "$(git rev-parse --show-toplevel 2>/dev/null)" ]; then
         dir=$(git rev-parse --show-toplevel 2>/dev/null);
     else 
