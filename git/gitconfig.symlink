@@ -60,7 +60,7 @@
   # Push to origin master
   pom = push origin master
   # Checkout
-  co = "!f() { \
+  co-old = "!f() { \
                trap 'echo ERROR: Operation failed; return' ERR; \
                git checkout $@; \
                last_commit=$(git log -1 HEAD --pretty=format:%s);\
@@ -91,14 +91,14 @@
   # undo last commit and unstage them
   uncommit = reset HEAD~1
   # just the differences between lines.
-  word-diff = diff --word-diff
+  diffw = diff --word-diff
   # list all authors
   authors = "!git log --all --format='%aN <%cE>' | sort -u"
   # show files ignored by git
   ignored = ls-files -o -i --exclude-standard
   # list frequently used git commands
   frequently = !'history | cut -c 8- | grep git | sort | uniq -c  | sort -n -r | head -n 5'
-  # find deleted file(s), parameter file name 
+  # find deleted file(s), parameter [file name] 
   deleted = !git log --diff-filter=D --summary | grep
   # view content of last commit
   log-last-commit = log --name-status HEAD^..HEAD     
@@ -149,7 +149,7 @@
   # Shortened commands 
   br = branch -v
   ci = commit
-  #co = checkout
+  co = checkout
   di = diff
   fi = flow init
   ff = flow feature
@@ -157,7 +157,7 @@
   fh = flow hotfix
   lo = !git log-pretty
   ms = !git merge-squash
-  st = status
+  st = status -sb
   # and even shorter
   b = branch -v
   r = remote -v
