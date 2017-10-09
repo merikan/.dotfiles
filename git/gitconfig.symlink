@@ -40,11 +40,12 @@
   spull = !git-svn fetch && git-svn rebase
   # git-svn: svn commit
   spush = !git-svn dcommit
-  # Pull with rebase and update submodules
-  up = !git pull --rebase --prune $@ && git submodule update --init --recursive 
+
+  # Update branch (pull/rebase/submodules)
+  up = !git ups
   # Pull with rebase and update submodules
   ups = !git pull --rebase --prune $@ && git submodule update --init --recursive
-  # Pull with rebase and update submodules (deep)
+  # Update recursively (deep)
   upd = "!f() { \
                 if [ -d .git ]; then\
                   git up;\
@@ -76,7 +77,7 @@
               }; f"
   # create and checkout a new branch and keep all your changes.
   cob = checkout -b
-  # stage the changes in a given file.
+  # stage the changes for a given file.
   stage = !git add -u
   # unstage is the opposite of git add. It lets you remove items from the staging area.
   unstage = reset HEAD
@@ -86,11 +87,14 @@
   unstaged = diff
   # work in progress, a quick save before swithing branch
   wip = !git add -A :/ && git commit -m 'WIP - Undo this temporary commit.'
-  # Send every change to trash. Commit before trashing so we can find it via 'git reflog'
-  trash = !git add -A && git commit -qm 'Trashed @ $(date +"%F %T")' && git reset HEAD~1 --hard
+  # Send all changes to trash. Commit before trashing so we can find it via 'git reflog' and 'git cherry-pick'
+  trash = !git add -A && git commit -qm \"Trashed @ $(date +%Y-%m-%dT%H:%M:%S%z)\" \
+           && git reset HEAD~1 --hard \
+           && echo "All changes moved to trash. Use 'git reflog' and 'git cherry-pick' to recover." 
   # undo last commit and unstage them
   uncommit = reset HEAD~1
-  # just the differences between lines.
+  
+  # diff just the differences between lines.
   diffw = diff --word-diff
   # list all authors
   authors = "!git log --all --format='%aN <%cE>' | sort -u"
