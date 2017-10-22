@@ -81,6 +81,7 @@ cask install dockertoolbox || true          `# docker `
 install docker-completion || true
 install docker-compose-completion || true
 install docker-machine-completion || true
+cask install etcher                         `# Burn images to SD cards & USB drives, safely and easily.`
 cask install evernote || true               `# taking notes`
 cask install gimp || true                   `# an Image Editor (I probably never be able to learn)`
 cask install google-chrome || true          `# a browser` 
