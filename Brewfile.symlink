@@ -28,6 +28,7 @@ install asciinema || true                   `# record and share terminal session
 install bash-completion || true
 install brew-cask-completion || true
 install curl || true                        `# curl`
+install docker-machine-driver-xhyve         `# driver plugin for xhyve/hyperkit (docker-machine/minikube/minishift)` 
 install fasd || true                        `# quick access to files and directories`
 install fzf || true                         `# a command-line fuzzy finder`
 install ffmpeg || true                      `# to record, convert and stream audio and video` 
@@ -89,6 +90,7 @@ cask install hyperswitch || true            `# awesome keyboard window switcher 
 cask install icolors || true                `# a color picker and hex converter`
 cask install intellij-idea || true          `# awesome java IDE`
 cask install kindle || true                 `# amazons ebook reader `
+cask install minishift || true              `# openshift mini`
 cask install paintbrush || true             `# clean and simple paint program`
 cask install pencil || true                 `# GUI prototyping tool`
 cask install phoenix-slides || true         `# image viewer`
