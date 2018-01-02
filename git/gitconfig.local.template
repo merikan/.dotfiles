@@ -1,0 +1,10 @@
+# This is a local file loaded by gitconfig to be used on a local computer
+# Just copy this file and remove the suffix ".template" and you are ready to go.
+
+
+[user]
+  name = Peter Merikan
+  email = peter@merikan.com
+
+[credential]
+  helper = osxkeychain

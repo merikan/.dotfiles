@@ -1,0 +1,54 @@
+# install.conf.yaml
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.liquidpromptrc: 
+    # shell
+    ~/.aliases: sh/aliases
+    ~/.functions: sh/functions
+    ~/.inputrc: sh/inputrc
+    ~/.profile: sh/profile
+    ~/.shrc: sh/shrc
+    # atom
+    ~/.atomrc: atom/atomrc
+    # bash
+    ~/.bash_aliases: bash/bash_aliases
+    ~/.bash_functions: bash/bash_functions
+    ~/.bash_profile: bash/bash_profile
+    ~/.bashrc: bash/bashrc
+    # homebrew
+    ~/Brewfile: brew/Brewfile
+    ~/.brew_bundle.sh: brew/brew_bundle.sh
+    # fzf
+    ~/.fzf.bash: fzf/fzf.bash
+    ~/.fzf.zsh: fzf/fzf.zsh
+    # git
+    ~/.git_commit_msg: git/git_commit_msg
+    ~/.gitconfig.local.template: git/gitconfig.local.template
+    ~/.gitconfig: git/gitconfig
+    # golang
+    ~/.golangrc: golang/golangrc
+    # mackup
+    ~/.mackup.cfg: mackup/mackup.cfg
+    # oh-my-zsh
+    ~/.oh-my-zshrc: oh-my-zsh/oh-my-zshrc
+    # prezto
+    ~/.zpreztorc: prezto/zpreztorc
+    # tmux
+    ~/.tmux.conf: tmux/tmux.conf
+    # zim
+    ~/.zimrc: zim/zimrc
+    # zsh
+    ~/.zlogin: zsh/zlogin
+    ~/.zlogout: zsh/zlogout
+    ~/.zprofile: zsh/zprofile
+    ~/.zsh_aliases: zsh/zsh_aliases
+    ~/.zshenv: zsh/zshenv
+    ~/.zshrc: zsh/zshrc
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
