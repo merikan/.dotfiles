@@ -96,6 +96,8 @@
   
   # diff just the differences between lines.
   diffw = diff --word-diff
+  # use icdiff if installed
+  diffy = !eval $(command -v icdiff >/dev/null 2>&1 && echo icdiff || echo diff) 
   # list all authors
   authors = "!git log --all --format='%aN <%cE>' | sort -u"
   # show files ignored by git
