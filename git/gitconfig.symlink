@@ -173,8 +173,8 @@
 	accept-theirs = "!f() { git checkout --theirs -- \"${@:-.}\"; git add -u \"${@:-.}\"; }; f"
 	accept-ours = "!f() { git checkout --ours -- \"${@:-.}\"; git add -u \"${@:-.}\"; }; f"
   
-  # open repos in browser, usage: git open [ustream] 
-  open  = "!f() { URL=$(git config remote.${1-origin}.url | sed -e 's#^.*git@#https://#' -e 's#.git$##' -e 's#:#/#2'); git web--browse $URL; }; f"
+  # open repo in browser, usage: git open [upstream] 
+  open  = "!f() { URL=$(git config remote.${1-origin}.url | sed -e 's#^.*@#https://#' -e 's#.git$##' -e 's#:#/#2'); git web--browse $URL; }; f"
   
 [push]
 	default = simple
