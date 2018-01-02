@@ -130,6 +130,8 @@
   #bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r ; }; f"
   # Show git branches by date
   branch-bydate = "! f() { for k in $(git branch $@ | sed 's/^..//; s/ .*//'); do  echo "$(git log -1 --pretty='%Cgreen%ci %Cblue(%cr)%Creset ' $k) $k" ;  done | sort -r; }; f"
+  # git sort by date
+  brs = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
   # List all git aliases
   aliases = "!git config -l | grep alias | cut -c 7-"
   # Change last commit comment
