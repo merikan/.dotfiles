@@ -85,6 +85,10 @@
   staged = diff --cached
   # view the current changes not yet in the staging area.
   unstaged = diff
+  # incoming changes
+  incoming = !git fetch && git log --pretty=oneline --abbrev-commit --graph ..@{u}
+  # outgoing changes
+  outgoing = log --pretty=oneline --abbrev-commit --graph @{u}..
   # work in progress, a quick save before swithing branch
   wip = !git add -A :/ && git commit -m 'WIP - Undo this temporary commit.'
   # Send all changes to trash. Commit before trashing so we can find it via 'git reflog' and 'git cherry-pick'
