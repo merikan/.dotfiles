@@ -43,6 +43,7 @@ install imagemagick || true                 `# create, edit, compose, or convert
 install jenv || true                        `# manage your java environment`
 install jq || true                          `# command-line JSON processor, like sed`
 install keybase || true                     `# Crypto for everyone! `
+install kompose || true                     `# A conversion tool to go from Docker Compose to Kubernetes`
 install mackup || true                      `# keep application settings in sync` 
 install midnight-commander || true          `# visual file manager`
 install mysql || true                       `# RDBMS`
@@ -79,9 +80,9 @@ cask install calibre || true                `# e-book reader and library managem
 cask install chromecast || true             `# google chromecast`
 cask install clementine || true             `# music player and radio streamer`
 cask install dockertoolbox || true          `# docker `
-install docker-completion || true
-install docker-compose-completion || true
-install docker-machine-completion || true
+install docker-completion || true           `# docker completion`
+install docker-compose-completion || true   `# docker compose completion`
+install docker-machine-completion || true   `# docker machine completion`
 cask install etcher                         `# Burn images to SD cards & USB drives, safely and easily.`
 cask install evernote || true               `# taking notes`
 cask install gimp || true                   `# an Image Editor (I probably never be able to learn)`
