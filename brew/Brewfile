@@ -49,6 +49,7 @@ install midnight-commander || true          `# visual file manager`
 install mysql || true                       `# RDBMS`
 install mongodb || true                     `# NoSQL database`
 install node || true                        `# node.js`
+install openshift-cli || true               `# openshift cli` 
 install potrace || true                     `# transforming bitmaps into vector graphics`
 install python || true                      `# python programming`
 install rest-shell || true                  `# Spring HATEOAS-compliant REST shell`
