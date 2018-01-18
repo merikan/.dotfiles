@@ -144,7 +144,7 @@ alias dm='docker-machine'
   # Hide/show all desktop icons (useful when presenting)
   alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
   alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
-  alias idea='open -a "`ls -dt /Applications/IntelliJ\ IDEA*|head -1`"'
+  alias intellij='open -a "`ls -dt /Applications/IntelliJ\ IDEA*|head -1`"'
 }
 
 
