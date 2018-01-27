@@ -2,6 +2,7 @@
 - defaults:
     link:
       relink: true
+      create: true
 
 - clean: ['~']
 
@@ -41,6 +42,10 @@
     ~/.shrc: sh/shrc
     # tmux
     ~/.tmux.conf: tmux/tmux.conf
+    ~/.tmux/renew_env.sh: tmux/renew_env.sh
+    ~/.tmux/yank.sh: tmux/yank.sh
+    ~/.tmux/tmux.remote.conf: tmux/tmux.remote.conf
+    ~/.tmux/tmux-theme.conf: tmux/base16-theme.conf
     # zim
     ~/.zimrc: zim/zimrc
     # zsh
