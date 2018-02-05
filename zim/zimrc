@@ -13,8 +13,6 @@
 # These dependencies are noted on the respective module's README.md.
 zmodules=(directory \
           environment \
-          git-info \
-          git \
           history \
           input \
           utility \
