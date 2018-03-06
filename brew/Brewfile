@@ -91,6 +91,7 @@ cask install google-chrome || true          `# a browser`
 cask install hyperswitch || true            `# awesome keyboard window switcher for Mac `
 cask install icolors || true                `# a color picker and hex converter`
 cask install intellij-idea || true          `# awesome java IDE`
+cask install insomnia || true               `# rest client`
 cask install kindle || true                 `# amazons ebook reader `
 cask install minishift || true              `# openshift mini`
 cask install paintbrush || true             `# clean and simple paint program`
