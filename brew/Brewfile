@@ -80,7 +80,7 @@ cask install bitbar || true
 cask install calibre || true                `# e-book reader and library management application`
 cask install chromecast || true             `# google chromecast`
 cask install clementine || true             `# music player and radio streamer`
-cask install dockertoolbox || true          `# docker `
+cask install docker || true                 `# docker for mac`
 install docker-completion || true           `# docker completion`
 install docker-compose-completion || true   `# docker compose completion`
 install docker-machine-completion || true   `# docker machine completion`
@@ -107,7 +107,7 @@ cask install sonos || true                  `# Sonos controller`
 cask install sourcetree || true             `# awesome git client `
 cask install vagrant || true                `# vm management`
 install homebrew/completions/vagrant-completion || true
-#cask install virtualbox || true   # installed via dockertoolbox
+cask install virtualbox || true             `# virtualizer for x86 hardware`
 cask install vlc || true                    `# media player`
 cask install xquartz || true                `# X windows on Mac`
 cask install inkscape || true               `# a vector graphics editor`
