@@ -44,6 +44,7 @@ install jenv || true                        `# manage your java environment`
 install jq || true                          `# command-line JSON processor, like sed`
 install keybase || true                     `# Crypto for everyone! `
 install kompose || true                     `# A conversion tool to go from Docker Compose to Kubernetes`
+install kubectl                             `# kubernetes` 
 install mackup || true                      `# keep application settings in sync` 
 install midnight-commander || true          `# visual file manager`
 install mysql || true                       `# RDBMS`
@@ -93,6 +94,7 @@ cask install icolors || true                `# a color picker and hex converter`
 cask install intellij-idea || true          `# awesome java IDE`
 cask install insomnia || true               `# rest client`
 cask install kindle || true                 `# amazons ebook reader `
+cask install minikube || true               `# kubernetes mini`
 cask install minishift || true              `# openshift mini`
 cask install paintbrush || true             `# clean and simple paint program`
 cask install pencil || true                 `# GUI prototyping tool`
