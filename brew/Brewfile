@@ -97,7 +97,6 @@ cask install minishift || true              `# openshift mini`
 cask install paintbrush || true             `# clean and simple paint program`
 cask install pencil || true                 `# GUI prototyping tool`
 cask install phoenix-slides || true         `# image viewer`
-cask install pixate-studio || true          `# protoype mobile apps`
 # https://github.com/sindresorhus/quick-look-plugins
 cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package || true
 cask install robomongo || true              `# MongoDB manager`
