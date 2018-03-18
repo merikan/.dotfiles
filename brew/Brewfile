@@ -44,7 +44,7 @@ install jenv || true                        `# manage your java environment`
 install jq || true                          `# command-line JSON processor, like sed`
 install keybase || true                     `# Crypto for everyone! `
 install kompose || true                     `# A conversion tool to go from Docker Compose to Kubernetes`
-install kubectl                             `# kubernetes` 
+install kubectl || true                     `# kubernetes` 
 install mackup || true                      `# keep application settings in sync` 
 install midnight-commander || true          `# visual file manager`
 install mysql || true                       `# RDBMS`
