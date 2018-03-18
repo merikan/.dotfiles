@@ -88,6 +88,7 @@ install docker-machine-completion || true   `# docker machine completion`
 cask install etcher                         `# Burn images to SD cards & USB drives, safely and easily.`
 cask install evernote || true               `# taking notes`
 cask install gimp || true                   `# an Image Editor (I probably never be able to learn)`
+cask install gitup || true                  `# awesome git client `
 cask install google-chrome || true          `# a browser` 
 cask install hyperswitch || true            `# awesome keyboard window switcher for Mac `
 cask install icolors || true                `# a color picker and hex converter`
