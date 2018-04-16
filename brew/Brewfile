@@ -39,6 +39,7 @@ install git-flow-avh || true                `# git-flow addon for git client`
 install gnupg || true                       `# gpg`
 install homebrew/completions/maven-completion || true
 install homebrew/completions/pip-completion || true
+install hugo || true                        `# open-source static site generator`
 install imagemagick || true                 `# create, edit, compose, or convert bitmap images`
 install jenv || true                        `# manage your java environment`
 install jq || true                          `# command-line JSON processor, like sed`
@@ -56,7 +57,6 @@ install python || true                      `# python programming`
 install rest-shell || true                  `# Spring HATEOAS-compliant REST shell`
 install ruby || true                        `# ruby environment`
 install ssh-copy-id || true                 `# ssh copy `
-install subversion || true                  `# subversion cli client`
 install the_silver_searcher || true         `# ag a code searching tool similar to ack`
 install tig || true                         `# text-mode interface for git`
 install tmux || true                        `# terminal multiplexer`
