@@ -18,6 +18,7 @@
     ~/.fzf.bash: fzf/fzf.bash
     ~/.fzf.zsh: fzf/fzf.zsh
     # git
+    ~/.gitignore_global: git/gitignore_global
     ~/.git_commit_msg: git/git_commit_msg
     ~/.gitconfig.local.template: git/gitconfig.local.template
     ~/.gitconfig: git/gitconfig
