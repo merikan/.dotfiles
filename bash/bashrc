@@ -204,6 +204,8 @@ do
   #echo "sourcing completion file $file"
   source $file
 done
+# source openshift tab completion
+command -v oc >/dev/null 2>&1  && source <(oc completion bash)
 unset file
 
 # ---------------------------------------------------------------------------------------------
@@ -231,7 +233,6 @@ if [[ $- = *i* ]] && [[ -s "${HOME}/.liquidprompt/liquidprompt" ]]; then
 fi
 
 # ---------------------------------------------------------------------------------------------
-
 # fzf for fuzzy file mathing
 [ -f ~/.fzf.bash ] && {
   source ~/.fzf.bash
