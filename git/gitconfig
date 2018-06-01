@@ -125,12 +125,13 @@
   lg = log --graph --pretty=format:'%Cred%h%Creset %an -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   # List commits showing changed files
   ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-  ra = log --graph --abbrev-commit --date=relative -20 --all --pretty='format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'
-
-  #log in pretty format 
-  log-pretty = log --pretty=format:'%C(yellow)%h%Creset %ai |%C(green)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit 
-  #log in pretty format with graph 
+  la = log --graph --abbrev-commit --date=relative -20 --all --pretty='format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'
+  # log in pretty format 
+  lo = log --pretty=format:'%C(yellow)%h%Creset %ai |%C(green)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit 
+  # log in pretty format with graph 
   log-graph = log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"
+  # log all branches (verbose)
+  lb = log --graph --all --decorate --stat --date=iso
   # create a backup of the branch BAK_mybranch
   backup = !git branch $(git branch | grep '*' | sed -e 's/* /BAK_/')
   #bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r ; }; f"
@@ -169,7 +170,6 @@
   ff = flow feature
   fr = flow release
   fh = flow hotfix
-  lo = !git log-pretty
   ms = !git merge-squash
   st = status -sb
   # and even shorter
