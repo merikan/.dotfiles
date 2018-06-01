@@ -140,7 +140,7 @@
   # git sort by date
   brs = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
   # List all git aliases
-  aliases = "!git config -l | grep alias | cut -c 7-"
+  aliases = "!git config -l | grep alias | cut -c 7- | sort "
   # Change last commit comment
   amend = commit --amend -m
   # Clean up repository
