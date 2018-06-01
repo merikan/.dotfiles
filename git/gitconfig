@@ -82,13 +82,15 @@
   # unstage is the opposite of git add. It lets you remove items from the staging area.
   unstage = reset HEAD
   # view the current changes in the staging area.
-  staged = diff --cached
+  staged = diff --staged
   # view the current changes not yet in the staging area.
   unstaged = diff
   # incoming changes
   incoming = !git fetch && git log --pretty=oneline --abbrev-commit --graph ..@{u}
+  in = !git incoming
   # outgoing changes
   outgoing = log --pretty=oneline --abbrev-commit --graph @{u}..
+  out = !git outgoing
   # work in progress, a quick save before swithing branch
   wip = !git add -A :/ && git commit -m 'WIP - Undo this temporary commit.'
   # Send all changes to trash. Commit before trashing so we can find it via 'git reflog' and 'git cherry-pick'
@@ -104,7 +106,7 @@
   diffy = !eval $(command -v icdiff >/dev/null 2>&1 && echo icdiff || echo diff) 
   # list all authors
   authors = "!git log --all --format='%aN <%cE>' | sort -u"
-  # show files ignored by git
+  # list al ignored files
   ignored = ls-files -o -i --exclude-standard
   # list frequently used git commands
   frequently = !'history | cut -c 8- | grep git | sort | uniq -c  | sort -n -r | head -n 5'
