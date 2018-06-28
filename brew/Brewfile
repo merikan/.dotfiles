@@ -50,6 +50,7 @@ install mackup || true                      `# keep application settings in sync
 install midnight-commander || true          `# visual file manager`
 install mysql || true                       `# RDBMS`
 install mongodb || true                     `# NoSQL database`
+install ncdu || true                        `# a disk usage analyzer with an ncurses interface`
 install node || true                        `# node.js`
 install openshift-cli || true               `# openshift cli` 
 install potrace || true                     `# transforming bitmaps into vector graphics`
