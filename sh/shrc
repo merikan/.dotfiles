@@ -22,7 +22,7 @@ command -v fasd >/dev/null 2>&1  && eval "$(fasd --init auto)"
 command -v brew >/dev/null 2>&1  && export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # Use openssl from homebrew instead
-command -v brew >/dev/null 2>&1 && export PATH=$(brew --prefix openssl)/bin:$PATH
+command -v brew >/dev/null 2>&1 && [ -d $(brew --prefix openssl)/bin ] && export PATH=$(brew --prefix openssl)/bin:$PATH
 
 # Java: Use jenv to handle versions
 #command -v jenv >/dev/null 2>&1 && {
@@ -48,9 +48,6 @@ export PATH="${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
 # Installing go with homebrew instead of gvm
 # use gvm - Go Version Manager
 #[[ -s "$HOME/.gvm/scripts/gvm" ]]  && source "$HOME/.gvm/scripts/gvm"
-
-# DRG project
-export DRG_DEPLOY_DIR="/Users/peter/.drg/deploy"
 
 # rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && {
