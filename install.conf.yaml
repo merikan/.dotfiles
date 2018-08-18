@@ -28,6 +28,7 @@
     ~/Brewfile: brew/Brewfile
     ~/.brew_bundle.sh: brew/brew_bundle.sh
     # liquidprompt
+    ~/.liquidprompt: submodules/liquidprompt
     ~/.liquidpromptrc: liquidprompt/liquidpromptrc
     # mackup
     ~/.mackup.cfg: mackup/mackup.cfg
@@ -58,4 +59,4 @@
     ~/.zshrc: zsh/zshrc
 
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
+  - [git submodule update --init --recursive, Installing/Updating submodules]
