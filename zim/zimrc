@@ -17,7 +17,6 @@ zmodules=(directory \
           autosuggestions \
           input \
           utility \
-          meta \
           custom \
           syntax-highlighting \
           history-substring-search \

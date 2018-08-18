@@ -49,6 +49,7 @@
     ~/.tmux/tmux.remote.conf: tmux/tmux.remote.conf
     ~/.tmux/tmux-theme.conf: tmux/base16-theme.conf
     # zim
+    ~/.zim: submodules/zimfw
     ~/.zimrc: zim/zimrc
     # zsh
     ~/.zlogin: zsh/zlogin

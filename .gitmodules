@@ -4,3 +4,6 @@
 [submodule "submodules/liquidprompt"]
 	path = submodules/liquidprompt
 	url = git@github.com:nojhan/liquidprompt.git
+[submodule "submodules/zimfw"]
+	path = submodules/zimfw
+	url = git@github.com:zimfw/zimfw.git
