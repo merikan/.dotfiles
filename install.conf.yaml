@@ -42,6 +42,9 @@
     ~/.inputrc: sh/inputrc
     ~/.profile: sh/profile
     ~/.shrc: sh/shrc
+    # spaceship-prompt
+    ~/.zfunctions/prompt_spaceship_setup: submodules/spaceship-prompt/spaceship.zsh
+    ~/.spaceship-promptrc: spaceship-prompt/spaceship-promptrc
     # tmux
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmux/renew_env.sh: tmux/renew_env.sh

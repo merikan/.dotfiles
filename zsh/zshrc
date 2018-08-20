@@ -41,13 +41,8 @@ fi
 
 # Personal settings below  -------------------------------------------------------
 
-# ---------------------------------------------------------------------------------------------
-# Liquid prompt -- A useful adaptive prompt for Bash & Zsh
-# Only load Liquid Prompt in interactive shells, not from a script or from scp
-# Only load if  zprompt_theme (zim) is not set and liquidprompt exists
-if [[ $- = *i* ]] && [[ -z ${zprompt_theme} ]] && [[ -s ${ZDOTDIR:-${HOME}}/.liquidprompt/liquidprompt ]]; then
-  source ~/.liquidprompt/liquidprompt
-fi
+# aff to fpath
+fpath=( "$HOME/.zfunctions" $fpath )
 
 # turn on autocomplete
 autoload -Uz compinit
@@ -84,6 +79,20 @@ unsetopt nomatch
 bindkey '\e[A' history-beginning-search-backward
 #Use down key to search forward in the history for a line beginning with the current line up to the cursor.
 bindkey '\e[B' history-beginning-search-forward
+
+# initialize prompt system
+autoload -U promptinit && promptinit
+# use spaceship-prompt
+source ~/.spaceship-promptrc
+prompt spaceship
+
+# ---------------------------------------------------------------------------------------------
+# Liquid prompt -- A useful adaptive prompt for Bash & Zsh
+# Only load Liquid Prompt in interactive shells, not from a script or from scp
+# Only load if  zprompt_theme (zim) is not set and liquidprompt exists
+if [[ $- = *i* ]] && [[ -z ${zprompt_theme} ]] && [[ -s ${ZDOTDIR:-${HOME}}/.liquidprompt/liquidprompt ]]; then
+  #source ~/.liquidprompt/liquidprompt
+fi
 
 # Using Base16 for Shells https://github.com/chriskempson/base16-shell
 BASE16_SHELL=$HOME/.config/base16-shell/

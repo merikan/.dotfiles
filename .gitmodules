@@ -7,3 +7,6 @@
 [submodule "submodules/zimfw"]
 	path = submodules/zimfw
 	url = git@github.com:zimfw/zimfw.git
+[submodule "submodules/spaceship-prompt"]
+	path = submodules/spaceship-prompt
+	url = git@github.com:denysdovhan/spaceship-prompt.git

@@ -1,0 +1,4 @@
+# customization of spaceship-prompt
+# for options see https://github.com/denysdovhan/spaceship-prompt/blob/master/docs/Options.md
+
+SPACESHIP_KUBECONTEXT_SHOW=false
