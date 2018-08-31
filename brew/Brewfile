@@ -55,6 +55,7 @@ install node || true                        `# node.js`
 install openshift-cli || true               `# openshift cli` 
 install potrace || true                     `# transforming bitmaps into vector graphics`
 install python || true                      `# python programming`
+install ripgrep || true                     `# recursively searches directories for a regex pattern`
 install rest-shell || true                  `# Spring HATEOAS-compliant REST shell`
 install ruby || true                        `# ruby environment`
 install ssh-copy-id || true                 `# ssh copy `
@@ -62,6 +63,7 @@ install the_silver_searcher || true         `# ag a code searching tool similar 
 install tig || true                         `# text-mode interface for git`
 install tmux || true                        `# terminal multiplexer`
 install tree || true                        `# list contents of directories in a tree-like format`
+install watch || true                       `# execute a program periodically and watch the output`
 install wget || true                        `# non-interactive network downloader`
 install ykpers || true                      `# yubikey personalization`
 install youtube-dl || true                  `# download videos from youtube and many more sites`
