@@ -57,6 +57,9 @@ alias cp='cp -i'
 #alias chgrp='chgrp --preserve-root'
 
 # Alias's to modified commands
+# $ \vi        # ignore aliases named "vi"
+# $ "vi"       # ignore aliases named "vi"
+# $ command vi # ignore functions and aliases
 alias vi='vim'
 alias grep='grep --color=auto'   # Highlight matches
 alias egrep='egrep --color=auto' # Highlight matches
@@ -64,6 +67,9 @@ alias fgrep='fgrep --color=auto' # Highlight matches
 alias bc='bc -l'
 alias wget='wget -c'
 alias ln='ln -i'
+command -v ccat >/dev/null 2>&1 && alias cat='ccat' # colorizing cat
+command -v ncdu >/dev/null 2>&1 && alias du='ncdu --color dark' # NCurses Disk Usage
+command -v dfc >/dev/null 2>&1 && alias df='dfc' # colorized df
 
 # Some convenient commands
 
@@ -99,6 +105,7 @@ alias pg='ps aux | grep'  #requires an argument
 alias un='tar -zxvf'
 alias mountedinfo='df -hT'
 alias openports='netstat -nape --inet'
+alias reload='exec $SHELL -l'
 alias ns='netstat -alnp --protocol=inet | grep -v CLOSE_WAIT | cut -c-6,21-94 | tail +2'
 alias listen="lsof -P -i -n" 
 alias du1='du -h --max-depth=1'
