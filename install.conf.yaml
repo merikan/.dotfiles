@@ -6,6 +6,9 @@
 
 - clean: ['~']
 
+- shell:
+  - [git submodule update --init --remote, Installing/Updating submodules]
+
 - link:
     # atom
     ~/.atomrc: atom/atomrc
@@ -61,6 +64,4 @@
     ~/.zsh_aliases: zsh/zsh_aliases
     ~/.zshenv: zsh/zshenv
     ~/.zshrc: zsh/zshrc
-
-- shell:
-  - [git submodule update --init --recursive, Installing/Updating submodules]
+    
