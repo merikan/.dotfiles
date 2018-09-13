@@ -83,7 +83,6 @@ bindkey '\e[B' history-beginning-search-forward
 # initialize prompt system
 autoload -U promptinit && promptinit
 # use spaceship-prompt
-source ~/.spaceship-promptrc
 prompt spaceship
 
 # ---------------------------------------------------------------------------------------------
