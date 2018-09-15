@@ -71,6 +71,12 @@ unsetopt beep
 #instead of leaving it unchanged in the argument list. This also 
 #applies to file expansion of an initial ~ or =.
 unsetopt nomatch
+# Enable Ctrl-x-e to edit command line
+autoload -U edit-command-line
+# Emacs and Bash style
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line
 
 #use emacs binding
 #bindkey -e
