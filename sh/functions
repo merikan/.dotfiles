@@ -159,8 +159,14 @@ function process()
 # extended cd funtionality
 cd() {
     if [[ "$1" == "" ]]; then
-      if command -v git >/dev/null 2>&1 && [ -e "$(git rev-parse --show-toplevel 2>/dev/null)" ] && [[ "$(git rev-parse --show-toplevel 2>/dev/null)" != "$(pwd)" ]]; then
+      if command -v git >/dev/null 2>&1 && [ -e "$(git rev-parse --show-toplevel 2>/dev/null)" ]; then 
+        if [[ "$(git rev-parse --show-toplevel 2>/dev/null)" != "$(pwd)" ]]; then
             builtin cd "$(git rev-parse --show-toplevel 2>/dev/null)"; #toplevel of git repository
+        elif [ -e "$(builtin cd ..; git rev-parse --show-toplevel 2>/dev/null)" ]; then
+          builtin cd "$(builtin cd ..; git rev-parse --show-toplevel 2>/dev/null)"; #toplevel of parent git repository
+        else 
+          builtin cd; # normal cd behaviour  
+        fi
       else 
         builtin cd; # normal cd behaviour
       fi
