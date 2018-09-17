@@ -119,26 +119,21 @@
   # Inspect history in various ways
   news = log -p HEAD@{1}..HEAD@{0}
   sl = shortlog
-  # Show compact history
-  l = "!git log --graph --pretty='tformat:%C(yellow)%h{%C(green)%ar{%C(bold blue)%an{%C(red)%d%C(reset) %s' $* | column -t -s '{' | less -FXRS"
+  # show commit log decorated
+  l = log --pretty=format:'%C(yellow)%h%Creset %ai %C(green)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit 
+  ll = !git l
+  # show detailed commit log
+  ld = log --graph --decorate --stat --date=iso --abbrev-commit
+  ldd = log --pretty=format:"%C(yellow)%h%C(green)%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
   # Show commit log using graph notation
-  lg = log --graph --pretty=format:'%Cred%h%Creset %an -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-  # List commits showing changed files
-  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-  la = log --graph --abbrev-commit --date=relative -20 --all --pretty='format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'
-  # log in pretty format 
-  lo = log --pretty=format:'%C(yellow)%h%Creset %ai |%C(green)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit 
-  # log in pretty format with graph 
-  log-graph = log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"
+  lg = log --graph --abbrev-commit --date=relative -20 --all --pretty=format:%'C(yellow)%h%Creset -%C(green)%d%Creset %s %C(blue)(%ar) %C(bold blue)<%an>%Creset'
   # log all branches (verbose)
-  lb = log --graph --all --decorate --stat --date=iso
+  lb = log --graph --all --decorate --stat --date=iso --abbrev-commit
   # create a backup of the branch BAK_mybranch
   backup = !git branch $(git branch | grep '*' | sed -e 's/* /BAK_/')
-  #bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r ; }; f"
-  # Show git branches by date
-  branch-bydate = "! f() { for k in $(git branch $@ | sed 's/^..//; s/ .*//'); do  echo "$(git log -1 --pretty='%Cgreen%ci %Cblue(%cr)%Creset ' $k) $k" ;  done | sort -r; }; f"
-  # git sort by date
+  # list and sort branches by date
   brs = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
+  brs2 = "! f() { for k in $(git branch $@ | sed 's/^..//; s/ .*//'); do  echo "$(git log -1 --pretty='%Cgreen%ci %Cblue(%cr)%Creset ' $k) $k" ;  done | sort -r; }; f"
   # List all git aliases
   aliases = "!git config -l | grep alias | cut -c 7- | sort "
   # Change last commit comment
