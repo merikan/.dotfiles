@@ -8,7 +8,7 @@
 
 - shell:
   - [git submodule update --init --remote, Installing/Updating submodules]
-
+  
 - link:
     # atom
     ~/.atomrc: atom/atomrc
@@ -29,7 +29,6 @@
     ~/.golangrc: golang/golangrc
     # homebrew
     ~/Brewfile: brew/Brewfile
-    ~/.brew_bundle.sh: brew/brew_bundle.sh
     # liquidprompt
     ~/.liquidprompt: submodules/liquidprompt
     ~/.liquidpromptrc: liquidprompt/liquidpromptrc

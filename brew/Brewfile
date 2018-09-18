@@ -1,177 +1,222 @@
+# https://github.com/Homebrew/homebrew-bundle
+# Always run 'brew update' before running 'brew bundle'
+# 
+# To keep this file in sync I'm avoiding to install with brew command, 
+# instead I'm adding a row to this file and run 'brew bundle' to make sure it's working. 
+# 
+# It's not always easy to understand how the dsl is constructed without reading the code.
+# I know people have asked for clarification in the documentation but it has not been 
+# well received by {noname}
 #
-# I am using this file when doing a clean install of Homebrew or when I want to
-# update Homebrew, formulae and casks.
-#
-# To use this bundle, just run 'brew_bundle' and Brewfile will be used.
-# You can also use directory-specific bundling with: brew bundle ~/mydir/mybrewfile
-#
-# To install Homebrew - ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 
-
-### ---------------------------------------------------- ###
-### Update                                               ###
-### ---------------------------------------------------- ###
-update || true
-upgrade || true
-
+tap "homebrew/boneyard"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/completions"             # completions 
+tap "homebrew/cask-drivers"            # cask drivers
+tap "homebrew/cask-fonts"              # fonts  
+tap "homebrew/cask-versions"           # alternate versions of Casks       
+tap "jesseduffield/lazygit"            # tap for lazygit
 
 ### ---------------------------------------------------- ###
-### Install formulae                                     ###
+### Formulae                                             ###
 ### ---------------------------------------------------- ###
-tap homebrew/completions || true            `# completions `
-tap caskroom/drivers || true                `# cask drivers`
-tap jesseduffield/lazygit                   `# tap for lazygit`
 
-install apple-gcc42 || true                 `# gcc for osx` 
-install android-sdk || true                 `# android sdk`
-install aria2 || true                       `# multi-protocol & multi-source command-line download utility`
-install asciinema || true                   `# record and share terminal sessions`
-install bash-completion || true
-install brew-cask-completion || true
-install ccat                                `# colorizing cat ` 
-install cloc                                `# count lines of code ` 
-install cowsay                              `# the cow says ` 
-install ctop                                `# top-like interface for container metrics ` 
-install curl || true                        `# curl`
-install dfc || true                         `# displays file system space usage using graphs and colors`
-install diff-pdf || true                    `# visually compare two PDF files`
-install dir-env || true                     `# load/unload environment variables based on $PWD`
-install doxygen                             `# Generate documentation from source code` 
-install fasd || true                        `# quick access to files and directories`
-install ffmpeg || true                      `# record, convert and stream audio and video`
-install fzf || true                         `# a command-line fuzzy finder`
-install ffmpeg || true                      `# to record, convert and stream audio and video` 
-install go || true                          `# golang sdk`
-install ghq || true                         `# git remote repository management made easy`
-install gibo || true                        `# easily accessing gitignore boilerplates`
-install git || true                         `# cli client for git`
-install git-flow-avh || true                `# git-flow addon for git client`
-install git-secret || true                  `# scan git commits for secrets and credentials`
-install gnupg || true                       `# gpg`
-install htop || true                        `# an interactive process viewer for Unix`
-install httpie || true                      `# HTTP command-line client`
-install hugo || true                        `# open-source static site generator`
-install icdiff || true                      `# improved colored diff`
-install imagemagick || true                 `# create, edit, compose, or convert bitmap images`
-install jenv || true                        `# manage your java environment`
-install jq || true                          `# command-line JSON processor, like sed`
-install jo || true                          `# small utility to create JSON objects`
-install joplin || true                      `# note taking and to-do application `
-install kompose || true                     `# A conversion tool to go from Docker Compose to Kubernetes`
-install kubectl || true                     `# kubernetes` 
-install lazygit || true                        `# simple terminal UI for git commands` 
-install lnav || true                        `# watch and analyze your log files from a terminal.` 
-install mackup || true                      `# keep application settings in sync` 
-install maven-completion || true
-install mas || true                         `# Mac App Store command-line interface`
-install midnight-commander || true          `# visual file manager`
-install mplayer || true                     `# UNIX movie player`
-install ncdu || true                        `# a disk usage analyzer with an ncurses interface`
-install nmap || true                        `# port scanning utility for large networks`
-install node || true                        `# node.js`
-install openshift-cli || true               `# openshift cli` 
-install plantuml || true                    `# draw UML diagrams`
-install pip-completion || true
-install potrace || true                     `# transforming bitmaps into vector graphics`
-install python || true                      `# python programming`
-install rest-shell || true                  `# Spring HATEOAS-compliant REST shell`
-install ripgrep || true                     `# recursively searches directories for a regex pattern`
-install ruby || true                        `# ruby environment`
-install ssh-copy-id || true                 `# ssh copy `
-install stunnel || true                     `# SSL tunneling program`
-install the_silver_searcher || true         `# ag a code searching tool similar to ack`
-install tig || true                         `# text-mode interface for git`
-install tmux || true                        `# terminal multiplexer`
-install tree || true                        `# list contents of directories in a tree-like format`
-install vim || true                         `# highly configurable text editor`
-install watch || true                       `# execute a program periodically and watch the output`
-install wget || true                        `# non-interactive network downloader`
-install yarn || true                        `# JavaScript package manager`
-install youtube-dl || true                  `# download videos from youtube and many more sites`
+brew "apple-gcc42"                                  # gcc for osx 
+brew "aria2"                                        # multi-protocol & multi-source command-line download utility
+brew "asciinema"                                    # record and share terminal sessions
+brew "bash-completion" 
+brew "brew-cask-completion" 
+brew "ccat"                                         # colorizing cat  
+brew "cloc"                                         # count lines of code  
+brew "cowsay"                                       # the cow says  
+brew "ctop"                                         # top-like interface for container metrics  
+brew "curl"                                         # curl
+brew "dfc"                                          # displays file system space usage using graphs and colors
+brew "diff-pdf"                                     # visually compare two PDF files
+brew "doxygen"                                      # Generate documentation from source code 
+brew "fasd"                                         # quick access to files and directories
+brew "ffmpeg"                                       # record, convert and stream audio and video
+brew "fzf"                                          # a command-line fuzzy finder
+brew "ffmpeg"                                       # to record, convert and stream audio and video 
+brew "go"                                           # golang sdk
+brew "ghq"                                          # git remote repository management made easy
+brew "gibo"                                         # easily accessing gitignore boilerplates
+brew "git"                                          # cli client for git
+brew "git-flow-avh"                                 # git-flow addon for git client
+brew "git-secret"                                   # scan git commits for secrets and credentials
+brew "gnupg"                                        # gpg
+brew "htop"                                         # an interactive process viewer for Unix
+brew "httpie"                                       # HTTP command-line client
+brew "hugo"                                         # open-source static site generator
+brew "icdiff"                                       # improved colored diff
+brew "imagemagick"                                  # create, edit, compose, or convert bitmap images
+brew "jenv"                                         # manage your java environment
+brew "jq"                                           # command-line JSON processor, like sed
+brew "jo"                                           # small utility to create JSON objects
+brew "joplin"                                       # note taking and to-do application 
+brew "kompose"                                      # A conversion tool to go from Docker Compose to Kubernetes
+brew "kubectl"                                      # kubernetes controller
+brew "lazygit"                                      # simple terminal UI for git commands 
+brew "lnav"                                         # watch and analyze your log files from a terminal. 
+brew "mackup"                                       # keep application settings in sync 
+brew "maven-completion"                   
+brew "mas"                                          # Mac App Store command-line interface
+brew "midnight-commander"                           # visual file manager
+brew "mplayer"                                      # UNIX movie player
+brew "ncdu"                                         # a disk usage analyzer with an ncurses interface
+brew "nmap"                                         # port scanning utility for large networks
+brew "node"                                         # node.js
+brew "openshift-cli"                                # openshift cli 
+brew "packer"                                       # package VMs 
+brew "packer-completion" 
+brew "plantuml"                                     # draw UML diagrams
+brew "pip-completion"                   
+brew "potrace"                                      # transforming bitmaps into vector graphics
+brew "python"                                       # python programming
+brew "reattach-to-user-namespace"                   # Reattach process (e.g., tmux) to background
+brew "rest-shell"                                   # Spring HATEOAS-compliant REST shell
+brew "ripgrep"                                      # recursively searches directories for a regex pattern
+brew "ruby"                                         # ruby environment
+brew "ssh-copy-id"                                  # ssh copy 
+brew "stunnel"                                      # SSL tunneling program
+brew "the_silver_searcher"                          # ag a code searching tool similar to ack
+brew "tig"                                          # text-mode interface for git
+brew "tmux"                                         # terminal multiplexer
+brew "tree"                                         # list contents of directories in a tree-like format
+brew "vim"                                          # highly configurable text editor
+brew "watch"                                        # execute a program periodically and watch the output
+brew "wget"                                         # non-interactive network downloader
+brew "yarn"                                         # JavaScript package manager
+brew "youtube-dl"                                   # download videos from youtube and many more sites
+brew "zsh"                                          # shell 
 
 ### ---------------------------------------------------- ###
-### Install casks (http://caskroom.io/)                  ###
+### Casks (http://caskroom.io/)                          ###
 ### ---------------------------------------------------- ###
 # Note: Casks with version 'latest' will not be updated due to no checksum change
-cask install adium || true
-cask install alfred || true                 `# amust have for boost productivity `
-cask alfred link || true
-cask install android-studio || true         `# android IDE `
-cask install android-file-transfer || true  `# transfer files from Android device `
-cask install atom || true                   `# yet another editor`
-cask install brave || true
-cask install bitbar || true
-cask install calibre || true                `# e-book reader and library management application`
-cask install clementine || true             `# music player and radio streamer`
-cask install cyberduck || true              `# client for FTP and SFTP, WebDAV, and cloud storage`
-cask install dash || true                   `# API documentation browser`
-cask install dbvisualizer || true           `# universal database tool`
-cask install docker || true                 `# docker for mac`
-install docker-completion || true           `# docker completion`
-install docker-compose-completion || true   `# docker compose completion`
-install docker-machine-completion || true   `# docker machine completion`
-cask install eclipse-java                   `# eclipse ide for java developers`
-cask install etcher                         `# Burn images to SD cards & USB drives, safely and easily.`
-cask install evernote || true               `# taking notes`
-cask install filezilla || true              `# client for FTP and SFTP`
-cask install flux || true                   `# get rid of the blue light`
-cask install firefox-developer-edition || true  `# a browser`
-cask install gimp || true                   `# an Image Editor (I probably never be able to learn)`
-cask install gitkraken || true              `# Git GUI client for Windows, Mac and Linux `
-cask install gitup || true                  `# awesome Git Gui Client `
-cask install google-chrome || true          `# a browser` 
-cask install google-photos-backup-and-sync || true `# Google Photos Backup And Sync`
-cask install hammerspoon || true            `# powerful automation of MacOS`
-cask install hyperswitch || true            `# awesome keyboard window switcher for Mac`
-cask install icolors || true                `# a color picker and hex converter`
-cask install inkscape || true               `# A powerful, free design tool`
-cask install insomnia || true               `# superduper rest client`
-cask install intellij-idea || true          `# awesome java IDE`
-cask install iterm2 || true                 `# Terminal emulator for macOS`
-cask install joplin || true                 `# a FOSS note taking and to-do application`
-cask install karabiner || true              `# keyboard customizer for macOS`
-cask install keepassxc || true              `# a great FOSS Password Manager`
-cask install keybase || true                `# Crypto for everyone!`
-cask install markright || true              `# a markdown editor`
-cask install meld || true                   `# visual diff and merge tool`
-cask install minikube || true               `# kubernetes mini`
-cask install minishift || true              `# openshift mini`
-cask install moeditor || true               `# all-purpose markdown editor`
-cask install opera || true                  `# browser`
-cask install mysqlworkbench  || true        `# gui tool for mysql `
-cask install paintbrush || true             `# clean and simple paint program`
-cask install pencil || true                 `# open-source GUI prototyping tool`
-cask install phoenix-slides || true         `# image viewer`
-# https://github.com/sindresorhus/quick-look-plugins
-cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv qlimagesize webpquicklook suspicious-package || true
-cask install robo-3t || true                `# free lightweight GUI for MongoDB `
-cask install skype || true                  `# video conf`
-cask install sketch || true                 `# sketchapp - design tool`
-cask install sketch-toolbox || true         `# some useful plugins for sketchapp`
-cask install sonos || true                  `# Sonos controller`
-cask install spectacle || true              `# move and resize windows`
-cask install sourcetree || true             `# awesome git client `
-cask install spotify || true                `# music for everyone`
-cask install vagrant || true                `# vm management`
-install vagrant-completion || true
-cask install virtualbox || true             `# virtualizer for x86 hardware`
-cask install virtualbox-extension-pack || true
-cask install visual-paradigm-ce || true     `# software modelling tool`
-cask install visual-studio-code || true     `# a great editor`
-cask install vlc || true                    `# media player`
-cask install xquartz || true                `# X windows on Mac`
-cask install yed || true                    `# Graph Editor`
-## -- fonts
-tap homebrew/cask-fonts || true
-cask install font-fira-code || true         `# monospaced font with programming ligatures`
-cask install font-go-mono || true           `# golang fonts`   
-cask install font-hasklig || true           `# a code font with monospaced ligatures`
-cask install font-inconsolata || true       `# a great programmers font`
-cask install font-monoid || true            `# a ppen source coding font with ligatures`
-cask install font-monoisome || true         `# monoid with Font Awesome support`
+cask "adium"                                        # instant messaging
+cask "alfred"                                       # a must have for boost productivity 
+cask "amazon-drive"                                 # amazon cloud drive
+cask "android-sdk"                                  # android sdk
+cask "android-studio"                               # android IDE 
+cask "android-file-transfer"                        # transfer files from Android device 
+cask "arq"                                          # backup for mac
+cask "asciidocfx"                                   # markup editor and pdf,epub, mobi,docbook creator
+cask "atom"                                         # yet another editor
+cask "backuploupe"                                  # browse your timemachine backups
+cask "bartender"                                    # organize your menu bar icons
+cask "bitbar"                                       # put the output from any script or program in your Mac OS X Menu Bar
+cask "brave"                                        # privacy focused, performance oriented browser
+cask "calibre"                                      # e-book reader and library management application
+cask "clementine"                                   # music player and radio streamer
+cask "chromium"                                     # open-source browser
+cask "cyberduck"                                    # client for FTP and SFTP, WebDAV, and cloud storage
+cask "dash"                                         # API documentation browser
+cask "dbvisualizer"                                 # universal database tool (skip Java deps, we will use sdkman for Java)
+cask "docker"                                       # docker for mac
+brew "docker-completion"                            # docker completion
+brew "docker-compose-completion"                    # docker compose completion
+brew "docker-machine-completion"                    # docker machine completion
+cask "eclipse-java"                                 # eclipse ide for java developers
+cask "etcher"                                       # Burn images to SD cards & USB drives, safely and easily.
+cask "evernote"                                     # taking notes
+cask "expandrive"                                   # map a drive to any cloud
+cask "filezilla"                                    # client for FTP and SFTP
+cask "flux"                                         # get rid of the blue light
+cask "firefox-developer-edition"                    # a browser
+cask "gimp"                                         # an Image Editor (I probably never be able to learn)
+cask "gitkraken"                                    # Git GUI client for Windows, Mac and Linux 
+cask "gitup"                                        # awesome Git Gui Client 
+cask "google-chrome"                                # a browser 
+cask "google-photos-backup-and-sync"                # Google Photos Backup And Sync
+cask "hammerspoon"                                  # powerful automation of MacOS, actions and wm
+cask "handbrake"                                    # open source video transcoder
+cask "hipchat"                                      # group chat, video chat, and screen sharing
+cask "horos"                                        # a free, open source medical image viewer
+cask "hyperswitch"                                  # awesome keyboard window switcher for Mac
+cask "icolors"                                      # a color picker and hex converter
+cask "inkscape"                                     # A powerful, free design tool
+cask "insomnia"                                     # superduper rest client
+cask "intellij-idea"                                # awesome java IDE
+cask "iterm2"                                       # Terminal emulator for macOS
+cask "jdiskreport"                                  # analyses your disk drives and shows charts and details tables
+cask "joplin"                                       # a FOSS note taking and to-do application
+cask "karabiner"                                    # keyboard customizer for macOS
+cask "keepassxc"                                    # a great FOSS Password Manager
+cask "keystore-explorer"                            # open source GUI replacement for the keytool and jarsigner
+cask "keybase"                                      # crypto for everyone!
+cask "markright"                                    # a markdown editor
+cask "meld"                                         # visual diff and merge tool
+cask "minikube"                                     # kubernetes mini
+cask "minishift"                                    # openshift mini
+cask "moeditor"                                     # all-purpose markdown editor
+cask "obs"                                          # foss for video recording and live streaming
+cask "opera"                                        # browser
+cask "mysqlworkbench"                               # gui tool for mysql 
+cask "paintbrush"                                   # clean and simple paint program
+cask "pencil"                                       # open-source GUI prototyping tool
+cask "phoenix-slides"                               # image viewer
+cask "postman"                                      # nice rest client
+cask "robo-3t"                                      # free lightweight GUI for MongoDB 
+cask "skype"                                        # video conf
+cask "sketch"                                       # sketchapp - design tool
+cask "sketch-toolbox"                               # some useful plugins for sketchapp
+cask "skitch"                                       # take screenshots of all or part of your screen
+cask "sonos"                                        # Sonos controller
+cask "spectacle"                                    # move and resize windows
+cask "soapui"                                       # soap and rest testing tool
+cask "sonos"                                        # controller for sonos speakers
+cask "sourcetree"                                   # awesome git client 
+cask "spectacle"                                    # move and resize windows
+cask "spotify"                                      # music for everyone
+cask "sublime-text2"                                # text editor
+cask "tunnelblick"                                  # free, open source graphic user interface for OpenVPN
+cask "vagrant"                                      # vm management
+brew "vagrant-completion"                      
+cask "virtualbox"                                   # virtualizer for x86 hardware
+cask "virtualbox-extension-pack" 
+cask "visual-paradigm-ce"                           # software modelling tool
+cask "visual-studio-code"                           # a great editor
+cask "vlc"                                          # media player
+cask "xquartz"                                      # X windows on Mac
+cask "yed"                                          # graph editor
+cask "zoomus"                                       # video communications
+
+## quick-look-plugins see:https://github.com/sindresorhus/quick-look-plugins
+cask "qlcolorcode"                                  # preview source code files with syntax highlighting
+cask "qlstephen"                                    # preview plain text files without or with unknown file extension.
+cask "qlmarkdown"                                   # preview Markdown files
+cask "quicklook-json"                               # preview JSON files
+cask "betterzip"                                    # preview archives
+cask "quicklook-csv"                                # preview CSV files
+cask "qlimagesize"                                  # display image size and resolution
+cask "webpquicklook"                                # preview WebP images
+cask "suspicious-package"                           # preview the contents of a standard Apple installer package
+cask "qlvideo"                                      # display thumbnails, static previews, cover art and metadata for video files
+## -- fonts                     
+cask "font-fira-code"                               # monospaced font with programming ligatures
+cask "font-go-mono"                                 # golang fonts   
+cask "font-hasklig"                                 # a code font with monospaced ligatures
+cask "font-inconsolata"                             # a great programmers font
+cask "font-monoid"                                  # a ppen source coding font with ligatures
+cask "font-monoisome"                               # monoid with Font Awesome support
 
 ### ---------------------------------------------------- ###
-### Cleanup                                              ###
+### Mac App Store command line interface                 ###
+### https://github.com/mas-cli/mas                       ###
 ### ---------------------------------------------------- ###
-cask cleanup || true
-cleanup || true
+
+mas "Bredbandskollen", id: 1147976909
+mas "Keynote", id: 409183694
+mas "Kindle", id: 405399194
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Pocket", id: 568494494
+mas "Slack", id: 803453959
+mas "The Archive Browser", id: 510232205
+mas "The Unarchiver", id: 425424353
+mas "Tomato One", id: 907364780
+mas "Twitter", id: 409789998
+mas "Wunderlist", id: 410628904
+
