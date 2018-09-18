@@ -1,0 +1,3 @@
+#!/bin/sh
+# when copy/paste dollar sign to terminal ($: command not found)
+exec "$@"

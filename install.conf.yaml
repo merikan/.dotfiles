@@ -10,6 +10,8 @@
   - [git submodule update --init --remote, Installing/Updating submodules]
   
 - link:
+    # fix dollar sign 
+    ~/bin/$: bin/$
     # atom
     ~/.atomrc: atom/atomrc
     # bash
