@@ -8,7 +8,8 @@
 
 - shell:
   - [git submodule update --init --remote, Installing/Updating submodules]
-  
+  - ["mkdir -p ~/{.config,src,go,Projects}", Creating default directories]
+
 - link:
     # fix dollar sign 
     ~/bin/$: bin/$
@@ -31,6 +32,7 @@
     ~/.golangrc: golang/golangrc
     # homebrew
     ~/Brewfile: brew/Brewfile
+    ~/bin/brewit: brew/brewit.sh
     # liquidprompt
     ~/.liquidprompt: submodules/liquidprompt
     ~/.liquidpromptrc: liquidprompt/liquidpromptrc
@@ -65,4 +67,10 @@
     ~/.zsh_aliases: zsh/zsh_aliases
     ~/.zshenv: zsh/zshenv
     ~/.zshrc: zsh/zshrc
-    
+
+- shell:
+  -
+    description: Installing/Updating Homebrew formulea
+    command: brewit
+    stdout: true
+    stderr: true
