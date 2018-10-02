@@ -122,11 +122,12 @@
   # show commit log decorated
   l = log --pretty=format:'%C(yellow)%h%Creset %ai %C(green)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit 
   ll = !git l
+  lo = !git l
   # show detailed commit log
   ld = log --graph --decorate --stat --date=iso --abbrev-commit
   ldd = log --pretty=format:"%C(yellow)%h%C(green)%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
   # Show commit log using graph notation
-  lg = log --graph --abbrev-commit --date=relative -20 --all --pretty=format:%'C(yellow)%h%Creset -%C(green)%d%Creset %s %C(blue)(%ar) %C(bold blue)<%an>%Creset'
+  lg = log --graph --abbrev-commit --date=relative --all --pretty=format:%'C(yellow)%h%Creset -%C(green)%d%Creset %s %C(blue)(%ar) %C(bold blue)<%an>%Creset'
   # log all branches (verbose)
   lb = log --graph --all --decorate --stat --date=iso --abbrev-commit
   # create a backup of the branch BAK_mybranch
