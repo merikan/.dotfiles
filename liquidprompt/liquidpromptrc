@@ -1,6 +1,7 @@
 
 ### --------------------------------------------------------------------------------
 # liquidprompt configuration file to override or add settings
+# https://github.com/nojhan/liquidprompt/blob/master/liquidpromptrc-dist
 ### --------------------------------------------------------------------------------
 
 # If you want to use different themes and features,

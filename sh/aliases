@@ -1,9 +1,6 @@
 #!/bin/sh
 #
-# My great list of aliases
-#
-# I prefer to alias all my functions too so that I can easily find them 
-# with the alias command.
+# My list of aliases
 
 function has() {  # has command?
    command -v $1 >/dev/null 2>&1 && return 0 || return 1 
