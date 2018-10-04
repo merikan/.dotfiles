@@ -13,3 +13,6 @@
 [submodule "submodules/prezto"]
 	path = submodules/prezto
 	url = git@github.com:sorin-ionescu/prezto.git
+[submodule "submodules/oh-my-zsh"]
+	path = submodules/oh-my-zsh
+	url = git@github.com:robbyrussell/oh-my-zsh.git

@@ -44,7 +44,13 @@ elif [ "$zh_framework" = "prezto" ]; then
     echo "unable to load $zh_framework"
   fi
 elif [ "$zh_framework" = "oh-my-zsh" ]; then
-  echo "should have loaded $zh_framework"
+  source "${ZDOTDIR:-$HOME}/.oh-my-zshrc"
+  if [[ -s "$ZSH/oh-my-zsh.sh" ]]; then
+    source $ZSH/oh-my-zsh.sh
+  else 
+    echo "unable to load $zh_framework"
+  fi
+
 else 
   echo "zsh framework $zh_framework not found"
 fi

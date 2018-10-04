@@ -40,6 +40,7 @@
     ~/.mackup.cfg: mackup/mackup.cfg
     # oh-my-zsh
     ~/.oh-my-zshrc: oh-my-zsh/oh-my-zshrc
+    ~/.oh-my-zsh: submodules/oh-my-zsh
     # prezto
     ~/.zpreztorc: prezto/zpreztorc
     ~/.zprezto: submodules/prezto
@@ -51,7 +52,8 @@
     ~/.shrc: sh/shrc
     # spaceship-prompt
     ~/.zfunctions/prompt_spaceship_setup: ~/spaceship-prompt/spaceship.zsh
-    ~/.config/spaceship-prompt/config: spaceship-prompt/spaceship-promptrc
+    #~/.config/spaceship-prompt/config: spaceship-prompt/spaceship-promptrc
+    ~/.spaceship-promptrc: spaceship-prompt/spaceship-promptrc
     # tmux
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmux/renew_env.sh: tmux/renew_env.sh

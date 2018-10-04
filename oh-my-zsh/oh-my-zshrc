@@ -51,26 +51,3 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
-
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-export PATH="/Users/peter/.rvm/gems/ruby-1.9.2-p320/bin:/Users/peter/.rvm/gems/ruby-1.9.2-p320@global/bin:/Users/peter/.rvm/rubies/ruby-1.9.2-p320/bin:/Users/peter/.rvm/bin:/Users/peter/opt/apache-maven-3.2.1/bin:/usr/local/bin::/Users/peter/bin:/Users/peter/.gvm/vertx/current/bin:/Users/peter/.gvm/springboot/current/bin:/Users/peter/.gvm/lazybones/current/bin:/Users/peter/.gvm/groovyserv/current/bin:/Users/peter/.gvm/groovy/current/bin:/Users/peter/.gvm/griffon/current/bin:/Users/peter/.gvm/grails/current/bin:/Users/peter/.gvm/gradle/current/bin:/Users/peter/.gvm/glide/current/bin:/Users/peter/.gvm/gaiden/current/bin::/Users/peter/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/peter/.rvm/bin"
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
