@@ -30,14 +30,24 @@ echo "Running .zshrc"
 [ -f ~/.shrc ] && source ~/.shrc
 
 # Use zsh framework  -------------------------------------------------------
-# Source zim
-if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
-  source ${ZDOTDIR:-${HOME}}/.zim/init.zsh
+local zh_framework=${ZSH_FRAMEWORK:-zim}
+if [ "$zh_framework" = "zim" ]; then
+  if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
+    source ${ZDOTDIR:-${HOME}}/.zim/init.zsh
+  else
+    echo "unable to load $zh_framework"
+  fi
+elif [ "$zh_framework" = "prezto" ]; then
+  if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+    source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+  else 
+    echo "unable to load $zh_framework"
+  fi
+elif [ "$zh_framework" = "oh-my-zsh" ]; then
+  echo "should have loaded $zh_framework"
+else 
+  echo "zsh framework $zh_framework not found"
 fi
-# Source Prezto.
-#if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-#  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-#fi
 
 # Personal settings below  -------------------------------------------------------
 
