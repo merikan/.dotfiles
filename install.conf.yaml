@@ -42,6 +42,7 @@
     ~/.oh-my-zshrc: oh-my-zsh/oh-my-zshrc
     # prezto
     ~/.zpreztorc: prezto/zpreztorc
+    ~/.zprezto: submodules/prezto
     # shell
     ~/.aliases: sh/aliases
     ~/.functions: sh/functions

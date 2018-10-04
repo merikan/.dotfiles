@@ -10,3 +10,6 @@
 [submodule "submodules/spaceship-prompt"]
 	path = submodules/spaceship-prompt
 	url = git@github.com:denysdovhan/spaceship-prompt.git
+[submodule "submodules/prezto"]
+	path = submodules/prezto
+	url = git@github.com:sorin-ionescu/prezto.git
