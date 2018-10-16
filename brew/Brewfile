@@ -85,6 +85,7 @@ brew "ssh-copy-id"                                  # ssh copy
 brew "stunnel"                                      # SSL tunneling program
 brew "the_silver_searcher"                          # ag a code searching tool similar to ack
 brew "tig"                                          # text-mode interface for git
+brew "tldr"                                         # Simplified and community-driven man pages (https://tldr.sh/)
 brew "tmux"                                         # terminal multiplexer
 brew "tree"                                         # list contents of directories in a tree-like format
 brew "vim"                                          # highly configurable text editor
