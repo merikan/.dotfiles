@@ -240,6 +240,56 @@ fi
   command -v ag >/dev/null 2>&1 && export FZF_DEFAULT_COMMAND='ag -g ""'
 }
 
+#Fasd for quick access to files and directories for POSIX shells. https://github.com/clvv/fasd
+command -v fasd >/dev/null 2>&1  && eval "$(fasd --init auto)"
+
+# Homebrew Cask
+command -v brew >/dev/null 2>&1  && export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+# Use openssl from homebrew instead
+command -v brew >/dev/null 2>&1 && [ -d $(brew --prefix openssl)/bin ] && export PATH=$(brew --prefix openssl)/bin:$PATH
+
+# Java: Use jenv to handle versions
+#command -v jenv >/dev/null 2>&1 && {
+#  export PATH="$HOME/.jenv/bin:$PATH"
+#  eval "$(jenv init -)"
+#  export JAVA_HOME=$HOME/.jenv/fake-java-home
+#}
+
+# Maven
+#M2_VERSION=3.3.9
+#export M2_HOME="$HOME/opt/maven/$M2_VERSION" && export PATH="$M2_HOME/bin:$PATH"
+# set heap size
+#export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=512m -Djava.awt.headless=true"
+# with debug
+#export MAVEN_OPTS="$MAVEN_OPTS -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000"
+
+# Android
+[ -d "/usr/local/opt/android-sdk" ] && export ANDROID_HOME="/usr/local/opt/android-sdk"  #OSX
+export PATH="${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
+
+# Golang
+[ -f ~/.golangrc ] && source ~/.golangrc
+# Installing go with homebrew instead of gvm
+# use gvm - Go Version Manager
+#[[ -s "$HOME/.gvm/scripts/gvm" ]]  && source "$HOME/.gvm/scripts/gvm"
+
+# rvm
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && {
+  source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+  export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+}
+
+# sdkman
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && {
+  # disable GVM alias
+  sed -i.bak 's/^\(sdkman_disable_gvm_alias=\).*/\1true/' "$SDKMAN_DIR/etc/config"
+  # source sdkman  
+  source "$SDKMAN_DIR/bin/sdkman-init.sh" 
+}
+
+
 # Aliases 
 [ -f ~/.aliases ] && source ~/.aliases
 [ -f ~/.bash_aliases ] && source ~/.bash_aliases

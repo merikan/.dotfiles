@@ -119,15 +119,58 @@ fi
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
+#Fasd for quick access to files and directories for POSIX shells. (https://github.com/clvv/fasd)
+command -v fasd >/dev/null 2>&1  && eval "$(fasd --init auto)"
+
+command -v brew >/dev/null 2>&1  && {
+  # Homebrew Cask
+  export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+  # Use openssl from homebrew instead
+  [ -d $(brew --prefix openssl)/bin ] && export PATH=$(brew --prefix openssl)/bin:$PATH
+}
+
 # source openshift tab completion
 command -v oc >/dev/null 2>&1  && source <(oc completion zsh)
 
-# fzf for fuzzy file mathing
+# fzf for fuzzy file mathing. (https://github.com/junegunn/fzf)
 [ -f ~/.fzf.zsh ] && {
   source ~/.fzf.zsh
   # Setting ag as the default source for fzf
   command -v ag >/dev/null 2>&1 && export FZF_DEFAULT_COMMAND='ag -g ""'
 }
+
+# Java: Use jenv to handle versions
+#command -v jenv >/dev/null 2>&1 && {
+#  export PATH="$HOME/.jenv/bin:$PATH"
+#  eval "$(jenv init -)"
+#  export JAVA_HOME=$HOME/.jenv/fake-java-home
+#}
+
+# Android
+[ -d "/usr/local/opt/android-sdk" ] && export ANDROID_HOME="/usr/local/opt/android-sdk"  #OSX
+export PATH="${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
+
+# Golang
+[ -f ~/.golangrc ] && source ~/.golangrc
+# Installing go with homebrew instead of gvm
+# use gvm - Go Version Manager
+#[[ -s "$HOME/.gvm/scripts/gvm" ]]  && source "$HOME/.gvm/scripts/gvm"
+
+# rvm
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && {
+  source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+  export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+}
+
+# sdkman
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && {
+  # disable GVM alias
+  sed -i.bak 's/^\(sdkman_disable_gvm_alias=\).*/\1true/' "$SDKMAN_DIR/etc/config"
+  # source sdkman  
+  source "$SDKMAN_DIR/bin/sdkman-init.sh" 
+}
+
 
 # Functions  -------------------------------------------------------
 [ -f ~/.functions ] && source ~/.functions
