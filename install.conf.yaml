@@ -7,7 +7,7 @@
 - clean: ['~']
 
 - shell:
-  - [git submodule update --init --remote, Installing/Updating submodules]
+  - [git submodule update --init --recursive, Installing/Updating submodules]
   - ["mkdir -p ~/{.config,src,go,Projects}", Creating default directories]
 
 - link:

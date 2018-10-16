@@ -44,7 +44,7 @@
   # Update branch (pull/rebase/submodules)
   up = !git ups
   # Pull with rebase and update submodules
-  ups = !git pull --rebase --prune $@ && git submodule update --init --remote
+  ups = !git pull --rebase --prune $@ && git submodule update --init --recursive
   # Update recursively (deep)
   upd = "!f() { \
                 if [ -d .git ]; then\
