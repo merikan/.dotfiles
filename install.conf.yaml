@@ -31,7 +31,7 @@
     # golang
     ~/.golangrc: golang/golangrc
     # homebrew
-    ~/Brewfile: brew/Brewfile
+    ~/.Brewfile: brew/Brewfile
     ~/bin/brewit: brew/brewit.sh
     # liquidprompt
     ~/.liquidprompt: submodules/liquidprompt

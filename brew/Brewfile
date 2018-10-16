@@ -1,12 +1,12 @@
 # https://github.com/Homebrew/homebrew-bundle
 # Always run 'brew update' before running 'brew bundle'
 # 
-# To keep this file in sync I'm avoiding to install with brew command, 
-# instead I'm adding a row to this file and run 'brew bundle' to make sure it's working. 
+# To keep this file in sync I'm avoiding to install with the `brew install` command, 
+# instead I'm adding a row to this file and run 'brew bundle --global' to make sure it's working. 
 # 
 # It's not always easy to understand how the dsl is constructed without reading the code.
 # I know people have asked for clarification in the documentation but it has not been 
-# well received by {noname}
+# well received by {noname}. Haven't found any changelog either but heck, it's open soutce ;-)
 #
 
 tap "homebrew/boneyard"
