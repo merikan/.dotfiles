@@ -3,16 +3,16 @@
 	url = https://github.com/anishathalye/dotbot
 [submodule "submodules/liquidprompt"]
 	path = submodules/liquidprompt
-	url = git@github.com:nojhan/liquidprompt.git
+	url = https://github.com/nojhan/liquidprompt.git
 [submodule "submodules/zimfw"]
 	path = submodules/zimfw
-	url = git@github.com:zimfw/zimfw.git
+	url = https://github.com/zimfw/zimfw.git
 [submodule "submodules/spaceship-prompt"]
 	path = submodules/spaceship-prompt
-	url = git@github.com:denysdovhan/spaceship-prompt.git
+	url = https://github.com/denysdovhan/spaceship-prompt.git
 [submodule "submodules/prezto"]
 	path = submodules/prezto
-	url = git@github.com:sorin-ionescu/prezto.git
+	url = https://github.com/sorin-ionescu/prezto.git
 [submodule "submodules/oh-my-zsh"]
 	path = submodules/oh-my-zsh
-	url = git@github.com:robbyrussell/oh-my-zsh.git
+	url = https://github.com/robbyrussell/oh-my-zsh.git
