@@ -41,10 +41,12 @@
   # git-svn: svn commit
   spush = !git-svn dcommit
 
-  # Update branch (pull/rebase/submodules)
-  up = !git ups
-  # Pull with rebase and update submodules
-  ups = !git pull --rebase --prune $@ && git submodule update --init --recursive
+  # Update branch (with rebase)
+  up = git pull --rebase --prune $@
+  # update submodules
+  ups = !git submodule update --init --recursive
+  # Update branch with rebase and update submodules
+  upa = !git up && !git ups
   # Update recursively (deep)
   upd = "!f() { \
                 if [ -d .git ]; then\
@@ -183,6 +185,13 @@
 
 [commit]
   template = ~/.git_commit_msg
+
+[status]
+  # make sure status is submodule aware
+	submoduleSummary = true
+[diff]
+  # include submodules when diff
+	submodule = log
 
 # credits:
 # http://haacked.com/archive/2014/07/28/github-flow-aliases/
