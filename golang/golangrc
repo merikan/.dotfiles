@@ -2,3 +2,6 @@
 
 export GOPATH=$HOME/go
 export PATH="$GOPATH/bin:$PATH"
+
+# turn on modules when not inside GOPATH/src
+export GO111MODULE=auto
