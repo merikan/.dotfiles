@@ -12,7 +12,6 @@
 tap "homebrew/boneyard"
 tap "homebrew/bundle"
 tap "homebrew/cask"
-tap "homebrew/completions"             # completions 
 tap "homebrew/cask-drivers"            # cask drivers
 tap "homebrew/cask-fonts"              # fonts  
 tap "homebrew/cask-versions"           # alternate versions of Casks       
