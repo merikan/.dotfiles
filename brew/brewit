@@ -26,14 +26,14 @@ install_homebrew() {
         if ! xcode-select --print-path &> /dev/null; then
             fail "command-line tools for Xcode must be installed before we can use Homebrew. \n"
         fi 
-        action "installing homebrew"
+        info "installing homebrew"
         ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
         if [[ $? != 0 ]]; then
             fail "unable to install homebrew, script $0"
         fi
         success "Homebrew is installed"
-        action "Installing homebrew bundle.. (brew bundle)"
-        brew bundle 
+        info "Installing homebrew bundle.. (brew bundle)"
+        brew bundle --global
         success
     fi
 }
