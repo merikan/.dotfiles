@@ -15,3 +15,5 @@ fi
 zstyle ':completion:*:*files' ignored-patterns '.DS_Store'
 # Typing EOF (CTRL+D) will not exit interactive sessions
 setopt ignoreeof
+
+export ZSH_FRAMEWORK=zim
