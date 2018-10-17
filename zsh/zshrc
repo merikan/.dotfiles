@@ -106,6 +106,8 @@ bindkey '\e[B' history-beginning-search-forward
 autoload -U promptinit && promptinit
 # use spaceship-prompt
 prompt spaceship
+# source config file, remove this when PR #508 is added
+[[ -s ${HOME}/.config/spaceship-prompt/config ]] && source ${HOME}/.config/spaceship-prompt/config
 
 # ---------------------------------------------------------------------------------------------
 # Liquid prompt -- A useful adaptive prompt for Bash & Zsh
