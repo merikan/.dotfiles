@@ -72,7 +72,8 @@
 
 - shell:
   -
-    description: Installing/Updating Homebrew formulea
+    description: Installing/Updating Homebrew and formulea
     command: $HOME/bin/brewit
+    stdin: true
     stdout: true
     stderr: true

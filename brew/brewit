@@ -18,7 +18,7 @@ done
 PRGDIR=`dirname "$PRG"`
 source "$PRGDIR"/../scripts/include.sh
 
-install_homebrew() {
+install() {
     if ! command -v brew >/dev/null 2>&1; then
 
         # XCode Command Line Tools is required for Homebrew
@@ -26,7 +26,7 @@ install_homebrew() {
         if ! xcode-select --print-path &> /dev/null; then
             fail "command-line tools for Xcode must be installed before we can use Homebrew. \n"
         fi 
-        info "installing homebrew"
+        info "Installing homebrew"
         ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
         if [[ $? != 0 ]]; then
             fail "unable to install homebrew, script $0"
@@ -56,7 +56,10 @@ cleanup() {
 
 main() {
     heading "Brewing with Homebrew"
-    install_homebrew
+    read -p "Do you want to install/update Homebrew and formulae ? (Y/n) " choice;
+    choice=${choice:-Y};
+    [[ "$choice" =~ ^([Yy])$ ]] || exit 0;
+    install
     update
     upgrade
     cleanup
