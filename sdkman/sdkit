@@ -1,0 +1,99 @@
+#!/usr/bin/env bash
+
+# -------------------------------------------------
+# Sdkman: Install, update, upgrade and cleanup 
+# -------------------------------------------------
+
+# resolve links - $0 may be a softlink
+PRG="$0"
+while [ -h "$PRG" ] ; do
+  ls=`ls -ld "$PRG"`
+  link=`expr "$ls" : '.*-> \(.*\)$'`
+  if expr "$link" : '/.*' > /dev/null; then
+    PRG="$link"
+  else
+    PRG=`dirname "$PRG"`/"$link"
+  fi
+done
+PRGDIR=`dirname "$PRG"`
+source "$PRGDIR"/../scripts/include.sh
+
+# candidates[name,version,default]
+declare -a CANDIDATES=(
+  "gradle,latest,true"
+  "groovy,latest,true"
+  "java,latest,false"
+  "java,8.0.181-zulu,true"
+  "kotlin,latest,true"
+  "kscript,latest,true"
+  "maven,latest,true"
+  "micronaut,latest,true"
+  "springboot,latest,true"
+)
+
+sdk_execute() {
+  println "$@"
+  (. $HOME/.sdkman/bin/sdkman-init.sh && "$@")
+}
+
+install() {
+    if [ -z ${SDKMAN_DIR+x} ] ; then
+        info "Installing Sdkman"
+        curl -s "https://get.sdkman.io" | bash
+        if [[ $? != 0 ]]; then
+            fail "Unable to install Sdkman, script $0"
+        fi
+        success "Sdkman is installed"
+    fi
+    
+    # source sdkman so functions are available
+    . $HOME/.sdkman/bin/sdkman-init.sh
+
+    info "Installing candidates"
+    for candidate in "${CANDIDATES[@]}"; do
+      IFS=',' read -ra array <<< "$candidate"
+      local name=${array[0]}; 
+      local version=${array[1]};
+      local default=${array[2]};
+      info "Installing candidate ${name} version ${version} (default=${default})"
+      if [ "$version" == "latest" ]; then version= ; fi
+      local answer='n' 
+      [ "${default}" == "true" ] && answer='Y'  
+      echo $answer | sdk install ${name} ${version}
+    done
+    success
+
+}
+
+update() {
+    info "Updating sdkman... (sdk selfupdate update)"
+    sdk selfupdate
+    success
+}
+upgrade() {
+    info "Upgrading candidates...(sdk upgrade)"
+    sdk upgrade
+    success
+}
+cleanup() {
+    info "Cleaning up sdkman... (sdk flush)"
+    for f in broadcast archives temp; do
+      info "flushing $f"
+      sdk flush $f
+    done 
+    success
+}
+
+main() {
+    heading "Managing sdkman"
+    read -p "Do you want to install/update Sdkman and candidates ? (Y/n) " choice;
+    choice=${choice:-Y};
+    [[ "$choice" =~ ^([Yy])$ ]] || exit 0;
+    install
+    update
+    upgrade
+    cleanup
+    success "Done Sdking"
+}
+
+main

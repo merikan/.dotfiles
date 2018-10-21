@@ -44,6 +44,8 @@
     # prezto
     ~/.zpreztorc: prezto/zpreztorc
     ~/.zprezto: submodules/prezto
+    # sdkman
+    ~/bin/sdkit: sdkman/sdkit
     # shell
     ~/.aliases: sh/aliases
     ~/.functions: sh/functions
@@ -70,6 +72,13 @@
     ~/.zshenv: zsh/zshenv
     ~/.zshrc: zsh/zshrc
 
+- shell:
+  -
+    description: Installing/Updating Sdkman and candidates
+    command: $HOME/bin/sdkit
+    stdin: true
+    stdout: true
+    stderr: true
 - shell:
   -
     description: Installing/Updating Homebrew and formulea
