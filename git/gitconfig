@@ -37,7 +37,7 @@
 
 [alias]
   # Update branch (with rebase)
-  up = git pull --rebase --prune $@
+  up = !git pull --rebase --prune $@
   # update submodules
   ups = !git submodule update --init --recursive
   # Update branch with rebase and update submodules
