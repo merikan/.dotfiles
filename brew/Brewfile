@@ -22,7 +22,6 @@ tap "johanhaleby/kubetail"             # tap for kubetail
 ### Formulae                                             ###
 ### ---------------------------------------------------- ###
 
-brew "apple-gcc42"                                  # gcc for osx 
 brew "aria2"                                        # multi-protocol & multi-source command-line download utility
 brew "asciinema"                                    # record and share terminal sessions
 brew "bash-completion" 
@@ -135,7 +134,6 @@ cask "google-chrome"                                # a browser
 cask "google-photos-backup-and-sync"                # Google Photos Backup And Sync
 cask "hammerspoon"                                  # powerful automation of MacOS, actions and wm
 cask "handbrake"                                    # open source video transcoder
-cask "hipchat"                                      # group chat, video chat, and screen sharing
 cask "horos"                                        # a free, open source medical image viewer
 cask "hyperswitch"                                  # awesome keyboard window switcher for Mac
 cask "icolors"                                      # a color picker and hex converter
