@@ -57,7 +57,7 @@ fi
 
 # Personal settings below  -------------------------------------------------------
 
-# aff to fpath
+# add to fpath
 fpath=( "$HOME/.zfunctions" $fpath )
 
 # turn on autocomplete
@@ -91,8 +91,8 @@ unsetopt nomatch
 autoload -U edit-command-line
 # Emacs and Bash style
 zle -N edit-command-line
-bindkey '^xe' edit-command-line
-bindkey '^x^e' edit-command-line
+bindkey '^xe' edit-command-line      # Ctrl+xe to open command line in editor
+bindkey '^x^e' edit-command-line     # Ctrl+x, Ctrl+e to open command line in editor
 
 #use emacs binding
 #bindkey -e
@@ -101,6 +101,19 @@ bindkey '^x^e' edit-command-line
 bindkey '\e[A' history-beginning-search-backward
 #Use down key to search forward in the history for a line beginning with the current line up to the cursor.
 bindkey '\e[B' history-beginning-search-forward
+
+# expand all aliases 
+# (https://blog.patshead.com/2012/11/automatically-expaning-zsh-global-aliases---simplified.html)
+allalias() {
+  zle _expand_alias
+  zle expand-word
+  zle self-insert
+}
+zle -N allalias
+bindkey " " allalias               # space expands all aliases, including global
+bindkey "^ " magic-space           # control-space to bypass expansion
+bindkey -M isearch " " magic-space # normal space during searches
+
 
 # initialize prompt system
 autoload -U promptinit && promptinit
@@ -180,7 +193,8 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 # Aliases            -------------------------------------------------------
 [ -f ~/.aliases ] && source ~/.aliases
-[ -f ~/zsh_aliases ] && source ~/.zsh_aliases
+[ -f ~/.zsh_aliases ] && source ~/.zsh_aliases
+
 
 
 ##############################################################################
