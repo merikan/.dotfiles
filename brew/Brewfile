@@ -120,6 +120,7 @@ cask "docker"                                       # docker for mac
 brew "docker-completion"                            # docker completion
 brew "docker-compose-completion"                    # docker compose completion
 brew "docker-machine-completion"                    # docker machine completion
+cask "dropbox"                                      # personal cloud storage service 
 cask "eclipse-java"                                 # eclipse ide for java developers
 cask "etcher"                                       # Burn images to SD cards & USB drives, safely and easily.
 cask "evernote"                                     # taking notes
