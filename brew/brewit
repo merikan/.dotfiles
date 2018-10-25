@@ -47,6 +47,9 @@ upgrade() {
     info "Upgrading formulae...(brew upgrade)"
     brew upgrade
     success
+    info "Upgrading casks...(brew cask upgrade)"
+    brew cask upgrade
+    success
 }
 cleanup() {
     info "Cleaning up Homebrew... (brew cleanup)"
@@ -56,7 +59,7 @@ cleanup() {
 
 main() {
     heading "Brewing with Homebrew"
-    read -p "Do you want to install/update Homebrew and formulae ? (Y/n) " choice;
+    read -p "Do you want to install/update Homebrew, Formulae and Casks ? (Y/n) " choice;
     choice=${choice:-Y};
     [[ "$choice" =~ ^([Yy])$ ]] || exit 0;
     install
