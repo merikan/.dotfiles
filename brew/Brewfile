@@ -109,7 +109,7 @@ cask "atom"                                         # yet another editor
 cask "backuploupe"                                  # browse your timemachine backups
 cask "bartender"                                    # organize your menu bar icons
 cask "bitbar"                                       # put the output from any script or program in your Mac OS X Menu Bar
-cask "brave"                                        # privacy focused, performance oriented browser
+cask "brave-browser"                                # privacy focused, performance oriented browser
 cask "calibre"                                      # e-book reader and library management application
 cask "clementine"                                   # music player and radio streamer
 cask "chromium"                                     # open-source browser
