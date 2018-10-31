@@ -26,6 +26,11 @@ function mvnwhy() {
 
 }
 
+function mvn_print_version() {
+  printf 'VERSION=${project.version}\n0\n' | mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate | grep '^VERSION' | sed 's/^.*=//'
+}
+
+
 # run maven wrapper in git toplevel directory or current/parent directories if found, else run native mvn. 
 function mvn {
     local dir=`pwd`

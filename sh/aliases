@@ -115,12 +115,17 @@ alias v='vagrant' # really short key for vagrant
 alias j=z         # fasd z with better key location
 alias jj=zz       # fasd zz with better key location
 #maven aliases
-alias mvncp='mvn clean package'
+alias MT!=' -DskipTests'
+alias mvnpv='mvn_print_version'
+alias mvnct='mvn clean test'
+alias mvnctv='mvn clean test verify'
 alias mvncv='mvn clean verify'
+alias mvncp='mvn clean package'
 alias mvnci='mvn clean install'
-alias mvncist='mvn clean install -DskipTests'
+alias mvncit!='mvn clean install -DskipTests'
 alias mvnsbr='mvn spring-boot:run'
 alias mvnsbrd='mvn spring-boot:run -Drun.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"'
+alias mvntc7='mvn tomcat7:run' 
 
 #docker aliases and functions
 alias d='docker'
