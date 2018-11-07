@@ -15,8 +15,6 @@ tap "homebrew/cask"
 tap "homebrew/cask-drivers"            # cask drivers
 tap "homebrew/cask-fonts"              # fonts  
 tap "homebrew/cask-versions"           # alternate versions of Casks       
-tap "jesseduffield/lazygit"            # tap for lazygit
-tap "johanhaleby/kubetail"             # tap for kubetail 
 
 ### ---------------------------------------------------- ###
 ### Formulae                                             ###
@@ -58,7 +56,9 @@ brew "jo"                                           # small utility to create JS
 brew "joplin"                                       # note taking and to-do application 
 brew "kompose"                                      # A conversion tool to go from Docker Compose to Kubernetes
 brew "kubectl"                                      # kubernetes controller
+tap "johanhaleby/kubetail"
 brew "kubetail"                                     # tail Kubernetes logs from multiple pods
+tap "jesseduffield/lazygit"
 brew "lazygit"                                      # simple terminal UI for git commands 
 brew "lnav"                                         # watch and analyze your log files from a terminal. 
 brew "mackup"                                       # keep application settings in sync 

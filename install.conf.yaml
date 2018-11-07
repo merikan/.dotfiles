@@ -11,7 +11,7 @@
   - ["mkdir -p $HOME/{.config,src,go,Projects}", Creating default directories]
 
 - link:
-    # fix dollar sign 
+    # add bins
     ~/bin/$: bin/$
     # atom
     ~/.atomrc: atom/atomrc
