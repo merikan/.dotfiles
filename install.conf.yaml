@@ -38,6 +38,8 @@
     ~/.liquidpromptrc: liquidprompt/liquidpromptrc
     # mackup
     ~/.mackup.cfg: mackup/mackup.cfg
+    # macos
+    ~/bin/macos-settings: macos/macos-settings
     # oh-my-zsh
     ~/.oh-my-zshrc: oh-my-zsh/oh-my-zshrc
     ~/.oh-my-zsh: submodules/oh-my-zsh
