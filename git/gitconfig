@@ -41,17 +41,17 @@
   # update submodules
   ups = !git submodule update --init --recursive
   # Update branch with rebase and update submodules
-  upa = !git up && !git ups
+  upa = !git up && git ups
   # Update recursively (deep)
   upd = "!f() { \
-                if [ -d .git ]; then\
-                  git up;\
+                if [ git rev-parse --git-dir > /dev/null 2>&1 ]; then\
+                  git upa;\
                 else\
                    echo "$(pwd) is not a git repository";\
                    read -p \"Do you want to do a deep update? (Y/n) \" choice;\
                    choice=${choice:-Y};\
                    if [[ \"$choice\" =~ ^([Yy])$ ]]; then \
-                     find . -name '.git' -exec sh -c '(echo \"== Updating `dirname '{}'`\" && cd `dirname '{}'`  && git up)' ';';\
+                     find . -name '.git' -exec sh -c '([ -e \"$(git rev-parse --show-superproject-working-tree 2>/dev/null)\" ] || echo \">>> Updating `dirname '{}'`\" && cd `dirname '{}'` && git upa)' ';';\
                    fi;\
                 fi;\
               }; f"
