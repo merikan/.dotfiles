@@ -8,7 +8,7 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing/Updating submodules]
-  - ["mkdir -p $HOME/{.config,src,go,Projects}", Creating default directories]
+  - ["mkdir -p $HOME/{.config,src,go,tmp,Projects}", Creating default directories]
 
 - link:
     # add bins
