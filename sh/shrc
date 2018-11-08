@@ -15,3 +15,10 @@ case "$(uname)" in
   Darwin*) export OSX=1;;
 esac
 
+# locale, set swedish but with english text, see https://wiki.archlinux.org/index.php/locale
+[ $OSX ] && { 
+  # a fix to make all LC_* swedish except LC_MESSAGES 
+  unset LC_ALL
+  export LANG=sv_SE.UTF-8
+  export LC_MESSAGES=en_US.UTF-8
+}
