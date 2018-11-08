@@ -187,12 +187,13 @@ alias matrix='LC_ALL=C tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS co
 alias play-youtube='__play-youtube_() { youtube-dl -q -o- "${1}" | mplayer -cache 8192 -; }; __play-youtube_'
 
 # shortcuts to be expanded
-alias -g L='| less'
-alias -g M='| most'
-alias -g C='| wc -l'
-alias -g H='| head'
-alias -g T='| tail'
-alias -g G='| grep'
-alias -g LL="2>&1 | less"
-alias -g NE="2> /dev/null"
-alias -g NUL="> /dev/null 2>&1"
+[ -n "$ZSH_VERSION" ] && {global='-g' }
+alias ${global} L='| less '
+alias ${global} M='| most '
+alias ${global} C='| wc -l '
+alias ${global} H='| head '
+alias ${global} T='| tail '
+alias ${global} G='| grep '
+alias ${global} LL='2>&1 | less '
+alias ${global} NE='2> /dev/null'
+alias ${global} NUL='> /dev/null 2>&1'

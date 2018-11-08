@@ -110,18 +110,14 @@ bindkey '\e[A' history-beginning-search-backward
 #Use down key to search forward in the history for a line beginning with the current line up to the cursor.
 bindkey '\e[B' history-beginning-search-forward
 
-# expand all aliases 
-# (https://blog.patshead.com/2012/11/automatically-expaning-zsh-global-aliases---simplified.html)
-allalias() {
-  zle _expand_alias
-  zle expand-word
-  zle self-insert
+# expand aliases with control+space
+# idea from https://blog.patshead.com/2012/11/automatically-expaning-zsh-global-aliases---simplified.html
+expandalias() {
+     zle _expand_alias
+     zle expand-word
 }
-zle -N allalias
-bindkey " " allalias               # space expands all aliases, including global
-bindkey "^ " magic-space           # control-space to bypass expansion
-bindkey -M isearch " " magic-space # normal space during searches
-
+zle -N expandalias
+bindkey "^ " expandalias              # control+space to expand alias
 
 # initialize prompt system
 autoload -U promptinit && promptinit
