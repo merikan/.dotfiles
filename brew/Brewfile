@@ -39,6 +39,7 @@ brew "ffmpeg"                                       # record, convert and stream
 brew "fzf"                                          # a command-line fuzzy finder
 brew "ffmpeg"                                       # to record, convert and stream audio and video 
 brew "go"                                           # golang sdk
+brew "goreleaser/tap/goreleaser"                    # release automation tool for Go projects
 brew "ghq"                                          # git remote repository management made easy
 brew "gibo"                                         # easily accessing gitignore boilerplates
 brew "git"                                          # cli client for git
