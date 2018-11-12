@@ -14,7 +14,7 @@ echo "Running .zprofile"
 # Browser
 #
 
-if [[ "$OSTYPE" == darwin* ]]; then
+if [[ "$(uname)" == darwin* ]]; then
   export BROWSER='open'
 fi
 

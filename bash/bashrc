@@ -204,9 +204,9 @@ do
   #echo "sourcing completion file $file"
   source $file
 done
+unset file
 # source openshift tab completion
 command -v oc >/dev/null 2>&1  && source <(oc completion bash)
-unset file
 
 # ---------------------------------------------------------------------------------------------
 # Screen:
