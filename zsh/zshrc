@@ -148,8 +148,10 @@ command -v brew >/dev/null 2>&1  && {
   [ -d $(brew --prefix openssl)/bin ] && export PATH=$(brew --prefix openssl)/bin:$PATH
 }
 
+# source kubectl tab completion
+command -v kubectl >/dev/null 2>&1 && source <(kubectl completion zsh)
 # source openshift tab completion
-command -v oc >/dev/null 2>&1  && source <(oc completion zsh)
+command -v oc >/dev/null 2>&1 && source <(oc completion zsh)
 
 # fzf for fuzzy file mathing. (https://github.com/junegunn/fzf)
 [ -f ~/.fzf.zsh ] && {

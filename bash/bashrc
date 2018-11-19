@@ -205,8 +205,10 @@ do
   source $file
 done
 unset file
+# source kubectl tab completion
+command -v kubectl >/dev/null 2>&1 && source <(kubectl completion bash)
 # source openshift tab completion
-command -v oc >/dev/null 2>&1  && source <(oc completion bash)
+command -v oc >/dev/null 2>&1 && source <(oc completion bash)
 
 # ---------------------------------------------------------------------------------------------
 # Screen:
