@@ -188,6 +188,7 @@ cask "virtualbox-extension-pack"
 cask "visual-paradigm-ce"                           # software modelling tool
 cask "visual-studio-code"                           # a great editor
 cask "vlc"                                          # media player
+cask "wavebox"                                      # desktop app for web (gmail)
 cask "xquartz"                                      # X windows on Mac
 cask "yed"                                          # graph editor
 cask "zoomus"                                       # video communications
