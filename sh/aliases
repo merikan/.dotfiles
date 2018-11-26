@@ -64,8 +64,8 @@ alias fgrep='fgrep --color=auto' # Highlight matches
 alias bc='bc -l'
 alias wget='wget -c'
 alias ln='ln -i'
+alias ncdu='ncdu --color dark' # NCurses Disk Usage
 command -v ccat >/dev/null 2>&1 && alias cat='ccat' # colorizing cat
-command -v ncdu >/dev/null 2>&1 && alias du='ncdu --color dark' # NCurses Disk Usage
 command -v dfc >/dev/null 2>&1 && alias df='dfc' # colorized df
 
 #tmux
