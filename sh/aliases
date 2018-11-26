@@ -68,6 +68,11 @@ command -v ccat >/dev/null 2>&1 && alias cat='ccat' # colorizing cat
 command -v ncdu >/dev/null 2>&1 && alias du='ncdu --color dark' # NCurses Disk Usage
 command -v dfc >/dev/null 2>&1 && alias df='dfc' # colorized df
 
+#tmux
+alias tm='tmux'
+#tmux; attach to an existing session or restore resurrect https://github.com/tmux-plugins/tmux-resurrect/issues/139#issuecomment-241715139
+alias tma='tmux attach || { (while ! tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/restore.sh; do sleep 0.2; done)& tmux ; }'
+
 # Some convenient commands
 
 # copy/paste command with prompt string into the shell
