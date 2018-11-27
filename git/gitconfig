@@ -4,6 +4,14 @@
   # Load private config, not to be pushed to repo
   path = ~/.gitconfig.local
 
+[user]
+	name = Peter Merikan
+	email = peter@merikan.com
+
+[core]
+	excludesfile = ~/.gitignore_global
+	#precomposeunicode = true
+
 [color]
   diff = auto
   status = auto
@@ -24,9 +32,18 @@
   changed = yellow
   untracked = red
 
-[core]
-	excludesfile = ~/.gitignore_global
-	#precomposeunicode = true
+[push]
+	default = simple
+
+[commit]
+  template = ~/.git_commit_msg
+
+[status]
+  # make sure status is submodule aware
+	submoduleSummary = true
+[diff]
+  # include submodules when diff
+	submodule = log
 
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
@@ -150,20 +167,6 @@
   # open repo in browser, usage: git open [upstream] 
   open  = "!f() { URL=$(git config remote.${1-origin}.url | sed -e 's#^.*@#https://#' -e 's#.git$##' -e 's#:#/#2'); git web--browse $URL; }; f"
   
-[push]
-	default = simple
-
-[commit]
-  template = ~/.git_commit_msg
-
-[status]
-  # make sure status is submodule aware
-	submoduleSummary = true
-[diff]
-  # include submodules when diff
-	submodule = log
-
 # credits:
 # http://haacked.com/archive/2014/07/28/github-flow-aliases/
 # http://nuclearsquid.com/writings/git-tricks-tips-workflows/ 
-
