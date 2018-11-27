@@ -56,7 +56,7 @@
   # Update branch (with rebase)
   up = !git pull --rebase --prune $@
   # update submodules
-  ups = !git submodule update --init --recursive
+  ups = !git submodule update --init --recursive --remote
   # Update branch with rebase and update submodules
   upa = !git up && git ups
   # Update recursively (deep)
