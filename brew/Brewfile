@@ -132,7 +132,6 @@ cask "eclipse-java"                                 # eclipse ide for java devel
 cask "balenaetcher"                                 # Burn images to SD cards & USB drives, safely and easily.
 cask "evernote"                                     # taking notes
 cask "expandrive"                                   # map a drive to any cloud
-cask "filezilla"                                    # client for FTP and SFTP
 cask "flux"                                         # get rid of the blue light
 cask "firefox-developer-edition"                    # a browser
 cask "gimp"                                         # an Image Editor (I probably never be able to learn)
