@@ -16,3 +16,6 @@
 [submodule "submodules/oh-my-zsh"]
 	path = submodules/oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
+[submodule "submodules/base16-shell"]
+	path = submodules/base16-shell
+	url = https://github.com/chriskempson/base16-shell.git

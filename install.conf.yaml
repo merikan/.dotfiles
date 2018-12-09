@@ -15,6 +15,8 @@
     ~/bin/$: bin/$
     # atom
     ~/.atomrc: atom/atomrc
+    # base16-shell
+    ~/.config/base16-shell: submodules/base16-shell
     # bash
     ~/.bash_aliases: bash/bash_aliases
     ~/.bash_functions: bash/bash_functions
