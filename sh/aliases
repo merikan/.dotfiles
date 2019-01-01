@@ -129,6 +129,8 @@ alias mvncp='mvn clean package'
 alias mvnci='mvn clean install'
 alias mvncit!='mvn clean install -DskipTests'
 alias mvnsbr='mvn spring-boot:run'
+alias mvncsbr='mvn clean spring-boot:run'
+alias mvnsbrd1='mvn spring-boot:run -Drun.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"'  # spring-boot v1.x
 alias mvnsbrd='mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"'
 alias mvntc7='mvn tomcat7:run' 
 
