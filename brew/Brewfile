@@ -48,6 +48,7 @@ brew "git-flow-avh"                                 # git-flow addon for git cli
 brew "gitleaks"                                     # audit git repos for secrets
 brew "git-secret"                                   # scan git commits for secrets and credentials
 brew "gnupg"                                        # gpg
+brew "gron"                                         # make JSON greppable!
 brew "htop"                                         # an interactive process viewer for Unix
 brew "httpie"                                       # HTTP command-line client
 brew "hugo"                                         # open-source static site generator
