@@ -20,5 +20,6 @@ esac
   # a fix to make all LC_* swedish except LC_MESSAGES 
   unset LC_ALL
   export LANG=sv_SE.UTF-8
+  export LC_CTYPE=sv_SE.UTF-8
   export LC_MESSAGES=en_US.UTF-8
 }
