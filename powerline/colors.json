@@ -1,0 +1,20 @@
+{
+	"colors": {
+		"base16:base00": [0, "002b36"],
+		"base16:base01": [18, "073642"],
+		"base16:base02": [19, "586e75"],
+		"base16:base03": [8, "657b83"],
+		"base16:base04": [20, "839496"],
+		"base16:base05": [7, "93a1a1"],
+		"base16:base06": [21, "eee8d5"],
+		"base16:base07": [15, "fdf6e3"],
+		"base16:base08": [1, "dc322f"],
+		"base16:base09": [16, "cb4b16"],
+		"base16:base0A": [3, "b58900"],
+		"base16:base0B": [2, "859900"],
+		"base16:base0C": [6, "2aa198"],
+		"base16:base0D": [4, "268bd2"],
+		"base16:base0E": [5, "6c71c4"],
+		"base16:base0F": [17, "d33682"]
+	}
+}

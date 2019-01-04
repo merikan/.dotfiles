@@ -45,6 +45,8 @@
     # oh-my-zsh
     ~/.oh-my-zshrc: oh-my-zsh/oh-my-zshrc
     ~/.oh-my-zsh: submodules/oh-my-zsh
+    # powerline
+    ~/.config/powerline: powerline
     # prezto
     ~/.zpreztorc: prezto/zpreztorc
     ~/.zprezto: submodules/prezto

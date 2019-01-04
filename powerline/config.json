@@ -1,0 +1,8 @@
+{
+	"ext": {
+		"tmux": {
+			"colorscheme": "base16",
+			"theme": "default"
+		}
+	}
+}

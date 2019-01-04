@@ -1,0 +1,14 @@
+{
+	"groups": {
+		"active_window_status": { "fg": "base16:base0D",   "bg": "base16:base01", "attrs": [] },
+		"window_status":        { "fg": "base16:base04",  "bg": "base16:base01", "attrs": [] },
+		"activity_status":      { "fg": "base16:base0A", "bg": "base16:base01", "attrs": [] },
+		"bell_status":          { "fg": "base16:base08",    "bg": "base16:base01", "attrs": [] },
+		"window":               { "fg": "base16:base04",  "bg": "base16:base01", "attrs": [] },
+		"window:divider":       { "fg": "base16:base02", "bg": "base16:base01", "attrs": [] },
+		"window:current":       { "fg": "base16:base07",  "bg": "base16:base02", "attrs": [] },
+		"window_name":          { "fg": "base16:base07",  "bg": "base16:base02", "attrs": ["bold"] },
+		"session":              { "fg": "base16:base07",  "bg": "base16:base02", "attrs": [] },
+		"session:prefix":       { "fg": "base16:base02", "bg": "base16:base07",  "attrs": [] }
+	}
+}
