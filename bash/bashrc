@@ -267,8 +267,10 @@ command -v brew >/dev/null 2>&1 && [ -d $(brew --prefix openssl)/bin ] && export
 #export MAVEN_OPTS="$MAVEN_OPTS -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000"
 
 # Android
-[ -d "/usr/local/opt/android-sdk" ] && export ANDROID_HOME="/usr/local/opt/android-sdk"  #OSX
-export PATH="${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
+[ -d "/usr/local/opt/android-sdk" ] && {
+  export ANDROID_HOME="/usr/local/opt/android-sdk" 
+  export PATH="${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
+}
 
 # Golang
 [ -f ~/.golangrc ] && source ~/.golangrc
@@ -291,6 +293,8 @@ export SDKMAN_DIR="$HOME/.sdkman"
   source "$SDKMAN_DIR/bin/sdkman-init.sh" 
 }
 
+# Add personal bin directory to the path
+export PATH=$HOME/bin:$HOME/.local/bin:$PATH
 
 # Aliases 
 [ -f ~/.aliases ] && source ~/.aliases
