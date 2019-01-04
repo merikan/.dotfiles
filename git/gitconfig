@@ -168,7 +168,22 @@
   
   # open repo in browser, usage: git open [upstream] 
   open  = "!f() { URL=$(git config remote.${1-origin}.url | sed -e 's#^.*@#https://#' -e 's#.git$##' -e 's#:#/#2'); git web--browse $URL; }; f"
-  
+  # reset permission https://stackoverflow.com/a/4408378/2380457
+	reset-permission = "!git diff -p -R --no-color | grep -E \"^(diff|(old|new) mode)\" --color=never | git apply"
+  # create and checkout a new branch and keep all your changes.
+  reset-permission-deep = "!f() { \
+                if [ git rev-parse --git-dir > /dev/null 2>&1 ]; then\
+                  git reset-permission;\
+                else\
+                   echo "$(pwd) is not a git repository";\
+                   read -p \"Do you want to do a deep reset? (Y/n) \" choice;\
+                   choice=${choice:-Y};\
+                   if [[ \"$choice\" =~ ^([Yy])$ ]]; then \
+                     find . -name '.git' -exec sh -c '([ -e \"$(git rev-parse --show-superproject-working-tree 2>/dev/null)\" ] || echo \">>> Updating `dirname '{}'`\" && cd `dirname '{}'` && git reset-permission)' ';';\
+                   fi;\
+                fi;\
+              }; f"
+
 # credits:
 # http://haacked.com/archive/2014/07/28/github-flow-aliases/
 # http://nuclearsquid.com/writings/git-tricks-tips-workflows/ 
