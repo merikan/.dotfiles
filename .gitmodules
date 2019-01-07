@@ -19,6 +19,3 @@
 [submodule "submodules/base16-shell"]
 	path = submodules/base16-shell
 	url = https://github.com/chriskempson/base16-shell.git
-[submodule "submodules/powerline"]
-	path = submodules/powerline
-	url = https://github.com/powerline/powerline.git
