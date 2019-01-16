@@ -105,6 +105,7 @@ brew "zsh"                                          # shell
 ### Casks (http://caskroom.io/)                          ###
 ### ---------------------------------------------------- ###
 # Note: Casks with version 'latest' will not be updated due to no checksum change
+cask "java"                                         # java 
 cask "adium"                                        # instant messaging
 cask "alfred"                                       # a must have for boost productivity 
 cask "amazon-drive"                                 # amazon cloud drive
