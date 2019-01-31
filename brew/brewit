@@ -53,7 +53,14 @@ upgrade() {
 }
 cleanup() {
     info "Cleaning up Homebrew... (brew cleanup)"
-    brew cleanup
+    warn "skipping cleanup since we want to keep old versions for some formulae"
+    #brew cleanup
+    success
+}
+healthCheck() {
+    info "Doing some health check... (brew deoctor && brew missing)"
+    brew doctor
+    brew missing
     success
 }
 
@@ -66,6 +73,7 @@ main() {
     update
     upgrade
     cleanup
+    healthCheck
     success "Done brewing"
 }
 
