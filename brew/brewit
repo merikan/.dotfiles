@@ -53,12 +53,23 @@ upgrade() {
 }
 cleanup() {
     info "Cleaning up Homebrew... (brew cleanup)"
-    warn "skipping cleanup since we want to keep old versions for some formulae"
-    #brew cleanup
-    success
+    source ~/.config/homebrew/config
+
+    items=( $(brew list) $(brew cask list))
+    for ignore in ${cleanup_ignore[@]}
+    do
+    if [[ " ${items[@]} " =~ " ${ignore} " ]]; then
+        items=("${items[@]/$ignore}")
+        #info "Ignoring cleanup for ${ignore}."
+        ignored[${#ignored[@]}]="${ignore}"
+    fi
+    done
+    brew cleanup --prune ${cleanup_prune:-30} ${items[*]}
+    success "Cleaned up ${#items[*]} formulae/casks, ${#ignored[*]} was ignored (${ignored[*]})"
 }
+
 healthCheck() {
-    info "Doing some health check... (brew deoctor && brew missing)"
+    info "Doing some health check... (brew doctor && brew missing)"
     brew doctor
     brew missing
     success

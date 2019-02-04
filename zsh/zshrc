@@ -143,8 +143,8 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 command -v fasd >/dev/null 2>&1  && eval "$(fasd --init auto)"
 
 command -v brew >/dev/null 2>&1  && {
-  # Homebrew Cask
-  export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+  # Turn off automatic cleanup 
+  export HOMEBREW_NO_INSTALL_CLEANUP=1
   # Use openssl from homebrew instead
   [ -d $(brew --prefix openssl)/bin ] && export PATH=$(brew --prefix openssl)/bin:$PATH
 }

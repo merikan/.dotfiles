@@ -1,0 +1,4 @@
+# Ignore the following formulae and casks when cleaning upp
+cleanup_ignore=(kubernetes-cli kubernetes-helm)
+#  Remove all cache files older than specified days, default 30
+cleanup_prune=30
