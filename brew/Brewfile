@@ -26,6 +26,7 @@ brew "asciinema"                                    # record and share terminal 
 brew "bash-completion" 
 brew "brew-cask-completion" 
 brew "ccat"                                         # colorizing cat  
+brew "clair-scanner"                                # scan local docker images
 brew "cloc"                                         # count lines of code  
 brew "cowsay"                                       # the cow says  
 brew "ctop"                                         # top-like interface for container metrics  
