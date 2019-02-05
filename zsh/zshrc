@@ -67,7 +67,6 @@ esac
 
 # add to fpath
 fpath=( "$HOME/.zfunctions" $fpath )
-
 # turn on autocomplete
 autoload -Uz compinit
 compinit
@@ -75,22 +74,24 @@ compinit
 zstyle ':completion:*' menu select
 #Change directories with variable names
 setopt cdablevars
-
 #globdots lets files beginning with a . be matched without explicitly specifying the dot.
 setopt globdots
-
 # extendedglob gives ability to do l -l **/*(^U)
 setopt extendedglob
-
 #correct turns on spelling correction for commands
 setopt correct
-
 #Report the status of background jobs immediately, rather than waiting until just before printing a prompt
 setopt notify
-
 #no beep, 
 unsetopt beep 
-
+# History command configuration
+setopt extended_history       # record timestamp of command in HISTFILE
+setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
+setopt hist_ignore_dups       # ignore duplicated commands history list
+setopt hist_ignore_space      # ignore commands that start with space
+setopt hist_verify            # show command with history expansion to user before running it
+setopt inc_append_history     # add commands to HISTFILE in order of execution
+setopt share_history          # share command history data
 #If a pattern for filename generation has no matches, print an error,
 #instead of leaving it unchanged in the argument list. This also 
 #applies to file expansion of an initial ~ or =.

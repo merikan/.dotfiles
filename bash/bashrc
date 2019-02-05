@@ -162,30 +162,32 @@ function xtitle {  # change the title of your xterm* window
   unset PROMPT_COMMAND
   echo -ne "\033]0;$1\007" 
 }
+# ---------------------------------------------------------------------------------------------
+# Liquid prompt -- A useful adaptive prompt for Bash & Zsh
+# Only load Liquid Prompt in interactive shells, not from a script or from scp
+if [[ $- = *i* ]] && [[ -s "${HOME}/.liquidprompt/liquidprompt" ]]; then
+  source "${HOME}/.liquidprompt/liquidprompt"
+fi
+
+
+#Fasd for quick access to files and directories for POSIX shells. https://github.com/clvv/fasd
+command -v fasd >/dev/null 2>&1  && eval "$(fasd --init auto)"
 
 # ---------------------------------------------------------------------------------------------
 # History: 
-
 # append to the history file when you exit a shell, don't overwrite it
 shopt -s histappend
 # keep the history between multiple bash sessions synced
-#PROMPT_COMMAND="history -n; history -a; $PROMPT_COMMAND"  # execute command just before Bash displays a prompt.
+PROMPT_COMMAND="history -a;history -n;$PROMPT_COMMAND"
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-#export HISTSIZE=9999
-#export HISTFILESIZE=999999
-# Avoid succesive duplicates in the bash command history.
-HISTCONTROL=ignoredups:ignorespace
-# Add date and time to bash history
-#export HISTTIMEFORMAT="%h/%d - %H:%M:%S "
-
 # Undocumented feature which sets the size to "unlimited".
 # http://stackoverflow.com/questions/9457233/unlimited-bash-history
 export HISTFILESIZE=
 export HISTSIZE=
+# Add date and time to bash history
 export HISTTIMEFORMAT="[%F %T] "
-# Force prompt to write history after every command.
-# http://superuser.com/questions/20900/bash-history-loss
-PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+# Avoid succesive duplicates in the bash command history.
+HISTCONTROL=ignoredups:ignorespace
 
 # ---------------------------------------------------------------------------------------------
 # Bash command completion:
@@ -227,12 +229,6 @@ if [ $TERM = "screen" ]; then
   PS1='window ${WINDOW} '$PS1
 fi
 
-# ---------------------------------------------------------------------------------------------
-# Liquid prompt -- A useful adaptive prompt for Bash & Zsh
-# Only load Liquid Prompt in interactive shells, not from a script or from scp
-if [[ $- = *i* ]] && [[ -s "${HOME}/.liquidprompt/liquidprompt" ]]; then
-  source "${HOME}/.liquidprompt/liquidprompt"
-fi
 
 # ---------------------------------------------------------------------------------------------
 # fzf for fuzzy file mathing
@@ -241,12 +237,6 @@ fi
   # Set ag as the default source for fzf
   command -v ag >/dev/null 2>&1 && export FZF_DEFAULT_COMMAND='ag -g ""'
 }
-
-#Fasd for quick access to files and directories for POSIX shells. https://github.com/clvv/fasd
-command -v fasd >/dev/null 2>&1  && eval "$(fasd --init auto)"
-
-# Homebrew Cask
-command -v brew >/dev/null 2>&1  && export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # Use openssl from homebrew instead
 command -v brew >/dev/null 2>&1 && [ -d $(brew --prefix openssl)/bin ] && export PATH=$(brew --prefix openssl)/bin:$PATH
