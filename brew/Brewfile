@@ -61,6 +61,7 @@ brew "jo"                                           # small utility to create JS
 brew "joplin"                                       # note taking and to-do application 
 brew "kompose"                                      # A conversion tool to go from Docker Compose to Kubernetes
 brew "kubectl"                                      # kubernetes controller
+brew "kubectx"                                      # kubectx: manage and switch between kubectl contexts, kubens: switch between Kubernetes namespaces.
 brew "kubernetes-helm"                              # helm packagemanager for kubernetes
 tap "johanhaleby/kubetail"
 brew "kubetail"                                     # tail Kubernetes logs from multiple pods
