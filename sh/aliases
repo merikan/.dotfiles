@@ -119,6 +119,7 @@ alias g='git'     # really short key for git
 alias v='vagrant' # really short key for vagrant
 alias j=z         # fasd z with better key location
 alias jj=zz       # fasd zz with better key location
+alias rtfm='tldr'
 #maven aliases
 alias MT!=' -DskipTests'
 alias mvnpv='mvn_print_version'
