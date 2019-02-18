@@ -158,6 +158,7 @@ cask "karabiner"                                    # keyboard customizer for ma
 cask "keepassxc"                                    # a great FOSS Password Manager
 cask "keystore-explorer"                            # open source GUI replacement for the keytool and jarsigner
 cask "keybase"                                      # crypto for everyone!
+cask "keycastr"                                     # keystroke visualizer
 cask "markright"                                    # a markdown editor
 cask "meld"                                         # visual diff and merge tool
 cask "minikube"                                     # kubernetes mini
