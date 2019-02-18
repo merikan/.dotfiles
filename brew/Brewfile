@@ -9,7 +9,6 @@
 # well received by {noname}. Haven't found any changelog either but heck, it's open soutce ;-)
 #
 
-tap "homebrew/boneyard"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-drivers"            # cask drivers
