@@ -6,12 +6,15 @@ SPACESHIP_PACKAGE_SHOW=false
 SPACESHIP_KUBECONTEXT_SHOW=true
 SPACESHIP_KUBECONTEXT_COLOR_GROUPS=(
   # https://upload.wikimedia.org/wikipedia/commons/1/15/Xterm_256color_chart.svg
-  #008000  minikube
+  002  minikube
   # namespace: environment 
-  #008000  '\(.*-dev\)$'
-  #ffdf00  '\(.*-qa\)$'
-  #ff5f00  '\(.*-sit\)$'
-  #ff0000  '\(.*-prod\)$'
+  002  '\(.*-dev\)$'
+  002  '\(.*-utv\)$'
+  228  '\(.*-qa\)$'
+  228  '\(.*-acc\)$'
+  202  '\(.*-sit\)$'
+  196  '\(.*-prod\)$'
+  196  '^.*-prod-.*\(.*\)$'
 )
 
 SPACESHIP_GOLANG_COLOR=#00add8
