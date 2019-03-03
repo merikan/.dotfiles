@@ -23,7 +23,7 @@ declare -a CANDIDATES=(
   "gradle,latest,true"
   "groovy,latest,true"
   "java,latest,false"
-  "java,8.0.181-zulu,true"
+  "java,8.0.202-zulufx,true"
   "kotlin,latest,true"
   "kscript,latest,true"
   "maven,latest,true"
@@ -44,6 +44,8 @@ install() {
             fail "Unable to install Sdkman, script $0"
         fi
         success "Sdkman is installed"
+    else
+      update
     fi
     
     # source sdkman so functions are available
@@ -67,7 +69,9 @@ install() {
 
 update() {
     info "Updating sdkman... (sdk selfupdate update)"
-    sdk selfupdate
+    echo "Y" | sdk selfupdate
+    # source sdkman so functions are available
+    . $HOME/.sdkman/bin/sdkman-init.sh
     success
 }
 upgrade() {
