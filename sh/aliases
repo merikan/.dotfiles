@@ -87,8 +87,8 @@ else
 	colorflag="-G"      # OS X `ls`
 fi
 alias ls="ls -aF ${colorflag}"    # show hidden and type suffix
-alias ll='ls -ltra'               # show hidden and sort by modified
-alias l.="ls -dl .* ${colorflag}" # show only hidden files
+alias ll='ls -la'               # show hidden and sort by modified
+alias l.="ls -dl ${colorflag} .*" # show only hidden files
 alias lx='ls -lXB'                # sort by extension
 alias lk='ls -lSr'                # sort by size
 alias lc='ls -lcr'		            # sort by change time  
