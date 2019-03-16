@@ -21,3 +21,5 @@ tags
 [._]*.un~
 
 
+### Python (dotbot)
+__pycache__/
