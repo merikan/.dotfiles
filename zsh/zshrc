@@ -205,6 +205,11 @@ if [ -d "$HOME/Library/Python/2.7/bin" ]; then
     export PATH=$HOME/Library/Python/2.7/bin:$PATH
 fi
 
+# ruby on macos
+[[ -s "/usr/local/opt/ruby/bin" ]] && {
+  export PATH=/usr/local/opt/ruby/bin:$PATH
+}
+
 # Functions  -------------------------------------------------------
 [ -f ~/.functions ] && source ~/.functions
 [ -f ~/.zsh_functions ] && source ~/.zsh_functions
