@@ -184,6 +184,7 @@ cask "sourcetree"                                   # awesome git client
 cask "spectacle"                                    # move and resize windows
 cask "spotify"                                      # music for everyone
 cask "sublime-text2"                                # text editor
+cask "thunderbird"                                  # free email application from Mozilla
 cask "tunnelblick"                                  # free, open source graphic user interface for OpenVPN
 cask "vagrant"                                      # vm management
 brew "vagrant-completion"                      
