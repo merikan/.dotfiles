@@ -7,6 +7,7 @@
 [user]
 	name = Peter Merikan
 	email = peter@merikan.com
+	signingkey = A93D728B0D0028A71C47EB106F86D20024CE1D22
 
 [core]
 	excludesfile = ~/.gitignore_global
@@ -37,6 +38,10 @@
 
 [commit]
   template = ~/.git_commit_msg
+	gpgsign = true
+
+[tag]
+	forceSignAnnotated = true
 
 [status]
   # make sure status is submodule aware
@@ -119,7 +124,7 @@
   news = log -p HEAD@{1}..HEAD@{0}
   sl = shortlog
   # show commit log decorated (append -p to show diff)
-  l = log --pretty=format:'%C(yellow)%h%Creset %ai %C(green)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit 
+  l = log --pretty=format:'%C(yellow)%h%Creset %ai %G?%C(green)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit 
   ll = !git l
   lo = !git l
   # show detailed commit log 
