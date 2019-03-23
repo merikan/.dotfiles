@@ -110,7 +110,6 @@ brew "zsh"                                          # shell
 cask "java"                                         # java 
 cask "adium"                                        # instant messaging
 cask "alfred"                                       # a must have for boost productivity 
-cask "amazon-drive"                                 # amazon cloud drive
 cask "android-sdk"                                  # android sdk
 cask "android-studio"                               # android IDE 
 cask "android-file-transfer"                        # transfer files from Android device 
