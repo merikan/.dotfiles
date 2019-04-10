@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -eo pipefail
 
 # -------------------------------------------------
 # Sdkman: Install, update, upgrade and cleanup 
@@ -43,13 +44,13 @@ install() {
         if [[ $? != 0 ]]; then
             fail "Unable to install Sdkman, script $0"
         fi
+        # source sdkman so functions are available
+        source $HOME/.sdkman/bin/sdkman-init.sh
         success "Sdkman is installed"
     else
       update
     fi
     
-    # source sdkman so functions are available
-    . $HOME/.sdkman/bin/sdkman-init.sh
 
     info "Installing candidates"
     for candidate in "${CANDIDATES[@]}"; do
@@ -69,9 +70,13 @@ install() {
 
 update() {
     info "Updating sdkman... (sdk selfupdate update)"
-    echo "Y" | sdk selfupdate
     # source sdkman so functions are available
-    . $HOME/.sdkman/bin/sdkman-init.sh
+    source $HOME/.sdkman/bin/sdkman-init.sh
+
+    echo "Y" | sdk selfupdate
+    echo "Y" | sdk update
+    # source sdkman so new functions are available
+    source $HOME/.sdkman/bin/sdkman-init.sh
     success
 }
 upgrade() {
