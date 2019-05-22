@@ -157,7 +157,7 @@ alias dc='docker-compose'
 alias dm='docker-machine'
 ! [ -n "$ZSH_VERSION" ] && complete -F _docker_machine dm
 
-[ $OSX ] && { # OS X Aliases
+[ $OSX ] && { # OS X specific aliases
   # Java (using jenv instead)
   #alias setJdk6='export JAVA_HOME=$(/usr/libexec/java_home -v 1.6)'
   #alias setJdk7='export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)'
@@ -183,6 +183,7 @@ alias dm='docker-machine'
   alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
   alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
   alias intellij='open -a "`ls -dt /Applications/IntelliJ\ IDEA*|head -1`"'
+  alias openports='sudo lsof -PiTCP -sTCP:LISTEN'
 }
 
 
