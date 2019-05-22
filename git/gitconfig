@@ -157,6 +157,7 @@
   br = branch -v
   ci = commit
   co = checkout
+  cp = cherry-pick
   di = diff
   fi = flow init
   ff = flow feature
