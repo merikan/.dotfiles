@@ -121,8 +121,21 @@ alias j=z         # fasd z with better key location
 alias jj=zz       # fasd zz with better key location
 alias rtfm='tldr'
 #maven aliases
-alias MT!=' -DskipTests'
 alias mvnpv='mvn_print_version'
+# short
+alias mct='mvn clean test'
+alias mctv='mvn clean test verify'
+alias mvcv='mvn clean verify'
+alias mcp='mvn clean package'
+alias mci='mvn clean install'
+alias mcit!='mvn clean install -DskipTests'
+alias msbr='mvn spring-boot:run'
+alias mcsbr='mvn clean spring-boot:run'
+alias msbrd='mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"' # spring-boot 2
+alias msbrd1='mvn spring-boot:run -Drun.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"'  # spring-boot v1.x
+alias mdb='mvn docker:build'
+alias mtc7='mvn tomcat7:run' 
+# little longer
 alias mvnct='mvn clean test'
 alias mvnctv='mvn clean test verify'
 alias mvncv='mvn clean verify'
@@ -133,6 +146,7 @@ alias mvnsbr='mvn spring-boot:run'
 alias mvncsbr='mvn clean spring-boot:run'
 alias mvnsbrd1='mvn spring-boot:run -Drun.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"'  # spring-boot v1.x
 alias mvnsbrd='mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"'
+alias mvndb='mvn docker:build'
 alias mvntc7='mvn tomcat7:run' 
 
 #docker aliases and functions
@@ -205,3 +219,4 @@ alias ${global} G='| grep '
 alias ${global} LL='2>&1 | less '
 alias ${global} NE='2> /dev/null'
 alias ${global} NUL='> /dev/null 2>&1'
+alias ${global} MT!=' -DskipTests'
