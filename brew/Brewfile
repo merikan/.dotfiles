@@ -33,8 +33,7 @@ brew "ctop"                                         # top-like interface for con
 brew "curl"                                         # curl
 brew "dfc"                                          # displays file system space usage using graphs and colors
 brew "diff-pdf"                                     # visually compare two PDF files
-tap "wagoodman/dive"
-brew "dive"                                         # exploring a docker image, layer contents, and discovering ways to shrink your Docker image size.
+brew "wagoodman/dive/dive"                          # exploring a docker image, layer contents, and discovering ways to shrink your Docker image size.
 brew "doxygen"                                      # Generate documentation from source code 
 brew "fasd"                                         # quick access to files and directories
 brew "ffmpeg"                                       # record, convert and stream audio and video
@@ -64,10 +63,8 @@ brew "kompose"                                      # A conversion tool to go fr
 brew "kubectl"                                      # kubernetes controller
 brew "kubectx"                                      # kubectx: manage and switch between kubectl contexts, kubens: switch between Kubernetes namespaces.
 brew "kubernetes-helm"                              # helm packagemanager for kubernetes
-tap "johanhaleby/kubetail"
-brew "kubetail"                                     # tail Kubernetes logs from multiple pods
-tap "jesseduffield/lazygit"
-brew "lazygit"                                      # simple terminal UI for git commands 
+brew "johanhaleby/kubetail/kubetail"                 # tail Kubernetes logs from multiple pods
+brew "jesseduffield/lazygit/lazygit"                # simple terminal UI for git commands 
 brew "lnav"                                         # watch and analyze your log files from a terminal. 
 brew "mackup"                                       # keep application settings in sync 
 brew "maven-completion"                   
