@@ -63,7 +63,8 @@ brew "kompose"                                      # A conversion tool to go fr
 brew "kubectl"                                      # kubernetes controller
 brew "kubectx"                                      # kubectx: manage and switch between kubectl contexts, kubens: switch between Kubernetes namespaces.
 brew "kubernetes-helm"                              # helm packagemanager for kubernetes
-brew "johanhaleby/kubetail/kubetail"                 # tail Kubernetes logs from multiple pods
+brew "kubespy"                                      # observing Kubernetes resources in real time
+brew "johanhaleby/kubetail/kubetail"                # tail Kubernetes logs from multiple pods
 brew "jesseduffield/lazygit/lazygit"                # simple terminal UI for git commands 
 brew "lnav"                                         # watch and analyze your log files from a terminal. 
 brew "mackup"                                       # keep application settings in sync 
