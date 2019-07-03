@@ -3,6 +3,7 @@
 
 SPACESHIP_NODE_SHOW=false
 SPACESHIP_PACKAGE_SHOW=false
+SPACESHIP_VI_MODE_SHOW=false
 SPACESHIP_KUBECTL_SHOW=true
 SPACESHIP_KUBECTL_VERSION_SHOW=false # disable to speed up prompt when no remote server is available
 SPACESHIP_KUBECONTEXT_SHOW=true

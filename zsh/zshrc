@@ -72,10 +72,9 @@ fpath=( "$HOME/.zfunctions" $fpath )
 # turn on autocomplete
 autoload -Uz compinit
 compinit
-# include hidden files
-_comp_options+=(globdots)
-# autocompletion with an arrow-key driven interface
-zstyle ':completion:*' menu select
+_comp_options+=(globdots) # include hidden files
+zstyle ':completion:*' menu select # autocompletion with an arrow-key driven interface
+zmodload zsh/complist
 #Change directories with variable names
 setopt cdablevars
 #globdots lets files beginning with a . be matched without explicitly specifying the dot.
@@ -102,15 +101,63 @@ setopt share_history          # share command history data
 #instead of leaving it unchanged in the argument list. This also 
 #applies to file expansion of an initial ~ or =.
 unsetopt nomatch
-# Enable Ctrl-x-e to edit command line
-autoload -U edit-command-line
-# Emacs and Bash style
-zle -N edit-command-line
+# Enable edit command line
+autoload -U edit-command-line && zle -N edit-command-line
 bindkey '^xe' edit-command-line      # Ctrl+xe to open command line in editor
 bindkey '^x^e' edit-command-line     # Ctrl+x, Ctrl+e to open command line in editor
 
-#use emacs binding
-#bindkey -e
+# vi mode
+bindkey -v
+export KEYTIMEOUT=1
+# Use vim keys in tab complete menu:
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -M menuselect 'left' vi-backward-char
+bindkey -M menuselect 'down' vi-down-line-or-history
+bindkey -M menuselect 'up' vi-up-line-or-history
+bindkey -M menuselect 'right' vi-forward-char
+bindkey -v '^?' backward-delete-char # Fix backspace bug when switching modes
+bindkey -M vicmd "v" edit-command-line # v to open command line in editor
+# Change cursor shape for different vi modes.
+function zle-keymap-select {
+  if [[ ${KEYMAP} == vicmd ]] ||
+      [[ $1 = 'block' ]]; then
+    echo -ne '\e[1 q'
+  elif [[ ${KEYMAP} == main ]] ||
+        [[ ${KEYMAP} == viins ]] ||
+        [[ ${KEYMAP} = '' ]] ||
+        [[ $1 = 'beam' ]]; then
+    echo -ne '\e[5 q'
+  fi
+}
+# ci", ci', ci`, di", etc
+autoload -U select-quoted
+zle -N select-quoted
+for m in visual viopp; do
+  for c in {a,i}{\',\",\`}; do
+    bindkey -M $m $c select-quoted
+  done
+done
+# ci{, ci(, ci<, di{, etc
+autoload -U select-bracketed
+zle -N select-bracketed
+for m in visual viopp; do
+  for c in {a,i}${(s..)^:-'()[]{}<>bB'}; do
+    bindkey -M $m $c select-bracketed
+  done
+done
+
+zle -N zle-keymap-select
+zle-line-init() {
+    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
+    echo -ne "\e[5 q"
+}
+zle -N zle-line-init
+echo -ne '\e[5 q' # Use beam shape cursor on startup.
+precmd() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+
 
 #Use up key to search backward in the history for a line beginning with the current line up to the cursor.
 bindkey '\e[A' history-beginning-search-backward
@@ -119,7 +166,7 @@ bindkey '\e[B' history-beginning-search-forward
 
 # Load antibody plugin manager
 command -v antibody >/dev/null 2>&1  && {
-  echo "loading antibody"
+  # echo "loading antibody"
   source <(antibody init)
   # Load Plugins
   # antibody bundle zdharma/fast-syntax-highlighting
