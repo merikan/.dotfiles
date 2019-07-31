@@ -10,6 +10,7 @@ SPACESHIP_KUBECONTEXT_COLOR_GROUPS=(
   # namespace: environment 
   002  '\(.*-dev\)$'
   002  '\(.*-utv\)$'
+  228  '\(.*-sys\)$'
   228  '\(.*-qa\)$'
   228  '\(.*-acc\)$'
   202  '\(.*-sit\)$'
