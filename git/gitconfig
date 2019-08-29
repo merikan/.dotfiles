@@ -46,6 +46,15 @@
 [status]
   # make sure status is submodule aware
 	submoduleSummary = true
+
+[diff]
+    tool = kdiff3
+[difftool]
+    prompt = false
+[merge]
+    tool = kdiff3
+    conflictstyle = diff3
+
 [diff]
   # include submodules when diff
 	submodule = log
