@@ -75,6 +75,7 @@ brew "mitmproxy"                                    # a free and open source int
 brew "mplayer"                                      # UNIX movie player
 brew "ncdu"                                         # a disk usage analyzer with an ncurses interface
 brew "nmap"                                         # port scanning utility for large networks
+brew "nativefier"                                   # Make any web page a desktop application
 brew "node"                                         # node.js
 brew "openshift-cli"                                # openshift cli 
 brew "packer"                                       # package VMs 
