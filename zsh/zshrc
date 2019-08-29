@@ -229,3 +229,4 @@ export PATH=$HOME/bin:$HOME/.local/bin:$PATH
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+source ~/zsh-autoenv/autoenv.zsh
