@@ -1,14 +1,14 @@
 # install.conf.yaml
 - defaults:
     link:
-      relink: true
-      create: true
+        relink: true
+        create: true
 
 - clean: ['~']
 
 - shell:
-  - [git submodule update --init --recursive, Installing/Updating submodules]
-  - ["mkdir -p $HOME/{.config,src,go,tmp,Projects}", Creating default directories]
+    - [git submodule update --init --recursive, Installing/Updating submodules]
+    - ["mkdir -p $HOME/{.config,src,go,tmp,Projects}", Creating default directories]
 
 - link:
     # add bins
@@ -80,16 +80,16 @@
     ~/.zshrc: zsh/zshrc
 
 - shell:
-  -
-    description: Installing/Updating Sdkman and candidates
-    command: $HOME/bin/sdkit
-    stdin: true
-    stdout: true
-    stderr: true
+    -
+        description: Installing/Updating Sdkman and candidates
+        command: $HOME/bin/sdkit
+        stdin: true
+        stdout: true
+        stderr: true
 - shell:
-  -
-    description: Installing/Updating Homebrew and formulea
-    command: $HOME/bin/brewit
-    stdin: true
-    stdout: true
-    stderr: true
+    -
+        description: Installing/Updating Homebrew and formulea
+        command: $HOME/bin/brewit
+        stdin: true
+        stdout: true
+        stderr: true
