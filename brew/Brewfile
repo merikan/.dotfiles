@@ -67,6 +67,7 @@ brew "kubespy"                                      # observing Kubernetes resou
 brew "johanhaleby/kubetail/kubetail"                # tail Kubernetes logs from multiple pods
 brew "jesseduffield/lazygit/lazygit"                # simple terminal UI for git commands 
 brew "lnav"                                         # watch and analyze your log files from a terminal. 
+brew "lua"                                          # a powerful, efficient, lightweight, embeddable scripting language
 brew "mackup"                                       # keep application settings in sync 
 brew "maven-completion"                   
 brew "mas"                                          # Mac App Store command-line interface
