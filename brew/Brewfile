@@ -179,7 +179,6 @@ cask "sketch"                                       # sketchapp - design tool
 cask "sketch-toolbox"                               # some useful plugins for sketchapp
 cask "skitch"                                       # take screenshots of all or part of your screen
 cask "sonos"                                        # Sonos controller
-cask "spectacle"                                    # move and resize windows
 cask "soapui"                                       # soap and rest testing tool
 cask "sonos"                                        # controller for sonos speakers
 cask "sourcetree"                                   # awesome git client 
