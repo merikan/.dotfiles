@@ -309,6 +309,14 @@ echo "Prevent Photos from opening automatically when devices are plugged in"
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
 ###############################################################################
+# other application settings                                                  #
+###############################################################################
+
+## Microsoft Office
+echo "Microsoft AutoUpdate should only check for updates (don't install)"
+defaults write com.microsoft.autoupdate2 HowToCheck -string "AutomaticCheck"
+
+###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
 
