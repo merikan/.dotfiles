@@ -106,7 +106,7 @@ brew "youtube-dl"                                   # download videos from youtu
 brew "zsh"                                          # shell 
 
 ### ---------------------------------------------------- ###
-### Casks (http://caskroom.io/)                          ###
+### Casks (https://formulae.brew.sh/cask/)               ###
 ### ---------------------------------------------------- ###
 # Note: Casks with version 'latest' will not be updated due to no checksum change
 cask "java"                                         # java 

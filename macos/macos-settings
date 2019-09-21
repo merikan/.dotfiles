@@ -103,7 +103,7 @@ echo "Enable 'Mission Control: Switch to Desktop 5' with Ctrl+5"
 /usr/libexec/PlistBuddy ~/Library/Preferences/com.apple.symbolichotkeys.plist -c \
   "Set AppleSymbolicHotKeys:122:enabled true"
 
-echo "Disable 'App Shortcuts: Show Help Menu' with ⇧⌘/"
+echo "Disable 'App Shortcuts: Show Help Menu' with ⇧⌘/ (interferce IntelliJ)"
 /usr/libexec/PlistBuddy ~/Library/Preferences/com.apple.symbolichotkeys.plist -c \
   "Set AppleSymbolicHotKeys:98:enabled false"
 
