@@ -70,6 +70,8 @@ fpath=( "$HOME/.zfunctions" $fpath )
 # turn on autocomplete
 autoload -Uz compinit
 compinit
+# include hidden files
+_comp_options+=(globdots)
 # autocompletion with an arrow-key driven interface
 zstyle ':completion:*' menu select
 #Change directories with variable names
