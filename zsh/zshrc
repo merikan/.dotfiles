@@ -124,6 +124,21 @@ bindkey "^ " expandalias              # control+space to expand alias
 
 # initialize prompt system
 autoload -U promptinit && promptinit
+
+# Use lf to switch directories and bind it to ctrl-o
+command -v lf >/dev/null 2>&1  && {
+  lfcd () {
+      tmp="$(mktemp)"
+      lf -last-dir-path="$tmp" "$@"
+      if [ -f "$tmp" ]; then
+          dir="$(cat "$tmp")"
+          rm -f "$tmp"
+          [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
+      fi
+  }
+  bindkey -s '^o' 'lfcd\n'
+}
+
 # use spaceship-prompt
 prompt spaceship
 # source config file, remove this when PR #508 is added
@@ -223,6 +238,9 @@ fi
 # Add personal bin directory to the path
 export PATH=$HOME/bin:$HOME/.local/bin:$PATH
 
+# use autoenv
+[[ -f ~/zsh-autoenv/autoenv.zsh ]] && source ~/zsh-autoenv/autoenv.zsh
+
 ##############################################################################
 # Local Config
 ##############################################################################
@@ -231,4 +249,3 @@ export PATH=$HOME/bin:$HOME/.local/bin:$PATH
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-source ~/zsh-autoenv/autoenv.zsh
