@@ -239,7 +239,7 @@ fi
 export PATH=$HOME/bin:$HOME/.local/bin:$PATH
 
 # use autoenv
-[[ -f ~/zsh-autoenv/autoenv.zsh ]] && source ~/zsh-autoenv/autoenv.zsh
+[[ -f "$HOME/.local/zsh-autoenv/autoenv.zsh" ]] && source "$HOME/zsh-autoenv/autoenv.zsh"
 
 ##############################################################################
 # Local Config

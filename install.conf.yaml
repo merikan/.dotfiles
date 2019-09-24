@@ -78,6 +78,8 @@
     ~/.zsh_aliases: zsh/zsh_aliases
     ~/.zshenv: zsh/zshenv
     ~/.zshrc: zsh/zshrc
+    # zsh-autoenv
+    ~/.local/zsh-autoenv: submodules/zsh-autoenv
 
 - shell:
     -
