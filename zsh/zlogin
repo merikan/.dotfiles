@@ -20,7 +20,7 @@ echo "Running .zlogin"
 
 local zsh_framework=${ZSH_FRAMEWORK:-""}
 # Initialize zim
-[ $zsh_framework == 'zim' ] && { 
+[ "$zsh_framework" == 'zim' ] && { 
   [[ -s ${ZIM_HOME}/login_init.zsh ]] && source ${ZIM_HOME}/login_init.zsh
 }
 

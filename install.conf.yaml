@@ -37,7 +37,7 @@
     ~/.config/homebrew/config: brew/config
     ~/bin/brewit: brew/brewit
     # liquidprompt
-    ~/.liquidprompt: submodules/liquidprompt
+    ~/.local/liquidprompt: submodules/liquidprompt
     ~/.liquidpromptrc: liquidprompt/liquidpromptrc
     # mackup
     ~/.mackup.cfg: mackup/mackup.cfg
@@ -45,12 +45,12 @@
     ~/bin/macos-settings: macos/macos-settings
     # oh-my-zsh
     ~/.oh-my-zshrc: oh-my-zsh/oh-my-zshrc
-    ~/.oh-my-zsh: submodules/oh-my-zsh
+    ~/.local/oh-my-zsh: submodules/oh-my-zsh
     # powerline
     ~/.config/powerline: powerline
     # prezto
     ~/.zpreztorc: prezto/zpreztorc
-    ~/.zprezto: submodules/prezto
+    ~/.local/zprezto: submodules/prezto
     # sdkman
     ~/bin/sdkit: sdkman/sdkit
     # shell
@@ -69,7 +69,7 @@
     ~/.tmux/tmux.remote.conf: tmux/tmux.remote.conf
     ~/.tmux/tmux-theme.conf: tmux/base16-theme.conf
     # zim
-    ~/.zim: submodules/zimfw
+    ~/.local/zim: submodules/zimfw
     ~/.zimrc: zim/zimrc
     # zsh
     ~/.zlogin: zsh/zlogin

@@ -165,8 +165,8 @@ function xtitle {  # change the title of your xterm* window
 # ---------------------------------------------------------------------------------------------
 # Liquid prompt -- A useful adaptive prompt for Bash & Zsh
 # Only load Liquid Prompt in interactive shells, not from a script or from scp
-if [[ $- = *i* ]] && [[ -s "${HOME}/.liquidprompt/liquidprompt" ]]; then
-  source "${HOME}/.liquidprompt/liquidprompt"
+if [[ $- = *i* ]] && [[ -s "${HOME}/.local/liquidprompt/liquidprompt" ]]; then
+  source "${HOME}/.local/liquidprompt/liquidprompt"
 fi
 
 

@@ -36,15 +36,16 @@ case $zsh_framework in
         echo "No zsh framwork was set. Set variable ZSH_FRAMEWORK in file zshenv to activate"
         ;;
      "zim" )
-        if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
-          source ${ZDOTDIR:-${HOME}}/.zim/init.zsh
+        if [[ -s "${HOME}/.local/zim/init.zsh" ]]; then
+          export ZIM_HOME=${HOME}/.local/zim
+          source ${ZIM_HOME}/init.zsh
         else
           echo "unable to load $zsh_framework"
         fi
         ;;
      "prezto" )
-        if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-          source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+        if [[ -s "${HOME}/.local/zprezto/init.zsh" ]]; then
+          source "${HOME}/.local/zprezto/init.zsh"
         else 
           echo "unable to load $zsh_framework"
         fi
@@ -148,8 +149,8 @@ prompt spaceship
 # Liquid prompt -- A useful adaptive prompt for Bash & Zsh
 # Only load Liquid Prompt in interactive shells, not from a script or from scp
 # Only load if  zprompt_theme (zim) is not set and liquidprompt exists
-if [[ $- = *i* ]] && [[ -z ${zprompt_theme} ]] && [[ -s ${ZDOTDIR:-${HOME}}/.liquidprompt/liquidprompt ]]; then
-  #source ~/.liquidprompt/liquidprompt
+if [[ $- = *i* ]] && [[ -z ${zprompt_theme} ]] && [[ -s ${ZDOTDIR:-${HOME}}/.local/liquidprompt/liquidprompt ]]; then
+  #source ~/.local/liquidprompt/liquidprompt
 fi
 
 # Using Base16 for Shells https://github.com/chriskempson/base16-shell
