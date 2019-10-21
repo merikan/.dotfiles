@@ -164,7 +164,9 @@ cask "keystore-explorer"                            # open source GUI replacemen
 cask "keybase"                                      # crypto for everyone!
 cask "keycastr"                                     # keystroke visualizer
 cask "markright"                                    # a markdown editor
+cask "merikan/casks/maconomy"                       # nativefied maconomy
 cask "meld"                                         # visual diff and merge tool
+cask "merikan/casks/messenger"                      # nativefied messenger
 cask "minikube"                                     # kubernetes mini
 cask "minishift"                                    # openshift mini
 cask "moeditor"                                     # all-purpose markdown editor
@@ -186,6 +188,7 @@ cask "sonos"                                        # controller for sonos speak
 cask "sourcetree"                                   # awesome git client 
 cask "spectacle"                                    # move and resize windows
 cask "spotify"                                      # music for everyone
+cask "merikan/casks/sr"                             # nativefied sveriges radio
 cask "sublime-text2"                                # text editor
 cask "thunderbird"                                  # free email application from Mozilla
 cask "tunnelblick"                                  # free, open source graphic user interface for OpenVPN
