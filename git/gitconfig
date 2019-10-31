@@ -204,4 +204,4 @@
 # http://nuclearsquid.com/writings/git-tricks-tips-workflows/ 
 
 [ghq]
-	root = $HOME/src
+	root = ~/src
