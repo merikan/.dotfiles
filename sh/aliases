@@ -221,3 +221,5 @@ alias ${global} LL='2>&1 | less '
 alias ${global} NE='2> /dev/null'
 alias ${global} NUL='> /dev/null 2>&1'
 alias ${global} MT!=' -DskipTests'
+alias ${global} JQ="| jq -Rrc '. as $line | fromjson? // \$line'"   //output: json and non-json
+alias ${global} JQO="| jq -R 'fromjson? | .'"                    //output: only json 
