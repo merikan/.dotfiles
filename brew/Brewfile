@@ -65,6 +65,7 @@ brew "kubectx"                                      # kubectx: manage and switch
 brew "kubernetes-helm"                              # helm packagemanager for kubernetes
 brew "kubespy"                                      # observing Kubernetes resources in real time
 brew "johanhaleby/kubetail/kubetail"                # tail Kubernetes logs from multiple pods
+brew "jesseduffield/lazydocker/lazydocker"          # the lazier way to manage everything docker
 brew "jesseduffield/lazygit/lazygit"                # simple terminal UI for git commands 
 brew "lf"                                           # file manager for the terminal
 brew "lnav"                                         # watch and analyze your log files from a terminal. 
