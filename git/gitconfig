@@ -48,23 +48,43 @@
 	submoduleSummary = true
 
 [diff]
-    tool = kdiff3
+  # console tool
+  tool = icdiff
+  # gui tool
+  guitool = vscode
+  # include submodules when diff
+	submodule = log
 [difftool]
     prompt = false
 [merge]
-    tool = kdiff3
+    tool = vscode
     conflictstyle = diff3
-
-[diff]
-  # include submodules when diff
-	submodule = log
-
-[difftool "sourcetree"]
+[mergetool]
+    prompt = false
+[pager]
+  difftool = true
+# icdiff
+[difftool "icdiff"]
+  cmd = icdiff --line-numbers \"$LOCAL\" \"$REMOTE\"
+  #sourcetree
+[difftool "stree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
-[mergetool "sourcetree"]
+[mergetool "stree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+# vscode
+[difftool "vscode"]
+  cmd = code --wait --diff \"$LOCAL\" \"$REMOTE\"
+[mergetool "vscode"]
+  cmd = code --wait $MERGED
+# kdiff3
+[difftool "kdiff3"]
+    cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+    trustExitCode = false
+[mergetool "kdiff3"]
+    cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+    trustExitCode = false      
 
 [alias]
   # Update branch (with rebase)
