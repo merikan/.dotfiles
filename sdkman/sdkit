@@ -58,11 +58,13 @@ install() {
       local name=${array[0]}; 
       local version=${array[1]};
       local default=${array[2]};
-      info "Installing candidate ${name} version ${version} (default=${default})"
+      info "Installing candidate \'${name}\' version \'${version}\' (default=${default})"
       if [ "$version" == "latest" ]; then version= ; fi
       local answer='n' 
       [ "${default}" == "true" ] && answer='Y'  
-      echo $answer | sdk install ${name} ${version}
+      local ret=0
+      echo $answer | sdk install ${name} ${version} || ret=$?
+      # echo "sdk install exited with: $ret"
     done
     success
 
