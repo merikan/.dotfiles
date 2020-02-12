@@ -193,7 +193,7 @@
   fr = flow release
   fh = flow hotfix
   ms = !git merge-squash
-  st = status -sb
+  st = status
   # and even shorter
   b = branch -v
   r = remote -v
