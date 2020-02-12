@@ -24,6 +24,7 @@ brew "aria2"                                        # multi-protocol & multi-sou
 brew "asciinema"                                    # record and share terminal sessions
 brew "bash" 
 brew "bash-completion" 
+brew "bat"                                          # a cat clone with syntax highlighting and git integration
 brew "brew-cask-completion" 
 brew "ccat"                                         # colorizing cat  
 brew "clair-scanner"                                # scan local docker images
