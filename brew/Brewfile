@@ -59,7 +59,8 @@ brew "jid"                                          # drill down JSON interactiv
 brew "jq"                                           # command-line JSON processor, like sed
 brew "jo"                                           # small utility to create JSON objects
 brew "joplin"                                       # note taking and to-do application 
-brew "kompose"                                      # A conversion tool to go from Docker Compose to Kubernetes
+brew "boz/repo/kail"                                # kubernetes log viewer
+brew "kompose"                                      # a conversion tool to go from Docker Compose to Kubernetes
 brew "kubectl"                                      # kubernetes controller
 brew "kubectx"                                      # kubectx: manage and switch between kubectl contexts, kubens: switch between Kubernetes namespaces.
 brew "kubernetes-helm"                              # helm packagemanager for kubernetes
