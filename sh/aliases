@@ -120,6 +120,11 @@ alias v='vagrant' # really short key for vagrant
 alias j=z         # fasd z with better key location
 alias jj=zz       # fasd zz with better key location
 alias rtfm='tldr'
+#kubernetes aliase(s)
+alias k='kubectl'
+alias ki="kubectl get pods -o jsonpath=\"{.items[*].spec.containers[*].image}\" |\
+          tr -s '[[:space:]]' '\\n' | sort | uniq -c" #list images in current ns
+alias kpf='kubectl port-forward '
 #maven aliases
 alias mvnpv='mvn_print_version'
 # short
