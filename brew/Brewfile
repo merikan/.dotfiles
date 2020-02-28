@@ -6,7 +6,7 @@
 # 
 # It's not always easy to understand how the dsl is constructed without reading the code.
 # I know people have asked for clarification in the documentation but it has not been 
-# well received by {noname}. Haven't found any changelog either but heck, it's open soutce ;-)
+# well received by {noname}. Haven't found any changelog either but heck, it's open source ;-)
 #
 
 tap "homebrew/bundle"
@@ -243,5 +243,5 @@ mas "The Archive Browser", id: 510232205
 mas "The Unarchiver", id: 425424353
 mas "Tomato One", id: 907364780
 mas "Twitter", id: 409789998
-mas "Wunderlist", id: 410628904
+mas "Microsoft To Do", id: 1274495053
 
