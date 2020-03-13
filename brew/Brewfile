@@ -47,7 +47,7 @@ brew "gibo"                                         # easily accessing gitignore
 brew "git"                                          # cli client for git
 brew "git-flow-avh"                                 # git-flow addon for git client
 brew "gitleaks"                                     # audit git repos for secrets
-brew "git-secret"                                   # scan git commits for secrets and credentials
+brew "git-secrets"                                  # prevents you from committing passwords and other sensitive information to a git repository.
 brew "gnupg"                                        # gpg
 brew "gron"                                         # make JSON greppable!
 brew "htop"                                         # an interactive process viewer for Unix
