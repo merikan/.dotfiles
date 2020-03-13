@@ -83,6 +83,23 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 defaults write com.apple.menuextra.clock DateFormat -string "EEE d MMM HH:mm"
 
 ###############################################################################
+# Keyboard                                                                    #
+###############################################################################
+# keyboard:text
+echo "Turn off 'Correct spelling automatically'"
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+echo "Turn off 'Capitalise words automatically'"
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+echo "Turn off 'Add full stop with double-space'"
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+echo "Turn off 'Touch Bar typing suggestions'"
+defaults write NSGlobalDomain NSAutomaticTextCompletionEnabled -bool false
+echo "Turn off 'Use smart quotes and dashes'"
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+
+
+###############################################################################
 # Hotkeys                                                                     #
 ###############################################################################
 
