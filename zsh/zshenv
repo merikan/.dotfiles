@@ -16,4 +16,8 @@ zstyle ':completion:*:*files' ignored-patterns '.DS_Store'
 # Typing EOF (CTRL+D) will not exit interactive sessions
 setopt ignoreeof
 
+# define Zim location
+export ZIM_HOME=${HOME}/.local/zim
+
+# define zsh framowork to be used
 export ZSH_FRAMEWORK=zim

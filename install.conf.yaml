@@ -69,7 +69,7 @@
     ~/.tmux/tmux.remote.conf: tmux/tmux.remote.conf
     ~/.tmux/tmux-theme.conf: tmux/base16-theme.conf
     # zim
-    ~/.local/zim: submodules/zimfw
+    ~/.local/zim/zimfw.zsh: zim/zimfw.zsh
     ~/.zimrc: zim/zimrc
     # zsh
     ~/.zlogin: zsh/zlogin
@@ -81,6 +81,14 @@
     # zsh-autoenv
     ~/.local/zsh-autoenv: submodules/zsh-autoenv
 
+- shell:
+    -
+        description: Installing zim if needed
+        command: "[ -s ${ZIM_HOME}/zimfw.zsh ] && [ ! -d ${ZIM_HOME}/modules ] && source ${ZIM_HOME}/zimfw.zsh install"
+        #command: "[ -s ${ZIM_HOME}/zimfw.zsh ] && [! -d ${ZIM_HOME}/modules] && source ${ZIM_HOME}/zimfw.zsh install"
+        stdin: true
+        stdout: true
+        stderr: true
 - shell:
     -
         description: Installing/Updating Sdkman and candidates

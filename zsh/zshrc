@@ -36,8 +36,9 @@ case $zsh_framework in
         echo "No zsh framwork was set. Set variable ZSH_FRAMEWORK in file zshenv to activate"
         ;;
      "zim" )
-        if [[ -s "${HOME}/.local/zim/init.zsh" ]]; then
-          export ZIM_HOME=${HOME}/.local/zim
+        if [[ -s "${ZIM_HOME}/init.zsh" ]]; then
+          # Update static initialization script if it's outdated, before sourcing it
+          source ${ZIM_HOME}/zimfw.zsh init -q
           source ${ZIM_HOME}/init.zsh
         else
           echo "unable to load $zsh_framework"

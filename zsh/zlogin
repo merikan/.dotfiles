@@ -18,10 +18,10 @@ echo "Running .zlogin"
   fi
 } &!
 
-local zsh_framework=${ZSH_FRAMEWORK:-""}
+
 # Initialize zim
-[ "$zsh_framework" == 'zim' ] && { 
-  [[ -s ${ZIM_HOME}/login_init.zsh ]] && source ${ZIM_HOME}/login_init.zsh
+[ "$ZSH_FRAMEWORK" == 'zim' ] && { 
+  [[ -s ${ZIM_HOME}/login_init.zsh ]] && source ${ZIM_HOME}/login_init.zsh -q &!
 }
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
