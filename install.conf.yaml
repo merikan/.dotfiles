@@ -36,6 +36,8 @@
     ~/.Brewfile: brew/Brewfile
     ~/.config/homebrew/config: brew/config
     ~/bin/brewit: brew/brewit
+    # k9s
+    ~/.k9s/skin.yml: k9s/skins/dracula.yml
     # liquidprompt
     ~/.local/liquidprompt: submodules/liquidprompt
     ~/.liquidpromptrc: liquidprompt/liquidpromptrc
