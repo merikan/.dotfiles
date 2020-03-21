@@ -3,6 +3,8 @@
 
 SPACESHIP_NODE_SHOW=false
 SPACESHIP_PACKAGE_SHOW=false
+SPACESHIP_KUBECTL_SHOW=true
+SPACESHIP_KUBECTL_VERSION_SHOW=false # disable to speed up prompt when no remote server is available
 SPACESHIP_KUBECONTEXT_SHOW=true
 SPACESHIP_KUBECONTEXT_COLOR_GROUPS=(
   # https://upload.wikimedia.org/wikipedia/commons/1/15/Xterm_256color_chart.svg
