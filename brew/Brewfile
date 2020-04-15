@@ -166,6 +166,7 @@ cask "keepassxc"                                    # a great FOSS Password Mana
 cask "keystore-explorer"                            # open source GUI replacement for the keytool and jarsigner
 cask "keybase"                                      # crypto for everyone!
 cask "keycastr"                                     # keystroke visualizer
+cask "love"                                         # LÖVE - make 2D games in Lua
 cask "markright"                                    # a markdown editor
 cask "merikan/casks/maconomy"                       # nativefied maconomy
 cask "meld"                                         # visual diff and merge tool
