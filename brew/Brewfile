@@ -124,6 +124,7 @@ cask "arq"                                          # backup for mac
 cask "asciidocfx"                                   # markup editor and pdf,epub, mobi,docbook creator
 cask "atom"                                         # yet another editor
 cask "backuploupe"                                  # browse your timemachine backups
+cask "balenaetcher"                                 # Burn images to SD cards & USB drives, safely and easily.
 cask "bartender"                                    # organize your menu bar icons
 cask "bitbar"                                       # put the output from any script or program in your Mac OS X Menu Bar
 cask "brave-browser"                                # privacy focused, performance oriented browser
@@ -139,7 +140,6 @@ brew "docker-compose-completion"                    # docker compose completion
 brew "docker-machine-completion"                    # docker machine completion
 cask "dropbox"                                      # personal cloud storage service 
 cask "eclipse-java"                                 # eclipse ide for java developers
-cask "balenaetcher"                                 # Burn images to SD cards & USB drives, safely and easily.
 cask "evernote"                                     # taking notes
 cask "expandrive"                                   # map a drive to any cloud
 cask "flux"                                         # get rid of the blue light
