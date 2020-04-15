@@ -82,8 +82,8 @@ setopt cdablevars
 setopt globdots
 # extendedglob gives ability to do l -l **/*(^U)
 setopt extendedglob
-#correct turns on spelling correction for commands
-setopt correct
+#turn off autocorrect
+unsetopt correct
 #Report the status of background jobs immediately, rather than waiting until just before printing a prompt
 setopt notify
 #no beep, 
