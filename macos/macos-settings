@@ -279,6 +279,13 @@ echo "iTerm2: Set font to 12pt Meslo LG M DZ Regular for Powerline for non ascii
 /usr/libexec/PlistBuddy -c "Set 'New Bookmarks':0:'Non Ascii Font' MesloLGMDZForPowerline-Regular 12" ~/Library/Preferences/com.googlecode.iTerm2.plist
 
 ###############################################################################
+# SourceTree                                                                 #
+###############################################################################
+
+echo "SourceTree: Don't restore windows on startup"
+defaults write com.torusknot.SourceTreeNotMAS  windowRestorationMethod -int 1
+
+###############################################################################
 # Time Machine                                                                #
 ###############################################################################
 
