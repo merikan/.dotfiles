@@ -8,7 +8,11 @@
 #         http://krypted.com/mac-os-x/defaults-symbolichotkeys/
 #
 # Howto change defaults:
-#  Before doing any changes, run
+# We can use defaults (https://www.manpagez.com/man/1/defaults/) 
+# or plutil (https://www.manpagez.com/man/1/plutil/)
+# or PlistBuddy (https://www.manpagez.com/man/8/PlistBuddy/)
+#
+# Before doing any changes, run
 #  $ defaults read > defaults_$(date +%F_%H:%M:%S).txt
 #  Change the setting, the run
 #  $ defaults read > defaults_$(date +%F_%H:%M:%S).txt
@@ -36,6 +40,18 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
+
+echo "Set language and text formats"
+defaults write NSGlobalDomain AppleLanguages -array "en-GB" "sv-SE"
+defaults write NSGlobalDomain AppleLocale -string "en_SE"
+defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
+defaults write NSGlobalDomain AppleMetricUnits -bool true
+echo "Set list sort order to Swedish standard sort order"
+defaults write NSGlobalDomain AppleCollationOrder "sv@collation=standard"
+echo "Show language menu in the top right corner"
+sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
+echo "Set the timezone; see `sudo systemsetup -listtimezones` for other values"
+sudo systemsetup -settimezone "Europe/Stockholm" >/dev/null
 
 echo "Set computer name (as done via System Preferences → Sharing)"
 read -p "Do you want to set the computer name ? (y/N) " choice;
