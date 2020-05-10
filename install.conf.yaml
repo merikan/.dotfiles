@@ -85,9 +85,8 @@
 
 - shell:
     -
-        description: Installing zim if needed
-        command: "[ -s ${ZIM_HOME}/zimfw.zsh ] && [ ! -d ${ZIM_HOME}/modules ] && source ${ZIM_HOME}/zimfw.zsh install"
-        #command: "[ -s ${ZIM_HOME}/zimfw.zsh ] && [! -d ${ZIM_HOME}/modules] && source ${ZIM_HOME}/zimfw.zsh install"
+        description: Installing zim modules if needed
+        command: "[ -s ${ZIM_HOME}/zimfw.zsh ] && [ ! -d ${ZIM_HOME}/modules ] && source ${ZIM_HOME}/zimfw.zsh install || exit 0"
         stdin: true
         stdout: true
         stderr: true
