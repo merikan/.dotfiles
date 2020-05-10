@@ -41,19 +41,32 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # General UI/UX                                                               #
 ###############################################################################
 
-echo "Set language and text formats"
+echo -n "Set language and text formats"
 defaults write NSGlobalDomain AppleLanguages -array "en-GB" "sv-SE"
 defaults write NSGlobalDomain AppleLocale -string "en_SE"
 defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 defaults write NSGlobalDomain AppleMetricUnits -bool true
-echo "Set list sort order to Swedish standard sort order"
+echo "  ✔"
+echo -n "Set list sort order to Swedish standard sort order"
 defaults write NSGlobalDomain AppleCollationOrder "sv@collation=standard"
-echo "Show language menu in the top right corner"
+echo "  ✔"
+echo -n "Show language menu in the top right corner"
 sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
-echo "Set the timezone; see `sudo systemsetup -listtimezones` for other values"
+echo "  ✔"
+echo -n "Set the timezone; see sudo systemsetup -listtimezones for other values"
 sudo systemsetup -settimezone "Europe/Stockholm" >/dev/null
+echo "  ✔"
+echo -n "Set menu bar clock format"
+# Menu bar clock format
+# "h:mm" Default
+# "HH"   Use a 24-hour clock
+# "a"    Show AM/PM
+# "ss"   Display the time with seconds
+defaults write com.apple.menuextra.clock DateFormat -string "EEE d MMM HH:mm"
+echo "  ✔"
 
-echo "Set computer name (as done via System Preferences → Sharing)"
+
+echo -n "Set computer name (as done via System Preferences → Sharing)"
 read -p "Do you want to set the computer name ? (y/N) " choice;
 choice=${choice:-n};
 [[ "$choice" =~ ^([Yy])$ ]] && {
@@ -65,190 +78,229 @@ choice=${choice:-n};
 		sudo scutil --set HostName "${computer_name}"
 		sudo scutil --set LocalHostName "${computer_name}"
 		sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "${computer_name}"
+		echo "  ✔"
 	}
 }
 
 # # Set standby delay to 24 hours (default is 1 hour)
 # sudo pmset -a standbydelay 86400
 
-echo "Disable the sound effects on boot"
+echo -n "Disable the sound effects on boot"
 sudo nvram SystemAudioVolume=" "
+echo "  ✔"
 
-echo "Expand save panel by default"
+echo -n "Expand save panel by default"
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
+echo "  ✔"
 
-echo "Expand print panel by default"
+echo -n "Expand print panel by default"
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
+echo "  ✔"
 
-echo "Save to disk (not to iCloud) by default"
+echo -n "Save to disk (not to iCloud) by default"
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+echo "  ✔"
 
-echo "Automatically quit printer app once the print jobs complete"
+echo -n "Automatically quit printer app once the print jobs complete"
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
+echo "  ✔"
 
-echo "Disable the “Are you sure you want to open this application?” dialog"
+echo -n "Disable the “Are you sure you want to open this application?” dialog"
 defaults write com.apple.LaunchServices LSQuarantine -bool false
-
-# Menu bar clock format
-# "h:mm" Default
-# "HH"   Use a 24-hour clock
-# "a"    Show AM/PM
-# "ss"   Display the time with seconds
-defaults write com.apple.menuextra.clock DateFormat -string "EEE d MMM HH:mm"
+echo "  ✔"
 
 ###############################################################################
 # Keyboard                                                                    #
 ###############################################################################
 # keyboard:text
-echo "Turn off 'Correct spelling automatically'"
+echo -n "Turn off 'Correct spelling automatically'"
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
-echo "Turn off 'Capitalise words automatically'"
+echo "  ✔"
+echo -n "Turn off 'Capitalise words automatically'"
 defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
-echo "Turn off 'Add full stop with double-space'"
+echo "  ✔"
+echo -n "Turn off 'Add full stop with double-space'"
 defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
-echo "Turn off 'Touch Bar typing suggestions'"
+echo "  ✔"
+echo -n "Turn off 'Touch Bar typing suggestions'"
 defaults write NSGlobalDomain NSAutomaticTextCompletionEnabled -bool false
-echo "Turn off 'Use smart quotes and dashes'"
+echo "  ✔"
+echo -n "Turn off 'Use smart quotes and dashes'"
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+echo "  ✔"
 
 
 ###############################################################################
 # Hotkeys                                                                     #
 ###############################################################################
 
-echo "Disable 'Spotlight: Show Spotlight search'"
+echo -n "Disable 'Spotlight: Show Spotlight search'"
 /usr/libexec/PlistBuddy ~/Library/Preferences/com.apple.symbolichotkeys.plist -c \
   "Set AppleSymbolicHotKeys:64:enabled false"
+echo "  ✔"
 
-echo "Enable 'Mission Control: Switch to Desktop 2' with Ctrl+2"
+echo -n "Enable 'Mission Control: Switch to Desktop 2' with Ctrl+2"
 /usr/libexec/PlistBuddy ~/Library/Preferences/com.apple.symbolichotkeys.plist -c \
   "Set AppleSymbolicHotKeys:119:enabled true"
-echo "Enable 'Mission Control: Switch to Desktop 3' with Ctrl+3"
+echo "  ✔"
+echo -n "Enable 'Mission Control: Switch to Desktop 3' with Ctrl+3"
 /usr/libexec/PlistBuddy ~/Library/Preferences/com.apple.symbolichotkeys.plist -c \
   "Set AppleSymbolicHotKeys:120:enabled true"
-echo "Enable 'Mission Control: Switch to Desktop 4' with Ctrl+4"
+echo "  ✔"
+echo -n "Enable 'Mission Control: Switch to Desktop 4' with Ctrl+4"
 /usr/libexec/PlistBuddy ~/Library/Preferences/com.apple.symbolichotkeys.plist -c \
   "Set AppleSymbolicHotKeys:121:enabled true"
-echo "Enable 'Mission Control: Switch to Desktop 5' with Ctrl+5"
+echo "  ✔"
+echo -n "Enable 'Mission Control: Switch to Desktop 5' with Ctrl+5"
 /usr/libexec/PlistBuddy ~/Library/Preferences/com.apple.symbolichotkeys.plist -c \
   "Set AppleSymbolicHotKeys:122:enabled true"
+echo "  ✔"
 
-echo "Disable 'App Shortcuts: Show Help Menu' with ⇧⌘/ (interferce IntelliJ)"
+echo -n "Disable 'App Shortcuts: Show Help Menu' with ⇧⌘/ (interferce IntelliJ)"
 /usr/libexec/PlistBuddy ~/Library/Preferences/com.apple.symbolichotkeys.plist -c \
   "Set AppleSymbolicHotKeys:98:enabled false"
+echo "  ✔"
 
 ###############################################################################
 # Screen                                                                      #
 ###############################################################################
 
-echo "Enable darkmode but only for menubar and dock"
+echo -n "Enable darkmode but only for menubar and dock"
 defaults write NSGlobalDomain AppleInterfaceStyle -string "Light"
 defaults write -g NSRequiresAquaSystemAppearance -bool true
 defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
+echo "  ✔"
 
 ###############################################################################
 # Finder                                                                      #
 ###############################################################################
 
-echo "Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons"
+echo -n "Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons"
 defaults write com.apple.finder QuitMenuItem -bool true
+echo "  ✔"
 
-echo "Finder: disable window animations and Get Info animations"
+echo -n "Finder: disable window animations and Get Info animations"
 defaults write com.apple.finder DisableAllAnimations -bool true
+echo "  ✔"
 
-echo "Set Desktop as the default location for new Finder windows"
+echo -n "Set Desktop as the default location for new Finder windows"
 # For other paths, use `PfLo` and `file:///full/path/here/`
 defaults write com.apple.finder NewWindowTarget -string "PfDe"
 defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Desktop/"
+echo "  ✔"
 
-echo "Show icons for hard drives, servers, and removable media on the desktop"
+echo -n "Show icons for hard drives, servers, and removable media on the desktop"
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
 defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
+echo "  ✔"
 
-echo "Finder: show hidden files by default"
+echo -n "Finder: show hidden files by default"
 defaults write com.apple.finder AppleShowAllFiles -bool true
+echo "  ✔"
 
-echo "Finder: show all filename extensions"
+echo -n "Finder: show all filename extensions"
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+echo "  ✔"
 
-echo "Finder: show status bar"
+echo -n "Finder: show status bar"
 defaults write com.apple.finder ShowStatusBar -bool true
+echo "  ✔"
 
-echo "Finder: show path bar"
+echo -n "Finder: show path bar"
 defaults write com.apple.finder ShowPathbar -bool true
+echo "  ✔"
 
-echo "Display full POSIX path as Finder window title"
+echo -n "Display full POSIX path as Finder window title"
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+echo "  ✔"
 
-echo "Keep folders on top when sorting by name"
+echo -n "Keep folders on top when sorting by name"
 defaults write com.apple.finder _FXSortFoldersFirst -bool true
+echo "  ✔"
 
-echo "When performing a search, search the current folder by default"
+echo -n "When performing a search, search the current folder by default"
 # This Mac       : `SCev`
 # Current Folder : `SCcf`
 # Previous Scope : `SCsp`
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+echo "  ✔"
 
-echo "Disable the warning when changing a file extension"
+echo -n "Disable the warning when changing a file extension"
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+echo "  ✔"
 
-echo "Enable spring loading for directories"
+echo -n "Enable spring loading for directories"
 defaults write NSGlobalDomain com.apple.springing.enabled -bool true
+echo "  ✔"
 
-echo "Remove the spring loading delay for directories"
+echo -n "Remove the spring loading delay for directories"
 defaults write NSGlobalDomain com.apple.springing.delay -float 0
+echo "  ✔"
 
-echo "Avoid creating .DS_Store files on network or USB volumes"
+echo -n "Avoid creating .DS_Store files on network or USB volumes"
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+echo "  ✔"
 
-echo "Use list view in all Finder windows by default"
+echo -n "Use list view in all Finder windows by default"
 # Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+echo "  ✔"
 
-echo "Show the ~/Library folder"
+echo -n "Show the ~/Library folder"
 chflags nohidden ~/Library
+echo "  ✔"
 
-echo "Show the /Volumes folder"
+echo -n "Show the /Volumes folder"
 sudo chflags nohidden /Volumes
+echo "  ✔"
 
-echo "Expand File Info panes for 'General', 'Open with', and 'Sharing & Permissions'"
+echo -n "Expand File Info panes for 'General', 'Open with', and 'Sharing & Permissions'"
 defaults write com.apple.finder FXInfoPanesExpanded -dict \
 	General -bool true \
 	OpenWith -bool true \
 	Privileges -bool true
+echo "  ✔"
 
 ###############################################################################
 # Dock, Dashboard, Touchbar and hot corners                                   #
 ###############################################################################
 
-echo "Turn off magnification (Dock)"
+echo -n "Turn off magnification (Dock)"
 defaults write com.apple.dock magnification -bool false
+echo "  ✔"
 
-echo "Disable Dashboard"
+echo -n "Disable Dashboard"
 defaults write com.apple.dashboard mcx-disabled -bool true
+echo "  ✔"
 
-echo "Don’t automatically rearrange Spaces based on most recent use"
+echo -n "Don’t automatically rearrange Spaces based on most recent use"
 defaults write com.apple.dock mru-spaces -bool false
+echo "  ✔"
 
-echo "Remove the auto-hiding Dock delay"
+echo -n "Remove the auto-hiding Dock delay"
 defaults write com.apple.dock autohide-delay -float 0
-echo "Remove the animation when hiding/showing the Dock"
+echo "  ✔"
+echo -n "Remove the animation when hiding/showing the Dock"
 defaults write com.apple.dock autohide-time-modifier -float 0
+echo "  ✔"
 
-echo "Automatically hide and show the Dock"
+echo -n "Automatically hide and show the Dock"
 defaults write com.apple.dock autohide -bool true
+echo "  ✔"
 
-echo "Make Dock icons of hidden applications translucent"
+echo -n "Make Dock icons of hidden applications translucent"
 defaults write com.apple.dock showhidden -bool true
+echo "  ✔"
 
-echo "Don’t show recent applications in Dock"
+echo -n "Don’t show recent applications in Dock"
 defaults write com.apple.dock show-recents -bool false
+echo "  ✔"
 
 # Hot corners
 # Possible values:
@@ -270,91 +322,109 @@ defaults write com.apple.dock show-recents -bool false
 # # Top right screen corner → Desktop
 # defaults write com.apple.dock wvous-tr-corner -int 4
 # defaults write com.apple.dock wvous-tr-modifier -int 0
-echo "Bottom left screen corner → Start screen saver"
+echo -n "Bottom left screen corner → Start screen saver"
 defaults write com.apple.dock wvous-bl-corner -int 5
 defaults write com.apple.dock wvous-bl-modifier -int 0
-echo "Bottom right screen corner → SLock screen"
+echo "  ✔"
+echo -n "Bottom right screen corner → SLock screen"
 defaults write com.apple.dock wvous-br-corner -int 13
 defaults write com.apple.dock wvous-br-modifier -int 0
+echo "  ✔"
 
-echo "Always show function keys in touchbar"
+echo -n "Always show function keys in touchbar"
 defaults write com.apple.touchbar.agent PresentationModeGlobal -string "functionKeys"
+echo "  ✔"
 
 ###############################################################################
 # Terminal & iTerm 2                                                          #
 ###############################################################################
 
-echo "Terminal: Only use UTF-8"
+echo -n "Terminal: Only use UTF-8"
 defaults write com.apple.terminal StringEncodings -array 4
+echo "  ✔"
 
-echo "iTerm2: Set font to 12pt Meslo LG M DZ Regular for Powerline"
+echo -n "iTerm2: Set font to 12pt Meslo LG M DZ Regular for Powerline"
 # print value https://stackoverflow.com/a/20206222
 /usr/libexec/PlistBuddy -c "Set 'New Bookmarks':0:'Normal Font' MesloLGMDZForPowerline-Regular 12" ~/Library/Preferences/com.googlecode.iTerm2.plist
-echo "iTerm2: Set font to 12pt Meslo LG M DZ Regular for Powerline for non ascii characters"
+echo "  ✔"
+echo -n "iTerm2: Set font to 12pt Meslo LG M DZ Regular for Powerline for non ascii characters"
 /usr/libexec/PlistBuddy -c "Set 'New Bookmarks':0:'Use Non-ASCII Font' true" ~/Library/Preferences/com.googlecode.iTerm2.plist
 /usr/libexec/PlistBuddy -c "Set 'New Bookmarks':0:'Non Ascii Font' MesloLGMDZForPowerline-Regular 12" ~/Library/Preferences/com.googlecode.iTerm2.plist
+echo "  ✔"
 
 ###############################################################################
 # SourceTree                                                                 #
 ###############################################################################
 
-echo "SourceTree: Don't restore windows on startup"
+echo -n "SourceTree: Don't restore windows on startup"
 defaults write com.torusknot.SourceTreeNotMAS  windowRestorationMethod -int 1
+echo "  ✔"
 
 ###############################################################################
 # Time Machine                                                                #
 ###############################################################################
 
-echo "Prevent Time Machine from prompting to use new hard drives as backup volume"
+echo -n "Prevent Time Machine from prompting to use new hard drives as backup volume"
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+echo "  ✔"
 
 ###############################################################################
 # Activity Monitor                                                            #
 ###############################################################################
 
-# Show the main window when launching Activity Monitor
+echo -n "Show the main window when launching Activity Monitor"
 defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
+echo "  ✔"
 
-# Visualize CPU usage in the Activity Monitor Dock icon
+echo -n "Visualize CPU usage in the Activity Monitor Dock icon"
 defaults write com.apple.ActivityMonitor IconType -int 5
+echo "  ✔"
 
-# Show all processes in Activity Monitor
+echo -n "Show all processes in Activity Monitor"
 defaults write com.apple.ActivityMonitor ShowCategory -int 0
+echo "  ✔"
 
-# Sort Activity Monitor results by CPU usage
+echo -n "Sort Activity Monitor results by CPU usage"
 defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
 defaults write com.apple.ActivityMonitor SortDirection -int 0
+echo "  ✔"
 
 ###############################################################################
 # Mac App Store                                                               #
 ###############################################################################
 
-echo "Enable the automatic update check"
+echo -n "Enable the automatic update check"
 defaults write com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
+echo "  ✔"
 
-echo "Check for software updates daily, not just once per week"
+echo -n "Check for software updates daily, not just once per week"
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
+echo "  ✔"
 
-# Download newly available updates in background
+echo -n "Download newly available updates in background"
 defaults write com.apple.SoftwareUpdate AutomaticDownload -int 1
+echo "  ✔"
 
-echo "Install System data files & security updates"
+echo -n "Install System data files & security updates"
 defaults write com.apple.SoftwareUpdate CriticalUpdateInstall -int 1
+echo "  ✔"
 
 ###############################################################################
 # Photos                                                                      #
 ###############################################################################
 
-echo "Prevent Photos from opening automatically when devices are plugged in"
+echo -n "Prevent Photos from opening automatically when devices are plugged in"
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
+echo "  ✔"
 
 ###############################################################################
 # other application settings                                                  #
 ###############################################################################
 
 ## Microsoft Office
-echo "Microsoft AutoUpdate should only check for updates (don't install)"
+echo -n "Microsoft AutoUpdate should only check for updates (don't install)"
 defaults write com.microsoft.autoupdate2 HowToCheck -string "AutomaticCheck"
+echo "  ✔"
 
 ###############################################################################
 # Kill affected applications                                                  #
