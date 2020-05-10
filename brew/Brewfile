@@ -106,6 +106,7 @@ brew "tree"                                         # list contents of directori
 brew "vim"                                          # highly configurable text editor
 brew "watch"                                        # execute a program periodically and watch the output
 brew "wget"                                         # non-interactive network downloader
+brew "xsv"                                          # A fast CSV command line toolkit written in Rust.
 brew "yarn"                                         # JavaScript package manager
 brew "youtube-dl"                                   # download videos from youtube and many more sites
 brew "zsh"                                          # shell 
