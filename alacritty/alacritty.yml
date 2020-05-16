@@ -1,0 +1,99 @@
+# Configuration for Alacritty, the GPU enhanced terminal emulator.
+# for default settings see https://github.com/alacritty/alacritty/blob/master/alacritty.yml
+
+# Font configuration
+font:
+  normal:
+    family: Fira Code
+    style: Regular
+  bold:
+    family: Fira Code
+    style: Bold
+  italic:
+    family: Fira Code
+    style: Italic
+  size: 12
+
+# Using colors in the shell 
+# colors:
+# # Base16 OceanicNext 256 - alacritty color config
+# # https://github.com/aaron-williamson/base16-alacritty
+#   # Default colors
+#   primary:
+#     background: '0x1b2b34'
+#     foreground: '0xc0c5ce'
+
+#   # Colors the cursor will use if `custom_cursor_colors` is true
+#   cursor:
+#     text: '0x1b2b34'
+#     cursor: '0xc0c5ce'
+
+#   # Normal colors
+#   normal:
+#     black:   '0x1b2b34'
+#     red:     '0xec5f67'
+#     green:   '0x99c794'
+#     yellow:  '0xfac863'
+#     blue:    '0x6699cc'
+#     magenta: '0xc594c5'
+#     cyan:    '0x5fb3b3'
+#     white:   '0xc0c5ce'
+
+#   # Bright colors
+#   bright:
+#     black:   '0x65737e'
+#     red:     '0xec5f67'
+#     green:   '0x99c794'
+#     yellow:  '0xfac863'
+#     blue:    '0x6699cc'
+#     magenta: '0xc594c5'
+#     cyan:    '0x5fb3b3'
+#     white:   '0xd8dee9'
+
+#   indexed_colors:
+#     - { index: 16, color: '0xf99157' }
+#     - { index: 17, color: '0xab7967' }
+#     - { index: 18, color: '0x343d46' }
+#     - { index: 19, color: '0x4f5b66' }
+#     - { index: 20, color: '0xa7adba' }
+#     - { index: 21, color: '0xcdd3de' }
+
+# Send ESC (\x1b) before characters when alt is pressed.
+alt_send_esc: true
+
+key_bindings:
+  - { key: N, mods: Control, action: SpawnNewInstance }
+  - { key: N, mods: Command, command: { program: "open", args: ["-nb", "io.alacritty"] } }
+
+#Swedish (sv_SE)
+#Mac OS
+  - { key: Key1,      mods: Alt,          chars: "\xA9"                  }
+  - { key: Key2,      mods: Alt,          chars: "\x40"                  }
+  - { key: Key3,      mods: Alt,          chars: "\xA3"                  }
+  - { key: Key4,      mods: Alt,          chars: "\x24"                  }
+  - { key: Key5,      mods: Alt,          chars: "∞"                     }
+  - { key: Key6,      mods: Alt,          chars: "\xA7"                  }
+  - { key: Key7,      mods: Alt,          chars: "\x7C"                  }
+  - { key: Key8,      mods: Alt,          chars: "\x5B"                  }
+  - { key: Key9,      mods: Alt,          chars: "\x5D"                  }
+  - { key: Key0,      mods: Alt,          chars: "≈"                     }
+  - { key: Minus,     mods: Alt,          chars: "\xB1"                  }
+  - { key: 26,        mods: Alt,          chars: "\x7C"                  }
+  - { key: 28,        mods: Alt,          chars: "\x5B"                  }
+  - { key: 25,        mods: Alt,          chars: "\x5D"                  }
+  
+  - { key: Key1,      mods: Alt|Shift,    chars: "\xA1"                  }
+  - { key: Key2,      mods: Alt|Shift,    chars: "”"                     }
+  - { key: Key3,      mods: Alt|Shift,    chars: "\xA5"                  }
+  - { key: Key4,      mods: Alt|Shift,    chars: "\x24"                  }
+  - { key: Key5,      mods: Alt|Shift,    chars: "‰"                     }
+  - { key: Key6,      mods: Alt|Shift,    chars: "\xB6"                  }
+  - { key: Key7,      mods: Alt|Shift,    chars: "\x5C"                  }
+  - { key: Key8,      mods: Alt|Shift,    chars: "\x7B"                  }
+  - { key: Key9,      mods: Alt|Shift,    chars: "\x7D"                  }
+  - { key: Key0,      mods: Alt|Shift,    chars: "≠"                     }
+  - { key: Minus,     mods: Alt|Shift,    chars: "\xBF"                  }
+
+# Replace the default bindings for these as the VirtualKeycodes don't match reality
+  - { key: Slash,     mods: Command,      action: DecreaseFontSize       }
+  - { key: Minus,     mods: Command,      action: IncreaseFontSize       }

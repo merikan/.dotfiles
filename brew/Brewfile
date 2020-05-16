@@ -118,6 +118,7 @@ brew "zsh"                                          # shell
 # Note: Casks with version 'latest' will not be updated due to no checksum change
 cask "java"                                         # java 
 cask "adium"                                        # instant messaging
+cask "alacritty"                                    # the GPU enhanced terminal emulator
 cask "alfred"                                       # a must have for boost productivity 
 cask "android-sdk"                                  # android sdk
 cask "android-studio"                               # android IDE 

@@ -13,6 +13,8 @@
 - link:
     # add bins
     ~/bin/$: bin/$
+    # alacritty
+    ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
     # atom
     ~/.atomrc: atom/atomrc
     # base16-shell
