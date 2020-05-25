@@ -80,6 +80,7 @@ brew "mitmproxy"                                    # a free and open source int
 brew "mplayer"                                      # UNIX movie player
 brew "ncdu"                                         # a disk usage analyzer with an ncurses interface
 brew "nmap"                                         # port scanning utility for large networks
+brew "neofetch"                                     # A fast, highly customizable system info script
 brew "nativefier"                                   # Make any web page a desktop application
 brew "nvm"                                          # manage multiple Node.js versions
 brew "openshift-cli"                                # openshift cli 
