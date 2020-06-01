@@ -118,8 +118,8 @@ bindkey '\e[B' history-beginning-search-forward
 # expand aliases with control+space
 # idea from https://blog.patshead.com/2012/11/automatically-expaning-zsh-global-aliases---simplified.html
 expandalias() {
-     zle _expand_alias
-     zle expand-word
+    zle _expand_alias
+    zle expand-word
 }
 zle -N expandalias
 bindkey "^ " expandalias              # control+space to expand alias
