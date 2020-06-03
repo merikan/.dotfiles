@@ -15,6 +15,7 @@ zmodule input
 #zmodule utility
 
 # Prompt
+zmodule denysdovhan/spaceship-prompt --name spaceship
 # Exposes git repository status information to prompts.
 #zmodule git-info
 # A customizable version of steeef's prompt theme.
