@@ -25,3 +25,7 @@ echo "Running .zlogin"
 }
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# print system info with neofetch
+clear
+command -v neofetch >/dev/null 2>&1  && neofetch
