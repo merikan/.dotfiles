@@ -84,6 +84,8 @@ setopt globdots
 setopt extendedglob
 #turn off autocorrect
 unsetopt correct
+#allows ‘>’ redirection to truncate existing files.
+setopt clobber
 #Report the status of background jobs immediately, rather than waiting until just before printing a prompt
 setopt notify
 #no beep, 
