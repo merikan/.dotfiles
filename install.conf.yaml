@@ -43,6 +43,8 @@
     ~/bin/brewit: brew/brewit
     # k9s
     ~/.k9s/skin.yml: k9s/skins/dracula.yml
+    #lf
+    ~/.config/lf/lfrc: lf/lfrc
     # liquidprompt
     ~/.local/liquidprompt: submodules/liquidprompt
     ~/.liquidpromptrc: liquidprompt/liquidpromptrc

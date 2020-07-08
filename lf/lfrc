@@ -1,0 +1,28 @@
+# My lf settings
+
+# Basic vars
+set shell bash
+set shellopts '-eu'
+set ifs "\n"
+set scrolloff 10
+set color256
+set hidden
+
+
+cmd fzf_jump ${{
+   res="$(find . -maxdepth 3 | fzf --reverse --header='$Jump to location')"
+   if [ -f "$res" ]; then
+     cmd="select"
+   elif [ -d "$res" ]; then
+     cmd="cd"                                                       
+   fi
+lf -remote "send $id $cmd \"$res\""
+}}
+
+
+# Bindings
+# toggle hidden
+map . set hidden!
+# 
+map <c-f> :fzf_jump
+map D delete       # delete selected
