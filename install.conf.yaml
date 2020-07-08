@@ -34,6 +34,9 @@
     ~/.gitconfig: git/gitconfig
     # golang
     ~/.golangrc: golang/golangrc
+    # hammerspoon
+    ~/.hammerspoon/init.lua: hammerspoon/init.lua
+    ~/.hammerspoon/Spoons/SpoonInstall.spoon: hammerspoon/Spoons/SpoonInstall.spoon
     # homebrew
     ~/.Brewfile: brew/Brewfile
     ~/.config/homebrew/config: brew/config
