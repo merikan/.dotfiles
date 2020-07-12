@@ -134,6 +134,8 @@
   ci = commit
   # commit --amend
   cia = commit --amend
+  # commit --amend without changing the message
+  cian = commit --amend --no-edit
   # commit -m
   cim = commit -m
   # cherry-pick
