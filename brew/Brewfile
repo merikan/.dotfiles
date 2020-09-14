@@ -81,6 +81,7 @@ brew "mas"                                          # Mac App Store command-line
 brew "midnight-commander"                           # visual file manager
 brew "mitmproxy"                                    # a free and open source interactive HTTPS proxy
 brew "mplayer"                                      # UNIX movie player
+brew "mysql-client"                                 # mysql client
 brew "ncdu"                                         # a disk usage analyzer with an ncurses interface
 brew "nmap"                                         # port scanning utility for large networks
 brew "neofetch"                                     # A fast, highly customizable system info script

@@ -221,6 +221,11 @@ command -v oc >/dev/null 2>&1 && source <(oc completion zsh)
   export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 }
 
+# mysql client
+if [ -d "/usr/local/opt/mysql-client/bin" ]; then
+    export PATH=/usr/local/opt/mysql-client/bin:$PATH
+fi
+
 # sdkman
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && {
