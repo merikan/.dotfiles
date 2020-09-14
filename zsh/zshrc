@@ -151,18 +151,9 @@ command -v lf >/dev/null 2>&1  && {
   }
   bindkey -s '^o' 'lfcd\n'
 }
-
 # Theme: spaceship-prompt
 # source config file, remove this when PR #508 is added
 [[ -s ${HOME}/.config/spaceship-prompt/config ]] && source ${HOME}/.config/spaceship-prompt/config
-
-# ---------------------------------------------------------------------------------------------
-# Liquid prompt -- A useful adaptive prompt for Bash & Zsh
-# Only load Liquid Prompt in interactive shells, not from a script or from scp
-# Only load if  zprompt_theme (zim) is not set and liquidprompt exists
-if [[ $- = *i* ]] && [[ -z ${zprompt_theme} ]] && [[ -s ${ZDOTDIR:-${HOME}}/.local/liquidprompt/liquidprompt ]]; then
-  #source ~/.local/liquidprompt/liquidprompt
-fi
 
 # Using Base16 for Shells https://github.com/chriskempson/base16-shell
 BASE16_SHELL=$HOME/.config/base16-shell/
