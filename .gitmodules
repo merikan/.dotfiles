@@ -4,9 +4,6 @@
 [submodule "submodules/liquidprompt"]
 	path = submodules/liquidprompt
 	url = https://github.com/nojhan/liquidprompt.git
-[submodule "submodules/spaceship-prompt"]
-	path = submodules/spaceship-prompt
-	url = https://github.com/denysdovhan/spaceship-prompt.git
 [submodule "submodules/prezto"]
 	path = submodules/prezto
 	url = https://github.com/sorin-ionescu/prezto.git

@@ -117,6 +117,18 @@ bindkey '\e[A' history-beginning-search-backward
 #Use down key to search forward in the history for a line beginning with the current line up to the cursor.
 bindkey '\e[B' history-beginning-search-forward
 
+# Load antibody plugin manager
+command -v antibody >/dev/null 2>&1  && {
+  echo "loading antibody"
+  source <(antibody init)
+  # Load Plugins
+  # antibody bundle zdharma/fast-syntax-highlighting
+  # antibody bundle zsh-users/zsh-autosuggestions
+  # antibody bundle zsh-users/zsh-history-substring-search
+  # antibody bundle zsh-users/zsh-completions
+  antibody bundle denysdovhan/spaceship-prompt
+}
+
 # expand aliases with control+space
 # idea from https://blog.patshead.com/2012/11/automatically-expaning-zsh-global-aliases---simplified.html
 expandalias() {
@@ -125,9 +137,6 @@ expandalias() {
 }
 zle -N expandalias
 bindkey "^ " expandalias              # control+space to expand alias
-
-# initialize prompt system
-autoload -U promptinit && promptinit
 
 # Use lf to switch directories and bind it to ctrl-o
 command -v lf >/dev/null 2>&1  && {
@@ -143,8 +152,7 @@ command -v lf >/dev/null 2>&1  && {
   bindkey -s '^o' 'lfcd\n'
 }
 
-# use spaceship-prompt
-prompt spaceship
+# Theme: spaceship-prompt
 # source config file, remove this when PR #508 is added
 [[ -s ${HOME}/.config/spaceship-prompt/config ]] && source ${HOME}/.config/spaceship-prompt/config
 
