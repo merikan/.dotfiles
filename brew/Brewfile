@@ -1,10 +1,12 @@
-# https://github.com/Homebrew/homebrew-bundle
-# Always run 'brew update' before running 'brew bundle'
 # 
 # To keep this file in sync I'm avoiding to install with the `brew install` command, 
 # instead I'm adding a row to this file and run 'brew bundle --global' to make sure it's working. 
+
+# https://github.com/Homebrew/homebrew-bundle
+# Always run 'brew update' before running 'brew bundle'
+
 # 
-# It's not always easy to understand how the dsl is constructed without reading the code.
+# It's not always easy to understand how the dsl for bundle is constructed without reading the code.
 # I know people have asked for clarification in the documentation but it has not been 
 # well received by {noname}. Haven't found any changelog either but heck, it's open source ;-)
 #
@@ -146,6 +148,7 @@ cask "eclipse-java"                                 # eclipse ide for java devel
 cask "evernote"                                     # taking notes
 cask "expandrive"                                   # map a drive to any cloud
 cask "flux"                                         # get rid of the blue light
+cask "firefox"                                      # a browser
 cask "firefox-developer-edition"                    # a browser
 cask "gimp"                                         # an Image Editor (I probably never be able to learn)
 cask "gitkraken"                                    # Git GUI client for Windows, Mac and Linux 
