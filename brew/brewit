@@ -48,14 +48,14 @@ upgrade() {
     brew upgrade
     success
     info "Upgrading casks...(brew cask upgrade)"
-    brew cask upgrade
+    brew upgrade --cask
     success
 }
 cleanup() {
     info "Cleaning up Homebrew... (brew cleanup)"
     source ~/.config/homebrew/config
 
-    items=( $(brew list) $(brew cask list))
+    items=( $(brew list --formula) $(brew list --cask))
     for ignore in ${cleanup_ignore[@]}
     do
     if [[ " ${items[@]} " =~ " ${ignore} " ]]; then
