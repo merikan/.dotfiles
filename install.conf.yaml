@@ -38,9 +38,9 @@
     ~/.hammerspoon/init.lua: hammerspoon/init.lua
     ~/.hammerspoon/Spoons/SpoonInstall.spoon: hammerspoon/Spoons/SpoonInstall.spoon
     # homebrew
-    ~/.Brewfile: brew/Brewfile
-    ~/.config/homebrew/config: brew/config
-    ~/bin/brewit: brew/brewit
+    ~/.Brewfile: homebrew/Brewfile
+    ~/.config/homebrew/config: homebrew/config
+    ~/bin/brewit: homebrew/brewit
     # k9s
     ~/.k9s/skin.yml: k9s/skins/dracula.yml
     #lf
