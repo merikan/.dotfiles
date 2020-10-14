@@ -227,7 +227,7 @@ alias ${global} LL='2>&1 | less '
 alias ${global} NE='2> /dev/null'
 alias ${global} NUL='> /dev/null 2>&1'
 alias ${global} MT!=' -DskipTests'
-alias ${global} MD=' -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"'
+alias ${global} MD=' -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"'  // maven debug properties
 alias ${global} JQ="| jq -Rrc '. as \$line | fromjson? // \$line'"   //output: json and non-json
 alias ${global} JQO="| jq -R 'fromjson? | .'"                    //output: only json 
-alias ${global} P="8080:8080 8081:8081"                            #port-forward 
+alias ${global} PF="8080:8080 8081:8081"                            #port-forward 
