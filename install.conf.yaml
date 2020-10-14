@@ -1,8 +1,10 @@
-# install.conf.yaml
+# install.conf.yaml for dotbot https://github.com/anishathalye/dotbot
 - defaults:
     link:
         relink: true
         create: true
+    shell:
+        stderr: true
 
 - clean: ['~']
 
