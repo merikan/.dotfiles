@@ -87,11 +87,11 @@ The list below is not a complete list of key bindings, it only contains the bind
     </tr>
     <tr>
         <td style="white-space:nowrap"><code>&lt;prefix&gt; s</code></td>
-        <td>Split pane horizontally</td>
+        <td>Split pane vertically</td>
     </tr>
     <tr>
-        <td style="white-space:nowrap"><code>&lt;prefix&gt; v</code></td>
-        <td>Split pane vertically</td>
+        <td style="white-space:nowrap"><code>&lt;prefix&gt; h</code></td>
+        <td>Split pane horizontally</td>
     </tr>
     <tr>
         <td style="white-space:nowrap"><code>Alt + ←</code>&nbsp;&nbsp; or<br/>
