@@ -3,7 +3,6 @@
 
 SPACESHIP_NODE_SHOW=false
 SPACESHIP_PACKAGE_SHOW=false
-SPACESHIP_VI_MODE_SHOW=false
 SPACESHIP_KUBECTL_SHOW=true
 SPACESHIP_KUBECTL_VERSION_SHOW=false # disable to speed up prompt when no remote server is available
 SPACESHIP_KUBECONTEXT_SHOW=true
@@ -22,3 +21,11 @@ SPACESHIP_KUBECONTEXT_COLOR_GROUPS=(
 )
 
 SPACESHIP_GOLANG_COLOR=#00add8
+
+SPACESHIP_VI_MODE_SHOW=false
+SPACESHIP_VI_MODE_INSERT=[INSERT]
+SPACESHIP_VI_MODE_NORMAL=[NORMAL]
+SPACESHIP_VI_MODE_COLOR=yellow
+# workaround to update prompt with VI modes (insert/normal)
+# however it turns off beam shape cursor so I will turn off VI_MODE_SHOW for now
+#eval spaceship_vi_mode_enable
