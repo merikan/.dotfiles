@@ -7,6 +7,8 @@
 #
 # This is not the file to define aliases, functions, shell options, and key
 # bindings. It should not change the shell environment.
+#
+# http://zsh.sourceforge.net/Intro/intro_3.html#SEC3
 
 echo "Running .zlogin"
 

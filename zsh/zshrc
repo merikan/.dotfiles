@@ -23,6 +23,8 @@
 # intended to be used together, although this could certainly be done if desired."
 # 
 # .zlogout is sometimes used to clear and reset the terminal.
+#
+# http://zsh.sourceforge.net/Guide/zshguide.html
 
 echo "Running .zshrc"
 
@@ -164,7 +166,7 @@ bindkey '\e[A' history-beginning-search-backward
 #Use down key to search forward in the history for a line beginning with the current line up to the cursor.
 bindkey '\e[B' history-beginning-search-forward
 
-# Load antibody plugin manager
+# Load antibody plugin manager (antibody list)
 command -v antibody >/dev/null 2>&1  && {
   # echo "loading antibody"
   source <(antibody init)
