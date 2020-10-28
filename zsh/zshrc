@@ -184,6 +184,15 @@ expandalias() {
 }
 zle -N expandalias
 bindkey "^ " expandalias              # control+space to expand alias
+# select global_alias
+function __zle_select_global_alias {
+  local alias=$(alias | awk -F "=" '{print $1}' | tr -d "\'" | grep -E '\b[[:upper:]]+\b' \
+                | fzf )
+  RBUFFER=${alias}${RBUFFER}
+  zle end-of-line
+}
+zle -N select_global_alias __zle_select_global_alias            # load widget
+bindkey '^G' select_global_alias                                # bind to ctrl+G
 
 # Use lf to switch directories and bind it to ctrl-o
 command -v lf >/dev/null 2>&1  && {
@@ -198,6 +207,7 @@ command -v lf >/dev/null 2>&1  && {
   }
   bindkey -s '^o' 'lfcd\n'
 }
+
 # Theme: spaceship-prompt
 # source config file, remove this when PR #508 is added
 [[ -s ${HOME}/.config/spaceship-prompt/config ]] && source ${HOME}/.config/spaceship-prompt/config
