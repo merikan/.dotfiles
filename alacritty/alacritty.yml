@@ -1,6 +1,9 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 # for default settings see https://github.com/alacritty/alacritty/blob/master/alacritty.yml
 
+shell:
+ program: zsh
+
 # Font configuration
 font:
   normal:
