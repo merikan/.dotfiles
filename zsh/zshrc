@@ -189,9 +189,8 @@ bindkey "^ " expandalias              # control+space to expand alias
 # select global_alias
 function __zle_select_global_alias {
   local alias=$(alias | awk -F "=" '{print $1}' | tr -d "\'" | grep -E '\b[[:upper:]]+\b' \
-                | fzf )
-  RBUFFER=${alias}${RBUFFER}
-  zle end-of-line
+                | fzf  --layout=reverse)
+  LBUFFER+="${(q-)alias} "
 }
 zle -N select_global_alias __zle_select_global_alias            # load widget
 bindkey '^G' select_global_alias                                # bind to ctrl+G
