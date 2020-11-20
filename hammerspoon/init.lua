@@ -31,7 +31,7 @@ hs.hotkey.bindSpec({ hyper, "r" }, hs.reload)
 --- Spoons
 --- ==============================================================================  ---
 hs.loadSpoon("SpoonInstall")
-Install=spoon.SpoonInstall -- abbreviation for easier use
+Install = spoon.SpoonInstall -- abbreviation for easier use
 Install.use_syncinstall = true -- use sync notifications
 -- my personal spoon repository
 spoon.SpoonInstall.repos.merikan = {
@@ -67,11 +67,11 @@ Install:andUse("WindowGrid", {
 Install:andUse("MiroWindowsManager",
                 {
                   hotkeys = {
-                    left =       { hyper, "left" },
-                    up =         { hyper, "up" },
-                    down =       { hyper, "down" },
-                    right =      { hyper, "right" },
-                    fullscreen = { hyper, "f" }
+                    left =       { hyper, "h" },
+                    down =       { hyper, "j" },
+                    up =         { hyper, "k" },
+                    right =      { hyper, "l" },
+                    fullscreen = { hyper, "u" }
                   }
                 }
 )
