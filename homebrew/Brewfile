@@ -216,7 +216,7 @@ cask "vlc"                                          # media player
 cask "wavebox"                                      # desktop app for web (gmail)
 cask "xquartz"                                      # X windows on Mac
 cask "yed"                                          # graph editor
-cask "zoomus"                                       # video communications
+cask "zoom"                                         # video communications
 
 ## quick-look-plugins see:https://github.com/sindresorhus/quick-look-plugins
 cask "qlcolorcode"                                  # preview source code files with syntax highlighting
