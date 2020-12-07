@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-set -eo pipefail
+# not possible to use with sdkman
+# set -eo pipefail
 
 # -------------------------------------------------
 # Sdkman: Install, update, upgrade and cleanup 
@@ -83,7 +84,7 @@ update() {
 }
 upgrade() {
     info "Upgrading candidates...(sdk upgrade)"
-    sdk upgrade
+    echo "Y" |  sdk upgrade
     success
 }
 cleanup() {
