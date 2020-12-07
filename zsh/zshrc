@@ -298,9 +298,6 @@ command -v python >/dev/null 2>&1 && {
   export PY_USER_SITE_DIR="$(python -m site --user-site)"
 
 }
-if [ -d "$HOME/Library/Python/2.7/bin" ]; then
-    export PATH=$HOME/Library/Python/2.7/bin:$PATH
-fi
 
 # ruby on macos
 [[ -s "/usr/local/opt/ruby/bin" ]] && {

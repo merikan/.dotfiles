@@ -59,6 +59,9 @@
     ~/.local/oh-my-zsh: submodules/oh-my-zsh
     # powerline
     ~/.config/powerline: powerline
+    # python
+    ~/.config/python/requirement.txt: python/requirement.txt
+    ~/bin/pythit: python/pythit
     # prezto
     ~/.zpreztorc: prezto/zpreztorc
     ~/.local/zprezto: submodules/prezto
@@ -110,6 +113,13 @@
     -
         description: Installing/Updating Homebrew and formulea
         command: $HOME/bin/brewit
+        stdin: true
+        stdout: true
+        stderr: true
+- shell:
+    -
+        description: Installing Python packages
+        command: $HOME/bin/pythit
         stdin: true
         stdout: true
         stderr: true

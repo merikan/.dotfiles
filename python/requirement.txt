@@ -1,0 +1,2 @@
+Glances
+powerline-status
