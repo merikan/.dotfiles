@@ -32,10 +32,10 @@ install() {
             fail "unable to install homebrew, script $0"
         fi
         success "Homebrew is installed"
-        info "Installing homebrew bundle.. (brew bundle)"
-        brew bundle --global
-        success
     fi
+    info "Installing homebrew bundle.. (brew bundle)"
+    brew bundle --global
+    success
 }
 
 update() {
