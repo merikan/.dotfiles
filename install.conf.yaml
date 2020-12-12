@@ -61,7 +61,7 @@
     ~/.config/powerline: powerline
     # python
     ~/.config/python/requirement.txt: python/requirement.txt
-    ~/bin/pythit: python/pythit
+    ~/bin/pyit: python/pyit
     # prezto
     ~/.zpreztorc: prezto/zpreztorc
     ~/.local/zprezto: submodules/prezto
@@ -119,7 +119,7 @@
 - shell:
     -
         description: Installing Python packages
-        command: $HOME/bin/pythit
+        command: $HOME/bin/pyit
         stdin: true
         stdout: true
         stderr: true
