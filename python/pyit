@@ -19,18 +19,18 @@ PRGDIR=`dirname "$PRG"`
 source "$PRGDIR"/../scripts/include.sh
 
 install() {
-    if ! command -v pip3 >/dev/null 2>&1; then
-        error "pip3 is not installed"
+    if ! command -v pip >/dev/null 2>&1; then
+        error "pip is not installed"
         exit 1
     fi
-    info "Installing python packages.. (pip3 -r)"
+    info "Installing python packages.. (pip -r)"
     pip3 -r $home/.config/python/requirement.txt 
     success
 }
 
 upgrade() {
     info "Upgrading python packages...(brew upgrade)"
-    for i in $(pip3 list -o | awk 'NR > 2 {print $1}'); do pip3 install -U $i; done
+    for i in $(pip list -o | awk 'NR > 2 {print $1}'); do pip install -U $i; done
     success
 }
 
