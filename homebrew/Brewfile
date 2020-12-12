@@ -179,7 +179,7 @@ cask "love"                                         # LÖVE - make 2D games in L
 cask "markright"                                    # a markdown editor
 cask "merikan/casks/maconomy"                       # nativefied maconomy
 cask "meld"                                         # visual diff and merge tool
-cask "merikan/casks/messenger"                      # nativefied messenger
+cask "messenger"                                    # facebook messenger
 cask "minikube"                                     # kubernetes mini
 cask "minishift"                                    # openshift mini
 cask "moeditor"                                     # all-purpose markdown editor
