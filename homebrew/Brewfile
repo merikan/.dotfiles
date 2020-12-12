@@ -234,6 +234,7 @@ cask "font-fira-code"                               # monospaced font with progr
 cask "font-go-mono"                                 # golang fonts   
 cask "font-hasklig"                                 # a code font with monospaced ligatures
 cask "font-inconsolata"                             # a great programmers font
+cask "font-jetbrains-mono"                          # a typeface made for developers. 
 cask "font-monoid"                                  # a ppen source coding font with ligatures
 cask "font-monoisome"                               # monoid with Font Awesome support
 
