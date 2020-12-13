@@ -3,3 +3,4 @@
 # zsh Aliases
 
 alias '$'=''
+alias help='run-help'

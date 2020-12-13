@@ -103,6 +103,9 @@ setopt share_history          # share command history data
 #instead of leaving it unchanged in the argument list. This also 
 #applies to file expansion of an initial ~ or =.
 unsetopt nomatch
+# setup help function for built-in commands"
+unalias run-help 2>/dev/null
+autoload run-help
 # Enable edit command line
 autoload -U edit-command-line && zle -N edit-command-line
 bindkey '^xe' edit-command-line      # Ctrl+xe to open command line in editor
