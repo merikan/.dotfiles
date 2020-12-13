@@ -94,6 +94,7 @@ brew "plantuml"                                     # draw UML diagrams
 brew "pip-completion"                   
 brew "potrace"                                      # transforming bitmaps into vector graphics
 brew "pv"                                           # a terminal-based tool for monitoring the progress of data through a pipeline.
+brew "pyenv"                                        # simple python version management
 brew "python"                                       # python programming
 brew "reattach-to-user-namespace"                   # Reattach process (e.g., tmux) to background
 brew "rest-shell"                                   # Spring HATEOAS-compliant REST shell
