@@ -3,6 +3,7 @@
 # --------
 # Manage Python packages
 # ------
+set -eo pipefail
 
 # resolve links - $0 may be a softlink
 PRG="$0"
@@ -17,20 +18,24 @@ while [ -h "$PRG" ] ; do
 done
 PRGDIR=`dirname "$PRG"`
 source "$PRGDIR"/../scripts/include.sh
+pip="pip3"
 
 install() {
-    if ! command -v pip >/dev/null 2>&1; then
-        error "pip is not installed"
-        exit 1
+    if command -v "${pip}" >/dev/null 2>&1; then
+      info "Installing python packages.. (pip -r)"
+      eval "${pip} install -r $HOME/.config/python/requirement.txt"
+      success
+    else
+      error "${pip} is not installed"
+      exit 1
     fi
-    info "Installing python packages.. (pip -r)"
-    pip3 -r $home/.config/python/requirement.txt 
-    success
 }
 
 upgrade() {
-    info "Upgrading python packages...(brew upgrade)"
-    for i in $(pip list -o | awk 'NR > 2 {print $1}'); do pip install -U $i; done
+    info "Upgrading python packages...(pip install -U)"
+    for i in $(${pip} list -o | awk 'NR > 2 {print $1}'); do 
+      eval "${pip} install -U $i"; 
+    done
     success
 }
 
