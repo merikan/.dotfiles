@@ -297,8 +297,9 @@ export SDKMAN_DIR="$HOME/.sdkman"
 }
 
 # python
-command -v python >/dev/null 2>&1 && {
-  export PY_USER_SITE_DIR="$(python -m site --user-site)"
+command -v python3 >/dev/null 2>&1 && {
+  export PATH="$(python3 -m site --user-base)"/bin:$PATH
+  export PY_USER_SITE_DIR="$(python3 -m site --user-site)"
 }
 # pyenv
 command -v pyenv >/dev/null 2>&1 && {

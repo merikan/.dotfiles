@@ -26,7 +26,7 @@ install() {
       exit 1
     fi
     info "Installing python packages.. (pip -r)"
-    eval "${pip} install -r $HOME/.config/python/requirement.txt"
+    eval "${pip} install --user -r $HOME/.config/python/requirement.txt"
     success
 }
 

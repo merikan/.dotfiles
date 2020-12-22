@@ -81,7 +81,7 @@
     ~/.tmux/renew_env.sh: tmux/renew_env.sh
     ~/.tmux/yank.sh: tmux/yank.sh
     ~/.tmux/tmux.remote.conf: tmux/tmux.remote.conf
-    ~/.tmux/tmux-theme.conf: tmux/base16-theme.conf
+    ~/.tmux/themes: tmux/themes
     # zim
     ~/.local/zim/zimfw.zsh: zim/zimfw.zsh
     ~/.zimrc: zim/zimrc

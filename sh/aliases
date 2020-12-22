@@ -174,8 +174,8 @@ alias dm='docker-machine'
   alias brew-update='brew update && brew outdated'
   alias brew-upgrade='brew upgrade && brew cleanup'
   # make python 3 default
-  alias python='/usr/local/bin/python3' 
-  alias pip='/usr/local/bin/pip3'
+  # alias python='/usr/local/bin/python3' 
+  # alias pip='/usr/local/bin/pip3'
   # When it's time for a fika
   alias fika="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
   # Pretty print from clipboard, OS X only 
