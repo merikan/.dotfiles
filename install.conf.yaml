@@ -78,9 +78,6 @@
     ~/.config/spaceship-prompt/config: spaceship-prompt/spaceship-promptrc
     # tmux
     ~/.tmux.conf: tmux/tmux.conf
-    ~/.tmux/renew_env.sh: tmux/renew_env.sh
-    ~/.tmux/yank.sh: tmux/yank.sh
-    ~/.tmux/tmux.remote.conf: tmux/tmux.remote.conf
     ~/.tmux/themes: tmux/themes
     # zim
     ~/.local/zim/zimfw.zsh: zim/zimfw.zsh

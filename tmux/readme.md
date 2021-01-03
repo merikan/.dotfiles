@@ -32,18 +32,23 @@ Features
 - highlight focused pane
 - separate theme file for easy customizable status line
 - scroll and copy mode improvements
-- support for nested tmux sessions
-- merge current session with existing one (move all windows)
-- local vs remote specific session configuration
-- integration with OSX or Linux clipboard (works for local, remote, and local+remote nested session scenario)
-- renew tmux and shell environment (SSH_AUTH_SOCK, DISPLAY, SSH_TTY) when reattaching back to old session
-- monitor windows for activity/silence
+- integration with OSX or Linux clipboard
 - integration with 3rd party plugins
 - install tpm and plugins automatically when tmux is started
-- and other stuff
 
-**Status line widgets**:
+**Copy mode**
+- Using vim bindings in copy mode
+   - Select visual mode; (`v`) character-wise, (`V`) line-wise or (`Ctrl+v`) block-wise
+   - Yank selected text with `y`
+   - Quit copy-mode with `q` or `Ctrl+c`
+- Don't leave copy-mode when yanking, use 'q' or Ctrl+c to leave
+- Enable cursor to select in copy-mode without leaving.
+- Doble click to deselect
 
+**Color Scheme and Status line widgets**:
+
+- The Color Scheme is my own Base16 theme
+- Using Power Line status line
 - visual indicator when you press `prefix` and when in `Copy` mode
 - CPU, memory usage, system load average metrics
 - username and hostname, current date time
@@ -60,7 +65,7 @@ Windows and pane indexing starts from `1` rather than `0`. Scrollback history li
 
 Key bindings
 -----------
-The `~/.tmux.conf` overrides default key bindings for many action, to make them more intuitive and comfortable to type on a Swedish keyboard. Also I want to have as vim-like as possible.
+The `~/.tmux.conf` overrides default key bindings for many action, to make them more intuitive and comfortable to type on a Swedish and ANSI keyboard. Also I want to have as vim-like as possible.
 
 The list below is not a complete list of key bindings, it only contains the bindings that I use most or which I feel I need to document.
 
@@ -86,55 +91,27 @@ The list below is not a complete list of key bindings, it only contains the bind
         <td colspan=2 style="text-align:left">: Pane</td>
     </tr>
     <tr>
-        <td style="white-space:nowrap"><code>&lt;prefix&gt; s</code></td>
+        <td style="white-space:nowrap"><code>&lt;prefix&gt; s</code>&nbsp;&nbsp; or<br/>
+        <code>&lt;prefix&gt; |</code>&nbsp;&nbsp; or<br/>
+        <code>&lt;prefix&gt; \</code>
+        </td>
         <td>Split pane vertically</td>
     </tr>
     <tr>
-        <td style="white-space:nowrap"><code>&lt;prefix&gt; h</code></td>
+        <td style="white-space:nowrap"><code>&lt;prefix&gt; -</code>&nbsp;&nbsp; or<br/>
+        <code>&lt;prefix&gt; _</code>
+        </td>
         <td>Split pane horizontally</td>
     </tr>
     <tr>
-        <td style="white-space:nowrap"><code>Alt + ←</code>&nbsp;&nbsp; or<br/>
-        <code>Alt + h</code>
+        <td style="white-space:nowrap"><code>Ctrl + [h,j,k,l]</code>&nbsp;&nbsp; or<br/>
+        <code>Alt + [←,↓,↑,→]</code>
         </td>
-        <td>Select pane on the left</td>
+        <td>Select pane left, down, up, right without prefix<br>
+        <code>Ctrl+[hjkl]</code> is <code>vim</code> and <code>fzf</code> aware and visual effect is enabled</td>
     </tr>
-    <tr>
-        <td style="white-space:nowrap"><code>Alt + →</code>&nbsp;&nbsp; or<br/>
-        <code>Alt - l</code>
-        </td>
-        <td>Select pane on the right</td>
-    </tr>
-    <tr>
-        <td style="white-space:nowrap"><code>Alt + ↑</code>&nbsp;&nbsp; or<br/>
-        <code>Alt + j</code>
-        </td>
-        <td>Select pane above</td>
-    </tr>
-    <tr>
-        <td style="white-space:nowrap"><code>Alt + ↓</code>&nbsp;&nbsp; or <br/>
-        <code>Alt + k</code></td>
-        <td>Select pane below</td>
-    </tr>
-    <tr>
-        <td style="white-space:nowrap"><code>Alt+Shift + ←</code></td>
-        <td>Resize current pane to the left</td>
-    </tr>
-    <tr>
-        <td style="white-space:nowrap"><code>Alt+Shift + →</code></td>
-        <td>Resize current pane to the right</td>
-    </tr>
-    <tr>
-        <td style="white-space:nowrap"><code>Alt+Shift + ↑</code></td>
-        <td>Resize current pane up</td>
-    </tr>
-    <tr>
-        <td style="white-space:nowrap"><code>Alt+Shift + ↓</code></td>
-        <td>Resize current pane down</td>
-    </tr>
-    <tr>
-        <td style="white-space:nowrap"><code>&lt;prefix&gt; \</code></td>
-        <td>Swap panes back and forth with 1st pane. When in main-horizontal or main-vertical layout, the main panel is always at index 1. This keybinding let you swap secondary pane with main one, and do the opposite.</td>
+        <td style="white-space:nowrap"><code>Alt+Shift + [←,↓,↑,→]</code></td>
+        <td>Resize current pane to the left, down, up, right</td>
     </tr>
     <tr>
         <td style="white-space:nowrap"><code>&lt;prefix&gt; Ctrl+o</code></td>
@@ -160,20 +137,16 @@ The list below is not a complete list of key bindings, it only contains the bind
         <td>Rename current window</td>
     </tr>
     <tr>
-        <td style="white-space:nowrap"><code>Shift + →</code></td>
-        <td>Move to next window</td>
+        <td style="white-space:nowrap"><code>&lt;prefix&gt; + [H,L]</code>&nbsp;&nbsp; or<br/><code>Shift + [←,→]</code></td>
+        <td>Select window to the left/right</td>
     </tr>
     <tr>
-        <td style="white-space:nowrap"><code>Shift + ←</code></td>
-        <td>Move to previous window</td>
+        <td style="white-space:nowrap"><code>&lt;prefix&gt; + w</code></td>
+        <td>Select window from tree</td>
     </tr>
     <tr>
-        <td style="white-space:nowrap"><code>Ctrl + Shift + →</code></td>
-        <td>Move the current window to the right</td>
-    </tr>
-    <tr>
-        <td style="white-space:nowrap"><code>Ctrl + Shift + ←</code></td>
-        <td>Move the current window to the left</td>
+        <td style="white-space:nowrap"><code>&lt;prefix&gt; + [<,>]</code>&nbsp;&nbsp; or<br/><code>Ctrl + Shift + [←,→]</code></td>
+        <td>Move the current window to the left/right</td>
     </tr>
     <tr>
         <td style="white-space:nowrap"><code>&lt;prefix&gt; X</code></td>
@@ -182,10 +155,6 @@ The list below is not a complete list of key bindings, it only contains the bind
     <tr>
         <td style="white-space:nowrap"><code>&lt;prefix&gt; Ctrl+x</code></td>
         <td>Kill other windows but current one (with confirmation)</td>
-    </tr>
-    <tr>
-        <td style="white-space:nowrap"><code>&lt;prefix&gt; L</code></td>
-        <td>Link window from another session by entering target session and window reference</td>
     </tr>
     <tr>
         <td colspan=2 style="text-align:left">: Session</td>
@@ -199,10 +168,6 @@ The list below is not a complete list of key bindings, it only contains the bind
         <td>Kill current session (with confirmation)</td>
     </tr>
     <tr>
-        <td style="white-space:nowrap"><code>&lt;prefix&gt; Ctrl+u</code></td>
-        <td>Merge current session with another. Essentially, this moves all windows from current session to another one</td>
-    </tr>
-    <tr>
         <td style="white-space:nowrap"><code>&lt;prefix&gt; d</code></td>
         <td>Detach from session</td>
     </tr>
@@ -211,7 +176,7 @@ The list below is not a complete list of key bindings, it only contains the bind
         <td>Detach other clients except current one from session</td>
     </tr>
     <tr>
-        <td colspan=2 style="text-align:left">: Copy mode (full mouse support, see below)</td>
+        <td colspan=2 style="text-align:left">: Copy mode (with mouse support)</td>
     </tr>
     <tr>
         <td style="white-space:nowrap"><code>&lt;prefix&gt; Esc</code></td>
@@ -223,22 +188,21 @@ The list below is not a complete list of key bindings, it only contains the bind
         <td>exit copy mode</td>
     </tr>
     <tr>
-        <td style="white-space:nowrap"><code>v</code>&nbsp;&nbsp; or <br/>
-        <code>Space</code></td>
-        <td>Begin selection</td>
+        <td style="white-space:nowrap"><code>v</code></td>
+        <td>Begin selection in character-wise mode</td>
+    </tr>
+    <tr>
+        <td style="white-space:nowrap"><code>V</code></td>
+        <td>Begin selection in line-wise mode</td>
+    </tr>
+    <tr>
+        <td style="white-space:nowrap"><code>Ctrl+v</code></td>
+        <td>Begin selection in block-wise mode</td>
     </tr>
     <tr>
         <td style="white-space:nowrap"><code>y</code>&nbsp;&nbsp; or <br/>
         <code>Enter</code></td>
-        <td>Copies selection and exits copy mode</td>
-    </tr>
-    <tr>
-        <td style="white-space:nowrap"><code>Y</code></td>
-        <td>Copies the whole line</td>
-    </tr>
-    <tr>
-        <td style="white-space:nowrap"><code>D</code></td>
-        <td>Copies to the end of line</td>
+        <td>Copies selection without exiting copy mode</td>
     </tr>
     <tr>
         <td style="white-space:nowrap"><code>Escape</code></td>
@@ -312,10 +276,6 @@ The list below is not a complete list of key bindings, it only contains the bind
         <td>Monitor current window for silence by entering silence period</td>
     </tr>
     <tr>
-        <td style="white-space:nowrap"><code>&lt;prefix&gt; F12</code></td>
-        <td>Switch off all key binding and prefix hanling in current window. See "Nested sessions" paragraph for more info</td>
-    </tr>
-    <tr>
         <td style="white-space:nowrap"><code>&lt;prefix&gt; Ctrl+s</code></td>
         <td>save all the details from your tmux environment (plugin: tmux-plugins/tmux-resurrect)</td>
     </tr>
@@ -324,98 +284,34 @@ The list below is not a complete list of key bindings, it only contains the bind
         <td>restore all the details from your tmux environment (plugin: tmux-plugins/tmux-resurrect)</td>
     </tr>
 </table>
-
+     
 ## Copy mode
-There are some tweaks to copy mode and scrolling behavior, you should be aware of.
+My key-bindings in copy-mode are vim bindings.   
 
-There is a root keybinding to enter Copy mode: `Escape`. Once in copy mode, you have several scroll controls:
+To enter copy mode press `<prefix>+Esc` and to exit just press `q` or `Ctrl+c`   
 
-- scroll by line: `M-Up`, `M-down`
-- scroll by half screen: `M-PageUp`, `M-PageDown`
-- scroll by whole screen: `PageUp`, `PageDown`
-- scroll by mouse wheel, scroll step is changed from `5` lines to `2`
+Tmux copy mode is  is very similar to vim visual mode. Select start selecting in character-vise mode with `v`, line-wise mode with `S-v` and block-wise mode with `C-v`. You can also use `Space` to start selection in charactervise mode.   
+To copy selected text without leaving copy mode, use `y` or `Enter`
 
-`Space` starts selection, `Enter` copies selection and exits copy mode. List all items in copy buffer using `prefix C-p`, and paste most recent item from buffer using `prexix p`.
-
-`y` just copies selected text and is equivalent to `Enter`,  `Y` copies whole line, and `D` copies by the end of line.
-
-Also, note, that when text is copied any trailing new lines are stripped. So, when you paste buffer in a command prompt, it will not be immediately executed.
-
-You can also select text using mouse. Default behavior is to copy text and immediately cancel copy mode on `MouseDragEnd` event. This is annoying, because sometimes I select text just to highlight it, but tmux drops me out of copy mode and reset scroll by the end. I've changed this behavior, so `MouseDragEnd` does not execute `copy-selection-and-cancel` action. Text is copied, but copy mode is not cancelled and selection is not cleared. You can then reset selection by mouse click.
-
-
-## Clipboard integration
-
-When you copy text inside tmux, it's stored in private tmux buffer, and not shared with system clipboard. Same is true when you SSH onto remote machine, and attach to tmux session there. Copied text will be stored in remote's session buffer, and not shared/transported to your local system clipboard. And sure, if you start local tmux session, then jump into nested remote session, copied text will not land in your system clipboard either.
-
-This is one of the major limitations of tmux, that you might just decide to give up using it. Let's explore possible solutions:
-
-- share text with OSX clipboard using **"pbcopy"**
-- share text with OSX clipboard using [reattach-to-user-namespace](https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard) wrapper to access "pbcopy" from tmux environment (seems on OSX 10.11.5 ElCapitan this is not needed, since I can still access pbcopy without this wrapper).
-- share text with X selection using **"xclip"** or **"xsel"** (store text in primary and clipboard selections). Works on Linux when DISPLAY variable is set.
-
-All solutions above are suitable for sharing tmux buffer with system clipboard for local machine scenario. They still does not address remote session scenarios. What we need is some way to transport buffer from remote machine to the clipboard on the local machine, bypassing remote system clipboard.
-
-There are 2 workarounds to address remote scenarios.
-
-Use **[ANSI OSC 52](https://en.wikipedia.org/wiki/ANSI_escape_code#Escape_sequences)** escape [sequence](https://blog.vucica.net/2017/07/what-are-osc-terminal-control-sequences-escape-codes.html) to talk to controlling/parent terminal and pass buffer on local machine. Terminal should properly undestand and handle OSC 52. Currently, only iTerm2 and XTerm support it. OSX Terminal, Gnome Terminal, Terminator do not.
-
-Second workaround is really involved and consists of [local network listener and SSH remote tunneling](https://apple.stackexchange.com/a/258168):
-
-- SSH onto target machine with remote tunneling on
-    ```
-    ssh -R 2222:localhost:3333  alexeys@192.168.33.100
-    ```
-- When text is copied inside tmux (by mouse, by keyboard by whatever configured shortcut), pipe text to network socket on remote machine
-    ```
-    echo "buffer" | nc localhost 2222
-    ```
-- Buffer will be sent thru SSH remote tunnel from port `2222` on remote machine to port `3333` on local machine.
-- Setup a service on local machine (systemd service unit with socket activation), which listens on network socket on port `3333`, and pipes any input to `pbcopy` command (or `xsel`, `xclip`).
-
-This tmux-config does its best to integrate with system clipboard, trying all solutions above in order, and falling back to OSC 52 ANSI escape sequences in case of failure. 
-
-On OSX you might need to install `reattach-to-user-namespace` wrapper: `brew install reattach-to-user-namespace`, and make sure OSC 52 sequence handling is turned on in iTerm. (Preferences -> General -> Applications in Terminal may access clipboard).
-
-On Linux, make sure `xclip` or `xsel` is installed. For remote scenarios, you would still need to setup network listener and use SSH remote tunneling, unless you terminal emulators supports OSC 52 sequences.
-
-
-## Nested tmux sessions
-
-One prefers using tmux on local machine to supercharge their terminal emulator experience, other use it only for remote scenarios to retain session/state in case of disconnect. Things are getting more complex, when you want to be on both sides. You end up with nested session, and face the question: **How you can control inner session, since all keybindings are caught and handled by outer session?**. Community provides several possible solutions.
-
-The most common is to press `C-a` prefix twice. First one is caught by local session, whereas second is passed to remote one. Nothing extra steps need to be done, this works out of the box. However, root keytable bindings are still handled by outer session, and cannot be passed to inner one.
-
-<!-- TODO fix toggle on and off -->
-Accepted solution, turn off all keybindings and key prefix handling in outer session, when working with inner one. This way, outer session just sits aside, without interfering keystrokes passed to inner session. Credits to [http://stahlke.org/dan/tmux-nested/](http://stahlke.org/dan/tmux-nested/) and this [Github issue](https://github.com/tmux/tmux/issues/237)
-
-So, how it works. When in outer session, simply press `F12` to toggle off all keybindings handling in outer session. Now work with inner session using the same keybinding scheme and same keyprefix. Press `F12` to turn on outer session back.
-
-<!-- ![nested sessions](https://user-images.githubusercontent.com/768858/33151636-84a0bab2-cfe1-11e7-9d5d-412525689c9b.gif) -->
-
-You might notice that when key bindings are "OFF", special `[OFF]` visual indicator is shown in the status line, and status line changes its style (colored to gray).
-
-###  Local and remote sessions
-
-Remote session is detected by existence of `$SSH_CLIENT` variable. When session is remote, following changes are applied:
-- status line is docked to bottom; so it does not stack with status line of local session
-- some widgets are removed from status line: battery, date time. The idea is to economy width, so on wider screens you can open two remote tmux sessions in side-by-side panes of single window of local session.
-
-You can apply remote-specific settings by extending `~/.tmux/.tmux.remote.conf` file.
+You can also select text using mouse. Default behavior is to copy text and immediately cancel copy mode on `MouseDragEnd1Pane` event. I have changed this behaviour so text is only selected, to yank the text use `y` and exit copy mode with `q`.   
+You can reset selection with mouse click.
 
 
 ## Themes and customization
 
-All colors and styles for the status-bar are loaded from a separate theme file.
-
+All colors and styles for Tmux and the status-bar are loaded from a separate theme file. 
 ```
 # load the theme
-source-file ~/.tmux/tmux-theme.conf
+source-file ~/.tmux/base16-theme.conf
 ```
+
+My current color scheme is base-16. I want soft colors that doesn't distract me from the content.
+
+The current pane is slightly brighter for better visibility.
 
 ## Status line
 
-My status line is minimalistic since I don't want it to distract me from what's important. No bling bling and colors, just the information I need to have when in tmux.
+I am using power-line for my status line. No colors and just the information I need to have when in tmux.
 
 The left part contains only current session name.
 

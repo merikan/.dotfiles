@@ -73,7 +73,6 @@ alias tm='tmux'
 #tmux; attach to an existing session or restore resurrect https://github.com/tmux-plugins/tmux-resurrect/issues/139#issuecomment-241715139
 alias tma='tmux attach || { (while ! tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/restore.sh; do sleep 0.2; done)& tmux ; }'
 alias tmo='tmux a -t '   # tmux open target session
-# Some convenient commands
 
 # copy/paste command with prompt string into the shell
 # alias $='__prompt_string_'
