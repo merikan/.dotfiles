@@ -79,6 +79,7 @@ brew "mackup"                                       # keep application settings 
 brew "maven-completion"                   
 brew "mas"                                          # Mac App Store command-line interface
 brew "midnight-commander"                           # visual file manager
+brew "minikube"                                     # kubernetes mini
 brew "mitmproxy"                                    # a free and open source interactive HTTPS proxy
 brew "mplayer"                                      # UNIX movie player
 brew "mysql-client"                                 # mysql client
@@ -181,7 +182,6 @@ cask "markright"                                    # a markdown editor
 cask "merikan/casks/maconomy"                       # nativefied maconomy
 cask "meld"                                         # visual diff and merge tool
 cask "messenger"                                    # facebook messenger
-cask "minikube"                                     # kubernetes mini
 cask "minishift"                                    # openshift mini
 cask "moeditor"                                     # all-purpose markdown editor
 cask "obs"                                          # foss for video recording and live streaming
