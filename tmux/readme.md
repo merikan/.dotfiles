@@ -137,7 +137,7 @@ The list below is not a complete list of key bindings, it only contains the bind
         <td>Rename current window</td>
     </tr>
     <tr>
-        <td style="white-space:nowrap"><code>&lt;prefix&gt; + [H,L]</code>&nbsp;&nbsp; or<br/><code>Shift + [←,→]</code></td>
+        <td style="white-space:nowrap"><code>Ctrl + [[,]]</code>&nbsp;&nbsp; or<br/><code>Shift + [←,→]</code></td>
         <td>Select window to the left/right</td>
     </tr>
     <tr>
@@ -145,7 +145,7 @@ The list below is not a complete list of key bindings, it only contains the bind
         <td>Select window from tree</td>
     </tr>
     <tr>
-        <td style="white-space:nowrap"><code>&lt;prefix&gt; + [<,>]</code>&nbsp;&nbsp; or<br/><code>Ctrl + Shift + [←,→]</code></td>
+        <td style="white-space:nowrap"><code>&lt;prefix&gt; + [[,]]</code>&nbsp;&nbsp; or<br/><code>Ctrl + Shift + [←,→]</code></td>
         <td>Move the current window to the left/right</td>
     </tr>
     <tr>
@@ -276,12 +276,15 @@ The list below is not a complete list of key bindings, it only contains the bind
         <td>Monitor current window for silence by entering silence period</td>
     </tr>
     <tr>
+        <td colspan=2 style="text-align:left">: plugin: tmux-resurrect</td>
+    </tr>
+    <tr>
         <td style="white-space:nowrap"><code>&lt;prefix&gt; Ctrl+s</code></td>
-        <td>save all the details from your tmux environment (plugin: tmux-plugins/tmux-resurrect)</td>
+        <td>save all the details from your tmux environment</td>
     </tr>
     <tr>
         <td style="white-space:nowrap"><code>&lt;prefix&gt; Ctrl+r</code></td>
-        <td>restore all the details from your tmux environment (plugin: tmux-plugins/tmux-resurrect)</td>
+        <td>restore all the details from your tmux environment</td>
     </tr>
 </table>
      
