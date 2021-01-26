@@ -28,6 +28,7 @@ brew "asciinema"                                    # record and share terminal 
 brew "bash" 
 brew "bash-completion" 
 brew "bat"                                          # a cat clone with syntax highlighting and git integration
+brew "bitwarden-cli"                                # open source password management
 brew "brew-cask-completion" 
 brew "ccat"                                         # colorizing cat  
 brew "clair-scanner"                                # scan local docker images
@@ -136,6 +137,7 @@ cask "backuploupe"                                  # browse your timemachine ba
 cask "balenaetcher"                                 # Burn images to SD cards & USB drives, safely and easily.
 cask "bartender"                                    # organize your menu bar icons
 cask "bitbar"                                       # put the output from any script or program in your Mac OS X Menu Bar
+cask "bitwarden"                                    # open source password management
 cask "brave-browser"                                # privacy focused, performance oriented browser
 cask "calibre"                                      # e-book reader and library management application
 cask "clementine"                                   # music player and radio streamer
