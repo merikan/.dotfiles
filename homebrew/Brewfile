@@ -103,6 +103,7 @@ brew "rest-shell"                                   # Spring HATEOAS-compliant R
 brew "ripgrep"                                      # recursively searches directories for a regex pattern
 brew "rsync"                                        # provides fast incremental file transfer.
 brew "ruby"                                         # ruby environment
+brew "scrcpy"                                       # android screen mirror
 brew "shellcheck"                                   # a static analysis tool for shell scripts
 brew "ssh-copy-id"                                  # ssh copy 
 brew "stunnel"                                      # SSL tunneling program
@@ -127,7 +128,7 @@ cask "java"                                         # java
 cask "adium"                                        # instant messaging
 cask "alacritty"                                    # the GPU enhanced terminal emulator
 cask "alfred"                                       # a must have for boost productivity 
-cask "android-sdk"                                  # android sdk
+cask "android-platform-tools"                       # android sdk
 cask "android-studio"                               # android IDE 
 cask "android-file-transfer"                        # transfer files from Android device 
 cask "arq"                                          # backup for mac
