@@ -158,6 +158,7 @@ cask "expandrive"                                   # map a drive to any cloud
 cask "flux"                                         # get rid of the blue light
 cask "firefox"                                      # a browser
 cask "firefox-developer-edition"                    # a browser
+cask "flutter"                                      # ui toolkit for flutter
 cask "gimp"                                         # an Image Editor (I probably never be able to learn)
 cask "gitkraken"                                    # Git GUI client for Windows, Mac and Linux 
 cask "gitup"                                        # awesome Git Gui Client 
