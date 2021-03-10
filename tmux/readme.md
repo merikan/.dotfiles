@@ -362,3 +362,60 @@ CPU, RAM, and load monitor for use with tmux
 Persists tmux environment across system restarts.
 * [tmux-continuum](https://github.com/tmux-plugins/tmux-continuum)   
 Continuous saving of tmux environment. Automatic restore when tmux is started. Automatic tmux start when computer is turned on.
+
+
+
+
+
+## [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)    
+Installs and loads tmux plugins.
+## [tmux-prefix-highlight](https://github.com/tmux-plugins/tmux-prefix-highlight)   
+Plugin that highlights when you press tmux prefix key
+## [tmux-online-status](https://github.com/tmux-plugins/tmux-online-status)   
+Tmux plugin that displays online status of your computer.
+## [tmux-copycat](https://github.com/tmux-plugins/tmux-copycat)   
+Tmux plugin that enhances tmux search
+### Key bindings
+**Search**   
+`prefix + /` - regex search (strings work too)   
+
+Example search entries:   
+> `foo` - searches for string `foo`   
+>`[0-9]+` - regex search for numbers   
+
+Grep is used for searching.   
+Searches are case insensitive.   
+
+**Predefined searches**   
+These starts "copycat mode" and jump to first match.
+* `prefix + ctrl-f` - simple file search
+* `prefix + ctrl-g` - jumping over git status files (best used after git status command)
+* `prefix + alt-h` - jumping over SHA-1/SHA-256 hashes (best used after git log command)
+* `prefix + ctrl-u` - url search (http, ftp and git urls)
+* `prefix + ctrl-d` - number search (mnemonic d, as digit)
+* `prefix + alt-i` - ip address search
+
+**"Copycat mode" bindings**   
+These are enabled when you search with copycat:   
+* `n` - jumps to the next match   
+* `N` - jumps to the previous match   
+
+To copy a highlighted match:
+* `Enter` - if you're using Tmux vi mode
+## [tmux-open](https://github.com/tmux-plugins/tmux-open)   
+Tmux key bindings for quick opening of a highlighted file or url
+### Key bindings
+In tmux copy mode:   
+`o` - "open" a highlighted selection with the system default program. open for OS X or xdg-open for Linux.   
+`ctrl-o` - open a highlighted selection with the $EDITOR   
+`shift-s` - search the highlighted selection directly inside a search engine (defaults to google).   
+## [tmux-mem-cpu-load](https://github.com/thewtex/tmux-mem-cpu-load)   
+CPU, RAM, and load monitor for use with tmux
+## [tmux-resurrect](https://github.com/tmux-plugins/tmux-resurrect)   
+Persists tmux environment across system restarts.
+### Key bindings
+`prefix + ctrl-s` - save   
+`prefix + ctrl-r` - restore   
+## [tmux-continuum](https://github.com/tmux-plugins/tmux-continuum)   
+Continuous saving of tmux environment. Automatic restore when tmux is started. Automatic tmux start when computer is turned on.
+I am using this to save my tmux environment every 15 minutes so I can restore after a reboot or if I f*ck things up.
