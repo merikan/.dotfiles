@@ -11,6 +11,8 @@
 
 [core]
 	excludesfile = ~/.gitignore_global
+  # start nvim in insert mode and on line 2
+	editor = nvim +star +2
 	#precomposeunicode = true
 
 [color]
