@@ -70,9 +70,9 @@ command -v dfc >/dev/null 2>&1 && alias df='dfc' # colorized df
 
 #tmux
 alias tm='tmux'
-#tmux; attach to an existing session or restore resurrect https://github.com/tmux-plugins/tmux-resurrect/issues/139#issuecomment-241715139
-alias tma='tmux attach || { (while ! tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/restore.sh; do sleep 0.2; done)& tmux ; }'
-alias tmo='tmux a -t '   # tmux open target session
+#tmux start; attach to an existing session or restore resurrect https://github.com/tmux-plugins/tmux-resurrect/issues/139#issuecomment-241715139
+alias tms='tmux attach || { (while ! tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/restore.sh; do sleep 0.2; done)& tmux ; }'
+alias tma='tmux a -t '   # tmux attach a target session
 
 # copy/paste command with prompt string into the shell
 # alias $='__prompt_string_'
