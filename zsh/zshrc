@@ -125,6 +125,8 @@ bindkey -M menuselect 'up' vi-up-line-or-history
 bindkey -M menuselect 'right' vi-forward-char
 bindkey -v '^?' backward-delete-char # Fix backspace bug when switching modes
 bindkey -M vicmd "v" edit-command-line # v to open command line in editor
+bindkey -M vicmd "^x^e" edit-command-line # v to open command line in editor
+bindkey -M vicmd "^xe" edit-command-line # v to open command line in editor
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
   if [[ ${KEYMAP} == vicmd ]] ||
