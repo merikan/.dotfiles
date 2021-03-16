@@ -34,7 +34,7 @@ install() {
         success "Homebrew is installed"
     fi
     info "Installing homebrew bundle.. (brew bundle)"
-    brew bundle --global
+    brew bundle --verbose --global
     success
 }
 
