@@ -40,7 +40,7 @@ set undodir=~/.local/share/nvim/undodir " Undo directory
 set shortmess+=c                        " Don't pass messages to |ins-completion-menu|.
 set signcolumn=yes                      " Always show the signcolumn, otherwise it would shift the text each time
 set updatetime=300                      " Faster completion
-set timeoutlen=100                      " By default timeoutlen is 1000 ms
+set timeoutlen=150                      " By default timeoutlen is 1000 ms
 
 set hidden                              " allow switching edited buffers without saving
 set clipboard^=unnamed,unnamedplus      " Use system buffer (cross-platform)

@@ -14,7 +14,7 @@ nnoremap <esc> :noh<return><esc>
 nnoremap <esc>^[ <esc>^[
 
 " Map escape to jj -- faster to reach and type
-inoremap jj <ESC>
+imap jj <ESC>
 
 " move lines up/down
 nnoremap <A-j> :m .+1<CR>==
