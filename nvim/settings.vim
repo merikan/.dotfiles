@@ -27,24 +27,23 @@ set smartindent                         " makes indenting smart
 set autoindent                          " good auto indent
 set showtabline=2                       " always show tabs
 set nowrap                              " display long lines as just one line
-set whichwrap+=<,>,[,],h,l
+set whichwrap+=<,>,[,],h,l              " automatically wrap left and right
 set splitbelow                          " horizontal split will be below
 set splitright                          " vertical split will be to the right
 
 set iskeyword+=-                      	" treat dash separated words as a word text object
 set formatoptions-=cro                  " stop newline continution of comments
 
-set nobackup                            " This is recommended by coc
-set nowritebackup                       " This is recommended by coc
-set undodir=~/.local/share/nvim/undodir " Undo directory
-set shortmess+=c                        " Don't pass messages to |ins-completion-menu|.
-set signcolumn=yes                      " Always show the signcolumn, otherwise it would shift the text each time
-set updatetime=300                      " Faster completion
-set timeoutlen=150                      " By default timeoutlen is 1000 ms
+set nobackup                            " skip backup (recommended by coc)
+set nowritebackup                       " skip backup(recommended by coc)
+set undodir=~/.local/share/nvim/undodir " use undo directory
+set shortmess+=c                        " don't pass messages to |ins-completion-menu|.
+set signcolumn=yes                      " always show the signcolumn, otherwise it would shift the text each time
+set updatetime=300                      " faster completion
+set timeoutlen=150                      " shorter timeout (default 1000 ms)
 
 set hidden                              " allow switching edited buffers without saving
-set clipboard^=unnamed,unnamedplus      " Use system buffer (cross-platform)
+set clipboard^=unnamed,unnamedplus      " use system buffer (cross-platform)
 set path+=**                            " gf jump to file under cursor, CTRL-^ to jump back
 set guifont=JetBrainsMono\ Nerd\ Font
-" use ripgrep instead of grep
-set grepprg=rg\ --vimgrep\ --smart-case\ --follow
+set grepprg=rg\ --vimgrep\ --smart-case\ --follow " use ripgrep instead of grep
