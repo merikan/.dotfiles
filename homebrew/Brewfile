@@ -59,6 +59,7 @@ brew "httpie"                                       # HTTP command-line client
 brew "hugo"                                         # open-source static site generator
 brew "icdiff"                                       # improved colored diff
 brew "imagemagick"                                  # create, edit, compose, or convert bitmap images
+brew "java"                                         # java 
 brew "jenv"                                         # manage your java environment
 brew "jid"                                          # drill down JSON interactively by using filtering queries like jq.
 brew "jq"                                           # command-line JSON processor, like sed
@@ -124,7 +125,6 @@ brew "zsh"                                          # shell
 ### Casks (https://formulae.brew.sh/cask/)               ###
 ### ---------------------------------------------------- ###
 # Note: Casks with version 'latest' will not be updated due to no checksum change
-cask "java"                                         # java 
 cask "adium"                                        # instant messaging
 cask "alacritty"                                    # the GPU enhanced terminal emulator
 cask "alfred"                                       # a must have for boost productivity 
