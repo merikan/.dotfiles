@@ -58,7 +58,8 @@
     ~/.config/nvim/init.vim: nvim/init.vim
     ~/.config/nvim/settings.vim: nvim/settings.vim
     ~/.config/nvim/key-mappings.vim: nvim/key-mappings.vim
-    ~/.config/nvim/plugins: nvim/plugins
+    ~/.config/nvim/plugins.vim: nvim/plugins.vim
+    ~/.config/nvim/plugin-config: nvim/plugin-config
     ~/.config/nvim/themes: nvim/themes
     # oh-my-zsh
     ~/.oh-my-zshrc: oh-my-zsh/oh-my-zshrc
