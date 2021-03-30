@@ -3,18 +3,17 @@
 [include]
   # Load private config, not to be pushed to repo
   path = ~/.gitconfig.local
-
+[init]
+	defaultBranch = main
 [user]
 	name = Peter Merikan
 	email = peter@merikan.com
 	signingkey = A93D728B0D0028A71C47EB106F86D20024CE1D22
-
 [core]
 	excludesfile = ~/.gitignore_global
   # start nvim in insert mode and on line 2
 	editor = nvim +star +2
 	#precomposeunicode = true
-
 [color]
   diff = auto
   status = auto
@@ -89,6 +88,100 @@
     trustExitCode = false      
 
 [alias]
+  # Shortened base commands 
+  a = add 
+  b = branch -v
+  c = commit
+  d = diff
+  # find file path in codebase
+  f = "!git ls-files | grep -i"w
+  l = log --pretty=format:'%C(yellow)%h%Creset %ai %G?%C(green)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit 
+  p = push`
+  r = remote -v
+  s = status
+  t = tag -l
+
+	accept-theirs = "!f() { git checkout --theirs -- \"${@:-.}\"; git add -u \"${@:-.}\"; }; f"
+	accept-ours = "!f() { git checkout --ours -- \"${@:-.}\"; git add -u \"${@:-.}\"; }; f"
+  # add
+  ad = add
+  # add --all
+  ada = add --all
+  # add context
+  adc = add .
+  # print aliases
+  aliases = "!git config -l | grep alias | cut -c 7- | sort "
+  # Change last commit comment
+  amend = commit --amend -m
+  # list assumed files
+  assumed = "!git ls-files -v | grep ^h | cut -c 3-"
+  # assume a file
+  assume = update-index --assume-unchanged
+  # assume all
+  assumeall = "!git st -s | awk {'print $2'} | xargs git assume"
+  # list all authors
+  authors = "!git log --all --format='%aN <%cE>' | sort -u"
+  # create a backup of the branch BAK_mybranch
+  backup = !git branch $(git branch | grep '*' | sed -e 's/* /BAK_/')
+  # branch
+  br = branch -v
+  # list and sort branches by date
+  brs = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
+  # hur kan detta fungera, verkar som brs2 finns någon annanstans, eller??? Testade att renama och den fortsatte att fungera!!!
+  brs2 = "! f() { for k in $(git branch $@ | sed 's/^..//; s/ .*//'); do  echo "$(git log -1 --pretty='%Cgreen%ci %Cblue(%cr)%Creset ' $k) $k" ;  done | sort -r; }; f"
+  brs3 = "! f() { for k in $(git branch $@ | sed 's/^..//; s/ .*//'); do  echo "$(git log -1 --pretty='%Cgreen%ci %Cblue(%cr)%Creset ' $k) $k" ;  done | sort -r | column -t; }; f"
+  # commit
+  ci = commit
+  # commit --amend
+  cia = commit --amend
+  # cherry-pick
+  cp = cherry-pick
+  # checkout
+  co = checkout
+  # create and checkout a new branch and keep all your changes.
+  cob = checkout -b
+  # diff 
+  di = diff
+  # diff --chached
+  dic = diff --cached
+  # diff just the differences between lines.
+  diw = diff --word-diff
+  # use icdiff if installed
+  diffy = !eval $(command -v icdiff >/dev/null 2>&1 && echo icdiff || echo diff) 
+  fli = flow init
+  flf = flow feature
+  flr = flow release
+  flh = flow hotfix
+  gr = grep -Ii
+  grep = grep -Ii
+  # incoming changes
+  incoming = !git fetch && git log --pretty=oneline --abbrev-commit --graph ..@{u}
+  in = !git incoming
+  ms = !git merge-squash
+  # outgoing changes
+  outgoing = log --pretty=oneline --abbrev-commit --graph @{u}..
+  # shorter then 'outgoing'
+  out = !git outgoing
+  pu = push
+  puf = push --force-with-lease
+  
+  st = status
+  # stage the changes for a given file.
+  stage = !git add -u
+  # view the current changes in the staging area.
+  staged = diff --staged
+  # Send all changes to trash. Commit before trashing so we can find it via 'git reflog' and 'git cherry-pick'
+  trash = !git add -A && git commit -qm \"Trashed @ $(date +%Y-%m-%dT%H:%M:%S%z)\" \
+           && git reset HEAD~1 --hard \
+           && echo "All changes moved to trash. Use 'git reflog' and 'git cherry-pick' to recover." 
+  # unassume file
+  unassume = update-index --no-assume-unchanged
+  # unassume all files
+  unassumeall = "!git assumed | xargs git update-index --no-assume-unchanged"
+  # unstage is the opposite of git add. It lets you remove items from the staging area.
+  unstage = reset HEAD
+  # view the current changes not yet in the staging area.
+  unstaged = diff
   # Update branch (with rebase)
   up = !git pull --rebase --prune $@
   # update submodules
@@ -110,37 +203,10 @@
                    fi;\
                 fi;\
               }; f"
-  # create and checkout a new branch and keep all your changes.
-  cob = checkout -b
-  # stage the changes for a given file.
-  stage = !git add -u
-  # unstage is the opposite of git add. It lets you remove items from the staging area.
-  unstage = reset HEAD
-  # view the current changes in the staging area.
-  staged = diff --staged
-  # view the current changes not yet in the staging area.
-  unstaged = diff
-  # incoming changes
-  incoming = !git fetch && git log --pretty=oneline --abbrev-commit --graph ..@{u}
-  in = !git incoming
-  # outgoing changes
-  outgoing = log --pretty=oneline --abbrev-commit --graph @{u}..
-  out = !git outgoing
-  # work in progress, a quick save before swithing branch
-  wip = !git add -A :/ && git commit -m 'WIP - Undo this temporary commit.'
-  # Send all changes to trash. Commit before trashing so we can find it via 'git reflog' and 'git cherry-pick'
-  trash = !git add -A && git commit -qm \"Trashed @ $(date +%Y-%m-%dT%H:%M:%S%z)\" \
-           && git reset HEAD~1 --hard \
-           && echo "All changes moved to trash. Use 'git reflog' and 'git cherry-pick' to recover." 
   # undo last commit and unstage them
   uncommit = reset HEAD~1
-  
-  # diff just the differences between lines.
-  diffw = diff --word-diff
-  # use icdiff if installed
-  diffy = !eval $(command -v icdiff >/dev/null 2>&1 && echo icdiff || echo diff) 
-  # list all authors
-  authors = "!git log --all --format='%aN <%cE>' | sort -u"
+  # work in progress, a quick save before swithing branch
+  wip = !git add -A :/ && git commit -m 'WIP - Undo this temporary commit.'
   # list al ignored files
   ignored = ls-files -o -i --exclude-standard
   # list frequently used git commands
@@ -154,8 +220,6 @@
   # Inspect history in various ways
   news = log -p HEAD@{1}..HEAD@{0}
   sl = shortlog
-  # show commit log decorated (append -p to show diff)
-  l = log --pretty=format:'%C(yellow)%h%Creset %ai %G?%C(green)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit 
   ll = !git l
   lo = !git l
   # show detailed commit log 
@@ -165,43 +229,11 @@
   lg = log --graph --abbrev-commit --date=relative --all --pretty=format:%'C(yellow)%h%Creset -%C(green)%d%Creset %s %C(blue)(%ar) %C(bold blue)<%an>%Creset'
   # log all branches (verbose)
   lb = log --graph --all --decorate --stat --date=iso --abbrev-commit
-  # create a backup of the branch BAK_mybranch
-  backup = !git branch $(git branch | grep '*' | sed -e 's/* /BAK_/')
-  # list and sort branches by date
-  brs = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
-  brs2 = "! f() { for k in $(git branch $@ | sed 's/^..//; s/ .*//'); do  echo "$(git log -1 --pretty='%Cgreen%ci %Cblue(%cr)%Creset ' $k) $k" ;  done | sort -r; }; f"
-  # List all git aliases
-  aliases = "!git config -l | grep alias | cut -c 7- | sort "
-  # Change last commit comment
-  amend = commit --amend -m
-  # list assumed files
-  assumed = "!git ls-files -v | grep ^h | cut -c 3-"
-  # assume a file
-  assume = update-index --assume-unchanged
-  # assume all
-  assumeall = "!git st -s | awk {'print $2'} | xargs git assume"
-  # unassume file
-  unassume = update-index --no-assume-unchanged
-  # unassume all files
-  unassumeall = "!git assumed | xargs git update-index --no-assume-unchanged"
-  # Shortened commands 
-  br = branch -v
-  ci = commit
-  co = checkout
-  cp = cherry-pick
-  di = diff
-  fi = flow init
-  ff = flow feature
-  fr = flow release
-  fh = flow hotfix
-  ms = !git merge-squash
-  st = status
-  # and even shorter
-  b = branch -v
-  r = remote -v
-  t = tag -l
-	accept-theirs = "!f() { git checkout --theirs -- \"${@:-.}\"; git add -u \"${@:-.}\"; }; f"
-	accept-ours = "!f() { git checkout --ours -- \"${@:-.}\"; git add -u \"${@:-.}\"; }; f"
+  l1 = l -10
+  l2 = l -20
+  l3 = l -30
+  lazy = !lazygit
+  rb = rebase
   
   # open repo in browser, usage: git open [upstream] 
   open  = "!f() { URL=$(git config remote.${1-origin}.url | sed -e 's#^.*@#https://#' -e 's#.git$##' -e 's#:#/#2'); git web--browse $URL; }; f"
