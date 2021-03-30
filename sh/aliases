@@ -120,6 +120,8 @@ alias v="vim"
 alias j=z         # fasd z with better key location
 alias jj=zz       # fasd zz with better key location
 alias rtfm='tldr'
+# ghq
+alias ghg='ghq get -l ' 
 #kubernetes aliase(s)
 alias k='kubectl'
 alias kim="kubectl get pods -o jsonpath=\"{.items[*].spec.containers[*].image}\" |\
