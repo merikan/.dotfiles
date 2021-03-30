@@ -90,6 +90,9 @@ brew "mysql-client"                                 # mysql client
 brew "ncdu"                                         # a disk usage analyzer with an ncurses interface
 brew "nmap"                                         # port scanning utility for large networks
 brew "neofetch"                                     # A fast, highly customizable system info script
+# brew "neovim"                                       # neovim
+brew "luajit", args: ['HEAD']                       # neovim dev 0.5+
+brew "neovim", args: ['HEAD']                       # neovim dev 0.5+
 brew "nativefier"                                   # Make any web page a desktop application
 brew "nvm"                                          # manage multiple Node.js versions
 brew "openshift-cli"                                # openshift cli 
