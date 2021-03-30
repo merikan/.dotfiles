@@ -17,6 +17,7 @@ tap "homebrew/cask-drivers"            # cask drivers
 tap "homebrew/cask-fonts"              # fonts  
 tap "homebrew/cask-versions"           # alternate versions of Casks
 tap "merikan/tools"                    # my personal tap
+tap "dart-lang/dart"                   # dart lang
 
 ### ---------------------------------------------------- ###
 ### Formulae                                             ###
@@ -36,6 +37,7 @@ brew "cloc"                                         # count lines of code
 brew "cowsay"                                       # the cow says  
 brew "ctop"                                         # top-like interface for container metrics  
 brew "curl"                                         # curl
+brew "dart"                                         # dart sdk
 brew "dfc"                                          # displays file system space usage using graphs and colors
 brew "diff-pdf"                                     # visually compare two PDF files
 brew "wagoodman/dive/dive"                          # exploring a docker image, layer contents, and discovering ways to shrink your Docker image size.
