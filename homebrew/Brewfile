@@ -46,6 +46,7 @@ brew "fasd"                                         # quick access to files and 
 brew "ffmpeg"                                       # record, convert and stream audio and video
 brew "fzf"                                          # a command-line fuzzy finder
 brew "ffmpeg"                                       # to record, convert and stream audio and video 
+brew "gdu"                                          # go disk usage
 brew "go"                                           # golang sdk
 brew "goreleaser/tap/goreleaser"                    # release automation tool for Go projects
 brew "ghq"                                          # git remote repository management made easy
