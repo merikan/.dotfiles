@@ -1,8 +1,153 @@
 # customization of spaceship-prompt
 # for options see https://github.com/denysdovhan/spaceship-prompt/blob/master/docs/Options.md
 
+# ------------------------------------------------------------------------------
+# Load custom sections
+# ------------------------------------------------------------------------------
+script_path=${0:a:h}
+source "$script_path"/sections/spaceship-wip.zsh
+source "$script_path"/sections/spaceship-java.zsh
+
+# ------------------------------------------------------------------------------
+# Prompt order
+# for a as fast prompt as possible, only specify the sections to be loaded
+# ------------------------------------------------------------------------------
+SPACESHIP_PROMPT_ORDER=(
+  time          # Time stamps section
+  user          # Username section
+  dir           # Current directory section
+  host          # Hostname section
+  wip           # git work in progess
+  git           # Git section (git_branch + git_status)
+  java          # java version
+  # hg            # Mercurial section (hg_branch  + hg_status)
+  # package       # Package version
+  # node          # Node.js section
+  # ruby          # Ruby section
+  # elixir        # Elixir section
+  # xcode         # Xcode section
+  # swift         # Swift section
+  golang        # Go section
+  # php           # PHP section
+  # rust          # Rust section
+  # haskell       # Haskell Stack section
+  # julia         # Julia section
+  docker        # Docker section
+  # aws           # Amazon Web Services section
+  # venv          # virtualenv section
+  # conda         # conda virtualenv section
+  # pyenv         # Pyenv section
+  # dotnet        # .NET section
+  # ember         # Ember.js section
+  kubectl       # Kubectl context section
+  # terraform     # Terraform workspace section
+  exec_time     # Execution time
+  line_sep      # Line break
+  # battery       # Battery level and status
+  # vi_mode       # Vi-mode indicator
+  jobs          # Background jobs indicator
+  exit_code     # Exit code section
+  char          # Prompt character
+)
+# ------------------------------------------------------------------------------
+# Look and feel
+# ------------------------------------------------------------------------------
+
+# a Robby Russell like prompt layout
+
+# USER
+SPACESHIP_USER_PREFIX="" # remove `with` before username
+SPACESHIP_USER_SUFFIX="" # remove space before host
+
+# HOST
+# Result will look like this:
+#   username@:(hostname)
+SPACESHIP_HOST_PREFIX="@:("
+SPACESHIP_HOST_SUFFIX=") "
+
+# DIR
+SPACESHIP_DIR_PREFIX='' # disable directory prefix, cause it's not the first section
+SPACESHIP_DIR_TRUNC='1' # show only last directory
+
+# DOCKER
+SPACESHIP_DOCKER_PREFIX="docker:("
+SPACESHIP_DOCKER_SUFFIX=") "
+SPACESHIP_DOCKER_SYMBOL=""
+
+# GIT
+# Disable git symbol
+SPACESHIP_GIT_SYMBOL="" # disable git prefix
+SPACESHIP_GIT_BRANCH_PREFIX="" # disable branch prefix too
+# Wrap git in `git:(...)`
+SPACESHIP_GIT_PREFIX='git:('
+SPACESHIP_GIT_SUFFIX=") "
+SPACESHIP_GIT_BRANCH_SUFFIX="" # remove space after branch name
+# Unwrap git status from `[...]`
+SPACESHIP_GIT_STATUS_PREFIX=" "
+SPACESHIP_GIT_STATUS_SUFFIX=""
+
+# GOLANG
+SPACESHIP_GOLANG_PREFIX="go:("
+SPACESHIP_GOLANG_SUFFIX=") "
+SPACESHIP_GOLANG_SYMBOL=""
+
+# JAVA
+SPACESHIP_JAVA_PREFIX="java:("
+SPACESHIP_JAVA_SUFFIX=") "
+SPACESHIP_JAVA_SYMBOL=""
+
+# KUBECTL
+SPACESHIP_KUBECTL_PREFIX="k8s:("
+SPACESHIP_KUBECTL_SUFFIX=") "
+SPACESHIP_KUBECTL_SYMBOL=""
+
+# KUBECONTEXT
+SPACESHIP_KUBECONTEXT_PREFIX="" 
+SPACESHIP_KUBECONTEXT_SUFFIX=""
+SPACESHIP_KUBECONTEXT_SYMBOL=""
+
+# NODE
+SPACESHIP_NODE_PREFIX="node:("
+SPACESHIP_NODE_SUFFIX=") "
+SPACESHIP_NODE_SYMBOL=""
+
+# RUBY
+SPACESHIP_RUBY_PREFIX="ruby:("
+SPACESHIP_RUBY_SUFFIX=") "
+SPACESHIP_RUBY_SYMBOL=""
+
+# SWIFT
+SPACESHIP_SWIFT_PREFIX="swift:("
+SPACESHIP_SWIFT_SUFFIX=") "
+SPACESHIP_SWIFT_SYMBOL=""
+
+# VENV
+SPACESHIP_VENV_PREFIX="venv:("
+SPACESHIP_VENV_SUFFIX=") "
+
+# WIP
+SPACESHIP_WIP_PREFIX="("
+SPACESHIP_WIP_SUFFIX=") "
+SPACESHIP_WIP_SYMBOL=""
+
+# XCODE
+SPACESHIP_XCODE_PREFIX="xcode:("
+SPACESHIP_XCODE_SUFFIX=") "
+SPACESHIP_XCODE_SYMBOL=""
+
+# ------------------------------------------------------------------------------
+# Settings
+# ------------------------------------------------------------------------------
+
+SPACESHIP_CHAR_SYMBOL="$ "
+SPACESHIP_CHAR_SYMBOL_ROOT="# "
+
+SPACESHIP_GOLANG_COLOR=#00add8
+
 SPACESHIP_NODE_SHOW=false
+
 SPACESHIP_PACKAGE_SHOW=false
+
 SPACESHIP_KUBECTL_SHOW=true
 SPACESHIP_KUBECTL_VERSION_SHOW=false # disable to speed up prompt when no remote server is available
 SPACESHIP_KUBECONTEXT_SHOW=true
@@ -19,8 +164,6 @@ SPACESHIP_KUBECONTEXT_COLOR_GROUPS=(
   196  '\(.*-prod\)$'
   196  '^.*-prod-.*\(.*\)$'
 )
-
-SPACESHIP_GOLANG_COLOR=#00add8
 
 SPACESHIP_VI_MODE_SHOW=false
 SPACESHIP_VI_MODE_INSERT=[INSERT]
