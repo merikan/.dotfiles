@@ -164,14 +164,21 @@
   outgoing = log --pretty=oneline --abbrev-commit --graph @{u}..
   # shorter then 'outgoing'
   out = !git outgoing
+  # push abbr.
   pu = push
+  # push with force-with-lease
   puf = push --force-with-lease
-  
+  # status abbr.
   st = status
   # stage the changes for a given file.
   stage = !git add -u
   # view the current changes in the staging area.
   staged = diff --staged
+  # switch abbr
+  sw = switch
+  # list all tags with date
+  tags = tag -l --sort=-creatordate --format='%(creatordate:short):  %(refname:short) - %(contents:subject)'
+  # another option git log --date-order --graph --tags --simplify-by-decoration --pretty=format:'%ai %h %d'
   # Send all changes to trash. Commit before trashing so we can find it via 'git reflog' and 'git cherry-pick'
   trash = !git add -A && git commit -qm \"Trashed @ $(date +%Y-%m-%dT%H:%M:%S%z)\" \
            && git reset HEAD~1 --hard \
