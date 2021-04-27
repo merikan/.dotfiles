@@ -5,8 +5,8 @@
 # Load custom sections
 # ------------------------------------------------------------------------------
 script_path=${0:a:h}
-source "$script_path"/sections/spaceship-wip.zsh
-source "$script_path"/sections/spaceship-java.zsh
+source "$script_path"/sections/wip.zsh
+source "$script_path"/sections/java.zsh
 
 # ------------------------------------------------------------------------------
 # Prompt order
@@ -141,13 +141,10 @@ SPACESHIP_XCODE_SYMBOL=""
 
 SPACESHIP_CHAR_SYMBOL="$ "
 SPACESHIP_CHAR_SYMBOL_ROOT="# "
-
 SPACESHIP_GOLANG_COLOR=#00add8
-
+SPACESHIP_JAVA_CONTEXT_ONLY=false
 SPACESHIP_NODE_SHOW=false
-
 SPACESHIP_PACKAGE_SHOW=false
-
 SPACESHIP_KUBECTL_SHOW=true
 SPACESHIP_KUBECTL_VERSION_SHOW=false # disable to speed up prompt when no remote server is available
 SPACESHIP_KUBECONTEXT_SHOW=true

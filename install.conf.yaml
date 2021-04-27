@@ -83,8 +83,8 @@
     # spaceship-prompt
     #~/.zfunctions/prompt_spaceship_setup: submodules/spaceship-prompt/spaceship.zsh
     ~/.config/spaceship-prompt/config: spaceship-prompt/spaceship-promptrc
-    ~/.config/spaceship-prompt/sections/spaceship-wip.zsh: spaceship-prompt/sections/spaceship-wip.zsh
-    ~/.config/spaceship-prompt/sections/spaceship-java.zsh: spaceship-prompt/sections/spaceship-java.zsh
+    ~/.config/spaceship-prompt/sections/wip.zsh: spaceship-prompt/sections/wip.zsh
+    ~/.config/spaceship-prompt/sections/java.zsh: spaceship-prompt/sections/java.zsh
     # tmux
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmux/themes: tmux/themes
