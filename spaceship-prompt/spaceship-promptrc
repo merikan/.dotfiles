@@ -7,6 +7,7 @@
 script_path=${0:a:h}
 source "$script_path"/sections/wip.zsh
 source "$script_path"/sections/java.zsh
+source "$script_path"/sections/flutter.zsh
 
 # ------------------------------------------------------------------------------
 # Prompt order
@@ -20,6 +21,9 @@ SPACESHIP_PROMPT_ORDER=(
   wip           # git work in progess
   git           # Git section (git_branch + git_status)
   java          # java version
+  flutter       # flutter version
+  # maven
+  # gradle
   # hg            # Mercurial section (hg_branch  + hg_status)
   # package       # Package version
   # node          # Node.js section
@@ -142,7 +146,7 @@ SPACESHIP_XCODE_SYMBOL=""
 SPACESHIP_CHAR_SYMBOL="$ "
 SPACESHIP_CHAR_SYMBOL_ROOT="# "
 SPACESHIP_GOLANG_COLOR=#00add8
-SPACESHIP_JAVA_CONTEXT_ONLY=false
+#SPACESHIP_JAVA_CONTEXT_ONLY=false
 SPACESHIP_NODE_SHOW=false
 SPACESHIP_PACKAGE_SHOW=false
 SPACESHIP_KUBECTL_SHOW=true
