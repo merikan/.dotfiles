@@ -223,6 +223,7 @@ cask "virtualbox-extension-pack"
 cask "visual-paradigm-ce"                           # software modelling tool
 cask "visual-studio-code"                           # a great editor
 cask "visualvm"                                     # visual profiling tool for the Java VM
+cask "vivaldi"                                      # another great browser
 cask "vlc"                                          # media player
 cask "wavebox"                                      # desktop app for web (gmail)
 cask "xquartz"                                      # X windows on Mac
