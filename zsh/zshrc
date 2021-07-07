@@ -251,6 +251,8 @@ command -v lf >/dev/null 2>&1  && {
 command -v kubectl >/dev/null 2>&1 && source <(kubectl completion zsh)
 # source openshift tab completion
 command -v oc >/dev/null 2>&1 && source <(oc completion zsh)
+# source kustomize tab completion
+command -v kustomize >/dev/null 2>&1 && source <(kustomize completion zsh)
 
 # fzf for fuzzy file mathing. (https://github.com/junegunn/fzf)
 [ -f ~/.fzf.zsh ] && {

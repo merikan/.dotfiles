@@ -127,6 +127,8 @@ alias k='kubectl'
 alias kim="kubectl get pods -o jsonpath=\"{.items[*].spec.containers[*].image}\" |\
           tr -s '[[:space:]]' '\\n' | sort | uniq -c" #list images in current ns
 alias kpf='kubectl port-forward '
+# kustomize
+alias kz='kustomize'
 #maven aliases
 # short
 alias mct='mvn clean test'
