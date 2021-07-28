@@ -249,6 +249,8 @@ command -v lf >/dev/null 2>&1  && {
 
 # source kubectl tab completion
 command -v kubectl >/dev/null 2>&1 && source <(kubectl completion zsh)
+# source k3d tab completion
+command -v k3d >/dev/null 2>&1 && source <(k3d completion zsh)
 # source openshift tab completion
 command -v oc >/dev/null 2>&1 && source <(oc completion zsh)
 # source kustomize tab completion

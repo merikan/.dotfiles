@@ -78,6 +78,7 @@ brew "kubespy"                                      # observing Kubernetes resou
 brew "johanhaleby/kubetail/kubetail"                # tail Kubernetes logs from multiple pods
 brew "jesseduffield/lazydocker/lazydocker"          # the lazier way to manage everything docker
 brew "jesseduffield/lazygit/lazygit"                # simple terminal UI for git commands 
+brew "k3d"                                          # k3d is a lightweight wrapper to run k3s
 brew "lf"                                           # file manager for the terminal
 brew "lnav"                                         # watch and analyze your log files from a terminal. 
 brew "lua"                                          # a powerful, efficient, lightweight, embeddable scripting language
