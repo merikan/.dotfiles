@@ -24,6 +24,7 @@ tap "dart-lang/dart"                   # dart lang
 ### ---------------------------------------------------- ###
 
 brew "getantibody/tap/antibody"                     # shell plugin manager 
+brew "argocd"                                       # GitOps continuous delivery tool for Kubernetes
 brew "aria2"                                        # multi-protocol & multi-source command-line download utility
 brew "asciinema"                                    # record and share terminal sessions
 brew "bash" 

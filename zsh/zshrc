@@ -255,6 +255,8 @@ command -v k3d >/dev/null 2>&1 && source <(k3d completion zsh)
 command -v oc >/dev/null 2>&1 && source <(oc completion zsh)
 # source kustomize tab completion
 command -v kustomize >/dev/null 2>&1 && source <(kustomize completion zsh)
+# source argocd tab completion
+command -v argocd >/dev/null 2>&1 && source <(argocd completion zsh)
 
 # fzf for fuzzy file mathing. (https://github.com/junegunn/fzf)
 [ -f ~/.fzf.zsh ] && {
