@@ -30,6 +30,9 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 "imap <C-k> <C-w>k
 "imap <C-l> <C-w>l
 
+" make Y behave like C and D
+nnoremap Y y$
+
 " Repeatable indenting
 vnoremap < <gv
 vnoremap > >gv
