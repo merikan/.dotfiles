@@ -39,6 +39,8 @@ nnoremap N nzzzv
 " keep cursor in position when joining
 nnoremap J mzJ`z
 vnoremap J mzJ`z
+" reselect pasted text
+nnoremap gp `[v`]
 " Repeatable indenting
 vnoremap < <gv
 vnoremap > >gv
