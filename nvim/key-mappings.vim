@@ -33,6 +33,12 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 " make Y behave like C and D
 nnoremap Y y$
 
+" keep current line centered when jumping
+nnoremap n nzzzv
+nnoremap N nzzzv
+" keep cursor in position when joining
+nnoremap J mzJ`z
+vnoremap J mzJ`z
 " Repeatable indenting
 vnoremap < <gv
 vnoremap > >gv
