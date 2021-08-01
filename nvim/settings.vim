@@ -2,7 +2,7 @@ syntax on                               " enable syntax highlighing
 set noerrorbells                        " no sound effects
 
 set termguicolors                       " set true colors
-set ruler              			            " show the cursor position all the time
+set ruler              	                " show the cursor position all the time
 set cursorline                          " enable highlighting of the current line
 hi cursorline cterm=none term=none      " make line nicer (also see miyakogi/conoline.vim)
 autocmd WinEnter * setlocal cursorline

@@ -12,10 +12,8 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 " Clear highlighting on escape in normal mode
 nnoremap <esc> :noh<return><esc>
 nnoremap <esc>^[ <esc>^[
-
-" Map escape to jj -- faster to reach and type
+" Map escape to jj b/c it's faster to reach and type, trim timeoutlen
 imap jj <ESC>
-
 " move lines up/down
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
@@ -32,7 +30,6 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 
 " make Y behave like C and D
 nnoremap Y y$
-
 " keep current line centered when jumping
 nnoremap n nzzzv
 nnoremap N nzzzv
@@ -58,7 +55,7 @@ else
   " Alternate way to save
   nnoremap <silent> <C-s> :w<CR>
   " Alternate way to quit
-  nnoremap <silent> <C-Q> :wq!<CR>
+  nnoremap <silent> <C-Q> :q!<CR>
   " <TAB>: completion.
   inoremap <silent> <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
