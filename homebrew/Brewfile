@@ -157,9 +157,6 @@ cask "dash"                                         # API documentation browser
 cask "dbvisualizer"                                 # universal database tool (skip Java deps, we will use sdkman for Java)
 cask "discord"                                      # group-chatting platform
 cask "docker"                                       # docker for mac
-brew "docker-completion"                            # docker completion
-brew "docker-compose-completion"                    # docker compose completion
-brew "docker-machine-completion"                    # docker machine completion
 cask "dropbox"                                      # personal cloud storage service 
 cask "eclipse-java"                                 # eclipse ide for java developers
 cask "evernote"                                     # taking notes
