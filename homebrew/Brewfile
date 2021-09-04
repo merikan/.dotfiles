@@ -242,12 +242,20 @@ cask "webpquicklook"                                # preview WebP images
 cask "suspicious-package"                           # preview the contents of a standard Apple installer package
 cask "qlvideo"                                      # display thumbnails, static previews, cover art and metadata for video files
 ## -- fonts                     
+cask "font-3270"                                    # a font for the nostalgic
+cask "font-3270-nerd-font"                          # nerd patched '3270' font
 cask "font-fira-code"                               # monospaced font with programming ligatures
+cask "font-fira-code-nerd-font"                     # nerd patched 'fire-code' font
 cask "font-go-mono"                                 # golang fonts   
+cask "font-go-mono-nerd-font"                       # nerd patched 'go-mono' font
 cask "font-hasklig"                                 # a code font with monospaced ligatures
+cask "font-hasklug-nerd-font"                       # nerd patched 'hasklig' font
 cask "font-inconsolata"                             # a great programmers font
+cask "font-inconsolata-nerd-font"                   # nerd patched 'inconsolata' font
 cask "font-jetbrains-mono"                          # a typeface made for developers. 
+cask "font-jetbrains-mono-nerd-font"                # nerd patched 'jetbrains-mono' font
 cask "font-monoid"                                  # a ppen source coding font with ligatures
+cask "font-monoid-nerd-font"                        # nerd patched 'monoid' font
 cask "font-monoisome"                               # monoid with Font Awesome support
 
 ### ---------------------------------------------------- ###
