@@ -70,7 +70,7 @@
   #sourcetree
 [difftool "stree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "stree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
@@ -85,17 +85,17 @@
     trustExitCode = false
 [mergetool "kdiff3"]
     cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3
-    trustExitCode = false      
+    trustExitCode = false
 
 [alias]
-  # Shortened base commands 
-  a = add 
+  # Shortened base commands
+  a = add
   b = branch -v
   c = commit
   d = diff
   # find file path in codebase
   f = "!git ls-files | grep -i"w
-  l = log --pretty=format:'%C(yellow)%h%Creset %ai %G?%C(green)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit 
+  l = log --pretty=format:'%C(yellow)%h%Creset %ai %G?%C(green)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit
   p = push`
   r = remote -v
   s = status
@@ -142,14 +142,14 @@
   co = checkout
   # create and checkout a new branch and keep all your changes.
   cob = checkout -b
-  # diff 
+  # diff
   di = diff
   # diff --chached
   dic = diff --cached
   # diff just the differences between lines.
   diw = diff --word-diff
   # use icdiff if installed
-  diffy = !eval $(command -v icdiff >/dev/null 2>&1 && echo icdiff || echo diff) 
+  diffy = !eval $(command -v icdiff >/dev/null 2>&1 && echo icdiff || echo diff)
   fli = flow init
   flf = flow feature
   flr = flow release
@@ -182,7 +182,7 @@
   # Send all changes to trash. Commit before trashing so we can find it via 'git reflog' and 'git cherry-pick'
   trash = !git add -A && git commit -qm \"Trashed @ $(date +%Y-%m-%dT%H:%M:%S%z)\" \
            && git reset HEAD~1 --hard \
-           && echo "All changes moved to trash. Use 'git reflog' and 'git cherry-pick' to recover." 
+           && echo "All changes moved to trash. Use 'git reflog' and 'git cherry-pick' to recover."
   ui = !gitui
   # unassume file
   unassume = update-index --no-assume-unchanged
@@ -221,10 +221,10 @@
   ignored = ls-files -o -i --exclude-standard
   # list frequently used git commands
   frequently = !'history | cut -c 8- | grep git | sort | uniq -c  | sort -n -r | head -n 5'
-  # find deleted file(s), parameter [file name] 
+  # find deleted file(s), parameter [file name]
   deleted = !git log --diff-filter=D --summary | grep
   # view content of last commit
-  log-last-commit = log --name-status HEAD^..HEAD     
+  log-last-commit = log --name-status HEAD^..HEAD
   # merge branch with squash
   merge-squash  =  merge --squash
   # Inspect history in various ways
@@ -232,7 +232,7 @@
   sl = shortlog
   ll = !git l
   lo = !git l
-  # show detailed commit log 
+  # show detailed commit log
   ld = log --graph --decorate --stat --date=iso --abbrev-commit
   ldd = log --pretty=format:"%C(yellow)%h%C(green)%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
   # Show commit log using graph notation (append -p to show diff)
@@ -244,8 +244,8 @@
   l3 = l -30
   lazy = !lazygit
   rb = rebase
-  
-  # open repo in browser, usage: git open [upstream] 
+
+  # open repo in browser, usage: git open [upstream]
   open  = "!f() { URL=$(git config remote.${1-origin}.url | sed -e 's#^.*@#https://#' -e 's#.git$##' -e 's#:#/#2'); git web--browse $URL; }; f"
   # reset permission https://stackoverflow.com/a/4408378/2380457
 	reset-permission = "!git diff -p -R --no-color | grep -E \"^(diff|(old|new) mode)\" --color=never | git apply"
@@ -265,7 +265,7 @@
 
 # credits:
 # http://haacked.com/archive/2014/07/28/github-flow-aliases/
-# http://nuclearsquid.com/writings/git-tricks-tips-workflows/ 
+# http://nuclearsquid.com/writings/git-tricks-tips-workflows/
 
 [ghq]
 	root = ~/src
