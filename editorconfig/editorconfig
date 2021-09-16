@@ -1,0 +1,37 @@
+# EditorConfig is awesome: https://EditorConfig.org
+# this is my uber config that captures everything where the
+# project lacks its own config file
+root = true
+
+# global config
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 2
+end_of_line = lf
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# override the following
+
+[*.{md,markdown,asciidoc,adoc}]
+trim_trailing_whitespace = false
+
+[*.{yml,yaml,raml}]
+trim_trailing_whitespace = false
+
+[{Makefile**, **.mk}]
+indent_style = tab
+indent_size = 4
+
+[*.{java,groovy,kt}]
+indent_style = space
+indent_size = 4
+
+[*.go]
+indent_style = tab
+indent_size = 2
+
+[*.lua]
+indent_style = tab
+indent_size = 4

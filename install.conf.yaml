@@ -26,6 +26,8 @@
     ~/.bash_functions: bash/bash_functions
     ~/.bash_profile: bash/bash_profile
     ~/.bashrc: bash/bashrc
+    # editorconfig
+    ~/.editorconfig: editorconfig/editorconfig
     # fzf
     ~/.fzf.bash: fzf/fzf.bash
     ~/.fzf.zsh: fzf/fzf.zsh
