@@ -3,13 +3,13 @@
 # My list of aliases
 
 function has() {  # has command?
-   command -v $1 >/dev/null 2>&1 && return 0 || return 1 
+   command -v $1 >/dev/null 2>&1 && return 0 || return 1
 }
 
 # Navigation -----------------------
 # typo; get rid of 'command not found'
 alias cd..='cd ..'
- 
+
 # a quick way to get out of current directory
 alias ..='cd ..'
 alias ...='cd ../../'
@@ -26,10 +26,10 @@ if ! command -v fasd2 >/dev/null 2>&1; then # only load when fasd isn't availabl
   #    The following aliases (save & show) are for saving frequently used directories
   #    You can save a directory using an abbreviation of your choosing. Eg. save ms
   #    You can subsequently move to one of the saved directories by using cd with
-  #    the abbreviation you chose. Eg. cd ms 
+  #    the abbreviation you chose. Eg. cd ms
   # set the cdablevars option so that no '$' is required when using this facility
   # bash:shopt -s cdable_vars, zsh:setopt cdablevars
-  
+
   [ ! -f ~/.dirs ] && touch ~/.dirs   # if doesn't exist, create it
   alias show='cat ~/.dirs'
   alias save='__save_'
@@ -40,7 +40,7 @@ if ! command -v fasd2 >/dev/null 2>&1; then # only load when fasd isn't availabl
 fi
 
 # ----------------
-# sudo and alias. If the last character of the alias value is a blank, 
+# sudo and alias. If the last character of the alias value is a blank,
 # then the next command word following the alias is also checked for alias expansion.
 alias sudo='sudo '
 
@@ -80,9 +80,9 @@ alias tma='tmux a -t '   # tmux attach a target session
 
 # Alias to multiple ls commands
 # Detect which `ls` flavor is in use
-if ls --color > /dev/null 2>&1; then 
+if ls --color > /dev/null 2>&1; then
 	colorflag="--color" # GNU `ls`
-else 
+else
 	colorflag="-G"      # OS X `ls`
 fi
 alias ls="ls -aF ${colorflag}"    # show hidden and type suffix
@@ -90,12 +90,12 @@ alias ll='ls -la'               # show hidden and sort by modified
 alias l.="ls -dl ${colorflag} .*" # show only hidden files
 alias lx='ls -lXB'                # sort by extension
 alias lk='ls -lSr'                # sort by size
-alias lc='ls -lcr'		            # sort by change time  
-alias lu='ls -lur'		            # sort by access time   
+alias lc='ls -lcr'		            # sort by change time
+alias lu='ls -lur'		            # sort by access time
 alias lr='ls -lR'                 # recursive ls
 alias lt='ls -ltr'                # sort by date
 alias lm='ls -al |more'           # pipe through 'more'
-alias la='ls -ltraFh'             # show all 
+alias la='ls -ltraFh'             # show all
 alias lla='ls -lah'               # list all and human readable
 alias g='grep -i'  # Case insensitive grep
 alias f='find . -iname'
@@ -108,7 +108,7 @@ alias mountedinfo='df -hT'
 alias openports='netstat -nape --inet'
 alias reload='exec $SHELL'
 alias ns='netstat -alnp --protocol=inet | grep -v CLOSE_WAIT | cut -c-6,21-94 | tail +2'
-alias listen="lsof -P -i -n" 
+alias listen="lsof -P -i -n"
 alias du1='du -h --max-depth=1'
 alias ducks='du -cksh * | sort -rn|head -11' # Lists folders and files sizes in the current folder
 alias da='date "+%Y-%m-%d %A    %T %Z"'
@@ -120,8 +120,10 @@ alias v="vim"
 alias j=z         # fasd z with better key location
 alias jj=zz       # fasd zz with better key location
 alias rtfm='tldr'
+alias lzg='lazygit'
+alias lzd='lazydocker'
 # ghq
-alias ghg='ghq get -l ' 
+alias ghg='ghq get -l '
 #kubernetes aliase(s)
 alias k='kubectl'
 alias kim="kubectl get pods -o jsonpath=\"{.items[*].spec.containers[*].image}\" |\
@@ -144,7 +146,7 @@ alias msbrd='mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjd
 alias msbrd1='mvn spring-boot:run -Drun.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"'  # spring-boot v1.x
 alias mpv='mvn_print_version'
 alias mdb='mvn docker:build'
-alias mtc7='mvn tomcat7:run' 
+alias mtc7='mvn tomcat7:run'
 # little longer
 alias mvnct='mvn clean test'
 alias mvnctv='mvn clean test verify'
@@ -158,7 +160,7 @@ alias mvnsbrd1='mvn spring-boot:run -Drun.jvmArguments="-Xdebug -Xrunjdwp:transp
 alias mvnsbrd='mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"'
 alias mvnpv='mvn_print_version'
 alias mvndb='mvn docker:build'
-alias mvntc7='mvn tomcat7:run' 
+alias mvntc7='mvn tomcat7:run'
 
 #docker aliases and functions
 alias d='docker'
@@ -178,11 +180,11 @@ alias dm='docker-machine'
   alias brew-update='brew update && brew outdated'
   alias brew-upgrade='brew upgrade && brew cleanup'
   # make python 3 default
-  # alias python='/usr/local/bin/python3' 
+  # alias python='/usr/local/bin/python3'
   # alias pip='/usr/local/bin/pip3'
   # When it's time for a fika
   alias fika="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-  # Pretty print from clipboard, OS X only 
+  # Pretty print from clipboard, OS X only
   alias xmlformatclipboard='pbpaste | xmllint --format -'
   # Merge PDF files, usage: 'mergepdf -o output.pdf input{1,2,3}.pdf'
   alias mergepdf='/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py'
@@ -203,13 +205,13 @@ alias dm='docker-machine'
 
 # Enable stin for atom editor until fixed
 #    see https://github.com/atom/atom/issues/1729 until https://github.com/atom/atom/pull/11184 is accepted
-# $ npm install --global tmpin 
+# $ npm install --global tmpin
 #has tmpin && alias atom='tmpin atom'   #this is ok if you pipe but it opens tmp folder when not piping
 
 # HTTPie aliases (https://github.com/jkbrzt/httpie)
 alias GET="http"
 alias POST="http POST"
-alias HEAD="http HEAD" 
+alias HEAD="http HEAD"
 
 # Enumerate every column ()
 alias fields="awk 'NR == 1 { for (i=1;i<=NF;i++) {printf i \" \"} print \"\"} {print}' | column -t"
@@ -237,6 +239,6 @@ alias ${global} NUL='> /dev/null 2>&1'
 alias ${global} MT!=' -DskipTests'
 alias ${global} MD=' -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"'  # spring-boot debug properties
 alias ${global} JQ="| jq -Rrc '. as \$line | fromjson? // \$line'"          #output: json and non-json
-alias ${global} JQO="| jq -R 'fromjson? | .'"                               #output: only json 
+alias ${global} JQO="| jq -R 'fromjson? | .'"                               #output: only json
 alias ${global} JQP="| jq -R -r '. as \$line | try fromjson catch \$line'"  #output: json pretty print and non-json
-alias ${global} PF="8080:8080 8081:8081"                            #port-forward 
+alias ${global} PF="8080:8080 8081:8081"                            #port-forward
