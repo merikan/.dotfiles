@@ -183,6 +183,7 @@
   trash = !git add -A && git commit -qm \"Trashed @ $(date +%Y-%m-%dT%H:%M:%S%z)\" \
            && git reset HEAD~1 --hard \
            && echo "All changes moved to trash. Use 'git reflog' and 'git cherry-pick' to recover." 
+  ui = !gitui
   # unassume file
   unassume = update-index --no-assume-unchanged
   # unassume all files

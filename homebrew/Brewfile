@@ -56,6 +56,7 @@ brew "git"                                          # cli client for git
 brew "git-flow-avh"                                 # git-flow addon for git client
 brew "gitleaks"                                     # audit git repos for secrets
 brew "git-secrets"                                  # prevents you from committing passwords and other sensitive information to a git repository.
+brew "gitui"                                        # an awesome tui for git
 brew "gnupg"                                        # gpg
 brew "gron"                                         # make JSON greppable!
 brew "htop"                                         # an interactive process viewer for Unix
