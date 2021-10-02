@@ -132,7 +132,6 @@ alias kpf='kubectl port-forward '
 # kustomize
 alias kz='kustomize'
 #maven aliases
-# short
 alias mct='mvn clean test'
 alias mcv='mvn clean verify'
 alias mctv='mvn clean test verify'
@@ -147,7 +146,6 @@ alias msbrd1='mvn spring-boot:run -Drun.jvmArguments="-Xdebug -Xrunjdwp:transpor
 alias mpv='mvn_print_version'
 alias mdb='mvn docker:build'
 alias mtc7='mvn tomcat7:run'
-# little longer
 alias mvnct='mvn clean test'
 alias mvnctv='mvn clean test verify'
 alias mvncv='mvn clean verify'
@@ -161,6 +159,10 @@ alias mvnsbrd='mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Xdebug -Xrun
 alias mvnpv='mvn_print_version'
 alias mvndb='mvn docker:build'
 alias mvntc7='mvn tomcat7:run'
+# golang aliases
+alias got='go test'
+alias gotv='go test -v'
+alias gob='go build'
 
 #docker aliases and functions
 alias d='docker'
