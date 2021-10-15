@@ -283,6 +283,12 @@ export SDKMAN_DIR="$HOME/.sdkman"
   source "$SDKMAN_DIR/bin/sdkman-init.sh" 
 }
 
+# rancher desktop
+[[ -d "$HOME/.rd/bin" ]] && {
+  export PATH=$PATH:$HOME/.rd/bin  # put it last in the path
+  source <(rdctl completion bash)
+}
+
 # Add personal bin directory to the path
 export PATH=$HOME/bin:$HOME/.local/bin:$PATH
 

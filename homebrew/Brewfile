@@ -43,6 +43,8 @@ brew "dfc"                                          # displays file system space
 brew "diff-pdf"                                     # visually compare two PDF files
 brew "wagoodman/dive/dive"                          # exploring a docker image, layer contents, and discovering ways to shrink your Docker image size.
 brew "doxygen"                                      # Generate documentation from source code
+brew "docker"                                       # docker client
+brew "docker-credential-helper"                     # keystore credential helper for Docker
 brew "fasd"                                         # quick access to files and directories
 brew "ffmpeg"                                       # record, convert and stream audio and video
 brew "fzf"                                          # a command-line fuzzy finder
@@ -157,7 +159,6 @@ cask "cyberduck"                                    # client for FTP and SFTP, W
 cask "dash"                                         # API documentation browser
 cask "dbvisualizer"                                 # universal database tool (skip Java deps, we will use sdkman for Java)
 cask "discord"                                      # group-chatting platform
-cask "docker"                                       # docker for mac
 cask "dropbox"                                      # personal cloud storage service
 cask "eclipse-java"                                 # eclipse ide for java developers
 cask "evernote"                                     # taking notes
@@ -202,6 +203,7 @@ cask "paintbrush"                                   # clean and simple paint pro
 cask "pencil"                                       # open-source GUI prototyping tool
 cask "phoenix-slides"                               # image viewer
 cask "postman"                                      # nice rest client
+cask "rancher"                                      # OSS alternative to Docker Desktop
 cask "robo-3t"                                      # free lightweight GUI for MongoDB
 cask "skype"                                        # video conf
 cask "sketch"                                       # sketchapp - design tool
