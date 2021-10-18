@@ -131,6 +131,7 @@ alias kim="kubectl get pods -o jsonpath=\"{.items[*].spec.containers[*].image}\"
 alias kpf='kubectl port-forward '
 # kustomize
 alias kz='kustomize'
+mk='minikube'
 #maven aliases
 alias mct='mvn clean test'
 alias mcv='mvn clean verify'
