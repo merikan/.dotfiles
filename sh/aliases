@@ -160,6 +160,8 @@ alias mvnsbrd='mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Xdebug -Xrun
 alias mvnpv='mvn_print_version'
 alias mvndb='mvn docker:build'
 alias mvntc7='mvn tomcat7:run'
+
+alias mk='minikube'
 # golang aliases
 alias gof='gofmt'
 alias gofl='gofmt -s -l'
