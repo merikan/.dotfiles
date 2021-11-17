@@ -47,9 +47,11 @@
     ~/.Brewfile: homebrew/Brewfile
     ~/.config/homebrew/config: homebrew/config
     ~/bin/brewit: homebrew/brewit
+    # ideavim
+    ~/.ideavimrc: ideavim/ideavimrc
     # k9s
     ~/.config/k9s/skin.yml: k9s/skins/dracula.yml
-    #lf
+    # lf
     ~/.config/lf/lfrc: lf/lfrc
     # liquidprompt
     ~/.local/liquidprompt: submodules/liquidprompt

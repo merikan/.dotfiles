@@ -1,0 +1,29 @@
+" cross-plattform clippboard https://stackoverflow.com/a/30691754/2380457
+set clipboard^=unnamed,unnamedplus
+
+" set lime number
+set number relativenumber
+
+" toogle line number
+:augroup numbertoggle
+:  autocmd!
+:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+:augroup END
+
+" search options
+set hlsearch incsearch ignorecase smartcase
+
+" set command menu
+set wildmenu
+
+let mapleader = " "
+" hh
+:imap hh <Esc>
+:cmap hh <Esc>
+
+nnoremap <Leader>k  :action FindInPath<CR>
+nnoremap <Leader>nf :action SelectInProjectView<CR>
+nnoremap <Leader>gr :action RenameElement<CR>
+nnoremap <Leader>gt :action GotoTest<CR>
+nnoremap <Leader>lf :action ReformatCode<CR>
