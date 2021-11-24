@@ -65,7 +65,6 @@ font:
 alt_send_esc: false  ## to handle swedish keyboard chars /\[]{}
 
 key_bindings:
-  - { key: N, mods: Control, action: SpawnNewInstance }
   - { key: N, mods: Command, command: { program: "open", args: ["-nb", "io.alacritty"] } }
 
 #Swedish (sv_SE)
