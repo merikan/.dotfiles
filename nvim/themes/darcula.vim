@@ -1,2 +1,0 @@
-" activate darcula
-colorscheme darcula

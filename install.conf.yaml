@@ -6,7 +6,11 @@
     shell:
         stderr: true
 
-- clean: ['~']
+- clean:
+    ~/:
+      force: true
+    ~/.config:
+      recursive: true
 
 - shell:
     - [git submodule update --init --recursive, Installing/Updating submodules]
@@ -61,12 +65,10 @@
     # macos
     ~/bin/macos-settings: macos/macos-settings
     # nvim
-    ~/.config/nvim/init.vim: nvim/init.vim
-    ~/.config/nvim/settings.vim: nvim/settings.vim
-    ~/.config/nvim/key-mappings.vim: nvim/key-mappings.vim
-    ~/.config/nvim/plugins.vim: nvim/plugins.vim
-    ~/.config/nvim/plugin-config: nvim/plugin-config
-    ~/.config/nvim/themes: nvim/themes
+    ~/.config/nvim/init.lua: nvim/init.lua
+    ~/.config/nvim/lua:
+      path: nvim/lua/*
+      glob: true
     # oh-my-zsh
     ~/.oh-my-zshrc: oh-my-zsh/oh-my-zshrc
     ~/.local/oh-my-zsh: submodules/oh-my-zsh
@@ -106,7 +108,6 @@
     # zsh-autoenv
     ~/.local/zsh-autoenv: submodules/zsh-autoenv
 
-# nvim
 - shell:
     -
         description: create vim unddo directory
@@ -114,14 +115,6 @@
         stdin: true
         stdout: true
         stderr: true
-    -
-        description: Installing vim-plug if needed
-        command: "[ ! -s ~/.config/nvim/autoload/plug.vim ] && curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim || exit 0"
-        stdin: true
-        stdout: true
-        stderr: true
-
-#zim
 - shell:
     -
         description: Installing zim modules if needed

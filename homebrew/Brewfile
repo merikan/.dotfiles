@@ -97,9 +97,7 @@ brew "mysql-client"                                 # mysql client
 brew "ncdu"                                         # a disk usage analyzer with an ncurses interface
 brew "nmap"                                         # port scanning utility for large networks
 brew "neofetch"                                     # A fast, highly customizable system info script
-# brew "neovim"                                       # neovim
-brew "luajit", args: ['HEAD']                       # neovim dev 0.5+
-brew "neovim", args: ['HEAD']                       # neovim dev 0.5+
+brew "neovim"                                       # neovim
 brew "nativefier"                                   # Make any web page a desktop application
 brew "nvm"                                          # manage multiple Node.js versions
 brew "openshift-cli"                                # openshift cli
@@ -119,7 +117,9 @@ brew "ruby"                                         # ruby environment
 brew "scrcpy"                                       # android screen mirror
 brew "shellcheck"                                   # a static analysis tool for shell scripts
 brew "ssh-copy-id"                                  # ssh copy
+brew "starship"                                     # blazing-fast cross-shell prompt
 brew "stunnel"                                      # SSL tunneling program
+brew "stylua"                                       # lua formatter
 brew "the_silver_searcher"                          # ag a code searching tool similar to ack
 brew "tig"                                          # text-mode interface for git
 brew "tldr"                                         # Simplified and community-driven man pages (https://tldr.sh/)
