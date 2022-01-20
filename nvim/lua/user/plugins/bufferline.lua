@@ -26,7 +26,7 @@ function M.setup()
     },
   }
 
-  keymap("n", "<leader>q", ":Bdelete")
+  keymap("n", "<leader>q", ":Bdelete<CR>")
 end
 
 return M
