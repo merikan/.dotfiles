@@ -77,7 +77,6 @@ function M.buf_set_keymaps(bufnr)
     buf_set_keymap("v", "[E", "<cmd>lua require'plugins.lsp.diagnostics'.goto_prev()<CR>", opts)
     buf_set_keymap("n", "]E", "<cmd>lua require'plugins.lsp.diagnostics'.goto_next()<CR>", opts)
     buf_set_keymap("v", "]E", "<cmd>lua require'plugins.lsp.diagnostics'.goto_next()<CR>", opts)
-    buf_set_keymap("n", "<leader>dl", "<cmd>lua require'plugins.lsp.diagnostics'.show_line_diagnostics()<CR>", opts)
 end
 
 return M

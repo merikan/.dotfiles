@@ -25,7 +25,7 @@ keymap('n', '<esc>', ':noh<return><return>')
 -- map hh top escape b/c it's faster to reach and type
 keymap('i', 'hh', '<ESC>')
 -- toggle cursorline and cursorcolumn
-keymap('n', '<Leader>c',':set cursorline! cursorcolumn!<CR>')
+keymap('n', '<Leader>tc',':set cursorline! cursorcolumn!<CR>')
 -- Alternate way to save
 keymap('n', '<C-s>', ':w<CR>')
 -- Alternate way to quit
