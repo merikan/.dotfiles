@@ -103,6 +103,7 @@ brew "nvm"                                          # manage multiple Node.js ve
 brew "openshift-cli"                                # openshift cli
 brew "packer"                                       # package VMs
 brew "packer-completion"
+brew "php"                                          # php
 brew "plantuml"                                     # draw UML diagrams
 brew "pip-completion"
 brew "potrace"                                      # transforming bitmaps into vector graphics
