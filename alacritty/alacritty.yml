@@ -65,7 +65,7 @@ font:
 alt_send_esc: true  ## to handle swedish keyboard chars /\[]{}
 
 key_bindings:
-  - { key: N, mods: Command, command: { program: "open", args: ["-nb", "io.alacritty"] } }
+  - { key: N, mods: Command, action: CreateNewWindow }
 # Mac OS specific
 # Option is not Alt
 
