@@ -41,7 +41,7 @@
     ~/.gitconfig.local.template: git/gitconfig.local.template
     ~/.gitconfig: git/gitconfig
     # gitui
-    ~/.config/gitui/key_config.ron: gitui/key_config.vim.ron
+    ~/.config/gitui/key_bindings.ron: gitui/key_bindings.ron
     # golang
     ~/.golangrc: golang/golangrc
     # hammerspoon
