@@ -69,6 +69,7 @@ brew "imagemagick"                                  # create, edit, compose, or 
 brew "java"                                         # java
 brew "jenv"                                         # manage your java environment
 brew "jid"                                          # drill down JSON interactively by using filtering queries like jq.
+brew "jless"                                        # a command-line JSON viewer
 brew "jq"                                           # command-line JSON processor, like sed
 brew "jo"                                           # small utility to create JSON objects
 brew "joplin"                                       # note taking and to-do application
