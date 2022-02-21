@@ -77,7 +77,7 @@ brew "boz/repo/kail"                                # kubernetes log viewer
 brew "kompose"                                      # a conversion tool to go from Docker Compose to Kubernetes
 brew "kubectl"                                      # kubernetes controller
 brew "kubectx"                                      # kubectx: manage and switch between kubectl contexts, kubens: switch between Kubernetes namespaces.
-brew "kubernetes-helm"                              # helm packagemanager for kubernetes
+brew "helm"                                         # helm packagemanager for kubernetes
 brew "kustomize"                                    # kustomize: template-free customization of application configuration
 brew "kubespy"                                      # observing Kubernetes resources in real time
 brew "johanhaleby/kubetail/kubetail"                # tail Kubernetes logs from multiple pods
