@@ -127,6 +127,7 @@ brew "tig"                                          # text-mode interface for gi
 brew "tldr"                                         # Simplified and community-driven man pages (https://tldr.sh/)
 brew "tmux"                                         # terminal multiplexer
 brew "tree"                                         # list contents of directories in a tree-like format
+brew "aquasecurity/trivy/trivy"                     # scanner for vulnerabilities in images, filesystems, git repos and config files
 brew "vim"                                          # highly configurable text editor
 brew "watch"                                        # execute a program periodically and watch the output
 brew "wget"                                         # non-interactive network downloader
