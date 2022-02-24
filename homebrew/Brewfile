@@ -33,7 +33,7 @@ brew "bat"                                          # a cat clone with syntax hi
 brew "bitwarden-cli"                                # open source password management
 brew "brew-cask-completion"
 brew "ccat"                                         # colorizing cat
-brew "clair-scanner"                                # scan local docker images
+brew "merikan/tools/clair-scanner"                  # scan local docker images
 brew "cloc"                                         # count lines of code
 brew "cowsay"                                       # the cow says
 brew "ctop"                                         # top-like interface for container metrics
@@ -49,7 +49,7 @@ brew "fasd"                                         # quick access to files and 
 brew "ffmpeg"                                       # record, convert and stream audio and video
 brew "fzf"                                          # a command-line fuzzy finder
 brew "ffmpeg"                                       # to record, convert and stream audio and video
-brew "gdu"                                          # go disk usage
+brew "merikan/tools/gdu-go"                         # go disk usage
 brew "go"                                           # golang sdk
 brew "goreleaser/tap/goreleaser"                    # release automation tool for Go projects
 brew "ghq"                                          # git remote repository management made easy
@@ -281,4 +281,3 @@ mas "The Unarchiver", id: 425424353
 mas "Tomato One", id: 907364780
 mas "Twitter", id: 409789998
 mas "Microsoft To Do", id: 1274495053
-
