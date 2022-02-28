@@ -52,6 +52,7 @@ brew "ffmpeg"                                       # to record, convert and str
 brew "merikan/tools/gdu-go"                         # go disk usage
 brew "go"                                           # golang sdk
 brew "goreleaser/tap/goreleaser"                    # release automation tool for Go projects
+brew "golangci-lint"                                # Go linters aggregator
 brew "ghq"                                          # git remote repository management made easy
 brew "gibo"                                         # easily accessing gitignore boilerplates
 brew "git"                                          # cli client for git
