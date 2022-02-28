@@ -208,6 +208,7 @@ cask "pencil"                                       # open-source GUI prototypin
 cask "phoenix-slides"                               # image viewer
 cask "postman"                                      # nice rest client
 cask "rancher"                                      # OSS alternative to Docker Desktop
+cask "responsively"                                 # modified web browser for responsive web development
 cask "robo-3t"                                      # free lightweight GUI for MongoDB
 cask "skype"                                        # video conf
 cask "sketch"                                       # sketchapp - design tool
