@@ -13,7 +13,7 @@ local preferred_servers = {
   "cmake",
   'cssls',
   "dartls",
-  "diagnosticls",
+  "diagnosticls", -- Diagnostic (general purpose server)
   "dockerls",
   "eslint",
   "emmet_ls",
@@ -26,6 +26,7 @@ local preferred_servers = {
   "kotlin_language_server",
   'sumneko_lua',
   "rust_analyzer",
+  "sqlls",
   "svelte",
   "tailwindcss",
   "taplo",
