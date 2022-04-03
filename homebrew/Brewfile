@@ -125,6 +125,7 @@ brew "starship"                                     # blazing-fast cross-shell p
 brew "stern"                                        # log tailing for Kubernetes
 brew "stunnel"                                      # SSL tunneling program
 brew "stylua"                                       # lua formatter
+brew "go-task/tap/go-task"                          # a task runner / build tool, like Make but ....
 brew "the_silver_searcher"                          # ag a code searching tool similar to ack
 brew "tig"                                          # text-mode interface for git
 brew "tldr"                                         # Simplified and community-driven man pages (https://tldr.sh/)
