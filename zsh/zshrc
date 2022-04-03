@@ -305,6 +305,8 @@ export SDKMAN_DIR="$HOME/.sdkman"
   source "$SDKMAN_DIR/bin/sdkman-init.sh"
 }
 
+# kubectl krew
+command -v kubectl >/dev/null 2>&1 && export PATH="${PATH}:${HOME}/.krew/bin"
 # dart
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
