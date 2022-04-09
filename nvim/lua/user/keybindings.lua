@@ -21,7 +21,7 @@
 -- clear highlightning with C-l or double Esc
 keymap('n', '<silent> <C-l>', ':nohl<CR><C-l>')
 -- clear highlighting on escape in normal mode
-keymap('n', '<esc>', ':noh<return><return>')
+keymap('n', '<esc>', ':noh<CR>')
 -- map hh top escape b/c it's faster to reach and type
 keymap('i', 'hh', '<ESC>')
 -- toggle cursorline and cursorcolumn
