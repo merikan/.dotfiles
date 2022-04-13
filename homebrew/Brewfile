@@ -27,6 +27,7 @@ brew "getantibody/tap/antibody"                     # shell plugin manager
 brew "argocd"                                       # GitOps continuous delivery tool for Kubernetes
 brew "aria2"                                        # multi-protocol & multi-source command-line download utility
 brew "asciinema"                                    # record and share terminal sessions
+brew "asdf"                                         # manage multiple runtime versions
 brew "bash"
 brew "bash-completion"
 brew "bat"                                          # a cat clone with syntax highlighting and git integration
