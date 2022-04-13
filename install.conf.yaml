@@ -55,6 +55,8 @@
     ~/.ideavimrc: ideavim/ideavimrc
     # k9s
     ~/.config/k9s/skin.yml: k9s/skins/dracula.yml
+    # lazygit
+    ~/.config/lazygit/config.yaml: lazygit/config.yaml
     # lf
     ~/.config/lf/lfrc: lf/lfrc
     # liquidprompt
