@@ -90,6 +90,7 @@ brew "k3d"                                          # k3d is a lightweight wrapp
 brew "lf"                                           # file manager for the terminal
 brew "lnav"                                         # watch and analyze your log files from a terminal.
 brew "lua"                                          # a powerful, efficient, lightweight, embeddable scripting language
+brew "luarocks"                                     # lua package manager
 brew "mackup"                                       # keep application settings in sync
 brew "maven-completion"
 brew "mas"                                          # Mac App Store command-line interface
