@@ -17,96 +17,97 @@
     - ["mkdir -p $HOME/{.config,src,go,tmp,Projects}", Creating default directories]
 
 - link:
-    # add bins
-    ~/bin/$: bin/$
     # alacritty
-    ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
+    ~/.config/alacritty/alacritty.yml: config/alacritty/alacritty.yml
     # atom
-    ~/.atomrc: atom/atomrc
+    ~/.atomrc: config/atom/atomrc
     # base16-shell
     ~/.config/base16-shell: submodules/base16-shell
     # bash
-    ~/.bash_aliases: bash/bash_aliases
-    ~/.bash_functions: bash/bash_functions
-    ~/.bash_profile: bash/bash_profile
-    ~/.bashrc: bash/bashrc
+    ~/.bash_aliases: config/bash/bash_aliases
+    ~/.bash_functions: config/bash/bash_functions
+    ~/.bash_profile: config/bash/bash_profile
+    ~/.bashrc: config/bash/bashrc
     # editorconfig
-    ~/.editorconfig: editorconfig/editorconfig
+    ~/.editorconfig: config/editorconfig/editorconfig
     # fzf
-    ~/.fzf.bash: fzf/fzf.bash
-    ~/.fzf.zsh: fzf/fzf.zsh
+    ~/.fzf.bash: config/fzf/fzf.bash
+    ~/.fzf.zsh: config/fzf/fzf.zsh
     # git
-    ~/.gitignore_global: git/gitignore_global
-    ~/.git_commit_msg: git/git_commit_msg
-    ~/.gitconfig.local.template: git/gitconfig.local.template
-    ~/.gitconfig: git/gitconfig
+    ~/.gitignore_global: config/git/gitignore_global
+    ~/.git_commit_msg: config/git/git_commit_msg
+    ~/.gitconfig.local.template: config/git/gitconfig.local.template
+    ~/.gitconfig: config/git/gitconfig
     # gitui
-    ~/.config/gitui/key_bindings.ron: gitui/key_bindings.ron
+    ~/.config/gitui/key_bindings.ron: config/gitui/key_bindings.ron
     # golang
-    ~/.golangrc: golang/golangrc
+    ~/.golangrc: config/golang/golangrc
     # hammerspoon
-    ~/.hammerspoon/init.lua: hammerspoon/init.lua
-    ~/.hammerspoon/Spoons/SpoonInstall.spoon: hammerspoon/Spoons/SpoonInstall.spoon
+    ~/.hammerspoon/init.lua: config/hammerspoon/init.lua
+    ~/.hammerspoon/Spoons/SpoonInstall.spoon: config/hammerspoon/Spoons/SpoonInstall.spoon
     # homebrew
-    ~/.Brewfile: homebrew/Brewfile
-    ~/.config/homebrew/config: homebrew/config
-    ~/bin/brewit: homebrew/brewit
+    ~/.Brewfile: config/homebrew/Brewfile
+    ~/.config/homebrew/config: config/homebrew/config
+    ~/bin/brewit: config/homebrew/brewit
     # ideavim
-    ~/.ideavimrc: ideavim/ideavimrc
+    ~/.ideavimrc: config/ideavim/ideavimrc
     # k9s
-    ~/.config/k9s/skin.yml: k9s/skins/dracula.yml
+    ~/.config/k9s/skin.yml: config/k9s/skins/dracula.yml
     # lazygit
-    ~/.config/lazygit/config.yaml: lazygit/config.yaml
+    ~/.config/lazygit/config.yaml: config/lazygit/config.yaml
     # lf
-    ~/.config/lf/lfrc: lf/lfrc
+    ~/.config/lf/lfrc: config/lf/lfrc
     # liquidprompt
     ~/.local/liquidprompt: submodules/liquidprompt
-    ~/.liquidpromptrc: liquidprompt/liquidpromptrc
+    ~/.liquidpromptrc: config/liquidprompt/liquidpromptrc
     # mackup
-    ~/.mackup.cfg: mackup/mackup.cfg
+    ~/.mackup.cfg: config/mackup/mackup.cfg
     # macos
     ~/bin/macos-settings: macos/macos-settings
     # nvim
-    ~/.config/nvim/init.lua: nvim/init.lua
+    ~/.config/nvim/init.lua: config/nvim/init.lua
     ~/.config/nvim/lua:
-      path: nvim/lua/*
+      path: config/nvim/lua/*
       glob: true
     # oh-my-zsh
-    ~/.oh-my-zshrc: oh-my-zsh/oh-my-zshrc
+    ~/.oh-my-zshrc: config/oh-my-zsh/oh-my-zshrc
     ~/.local/oh-my-zsh: submodules/oh-my-zsh
     # powerline
-    ~/.config/powerline: powerline
-    # python
-    ~/.config/python/requirement.txt: python/requirement.txt
-    ~/bin/pyit: python/pyit
+    ~/.config/powerline: config/powerline
     # prezto
-    ~/.zpreztorc: prezto/zpreztorc
+    ~/.zpreztorc: config/prezto/zpreztorc
     ~/.local/zprezto: submodules/prezto
+    # python
+    ~/.config/python/requirement.txt: config/python/requirement.txt
+    ~/bin/pyit: config/python/pyit
+    # scripts
+    ~/bin/$: config/scripts/$
     # sdkman
-    ~/bin/sdkit: sdkman/sdkit
+    ~/bin/sdkit: config/sdkman/sdkit
     # shell
-    ~/.aliases: sh/aliases
-    ~/.functions: sh/functions
-    ~/.inputrc: sh/inputrc
-    ~/.profile: sh/profile
-    ~/.shrc: sh/shrc
+    ~/.aliases: config/sh/aliases
+    ~/.functions: config/sh/functions
+    ~/.inputrc: config/sh/inputrc
+    ~/.profile: config/sh/profile
+    ~/.shrc: config/sh/shrc
     # spaceship-prompt
-    #~/.zfunctions/prompt_spaceship_setup: submodules/spaceship-prompt/spaceship.zsh
-    ~/.config/spaceship-prompt/config: spaceship-prompt/spaceship-promptrc
-    ~/.config/spaceship-prompt/sections: spaceship-prompt/sections
+    ~/.config/spaceship-prompt/config: config/spaceship-prompt/spaceship-promptrc
+    ~/.config/spaceship-prompt/sections: config/spaceship-prompt/sections
     # tmux
-    ~/.tmux.conf: tmux/tmux.conf
-    ~/.tmux/themes: tmux/themes
+    ~/.tmux.conf: config/tmux/tmux.conf
+    ~/.tmux/themes: config/tmux/themes
+    # vim
+    ~/.vimrc: config/vim/vimrc
     # zim
-    ~/.local/zim/zimfw.zsh: zim/zimfw.zsh
-    ~/.zimrc: zim/zimrc
+    ~/.local/zim/zimfw.zsh: config/zim/zimfw.zsh
+    ~/.zimrc: config/zim/zimrc
     # zsh
-    ~/.zlogin: zsh/zlogin
-    ~/.zlogout: zsh/zlogout
-    ~/.zprofile: zsh/zprofile
-    ~/.zsh_aliases: zsh/zsh_aliases
-    ~/.zshenv: zsh/zshenv
-    ~/.zshrc: zsh/zshrc
+    ~/.zlogin: config/zsh/zlogin
+    ~/.zlogout: config/zsh/zlogout
+    ~/.zprofile: config/zsh/zprofile
+    ~/.zsh_aliases: config/zsh/zsh_aliases
+    ~/.zshenv: config/zsh/zshenv
+    ~/.zshrc: config/zsh/zshrc
     # zsh-autoenv
     ~/.local/zsh-autoenv: submodules/zsh-autoenv
 
