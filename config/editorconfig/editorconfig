@@ -12,7 +12,7 @@ end_of_line = lf
 trim_trailing_whitespace = true
 insert_final_newline = true
 
-# override the following
+# make exceptions from global config
 
 [*.{md,markdown,asciidoc,adoc}]
 trim_trailing_whitespace = false
