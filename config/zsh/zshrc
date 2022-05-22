@@ -274,7 +274,7 @@ command -v argocd >/dev/null 2>&1 && source <(argocd completion zsh)
 #}
 
 # Android
-[ -d "/usr/local/opt/android-sdk" ] && {
+[ -d "/Users/peter/Library/Android/sdk" ] && {
   export ANDROID_HOME="/usr/local/opt/android-sdk"
   export PATH="${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
 }
