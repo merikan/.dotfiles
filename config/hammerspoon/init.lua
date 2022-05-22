@@ -34,9 +34,9 @@ local function moveWindowToDisplay(d)
   end
 end
 
-hs.hotkey.bind({"ctrl", "alt", "cmd"}, "1", moveWindowToDisplay(1))
-hs.hotkey.bind({"ctrl", "alt", "cmd"}, "2", moveWindowToDisplay(2))
-hs.hotkey.bind({"ctrl", "alt", "cmd"}, "3", moveWindowToDisplay(3))
+hs.hotkey.bind(hyper, "1", moveWindowToDisplay(1))
+hs.hotkey.bind(hyper, "2", moveWindowToDisplay(2))
+hs.hotkey.bind(hyper, "3", moveWindowToDisplay(3))
 
 --- ==============================================================================  ---
 --- Spoons
@@ -58,14 +58,6 @@ Install:andUse("ReloadConfiguration", {
     reloadConfiguration = { hyper, "r" }
   },
 })
-
--- http://www.hammerspoon.org/Spoons/WindowGrid.html
-Install:andUse("WindowGrid", {
-                  disabled = true,
-                  start = true,
-                  config = {gridGeometries = { { "6x4" } } },
-                  hotkeys = {show_grid = { hyper, "g" } },
-})
 -- lock screen
 hs.hotkey.bind({"shift","cmd"}, "l", function()
   hs.caffeinate.lockScreen()
@@ -74,13 +66,6 @@ end)
 hs.hotkey.bind(hyper, "z", function()
   hs.caffeinate.systemSleep()
 end)
-
--- -- http://www.hammerspoon.org/Spoons/WindowHalfsAndThirds.html
--- Install:andUse("WindowHalfsAndThirds", 
--- {
---                   disabled = true,
---                   hotkeys = 'default'
--- })
 
 -- http://www.hammerspoon.org/Spoons/MiroWindowsManager.html
 Install:andUse("MiroWindowsManager",
@@ -94,8 +79,6 @@ Install:andUse("MiroWindowsManager",
                   }
                 }
 )
-
-
 
 
 hs.notify.show("Hammerspoon", "Configuration (re)loaded", '')
