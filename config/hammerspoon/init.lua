@@ -66,6 +66,14 @@ Install:andUse("WindowGrid", {
                   config = {gridGeometries = { { "6x4" } } },
                   hotkeys = {show_grid = { hyper, "g" } },
 })
+-- lock screen
+hs.hotkey.bind({"shift","cmd"}, "l", function()
+  hs.caffeinate.lockScreen()
+end)
+-- system sleep
+hs.hotkey.bind(hyper, "z", function()
+  hs.caffeinate.systemSleep()
+end)
 
 -- -- http://www.hammerspoon.org/Spoons/WindowHalfsAndThirds.html
 -- Install:andUse("WindowHalfsAndThirds", 
