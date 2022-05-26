@@ -120,6 +120,7 @@ brew "rest-shell"                                   # Spring HATEOAS-compliant R
 brew "ripgrep"                                      # recursively searches directories for a regex pattern
 brew "rsync"                                        # provides fast incremental file transfer.
 brew "ruby"                                         # ruby environment
+brew "semgrep"                                      # static analysis, find bugs and enforce code standards
 brew "scrcpy"                                       # android screen mirror
 brew "shellcheck"                                   # a static analysis tool for shell scripts
 brew "ssh-copy-id"                                  # ssh copy
