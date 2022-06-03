@@ -274,9 +274,10 @@ command -v argocd >/dev/null 2>&1 && source <(argocd completion zsh)
 #}
 
 # Android
-[ -d "/Users/peter/Library/Android/sdk" ] && {
-  export ANDROID_HOME="/usr/local/opt/android-sdk"
-  export PATH="${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
+local android_dir='/Users/peter/Library/Android/sdk'
+[ -d "$android_dir" ] && {
+  export ANDROID_HOME="$android_dir"
+  export PATH="${PATH}:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator"
 }
 
 # Golang
