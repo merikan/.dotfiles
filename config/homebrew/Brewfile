@@ -122,6 +122,7 @@ brew "rsync"                                        # provides fast incremental 
 brew "ruby"                                         # ruby environment
 brew "semgrep"                                      # static analysis, find bugs and enforce code standards
 brew "scrcpy"                                       # android screen mirror
+brew "sheldon"                                      # fast, configurable, shell plugin manager
 brew "shellcheck"                                   # a static analysis tool for shell scripts
 brew "ssh-copy-id"                                  # ssh copy
 brew "starship"                                     # blazing-fast cross-shell prompt

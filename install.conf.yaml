@@ -84,6 +84,8 @@
     ~/bin/$: config/scripts/$
     # sdkman
     ~/bin/sdkit: config/sdkman/sdkit
+    # sheldon
+    ~/.sheldon/plugins.toml: config/sheldon/plugins.toml
     # shell
     ~/.aliases: config/sh/aliases
     ~/.functions: config/sh/functions

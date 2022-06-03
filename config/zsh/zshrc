@@ -172,16 +172,9 @@ bindkey '\e[A' history-beginning-search-backward
 #Use down key to search forward in the history for a line beginning with the current line up to the cursor.
 bindkey '\e[B' history-beginning-search-forward
 
-# Load antibody plugin manager (antibody list)
-command -v antibody >/dev/null 2>&1  && {
-  # echo "loading antibody"
-  source <(antibody init)
-  # Load Plugins
-  # antibody bundle zdharma/fast-syntax-highlighting
-  # antibody bundle zsh-users/zsh-autosuggestions
-  # antibody bundle zsh-users/zsh-history-substring-search
-  # antibody bundle zsh-users/zsh-completions
-  antibody bundle denysdovhan/spaceship-prompt
+# install/load plugins with sheldon
+command -v sheldon >/dev/null 2>&1  && {
+  eval "$(sheldon source)"
 }
 
 # expand aliases with control+space
