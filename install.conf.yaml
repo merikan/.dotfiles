@@ -122,6 +122,13 @@
         stderr: true
 - shell:
     -
+        description: Installing/updating sheldon plugins
+        command: "[ -s $HOME/.sheldon/plugins.toml ] && command -v sheldon >/dev/null 2>&1 && sheldon lock --update || exit 0"
+        stdin: true
+        stdout: true
+        stderr: true
+- shell:
+    -
         description: Installing zim modules if needed
         command: "[ -s ${ZIM_HOME}/zimfw.zsh ] && [ ! -d ${ZIM_HOME}/modules ] && source ${ZIM_HOME}/zimfw.zsh install || exit 0"
         stdin: true
