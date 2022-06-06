@@ -116,7 +116,6 @@ brew "pv"                                           # a terminal-based tool for 
 brew "pyenv"                                        # simple python version management
 brew "python"                                       # python programming
 brew "reattach-to-user-namespace"                   # Reattach process (e.g., tmux) to background
-brew "rest-shell"                                   # Spring HATEOAS-compliant REST shell
 brew "ripgrep"                                      # recursively searches directories for a regex pattern
 brew "rsync"                                        # provides fast incremental file transfer.
 brew "ruby"                                         # ruby environment
