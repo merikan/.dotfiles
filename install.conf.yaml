@@ -101,7 +101,6 @@
     # vim
     ~/.vimrc: config/vim/vimrc
     # zim
-    ~/.local/zim/zimfw.zsh: config/zim/zimfw.zsh
     ~/.zimrc: config/zim/zimrc
     # zsh
     ~/.zlogin: config/zsh/zlogin
@@ -113,45 +112,39 @@
     # zsh-autoenv
     ~/.local/zsh-autoenv: submodules/zsh-autoenv
 
+- defaults:
+    shell:
+      stdin: true
+      stdout: true
+      stderr: true
+
 - shell:
     -
-        description: create vim unddo directory
-        command: "mkdir -p ~/.local/share/nvim/undodir"
-        stdin: true
-        stdout: true
-        stderr: true
+      description: create vim unddo directory
+      command: "mkdir -p ~/.local/share/nvim/undodir"
+
 - shell:
     -
-        description: Installing/updating sheldon plugins
-        command: "[ -s $HOME/.sheldon/plugins.toml ] && command -v sheldon >/dev/null 2>&1 && sheldon lock --update || exit 0"
-        stdin: true
-        stdout: true
-        stderr: true
+      description: Installing/updating sheldon plugins
+      command: "[ -s $HOME/.sheldon/plugins.toml ] && command -v sheldon >/dev/null 2>&1 && sheldon lock --update || exit 0"
+
+- shell:
+    - 
+      description: Downloading zimfw.zsh file 
+      command : "curl -fsSL -o ${ZIM_HOME}/zimfw.zsh https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh"
+    -
+      description: Installing zim modules if needed
+      command: "[[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]] && source ${ZIM_HOME}/zimfw.zsh init -q || exit 0"
+
 - shell:
     -
-        description: Installing zim modules if needed
-        command: "[ -s ${ZIM_HOME}/zimfw.zsh ] && [ ! -d ${ZIM_HOME}/modules ] && source ${ZIM_HOME}/zimfw.zsh install || exit 0"
-        stdin: true
-        stdout: true
-        stderr: true
+      description: Installing/Updating Sdkman and candidates
+      command: $HOME/bin/sdkit
 - shell:
     -
-        description: Installing/Updating Sdkman and candidates
-        command: $HOME/bin/sdkit
-        stdin: true
-        stdout: true
-        stderr: true
+      description: Installing/Updating Homebrew and formulea
+      command: $HOME/bin/brewit
 - shell:
     -
-        description: Installing/Updating Homebrew and formulea
-        command: $HOME/bin/brewit
-        stdin: true
-        stdout: true
-        stderr: true
-- shell:
-    -
-        description: Installing Python packages
-        command: $HOME/bin/pyit
-        stdin: true
-        stdout: true
-        stderr: true
+      description: Installing Python packages
+      command: $HOME/bin/pyit
