@@ -78,6 +78,9 @@ brew "kompose"                                      # a conversion tool to go fr
 brew "krew"                                         # package manager for kubectl plugins
 brew "kubectl"                                      # kubernetes controller
 brew "kubectx"                                      # kubectx: manage and switch between kubectl contexts, kubens: switch between Kubernetes namespaces.
+brew "kubeconform"                                  # lint k8s manifests
+brew "kubeval"                                      # lint k8s manifests, supports k8s versions
+brew "kube-linter"                                  # lint k8s and helm manifests
 brew "helm"                                         # helm packagemanager for kubernetes
 brew "kustomize"                                    # kustomize: template-free customization of application configuration
 brew "kubespy"                                      # observing Kubernetes resources in real time
