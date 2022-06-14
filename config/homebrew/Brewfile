@@ -59,6 +59,7 @@ brew "gitleaks"                                     # audit git repos for secret
 brew "git-secrets"                                  # prevents you from committing passwords and other sensitive information to a git repository.
 brew "gitui"                                        # an awesome tui for git
 brew "gnupg"                                        # gpg
+brew "go-task/tap/go-task"                          # task runner / build tool
 brew "gron"                                         # make JSON greppable!
 brew "htop"                                         # an interactive process viewer for Unix
 brew "httpie"                                       # HTTP command-line client

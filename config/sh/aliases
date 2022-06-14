@@ -100,6 +100,7 @@ alias lla='ls -lah'               # list all and human readable
 alias g='grep -i'  # Case insensitive grep
 alias f='find . -iname'
 alias m='more'
+alias t='task'
 alias df='df -h'
 alias hist='history | grep $1' #requires an argument
 alias pg='ps aux | grep'  #requires an argument
