@@ -63,7 +63,7 @@
     # mackup
     ~/.mackup.cfg: config/mackup/mackup.cfg
     # macos
-    ~/bin/macos-settings: macos/macos-settings
+    ~/bin/macos-settings: config/macos/macos-settings
     # nvim
     ~/.config/nvim/init.lua: config/nvim/init.lua
     ~/.config/nvim/lua:
