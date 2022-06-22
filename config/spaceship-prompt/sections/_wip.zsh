@@ -14,12 +14,12 @@ SPACESHIP_WIP_COLOR="${SPACESHIP_WIP_COLOR="red"}"
 # ------------------------------------------------------------------------------
 # Section
 # ------------------------------------------------------------------------------
-spaceship_wip() {
+spaceship__wip() {
   [[ $SPACESHIP_WIP_SHOW == false ]] && return
-  
+
   spaceship::is_git || return
 
-  local wip=$(git log -n 1 2>/dev/null | grep -q -c -i "wip" && echo true); 
+  local wip=$(git log -n 1 2>/dev/null | grep -q -c -i "wip" && echo true);
 
   if [[ $wip == true ]]; then
     # Display WIP section

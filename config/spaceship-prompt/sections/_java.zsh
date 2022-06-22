@@ -1,6 +1,6 @@
 # Java
 
-# Java is a class-based, object-oriented programming language 
+# Java is a class-based, object-oriented programming language
 # Link: https://www.java.com
 
 # ------------------------------------------------------------------------------
@@ -19,8 +19,8 @@ SPACESHIP_JAVA_COLOR="${SPACESHIP_JAVA_COLOR="cyan"}"
 
 spaceship::java::is_in_context() {
     local is_in_context=false
-    
-    if [[ -f pom.xml || -f build.gradle || -f settings.gradle || 
+
+    if [[ -f pom.xml || -f build.gradle || -f settings.gradle ||
           -n *.(java|class|jar|war)(#qN^/) ]]; then
       is_in_context=true
     elif spaceship::is_git; then # java project in git repo?
@@ -40,7 +40,7 @@ spaceship::java::is_in_context() {
 # ------------------------------------------------------------------------------
 # Section
 # ------------------------------------------------------------------------------
-spaceship_java() {
+spaceship__java() {
   [[ $SPACESHIP_JAVA_SHOW == false ]] && return
 
   spaceship::exists java || return

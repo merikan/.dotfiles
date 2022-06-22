@@ -5,9 +5,9 @@
 # Load custom sections
 # ------------------------------------------------------------------------------
 script_path=${0:a:h}
-source "$script_path"/sections/wip.zsh
-source "$script_path"/sections/java.zsh
-source "$script_path"/sections/flutter.zsh
+source "$script_path"/sections/_wip.zsh
+source "$script_path"/sections/_java.zsh
+source "$script_path"/sections/_flutter.zsh
 
 # ------------------------------------------------------------------------------
 # Prompt order
@@ -18,12 +18,12 @@ SPACESHIP_PROMPT_ORDER=(
   user          # Username section
   dir           # Current directory section
   host          # Hostname section
-  wip           # git work in progess
+  _wip          # git work in progess
   git           # Git section (git_branch + git_status)
-  java          # java version
-  flutter       # flutter version
+  _java         # java version
+  _flutter      # flutter version
   # maven
-  # gradle
+  # gradl
   # hg            # Mercurial section (hg_branch  + hg_status)
   # package       # Package version
   # node          # Node.js section
@@ -56,8 +56,10 @@ SPACESHIP_PROMPT_ORDER=(
 # ------------------------------------------------------------------------------
 # Look and feel
 # ------------------------------------------------------------------------------
-
 # a Robby Russell like prompt layout
+#
+COLOR_PRIMARY="109"
+COLOR_SECONDARY="142"
 
 # USER
 SPACESHIP_USER_PREFIX="" # remove `with` before username
@@ -77,15 +79,21 @@ SPACESHIP_DIR_TRUNC='1' # show only last directory
 SPACESHIP_DOCKER_PREFIX="docker:("
 SPACESHIP_DOCKER_SUFFIX=") "
 SPACESHIP_DOCKER_SYMBOL=""
+SPACESHIP_DOCKER_COLOR="${COLOR_PRIMARY}"
+SPACESHIP_DOCKER_CONTEXT_PREFIX=" ["
+SPACESHIP_DOCKER_CONTEXT_SUFFIX="]"
 
 # GIT
 # Disable git symbol
 SPACESHIP_GIT_SYMBOL="" # disable git prefix
 SPACESHIP_GIT_BRANCH_PREFIX="" # disable branch prefix too
+SPACESHIP_GIT_BRANCH_COLOR="${COLOR_PRIMARY}"
 # Wrap git in `git:(...)`
 SPACESHIP_GIT_PREFIX='git:('
 SPACESHIP_GIT_SUFFIX=") "
 SPACESHIP_GIT_BRANCH_SUFFIX="" # remove space after branch name
+SPACESHIP_GIT_STATUS_COLOR="${COLOR_PRIMARY}"
+
 # Unwrap git status from `[...]`
 SPACESHIP_GIT_STATUS_PREFIX=" "
 SPACESHIP_GIT_STATUS_SUFFIX=""
@@ -94,45 +102,54 @@ SPACESHIP_GIT_STATUS_SUFFIX=""
 SPACESHIP_FLUTTER_PREFIX="flutter:("
 SPACESHIP_FLUTTER_SUFFIX=") "
 SPACESHIP_FLUTTER_SYMBOL=""
+SPACESHIP_FLUTTER_COLOR="${COLOR_PRIMARY}"
 
 # GOLANG
 SPACESHIP_GOLANG_PREFIX="go:("
 SPACESHIP_GOLANG_SUFFIX=") "
 SPACESHIP_GOLANG_SYMBOL=""
+SPACESHIP_GOLANG_COLOR="${COLOR_PRIMARY}"
 
 # JAVA
 SPACESHIP_JAVA_PREFIX="java:("
 SPACESHIP_JAVA_SUFFIX=") "
 SPACESHIP_JAVA_SYMBOL=""
+SPACESHIP_JAVA_COLOR="${COLOR_PRIMARY}"
 
 # KUBECTL
 SPACESHIP_KUBECTL_PREFIX="k8s:("
 SPACESHIP_KUBECTL_SUFFIX=") "
 SPACESHIP_KUBECTL_SYMBOL=""
+SPACESHIP_KUBECTL_COLOR="${COLOR_PRIMARY}"
 
 # KUBECONTEXT
-SPACESHIP_KUBECONTEXT_PREFIX="" 
-SPACESHIP_KUBECONTEXT_SUFFIX=""
+SPACESHIP_KUBECONTEXT_PREFIX=" ["
+SPACESHIP_KUBECONTEXT_SUFFIX="]"
 SPACESHIP_KUBECONTEXT_SYMBOL=""
 
 # NODE
 SPACESHIP_NODE_PREFIX="node:("
 SPACESHIP_NODE_SUFFIX=") "
 SPACESHIP_NODE_SYMBOL=""
+SPACESHIP_NODE_COLOR="${COLOR_PRIMARY}"
 
 # RUBY
 SPACESHIP_RUBY_PREFIX="ruby:("
 SPACESHIP_RUBY_SUFFIX=") "
 SPACESHIP_RUBY_SYMBOL=""
+SPACESHIP_RUBY_COLOR="${COLOR_PRIMARY}"
 
 # SWIFT
 SPACESHIP_SWIFT_PREFIX="swift:("
 SPACESHIP_SWIFT_SUFFIX=") "
 SPACESHIP_SWIFT_SYMBOL=""
+SPACESHIP_SWIFT_COLOR="${COLOR_PRIMARY}"
 
 # VENV
 SPACESHIP_VENV_PREFIX="venv:("
 SPACESHIP_VENV_SUFFIX=") "
+SPACESHIP_VENV_SUFFIX=") "
+SPACESHIP_VENV_COLOR="${COLOR_PRIMARY}"
 
 # WIP
 SPACESHIP_WIP_PREFIX="("
@@ -143,6 +160,7 @@ SPACESHIP_WIP_SYMBOL=""
 SPACESHIP_XCODE_PREFIX="xcode:("
 SPACESHIP_XCODE_SUFFIX=") "
 SPACESHIP_XCODE_SYMBOL=""
+SPACESHIP_XCODE_COLOR="${COLOR_PRIMARY}"
 
 # ------------------------------------------------------------------------------
 # Settings
@@ -150,7 +168,6 @@ SPACESHIP_XCODE_SYMBOL=""
 
 SPACESHIP_CHAR_SYMBOL="$ "
 SPACESHIP_CHAR_SYMBOL_ROOT="# "
-SPACESHIP_GOLANG_COLOR=#00add8
 #SPACESHIP_JAVA_CONTEXT_ONLY=false
 SPACESHIP_NODE_SHOW=false
 SPACESHIP_PACKAGE_SHOW=false
@@ -159,10 +176,10 @@ SPACESHIP_KUBECTL_VERSION_SHOW=false # disable to speed up prompt when no remote
 SPACESHIP_KUBECONTEXT_SHOW=true
 SPACESHIP_KUBECONTEXT_COLOR_GROUPS=(
   # https://upload.wikimedia.org/wikipedia/commons/1/15/Xterm_256color_chart.svg
-  002  minikube
-  # namespace: environment 
-  002  '\(.*-dev\)$'
-  002  '\(.*-utv\)$'
+  100  minikube
+  # namespace: environment
+  100  '\(.*-dev\)$'
+  100  '\(.*-utv\)$'
   228  '\(.*-sys\)$'
   228  '\(.*-qa\)$'
   228  '\(.*-acc\)$'

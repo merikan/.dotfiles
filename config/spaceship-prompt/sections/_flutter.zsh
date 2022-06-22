@@ -20,7 +20,7 @@ SPACESHIP_FLUTTER_COLOR="${SPACESHIP_FLUTTER_COLOR="blue"}"
 
 spaceship::flutter::is_in_context() {
     local is_in_context=false
-    
+
     if [[ -f pubspec.yaml || -d dart_tool || -n *.dart(#qN^/) ]]; then
       is_in_context=true
     elif spaceship::is_git; then # flutter project in git repo?
@@ -40,7 +40,7 @@ spaceship::flutter::is_in_context() {
 # ------------------------------------------------------------------------------
 # Section
 # ------------------------------------------------------------------------------
-spaceship_flutter() {
+spaceship__flutter() {
   [[ $SPACESHIP_FLUTTER_SHOW == false ]] && return
 
   spaceship::exists flutter || return
