@@ -172,6 +172,18 @@
   puf = push --force-with-lease
   # status abbr.
   st = status
+  # skip/unskip files
+  ## skip a file
+  skip = update-index --skip-worktree
+  ## skip all
+  skipall = "!git st -s | awk {'print $2'} | xargs git skip"
+  ## list skippped files
+  skipped = "!git ls-files -v | grep '^S' | cut -c 3-"
+  ## unskip file
+  unskip = update-index --no-skip-worktree
+  ## unskip all files
+  unskipall = "!git skipped | xargs git unskip"
+
   # stage the changes for a given file.
   stage = !git add -u
   # view the current changes in the staging area.
