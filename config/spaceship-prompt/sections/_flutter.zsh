@@ -13,6 +13,9 @@ SPACESHIP_FLUTTER_PREFIX="${SPACESHIP_FLUTTER_PREFIX="$SPACESHIP_PROMPT_DEFAULT_
 SPACESHIP_FLUTTER_SUFFIX="${SPACESHIP_FLUTTER_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"}"
 SPACESHIP_FLUTTER_SYMBOL="${SPACESHIP_FLUTTER_SYMBOL="💙 "}"
 SPACESHIP_FLUTTER_COLOR="${SPACESHIP_FLUTTER_COLOR="blue"}"
+SPACESHIP_FLUTTER_CHANNEL_PREFIX="${SPACESHIP_FLUTTER_CHANNEL_PREFIX=" ["}"
+SPACESHIP_FLUTTER_CHANNEL_SUFFIX="${SPACESHIP_FLUTTER_CHANNEL_SUFFIX="]"}"
+SPACESHIP_FLUTTER_CHANNEL_COLOR="${SPACESHIP_FLUTTER_CHANNEL_COLOR="$SPACESHIP_FLUTTER_COLOR"}"
 
 # ------------------------------------------------------------------------------
 # Utils
@@ -38,7 +41,7 @@ spaceship::flutter::is_in_context() {
 }
 
 # ------------------------------------------------------------------------------
-# Section
+# Section(s)
 # ------------------------------------------------------------------------------
 spaceship__flutter() {
   [[ $SPACESHIP_FLUTTER_SHOW == false ]] && return
@@ -50,10 +53,22 @@ spaceship__flutter() {
   local flutter_version_output=$(flutter --version --suppress-analytics | head -n 1)
   local flutter_version=$(echo "$flutter_version_output" | awk '{print $2}')
   local flutter_channel=$(echo "$flutter_version_output" | awk '{print $5}')
+  local flutter_channel_section="$(_spaceship_flutter_channel $flutter_channel)"
 
   spaceship::section \
     "$SPACESHIP_FLUTTER_COLOR" \
     "$SPACESHIP_FLUTTER_PREFIX" \
-    "${SPACESHIP_FLUTTER_SYMBOL}v${flutter_version} [${flutter_channel}]" \
+    "${SPACESHIP_FLUTTER_SYMBOL}v${flutter_version}${flutter_channel_section}" \
     "$SPACESHIP_FLUTTER_SUFFIX"
+}
+# internal section for channel
+# inparam: channel
+_spaceship_flutter_channel() {
+  [[ $SPACESHIP_FLUTTER_CHANNEL_SHOW == false ]] && return
+
+  local flutter_channel=${1:?"unknown"}
+
+  spaceship::section \
+    "$SPACESHIP_FLUTTER_CHANNEL_COLOR" \
+    "$SPACESHIP_FLUTTER_CHANNEL_PREFIX${flutter_channel}$SPACESHIP_FLUTTER_CHANNEL_SUFFIX"
 }

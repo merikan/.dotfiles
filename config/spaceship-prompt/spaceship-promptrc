@@ -5,9 +5,12 @@
 # Load custom sections
 # ------------------------------------------------------------------------------
 script_path=${0:a:h}
-source "$script_path"/sections/_wip.zsh
-source "$script_path"/sections/_java.zsh
-source "$script_path"/sections/_flutter.zsh
+for file in "$script_path"/sections/*.zsh; do
+  source "$file"
+done
+# source "$script_path"/sections/_wip.zsh
+# source "$script_path"/sections/_java.zsh
+# source "$script_path"/sections/_flutter.zsh
 
 # ------------------------------------------------------------------------------
 # Prompt order
@@ -18,10 +21,10 @@ SPACESHIP_PROMPT_ORDER=(
   user          # Username section
   dir           # Current directory section
   host          # Hostname section
-  _wip          # git work in progess
+  _wip         # git work in progess
   git           # Git section (git_branch + git_status)
-  _java         # java version
-  _flutter      # flutter version
+  _java        # java version
+  _flutter     # flutter version
   # maven
   # gradl
   # hg            # Mercurial section (hg_branch  + hg_status)
@@ -59,7 +62,7 @@ SPACESHIP_PROMPT_ORDER=(
 # a Robby Russell like prompt layout
 #
 COLOR_PRIMARY="109"
-COLOR_SECONDARY="142"
+COLOR_SECONDARY="109"
 
 # USER
 SPACESHIP_USER_PREFIX="" # remove `with` before username
@@ -92,8 +95,7 @@ SPACESHIP_GIT_BRANCH_COLOR="${COLOR_PRIMARY}"
 SPACESHIP_GIT_PREFIX='git:('
 SPACESHIP_GIT_SUFFIX=") "
 SPACESHIP_GIT_BRANCH_SUFFIX="" # remove space after branch name
-SPACESHIP_GIT_STATUS_COLOR="${COLOR_PRIMARY}"
-
+SPACESHIP_GIT_STATUS_COLOR="${COLOR_SECONDARY}"
 # Unwrap git status from `[...]`
 SPACESHIP_GIT_STATUS_PREFIX=" "
 SPACESHIP_GIT_STATUS_SUFFIX=""
@@ -103,6 +105,7 @@ SPACESHIP_FLUTTER_PREFIX="flutter:("
 SPACESHIP_FLUTTER_SUFFIX=") "
 SPACESHIP_FLUTTER_SYMBOL=""
 SPACESHIP_FLUTTER_COLOR="${COLOR_PRIMARY}"
+SPACESHIP_FLUTTER_CHANNEL_COLOR="${COLOR_SECONDARY}"
 
 # GOLANG
 SPACESHIP_GOLANG_PREFIX="go:("
@@ -168,7 +171,6 @@ SPACESHIP_XCODE_COLOR="${COLOR_PRIMARY}"
 
 SPACESHIP_CHAR_SYMBOL="$ "
 SPACESHIP_CHAR_SYMBOL_ROOT="# "
-#SPACESHIP_JAVA_CONTEXT_ONLY=false
 SPACESHIP_NODE_SHOW=false
 SPACESHIP_PACKAGE_SHOW=false
 SPACESHIP_KUBECTL_SHOW=true

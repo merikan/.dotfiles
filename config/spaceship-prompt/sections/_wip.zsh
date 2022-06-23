@@ -1,5 +1,5 @@
 # do we have a wip commit?
-# check if latest commit has the word 'wip' in commit message
+# check if latest commit message starts with the word 'wip'
 
 # ------------------------------------------------------------------------------
 # Configuration
@@ -19,7 +19,7 @@ spaceship__wip() {
 
   spaceship::is_git || return
 
-  local wip=$(git log -n 1 2>/dev/null | grep -q -c -i "wip" && echo true);
+  local wip=$(git log -n 1 --pretty=format:%s 2>/dev/null | grep -q -c -i "^wip" && echo true);
 
   if [[ $wip == true ]]; then
     # Display WIP section
