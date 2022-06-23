@@ -6,7 +6,7 @@
 for i in {0..255}; do printf "\x1b[38;5;${i}mcolor%-5i\x1b[0m" $i ; if ! (( ($i + 1 ) % 8 )); then echo ; fi ; done
 
 # ANSI Colors
-# There are 16 ANSI Colors, which are actually 8 colors, each having "normal" 
+# There are 16 ANSI Colors, which are actually 8 colors, each having "normal"
 # and "bright" intensity variants.
 # Echoes a bunch of color codes to the terminal to demonstrate
 # what's available. Each line is the color code of one forground color,
@@ -63,3 +63,4 @@ for i in {0..6}; do
 done
 
 echo -e "\n"
+curl -s https://gist.githubusercontent.com/merikan/a2eb47c43ec5d29cf9e72cd739eb21fa/raw/e50a28ec54188d2413518788de6c6367ffcea4f7/print256colours.sh | bash
