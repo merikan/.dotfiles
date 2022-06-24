@@ -43,7 +43,7 @@ spaceship::flutter::is_in_context() {
 # ------------------------------------------------------------------------------
 # Section(s)
 # ------------------------------------------------------------------------------
-spaceship__flutter() {
+spaceship_myflutter() {
   [[ $SPACESHIP_FLUTTER_SHOW == false ]] && return
 
   spaceship::exists flutter || return

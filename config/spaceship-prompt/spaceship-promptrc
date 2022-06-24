@@ -21,10 +21,10 @@ SPACESHIP_PROMPT_ORDER=(
   user          # Username section
   dir           # Current directory section
   host          # Hostname section
-  _wip         # git work in progess
+  mywip         # git work in progess
   git           # Git section (git_branch + git_status)
-  _java        # java version
-  _flutter     # flutter version
+  myjava        # custom java section
+  myflutter     # custom flutter section
   # maven
   # gradl
   # hg            # Mercurial section (hg_branch  + hg_status)

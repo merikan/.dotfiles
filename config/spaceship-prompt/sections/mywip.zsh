@@ -14,7 +14,7 @@ SPACESHIP_WIP_COLOR="${SPACESHIP_WIP_COLOR="red"}"
 # ------------------------------------------------------------------------------
 # Section
 # ------------------------------------------------------------------------------
-spaceship__wip() {
+spaceship_mywip() {
   [[ $SPACESHIP_WIP_SHOW == false ]] && return
 
   spaceship::is_git || return

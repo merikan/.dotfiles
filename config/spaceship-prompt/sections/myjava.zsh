@@ -40,7 +40,7 @@ spaceship::java::is_in_context() {
 # ------------------------------------------------------------------------------
 # Section
 # ------------------------------------------------------------------------------
-spaceship__java() {
+spaceship_myjava() {
   [[ $SPACESHIP_JAVA_SHOW == false ]] && return
 
   spaceship::exists java || return
