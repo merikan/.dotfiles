@@ -38,6 +38,7 @@ brew "cowsay"                                       # the cow says
 brew "csvkit"                                       # tools for working with CSV
 brew "ctop"                                         # top-like interface for container metrics
 brew "curl"                                         # curl
+brew "dasel"                                        # query and modify data structures in json/toml/yaml/xml/csv/plain format
 brew "dfc"                                          # displays file system space usage using graphs and colors
 brew "diff-pdf"                                     # visually compare two PDF files
 brew "wagoodman/dive/dive"                          # exploring a docker image, layer contents, and discovering ways to shrink your Docker image size.
@@ -142,9 +143,10 @@ brew "aquasecurity/trivy/trivy"                     # scanner for vulnerabilitie
 brew "vim"                                          # highly configurable text editor
 brew "watch"                                        # execute a program periodically and watch the output
 brew "wget"                                         # non-interactive network downloader
-brew "xsv"                                          # A fast CSV command line toolkit written in Rust.
+brew "xsv"                                          # A fast csv command line toolkit written in Rust.
 brew "yarn"                                         # JavaScript package manager
 brew "youtube-dl"                                   # download videos from youtube and many more sites
+brew "yq"                                           # fast yaml processor
 brew "zsh"                                          # shell
 
 ### ---------------------------------------------------- ###
