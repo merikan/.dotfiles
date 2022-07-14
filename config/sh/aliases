@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# My list of aliases
+# My list of aliases and they are shell agnostic
 
 function has() {  # has command?
    command -v $1 >/dev/null 2>&1 && return 0 || return 1
@@ -136,6 +136,8 @@ alias kim="kubectl get pods -o jsonpath=\"{.items[*].spec.containers[*].image}\"
 alias kpf='kubectl port-forward '
 # kustomize
 alias kz='kustomize'
+# skaffold
+alias sk=skaffold
 mk='minikube'
 #maven aliases
 alias mct='mvn clean test'
