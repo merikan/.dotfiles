@@ -51,6 +51,7 @@ brew "fzf"                                          # a command-line fuzzy finde
 brew "ffmpeg"                                       # to record, convert and stream audio and video
 brew "merikan/tools/gdu-go"                         # go disk usage
 brew "go"                                           # golang sdk
+brew "gojq"                                         # jq written in go
 brew "goreleaser/tap/goreleaser"                    # release automation tool for Go projects
 brew "golangci-lint"                                # Go linters aggregator
 brew "ghq"                                          # git remote repository management made easy
