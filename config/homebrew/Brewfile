@@ -229,6 +229,7 @@ cask "skype"                                        # video conf
 cask "sketch"                                       # sketchapp - design tool
 cask "sketch-toolbox"                               # some useful plugins for sketchapp
 cask "skitch"                                       # take screenshots of all or part of your screen
+cask "sloth"                                        # shows all open files and sockets
 cask "sonos"                                        # Sonos controller
 cask "soapui"                                       # soap and rest testing tool
 cask "sonos"                                        # controller for sonos speakers
