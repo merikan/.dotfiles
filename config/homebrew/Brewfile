@@ -149,6 +149,8 @@ brew "xsv"                                          # A fast csv command line to
 brew "yarn"                                         # JavaScript package manager
 brew "youtube-dl"                                   # download videos from youtube and many more sites
 brew "yq"                                           # fast yaml processor
+brew "vmware-tanzu/carvel/ytt"                      # YAML templating tool, structure instead of text
+
 brew "zsh"                                          # shell
 
 ### ---------------------------------------------------- ###
