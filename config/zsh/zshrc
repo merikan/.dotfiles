@@ -208,10 +208,6 @@ command -v lf >/dev/null 2>&1  && {
   bindkey -s '^o' 'lfcd\n'
 }
 
-# Theme: spaceship-prompt
-# source config file, remove this when PR #508 is added
-[[ -s ${HOME}/.config/spaceship-prompt/config ]] && source ${HOME}/.config/spaceship-prompt/config
-
 # Using Base16 for Shells https://github.com/chriskempson/base16-shell
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"

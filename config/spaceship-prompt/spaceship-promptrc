@@ -1,32 +1,30 @@
 # customization of spaceship-prompt
-# for options see https://github.com/denysdovhan/spaceship-prompt/blob/master/docs/Options.md
+# for options see https://spaceship-prompt.sh/config/prompt/
 
 # ------------------------------------------------------------------------------
 # Load custom sections
 # ------------------------------------------------------------------------------
 script_path=${0:a:h}
 for file in "$script_path"/sections/*.zsh; do
+  #echo "loading $file"
   source "$file"
 done
-# source "$script_path"/sections/_wip.zsh
-# source "$script_path"/sections/_java.zsh
-# source "$script_path"/sections/_flutter.zsh
 
 # ------------------------------------------------------------------------------
 # Prompt order
-# for a as fast prompt as possible, only specify the sections to be loaded
+# to load fast, only specify the sections to be loaded
+# https://spaceship-prompt.sh/config/prompt/#prompt-order
 # ------------------------------------------------------------------------------
 SPACESHIP_PROMPT_ORDER=(
   time          # Time stamps section
   user          # Username section
   dir           # Current directory section
   host          # Hostname section
-  mywip         # git work in progess
+  wip           # git work in progess
   git           # Git section (git_branch + git_status)
-  myjava        # custom java section
-  myflutter     # custom flutter section
-  # maven
-  # gradl
+  golang        # Go section
+  flutter       # flutter section
+  java          # java section
   # hg            # Mercurial section (hg_branch  + hg_status)
   # package       # Package version
   # node          # Node.js section
@@ -34,7 +32,6 @@ SPACESHIP_PROMPT_ORDER=(
   # elixir        # Elixir section
   # xcode         # Xcode section
   # swift         # Swift section
-  mygolang        # custom Go section
   # php           # PHP section
   # rust          # Rust section
   # haskell       # Haskell Stack section
@@ -47,6 +44,7 @@ SPACESHIP_PROMPT_ORDER=(
   # dotnet        # .NET section
   # ember         # Ember.js section
   kubectl       # Kubectl context section
+  async         # Async jobs indicator
   # terraform     # Terraform workspace section
   exec_time     # Execution time
   line_sep      # Line break
@@ -126,9 +124,9 @@ SPACESHIP_KUBECTL_SYMBOL=""
 SPACESHIP_KUBECTL_COLOR="${COLOR_PRIMARY}"
 
 # KUBECONTEXT
-SPACESHIP_KUBECONTEXT_PREFIX=" ["
-SPACESHIP_KUBECONTEXT_SUFFIX="]"
-SPACESHIP_KUBECONTEXT_SYMBOL=""
+SPACESHIP_KUBECTL_CONTEXT_PREFIX=" ["
+SPACESHIP_KUBECTL_CONTEXT_SUFFIX="]"
+SPACESHIP_KUBECTL_CONTEXT_SYMBOL=""
 
 # NODE
 SPACESHIP_NODE_PREFIX="node:("
@@ -175,8 +173,8 @@ SPACESHIP_NODE_SHOW=false
 SPACESHIP_PACKAGE_SHOW=false
 SPACESHIP_KUBECTL_SHOW=true
 SPACESHIP_KUBECTL_VERSION_SHOW=false # disable to speed up prompt when no remote server is available
-SPACESHIP_KUBECONTEXT_SHOW=true
-SPACESHIP_KUBECONTEXT_COLOR_GROUPS=(
+SPACESHIP_KUBECTL_CONTEXT_SHOW=true
+SPACESHIP_KUBECTL_CONTEXT_COLOR_GROUPS=(
   # https://upload.wikimedia.org/wikipedia/commons/1/15/Xterm_256color_chart.svg
   100  minikube
   # namespace: environment
