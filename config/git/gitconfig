@@ -36,6 +36,7 @@
 
 [push]
 	default = simple
+	autoSetupRemote = true
 
 [commit]
   template = ~/.git_commit_msg
