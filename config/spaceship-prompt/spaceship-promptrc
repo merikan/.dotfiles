@@ -26,6 +26,7 @@ SPACESHIP_PROMPT_ORDER=(
   java          # java section
   dart          # dart section
   flutter       # flutter section
+  lua           # lua section
   # hg            # Mercurial section (hg_branch  + hg_status)
   # package       # Package version
   # node          # Node.js section
@@ -111,7 +112,12 @@ SPACESHIP_FLUTTER_PREFIX="flutter:("
 SPACESHIP_FLUTTER_SUFFIX=") "
 SPACESHIP_FLUTTER_SYMBOL=""
 SPACESHIP_FLUTTER_COLOR="${COLOR_PRIMARY}"
-SPACESHIP_FLUTTER_CHANNEL_COLOR="${COLOR_SECONDARY}"
+
+# LUA
+SPACESHIP_LUA_PREFIX="lua:("
+SPACESHIP_LUA_SUFFIX=") "
+SPACESHIP_LUA_SYMBOL=""
+SPACESHIP_LUA_COLOR="${COLOR_PRIMARY}"
 
 # GOLANG
 SPACESHIP_GOLANG_PREFIX="go:("
