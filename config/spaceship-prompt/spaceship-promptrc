@@ -23,8 +23,9 @@ SPACESHIP_PROMPT_ORDER=(
   wip           # git work in progess
   git           # Git section (git_branch + git_status)
   golang        # Go section
-  flutter       # flutter section
   java          # java section
+  dart          # dart section
+  flutter       # flutter section
   # hg            # Mercurial section (hg_branch  + hg_status)
   # package       # Package version
   # node          # Node.js section
@@ -54,6 +55,7 @@ SPACESHIP_PROMPT_ORDER=(
   exit_code     # Exit code section
   char          # Prompt character
 )
+
 # ------------------------------------------------------------------------------
 # Look and feel
 # ------------------------------------------------------------------------------
@@ -97,6 +99,12 @@ SPACESHIP_GIT_STATUS_COLOR="${COLOR_SECONDARY}"
 # Unwrap git status from `[...]`
 SPACESHIP_GIT_STATUS_PREFIX=" "
 SPACESHIP_GIT_STATUS_SUFFIX=""
+
+# DART
+SPACESHIP_DART_PREFIX="dart:("
+SPACESHIP_DART_SUFFIX=") "
+SPACESHIP_DART_SYMBOL=""
+SPACESHIP_DART_COLOR="${COLOR_PRIMARY}"
 
 # FLUTTER
 SPACESHIP_FLUTTER_PREFIX="flutter:("
