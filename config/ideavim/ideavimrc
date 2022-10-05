@@ -1,29 +1,57 @@
 " cross-plattform clippboard https://stackoverflow.com/a/30691754/2380457
 set clipboard^=unnamed,unnamedplus
-
 " set lime number
 set number relativenumber
-
-" toogle line number
-:augroup numbertoggle
-:  autocmd!
-:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-:augroup END
+" idea
+command Restart action RestartIde
+command ReloadVim action IdeaVim.ReloadVimRc.reload
 
 " search options
 set hlsearch incsearch ignorecase smartcase
 
 " set command menu
 set wildmenu
+let mapleader=" "
+""""""""""""""""""""""
+" NerdTree configuration
+" https://github.com/JetBrains/ideavim/wiki/NERDTree-support
+" set NERDTree
+" let g:NERDTreeMapActivateNode='l'
+" let g:NERDTreeMapCloseDir='h'
+" nnoremap <leader>e :NERDTreeToggle<CR>
 
-let mapleader = " "
 " hh
 :imap hh <Esc>
 :cmap hh <Esc>
+" explorer
+set NERDTree
+nnoremap <space>er :NERDTreeFind<CR>
+nnoremap <space>ee :NERDTree<CR>
 
 nnoremap <Leader>k  :action FindInPath<CR>
 nnoremap <Leader>nf :action SelectInProjectView<CR>
 nnoremap <Leader>gr :action RenameElement<CR>
 nnoremap <Leader>gt :action GotoTest<CR>
 nnoremap <Leader>lf :action ReformatCode<CR>
+let g:NERDTreeMapActivateNode = 'l'
+let g:NERDTreeMapPreview = 'E'
+let g:NERDTreeMapOpenInTab = 't'
+let g:NERDTreeMapOpenInTabSilent = 'T'
+let g:NERDTreeMapOpenSplit = 's'
+let g:NERDTreeMapPreviewSplit = 'S'
+let g:NERDTreeMapOpenVSplit = 'v'
+let g:NERDTreeMapPreviewVSplit = 'V'
+let g:NERDTreeMapOpenRecursively = 'L'
+let g:NERDTreeMapCloseDir = 'h'
+let g:NERDTreeMapCloseChildren = 'H'
+let g:NERRTreeMapJumpRoot = 'gf'
+let g:NERDTreeMapJumpParent = 'gh'
+let g:NERDTreeMapJumpFirstChild = 'K'
+let g:NERDTreeMapJumpLastChild = 'J'
+let g:NERDTreeMapJumpNextSibling = 'j'
+let g:NERDTreeMapJumpPrevSibling = 'k'
+let g:NERDTreeMapRefresh = 'R'
+let g:NERDTreeMapRefreshRoot = 'gR'
+let g:NERDTreeMapMenu = '<Tab>'
+let g:NERDTreeMapQuit = 'q'
+let g:NERDTreeMapToggleZoom = '<SP>m'
