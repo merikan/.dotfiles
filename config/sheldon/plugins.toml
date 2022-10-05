@@ -16,6 +16,8 @@ shell = "zsh"
 
 [plugins.spaceship]
 github = 'spaceship-prompt/spaceship-prompt'
+#github = 'merikan/spaceship-prompt'
+#branch = 'add_flutter_section'
 
 # For example:
 #
