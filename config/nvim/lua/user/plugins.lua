@@ -44,8 +44,7 @@ vim.cmd [[
 
 return packer.startup(function(use)
   use { "wbthomason/packer.nvim" }
-  use {
-    "nvim-telescope/telescope.nvim", -- a picky fuzzy finder
+  use { "nvim-telescope/telescope.nvim", -- a picky fuzzy finder
     requires = {
       "nvim-lua/plenary.nvim",
       "nvim-lua/popup.nvim",
@@ -56,8 +55,7 @@ return packer.startup(function(use)
       require("user.plugins.telescope").setup()
     end,
   }
-  use {
-    "nvim-treesitter/nvim-treesitter", -- treesitter render AST for languages
+  use { "nvim-treesitter/nvim-treesitter", -- treesitter render AST for languages
     requires = {
       -- "nvim-treesitter/nvim-treesitter-refactor",
       -- "nvim-treesitter/nvim-treesitter-textobjects",
@@ -68,12 +66,9 @@ return packer.startup(function(use)
       require("user.plugins.treesitter").setup()
     end,
   }
-  use "windwp/nvim-autopairs" -- autopairs parentheses, brackets, quotes etc.
-  use "tpope/vim-surround" --  all about "surroundings": parentheses, brackets, quotes, XML tags, and more.
 
   -- LSP  - Language Server Protocol
-  use {
-    "neovim/nvim-lspconfig", -- common lsp configurations
+  use { "neovim/nvim-lspconfig", -- common lsp configurations
     requires = {
       "williamboman/nvim-lsp-installer", -- lsp installer
       "folke/lua-dev.nvim", -- setup for lua dev
@@ -91,14 +86,21 @@ return packer.startup(function(use)
       require("user.lsp").setup()
     end,
   }
+  -- Java
+  use "mfussenegger/nvim-jdtls"
+
+  -- debugger (DAP)
+  -- use "mfussenegger/nvim-dap"
+  -- use "theHamsta/nvim-dap-virtual-text"
+  -- use "rcarriga/nvim-dap-ui"
+  -- use "Pocco81/DAPInstall.nvim"
+
   -- snippets
-  use {
-    "L3MON4D3/LuaSnip", --snippet engine
+  use { "L3MON4D3/LuaSnip", --snippet engine
     requires = "rafamadriz/friendly-snippets", -- a bunch of snippets to use
   }
   -- autocompletion
-  use {
-    "hrsh7th/nvim-cmp",
+  use { "hrsh7th/nvim-cmp",
     requires = {
       "hrsh7th/cmp-nvim-lsp", -- nvim-cmp for lsp
       "onsails/lspkind-nvim", -- pictograms for completion items
@@ -115,15 +117,15 @@ return packer.startup(function(use)
       require("user.plugins.cmp").setup()
     end,
   }
-  use {
-    "folke/trouble.nvim", -- handle diagnostics with grace
+  use "windwp/nvim-autopairs" -- autopairs parentheses, brackets, quotes etc.
+  use "tpope/vim-surround" --  all about "surroundings": parentheses, brackets, quotes, XML tags, and more.
+  use { "folke/trouble.nvim", -- handle diagnostics with grace
     requires = "kyazdani42/nvim-web-devicons",
     config = function()
       require("user.plugins.trouble").setup()
     end,
   }
-  use {
-    "numToStr/Comment.nvim", -- line and block comments
+  use { "numToStr/Comment.nvim", -- line/block comments
     requires = {
       { "JoosepAlviste/nvim-ts-context-commentstring", after = "nvim-treesitter" },
     },
@@ -131,8 +133,7 @@ return packer.startup(function(use)
       require("user.plugins.comment").setup()
     end,
   }
-  use {
-    "folke/todo-comments.nvim", -- manage your todos with grace
+  use { "folke/todo-comments.nvim", -- manage your todos with grace
     requires = "nvim-lua/plenary.nvim",
     config = function()
       require("todo-comments").setup()
