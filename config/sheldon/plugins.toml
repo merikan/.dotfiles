@@ -16,11 +16,17 @@ shell = "zsh"
 
 [plugins.spaceship]
 github = 'spaceship-prompt/spaceship-prompt'
-#github = 'merikan/spaceship-prompt'
-#branch = 'add_flutter_section'
 
 [plugins.spaceship-flutter]
 github = "spaceship-prompt/spaceship-flutter"
+
+#     === WIP ===
+# [plugins.spaceship]
+# github = 'merikan/spaceship-prompt'
+# branch = 'package_dart'
+#
+# [plugins.spaceship]
+# local = "~/src/github.com/merikan/spaceship-prompt"
 
 # For example:
 #
