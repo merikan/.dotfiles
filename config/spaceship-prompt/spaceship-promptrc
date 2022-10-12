@@ -2,82 +2,49 @@
 # for options see https://spaceship-prompt.sh/config/prompt/
 
 # ------------------------------------------------------------------------------
-# Load custom sections
+# Load local custom sections
 # ------------------------------------------------------------------------------
 script_path=${0:a:h}
 for file in "$script_path"/sections/*.zsh; do
-  #echo "loading $file"
   source "$file"
 done
 
-# ------------------------------------------------------------------------------
-# Prompt order
-# to load fast, only specify the sections to be loaded
-# https://spaceship-prompt.sh/config/prompt/#prompt-order
-# ------------------------------------------------------------------------------
-SPACESHIP_PROMPT_ORDER=(
-  time          # Time stamps section
-  user          # Username section
-  dir           # Current directory section
-  host          # Hostname section
-  wip           # git work in progess
-  git           # Git section (git_branch + git_status)
-  golang        # Go section
-  java          # java section
-  dart          # dart section
-  flutter       # flutter section
-  lua           # lua section
-  # hg            # Mercurial section (hg_branch  + hg_status)
-  # package       # Package version
-  # node          # Node.js section
-  # ruby          # Ruby section
-  # elixir        # Elixir section
-  # xcode         # Xcode section
-  # swift         # Swift section
-  # php           # PHP section
-  # rust          # Rust section
-  # haskell       # Haskell Stack section
-  # julia         # Julia section
-  docker        # Docker section
-  # aws           # Amazon Web Services section
-  # venv          # virtualenv section
-  # conda         # conda virtualenv section
-  # pyenv         # Pyenv section
-  # dotnet        # .NET section
-  # ember         # Ember.js section
-  kubectl       # Kubectl context section
-  async         # Async jobs indicator
-  # terraform     # Terraform workspace section
-  exec_time     # Execution time
-  line_sep      # Line break
-  # battery       # Battery level and status
-  # vi_mode       # Vi-mode indicator
-  jobs          # Background jobs indicator
-  exit_code     # Exit code section
-  char          # Prompt character
-)
+spaceship add flutter # add flutter external section
+
 
 # ------------------------------------------------------------------------------
 # Look and feel
 # ------------------------------------------------------------------------------
 # a Robby Russell like prompt layout
 #
+
+# SPACESHIP_PROMPT_DEFAULT_PREFIX="("
+# SPACESHIP_PROMPT_DEFAULT_SUFFIX=")"
 COLOR_PRIMARY="109"
 COLOR_SECONDARY="109"
+
+# CHAR
+SPACESHIP_CHAR_SYMBOL="$ "
+SPACESHIP_CHAR_SYMBOL_ROOT="# "
 
 # USER
 SPACESHIP_USER_PREFIX="" # remove `with` before username
 SPACESHIP_USER_SUFFIX="" # remove space before host
 
 # HOST
-# Result will look like this:
-#   username@:(hostname)
 SPACESHIP_HOST_PREFIX="@:("
 SPACESHIP_HOST_SUFFIX=") "
 
 # DIR
-SPACESHIP_DIR_PREFIX='' # disable directory prefix, cause it's not the first section
-SPACESHIP_DIR_TRUNC='1' # show only last directory
+SPACESHIP_DIR_PREFIX=""  # disable directory prefix, cause it's not the first section
+SPACESHIP_DIR_SUFFIX=" " 
+SPACESHIP_DIR_TRUNC="2"  # trunk to # dirs
+
+# PACKAGE
+SPACESHIP_PACKAGE_PREFIX="projver:("
+SPACESHIP_PACKAGE_SUFFIX=") "
+SPACESHIP_PACKAGE_SYMBOL=""
+SPACESHIP_PACKAGE_COLOR="${COLOR_PRIMARY}"
 
 # DOCKER
 SPACESHIP_DOCKER_PREFIX="docker:("
@@ -88,16 +55,13 @@ SPACESHIP_DOCKER_CONTEXT_PREFIX=" ["
 SPACESHIP_DOCKER_CONTEXT_SUFFIX="]"
 
 # GIT
-# Disable git symbol
-SPACESHIP_GIT_SYMBOL="" # disable git prefix
-SPACESHIP_GIT_BRANCH_PREFIX="" # disable branch prefix too
-SPACESHIP_GIT_BRANCH_COLOR="${COLOR_PRIMARY}"
-# Wrap git in `git:(...)`
 SPACESHIP_GIT_PREFIX='git:('
 SPACESHIP_GIT_SUFFIX=") "
-SPACESHIP_GIT_BRANCH_SUFFIX="" # remove space after branch name
+SPACESHIP_GIT_SYMBOL=""
+SPACESHIP_GIT_BRANCH_PREFIX=""
+SPACESHIP_GIT_BRANCH_COLOR="${COLOR_PRIMARY}"
+SPACESHIP_GIT_BRANCH_SUFFIX=""
 SPACESHIP_GIT_STATUS_COLOR="${COLOR_SECONDARY}"
-# Unwrap git status from `[...]`
 SPACESHIP_GIT_STATUS_PREFIX=" "
 SPACESHIP_GIT_STATUS_SUFFIX=""
 
@@ -130,17 +94,6 @@ SPACESHIP_JAVA_PREFIX="java:("
 SPACESHIP_JAVA_SUFFIX=") "
 SPACESHIP_JAVA_SYMBOL=""
 SPACESHIP_JAVA_COLOR="${COLOR_PRIMARY}"
-
-# KUBECTL
-SPACESHIP_KUBECTL_PREFIX="k8s:("
-SPACESHIP_KUBECTL_SUFFIX=") "
-SPACESHIP_KUBECTL_SYMBOL=""
-SPACESHIP_KUBECTL_COLOR="${COLOR_PRIMARY}"
-
-# KUBECONTEXT
-SPACESHIP_KUBECTL_CONTEXT_PREFIX=" ["
-SPACESHIP_KUBECTL_CONTEXT_SUFFIX="]"
-SPACESHIP_KUBECTL_CONTEXT_SYMBOL=""
 
 # NODE
 SPACESHIP_NODE_PREFIX="node:("
@@ -177,16 +130,18 @@ SPACESHIP_XCODE_SUFFIX=") "
 SPACESHIP_XCODE_SYMBOL=""
 SPACESHIP_XCODE_COLOR="${COLOR_PRIMARY}"
 
-# ------------------------------------------------------------------------------
-# Settings
-# ------------------------------------------------------------------------------
+# KUBECTL
+SPACESHIP_KUBECTL_PREFIX="k8s:("
+SPACESHIP_KUBECTL_SUFFIX=") "
+SPACESHIP_KUBECTL_SYMBOL=""
+SPACESHIP_KUBECTL_COLOR="${COLOR_PRIMARY}"
 
-SPACESHIP_CHAR_SYMBOL="$ "
-SPACESHIP_CHAR_SYMBOL_ROOT="# "
-SPACESHIP_NODE_SHOW=false
-SPACESHIP_PACKAGE_SHOW=false
-SPACESHIP_KUBECTL_SHOW=true
-SPACESHIP_KUBECTL_VERSION_SHOW=false # disable to speed up prompt when no remote server is available
+# KUBECONTEXT
+SPACESHIP_KUBECTL_CONTEXT_PREFIX=" ["
+SPACESHIP_KUBECTL_CONTEXT_SUFFIX="]"
+SPACESHIP_KUBECTL_CONTEXT_SYMBOL=""
+
+# SPACESHIP_KUBECTL_VERSION_SHOW=false # disable to speed up prompt when no remote server is available
 SPACESHIP_KUBECTL_CONTEXT_SHOW=true
 SPACESHIP_KUBECTL_CONTEXT_COLOR_GROUPS=(
   # https://upload.wikimedia.org/wikipedia/commons/1/15/Xterm_256color_chart.svg

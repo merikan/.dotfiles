@@ -2,7 +2,7 @@
 #
 # Script containing shell configuration that works for all shells
 # Use this for interactive non-login shells
-echo "Running .shrc"
+# echo "Running .shrc"
 
 # Fix systems missing $USER
 [ -z "$USER" ] && export USER=$(whoami)

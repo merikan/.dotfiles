@@ -26,7 +26,7 @@
 #
 # http://zsh.sourceforge.net/Guide/zshguide.html
 
-echo "Running .zshrc"
+# echo "Running .zshrc"
 
 # load shared shell configuration
 [ -f ~/.shrc ] && source ~/.shrc
@@ -352,5 +352,5 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 
 # print system info with neofetch
-clear
+#clear
 command -v neofetch >/dev/null 2>&1  && neofetch

@@ -10,7 +10,7 @@
 #
 # http://zsh.sourceforge.net/Intro/intro_3.html#SEC3
 
-echo "Running .zlogin"
+# echo "Running .zlogin"
 
 {
   # Compile the completion dump to increase startup speed.

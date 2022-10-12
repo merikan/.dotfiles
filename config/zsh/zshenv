@@ -4,7 +4,7 @@
 # This file is sourced by all instances of Zsh (interactive, non-interactive, login and non-login ), 
 # and thus, it should be kept as small as possible and should only define environment variables.
 
-echo "Running .zshenv"
+#echo "Running .zshenv"
 
 # Ensure that a non-login, non-interactive shell has a defined environment.
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then

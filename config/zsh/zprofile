@@ -8,7 +8,7 @@
 #
 # zprofile and zlogin are not meant to be used concurrently but can be done so.
 
-echo "Running .zprofile"
+# echo "Running .zprofile"
 
 #
 # Browser
