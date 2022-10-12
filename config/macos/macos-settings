@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # Macos Settings
+# This is my MacOs setting to be run when installing a new version of MacOs
 #
 # Kudos to:  
 #         https://mths.be/macos
@@ -300,6 +301,10 @@ echo "  ✔"
 
 echo -n "Don’t show recent applications in Dock"
 defaults write com.apple.dock show-recents -bool false
+echo "  ✔"
+
+echo -n "Always show date in Dock"
+defaults write com.apple.menuextra.clock.plist ShowDate -int 1
 echo "  ✔"
 
 # Hot corners
