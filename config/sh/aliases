@@ -107,7 +107,8 @@ alias pg='ps aux | grep'  #requires an argument
 alias un='tar -zxvf'
 alias mountedinfo='df -hT'
 alias openports='netstat -nape --inet'
-alias reload='exec $SHELL'
+alias reload='clear; exec $SHELL'
+alias rr="reload"
 alias ns='netstat -alnp --protocol=inet | grep -v CLOSE_WAIT | cut -c-6,21-94 | tail +2'
 alias listen="lsof -P -i -n"
 alias du1='du -h --max-depth=1'
