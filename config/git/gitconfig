@@ -159,12 +159,23 @@
   flh = flow hotfix
   gr = grep -Ii
   grep = grep -Ii
-  # incoming changes
-  incoming = !git fetch && git log --pretty=oneline --abbrev-commit --graph ..@{u}
+  # incoming changes > param: remote (optional)
+  incoming = "!f() { \
+                REMOTE="@{u}"; \
+                [ -z $1 ] || REMOTE="$1/$(git rev-parse --symbolic-full-name @{u} | awk -F \"/\" '{print $NF}' )"; \
+                git fetch $1; \
+                git log --pretty=oneline --abbrev-commit --graph ..${REMOTE}; \
+              }; f"
+
   in = !git incoming
   ms = !git merge-squash
-  # outgoing changes
-  outgoing = log --pretty=oneline --abbrev-commit --graph @{u}..
+  # outgoing changes > param: remote (optional)
+  outgoing = "!f() { \
+                REMOTE="@{u}"; \
+                [ -z $1 ] || REMOTE="$1/$(git rev-parse --symbolic-full-name @{u} | awk -F \"/\" '{print $NF}' )"; \
+                git fetch $1; \
+                git log --pretty=oneline --abbrev-commit --graph ${REMOTE}..; \
+              }; f"
   # shorter then 'outgoing'
   out = !git outgoing
   # push abbr.
