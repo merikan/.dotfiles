@@ -45,7 +45,6 @@ brew "wagoodman/dive/dive"                          # exploring a docker image, 
 brew "doxygen"                                      # Generate documentation from source code
 brew "docker"                                       # docker client
 brew "docker-credential-helper"                     # keystore credential helper for Docker
-brew "fasd"                                         # quick access to files and directories
 brew "ffmpeg"                                       # record, convert and stream audio and video
 brew "fzf"                                          # a command-line fuzzy finder
 brew "ffmpeg"                                       # to record, convert and stream audio and video
@@ -150,7 +149,7 @@ brew "yarn"                                         # JavaScript package manager
 brew "youtube-dl"                                   # download videos from youtube and many more sites
 brew "yq"                                           # fast yaml processor
 brew "vmware-tanzu/carvel/ytt"                      # YAML templating tool, structure instead of text
-
+brew "zoxide"                                       # a smarter cd command
 brew "zsh"                                          # shell
 
 ### ---------------------------------------------------- ###

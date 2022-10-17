@@ -170,8 +170,11 @@ if [[ $- = *i* ]] && [[ -s "${HOME}/.local/liquidprompt/liquidprompt" ]]; then
 fi
 
 
-#Fasd for quick access to files and directories for POSIX shells. https://github.com/clvv/fasd
-command -v fasd >/dev/null 2>&1  && eval "$(fasd --init auto)"
+# fast cd jumping 
+command -v zoxide >/dev/null 2>&1 && {
+  export _ZO-DATA_DIR="$HOME/.local/share"
+  eval "$(zoxide init bash)" 
+}
 
 # ---------------------------------------------------------------------------------------------
 # History: 

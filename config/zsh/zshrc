@@ -213,8 +213,11 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 ! [[ -s ${HOME}/.base16_theme ]] && base16_oceanicnext  # set theme
 
-#Fasd for quick access to files and directories for POSIX shells. (https://github.com/clvv/fasd)
-command -v fasd >/dev/null 2>&1  && eval "$(fasd --init auto)"
+# fast cd jumping 
+command -v zoxide >/dev/null 2>&1 && {
+  export _ZO_DATA_DIR="$HOME/.local/share"
+  eval "$(zoxide init zsh)" 
+}
 
 command -v brew >/dev/null 2>&1  && {
   # Turn off automatic cleanup
