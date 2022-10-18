@@ -1,6 +1,6 @@
 # If applied, this commit will...
 
- 
+
 # Explain why this change is being made
 
 
@@ -10,9 +10,31 @@
 # Provide links to any relevant tickets, articles or other resources
 
 
+# Breaking Change?
+
+
+# ---------------------------------------------------
+# Conventional Commit
+# ---------------------------------------------------
+# <type>[(<scope>)]: <subject>
+#
+# Type: 
+#    fix:      a bug fix (PATCH)
+#    feat:     a new feature (MINOR)
+#    test:     adding or updating tests
+#    style:    update code formatting (indentation, tabs vs spaces, etc.)
+#    refactor: refactoring of code (no bug fix or added feature)
+#    perf:     a code change that improves performance
+#    docs:     documentation only changes
+#    build:    changes that affect the build system or external dependencies
+#    ci:       changes to  CI configuration files and scripts
+#    chore:    updates to build process (see ci and build)
+# Scope:
+#    Whatever is meaningful in the project
+
 # ---------------------------------------------------
 # The seven rules of a great git commit message
-# http://chris.beams.io/posts/git-commit/
+# ---------------------------------------------------
 #   1. Separate subject from body with a blank line
 #   2. Limit the subject line to 50 characters
 #   3. Capitalize the subject line
@@ -20,6 +42,8 @@
 #   5. Use the imperative mood in the subject line
 #   6. Wrap the body at 72 characters
 #   7. Use the body to explain what and why vs. how
-# ---------------------------------------------------
 
+# Links:
+#   https://www.conventionalcommits.org
+#   https://chris.beams.io/posts/git-commit/
 

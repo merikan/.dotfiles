@@ -12,7 +12,7 @@
 [core]
 	excludesfile = ~/.gitignore_global
   # start nvim in insert mode and on line 2
-	editor = nvim +star +2
+	#editor = nvim +star +2
 	#precomposeunicode = true
 [color]
   diff = auto
@@ -147,7 +147,7 @@
   cob = checkout -b
   # diff
   di = diff
-  # diff --chached
+  # diff --cached
   dic = diff --cached
   # diff just the differences between lines.
   diw = diff --word-diff
