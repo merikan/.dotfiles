@@ -97,7 +97,6 @@
     ~/.config/spaceship/sections: config/spaceship-prompt/sections
     # tmux
     ~/.tmux.conf: config/tmux/tmux.conf
-    ~/.tmux/themes: config/tmux/themes
     # vim
     ~/.vimrc: config/vim/vimrc
     # zim

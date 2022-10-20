@@ -299,21 +299,27 @@ You can reset selection with mouse click.
 
 ## Themes and customization
 
-All colors and styles for Tmux and the status-bar are loaded from a separate theme file. 
+All colors and styles for Tmux and the status-bar are loaded from a separate theme file. For many years I have designed my own theme together with
+powerline. It was a fun ride but I was always bothered by having the powerline-status process running in the background so I decided to go for a 
+already made theme, and their are some really god ones out there, gruvbox, nord etc.
+
+My current color scheme is [egel/tmux-gruvbox](https://github.com/egel/tmux-gruvbox). Gruvbux is one of my favorite color schemes because it has soft colors that doesn't distract me from the content.
+I have changed `pane-active-border-style` to a nicer color so that I can easily see which pane is active.
+
 ```
 # load the theme
-source-file ~/.tmux/base16-theme.conf
+set -g @plugin 'egel/tmux-gruvbox'
+set -g @tmux-gruvbox 'dark'
+set-option -g pane-active-border-style fg=colour223 #fbg1
 ```
 
-My current color scheme is base-16. I want soft colors that doesn't distract me from the content.
-
-The current pane is slightly brighter for better visibility.
 
 ## Status line
 
-I am using power-line for my status line. No colors and just the information I need to have when in tmux.
+My status line has a powerline look provided by the [egel/tmux-gruvbox](https://github.com/egel/tmux-gruvbox) color theme. No bright colors and just the information I need to have when in tmux.
 
-The left part contains only current session name.
+The left part contains:   
+- current session name.
 
 The windows part contains:
 - window number
@@ -321,7 +327,6 @@ The windows part contains:
 - invert background color when selected
 
 The right part of status line consists of following components:
-
 - visual indicator when you press prefix key: `[^A]`.
 - visual indicator when pane is zoomed: `[Z]`
 - CPU, memory usage, system load average metrics. 
@@ -362,17 +367,11 @@ CPU, RAM, and load monitor for use with tmux
 Persists tmux environment across system restarts.
 * [tmux-continuum](https://github.com/tmux-plugins/tmux-continuum)   
 Continuous saving of tmux environment. Automatic restore when tmux is started. Automatic tmux start when computer is turned on.
+* [egel/tmux-gruvbox](https://github.com/egel/tmux-gruvbox)
+Gruvbox color theme configuration for Tmux
 
 
-
-
-
-## [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)    
-Installs and loads tmux plugins.
-## [tmux-prefix-highlight](https://github.com/tmux-plugins/tmux-prefix-highlight)   
-Plugin that highlights when you press tmux prefix key
-## [tmux-online-status](https://github.com/tmux-plugins/tmux-online-status)   
-Tmux plugin that displays online status of your computer.
+# CheatSheets
 ## [tmux-copycat](https://github.com/tmux-plugins/tmux-copycat)   
 Tmux plugin that enhances tmux search
 ### Key bindings
