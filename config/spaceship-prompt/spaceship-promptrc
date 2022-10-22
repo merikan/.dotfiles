@@ -13,13 +13,11 @@ spaceship add flutter # add flutter external section
 
 
 # ------------------------------------------------------------------------------
-# Look and feel
+# Look and feel, a Robby Russell like prompt layout
 # ------------------------------------------------------------------------------
-# a Robby Russell like prompt layout
 #
 
-# SPACESHIP_PROMPT_DEFAULT_PREFIX="("
-# SPACESHIP_PROMPT_DEFAULT_SUFFIX=")"
+# colors
 COLOR_PRIMARY="109"
 COLOR_SECONDARY="109"
 
@@ -41,7 +39,7 @@ SPACESHIP_DIR_SUFFIX=" "
 SPACESHIP_DIR_TRUNC="2"  # trunk to # dirs
 
 # PACKAGE
-SPACESHIP_PACKAGE_PREFIX="projver:("
+SPACESHIP_PACKAGE_PREFIX="project:("
 SPACESHIP_PACKAGE_SUFFIX=") "
 SPACESHIP_PACKAGE_SYMBOL=""
 SPACESHIP_PACKAGE_COLOR="${COLOR_PRIMARY}"
