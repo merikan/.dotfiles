@@ -36,7 +36,7 @@ SPACESHIP_HOST_SUFFIX=") "
 # DIR
 SPACESHIP_DIR_PREFIX=""  # disable directory prefix, cause it's not the first section
 SPACESHIP_DIR_SUFFIX=" " 
-SPACESHIP_DIR_TRUNC="2"  # trunk to # dirs
+SPACESHIP_DIR_SHORT="true" 
 
 # PACKAGE
 SPACESHIP_PACKAGE_PREFIX="project:("
