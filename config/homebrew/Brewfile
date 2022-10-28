@@ -194,7 +194,6 @@ cask "google-photos-backup-and-sync"                # Google Photos Backup And S
 cask "hammerspoon"                                  # powerful automation of MacOS, actions and wm
 cask "handbrake"                                    # open source video transcoder
 cask "horos"                                        # a free, open source medical image viewer
-cask "hyperswitch"                                  # awesome keyboard window switcher for Mac
 cask "icolors"                                      # a color picker and hex converter
 cask "inkscape"                                     # A powerful, free design tool
 cask "insomnia"                                     # superduper rest client
@@ -213,6 +212,7 @@ cask "love"                                         # LÖVE - make 2D games in L
 cask "markright"                                    # a markdown editor
 cask "merikan/casks/maconomy"                       # nativefied maconomy
 cask "meld"                                         # visual diff and merge tool
+cask "alt-tab"                                      # awesome keyboard window switcher for Mac
 cask "messenger"                                    # facebook messenger
 cask "minishift"                                    # openshift mini
 cask "moeditor"                                     # all-purpose markdown editor
