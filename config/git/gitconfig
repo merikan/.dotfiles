@@ -219,7 +219,7 @@
   # view the current changes not yet in the staging area.
   unstaged = diff
   # Update branch (with rebase)
-  up = !git pull --rebase --prune $@
+  up = !git pull --rebase $@
   # update submodules
   ups = !git submodule update --init --recursive
   # update submodules from remote
@@ -295,3 +295,5 @@
 
 [ghq]
 	root = ~/src
+[fetch]
+	prune = true
