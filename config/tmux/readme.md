@@ -368,6 +368,9 @@ Persists tmux environment across system restarts.
 * [tmux-continuum](https://github.com/tmux-plugins/tmux-continuum)   
 Continuous saving of tmux environment. Automatic restore when tmux is started. Automatic tmux start when computer is turned on.
 * [egel/tmux-gruvbox](https://github.com/egel/tmux-gruvbox)
+* [sainnhe/tmux-fzf](https://github.com/sainnhe/tmux-fzf)
+Use fxf to manage your tmux work environment
+
 Gruvbox color theme configuration for Tmux
 
 
@@ -418,3 +421,7 @@ Persists tmux environment across system restarts.
 ## [tmux-continuum](https://github.com/tmux-plugins/tmux-continuum)   
 Continuous saving of tmux environment. Automatic restore when tmux is started. Automatic tmux start when computer is turned on.
 I am using this to save my tmux environment every 15 minutes so I can restore after a reboot or if I f*ck things up.
+
+## * [sainnhe/tmux-fzf](https://github.com/sainnhe/tmux-fzf)
+To launch tmux-fzf, press `prefix` + `F` (Shift+F).
+
