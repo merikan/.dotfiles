@@ -196,6 +196,14 @@
   ## unskip all files
   unskipall = "!git skipped | xargs git unskip"
 
+  # stash
+  sta = stash
+  # stash all, including untracked and ignored files
+  staa = stash -a
+  # stash non-indexd files
+  stak = stash -uk
+  # apply and pop a stash entry
+  stap = stash pop
   # stage the changes for a given file.
   stage = !git add -u
   # view the current changes in the staging area.
