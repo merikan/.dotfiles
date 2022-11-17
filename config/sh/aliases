@@ -123,7 +123,6 @@ alias j=z         # fasd z with better key location
 alias jj=zz       # fasd zz with better key location
 alias rtfm='tldr'
 alias lazygit='LG_CONFIG_FILE="$HOME/.config/lazygit/config.yaml" lazygit'
-
 alias lzg='lazygit'
 alias lzd='lazydocker'
 command -v gdu-go >/dev/null 2>&1 && alias gdu="gdu-go"
@@ -143,27 +142,20 @@ mk='minikube'
 #maven aliases
 alias mct='mvn clean test'
 alias mcv='mvn clean verify'
-alias mctv='mvn clean test verify'
 alias mcp='mvn clean package'
 alias mcpt!='mvn clean package -DskipTests'
-alias mci='mvn clean install'
-alias mcit!='mvn clean install -DskipTests'
 alias msbr='mvn spring-boot:run'
 alias mcsbr='mvn clean spring-boot:run'
-alias msbrd='mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"' # spring-boot 2
-alias msbrd1='mvn spring-boot:run -Drun.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"'  # spring-boot v1.x
+alias msbrd='mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"'
 alias mpv='mvn_print_version'
 alias mdb='mvn docker:build'
 alias mtc7='mvn tomcat7:run'
 alias mvnct='mvn clean test'
-alias mvnctv='mvn clean test verify'
 alias mvncv='mvn clean verify'
 alias mvncp='mvn clean package'
 alias mvnci='mvn clean install'
-alias mvncit!='mvn clean install -DskipTests'
 alias mvnsbr='mvn spring-boot:run'
 alias mvncsbr='mvn clean spring-boot:run'
-alias mvnsbrd1='mvn spring-boot:run -Drun.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"'  # spring-boot v1.x
 alias mvnsbrd='mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"'
 alias mvnpv='mvn_print_version'
 alias mvndb='mvn docker:build'
