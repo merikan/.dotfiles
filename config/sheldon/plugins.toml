@@ -14,6 +14,8 @@ shell = "zsh"
 
 [plugins]
 
+[plugins.base16-shell]
+github = 'chriskempson/base16-shell'
 [plugins.spaceship-flutter]
 github = 'spaceship-prompt/spaceship-flutter'
 #local = "~/src/github.com/merikan/spaceship-flutter"

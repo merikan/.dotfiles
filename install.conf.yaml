@@ -21,8 +21,6 @@
     ~/.config/alacritty/alacritty.yml: config/alacritty/alacritty.yml
     # atom
     ~/.atomrc: config/atom/atomrc
-    # base16-shell
-    ~/.config/base16-shell: submodules/base16-shell
     # bash
     ~/.bash_aliases: config/bash/bash_aliases
     ~/.bash_functions: config/bash/bash_functions
