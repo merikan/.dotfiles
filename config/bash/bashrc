@@ -158,17 +158,14 @@ export PS2='> '    # Secondary prompt
 export PS3='#? '   # Prompt 3
 export PS4='+'     # Prompt 4
 
+# install/load plugins with sheldon
+command -v sheldon >/dev/null 2>&1  && {
+  eval "$(sheldon --config-file ~/.config/sheldon/plugins.bash.toml source)"
+}
 function xtitle {  # change the title of your xterm* window
   unset PROMPT_COMMAND
   echo -ne "\033]0;$1\007" 
 }
-# ---------------------------------------------------------------------------------------------
-# Liquid prompt -- A useful adaptive prompt for Bash & Zsh
-# Only load Liquid Prompt in interactive shells, not from a script or from scp
-if [[ $- = *i* ]] && [[ -s "${HOME}/.local/liquidprompt/liquidprompt" ]]; then
-  source "${HOME}/.local/liquidprompt/liquidprompt"
-fi
-
 
 # fast cd jumping 
 command -v zoxide >/dev/null 2>&1 && {

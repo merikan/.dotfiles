@@ -10,21 +10,13 @@
 #
 # See the documentation for more https://github.com/rossmacarthur/sheldon#readme
 
-shell = "zsh"
+shell = "bash"
 
 [plugins]
 
 [plugins.base16-shell]
 github = 'chriskempson/base16-shell'
 
-[plugins.zsh-autoenv]
-github = 'Tarrasch/zsh-autoenv'
-
-[plugins.spaceship-flutter]
-github = 'spaceship-prompt/spaceship-flutter'
-#local = "~/src/github.com/merikan/spaceship-flutter"
-
-[plugins.spaceship]
-github = 'spaceship-prompt/spaceship-prompt'
-#local = "~/src/github.com/merikan/spaceship-prompt"
-
+[plugins.liquidprompt]
+github = 'nojhan/liquidprompt'
+use = ["liquidprompt"]

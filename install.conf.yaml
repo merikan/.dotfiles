@@ -56,7 +56,6 @@
     # lf
     ~/.config/lf/lfrc: config/lf/lfrc
     # liquidprompt
-    ~/.local/liquidprompt: submodules/liquidprompt
     ~/.liquidpromptrc: config/liquidprompt/liquidpromptrc
     # mackup
     ~/.mackup.cfg: config/mackup/mackup.cfg
@@ -77,7 +76,10 @@
     # sdkman
     ~/bin/sdkit: config/sdkman/sdkit
     # sheldon
-    ~/.config/sheldon/plugins.toml: config/sheldon/plugins.toml
+    # ~/.config/sheldon/plugins.toml: config/sheldon/plugins.toml
+    ~/.config/sheldon:
+      path: config/sheldon/*
+      glob: true
     # shell
     ~/.aliases: config/sh/aliases
     ~/.functions: config/sh/functions
