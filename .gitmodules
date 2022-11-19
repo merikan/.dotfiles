@@ -4,6 +4,3 @@
 [submodule "submodules/liquidprompt"]
 	path = submodules/liquidprompt
 	url = https://github.com/nojhan/liquidprompt.git
-[submodule "submodules/zsh-autoenv"]
-	path = submodules/zsh-autoenv
-	url = https://github.com/Tarrasch/zsh-autoenv.git

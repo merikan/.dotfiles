@@ -100,8 +100,6 @@
     ~/.zsh_aliases: config/zsh/zsh_aliases
     ~/.zshenv: config/zsh/zshenv
     ~/.zshrc: config/zsh/zshrc
-    # zsh-autoenv
-    ~/.local/zsh-autoenv: submodules/zsh-autoenv
 
 - defaults:
     shell:
