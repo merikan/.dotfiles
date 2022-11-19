@@ -69,14 +69,8 @@
     ~/.config/nvim/lua:
       path: config/nvim/lua/*
       glob: true
-    # oh-my-zsh
-    ~/.oh-my-zshrc: config/oh-my-zsh/oh-my-zshrc
-    ~/.local/oh-my-zsh: submodules/oh-my-zsh
     # powerline
     ~/.config/powerline: config/powerline
-    # prezto
-    ~/.zpreztorc: config/prezto/zpreztorc
-    ~/.local/zprezto: submodules/prezto
     # python
     ~/.config/python/requirement.txt: config/python/requirement.txt
     ~/bin/pyit: config/python/pyit

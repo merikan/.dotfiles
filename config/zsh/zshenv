@@ -26,5 +26,3 @@ setopt ignoreeof
 # define Zim location
 export ZIM_HOME=${HOME}/.local/zim
 
-# define zsh framowork to be used
-export ZSH_FRAMEWORK=zim
