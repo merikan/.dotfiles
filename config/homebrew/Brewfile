@@ -37,6 +37,7 @@ brew "cloc"                                         # count lines of code
 brew "cowsay"                                       # the cow says
 brew "csvkit"                                       # tools for working with CSV
 brew "ctop"                                         # top-like interface for container metrics
+brew "cosign"                                       # 
 brew "curl"                                         # curl
 brew "dasel"                                        # query and modify data structures in json/toml/yaml/xml/csv/plain format
 brew "dfc"                                          # displays file system space usage using graphs and colors
@@ -59,6 +60,7 @@ brew "git"                                          # cli client for git
 brew "git-flow-avh"                                 # git-flow addon for git client
 brew "gitleaks"                                     # audit git repos for secrets
 brew "git-secrets"                                  # prevents you from committing passwords and other sensitive information to a git repository.
+brew "sigstore/tap/gitsign"                         # keyless sigstore to sign git commits
 brew "gitui"                                        # an awesome tui for git
 brew "gnupg"                                        # gpg
 brew "go-task/tap/go-task"                          # task runner / build tool
