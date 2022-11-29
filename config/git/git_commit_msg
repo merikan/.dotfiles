@@ -19,16 +19,16 @@
 # <type>[(<scope>)]: <subject>
 #
 # Type: 
-#    fix:      a bug fix (PATCH)
-#    feat:     a new feature (MINOR)
-#    test:     adding or updating tests
-#    style:    update code formatting (indentation, tabs vs spaces, etc.)
-#    refactor: refactoring of code (no bug fix or added feature)
-#    perf:     a code change that improves performance
-#    docs:     documentation only changes
-#    build:    changes that affect the build system or external dependencies
-#    ci:       changes to  CI configuration files and scripts
-#    chore:    updates to build process (see ci and build)
+#    fix:           a bug fix (PATCH)
+#    feat:          a new feature (MINOR)
+#    test:          adding or updating tests
+#    style:         update code formatting (indentation, tabs vs spaces, etc.)
+#    refactor:      refactoring of code (no bug fix or added feature)
+#    perf:          a code change that improves performance
+#    docs:          documentation only changes
+#    chore:         updates to build process (see ci and build)
+#     ├─ build:     changes that affect the build system or external dependencies
+#     └─ ci:        changes to  CI configuration files and scripts
 # Scope:
 #    Whatever is meaningful in the project
 
