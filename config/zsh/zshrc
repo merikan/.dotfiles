@@ -181,7 +181,7 @@ command -v lf >/dev/null 2>&1  && {
 }
 
 # Using Base16 for Shells https://github.com/chriskempson/base16-shell
-[[ -z "$BASE16_SHELL" ]] && base16_oceanicnext  # set theme
+[[ -z "$BASE16_SHELL" ]] && base16_gruvbox-dark-medium  # set theme
 
 # fast cd jumping 
 command -v zoxide >/dev/null 2>&1 && {
@@ -325,5 +325,4 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 
 # print system info with neofetch
-#clear
-command -v neofetch >/dev/null 2>&1  && neofetch
+# command -v neofetch >/dev/null 2>&1  && clear; neofetch
