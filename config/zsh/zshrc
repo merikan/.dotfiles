@@ -28,6 +28,11 @@
 
 # echo "Running .zshrc"
 
+# install/load plugins with sheldon
+command -v sheldon >/dev/null 2>&1  && {
+  eval "$(sheldon source)"
+}
+
 # load shared shell configuration
 [ -f ~/.shrc ] && source ~/.shrc
 
@@ -144,11 +149,6 @@ bindkey '\e[A' history-beginning-search-backward
 #Use down key to search forward in the history for a line beginning with the current line up to the cursor.
 bindkey '\e[B' history-beginning-search-forward
 
-# install/load plugins with sheldon
-command -v sheldon >/dev/null 2>&1  && {
-  eval "$(sheldon source)"
-}
-
 # expand aliases with control+space
 # idea from https://blog.patshead.com/2012/11/automatically-expaning-zsh-global-aliases---simplified.html
 expandalias() {
@@ -181,7 +181,7 @@ command -v lf >/dev/null 2>&1  && {
 }
 
 # Using Base16 for Shells https://github.com/chriskempson/base16-shell
-[[ -z "$BASE16_SHELL" ]] && base16_gruvbox-dark-medium  # set theme
+type -f base16_default-dark >/dev/null 2>&1 && base16_gruvbox-dark-medium
 
 # fast cd jumping 
 command -v zoxide >/dev/null 2>&1 && {
