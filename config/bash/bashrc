@@ -57,6 +57,15 @@
 
 echo "Running .bashrc"
 
+# XDG  Base Directory Specification
+# - https://specifications.freedesktop.org/basedir-spec/latest/
+# - https://wiki.archlinux.org/title/XDG_Base_Directory
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+# export $XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:="/run/user/$UID"}"
+
 # =============================================================================================
 #  1. These are executed only for interactive shells
 # =============================================================================================
