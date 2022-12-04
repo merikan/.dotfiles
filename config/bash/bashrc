@@ -191,6 +191,7 @@ PROMPT_COMMAND="history -a;history -n;$PROMPT_COMMAND"
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 # Undocumented feature which sets the size to "unlimited".
 # http://stackoverflow.com/questions/9457233/unlimited-bash-history
+export HISTFILE="${XDG_STATE_HOME}"/bash/history
 export HISTFILESIZE=
 export HISTSIZE=
 # Add date and time to bash history
