@@ -256,6 +256,8 @@ esac
   export PATH="${PATH}:$ANDROID_SDK/cmdline-tools/latest/bin:$ANDROID_SDK/platform-tools:$ANDROID_SDK/emulator"
 }
 
+# Docker
+export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 # Golang
 [ -f "$XDG_CONFIG_HOME"/go/golangrc ] && source "$XDG_CONFIG_HOME"/go/golangrc
 # Installing go with homebrew instead of gvm
