@@ -257,7 +257,7 @@ esac
 }
 
 # Golang
-[ -f ~/.golangrc ] && source ~/.golangrc
+[ -f "$XDG_CONFIG_HOME"/go/golangrc ] && source "$XDG_CONFIG_HOME"/go/golangrc
 # Installing go with homebrew instead of gvm
 # use gvm - Go Version Manager
 #[[ -s "$HOME/.gvm/scripts/gvm" ]]  && source "$HOME/.gvm/scripts/gvm"

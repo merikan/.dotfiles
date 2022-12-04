@@ -2,4 +2,4 @@
 # Invoked before Atom starts so we can set environment variables etc.
 
 # load golang
-[ -f ~/.golangrc ] && source ~/.golangrc
+[ -f "$XDG_CONFIG_HOME"/go/golangrc ] && source "$XDG_CONFIG_HOME"/go/golangrc
