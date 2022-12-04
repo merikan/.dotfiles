@@ -33,10 +33,10 @@
     ~/.fzf.bash: config/fzf/fzf.bash
     ~/.fzf.zsh: config/fzf/fzf.zsh
     # git
-    ~/.gitignore_global: config/git/gitignore_global
-    ~/.git_commit_msg: config/git/git_commit_msg
-    ~/.gitconfig.local.template: config/git/gitconfig.local.template
-    ~/.gitconfig: config/git/gitconfig
+    ~/.config/git/ignore_global: config/git/ignore_global
+    ~/.config/git/commit_msg: config/git/commit_msg
+    ~/.config/git/config.local.template: config/git/config.local.template
+    ~/.config/git/config: config/git/config
     # gitui
     ~/.config/gitui/key_bindings.ron: config/gitui/key_bindings.ron
     # golang
