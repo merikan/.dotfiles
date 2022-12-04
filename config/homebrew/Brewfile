@@ -162,7 +162,6 @@ brew "zsh"                                          # shell
 cask "adium"                                        # instant messaging
 cask "alacritty"                                    # the GPU enhanced terminal emulator
 cask "alfred"                                       # a must have for boost productivity
-cask "android-platform-tools"                       # android sdk
 cask "android-studio"                               # android IDE
 cask "android-file-transfer"                        # transfer files from Android device
 cask "arq"                                          # backup for mac

@@ -243,11 +243,17 @@ command -v argocd >/dev/null 2>&1 && source <(argocd completion zsh)
 #  export JAVA_HOME=$HOME/.jenv/fake-java-home
 #}
 
-# Android
-local android_dir='/Users/peter/Library/Android/sdk'
-[ -d "$android_dir" ] && {
-  export ANDROID_HOME="$android_dir"
-  export PATH="${PATH}:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator"
+# Android Studio doesn't honour XDG though it support symlinks
+# create directory if not exists and thensymlink
+[[ ! -d "$HOME"/.android ]] && mkdir -p "$HOME/.android"
+[[ -d "$HOME"/.android && ! -L "$HOME"/.android ]] && mv "$HOME"/.android "$XDG_DATA_HOME"/android && ln -s "$XDG_DATA_HOME"/android "$HOME"/.android
+export ANDROID_HOME="$XDG_DATA_HOME"/android
+case "$(uname)" in
+  Linux*)  export export ANDROID_SDK="$HOME"/Android/Sdk;;
+  Darwin*) export export ANDROID_SDK="$HOME"/Library/Android/sdk;;
+esac
+[ -d "$ANDROID_SDK" ] && {
+  export PATH="${PATH}:$ANDROID_SDK/cmdline-tools/latest/bin:$ANDROID_SDK/platform-tools:$ANDROID_SDK/emulator"
 }
 
 # Golang
