@@ -14,7 +14,8 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing/Updating submodules]
-    - ["mkdir -p $HOME/{.config,src,go,tmp,Projects}", Creating default directories]
+    - ["mkdir -p $XDG_CONFIG_HOME $XDG_DATA_HOME $XDG_CACHE_HOME $XDG_STATE_HOME", "Creating XDG_* directories"]
+    - ["mkdir -p $HOME/{tmp,src,projects,go}", Creating default directories]
 
 - link:
     # alacritty
