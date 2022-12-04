@@ -46,6 +46,11 @@ fi
 
 # Personal settings below  -------------------------------------------------------
 
+## show current dir in terminal title
+_set_terminal_title() {
+  echo -ne "\033]0;$(pwd | sed -e "s;^$HOME;~;")\a"
+}
+precmd_functions+=(_set_terminal_title)
 # add to fpath
 fpath=( "$HOME/.zfunctions" $fpath )
 # turn on autocomplete
@@ -140,8 +145,11 @@ zle-line-init() {
     echo -ne "\e[5 q"
 }
 zle -N zle-line-init
-echo -ne '\e[5 q' # Use beam shape cursor on startup.
 precmd() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+_beam_cursor() {
+   echo -ne '\e[5 q'
+}
+precmd_functions+=(_beam_cursor)
 
 
 #Use up key to search backward in the history for a line beginning with the current line up to the cursor.
