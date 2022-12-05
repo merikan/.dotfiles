@@ -126,6 +126,7 @@ brew "reattach-to-user-namespace"                   # Reattach process (e.g., tm
 brew "ripgrep"                                      # recursively searches directories for a regex pattern
 brew "rsync"                                        # provides fast incremental file transfer.
 brew "ruby"                                         # ruby environment
+brew "rustup-init"                                  # rustup installer
 brew "semgrep"                                      # static analysis, find bugs and enforce code standards
 brew "scrcpy"                                       # android screen mirror
 brew "sheldon"                                      # fast, configurable, shell plugin manager

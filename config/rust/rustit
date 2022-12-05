@@ -1,0 +1,60 @@
+
+#!/usr/bin/env bash
+
+# -------------------------------------------------
+# Rust: Install and update
+# -------------------------------------------------
+
+# resolve links - $0 may be a softlink
+PRG="$0"
+while [ -h "$PRG" ] ; do
+  ls=`ls -ld "$PRG"`
+  link=`expr "$ls" : '.*-> \(.*\)$'`
+  if expr "$link" : '/.*' > /dev/null; then
+    PRG="$link"
+  else
+    PRG=`dirname "$PRG"`/"$link"
+  fi
+done
+PRGDIR=`dirname "$PRG"`
+source "$PRGDIR"/../scripts/include.sh
+
+
+install() {
+  # toolchain already installed?
+  command -v rustup >/dev/null 2>&1 && exit 0;
+  
+  info "Installing Rust toolchain"
+  # installed via package manager? 
+  if command -v rustup-init >/dev/null 2>&1 ; then
+    echo "using already installed rustup-init"
+    rustup-init -y --no-modify-path
+  else 
+    echo "downloading installer"
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
+  fi
+
+  # source it
+  [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
+
+  success
+}
+
+update() {
+  info "Upgrading... (rustup update)"
+  rustup update
+  success
+}
+
+main() {
+  heading "Managing rustup"
+  read -p "Do you want to install/update Rust toolchain ? (Y/n) " choice;
+  choice=${choice:-Y};
+  [[ "$choice" =~ ^([Yy])$ ]] || exit 0;
+
+  install
+  update
+  success "Done Rusting"
+}
+
+main

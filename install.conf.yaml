@@ -72,6 +72,8 @@
     # python
     ~/.config/python/requirement.txt: config/python/requirement.txt
     ~/bin/pyit: config/python/pyit
+    #rustup
+    ~/bin/rustit: config/rust/rustit
     # scripts
     ~/bin/$: config/scripts/$
     # sdkman
@@ -112,8 +114,8 @@
 
 - shell:
     -
-      description: create vim unddo directory
-      command: "mkdir -p ~/.local/share/nvim/undodir"
+      description: Installing/Updating Homebrew and formulea
+      command: $HOME/bin/brewit
 
 - shell:
     -
@@ -132,11 +134,18 @@
     -
       description: Installing/Updating Sdkman and candidates
       command: $HOME/bin/sdkit
+
 - shell:
-    -
-      description: Installing/Updating Homebrew and formulea
-      command: $HOME/bin/brewit
+    - 
+      description: Install Rust toolchain
+      command: $HOME/bin/rustit""
+
 - shell:
     -
       description: Installing Python packages
       command: $HOME/bin/pyit
+
+- shell:
+    -
+      description: create vim unddo directory
+      command: "mkdir -p ~/.local/share/nvim/undodir"

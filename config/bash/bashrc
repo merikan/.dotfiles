@@ -260,6 +260,12 @@ command -v brew >/dev/null 2>&1 && [ -d $(brew --prefix openssl)/bin ] && export
 # use gvm - Go Version Manager
 #[[ -s "$HOME/.gvm/scripts/gvm" ]]  && source "$HOME/.gvm/scripts/gvm"
 
+# Rust
+[ -d "$HOME/.cargo/bin" ] && {
+  source "$HOME/.cargo/env"
+  rustup completions bash > ~/.local/share/bash-completion/completions/rustup
+}
+
 # rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && {
   source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
