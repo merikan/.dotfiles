@@ -171,10 +171,16 @@ export PS4='+'     # Prompt 4
 command -v sheldon >/dev/null 2>&1  && {
   eval "$(sheldon --config-file ~/.config/sheldon/plugins.bash.toml source)"
 }
+
 function xtitle {  # change the title of your xterm* window
   unset PROMPT_COMMAND
   echo -ne "\033]0;$1\007" 
 }
+
+# Using Base16 for Shells https://github.com/chriskempson/base16-shell
+base16_theme="base16_gruvbox-dark-medium"
+type -f $base16_theme >/dev/null 2>&1 && eval $base16_theme
+
 
 # fast cd jumping 
 command -v zoxide >/dev/null 2>&1 && {
@@ -210,34 +216,10 @@ bind "set show-all-if-ambiguous On"
 # Turn on advanced bash completion if the file exists (get it here: http://www.caliban.org/bash/index.shtml#completion)
 [ -f /etc/bash_completion ] && source /etc/bash_completion
 
-# Turn on local bash completion if file exist
-for file in $HOME/.dotfiles/**/*.completion.bash
-do
-  #echo "sourcing completion file $file"
-  source $file
-done
-unset file
 # source kubectl tab completion
 command -v kubectl >/dev/null 2>&1 && source <(kubectl completion bash)
 # source openshift tab completion
 command -v oc >/dev/null 2>&1 && source <(oc completion bash)
-
-# ---------------------------------------------------------------------------------------------
-# Screen:
-
-# Look for any unattached screen sessions and automatically attach to the first one found
-if [ $SSH_TTY ] && [ ! $WINDOW ]; then
-  SCREENLIST=`screen -ls | grep 'Attached'`
-  if [ $? -eq "0" ]; then
-    echo -e "Screen is already running and attached:\n ${SCREENLIST}"
-  else
-    screen -U -R
-  fi
-fi
-# Add screen window to prompt, if applicable
-if [ $TERM = "screen" ]; then
-  PS1='window ${WINDOW} '$PS1
-fi
 
 
 # ---------------------------------------------------------------------------------------------
