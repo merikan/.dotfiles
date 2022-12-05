@@ -9,8 +9,12 @@ for file in "$script_path"/sections/*.zsh; do
   source "$file"
 done
 
-spaceship add flutter       # add flutter external section
-spaceship remove docker     # remove docker section
+spaceship remove ansible
+spaceship remove docker
+spaceship remove docker_compose
+
+spaceship add --before git wip  # add custom section
+spaceship add flutter           # add flutter external section
 
 
 # ------------------------------------------------------------------------------

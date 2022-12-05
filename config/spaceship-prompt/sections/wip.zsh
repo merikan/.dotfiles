@@ -5,7 +5,7 @@
 # Configuration
 # ------------------------------------------------------------------------------
 SPACESHIP_WIP_SHOW="${SPACESHIP_WIP_SHOW:=true}"
-SPACESHIP_WIP_ASYNC="${SPACESHIP_JAVA_ASYNC=true}"
+SPACESHIP_WIP_ASYNC="${SPACESHIP_WIP_ASYNC=true}"
 SPACESHIP_WIP_PREFIX="${SPACESHIP_WIP_PREFIX="$SPACESHIP_PROMPT_DEFAULT_PREFIX"}"
 SPACESHIP_WIP_SUFFIX="${SPACESHIP_WIP_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"}"
 SPACESHIP_WIP_SYMBOL="${SPACESHIP_WIP_SYMBOL="🚧 "}"
@@ -19,7 +19,6 @@ spaceship_wip() {
   [[ $SPACESHIP_WIP_SHOW == false ]] && return
 
   spaceship::is_git || return
-
   local is_wip=$(git log -n 1 --pretty=format:%s 2>/dev/null | grep -q -c -i "^wip" && echo true);
 
   [[ -n $is_wip ]] || return
