@@ -47,6 +47,7 @@ brew "doxygen"                                      # Generate documentation fro
 brew "docker"                                       # docker client
 brew "docker-credential-helper"                     # keystore credential helper for Docker
 brew "ffmpeg"                                       # record, convert and stream audio and video
+brew "flake8"                                       # lint python
 brew "fzf"                                          # a command-line fuzzy finder
 brew "ffmpeg"                                       # to record, convert and stream audio and video
 brew "merikan/tools/gdu-go"                         # go disk usage
