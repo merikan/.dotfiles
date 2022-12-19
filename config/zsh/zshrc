@@ -38,6 +38,12 @@ if [[ "$PROFILE_STARTUP" == true ]]; then
   zmodload zsh/zprof
 fi
 
+# Nix
+fpath=($HOME/.nix-profile/share/zsh/site-functions $fpath)
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
+# End Nix
 # install and load plugins with sheldon
 command -v sheldon >/dev/null 2>&1  && {
   eval "$(sheldon source)"
