@@ -143,8 +143,10 @@ brew "the_silver_searcher"                          # ag a code searching tool s
 brew "tig"                                          # text-mode interface for git
 brew "tldr"                                         # Simplified and community-driven man pages (https://tldr.sh/)
 brew "tmux"                                         # terminal multiplexer
+brew "toot"                                         # mastodon tui client
 brew "tree"                                         # list contents of directories in a tree-like format
 brew "aquasecurity/trivy/trivy"                     # scanner for vulnerabilities in images, filesystems, git repos and config files
+brew "tut"                                          # mastodon tui client
 brew "vim"                                          # highly configurable text editor
 brew "watch"                                        # execute a program periodically and watch the output
 brew "wget"                                         # non-interactive network downloader
@@ -256,6 +258,7 @@ cask "vivaldi"                                      # another great browser
 cask "vlc"                                          # media player
 cask "vscodium"                                     # open source version of VSCode
 cask "wavebox"                                      # desktop app for web (gmail)
+cask "whalebird"                                    # mastodon client
 cask "xquartz"                                      # X windows on Mac
 cask "yed"                                          # graph editor
 cask "zoom"                                         # video communications
