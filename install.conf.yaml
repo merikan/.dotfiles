@@ -1,4 +1,13 @@
+# ---------------------------------------------------------------------------------------------
+#  Peter Merikan
+#  This is my install script for dotbot to setup and update my computer
+#
 # install.conf.yaml for dotbot https://github.com/anishathalye/dotbot
+# ---------------------------------------------------------------------------------------------
+
+# ---------------------------------------------------------------------------------------------
+# --  Initialize
+# ---------------------------------------------------------------------------------------------
 - defaults:
     link:
         relink: true
@@ -12,15 +21,23 @@
     ~/.config:
       recursive: true
 
+# ---------------------------------------------------------------------------------------------
+# --  Setup
+# ---------------------------------------------------------------------------------------------
+
 - shell:
-    - [git submodule update --init --recursive, Installing/Updating submodules]
-    - ["mkdir -p $XDG_CONFIG_HOME $XDG_DATA_HOME $XDG_CACHE_HOME $XDG_STATE_HOME", "Creating XDG_* directories"]
-    - ["mkdir -p $HOME/{tmp,src,projects}", Creating default directories]
+    - [git submodule update --init --recursive,                                     Installing/Updating submodules]
+    - ["mkdir -p $XDG_CONFIG_HOME $XDG_DATA_HOME $XDG_CACHE_HOME $XDG_STATE_HOME",  Creating XDG_* directories]
+    - ["mkdir -p $HOME/{tmp,src,projects}",                                         Creating default directories]
 
   # fake XDG_CONFIG_HOME for tut on Darwin
 - shell:
     - ["[ `uname` = Darwin ] && mkdir -p $HOME/Library/Application\\ Support/tut", Creating tut directory]
     - ["[ `uname` = Darwin ] && ln -sfh ~/Library/Application\\ Support/tut ~/.config/tut", Symlink XDG_CONFIG_HOME/tut]
+
+# ---------------------------------------------------------------------------------------------
+# --  Link configs
+# ---------------------------------------------------------------------------------------------
 
 - link:
     # alacritty
@@ -113,6 +130,9 @@
     ~/.zshenv: config/zsh/zshenv
     ~/.zshrc: config/zsh/zshrc
 
+# ---------------------------------------------------------------------------------------------
+# --  Install
+# ---------------------------------------------------------------------------------------------
 - defaults:
     shell:
       stdin: true
