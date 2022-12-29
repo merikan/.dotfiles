@@ -17,6 +17,11 @@
     - ["mkdir -p $XDG_CONFIG_HOME $XDG_DATA_HOME $XDG_CACHE_HOME $XDG_STATE_HOME", "Creating XDG_* directories"]
     - ["mkdir -p $HOME/{tmp,src,projects}", Creating default directories]
 
+  # fake XDG_CONFIG_HOME for tut on Darwin
+- shell:
+    - ["[ `uname` = Darwin ] && mkdir -p $HOME/Library/Application\\ Support/tut", Creating tut directory]
+    - ["[ `uname` = Darwin ] && ln -sfh ~/Library/Application\\ Support/tut ~/.config/tut", Symlink XDG_CONFIG_HOME/tut]
+
 - link:
     # alacritty
     ~/.config/alacritty/alacritty.yml: config/alacritty/alacritty.yml
@@ -94,6 +99,8 @@
     ~/.config/spaceship/sections: config/spaceship-prompt/sections
     # tmux
     ~/.tmux.conf: config/tmux/tmux.conf
+    # tut
+    ~/.config/tut/config.ini: config/tut/config.ini
     # vim
     ~/.vimrc: config/vim/vimrc
     # zim
