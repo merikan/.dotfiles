@@ -31,11 +31,6 @@
     - ["mkdir -p $HOME/{tmp,src,projects}",                                         Creating default directories]
     - ["mkdir -p $HOME/.ssh; chmod 700 $HOME/.ssh",                                 Creating ssh directory]
 
-  # fake XDG_CONFIG_HOME for tut on Darwin
-- shell:
-    - ["[ `uname` = Darwin ] && mkdir -p $HOME/Library/Application\\ Support/tut", Creating tut directory]
-    - ["[ `uname` = Darwin ] && ln -sfh ~/Library/Application\\ Support/tut ~/.config/tut", Symlink XDG_CONFIG_HOME/tut]
-
 # ---------------------------------------------------------------------------------------------
 # --  Link configs
 # ---------------------------------------------------------------------------------------------
