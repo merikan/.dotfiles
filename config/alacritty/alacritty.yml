@@ -15,7 +15,7 @@ font:
   italic:
     family: FiraCode Nerd Font
     style: Italic
-  size: 12
+  size: 14
 
 # Using colors in the shell 
 # colors:
