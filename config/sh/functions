@@ -44,11 +44,11 @@ function mvn {
     fi
 
     if [ -e $dir/mvnw ]; then
-        echo "Running wrapper at $dir"
+        #echo "Running wrapper at $dir"
         $dir/mvnw $@
         return $?
     fi
-    echo "No wrapper found, running native Maven"
+    #echo "No wrapper found, running native Maven"
     command mvn $@
 }
 
@@ -62,11 +62,11 @@ function gradle {
     fi
 
     if [ -e $dir/gradlew ]; then
-        echo "Running wrapper at $dir"
+        #echo "Running wrapper at $dir"
         $dir/gradlew $@
         return $?
     fi
-    echo "No wrapper found, running native Gradle"
+    #echo "No wrapper found, running native Gradle"
     command gradle $@
 }
 
