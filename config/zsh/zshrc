@@ -1,4 +1,6 @@
 #!/usr/bin/env zsh
+
+####  ========================================================================================================= ####
 # This file is sourced by interactive shells. It should define aliases,
 # functions, shell options, and key bindings.
 
@@ -26,9 +28,17 @@
 #
 # http://zsh.sourceforge.net/Guide/zshguide.html
 
+####  ========================================================================================================= ####
+
 # echo "Running .zshrc"
 
-# install/load plugins with sheldon
+# load profiling
+PROFILE_STARTUP=false
+if [[ "$PROFILE_STARTUP" == true ]]; then
+  zmodload zsh/zprof
+fi
+
+# install and load plugins with sheldon
 command -v sheldon >/dev/null 2>&1  && {
   eval "$(sheldon source)"
 }
@@ -39,7 +49,7 @@ command -v sheldon >/dev/null 2>&1  && {
 # init zimfw
 if [[ -s "${ZIM_HOME}/init.zsh" ]]; then
   # Update static initialization script if it's outdated, before sourcing it
-  source ${ZIM_HOME}/zimfw.zsh init -q
+  # source ${ZIM_HOME}/zimfw.zsh init -q
   source ${ZIM_HOME}/init.zsh
 fi
 
@@ -53,9 +63,24 @@ _set_terminal_title() {
 precmd_functions+=(_set_terminal_title)
 # add to fpath
 fpath=( "$HOME/.zfunctions" $fpath )
-# turn on autocomplete
+
+# # Load and initialize the completion system ignoring insecure directories with a
+# cache time of 20 hours, so it should almost always regenerate the first time a
+# shell is opened each day.
 autoload -Uz compinit
-compinit
+_comp_path="${XDG_CACHE_HOME:-$HOME/.cache}/zcompdump"
+# #q expands globs in conditional expressions
+if [[ $_comp_path(#qNmh-20) ]]; then
+  # -C (skip function check) implies -i (skip security check).
+  compinit -C -d "$_comp_path"
+else
+  mkdir -p "$_comp_path:h"
+  compinit -i -d "$_comp_path"
+  # Keep $_comp_path younger than cache time even if it isn't regenerated.
+  touch "$_comp_path"
+fi
+unset _comp_path
+
 _comp_options+=(globdots) # include hidden files
 zstyle ':completion:*' menu select # autocompletion with an arrow-key driven interface
 zmodload zsh/complist
@@ -174,20 +199,6 @@ function __zle_select_global_alias {
 zle -N select_global_alias __zle_select_global_alias            # load widget
 bindkey '^G' select_global_alias                                # bind to ctrl+G
 
-# Use lf to switch directories and bind it to ctrl-o
-command -v lf >/dev/null 2>&1  && {
-  lfcd () {
-      tmp="$(mktemp)"
-      lf -last-dir-path="$tmp" "$@"
-      if [ -f "$tmp" ]; then
-          dir="$(cat "$tmp")"
-          rm -f "$tmp"
-          [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
-      fi
-  }
-  bindkey -s '^o' 'lfcd\n'
-}
-
 # Using Base16 for Shells https://github.com/chriskempson/base16-shell
 local base16_theme="base16_gruvbox-dark-medium"
 type -f $base16_theme >/dev/null 2>&1 && eval $base16_theme
@@ -199,10 +210,15 @@ command -v zoxide >/dev/null 2>&1 && {
 }
 
 command -v brew >/dev/null 2>&1  && {
+  # Disable phone home
+  export HOMEBREW_NO_ANALYTICS=1
   # Turn off automatic cleanup
   export HOMEBREW_NO_INSTALL_CLEANUP=1
-  # Use openssl from homebrew instead
-  [ -d $(brew --prefix openssl)/bin ] && export PATH=$(brew --prefix openssl)/bin:$PATH
+  # Use openssl from homebrew instead of provided
+  [ $OSX ] && { 
+    local openssl_path="$(brew --prefix openssl)/bin"
+    [ -d $openssl_path ] && export PATH=$openssl_path:$PATH
+  }
 }
 
 # Use lf to switch directories and bind it to ctrl-o
@@ -219,22 +235,27 @@ command -v lf >/dev/null 2>&1  && {
   bindkey -s '^o' 'lfcd\n'
 }
 
-# source kubectl tab completion
-command -v kubectl >/dev/null 2>&1 && source <(kubectl completion zsh)
-# source k3d tab completion
-command -v k3d >/dev/null 2>&1 && source <(k3d completion zsh)
-# source openshift tab completion
-command -v oc >/dev/null 2>&1 && source <(oc completion zsh)
-# source kustomize tab completion
-command -v kustomize >/dev/null 2>&1 && source <(kustomize completion zsh)
-# source argocd tab completion
-command -v argocd >/dev/null 2>&1 && source <(argocd completion zsh)
-
+[[ ! $OSX ]] && {
+  # source kubectl tab completion
+  command -v kubectl >/dev/null 2>&1 && source <(kubectl completion zsh)
+  # source k3d tab completion
+  command -v k3d >/dev/null 2>&1 && source <(k3d completion zsh)
+  # source openshift tab completion
+  command -v oc >/dev/null 2>&1 && source <(oc completion zsh)
+  # source kustomize tab completion
+  command -v kustomize >/dev/null 2>&1 && source <(kustomize completion zsh)
+  # source argocd tab completion
+  command -v argocd >/dev/null 2>&1 && source <(argocd completion zsh)
+}
 # fzf for fuzzy file mathing. (https://github.com/junegunn/fzf)
-[ -f ~/.fzf.zsh ] && {
-  source ~/.fzf.zsh
+command -v fzf >/dev/null 2>&1  && {
+  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
   # Setting ag as the default source for fzf
   command -v ag >/dev/null 2>&1 && export FZF_DEFAULT_COMMAND='ag -g ""'
+  if [[ $OSX ]]; then
+    bindkey "ç" fzf-cd-widget  # emulate Alt+c
+  fi
+
 }
 
 # Java: Use jenv to handle versions
@@ -313,9 +334,9 @@ command -v pyenv >/dev/null 2>&1 && {
 }
 
 # load nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+# [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # rancher desktop
 [[ -d "$HOME/.rd/bin" ]] && {
@@ -350,3 +371,8 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # print system info with neofetch
 # command -v neofetch >/dev/null 2>&1  && clear; neofetch
+
+# render profiling
+if [[ "$PROFILE_STARTUP" == true ]]; then
+  zprof > $HOME/zprofile.log
+fi
