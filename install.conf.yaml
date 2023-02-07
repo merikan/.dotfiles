@@ -59,6 +59,8 @@
     ~/.config/gitui/key_bindings.ron: config/gitui/key_bindings.ron
     # golang
     ~/.config/go/golangrc: config/golang/golangrc
+    # go-task
+    ~/.config/go-task/Taskfile.yaml: config/go-task/Taskfile.yaml
     # hammerspoon
     ~/.hammerspoon/init.lua: config/hammerspoon/init.lua
     ~/.hammerspoon/Spoons/SpoonInstall.spoon: config/hammerspoon/Spoons/SpoonInstall.spoon

@@ -1,0 +1,21 @@
+# https://taskfile.dev
+#
+# This is my personal taskfile with tasks to be used everywhere in 
+# different projects
+#
+# See alias tt
+
+version: '3'
+
+tasks:
+  default: 
+    desc: list all tasks with description
+    cmds:
+      - task -l
+    silent: true
+
+  
+  mvn:dependency:relocated:
+    desc: check for relocated dependencies with 'oga-maven-plugin'
+    cmds:
+      - cmd: "mvn biz.lermitage.oga:oga-maven-plugin:check --fail-never"

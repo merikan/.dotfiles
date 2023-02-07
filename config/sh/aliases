@@ -101,6 +101,7 @@ alias g='grep -i'  # Case insensitive grep
 alias f='find . -iname'
 alias m='more'
 alias t='task'
+alias tt="task --taskfile $XDG_CONFIG_HOME/go-task/Taskfile.yaml"
 alias df='df -h'
 alias hist='history | grep $1' #requires an argument
 alias pg='ps aux | grep'  #requires an argument
