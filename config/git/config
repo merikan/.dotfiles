@@ -276,6 +276,9 @@
   l3 = l -30
   lazy = !lazygit
   rb = rebase
+  rbi = rebase -i --committer-date-is-author-date
+  rbc = rebase --contintue
+  rba = rebase --abort
 
   # open repo in browser, usage: git open [upstream]
   open  = "!f() { URL=$(git config remote.${1-origin}.url | sed -e 's#^.*@#https://#' -e 's#.git$##' -e 's#:#/#2'); git web--browse $URL; }; f"
