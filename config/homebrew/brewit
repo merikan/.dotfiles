@@ -27,7 +27,7 @@ install() {
             fail "command-line tools for Xcode must be installed before we can use Homebrew. \n"
         fi 
         info "Installing homebrew"
-        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         if [[ $? != 0 ]]; then
             fail "unable to install homebrew, script $0"
         fi
@@ -69,7 +69,7 @@ cleanup() {
 }
 
 healthCheck() {
-    info "Doing some health check... (brew doctor && brew missing)"
+    info "Doing a health check... (brew doctor && brew missing)"
     brew doctor
     brew missing
     success
