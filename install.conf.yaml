@@ -139,6 +139,10 @@
 
 - shell:
     -
+      description: setup shell environment
+      command: source $HOME/.zshenv
+- shell:
+    -
       description: Installing/Updating Homebrew and formulea
       command: $HOME/bin/brewit
 
