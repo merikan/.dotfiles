@@ -28,6 +28,7 @@ install() {
         fi 
         info "Installing homebrew"
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        eval "$(/opt/homebrew/bin/brew shellenv)"
         if [[ $? != 0 ]]; then
             fail "unable to install homebrew, script $0"
         fi
