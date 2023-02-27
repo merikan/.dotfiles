@@ -28,12 +28,17 @@ install() {
         fi 
         info "Installing homebrew"
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-        eval "$(/opt/homebrew/bin/brew shellenv)"
         if [[ $? != 0 ]]; then
             fail "unable to install homebrew, script $0"
         fi
+        eval "$(${HOMEBREW_PREFIX}/bin/brew shellenv)"
         success "Homebrew is installed"
     fi
+    # install rosetta
+    if [[ "$(uname -m)" == "arm64" ]]; then 
+      /usr/sbin/softwareupdate --install-rosetta --agree-to-license
+    fi
+
     info "Installing homebrew bundle.. (brew bundle)"
     brew bundle --verbose --global
     success
