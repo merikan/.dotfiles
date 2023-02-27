@@ -6,6 +6,11 @@
 
 #echo "Running .zshenv"
 
+# OS and Architecture
+export UNAME_SYSTEM=$(/usr/bin/uname -s)
+export UNAME_MACHINE=$(/usr/bin/uname -m)
+
+
 # XDG  Base Directory Specification
 # - https://specifications.freedesktop.org/basedir-spec/latest/
 # - https://wiki.archlinux.org/title/XDG_Base_Directory
@@ -20,7 +25,21 @@ if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
-#
+if [[ "${UNAME_SYSTEM}" == "Darwin" ]]; then
+  if [[ "${UNAME_MACHINE}" == "arm64" ]]; then
+    export HOMEBREW_PREFIX="/opt/homebrew"
+  else
+    export HOMEBREW_PREFIX="/usr/local"
+  fi
+  [[ -s "${HOMEBREW_PREFIX}/bin/brew" ]] && {
+    export HOMEBREW_CELLAR="${HOMEBREW_PREFIX}/Cellar"
+    export HOMEBREW_REPOSITORY="${HOMEBREW_PREFIX}/Homebrew"
+    export PATH="${HOMEBREW_PREFIX}/bin:${HOMEBREW_PREFIX}/sbin${PATH+:$PATH}"
+    export MANPATH="${HOMEBREW_PREFIX}/share/man${MANPATH+:$MANPATH}:"
+    export INFOPATH="${HOMEBREW_PREFIX}/share/info:${INFOPATH:-}"
+  }
+fi
+
 # Editors
 #
 export EDITOR='nvim'
