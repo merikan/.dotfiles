@@ -58,6 +58,7 @@ brew "golangci-lint"                                # Go linters aggregator
 brew "ghq"                                          # git remote repository management made easy
 brew "gibo"                                         # easily accessing gitignore boilerplates
 brew "git"                                          # cli client for git
+brew "git-branchless"                               # some nice git commands
 brew "git-flow-avh"                                 # git-flow addon for git client
 brew "gitleaks"                                     # audit git repos for secrets
 brew "git-secrets"                                  # prevents you from committing passwords and other sensitive information to a git repository.
