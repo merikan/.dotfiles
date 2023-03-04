@@ -128,6 +128,7 @@ brew "rsync"                                        # provides fast incremental 
 brew "ruby"                                         # ruby environment
 brew "rustup-init"                                  # rustup installer
 brew "semgrep"                                      # static analysis, find bugs and enforce code standards
+brew "scorecard"                                    # check OSS security health
 brew "scrcpy"                                       # android screen mirror
 brew "sheldon"                                      # fast, configurable, shell plugin manager
 brew "shellcheck"                                   # a static analysis tool for shell scripts
