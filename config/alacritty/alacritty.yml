@@ -61,8 +61,6 @@ font:
 #     - { index: 20, color: '0xa7adba' }
 #     - { index: 21, color: '0xcdd3de' }
 
-# Send ESC (\x1b) before characters when alt is pressed.
-alt_send_esc: true  ## to handle swedish keyboard chars /\[]{}
 
 key_bindings:
   - { key: N, mods: Command, action: CreateNewWindow }
