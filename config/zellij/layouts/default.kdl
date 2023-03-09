@@ -1,0 +1,13 @@
+/*
+ * This my default layout
+ */
+layout {
+    pane
+    pane size=1 borderless=true {
+        plugin location="zellij:tab-bar"
+    }
+    pane size=2 borderless=true {
+        plugin location="zellij:status-bar"
+    }
+}
+

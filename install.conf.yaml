@@ -118,6 +118,10 @@
     ~/.config/tut/config.ini: config/tut/config.ini
     # vim
     ~/.vimrc: config/vim/vimrc
+    # zellij
+    ~/.config/zellij:
+      path: config/zellij/*
+      glob: true
     # zim
     ~/.zimrc: config/zim/zimrc
     # zsh

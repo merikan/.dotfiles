@@ -1,0 +1,59 @@
+
+keybinds {
+    // global
+    unbind "Ctrl b" // unbind default tmux key
+    unbind "Ctrl q"
+
+    normal clear-defaults=true {
+      // add back some bindings
+      bind "Ctrl a" { SwitchToMode "Tmux"; }
+      bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
+      bind "Alt j" "Alt Down" { MoveFocus "Down"; }
+      bind "Alt k" "Alt Up" { MoveFocus "Up"; }
+      bind "Alt l" "Alt Right" { MoveFocusOrTab "Right"; }
+    }
+    tmux clear-defaults=true {
+        // add my preferred tmux bindings
+        bind "Ctrl a" { Write 2; SwitchToMode "Normal"; }
+        bind "[" { SwitchToMode "Scroll"; }
+        bind "]" { EditScrollback; SwitchToMode "Normal"; }
+        bind "-" "_" { NewPane "Down"; SwitchToMode "Normal"; }
+        bind "s"  "|" "\\" { NewPane "Right"; SwitchToMode "Normal"; }
+        bind "z" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
+        bind "c" { NewTab; SwitchToMode "Normal"; }
+        bind "," { SwitchToMode "RenameTab"; }
+        bind "H" "p" { GoToPreviousTab; }
+        bind "L" "n" "Tab" { GoToNextTab; }
+        bind "h"  "Left" { MoveFocus "Left"; }
+        bind "j" "Down" { MoveFocus "Down"; }
+        bind "k"  "Up" { MoveFocus "Up"; }
+        bind "l" "Right" { MoveFocus "Right"; }
+        bind "o" { FocusNextPane; }
+        bind "d" { Detach; }
+        bind "Space" { NextSwapLayout; }
+        bind "x" { CloseFocus; SwitchToMode "Normal"; }
+        bind "Ctrl q" { Quit; }
+        bind "1" { GoToTab 1; SwitchToMode "Normal"; }
+        bind "2" { GoToTab 2; SwitchToMode "Normal"; }
+        bind "3" { GoToTab 3; SwitchToMode "Normal"; }
+        bind "4" { GoToTab 4; SwitchToMode "Normal"; }
+        bind "5" { GoToTab 5; SwitchToMode "Normal"; }
+        bind "6" { GoToTab 6; SwitchToMode "Normal"; }
+        bind "7" { GoToTab 7; SwitchToMode "Normal"; }
+        bind "8" { GoToTab 8; SwitchToMode "Normal"; }
+        bind "9" { GoToTab 9; SwitchToMode "Normal"; }
+        // switch to other modes
+        bind "Enter" "Esc" { SwitchToMode "Normal"; }
+        bind "Ctrl p" { SwitchToMode "Pane"; }
+        bind "Ctrl t" { SwitchToMode "Tab"; }
+        bind "Ctrl r" { SwitchToMode "Resize"; }
+        bind "Ctrl s" { SwitchToMode "Scroll"; }
+        bind "Ctrl o" { SwitchToMode "Session"; }
+        bind "Ctrl m" { SwitchToMode "Move"; }
+    }
+    shared_except "tmux" {
+        bind "Ctrl a" { SwitchToMode "Tmux"; }
+    }
+}
+// set the theme
+theme "nord"

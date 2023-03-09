@@ -1,4 +1,4 @@
-#
+
 # To keep this file in sync I'm avoiding to install with the `brew install` command,
 # instead I'm adding a row to this file and run 'brew bundle --global' to make sure it's working.
 
@@ -157,6 +157,7 @@ brew "yarn"                                         # JavaScript package manager
 brew "youtube-dl"                                   # download videos from youtube and many more sites
 brew "yq"                                           # fast yaml processor
 brew "vmware-tanzu/carvel/ytt"                      # YAML templating tool, structure instead of text
+brew "zellij"                                       # an awesome terminal multiplexer
 brew "zoxide"                                       # a smarter cd command
 brew "zsh"                                          # shell
 
