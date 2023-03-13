@@ -4,6 +4,9 @@
 shell:
  program: zsh
 
+window:
+  option_as_alt: Both
+
 # Font configuration
 font:
   normal:
@@ -64,99 +67,3 @@ font:
 
 key_bindings:
   - { key: N, mods: Command, action: CreateNewWindow }
-# Mac OS specific
-# Option is not Alt
-
-# US/Ansi
-# Key     Char Asc   Hex
-# Alt+a    å : 195 : C3
-# Alt+b    ∫ : 226 : E2
-# Alt+c    ç : 195 : C3
-# Alt+d    ∂ : 226 : E2
-# Alt+e    ´ : 194 : C2
-# Alt+f    ƒ : 198 : C6
-# Alt+g    © : 194 : C2
-# Alt+h    ˙ : 203 : CB
-# Alt+i    ˆ : 203 : CB
-# Alt+j    ∆ : 226 : E2
-# Alt+k    ˚ : 203 : CB
-# Alt+l    ¬ : 194 : C2
-# Alt+m    µ : 194 : C2
-# Alt+n    ˜ : 203 : CB
-# Alt+o    ø : 195 : C3
-# Alt+p    π : 207 : CF
-# Alt+q    œ : 197 : C5
-# Alt+r    ® : 194 : C2
-# Alt+s    ß : 195 : C3
-# Alt+t    † : 226 : E2
-# Alt+u    ¨ : 194 : C2
-# Alt+v    √ : 226 : E2
-# Alt+w    ∑ : 226 : E2
-# Alt+x    ≈ : 226 : E2
-# Alt+y    ¥ : 194 : C2
-# Alt+z    Ω : 206 : CE
-
-# Option-key is NOT Alt-key 
-  # -- Option + key=          ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ
-  # -- > SWE/Int keyboard     ›ç∂éƒ¸˛ı√ªﬁ’‘œπ•®ß†ü‹Ω≈µ˙æø
-  # -- > US/ANSI keyboard     å∫ç∂´ƒ©˙ˆ∆˚¬µ˜øπœ®ß†¨√∑≈¥ç
-
-#Remap Swedish (sv_SE) to behave like US/ansi when pressing Option+letter
-  - { key: A,      mods: Option,          chars: "å"                  }
-  - { key: B,      mods: Option,          chars: "∫"                  }
-  - { key: C,      mods: Option,          chars: "ç"                  }
-  - { key: D,      mods: Option,          chars: "∂"                  }
-  - { key: E,      mods: Option,          chars: "´"                  }
-  - { key: F,      mods: Option,          chars: "ƒ"                  }
-  - { key: G,      mods: Option,          chars: "©"                  }
-  - { key: H,      mods: Option,          chars: "˙"                  }
-  - { key: I,      mods: Option,          chars: "ˆ"                  }
-  - { key: J,      mods: Option,          chars: "∆"                  }
-  - { key: K,      mods: Option,          chars: "˚"                  }
-  - { key: L,      mods: Option,          chars: "¬"                  }
-  - { key: M,      mods: Option,          chars: "µ"                  }
-  - { key: N,      mods: Option,          chars: "˜"                  }
-  - { key: O,      mods: Option,          chars: "ø"                  }
-  - { key: P,      mods: Option,          chars: "π"                  }
-  - { key: Q,      mods: Option,          chars: "œ"                  }
-  - { key: R,      mods: Option,          chars: "®"                  }
-  - { key: S,      mods: Option,          chars: "ß"                  }
-  - { key: T,      mods: Option,          chars: "†"                  }
-  - { key: U,      mods: Option,          chars: "¨"                  }
-  - { key: V,      mods: Option,          chars: "√"                  }
-  - { key: W,      mods: Option,          chars: "∑"                  }
-  - { key: X,      mods: Option,          chars: "≈"                  }
-  - { key: Y,      mods: Option,          chars: "¥"                  }
-  - { key: Z,      mods: Option,          chars: "ç"                  }
-
-#Swedish (sv_SE)
-#   - { key: Key1,      mods: Alt,          chars: "\xA9"                  }
-#   - { key: Key2,      mods: Alt,          chars: "\x40"                  }
-#   - { key: Key3,      mods: Alt,          chars: "\xA3"                  }
-#   - { key: Key4,      mods: Alt,          chars: "\x24"                  }
-#   - { key: Key5,      mods: Alt,          chars: "∞"                     }
-#   - { key: Key6,      mods: Alt,          chars: "\xA7"                  }
-#   - { key: Key7,      mods: Alt,          chars: "\x7C"                  }
-#   - { key: Key8,      mods: Alt,          chars: "\x5B"                  }
-#   - { key: Key9,      mods: Alt,          chars: "\x5D"                  }
-#   - { key: Key0,      mods: Alt,          chars: "≈"                     }
-#   - { key: Minus,     mods: Alt,          chars: "\xB1"                  }
-#   - { key: 26,        mods: Alt,          chars: "\x7C"                  }
-#   - { key: 28,        mods: Alt,          chars: "\x5B"                  }
-#   - { key: 25,        mods: Alt,          chars: "\x5D"                  }
-  
-#   - { key: Key1,      mods: Alt|Shift,    chars: "\xA1"                  }
-#   - { key: Key2,      mods: Alt|Shift,    chars: "”"                     }
-#   - { key: Key3,      mods: Alt|Shift,    chars: "\xA5"                  }
-#   - { key: Key4,      mods: Alt|Shift,    chars: "\x24"                  }
-#   - { key: Key5,      mods: Alt|Shift,    chars: "‰"                     }
-#   - { key: Key6,      mods: Alt|Shift,    chars: "\xB6"                  }
-#   - { key: Key7,      mods: Alt|Shift,    chars: "\x5C"                  }
-#   - { key: Key8,      mods: Alt|Shift,    chars: "\x7B"                  }
-#   - { key: Key9,      mods: Alt|Shift,    chars: "\x7D"                  }
-#   - { key: Key0,      mods: Alt|Shift,    chars: "≠"                     }
-#   - { key: Minus,     mods: Alt|Shift,    chars: "\xBF"                  }
-
-# # Replace the default bindings for these as the VirtualKeycodes don't match reality
-#   - { key: Slash,     mods: Command,      action: DecreaseFontSize       }
-#   - { key: Minus,     mods: Command,      action: IncreaseFontSize       }
