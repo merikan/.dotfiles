@@ -96,6 +96,7 @@ brew "jesseduffield/lazydocker/lazydocker"          # the lazier way to manage e
 brew "jesseduffield/lazygit/lazygit"                # simple terminal UI for git commands
 brew "k3d"                                          # k3d is a lightweight wrapper to run k3s
 brew "k6"                                           # open-source load testing tool
+brew "kubeaudit"                                    # audit k8s clusters and manifests
 brew "lf"                                           # file manager for the terminal
 brew "lnav"                                         # watch and analyze your log files from a terminal.
 brew "lua"                                          # a powerful, efficient, lightweight, embeddable scripting language
