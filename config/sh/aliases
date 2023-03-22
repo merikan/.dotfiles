@@ -248,4 +248,8 @@ alias ${global} MD=' -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport
 alias ${global} JQ="| jq -Rrc '. as \$line | fromjson? // \$line'"          #output: json and non-json
 alias ${global} JQO="| jq -R 'fromjson? | .'"                               #output: only json
 alias ${global} JQP="| jq -R -r '. as \$line | try fromjson catch \$line'"  #output: json pretty print and non-json
+alias ${global} JQPP="| tr \"\\n\" \"\n\" | jq -R -r '. as \$line | try fromjson catch \$line'"  #output: json pretty print and non-json
 alias ${global} PF="8080:8080 8081:8081"                            #port-forward
+alias ${global} FORF="for f in ./*; do echo \$f; done"              #loop over files
+alias ${global} FORD="for d in */; do echo \$d; done"               #loop over dirs
+
