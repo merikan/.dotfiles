@@ -117,7 +117,7 @@ alias ducks='du -cksh * | sort -rn|head -11' # Lists folders and files sizes in 
 alias da='date "+%Y-%m-%d %A    %T %Z"'
 alias scp-bash='scp ~/.bashrc ~/.bash_completion ~/.bash_profile ~/.profile ~/.bash_functions ~/.bash_aliases ~/.functions ~/.aliases' # copy bash files to server, requires username@hostname:
 alias veewee='bundle exec veewee'  # do the veewee
-alias g='git'     # really short key for git
+alias g='git'
 command -v nvim >/dev/null 2>&1 && alias vim="nvim"
 alias v="vim"
 alias j=z         # fasd z with better key location
@@ -235,7 +235,7 @@ alias matrix='LC_ALL=C tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS co
 alias play-youtube='__play-youtube_() { youtube-dl -q -o- "${1}" | mplayer -cache 8192 -; }; __play-youtube_'
 
 # shortcuts to be expanded
-[ -n "$ZSH_VERSION" ] && {global='-g' }
+[ -n "$ZSH_VERSION" ] && { global='-g' }
 alias ${global} L='| less '
 alias ${global} M='| most '
 alias ${global} C='| wc -l '
