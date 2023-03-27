@@ -65,7 +65,9 @@ echo -n "Set menu bar clock format"
 # "ss"   Display the time with seconds
 defaults write com.apple.menuextra.clock DateFormat -string "EEE d MMM HH:mm"
 echo "  ✔"
-
+echo -n "Turn off the Character Accent Selector and re-enable Key repetition"
+defaults write -g ApplePressAndHoldEnabled -bool false
+echo "  ✔"
 
 echo -n "Set computer name (as done via System Preferences → Sharing)"
 read -p "Do you want to set the computer name ? (y/N) " choice;
