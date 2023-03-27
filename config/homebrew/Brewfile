@@ -116,6 +116,7 @@ brew "neofetch"                                     # A fast, highly customizabl
 brew "neovim"                                       # neovim
 brew "nativefier"                                   # Make any web page a desktop application
 brew "nvm"                                          # manage multiple Node.js versions
+brew "openconnect"                                  # open client for cisco anyconnect vpn
 brew "openshift-cli"                                # openshift cli
 brew "packer"                                       # package VMs
 brew "packer-completion"
