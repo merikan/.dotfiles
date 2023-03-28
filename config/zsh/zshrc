@@ -230,6 +230,11 @@ command -v lf >/dev/null 2>&1  && {
   bindkey -s '^o' 'lfcd\n'
 }
 
+# load direnv
+command -v direnv >/dev/null 2>&1  && {
+  eval "$(direnv hook zsh)"
+}
+
 [[ ! $OSX ]] && {
   # source kubectl tab completion
   command -v kubectl >/dev/null 2>&1 && source <(kubectl completion zsh)
