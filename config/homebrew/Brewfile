@@ -83,6 +83,7 @@ brew "jq"                                           # command-line JSON processo
 brew "jo"                                           # small utility to create JSON objects
 brew "joplin-cli"                                   # note taking and to-do application
 brew "boz/repo/kail"                                # kubernetes log viewer
+brew "k9s"                                          # awesome tui for k8s
 brew "kompose"                                      # a conversion tool to go from Docker Compose to Kubernetes
 brew "krew"                                         # package manager for kubectl plugins
 brew "kubectl"                                      # kubernetes controller
