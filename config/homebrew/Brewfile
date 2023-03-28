@@ -43,6 +43,7 @@ brew "curl"                                         # curl
 brew "dasel"                                        # query and modify data structures in json/toml/yaml/xml/csv/plain format
 brew "dfc"                                          # displays file system space usage using graphs and colors
 brew "diff-pdf"                                     # visually compare two PDF files
+brew "direnv"                                       # load/unload env variables
 brew "wagoodman/dive/dive"                          # exploring a docker image, layer contents, and discovering ways to shrink your Docker image size.
 brew "doxygen"                                      # Generate documentation from source code
 brew "docker"                                       # docker client
