@@ -61,8 +61,9 @@ _set_terminal_title() {
   echo -ne "\033]0;$(pwd | sed -e "s;^$HOME;~;")\a"
 }
 precmd_functions+=(_set_terminal_title)
-# add to fpath
-fpath=( "$HOME/.zfunctions" $fpath )
+# add zfunc to fpath
+[ -d "$HOME/.zfunc" ] || mkdir "$HOME/.zfunc" 
+fpath=( "$HOME/.zfunc" $fpath )
 
 # # Load and initialize the completion system ignoring insecure directories with a
 # cache time of 20 hours, so it should almost always regenerate the first time a
@@ -277,7 +278,7 @@ export GEM_HOME="${XDG_DATA_HOME}"/gem
 # Rust
 [[ -d "$HOME/.cargo/bin" ]] && {
   source "$HOME/.cargo/env"
-  rustup completions zsh > ~/.zfunctions/_rustup
+  rustup completions zsh > $HOME/.zfunc/_rustup
 }
 
 # rvm
