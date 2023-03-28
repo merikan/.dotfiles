@@ -25,7 +25,6 @@ declare -a CANDIDATES=(
   "gradle,latest,true"
   "groovy,latest,true"
   "java,latest,false"
-  "java,8.0.202-zulufx,true"
   "kotlin,latest,true"
   "kscript,latest,true"
   "maven,latest,true"
