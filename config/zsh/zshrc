@@ -242,14 +242,17 @@ command -v lf >/dev/null 2>&1  && {
   # source argocd tab completion
   command -v argocd >/dev/null 2>&1 && source <(argocd completion zsh)
 }
+
 # fzf for fuzzy file mathing. (https://github.com/junegunn/fzf)
 command -v fzf >/dev/null 2>&1  && {
-  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+  for file in "$XDG_CONFIG_HOME"/fzf/*.zsh; do
+      source "$file"
+  done
   # Setting ag as the default source for fzf
   command -v ag >/dev/null 2>&1 && export FZF_DEFAULT_COMMAND='ag -g ""'
-  if [[ $OSX ]]; then
-    bindkey "ç" fzf-cd-widget  # emulate Alt+c
-  fi
+  # if [[ $OSX ]]; then
+  #   bindkey "ç" fzf-cd-widget  # emulate Alt+c
+  # fi
 
 }
 
@@ -269,6 +272,7 @@ esac
 export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 # Ruby gems
 export GEM_HOME="${XDG_DATA_HOME}"/gem
+
 # Golang
 [ -f "$XDG_CONFIG_HOME"/go/golangrc ] && source "$XDG_CONFIG_HOME"/go/golangrc
 # Installing go with homebrew instead of gvm

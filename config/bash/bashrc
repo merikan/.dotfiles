@@ -224,8 +224,10 @@ command -v oc >/dev/null 2>&1 && source <(oc completion bash)
 
 # ---------------------------------------------------------------------------------------------
 # fzf for fuzzy file mathing
-[ -f ~/.fzf.bash ] && {
-  source ~/.fzf.bash
+command -v fzf >/dev/null 2>&1 && {
+  for file in "$XDG_CONFIG_HOME"/fzf/*.zsh; do
+      source "$file"
+  done
   # Set ag as the default source for fzf
   command -v ag >/dev/null 2>&1 && export FZF_DEFAULT_COMMAND='ag -g ""'
 }
