@@ -29,7 +29,7 @@
     - [git submodule update --init --recursive,                                     Installing/Updating submodules]
     - ["mkdir -p $XDG_CONFIG_HOME $XDG_DATA_HOME $XDG_CACHE_HOME $XDG_STATE_HOME",  Creating XDG_* directories]
     - ["mkdir -p $HOME/{tmp,src,projects}",                                         Creating default directories]
-    - ["mkdir -p $HOME/.ssh; chmod 700 $HOME/.ssh",                                 Creating ssh directory]
+    - ["mkdir -p $HOME/.ssh/control; chmod 700 $HOME/.ssh",                         Creating ssh directory]
 
 # ---------------------------------------------------------------------------------------------
 # --  Link configs
