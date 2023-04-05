@@ -1,0 +1,139 @@
+
+  --------------------------------------------------------------------------------
+  -- Core
+  --------------------------------------------------------------------------------
+  -- use { "lewis6991/impatient.nvim" }                    -- when you don't want to wait
+  -- treesitter
+  -- use { "nvim-treesitter/nvim-treesitter",              -- treesitter render AST for languages
+  --   requires = {
+  --     -- "nvim-treesitter/nvim-treesitter-refactor",
+  --     -- "nvim-treesitter/nvim-treesitter-textobjects",
+  --   },
+  --   run = ":TSUpdate",
+  --   config = function()
+  --     require("user.plugins.treesitter").setup()
+  --   end,
+  -- }
+
+  -- Telescope
+  -- use { "nvim-telescope/telescope.nvim",                -- a picky fuzzy finder
+  --   requires = {
+  --     "nvim-lua/plenary.nvim",
+  --     "nvim-lua/popup.nvim",
+  --     "nvim-telescope/telescope-project.nvim",
+  --     { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
+  --   },
+  -- }
+
+  --------------------------------------------------------------------------------
+  -- Look andf Feel
+  --------------------------------------------------------------------------------
+   -- use { "goolord/alpha-nvim",                           -- a nvim dashboard
+   --   requires = { "kyazdani42/nvim-web-devicons" },
+   --   -- config = function()
+   --   --   require "user.plugins.alpha"
+   --   -- end,
+   -- }
+  -- use {'akinsho/bufferline.nvim', tag = "v3.*",         -- tabs for buffers
+  --   requires = 'nvim-tree/nvim-web-devicons'}
+  --  use { "SmiteshP/nvim-navic",                          --  
+  --    requires = "neovim/nvim-lspconfig"
+  --  }
+  use { "nvim-lualine/lualine.nvim" }
+  use { "szw/vim-maximizer" }
+  use { "kyazdani42/nvim-tree.lua" }
+  use { "moll/vim-bbye" }                               -- close buffers nicely
+  use { "alexghergh/nvim-tmux-navigation" }             -- make tmux and and vim work together
+  use { "akinsho/toggleterm.nvim" }                     -- toggle a terminal
+  use { "lukas-reineke/indent-blankline.nvim" }         -- indent blank lines too
+
+  -- Colorschemes > use "colorscheme.lua" to activate a scheme
+  use { "doums/darcula" }
+  use { "RRethy/nvim-base16"}
+  use { "gruvbox-community/gruvbox" }
+  use { "folke/tokyonight.nvim" }
+  use { "lunarvim/darkplus.nvim" }
+  use { "sainnhe/gruvbox-material" }
+  use { "joshdick/onedark.vim" }
+  use { "kvrohit/rasmus.nvim" }
+
+  --------------------------------------------------------------------------------
+  -- Development
+  --------------------------------------------------------------------------------
+  use { "ahmedkhalf/project.nvim" }                     -- manage projects
+  -- use { "windwp/nvim-autopairs" }                       -- autopairs parentheses, brackets, quotes etc.
+  use { "tpope/vim-surround" }                          -- all about "surroundings"
+  use { "numToStr/Comment.nvim",                        -- line/block comments
+    requires = {
+      { "JoosepAlviste/nvim-ts-context-commentstring",
+        after = "nvim-treesitter" },
+    },
+    config = function()
+      require("user.plugins.comment").setup()
+    end,
+    
+  -- autocompletion
+  use { "hrsh7th/nvim-cmp",
+    requires = {
+      "hrsh7th/cmp-nvim-lsp",                           -- nvim-cmp for lsp
+      "onsails/lspkind-nvim",                           -- pictograms for completion items
+      "hrsh7th/cmp-buffer",                             -- nvim-cmp for buffer words
+      "hrsh7th/cmp-path",                               -- nvim-cmp for path
+      "hrsh7th/cmp-cmdline",                            -- nvim-cmp for vim cmdline
+      "saadparwaiz1/cmp_luasnip",                       -- snippet completions
+      "hrsh7th/cmp-nvim-lua",                           -- nvim-cmp for nvim lua
+      "f3fora/cmp-spell",                               -- nvim-cmp for vim spell
+      { "ray-x/cmp-treesitter",                         -- cmp for treesitter
+        after = "nvim-treesitter" },
+      "Saecki/crates.nvim",                             -- cmp for rust crates
+    },
+    -- config = function()
+    --   require("user.plugins.cmp")
+    -- end,
+  }
+
+  -- snippets
+  use { "L3MON4D3/LuaSnip",                             --snippet engine
+    requires = "rafamadriz/friendly-snippets",          -- a bunch of snippets to use
+  }
+
+  -- LSP
+  use {
+    'neovim/nvim-lspconfig', -- LSP Configuration
+    requires = {
+      -- Automatically install LSPs to stdpath for neovim
+      'williamboman/mason.nvim',
+      'williamboman/mason-lspconfig.nvim',
+
+      -- Useful status updates for LSP
+      'j-hui/fidget.nvim',
+    },
+  }
+
+  use { "jose-elias-alvarez/null-ls.nvim" }             -- for formatters and linters
+  use { "mfussenegger/nvim-jdtls" }                     -- java lsp config
+  --use { "glepnir/lspsaga.nvim" }                        -- LSP UIs
+  use { "RRethy/vim-illuminate" }                       -- highlight words under cursor
+
+
+  use { "folke/trouble.nvim",                           -- handle diagnostics with grace
+    requires = "kyazdani42/nvim-web-devicons",
+    config = function()
+      require("user.plugins.trouble").setup()
+    end,
+  }
+  -- Git
+  use { "lewis6991/gitsigns.nvim" }
+
+  -- DAP
+  use { "mfussenegger/nvim-dap" }
+  use { "rcarriga/nvim-dap-ui" }
+  use { "ravenxrz/DAPInstall.nvim" }
+
+
+  -- Automatically set up your configuration after cloning packer.nvim
+  -- Put this at the end after all plugins
+  if packer_bootstrap then
+    require("packer").sync()
+  end
+end)

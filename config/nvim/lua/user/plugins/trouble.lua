@@ -1,12 +1,11 @@
+-- A pretty list for showing diagnostics, references, telescope results, quickfix and location lists
 -- https://github.com/folke/trouble.nvim
-local M = {}
-
-local set_keymap = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
+local M = {
+   "folke/trouble.nvim",
+      dependencies = "nvim-tree/nvim-web-devicons"
+}
 
 M.setup = function()
-
-  set_keymap('n', '<Leader>tt', '<Cmd>TroubleToggle<CR>', opts)
 
   require("trouble").setup {
     -- see default config at https://github.com/folke/trouble.nvim#setup

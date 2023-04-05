@@ -1,0 +1,21 @@
+# list nmvim configurations
+# inspired by https://www.youtube.com/watch?v=LkHjJlSgKZY
+
+command -v fzf >/dev/null 2>&1 || { echo "fzf is not installed" && return 1;}
+command -v nvim >/dev/null 2>&1 || { echo "nvim is not installed" && return 1;}
+nvim_version=$(nvim --version | head -1 | grep -o '[0-9]\.[0-9]')
+if (( $(echo "$nvim_version < 0.9 " | bc -l) )); then
+  echo "Nvim version must be > 0.9 to use the NVIM_APPNAME feature"
+  exit 1
+fi
+
+items=("default" )
+for d in $(find $XDG_CONFIG_HOME -type d -name '*.nvim' -exec basename \{} \;); do items+=("$d"); done
+config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
+if [[ -z $config ]]; then
+  echo "Nothing selected"
+  return 0
+elif [[ $config == "default" ]]; then
+  config=""
+fi
+NVIM_APPNAME="$config" nvim "$@"
