@@ -133,13 +133,11 @@ bindkey -M menuselect 'down' vi-down-line-or-history
 bindkey -M menuselect 'up' vi-up-line-or-history
 bindkey -M menuselect 'right' vi-forward-char
 bindkey -v '^?' backward-delete-char # Fix backspace bug when switching modes
-bindkey -M vicmd "v" edit-command-line # v to open command line in editor
 bindkey -M vicmd "^x^e" edit-command-line # v to open command line in editor
 bindkey -M vicmd "^xe" edit-command-line # v to open command line in editor
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
-  if [[ ${KEYMAP} == vicmd ]] ||
-      [[ $1 = 'block' ]]; then
+  if [[ ${KEYMAP} == vicmd ]] || [[ $1 = 'block' ]]; then
     echo -ne '\e[1 q'
   elif [[ ${KEYMAP} == main ]] ||
         [[ ${KEYMAP} == viins ]] ||
@@ -344,7 +342,11 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 
 # Functions  -------------------------------------------------------
-[ -f ~/.functions ] && source ~/.functions
+source_sh () {
+  emulate -LR sh
+  . "$@"
+}
+[ -f ~/.functions ] && source_sh ~/.functions
 [ -f ~/.zsh_functions ] && source ~/.zsh_functions
 
 # Aliases            -------------------------------------------------------
