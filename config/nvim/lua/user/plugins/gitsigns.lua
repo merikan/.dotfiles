@@ -1,4 +1,7 @@
 local M = {
+-- Git integration for buffers
+-- https://github.com/lewis6991/gitsigns.nvim
+
   "lewis6991/gitsigns.nvim",
   dependencies = {
     { "nvim-lua/plenary.nvim" },
