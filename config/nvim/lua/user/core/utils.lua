@@ -1,9 +1,11 @@
 local M = {}
 
 -- protected require
-M.prequire = function(...)
-  local status, lib = pcall(require, ...)
-  if (status) then return lib end
+M.prequire = function(req_name)
+  if req_name then
+    local status, lib = pcall(require, req_name)
+    if (status) then return lib end
+  end
   return nil
 end
 

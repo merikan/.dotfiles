@@ -3,10 +3,11 @@
 local colorscheme = "darcula"
 
 -- set colorscheme
-pcall(vim.cmd, "colorscheme " .. colorscheme)
+vim.api.nvim_cmd({cmd='colorscheme', args={colorscheme}}, {})
 
 -- load custom settings for selected color scheme if available
 local scheme = prequire("user.colorscheme." .. colorscheme)
 if scheme then
   scheme.setup()
 end
+

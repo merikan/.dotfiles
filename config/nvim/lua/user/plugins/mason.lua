@@ -1,10 +1,9 @@
 local M = {
-  "williamboman/mason.nvim",
+    "williamboman/mason.nvim",
+    build = ":MasonUpdate" -- :MasonUpdate updates registry contents
 }
 -- https://github.com/williamboman/mason.nvim/blob/main/PACKAGES.md
 M.packages = {
-  "angular-language-server",
-  "ansible-language-server",
   "bash-language-server",
   "beautysh",
   "black",

@@ -2,19 +2,7 @@
 --
 return {
   "mfussenegger/nvim-dap",                  -- DAP client implementation for Neovim
-  enabled = vim.fn.has "win32" == 0,
   dependencies = {
-    {
-      "jay-babu/mason-nvim-dap.nvim",
-      dependencies = { "nvim-dap" },
-      cmd = { "DapInstall", "DapUninstall" },
-      config = function()
-        local opts = { automatic_setup = true }
-        local mason_nvim_dap = require "mason-nvim-dap"
-        mason_nvim_dap.setup(opts)
-        mason_nvim_dap.setup_handlers {}
-      end,
-    },
     {
       "rcarriga/nvim-dap-ui",                   -- UI for nvim-dap
       config = function()
@@ -28,6 +16,7 @@ return {
     },
     { "theHamsta/nvim-dap-virtual-text" },        -- virtual text support to nvim-dap.
     { "nvim-telescope/telescope-dap.nvim" },      -- telescopte integration with nvim-dap
+
     --  Adapter configuration for specific languages
     { "leoluz/nvim-dap-go" },                 -- golang
     { "mfussenegger/nvim-dap-python" },       -- python

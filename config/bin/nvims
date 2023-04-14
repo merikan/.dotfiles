@@ -10,7 +10,7 @@ if (( $(echo "$nvim_version < 0.9 " | bc -l) )); then
 fi
 
 items=("default" )
-for d in $(find $XDG_CONFIG_HOME -type d -name '*.nvim' -exec basename \{} \;); do items+=("$d"); done
+for d in $(find $XDG_CONFIG_HOME -type d -name '*.nvim' -maxdepth 1 -exec basename \{} \;); do items+=("$d"); done
 config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
 if [[ -z $config ]]; then
   echo "Nothing selected"
