@@ -113,6 +113,8 @@
     # spaceship-prompt
     ~/.config/spaceship/spaceship.zsh: config/spaceship-prompt/spaceship-promptrc
     ~/.config/spaceship/sections: config/spaceship-prompt/sections
+    # testcontainers
+    ~/.testcontainers.properties: config/testcontainers/testcontainers.properties
     # tmux
     ~/.tmux.conf: config/tmux/tmux.conf
     # tut
