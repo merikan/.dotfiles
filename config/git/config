@@ -247,6 +247,7 @@
               }; f"
   # undo last commit and unstage them
   uncommit = reset HEAD~1
+  uc = uncommit
   # work in progress, a quick save before swithing branch
   wip = !git add -A :/ && git commit -m 'WIP - Undo this temporary commit.'
   # list al ignored files
