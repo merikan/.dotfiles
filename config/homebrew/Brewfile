@@ -139,6 +139,7 @@ brew "scorecard"                                    # check OSS security health
 brew "scrcpy"                                       # android screen mirror
 brew "sheldon"                                      # fast, configurable, shell plugin manager
 brew "shellcheck"                                   # a static analysis tool for shell scripts
+brew "skopeo"                                       # work with container registry and images
 brew "ssh-copy-id"                                  # ssh copy
 brew "starship"                                     # blazing-fast cross-shell prompt
 brew "stern"                                        # log tailing for Kubernetes
