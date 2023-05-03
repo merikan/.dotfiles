@@ -38,7 +38,7 @@ brew "cmake"                                        # cross-platform make
 brew "cowsay"                                       # the cow says
 brew "csvkit"                                       # tools for working with CSV
 brew "ctop"                                         # top-like interface for container metrics
-brew "cosign"                                       # 
+brew "cosign"                                       #
 brew "curl"                                         # curl
 brew "dasel"                                        # query and modify data structures in json/toml/yaml/xml/csv/plain format
 brew "dfc"                                          # displays file system space usage using graphs and colors
@@ -192,7 +192,7 @@ cask "clementine"                                   # music player and radio str
 cask "chromium"                                     # open-source browser
 cask "cyberduck"                                    # client for FTP and SFTP, WebDAV, and cloud storage
 cask "dash"                                         # API documentation browser
-cask "dbvisualizer"                                 # universal database tool (skip Java deps, we will use sdkman for Java)
+cask "dbeaver-community"                            # universal database tool
 cask "discord"                                      # group-chatting platform
 cask "dropbox"                                      # personal cloud storage service
 cask "eclipse-java"                                 # eclipse ide for java developers
