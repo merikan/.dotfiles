@@ -23,6 +23,9 @@ github = 'Tarrasch/zsh-autoenv'
 [plugins.vi-mode]
 github = 'woefe/vi-mode.zsh'
 
+[plugins.system-clipboard]
+github = "kutsan/zsh-system-clipboard"
+
 [plugins.spaceship-flutter]
 github = 'spaceship-prompt/spaceship-flutter'
 #local = "~/src/github.com/merikan/spaceship-flutter"
