@@ -128,22 +128,33 @@ bindkey '\e[A' history-beginning-search-backward
 #Use down key to search forward in the history for a line beginning with the current line up to the cursor.
 bindkey '\e[B' history-beginning-search-forward
 
-# expand aliases with control+space
+# expand aliases with ^space
 # idea from https://blog.patshead.com/2012/11/automatically-expaning-zsh-global-aliases---simplified.html
 expandalias() {
     zle _expand_alias
     zle expand-word
 }
 zle -N expandalias
-bindkey "^ " expandalias              # control+space to expand alias
-# select global_alias
+bindkey "^ " expandalias
+# select global_alias, ^g
 function __zle_select_global_alias {
   local alias=$(alias | awk -F "=" '{print $1}' | tr -d "\'" | grep -E '\b[[:upper:]]+\b' \
                 | fzf  --layout=reverse)
   LBUFFER+="${alias} "
 }
-zle -N select_global_alias __zle_select_global_alias            # load widget
-bindkey '^G' select_global_alias                                # bind to ctrl+G
+zle -N select_global_alias __zle_select_global_alias
+bindkey '^G' select_global_alias
+# better ^z, press twice = suspend + bg (https://superuser.com/a/378045)
+better-ctrl-z () {
+  if [[ $#BUFFER -eq 0 ]]; then
+    bg
+    zle redisplay
+  else
+    zle push-input
+  fi
+}
+zle -N better-ctrl-z
+bindkey '^Z' better-ctrl-z
 
 # Using Base16 for Shells https://github.com/chriskempson/base16-shell
 local base16_theme="base16_gruvbox-dark-medium"
