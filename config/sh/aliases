@@ -139,7 +139,8 @@ alias kz='kustomize'
 # skaffold
 alias sk=skaffold
 mk='minikube'
-alias zz="zellij"
+alias zl="zellij"
+alias zs="zellij -s"
 
 #maven aliases
 alias mct='mvn clean test'
