@@ -206,7 +206,6 @@ cask "gimp"                                         # an Image Editor (I probabl
 cask "gitkraken"                                    # Git GUI client for Windows, Mac and Linux
 cask "gitup"                                        # awesome Git Gui Client
 cask "google-chrome"                                # a browser
-cask "google-photos-backup-and-sync"                # Google Photos Backup And Sync
 cask "hammerspoon"                                  # powerful automation of MacOS, actions and wm
 cask "handbrake"                                    # open source video transcoder
 cask "horos"                                        # a free, open source medical image viewer
