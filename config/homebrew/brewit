@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # --------
-# Homebrew: Install, update, upgrade and cleanup 
+# Homebrew: Install, update, upgrade and cleanup
 # ------
 
 # resolve links - $0 may be a softlink
@@ -25,7 +25,7 @@ install() {
         # (since we are able to git clone this repo xcode should already have been installed)
         if ! xcode-select --print-path &> /dev/null; then
             fail "command-line tools for Xcode must be installed before we can use Homebrew. \n"
-        fi 
+        fi
         info "Installing homebrew"
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         if [[ $? != 0 ]]; then
@@ -35,12 +35,15 @@ install() {
         success "Homebrew is installed"
     fi
     # install rosetta
-    if [[ "$(uname -m)" == "arm64" ]]; then 
+    if [[ "$(uname -m)" == "arm64" ]]; then
       /usr/sbin/softwareupdate --install-rosetta --agree-to-license
     fi
 
     info "Installing homebrew bundle.. (brew bundle)"
     brew bundle --verbose --global
+    # remove the quarantine attribute
+    xattr -d -r com.apple.quarantine ~/Library/QuickLook
+
     success
 }
 
@@ -49,6 +52,7 @@ update() {
     brew update
     success
 }
+
 upgrade() {
     info "Upgrading formulae...(brew upgrade)"
     brew upgrade
@@ -57,6 +61,7 @@ upgrade() {
     brew upgrade --cask
     success
 }
+
 cleanup() {
     info "Cleaning up Homebrew... (brew cleanup)"
     source ~/.config/homebrew/config

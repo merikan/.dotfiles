@@ -218,7 +218,7 @@ cask "joplin"                                       # a FOSS note taking and to-
 cask "karabiner"                                    # keyboard customizer for macOS
 cask "kdiff3"                                       # utility for comparing and merging files and directories
 cask "keepassxc"                                    # a great FOSS Password Manager
-cask "keystore-explorer"                            # open source GUI replacement for the keytool and jarsigner
+cask "keystore-explorer"                            # open source GUI replacement for the keytool and jarsignerbrewfilbrewfil
 cask "keybase"                                      # crypto for everyone!
 cask "keycastr"                                     # keystroke visualizer
 cask "kui"                                          # a Framework for Enhancing CLIs with Graphics
