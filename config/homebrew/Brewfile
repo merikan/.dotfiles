@@ -287,7 +287,7 @@ cask "font-3270"                                    # a font for the nostalgic
 cask "font-3270-nerd-font"                          # nerd patched '3270' font
 cask "font-fira-code"                               # monospaced font with programming ligatures
 cask "font-fira-code-nerd-font"                     # nerd patched 'fire-code' font
-cask "font-go-mono"                                 # golang fonts
+cask "font-go"                                      # golang fonts
 cask "font-go-mono-nerd-font"                       # nerd patched 'go-mono' font
 cask "font-hasklig"                                 # a code font with monospaced ligatures
 cask "font-hasklug-nerd-font"                       # nerd patched 'hasklig' font
