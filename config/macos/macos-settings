@@ -2,14 +2,15 @@
 
 # Macos Settings
 # This is my MacOs setting to be run when installing a new version of MacOs
+# https://macos-defaults.com/
 #
-# Kudos to:  
+# Kudos to:
 #         https://mths.be/macos
 #         https://www.defaults-write.com/
 #         http://krypted.com/mac-os-x/defaults-symbolichotkeys/
 #
 # Howto change defaults:
-# We can use defaults (https://www.manpagez.com/man/1/defaults/) 
+# We can use defaults (https://www.manpagez.com/man/1/defaults/)
 # or plutil (https://www.manpagez.com/man/1/plutil/)
 # or PlistBuddy (https://www.manpagez.com/man/8/PlistBuddy/)
 #
@@ -20,7 +21,7 @@
 #  Doing this creates two files called 'defaults_{timestamp}.txt', before and after changes.
 #  Diff those two files
 #  $ diff defaults_XX defaults_YY
-#  with this knowledge you can then open up the latest file in an editor, 
+#  with this knowledge you can then open up the latest file in an editor,
 #  search for the bit that changed and try and work out the command to change it.
 
 # Abort if not Macos.
@@ -289,8 +290,17 @@ echo "  ✔"
 echo -n "Remove the auto-hiding Dock delay"
 defaults write com.apple.dock autohide-delay -float 0
 echo "  ✔"
+
 echo -n "Remove the animation when hiding/showing the Dock"
 defaults write com.apple.dock autohide-time-modifier -float 0
+echo "  ✔"
+#
+echo -n "Set the icon size of Dock items to 39 pixels"
+defaults write com.apple.dock tilesize -int 39
+echo "  ✔"
+
+echo -n "Position the Dock to the left"
+defaults write com.apple.dock "orientation" -string "left"
 echo "  ✔"
 
 echo -n "Automatically hide and show the Dock"
