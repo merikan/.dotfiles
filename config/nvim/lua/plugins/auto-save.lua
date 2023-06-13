@@ -1,5 +1,6 @@
 -- auto save changes
 -- https://github.com/akinsho/Pocco81/auto-save.nvim
+if true then return {} end
 return {
   "Pocco81/auto-save.nvim",
   event = "VeryLazy",

@@ -26,5 +26,7 @@
 -- require "user.core.colorscheme"     -- set color scheme
 -- bootstrap lazy.nvim, LazyVim and your plugins
 
+-- My config now uses the amazing LazyVim as boilerplate, because I'm a lazy developer ;-) 
+-- https://www.lazyvim.org/
 require("config.globals") -- load global functions
 require("config.lazy")    -- load lazyVim, because I'm lazy

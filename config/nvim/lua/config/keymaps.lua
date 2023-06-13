@@ -1,10 +1,10 @@
 -- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set by LazyVim: 
--- see https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
+-- Default keymaps that are always set by LazyVim:
+-- see (1) https://www.lazyvim.org/keymaps (2) https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 
 local Util = require("lazyvim.util")
 
--- My additional keymaps 
+-- My additional keymaps
 
 -- make Y behave like C and D
 keymap('n', 'Y', 'y$')
