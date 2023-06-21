@@ -24,7 +24,6 @@ return {
     --   indent = { padding = 0, indent_size = 1 },
     -- },
     commands = {
-      system_open = function(state) require("astronvim.utils").system_open(state.tree:get_node():get_id()) end,
       parent_or_close = function(state)
         local node = state.tree:get_node()
         if (node.type == "directory" or node:has_children()) and node:is_expanded() then

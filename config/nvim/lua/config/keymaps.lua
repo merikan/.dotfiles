@@ -54,4 +54,5 @@ keymap('v', '<A-S-j>', ':m \'>+1<CR>gv=gv')
 keymap('v', '<A-S-k>', ':m \'<-2<CR>gv=gv')
 
 -- gitui
-keymap("n", "<leader>gu", function() Util.float_term({ "gitui" }, { cwd = Util.get_root(), esc_esc = false }) end, { desc = "Gitui (root dir)" })
+local gitui = function() Util.float_term(nil, { cwd = Util.get_root() }) end
+keymap("n", "<leader>gu", gitui, { desc = "Gitui (root dir)" })
