@@ -176,6 +176,7 @@ brew "zsh"                                          # shell
 # Note: Casks with version 'latest' will not be updated due to no checksum change
 cask "adium"                                        # instant messaging
 cask "alacritty"                                    # the GPU enhanced terminal emulator
+cask "alt-tab"                                      # awesome keyboard window switcher for Mac
 cask "alfred"                                       # a must have for boost productivity
 cask "android-studio"                               # android IDE
 cask "android-file-transfer"                        # transfer files from Android device
@@ -227,7 +228,6 @@ cask "love"                                         # LÖVE - make 2D games in L
 cask "markright"                                    # a markdown editor
 cask "merikan/casks/maconomy"                       # nativefied maconomy
 cask "meld"                                         # visual diff and merge tool
-cask "alt-tab"                                      # awesome keyboard window switcher for Mac
 cask "messenger"                                    # facebook messenger
 cask "minishift"                                    # openshift mini
 cask "moeditor"                                     # all-purpose markdown editor
@@ -238,6 +238,7 @@ cask "paintbrush"                                   # clean and simple paint pro
 cask "pencil"                                       # open-source GUI prototyping tool
 cask "phoenix-slides"                               # image viewer
 cask "postman"                                      # nice rest client
+cask "raycast"                                      # supercharged productivity
 cask "rancher"                                      # OSS alternative to Docker Desktop
 cask "responsively"                                 # modified web browser for responsive web development
 cask "robo-3t"                                      # free lightweight GUI for MongoDB
