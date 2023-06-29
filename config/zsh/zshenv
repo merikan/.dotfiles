@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 #
 # Defines environment variables.
-# This file is sourced by all instances of Zsh (interactive, non-interactive, login and non-login ), 
+# This file is sourced by all instances of Zsh (interactive, non-interactive, login and non-login ),
 # and thus, it should be kept as small as possible and should only define environment variables.
 
 #echo "Running .zshenv"
@@ -48,7 +48,7 @@ export EDITOR='nvim'
 export VISUAL='nvim'
 export PAGER='less'
 
-# file names to ignore 
+# file names to ignore
 zstyle ':completion:*:*files' ignored-patterns '.DS_Store'
 # Typing EOF (CTRL+D) will not exit interactive sessions
 setopt ignoreeof
@@ -56,3 +56,5 @@ setopt ignoreeof
 # define Zim location
 export ZIM_HOME=${HOME}/.local/zim
 
+# teaaldeer and XDG https://github.com/dbrgn/tealdeer/issues/311
+export TEALDEER_CONFIG_DIR="${XDG_CONFIG_HOME}/tealdeer"

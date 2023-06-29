@@ -1,0 +1,13 @@
+# tealdeer doesn't support XDG_* dirs on Macos https://github.com/dbrgn/tealdeer/issues/311
+# see export TEALDEER_CONFIG_DIR
+[directories]
+
+# tealdeer does not resolve envvars, XDG_* or tilde, in config <sigh>
+# custom_pages_dir = "$XDG_CONFIG_HOME/tealdeer/tldr-pages"
+# cache_dir = "$XDG_CACHE_HOME/tealdeer"
+cache_dir = "/Users/peter/.cache/tealdeer"
+custom_pages_dir = "/Users/peter/.config/tealdeer/tldr-pages"
+
+[updates]
+auto_update = true
+auto_update_interval_hours = 2

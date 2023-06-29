@@ -118,6 +118,10 @@
     # spaceship-prompt
     ~/.config/spaceship/spaceship.zsh: config/spaceship-prompt/spaceship-promptrc
     ~/.config/spaceship/sections: config/spaceship-prompt/sections
+    # tealdeer
+    ~/.config/tealdeer:
+      path: config/tealdeer/*
+      glob: true
     # testcontainers
     ~/.testcontainers.properties: config/testcontainers/testcontainers.properties
     # tmux
