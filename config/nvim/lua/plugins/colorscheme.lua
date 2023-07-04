@@ -1,7 +1,7 @@
 return {
   -- add schemes
-  -- { "doums/darcula", event = "VeryLazy" },
-  { "aaronkollasch/darcula", event = "VeryLazy" },
+  { "doums/darcula", event = "VeryLazy" },
+  -- { "aaronkollasch/darcula", event = "VeryLazy" },
   { "RRethy/nvim-base16", event = "VeryLazy" },
   { "gruvbox-community/gruvbox", event = "VeryLazy" },
   { "folke/tokyonight.nvim", event = "VeryLazy" },

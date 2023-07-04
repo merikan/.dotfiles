@@ -52,7 +52,6 @@ return {
         ["[b"] = "prev_source",
         ["]b"] = "next_source",
         o = "open",
-        O = "system_open",
         h = "parent_or_close",
         l = "child_or_open",
       },
