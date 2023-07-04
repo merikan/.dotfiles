@@ -7,10 +7,10 @@ keybinds {
     normal clear-defaults=true {
       // add back some bindings
       bind "Ctrl a" { SwitchToMode "Tmux"; }
-      bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
-      bind "Alt j" "Alt Down" { MoveFocus "Down"; }
-      bind "Alt k" "Alt Up" { MoveFocus "Up"; }
-      bind "Alt l" "Alt Right" { MoveFocusOrTab "Right"; }
+      bind "Alt h" { MoveFocusOrTab "Left"; }
+      bind "Alt j" { MoveFocus "Down"; }
+      bind "Alt k" { MoveFocus "Up"; }
+      bind "Alt l" { MoveFocusOrTab "Right"; }
     }
     tmux clear-defaults=true {
         // add my preferred tmux bindings
@@ -24,10 +24,10 @@ keybinds {
         bind "," { SwitchToMode "RenameTab"; }
         bind "H" "p" { GoToPreviousTab; }
         bind "L" "n" "Tab" { GoToNextTab; }
-        bind "h"  "Left" { MoveFocus "Left"; }
-        bind "j" "Down" { MoveFocus "Down"; }
-        bind "k"  "Up" { MoveFocus "Up"; }
-        bind "l" "Right" { MoveFocus "Right"; }
+        bind "h" { MoveFocus "Left"; }
+        bind "j" { MoveFocus "Down"; }
+        bind "k" { MoveFocus "Up"; }
+        bind "l" { MoveFocus "Right"; }
         bind "o" { FocusNextPane; }
         bind "d" { Detach; }
         bind "Space" { NextSwapLayout; }

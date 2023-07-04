@@ -1,3 +1,4 @@
+// $ zellij setup --dump-config > ~/.config/zellij/config-default.kdl
 // If you'd like to override the default keybindings completely, be sure to change "keybinds" to "keybinds clear-defaults=true"
 keybinds {
     normal {
@@ -200,6 +201,10 @@ plugins {
 //
 // default_shell "fish"
 
+// Choose the path to override cwd that zellij will use for opening new panes
+//
+// default_cwd ""
+
 // Toggle between having pane frames around the panes
 // Options:
 //   - true (default)
@@ -309,3 +314,4 @@ plugins {
 // The folder in which Zellij will look for themes
 //
 // theme_dir "/path/to/my/theme_dir"
+
