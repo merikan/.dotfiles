@@ -10,13 +10,13 @@ window:
 # Font configuration
 font:
   normal:
-    family: FiraCode Nerd Font
+    family: "JetBrainsMono Nerd Font"
     style: Regular
   bold:
-    family: FiraCode Nerd Font
+    family: "JetBrainsMono Nerd Font"
     style: Bold
   italic:
-    family: FiraCode Nerd Font
+    family: "JetBrainsMono Nerd Font"
     style: Italic
   size: 14
 
