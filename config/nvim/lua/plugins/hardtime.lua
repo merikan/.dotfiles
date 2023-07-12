@@ -3,7 +3,7 @@
 return {
   "m4xshen/hardtime.nvim",
   opts = {
-    disabled_filetypes = {"neo-tree"}
+    disabled_filetypes = {"neo-tree", "lazy"}
   }
 
 }
