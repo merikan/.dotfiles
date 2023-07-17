@@ -4,6 +4,9 @@ return {
   "neovim/nvim-lspconfig",
   opts = function(_, opts)
     -- when autosave, turn off autoformat
-    opts.autoformat = false
+    local autosave = prequire("plugins.auto-save")
+    if autosave and autosave.enabled then
+      opts.autoformat = false
+    end
   end,
 }
