@@ -12,10 +12,10 @@ keymap("n", "Y", "y$", { desc = "Y like C and D" })
 -- paste without yank
 keymap("v", "p", '"_dP', { desc = "paste without yank" })
 -- delete without yanking
-keymap("n,x", "<leader>d", '"_d', { desc = "delete without yank" })
+keymap({ "n", "x" }, "<leader>d", '"_d', { desc = "delete without yank" })
 -- delete char without yanking
-keymap("n,v", "x", '"_x')
-keymap("n,v", "X", '"_X')
+keymap({ "n", "v" }, "x", '"_x', { desc = "delete char without yank" })
+keymap({ "n", "v" }, "X", '"_X', { desc = "delete char without yank" })
 -- reselect pasted text
 keymap("n", "gp", "[v`]", { desc = "reselect pasted text" })
 
@@ -47,8 +47,34 @@ keymap("i", "<A-S-k>", "<Esc>:m .-2<CR>==gi", { desc = "move line(s)" })
 keymap("v", "<A-S-j>", ":m '>+1<CR>gv=gv", { desc = "move line(s)" })
 keymap("v", "<A-S-k>", ":m '<-2<CR>gv=gv", { desc = "move line(s)" })
 
+
+--------------------------------------------------------------------------------
+-- Plugins
+--------------------------------------------------------------------------------
+-- tmux-navigator
+keymap("n", "<C-h>", ":NvimTmuxNavigateLeft<CR>", { desc = "Go to left window (tmux-aware)", remap = true })
+keymap("n", "<C-j>", ":NvimTmuxNavigateDown<CR>", { desc = "Go to lower window (tmux-aware)", remap = true })
+keymap("n", "<C-k>", ":NvimTmuxNavigateUp<CR>", { desc = "Go to upper window (tmux-aware)", remap = true })
+keymap("n", "<C-l>", ":NvimTmuxNavigateRight<CR>", { desc = "Go to right window (tmux-aware)", remap = true })
+
+--------------------------------------------------------------------------------
+-- TUI applications
+--------------------------------------------------------------------------------
 -- gitui
-local gitui = function()
-  Util.float_term(nil, { cwd = Util.get_root() })
-end
-keymap("n", "<leader>gu", gitui, { desc = "Gitui (root dir)" })
+keymap("n", "<leader>gu", function() Util.float_term({ "gitui" }, { cwd = Util.get_root(), esc_esc = false, ctrl_hjkl = false }) end, { desc = "Gitui" })
+
+-- ====================================================
+--  map     : root of all recursive mappings
+--  noremap : no recursive map
+--  {m}{nore}map
+--
+--  Mode letters:
+--    n: normal only
+--    v: visual and select
+--    o: operator-pending
+--    x: visual only
+--    s: select only
+--    i: insert
+--    c: command-line
+--    t: terminal window
+--    l: insert, command-line, regexp-search (and others. Collectively called "Lang-Arg" pseudo-mode)
