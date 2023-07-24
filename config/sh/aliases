@@ -2,7 +2,7 @@
 #
 # My list of aliases and they are shell agnostic
 
-function has() {  # has command?
+has() {  # has command?
    command -v $1 >/dev/null 2>&1 && return 0 || return 1
 }
 
@@ -20,25 +20,6 @@ alias .......='cd ../../../../../../'
 alias ........='cd ../../../../../../../'
 alias .........='cd ../../../../../../../../'
 
-# Poor man's fasd
-if ! command -v fasd2 >/dev/null 2>&1; then # only load when fasd isn't available
-  # I got the following from, and mod'd it: http://www.macosxhints.com/article.php?story=20020716005123797
-  #    The following aliases (save & show) are for saving frequently used directories
-  #    You can save a directory using an abbreviation of your choosing. Eg. save ms
-  #    You can subsequently move to one of the saved directories by using cd with
-  #    the abbreviation you chose. Eg. cd ms
-  # set the cdablevars option so that no '$' is required when using this facility
-  # bash:shopt -s cdable_vars, zsh:setopt cdablevars
-
-  [ ! -f ~/.dirs ] && touch ~/.dirs   # if doesn't exist, create it
-  alias show='cat ~/.dirs'
-  alias save='__save_'
-  __save_ (){
-          command sed "/!$/d" ~/.dirs > ~/.dirs1; mv ~/.dirs1 ~/.dirs; echo "$@"=\"`pwd`\" >> ~/.dirs; source ~/.dirs ;
-  }
-  source ~/.dirs  # Initialization for the above 'save' facility: source the .dirs file
-fi
-
 # ----------------
 # sudo and alias. If the last character of the alias value is a blank,
 # then the next command word following the alias is also checked for alias expansion.
@@ -54,8 +35,8 @@ alias cp='cp -i'
 #alias chgrp='chgrp --preserve-root'
 
 # Alias's to modified commands
-# $ \vi        # ignore aliases named "vi"
-# $ "vi"       # ignore aliases named "vi"
+# $ \vi        # ignore alias named "vi"
+# $ "vi"       # ignore alias named "vi"
 # $ command vi # ignore functions and aliases
 alias vi='vim'
 alias grep='grep --color=auto'   # Highlight matches
@@ -85,8 +66,10 @@ if ls --color > /dev/null 2>&1; then
 else
 	colorflag="-G"      # OS X `ls`
 fi
+# shellcheck disable=SC2139
 alias ls="ls -aF ${colorflag}"    # show hidden and type suffix
 alias ll='ls -la'               # show hidden and sort by modified
+# shellcheck disable=SC2139
 alias l.="ls -dl ${colorflag} .*" # show only hidden files
 alias lx='ls -lXB'                # sort by extension
 alias lk='ls -lSr'                # sort by size
@@ -101,6 +84,7 @@ alias g='grep -i'  # Case insensitive grep
 alias f='find . -iname'
 alias m='more'
 alias t='task'
+# shellcheck disable=SC2139
 alias tt="task --taskfile $XDG_CONFIG_HOME/go-task/Taskfile.yaml"
 alias df='df -h'
 alias hist='history | grep $1' #requires an argument
@@ -138,7 +122,7 @@ alias kpf='kubectl port-forward '
 alias kz='kustomize'
 # skaffold
 alias sk=skaffold
-mk='minikube'
+alias mk='minikube'
 alias zl="zellij"
 alias zs="zellij -s"
 
@@ -236,14 +220,14 @@ alias matrix='LC_ALL=C tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS co
 alias play-youtube='__play-youtube_() { youtube-dl -q -o- "${1}" | mplayer -cache 8192 -; }; __play-youtube_'
 
 # shortcuts to be expanded
-[ -n "$ZSH_VERSION" ] && { global='-g' }
+[ -n "$ZSH_VERSION" ] && { global='-g'; }
 alias ${global} L='| less '                 # less
 alias ${global} M='| more '                 # more
 alias ${global} C='| wc -l '                # count number of lines
 alias ${global} H='| head '                 # head
 alias ${global} T='| tail '                 # tail
 alias ${global} G='| grep '                 # grep
-alias ${glabal} X='| xargs '                # xargs
+alias ${global} X='| xargs '                # xargs
 alias ${global} TEE='| tee >( grep 'filter' > filter.log ) output.log'  # tee with filter
 alias ${global} LL='2>&1 | less '           # pipe stderr and stdout to less
 alias ${global} NE='2> /dev/null'           # stderr to devnull
