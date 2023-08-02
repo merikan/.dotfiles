@@ -32,6 +32,12 @@
   changed = yellow
   untracked = red
 
+[fetch]
+	prune = true
+
+[pull]
+	ff = only
+
 [push]
 	default = simple
 	autoSetupRemote = true
@@ -224,27 +230,10 @@
   unstage = reset HEAD
   # view the current changes not yet in the staging area.
   unstaged = diff
-  # Update branch (with rebase)
-  up = !git pull --rebase $@
   # update submodules
   ups = !git submodule update --init --recursive
   # update submodules from remote
   upsr = !git submodule update --init --recursive --remote
-  # Update branch with rebase and update submodules
-  upa = !git up && git ups
-  # Update recursively (deep)
-  upd = "!f() { \
-                if [ git rev-parse --git-dir > /dev/null 2>&1 ]; then\
-                  git upa;\
-                else\
-                   echo "$(pwd) is not a git repository";\
-                   read -p \"Do you want to do a deep update? (Y/n) \" choice;\
-                   choice=${choice:-Y};\
-                   if [[ \"$choice\" =~ ^([Yy])$ ]]; then \
-                     find . -name '.git' -exec sh -c '([ -e \"$(git rev-parse --show-superproject-working-tree 2>/dev/null)\" ] || echo \">>> Updating `dirname '{}'`\" && cd `dirname '{}'` && git upa)' ';';\
-                   fi;\
-                fi;\
-              }; f"
   # undo last commit and unstage them
   uncommit = reset HEAD~1
   uc = uncommit
@@ -263,8 +252,6 @@
   # Inspect history in various ways
   news = log -p HEAD@{1}..HEAD@{0}
   sl = shortlog
-  ll = !git l
-  lo = !git l
   # show detailed commit log
   ld = log --graph --decorate --stat --date=iso --abbrev-commit
   ldd = log --pretty=format:"%C(yellow)%h%C(green)%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
@@ -272,6 +259,7 @@
   lg = log --graph --abbrev-commit --date=relative --all --pretty=format:%'C(yellow)%h%Creset -%C(green)%d%Creset %s %C(blue)(%ar) %C(bold blue)<%an>%Creset'
   # log all branches (verbose)
   lb = log --graph --all --decorate --stat --date=iso --abbrev-commit
+  ll = !git l -30
   l1 = l -10
   l2 = l -20
   l3 = l -30
@@ -305,5 +293,3 @@
 
 [ghq]
 	root = ~/src
-[fetch]
-	prune = true
