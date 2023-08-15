@@ -289,3 +289,5 @@
 
 [ghq]
 	root = ~/src
+[branch]
+	sort = -committerdate
