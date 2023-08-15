@@ -129,12 +129,8 @@
   # create a backup of the branch BAK_mybranch
   backup = !git branch $(git branch | grep '*' | sed -e 's/* /BAK_/')
   # branch
-  br = branch -v
   # list and sort branches by date
-  brs = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
-  # hur kan detta fungera, verkar som brs2 finns någon annanstans, eller??? Testade att renama och den fortsatte att fungera!!!
-  brs2 = "! f() { for k in $(git branch $@ | sed 's/^..//; s/ .*//'); do  echo "$(git log -1 --pretty='%Cgreen%ci %Cblue(%cr)%Creset ' $k) $k" ;  done | sort -r; }; f"
-  brs3 = "! f() { for k in $(git branch $@ | sed 's/^..//; s/ .*//'); do  echo "$(git log -1 --pretty='%Cgreen%ci %Cblue(%cr)%Creset ' $k) $k" ;  done | sort -r | column -t; }; f"
+  brs = "!git branch --format='%(committerdate:iso8601) %(refname:short) (%(committerdate:relative))' --sort=-committerdate"
   # commit
   ci = commit
   # commit --amend
