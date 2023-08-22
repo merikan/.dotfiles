@@ -186,7 +186,6 @@ cask "atom"                                         # yet another editor
 cask "backuploupe"                                  # browse your timemachine backups
 cask "balenaetcher"                                 # Burn images to SD cards & USB drives, safely and easily.
 cask "bartender"                                    # organize your menu bar icons
-cask "bitbar"                                       # put the output from any script or program in your Mac OS X Menu Bar
 cask "bitwarden"                                    # open source password management
 cask "brave-browser"                                # privacy focused, performance oriented browser
 cask "calibre"                                      # e-book reader and library management application
@@ -270,6 +269,7 @@ cask "vlc"                                          # media player
 cask "vscodium"                                     # open source version of VSCode
 cask "wavebox"                                      # desktop app for web (gmail)
 cask "whalebird"                                    # mastodon client
+cask "xbar"                                         # put the output from any script or program in your Mac OS X Menu Bar
 cask "xquartz"                                      # X windows on Mac
 cask "yed"                                          # graph editor
 cask "zoom"                                         # video communications
