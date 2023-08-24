@@ -168,7 +168,7 @@
               }; f"
 
   in = !git incoming
-  ms = !git merge-squash
+  ms = !git merge --squash
   # outgoing changes > param: remote (optional)
   outgoing = "!f() { \
                 REMOTE="@{u}"; \
@@ -243,8 +243,6 @@
   deleted = !git log --diff-filter=D --summary | grep
   # view content of last commit
   log-last-commit = log --name-status HEAD^..HEAD
-  # merge branch with squash
-  merge-squash  =  merge --squash
   # Inspect history in various ways
   news = log -p HEAD@{1}..HEAD@{0}
   sl = shortlog
