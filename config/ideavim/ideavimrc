@@ -1,38 +1,53 @@
-" cross-plattform clippboard https://stackoverflow.com/a/30691754/2380457
+" vim bindings in IDEA Intellij
+" https://github.com/JetBrains/ideavim#executing-ide-actions
+
+
+" cross-platform clipboard
 set clipboard^=unnamed,unnamedplus
 " set lime number
 set number relativenumber
 " idea
-command Restart action RestartIde
-command ReloadVim action IdeaVim.ReloadVimRc.reload
+command! Restart action RestartIde
+command! ReloadVim action IdeaVim.ReloadVimRc.reload
 
 " search options
 set hlsearch incsearch ignorecase smartcase
 
 " set command menu
-set wildmenu
+"set wildmenu
 let mapleader=" "
+imap hh <Esc>
+cmap hh <Esc>
+" zoom editor
+nmap <leader>Z <Action>(HideAllWindows)
+" duplicate
+nmap <M-d> <Action>(EditorDuplicate)
+vmap <M-d> <Action>(EditorDuplicate)
+" jump tabs
+nmap H <Action>(PreviousTab)
+nmap L <Action>(NextTab)
+nmap <leader>qq <Action>(CloseAllEditors)
+" coding"
+nmap gD <Action>(GotoDeclaration)
+nmap gy <Action>(GotoTypeDeclaration)
+nmap gI <Action>(GotoImplementation)
+nmap <Leader>ca <Action>(GotoAction)
+nmap <leader>cf <Action>(ReformatCode)
+nmap <leader>F <Action>(ReformatCode)
+nmap <Leader>cr <Action>(RenameElement)
+nmap [e <Action>(GotoPreviousError)
+nmap ]e <Action>(GotoNextError)
+nmap <leader>fr <Action>(RecentFiles)
+" test
+nmap <Leader>tr <Action>(RunClass)
+nmap <Leader>tg :action GotoTest<CR>
+
+
 """"""""""""""""""""""
 " NerdTree configuration
 " https://github.com/JetBrains/ideavim/wiki/NERDTree-support
-" set NERDTree
-" let g:NERDTreeMapActivateNode='l'
-" let g:NERDTreeMapCloseDir='h'
-" nnoremap <leader>e :NERDTreeToggle<CR>
-
-" hh
-:imap hh <Esc>
-:cmap hh <Esc>
-" explorer
 set NERDTree
-nnoremap <space>er :NERDTreeFind<CR>
-nnoremap <space>ee :NERDTree<CR>
-
-nnoremap <Leader>k  :action FindInPath<CR>
-nnoremap <Leader>nf :action SelectInProjectView<CR>
-nnoremap <Leader>gr :action RenameElement<CR>
-nnoremap <Leader>gt :action GotoTest<CR>
-nnoremap <Leader>lf :action ReformatCode<CR>
+nnoremap <Leader>e :NERDTreeToggle<CR>
 let g:NERDTreeMapActivateNode = 'l'
 let g:NERDTreeMapPreview = 'E'
 let g:NERDTreeMapOpenInTab = 't'
@@ -54,4 +69,5 @@ let g:NERDTreeMapRefresh = 'R'
 let g:NERDTreeMapRefreshRoot = 'gR'
 let g:NERDTreeMapMenu = '<Tab>'
 let g:NERDTreeMapQuit = 'q'
-let g:NERDTreeMapToggleZoom = '<SP>m'
+"let g:NERDTreeMapToggleZoom = '<SP>m'
+

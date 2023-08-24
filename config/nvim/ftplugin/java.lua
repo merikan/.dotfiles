@@ -3,7 +3,7 @@
 
 local jdtls = prequire "jdtls"
 if not jdtls then
-  vim.notify "JDTLS not found, install with `:MasonInstall jdtls`"
+  vim.notify "nvim-jdtls not found, install with your package manager"
   return
 end
 

@@ -57,7 +57,7 @@ if vim.g.neovide then
 end
 -- keep current line centered when jumping
 keymap('n', 'n', 'nzzzv') -- next
-keymap('n', '<C-d>', '<C-d>zz') -- halgpage down
+keymap('n', '<C-d>', '<C-d>zz') -- halfpage down
 -- keep cursor in position when joining
 keymap('n', 'J', 'mzJ`z')
 keymap('v', 'J', 'mzJ`z')
