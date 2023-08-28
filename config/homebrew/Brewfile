@@ -256,6 +256,7 @@ cask "spotify"                                      # music for everyone
 cask "merikan/casks/sr"                             # nativefied sveriges radio
 cask "sublime-text2"                                # text editor
 cask "thunderbird"                                  # free email application from Mozilla
+cask "tomatobar"                                    # another pomodoro app
 cask "tunnelblick"                                  # free, open source graphic user interface for OpenVPN
 cask "vagrant"                                      # vm management
 brew "vagrant-completion"
