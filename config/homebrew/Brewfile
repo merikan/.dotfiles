@@ -11,6 +11,19 @@
 # well received by {noname}. Haven't found any changelog either but heck, it's open source ;-)
 #
 
+def macos?
+  RUBY_PLATFORM =~ /darwin/
+end
+def linux?
+  RUBY_PLATFORM =~ /linux/
+end
+def arch_amd?
+  RUBY_PLATFORM =~ /amd/
+end
+def arch_arm?
+  RUBY_PLATFORM =~ /arm/
+end
+
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"              # fonts
 tap "homebrew/cask-versions"           # alternate versions of Casks
@@ -257,8 +270,12 @@ cask "tomatobar"                                    # another pomodoro app
 cask "tunnelblick"                                  # free, open source graphic user interface for OpenVPN
 cask "vagrant"                                      # vm management
 brew "vagrant-completion"
-cask "virtualbox"                                   # virtualizer for x86 hardware
-cask "virtualbox-extension-pack"
+if arch_amd?
+  cask "virtualbox"                                   # virtualizer for x86 hardware
+end
+if arch_arm?
+  cask "virtualbox-beta"                            # virtualizer for arm hardware
+end
 cask "visual-paradigm-ce"                           # software modelling tool
 cask "visual-studio-code"                           # a great editor
 cask "visualvm"                                     # visual profiling tool for the Java VM
