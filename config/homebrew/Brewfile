@@ -228,7 +228,6 @@ cask "merikan/casks/maconomy"                       # nativefied maconomy
 cask "meld"                                         # visual diff and merge tool
 cask "messenger"                                    # facebook messenger
 cask "minishift"                                    # openshift mini
-cask "moeditor"                                     # all-purpose markdown editor
 cask "obs"                                          # foss for video recording and live streaming
 cask "opera"                                        # browser
 cask "mysqlworkbench"                               # gui tool for mysql
