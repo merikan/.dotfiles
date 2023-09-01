@@ -215,7 +215,7 @@ cask "intellij-idea"                                # awesome java IDE
 cask "iterm2"                                       # Terminal emulator for macOS
 cask "jdiskreport"                                  # analyses your disk drives and shows charts and details tables
 cask "joplin"                                       # a FOSS note taking and to-do application
-cask "karabiner"                                    # keyboard customizer for macOS
+cask "karabiner-elements"                           # keyboard customizer for macOS
 cask "kdiff3"                                       # utility for comparing and merging files and directories
 cask "keepassxc"                                    # a great FOSS Password Manager
 cask "keystore-explorer"                            # open source GUI replacement for the keytool and jarsignerbrewfilbrewfil
