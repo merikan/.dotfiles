@@ -15,7 +15,17 @@ tasks:
     silent: true
 
   
+  # ------------------------------------------------------------------------------- #
+  # Maven commands
+  # ------------------------------------------------------------------------------- #
   mvn:dependency:relocated:
     desc: check for relocated dependencies with 'oga-maven-plugin'
+    dir: '{{.USER_WORKING_DIR}}'
     cmds:
       - cmd: "mvn biz.lermitage.oga:oga-maven-plugin:check --fail-never"
+
+  mvn:effective-pom:
+    desc: print effective pom
+    dir: '{{.USER_WORKING_DIR}}'
+    cmds:
+      - cmd: "mvn help:effective-pom"
