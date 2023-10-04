@@ -6,6 +6,7 @@ local preferred_packages = {
   "beautysh",
   "black",
   "cmake-language-server",
+  "cucumber-language-server",
   "codelldb",
   "css-lsp",
   "dart-debug-adapter",
