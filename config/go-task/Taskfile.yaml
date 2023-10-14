@@ -29,3 +29,9 @@ tasks:
     dir: '{{.USER_WORKING_DIR}}'
     cmds:
       - cmd: "mvn help:effective-pom"
+
+  mvn:build-plan:
+    desc: print lifecycles, phaces and goals  
+    dir: '{{.USER_WORKING_DIR}}'
+    cmds:
+      - cmd: "mvn fr.jcgay.maven.plugins:buildplan-maven-plugin:list"
