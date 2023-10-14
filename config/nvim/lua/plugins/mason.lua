@@ -48,7 +48,6 @@ local preferred_packages = {
   "prettierd",
   "python-lsp-server",
   "rust-analyzer",
-  "rustfmt",
   "selene",
   "shellcheck",
   "shfmt",
@@ -71,5 +70,5 @@ return {
   "williamboman/mason.nvim",
   opts = {
     ensure_installed = preferred_packages,
-  }
+  },
 }
