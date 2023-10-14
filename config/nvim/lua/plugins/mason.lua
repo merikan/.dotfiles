@@ -13,6 +13,7 @@ local preferred_packages = {
   "deno",
   "diagnostic-languageserver",
   "dockerfile-language-server",
+  "drools-lsp",
   "emmet-ls",
   "eslint-lsp",
   "eslint_d",
