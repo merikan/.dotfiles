@@ -229,7 +229,7 @@
   # view the current changes not yet in the staging area.
   unstaged = diff
   # pull abbr.
-  up = pull
+  up = pull --rebase
   # update submodules
   ups = !git submodule update --init --recursive
   # update submodules from remote
