@@ -11,7 +11,7 @@ o.clipboard:prepend { "unnamed", "unnamedplus" } -- use system buffer (cross-pla
 o.fileencoding = "utf-8" -- the encoding written to a file
 o.mouse = "a" -- allow the mouse to be used in neovim
 -- disable LazyVim auto format
-vim.g.autoformat = true
+vim.g.autoformat = false
 
 --------------------------------------------------------------------------------
 -- Display
