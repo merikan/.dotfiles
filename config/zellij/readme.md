@@ -45,26 +45,28 @@ My `Tmux` mode is more like `Normal` mode in `Vim`. My first try in `Zellij` was
 * `Alt l`, `Alt Right` - Focus on `Pane` to the right
 
 ### Tmux mode
+#### default
 * `Ctrl a` - Switch to `Normal` mode
+* `Enter`, `Esc` - Switch to `Normal` mode
 * `?` - Show help text
 * `[` - Switch to `Scroll` mode
 * `]` - Open `Scrollback` buffer in `Vim`
-* `s`, `|`, `\` - Open new `Pane` to the right
+#### Panes
+* `|`, `\`,`s` - Open new `Pane` to the right
 * `-`, `_` - Open new `Pane` below
-* `z` - Toggle `Pane` to full screen
-* `c` - Create a new `Tab`
-* `,` - Rename a `Tab`
-* `Shift h`, `p` - Switch to previous `Tab`
-* `Shift l`, `n` - Switch to next `Tab`
-* `h`, `Left` - Focus on `Pane` to the left
-* `j`, `Down` - Focus on `Pane` below
-* `k`, `Up` - Focus on `Pane` above
-* `l`, `Right` - Focus on `Pane` to the right
-* `o` - Focus on next `Pane`
-* `d` - Detach session
-* `Space` - Swap to next layout
 * `x` - Close current `Pane`
-* `Ctrl q` - Quit current `Session`
+* `z` - Toggle `Pane` to full screen
+* `h` - Focus on `Pane` to the left
+* `j` - Focus on `Pane` below 
+* `k` - Focus on `Pane` above
+* `l` - Focus on `Pane` to the right
+* `o` - Focus on next `Pane`
+#### Tabs
+* `c` - Create a new `Tab`
+* `r` - Rename a `Tab`
+* `X` - Close current `Tab`
+* `Shift h`, `p` - Switch to previous `Tab`
+* `Shift l`, `n`,`Tab` - Switch to next `Tab`
 * `1` - Goto `Tab` #1
 * `2` - Goto `Tab` #2
 * `3` - Goto `Tab` #3
@@ -74,7 +76,12 @@ My `Tmux` mode is more like `Normal` mode in `Vim`. My first try in `Zellij` was
 * `7` - Goto `Tab` #7
 * `8` - Goto `Tab` #8
 * `9` - Goto `Tab` #9
-* `Enter`, `Esc` - Switch to `Normal` mode
+#### Session
+* `d` - Detach session
+* `w` - Open session-manager
+* `Ctrl q` - Quit current `Session`
+#### Other
+* `Space` - Swap to next layout
 * `Ctrl p` - Switch to `Pane` mode
 * `Ctrl t` - Switch to `Tab` mode
 * `Ctrl r` - Switch to `Resize` mode
