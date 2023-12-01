@@ -54,6 +54,7 @@ brew "ctop"                                         # top-like interface for con
 brew "cosign"                                       #
 brew "curl"                                         # curl
 brew "dasel"                                        # query and modify data structures in json/toml/yaml/xml/csv/plain format
+brew "delta"                                        # syntax-highlighting pager for git, diff, and grep output
 brew "dfc"                                          # displays file system space usage using graphs and colors
 brew "diff-pdf"                                     # visually compare two PDF files
 brew "direnv"                                       # load/unload env variables

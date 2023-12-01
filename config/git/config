@@ -11,6 +11,7 @@
 	email = peter@merikan.com
 	signingkey = A93D728B0D0028A71C47EB106F86D20024CE1D22
 [core]
+  pager = delta
 	excludesfile = ~/.config/git/ignore_global
 [color]
   diff = auto
@@ -31,7 +32,6 @@
   added = green
   changed = yellow
   untracked = red
-
 [fetch]
 	prune = true
 
@@ -52,7 +52,8 @@
 [status]
   # make sure status is submodule aware
 	submoduleSummary = true
-
+[interactive]
+    diffFilter = delta --color-only
 [diff]
   # console tool
   tool = icdiff
@@ -60,6 +61,7 @@
   guitool = vscode
   # include submodules when diff
 	submodule = log
+  colorMoved = default
 [difftool]
     prompt = false
 [merge]
@@ -91,7 +93,10 @@
 [mergetool "kdiff3"]
     cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3
     trustExitCode = false
-
+[delta]
+    navigate = true
+    line-numbers = true
+    side-by-side = true
 [alias]
   # Shortened base commands
   a = add
