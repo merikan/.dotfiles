@@ -1,13 +1,8 @@
 -- override/extend lazyvim default config
 
--- a fast and fully programmable dashboard for neovim.
--- https://github.com/goolord/alpha-nvim
--- https://github.com/goolord/alpha-nvim/discussions/16
-
 return {
-  "goolord/alpha-nvim",
+  "nvimdev/dashboard-nvim",
   opts = function(_, opts)
-    local dashboard = opts
     local logo = [[
     ███╗   ███╗███████╗██████╗ ██╗██╗  ██╗ █████╗ ███╗   ██╗
     ████╗ ████║██╔════╝██╔══██╗██║██║ ██╔╝██╔══██╗████╗  ██║
@@ -19,7 +14,10 @@ return {
     Peter Merikan  (https://merikan.com)
     github.com/merikan
     ]]
-    dashboard.section.header.val = vim.split(logo, "\n")
+
+    logo = string.rep("\n", 8) .. logo .. "\n\n"
+    opts.config.header = vim.split(logo, "\n")
+
     local footer = [[
         ╔══════════════════════════════════════════════════════════╗
         ║                                                          ║
@@ -28,7 +26,11 @@ return {
         ║                 but simplicity is always rewarded.       ║
         ║                                                          ║
         ╚══════════════════════════════════════════════════════════╝
+
+                powered by LazyVim https://www.lazyvim.org/
     ]]
-    dashboard.section.footer.val = vim.split(footer, "\n")
+    footer = string.rep("\n", 2) .. footer .. "\n\n"
+    local lazy_footer = opts.config.footer()
+    opts.config.footer = vim.tbl_extend('keep', vim.split(footer, "\n"), lazy_footer)
   end,
 }
