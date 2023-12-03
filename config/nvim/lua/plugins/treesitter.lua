@@ -10,6 +10,7 @@ return {
       "bash",
       "dart",
       "html",
+      "java",
       "javascript",
       "json",
       "kdl",
