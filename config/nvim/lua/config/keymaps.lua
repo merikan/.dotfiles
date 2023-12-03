@@ -3,8 +3,20 @@
 -- see (1) https://www.lazyvim.org/keymaps
 --     (2) https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 
-local Util = require("lazyvim.util")
+local lazyvim_util = require("lazyvim.util")
+local set = vim.keymap.set
+local del = vim.keymap.del
+-- Delete LazyVim default bindings for meta information
+del("n", "<leader>l")
+del("n", "<leader>L")
 
+set("n", "<leader>;P", "<cmd>Mason<CR>", { desc = "Package Manager - [Mason]" })
+set("n", "<leader>;p", "<cmd>Lazy<CR>", { desc = "Plugin Manager - [LazyVim]" })
+set("n", "<leader>;e", "<cmd>LazyExtras<CR>", { desc = "Extras Manager - [LazyVim]" })
+set("n", "<leader>;i", "<cmd>LspInfo<CR>", { desc = "Lsp Info" })
+set("n", "<leader>;c", lazyvim_util.news.changelog, { desc = "Changelog [LazyVim]" })
+set("n", "<leader>;r", lazyvim_util.root.info, { desc = "Root Info [LazyVim]" })
+set("n", "<leader>;M", vim.cmd.messages, { desc = "Display messages" })
 -- My additional keymaps
 
 -- make Y behave like C and D
