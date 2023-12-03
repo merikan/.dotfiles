@@ -42,23 +42,22 @@ if vim.g.neovide then
   keymap("v", "<D-v>", "<C-R>+")
 end
 -- keep current line centered when jumping
-keymap("n", "n", "nzzzv") -- next
-keymap("n", "<C-d>", "<C-d>zz") -- halfpage down
+keymap("n", "n", "nzzzv", { desc = "Next search result" })
+keymap("n", "<C-d>", "<C-d>zz", { desc = "Halfpage down" })
+keymap("n", "<C-u>", "<C-u>zz", { desc = "Halfpage up" })
 -- keep cursor in position when joining
-keymap("n", "J", "mzJ`z")
-keymap("v", "J", "mzJ`z")
+keymap({ "n", "v" }, "J", "mzJ`z", { desc = "Join lines" })
 -- duplicate line(s) with Alt+d
-keymap("i", "<A-d>", "<Esc>yypi", { desc = "duplicate line(s)" })
-keymap("n", "<A-d>", "<Esc>yyp", { desc = "duplicate line(s)" })
-keymap("v", "<A-d>", "oYPgv<Esc>", { desc = "duplicate line(s)" })
+keymap("i", "<A-d>", "<Esc>yypi", { desc = "Duplicate line(s)" })
+keymap("n", "<A-d>", "<Esc>yyp", { desc = "Duplicate line(s)" })
+keymap("v", "<A-d>", "oYPgv<Esc>", { desc = "Duplicate line(s)" })
 -- move line(s) with Alt+Shift+jk
-keymap("n", "<A-S-j>", ":m .+1<CR>==", { desc = "move line(s)" })
-keymap("n", "<A-S-k>", ":m .-2<CR>==", { desc = "move line(s)" })
-keymap("i", "<A-S-j>", "<Esc>:m .+1<CR>==gi", { desc = "move line(s)" })
-keymap("i", "<A-S-k>", "<Esc>:m .-2<CR>==gi", { desc = "move line(s)" })
-keymap("v", "<A-S-j>", ":m '>+1<CR>gv=gv", { desc = "move line(s)" })
-keymap("v", "<A-S-k>", ":m '<-2<CR>gv=gv", { desc = "move line(s)" })
-
+keymap("n", "<A-S-j>", ":m .+1<CR>==", { desc = "Move line(s) down" })
+keymap("n", "<A-S-k>", ":m .-2<CR>==", { desc = "Move line(s) up" })
+keymap("i", "<A-S-j>", "<Esc>:m .+1<CR>==gi", { desc = "move line(s) down" })
+keymap("i", "<A-S-k>", "<Esc>:m .-2<CR>==gi", { desc = "move line(s) up" })
+keymap("v", "<A-S-j>", ":m '>+1<CR>gv=gv", { desc = "move line(s) down" })
+keymap("v", "<A-S-k>", ":m '<-2<CR>gv=gv", { desc = "move line(s) up" })
 
 --------------------------------------------------------------------------------
 -- Plugins
@@ -73,7 +72,9 @@ keymap("n", "<C-l>", ":NvimTmuxNavigateRight<CR>", { desc = "Go to right window 
 -- TUI applications
 --------------------------------------------------------------------------------
 -- gitui
-keymap("n", "<leader>gu", function() Util.float_term({ "gitui" }, { cwd = Util.get_root(), esc_esc = false, ctrl_hjkl = false }) end, { desc = "Gitui" })
+keymap("n", "<leader>gu", function()
+  lazyvim_util.float_term({ "gitui" }, { cwd = lazyvim_util.get_root(), esc_esc = false, ctrl_hjkl = false })
+end, { desc = "Gitui" })
 
 -- ====================================================
 --  map     : root of all recursive mappings
