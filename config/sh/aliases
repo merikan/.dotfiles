@@ -223,24 +223,25 @@ alias play-youtube='__play-youtube_() { youtube-dl -q -o- "${1}" | mplayer -cach
 
 # shortcuts to be expanded
 [ -n "$ZSH_VERSION" ] && { global='-g'; }
-alias ${global} L='| less '                 # less
-alias ${global} M='| more '                 # more
-alias ${global} C='| wc -l '                # count number of lines
-alias ${global} H='| head '                 # head
-alias ${global} T='| tail '                 # tail
-alias ${global} G='| grep '                 # grep
-alias ${global} X='| xargs '                # xargs
-alias ${global} TEE='| tee >( grep 'filter' > filter.log ) output.log'  # tee with filter
-alias ${global} LL='2>&1 | less '           # pipe stderr and stdout to less
-alias ${global} NE='2> /dev/null'           # stderr to devnull
-alias ${global} NUL='> /dev/null 2>&1'      # send all output to dev/null
-alias ${global} JQ="| jq -Rrc '. as \$line | fromjson? // \$line'"          #output: json and non-json
-alias ${global} JQO="| jq -R 'fromjson? | .'"                               #output: only json
-alias ${global} JQP="| jq -R -r '. as \$line | try fromjson catch \$line'"  #output: json pretty print and non-json
-alias ${global} JQPP="| tr \"\\n\" \"\n\" | jq -R -r '. as \$line | try fromjson catch \$line'"  #output: json pretty print and non-json
-alias ${global} PF="8080:8080 8081:8081"                            #port-forward
-alias ${global} FORF="for f in ./*; do echo \$f; done"              #loop over files
-alias ${global} FORD="for d in */; do echo \$d; done"               #loop over dirs
-alias ${global} MT!=' -DskipTests'          # skip tests in Maven
-alias ${global} MD=' -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"'  # spring-boot debug properties
+alias "${global}" L='| less '                 # less
+alias "${global}" M='| more '                 # more
+alias "${global}" C='| wc -l '                # count number of lines
+alias "${global}" H='| head '                 # head
+alias "${global}" T='| tail '                 # tail
+alias "${global}" G='| grep '                 # grep
+alias "${global}" X='| xargs '                # xargs
+alias "${global}" V='| vim '                  # vim
+alias "${global}" TEE='| tee >( grep 'filter' > filter.log ) output.log'  # tee with filter
+alias "${global}" LL='2>&1 | less '           # pipe stderr and stdout to less
+alias "${global}" NE='2> /dev/null'           # stderr to devnull
+alias "${global}" NUL='> /dev/null 2>&1'      # send all output to dev/null
+alias "${global}" JQ="| jq -Rrc '. as \$line | fromjson? // \$line'"          #output: json and non-json
+alias "${global}" JQO="| jq -R 'fromjson? | .'"                               #output: only json
+alias "${global}" JQP="| jq -R -r '. as \$line | try fromjson catch \$line'"  #output: json pretty print and non-json
+alias "${global}" JQPP="| tr \"\\n\" \"\n\" | jq -R -r '. as \$line | try fromjson catch \$line'"  #output: json pretty print and non-json
+alias "${global}" PF="8080:8080 8081:8081"                            #port-forward
+alias "${global}" FORF="for f in ./*; do echo \$f; done"              #loop over files
+alias "${global}" FORD="for d in */; do echo \$d; done"               #loop over dirs
+alias "${global}" MT!=' -DskipTests'          # skip tests in Maven
+alias "${global}" MD=' -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"'  # spring-boot debug properties
 
