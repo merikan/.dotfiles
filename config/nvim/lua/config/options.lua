@@ -10,8 +10,8 @@ local o = vim.opt
 o.clipboard:prepend { "unnamed", "unnamedplus" } -- use system buffer (cross-platform)
 o.fileencoding = "utf-8" -- the encoding written to a file
 o.mouse = "a" -- allow the mouse to be used in neovim
--- disable LazyVim auto format
-vim.g.autoformat = false
+o.autoread = true -- automatically reload a file
+vim.g.autoformat = false -- disable LazyVim auto format
 
 --------------------------------------------------------------------------------
 -- Display
