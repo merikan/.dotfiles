@@ -148,19 +148,6 @@ local config = {
   },
 }
 
--- read project java settings if exists and apply to current
--- should be in root dir/.jdtls/config.lua
-local project_jdtls_config = util.path.join(root_dir, ".nvim", "jdtls.lua")
-
-local opts = prequire(project_jdtls_config)
-if opts  then
-  vim.notify("Jag hittade en fil i roten " .. project_jdtls_config)
-  vim.notify(opts)
-   --opts = vim.tbl_deep_extend("force", server_opts, opts)
-else
-  vim.notify("Hittade ingen fil! " .. project_jdtls_config)
-end
-
 
 -- This starts a new client & server,
 -- or attaches to an existing client & server depending on the `root_dir`.
