@@ -22,8 +22,9 @@ My `Tmux` mode is more like `Normal` mode in `Vim`. My first try in `Zellij` was
 - stays in `Tmux` mode, use `Esc` key to exit
 - my preferred key bindings is loaded in `Tmux` mode
   - create pane (vertical/horizontal)
-  - close/rename pane
+  - close pane
   - jump to pane (up/down/left/right)
+  - create/close tab
   - switch tabs (left/right)
   - open scrollback buffer
   - and more
