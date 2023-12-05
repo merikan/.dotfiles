@@ -124,7 +124,9 @@ autoload run-help
 # Enable edit command line
 autoload -U edit-command-line && zle -N edit-command-line
 bindkey '^xe' edit-command-line      # Ctrl+xe to open command line in editor
+bindkey -a '^xe' edit-command-line   # Ctrl+xe to open command line in editor
 bindkey '^x^e' edit-command-line     # Ctrl+x, Ctrl+e to open command line in editor
+bindkey -a '^x^e' edit-command-line  # Ctrl+x, Ctrl+e to open command line in editor
 
 # # vi mode
 # loade via jeffreytse/zsh-vi-mode with sheldon
