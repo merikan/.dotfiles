@@ -34,3 +34,5 @@ github = 'spaceship-prompt/spaceship-flutter'
 github = 'spaceship-prompt/spaceship-prompt'
 #local = "~/src/github.com/merikan/spaceship-prompt"
 
+[plugins.jq-repl]
+github = 'reegnz/jq-zsh-plugin'
