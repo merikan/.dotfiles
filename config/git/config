@@ -97,6 +97,7 @@
     navigate = true
     line-numbers = true
     side-by-side = true
+
 [alias]
   # Shortened base commands
   a = add
@@ -134,6 +135,7 @@
   # create a backup of the branch BAK_mybranch
   backup = !git branch $(git branch | grep '*' | sed -e 's/* /BAK_/')
   # branch
+  br = branch
   # list and sort branches by date
   brs = "!git branch --format='%(committerdate:iso8601) %(refname:short) (%(committerdate:relative))' --sort=-committerdate"
   # commit
