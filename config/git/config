@@ -152,8 +152,8 @@
   cob = checkout -b
   # diff
   di = diff
-  # diff --cached
-  dic = diff --cached
+  # diff staged --cached
+  dis = diff --cached
   # diff just the differences between lines.
   diw = diff --word-diff
   # use icdiff if installed
