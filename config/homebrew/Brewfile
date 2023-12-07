@@ -54,7 +54,7 @@ brew "ctop"                                         # top-like interface for con
 brew "cosign"                                       #
 brew "curl"                                         # curl
 brew "dasel"                                        # query and modify data structures in json/toml/yaml/xml/csv/plain format
-brew "delta"                                        # syntax-highlighting pager for git, diff, and grep output
+brew "git-delta"                                    # syntax-highlighting pager for git, diff, and grep output
 brew "joshuto"                                      # ranger-like terminal file manager written in Rust
 brew "wvanlint/twf/twf"                             # tree view file explorer
 brew "dfc"                                          # displays file system space usage using graphs and colors
