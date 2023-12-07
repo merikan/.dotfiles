@@ -27,6 +27,7 @@ local preferred_packages = {
     "lemminx",
     "lua-language-server",
     "marksman",
+    "nil",
     "python-lsp-server",
     "rust-analyzer",
     "sqlls",
