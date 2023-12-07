@@ -221,6 +221,8 @@ alias matrix='LC_ALL=C tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS co
 
 #play youtube videos
 alias play-youtube='__play-youtube_() { youtube-dl -q -o- "${1}" | mplayer -cache 8192 -; }; __play-youtube_'
+# check the weather
+alias weather='__weather(){ curl -4 wttr.in/"${1:=gothenburg}"; }; __weather'
 
 # shortcuts to be expanded
 [ -n "$ZSH_VERSION" ] && { global='-g'; }
