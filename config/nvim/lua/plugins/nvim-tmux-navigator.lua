@@ -4,6 +4,7 @@
 return {
   "alexghergh/nvim-tmux-navigation",
   lazy = false,
+  enabled = function() return vim.env.TMUX ~= nil end,
   config = function()
     require("nvim-tmux-navigation").setup {
       disable_when_zoomed = true, -- defaults to false
