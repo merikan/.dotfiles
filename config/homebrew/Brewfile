@@ -126,7 +126,6 @@ brew "maven-completion"
 brew "mas"                                          # Mac App Store command-line interface
 brew "midnight-commander"                           # visual file manager
 brew "minikube"                                     # kubernetes mini
-brew "mitmproxy"                                    # a free and open source interactive HTTPS proxy
 brew "mplayer"                                      # UNIX movie player
 brew "mysql-client"                                 # mysql client
 brew "ncdu"                                         # a disk usage analyzer with an ncurses interface
@@ -244,6 +243,7 @@ cask "merikan/casks/maconomy"                       # nativefied maconomy
 cask "meld"                                         # visual diff and merge tool
 cask "messenger"                                    # facebook messenger
 cask "minishift"                                    # openshift mini
+cask "mitmproxy"                                    # a free and open source interactive HTTPS proxy
 cask "obs"                                          # foss for video recording and live streaming
 cask "opera"                                        # browser
 cask "mysqlworkbench"                               # gui tool for mysql
