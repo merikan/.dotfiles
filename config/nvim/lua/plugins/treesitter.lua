@@ -3,6 +3,12 @@
 
 -- add more treesitter parsers
 -- https://github.com/nvim-treesitter/nvim-treesitter#supported-languages
+vim.filetype.add {
+  extension = {
+    templ = "templ",
+  },
+}
+
 return {
   "nvim-treesitter/nvim-treesitter",
   opts = {
@@ -24,6 +30,7 @@ return {
       "regex",
       "tsx",
       "typescript",
+      "templ",
       "vim",
       "vimdoc",
       "yaml",

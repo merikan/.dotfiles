@@ -34,6 +34,7 @@ local preferred_packages = {
     "svelte-language-server",
     "tailwindcss-language-server",
     "taplo",
+    "templ",
     "terraform-ls",
     "typescript-language-server",
     "vue-language-server",
