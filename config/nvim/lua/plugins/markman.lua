@@ -1,4 +1,4 @@
---  [markdown markmap]
+--  Visualize your Markdown as mindmaps with markmap
 --  https://github.com/Zeioth/markmap.nvim
 return {
   "Zeioth/markmap.nvim",

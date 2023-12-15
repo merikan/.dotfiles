@@ -1,3 +1,6 @@
+-- Visual git plugin
+-- https://github.com/tanvirtin/vgit.nvim
+-- command VGit <tab>
 return {
   'tanvirtin/vgit.nvim',
   requires = {
