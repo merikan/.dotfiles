@@ -38,6 +38,7 @@ o.number = true -- set numbered lines
 o.numberwidth = 4 -- minimal number of columns to use for the line number {default 4}
 o.relativenumber = true -- use relative number
 o.cursorline = true -- highlight the current line
+o.scrolloff = 0 -- Lines of context
 
 o.expandtab = true -- convert tabs to spaces
 o.shiftwidth = 2 -- the number of spaces inserted for each indentation
