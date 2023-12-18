@@ -50,7 +50,7 @@ keymap({ "n", "v" }, "J", "mzJ`z", { desc = "Join lines" })
 -- duplicate line(s) with Alt+d
 keymap("i", "<A-d>", "<Esc>yypi", { desc = "Duplicate line(s)" })
 keymap("n", "<A-d>", "<Esc>yyp", { desc = "Duplicate line(s)" })
-keymap("v", "<A-d>", "oYPgv<Esc>", { desc = "Duplicate line(s)" })
+keymap("v", "<A-d>", "oYPgv<Esc>gv=gv", { desc = "Duplicate line(s)" })
 -- move line(s) with Alt+Shift+jk
 keymap("n", "<A-S-j>", ":m .+1<CR>==", { desc = "Move line(s) down" })
 keymap("n", "<A-S-k>", ":m .-2<CR>==", { desc = "Move line(s) up" })
