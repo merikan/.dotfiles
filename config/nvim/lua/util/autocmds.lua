@@ -3,10 +3,6 @@
 -- Add any additional autocmds here
 
 
--- set global
-_G.prequire = require "config.utils".prequire
-
-
 -- autocommand to keep a history of lockfiles
 -- https://github.com/folke/lazy.nvim/issues/234
 vim.api.nvim_create_autocmd("User", {
