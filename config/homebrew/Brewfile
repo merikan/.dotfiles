@@ -251,6 +251,7 @@ cask "paintbrush"                                   # clean and simple paint pro
 cask "pencil"                                       # open-source GUI prototyping tool
 cask "phoenix-slides"                               # image viewer
 cask "postman"                                      # nice rest client
+cask "qownnotes"                                    # note taking app
 cask "raycast"                                      # supercharged productivity
 cask "rancher"                                      # OSS alternative to Docker Desktop
 cask "responsively"                                 # modified web browser for responsive web development
