@@ -220,7 +220,7 @@ alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' 
 alias matrix='LC_ALL=C tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS conv=unblock | GREP_COLOR="1;32" grep --color "[^ ]"'
 
 #play youtube videos
-alias play-youtube='__play-youtube_() { youtube-dl -q -o- "${1}" | mplayer -cache 8192 -; }; __play-youtube_'
+alias play-yt='__play-youtube_() { yt-dlp -q -o- "${1:=https://www.youtube.com/watch?v=dQw4w9WgXcQ}" | mplayer -cache 8192 -; }; __play-youtube_'
 # check the weather
 alias weather='__weather(){ curl -4 wttr.in/"${1:=gothenburg}"; }; __weather'
 

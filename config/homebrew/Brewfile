@@ -178,7 +178,7 @@ brew "wget"                                         # non-interactive network do
 brew "xdg-ninja"                                    # xdg checks your $HOME for unwanted files and directories.
 brew "xsv"                                          # A fast csv command line toolkit written in Rust.
 brew "yarn"                                         # JavaScript package manager
-brew "youtube-dl"                                   # download videos from youtube and many more sites
+brew "yt-dlp"                                       # download videos from youtube and many more sites
 brew "yq"                                           # fast yaml processor
 brew "vmware-tanzu/carvel/ytt"                      # YAML templating tool, structure instead of text
 brew "zellij"                                       # an awesome terminal multiplexer
