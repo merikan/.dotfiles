@@ -152,6 +152,8 @@
   co = checkout
   # create and checkout a new branch and keep all your changes.
   cob = checkout -b
+  # helper alias
+  default = !git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'
   # diff
   di = diff
   # diff staged --cached
@@ -220,8 +222,12 @@
   stage = !git add -u
   # view the current changes in the staging area.
   staged = diff --staged
-  # switch abbr
+  # a smarter switch
+  switch = "!f() { DEFAULT=$(git default); git switch ${1-$DEFAULT}; f"
   sw = switch
+  swd = sw develop
+  swm = sw main
+
   # list all tags with date
   tags = tag -l --sort=-creatordate --format='%(creatordate:short):  %(refname:short) - %(contents:subject)'
   # another option git log --date-order --graph --tags --simplify-by-decoration --pretty=format:'%ai %h %d'
