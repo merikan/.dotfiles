@@ -262,7 +262,6 @@ cask "sonos"                                        # Sonos controller
 cask "soapui"                                       # soap and rest testing tool
 cask "sonos"                                        # controller for sonos speakers
 cask "sourcetree"                                   # awesome git client
-cask "spectacle"                                    # move and resize windows
 cask "spotify"                                      # music for everyone
 cask "merikan/casks/sr"                             # nativefied sveriges radio
 cask "sublime-text2"                                # text editor
