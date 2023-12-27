@@ -264,7 +264,7 @@ cask "sonos"                                        # controller for sonos speak
 cask "sourcetree"                                   # awesome git client
 cask "spotify"                                      # music for everyone
 cask "merikan/casks/sr"                             # nativefied sveriges radio
-cask "sublime-text2"                                # text editor
+cask "sublime-text"                                # text editor
 cask "thunderbird"                                  # free email application from Mozilla
 cask "tomatobar"                                    # another pomodoro app
 cask "tunnelblick"                                  # free, open source graphic user interface for OpenVPN
