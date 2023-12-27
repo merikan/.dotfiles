@@ -34,6 +34,8 @@ return {
       "vim",
       "vimdoc",
       "yaml",
+      "xml",
+    },
     incremental_selection = {
       enable = true,
       keymaps = {

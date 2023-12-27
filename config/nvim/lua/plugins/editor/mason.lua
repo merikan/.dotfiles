@@ -80,6 +80,7 @@ local preferred_packages = {
     "sql-formatter",
     "stylua",
     "yamlfmt",
+    "xmlformatter",
   },
   other = {
     "gotestsum",
