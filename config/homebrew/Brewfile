@@ -239,7 +239,6 @@ cask "kui"                                          # a Framework for Enhancing 
 cask "love"                                         # LÖVE - make 2D games in Lua
 cask "markright"                                    # a markdown editor
 cask "merikan/casks/maconomy"                       # nativefied maconomy
-cask "meld"                                         # visual diff and merge tool
 cask "messenger"                                    # facebook messenger
 cask "minishift"                                    # openshift mini
 cask "mitmproxy"                                    # a free and open source interactive HTTPS proxy
