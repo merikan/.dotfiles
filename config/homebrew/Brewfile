@@ -196,7 +196,6 @@ cask "alfred"                                       # a must have for boost prod
 cask "android-studio"                               # android IDE
 cask "android-file-transfer"                        # transfer files from Android device
 cask "arq"                                          # backup for mac
-cask "atom"                                         # yet another editor
 cask "backuploupe"                                  # browse your timemachine backups
 cask "balenaetcher"                                 # Burn images to SD cards & USB drives, safely and easily.
 cask "bartender"                                    # organize your menu bar icons
