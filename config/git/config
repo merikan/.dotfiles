@@ -232,7 +232,7 @@
   tags = tag -l --sort=-creatordate --format='%(creatordate:short):  %(refname:short) - %(contents:subject)'
   # another option git log --date-order --graph --tags --simplify-by-decoration --pretty=format:'%ai %h %d'
   # Send all changes to trash. Commit before trashing so we can find it via 'git reflog' and 'git cherry-pick'
-  trash = !git add -A && git commit -qm \"Trashed @ $(date +%Y-%m-%dT%H:%M:%S%z)\" \
+  trash = !git add -A && git commit -qm \"Trash Savepoint @ $(date +%Y-%m-%dT%H:%M:%S%z)\" \
            && git reset HEAD~1 --hard \
            && echo "All changes moved to trash. Use 'git reflog' and 'git cherry-pick' to recover."
   ui = !gitui
