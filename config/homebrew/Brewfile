@@ -253,7 +253,6 @@ cask "qownnotes"                                    # note taking app
 cask "raycast"                                      # supercharged productivity
 cask "rancher"                                      # OSS alternative to Docker Desktop
 cask "responsively"                                 # modified web browser for responsive web development
-cask "robo-3t"                                      # free lightweight GUI for MongoDB
 cask "skype"                                        # video conf
 cask "sketch"                                       # sketchapp - design tool
 cask "sketch-toolbox"                               # some useful plugins for sketchapp
