@@ -180,16 +180,12 @@ if [[ -v $HOMEBREW_PREFIX && "${UNAME_SYSTEM}" == "Darwin" ]]; then
   [ -d $openssl_path ] && export PATH=$openssl_path:$PATH
 fi
 
-# Use tfw to cd and bind it to ctrl-o
-command -v twf >/dev/null 2>&1  && {
-  twfcd() {
-    local dir=$(twf --height=0.5)
-    [ -d "$dir" ] && {
-      cd "$dir"
-    }
-    return 0
+# Use lf to cd and bind it to ctrl-o
+command -v lf >/dev/null 2>&1  && {
+  lfcd () {
+    cd "$(command lf -print-last-dir "$@")"
   }
-  bindkey -s '^o' 'twfcd\n'
+  bindkey -s '^o' 'lfcd\n'
 }
 
 # load direnv

@@ -53,6 +53,7 @@ brew "csvkit"                                       # tools for working with CSV
 brew "ctop"                                         # top-like interface for container metrics
 brew "cosign"                                       #
 brew "curl"                                         # curl
+brew "util-linux"                                   # linux utilities
 brew "dasel"                                        # query and modify data structures in json/toml/yaml/xml/csv/plain format
 brew "git-delta"                                    # syntax-highlighting pager for git, diff, and grep output
 brew "joshuto"                                      # ranger-like terminal file manager written in Rust

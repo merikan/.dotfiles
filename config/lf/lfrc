@@ -1,28 +1,171 @@
 # My lf settings
-
-# Basic vars
-set shell bash
-set shellopts '-eu'
-set ifs "\n"
+# open alacritty with lf as command `alacritty -e sh -c "lf"`
+# Basic Settings
+set hidden true
+set ignorecase true
+set icons true
 set scrolloff 10
-set color256
-set hidden
-
-
-cmd fzf_jump ${{
-   res="$(find . -maxdepth 3 | fzf --reverse --header='$Jump to location')"
-   if [ -f "$res" ]; then
-     cmd="select"
-   elif [ -d "$res" ]; then
-     cmd="cd"                                                       
-   fi
-lf -remote "send $id $cmd \"$res\""
-}}
-
+set drawbox
 
 # Bindings
-# toggle hidden
+#
+# Basic Functions
+map a mkfile
+map A mkdir
+map J go-parent down
+map K go-parent up
 map . set hidden!
-# 
+map H set hidden!
+map c # unmap this
+map cd cd_smart
+map d # unmap this
+map dd delete
+map p paste
+map x cut
+map y # unmap this
+map yy copy
+map yn yank-basename # yank name
+map yp yank-pathname # path+name
+map yd yank-dirname # yanl dir
+map <enter> open
+map R reload
+map m # unmap this
+map <esc> clear
+map r rename
+map U unselect
+map au unarchive
+map ch chmod
+map <c-c> quit
+map g? $lf -doc | less # show documentation
+# File Openers
+map e $$EDITOR "$f"
+map o $$OPENER "$f"
+map u $view "$f"
+
+# Movement
+map g. cd ~/.dotfiles
+map gc cd ~/.config
+map gd cd ~/Downloads
+map gl cd ~/.local
+map gp cd ~/Pictures
+map gs cd ~/src
+map g~ cd ~ #go home
+map gg top
+map G bottom
 map <c-f> :fzf_jump
-map D delete       # delete selected
+map gf :fzf_jump
+map gz :zoxide_jump
+# xdg-*
+map gxc ${{ lf -remote "send $id cd ${XDG_CONFIG_HOME:-$HOME/.config}" }}
+map gxC ${{ lf -remote "send $id cd ${XDG_CACHE_HOME:-$HOME/.cache}" }}
+map gxd ${{ lf -remote "send $id cd ${XDG_DATA_HOME:-$HOME/.local/share}" }}
+map gxs ${{ lf -remote "send $id cd ${XDG_STATE_HOME:-$HOME/.local/state}" }}
+
+# -------------------------------------------------------------------------------
+# Custom functiones
+# -------------------------------------------------------------------------------
+
+# yank
+cmd yank-basename ${{
+  case "$(uname)" in
+    Linux*)  basename "$fx" | head -c-1 | xclip -i -selection clipboard;;
+    Darwin*) basename -a -- "$fx" | pbcopy;;
+    *) echo "Unsupported os $(uname)" ;;
+  esac
+}}
+cmd yank-dirname ${{
+  case "$(uname)" in
+    Linux*)  dirname -- "$f" | head -c-1 | xclip -i -selection clipboard;;
+    Darwin*) dirname -- "$f" | pbcopy;;
+    *) echo "Unsupported os $(uname)" ;;
+  esac
+}}
+cmd yank-pathname ${{
+  case "$(uname)" in
+    Linux*)  printf '%s' "$fx" | xclip -i -selection clipboard;;
+    Darwin*) printf '%s' "$fx" | pbcopy;;
+    *) echo "Unsupported os $(uname)" ;;
+  esac
+}}
+
+cmd mkdir ${{
+  printf "Directory Name: "
+  read ans
+  mkdir $ans
+}}
+
+cmd mkfile ${{
+  printf "File Name: "
+  read ans
+  $EDITOR $ans
+}}
+
+cmd open ${{
+   case $(file --mime-type $f -b) in
+      text/*) $EDITOR $fx;;
+      video/*) open -a mpv $f & ;;
+      *) for f in $fx; do setsid -f $OPENER $f >/dev/null 2>&1; done;;
+   esac
+}}
+
+cmd opener ${{
+      for f in $fx; do setsid -f $OPENER $f >/dev/null 2>&1; done;;
+   esac
+}}
+
+cmd unarchive ${{
+  case "$f" in
+      *.zip) unzip "$f" ;;
+      *.tar.gz) tar -xzvf "$f" ;;
+      *.tar.bz2) tar -xjvf "$f" ;;
+      *.tar) tar -xvf "$f" ;;
+      *) echo "Unsupported format" ;;
+  esac
+}}
+
+# cd smart git-root > git-root > $home
+cmd cd_smart ${{
+  res="~"
+  if command -v git >/dev/null 2>&1 && [ -e "$(git rev-parse --show-toplevel 2>/dev/null)" ]; then # is git repo
+      if [[ "$(git rev-parse --show-toplevel 2>/dev/null)" != "$(pwd)" ]]; then # not att toplevel
+          res="$(git rev-parse --show-toplevel 2>/dev/null)"; #toplevel of git repository
+      elif [ -e "$(builtin cd ..; git rev-parse --show-toplevel 2>/dev/null)" ]; then
+        res="$(cd ..; git rev-parse --show-toplevel 2>/dev/null)"; #toplevel of parent git repository
+      fi
+  fi
+  cat $res | pbcopy
+  lf -remote "send $id cd \"$res\""
+}}
+
+cmd go-parent &{{
+    dironly="setlocal '$(dirname "$PWD")' dironly"
+    lf -remote "send $id :updir; $dironly true; $1; $dironly false; open"
+}}
+
+# https://github.com/gokcehan/lf/wiki/Integrations#fzf
+cmd fzf_jump ${{
+  res="$(find . -maxdepth 3 | fzf --reverse --header='$Jump to location')"
+  if [ -f "$res" ]; then
+    cmd="select"
+  elif [ -d "$res" ]; then
+    cmd="cd"
+  fi
+  lf -remote "send $id $cmd \"$res\""
+}}
+
+# https://github.com/gokcehan/lf/wiki/Integrations#zoxide
+cmd zoxide_jump ${{
+	result="$(zoxide query -i)"
+	lf -remote "send $id cd $result"
+}}
+
+# Show current directory in window title
+# https://github.com/gokcehan/lf/wiki/Tips#show-current-directory-in-window-title
+cmd on-cd &{{
+  # '&' commands run silently in background (which is what we want here),
+  # but are not connected to stdout.
+  # To make sure our escape sequence still reaches stdout we pipe it to /dev/tty
+  printf "\033]0; $PWD\007" > /dev/tty
+}}
+on-cd #  run at startup
+

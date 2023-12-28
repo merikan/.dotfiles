@@ -78,7 +78,9 @@
     # lazygit
     ~/.config/lazygit/config.yaml: config/lazygit/config.yaml
     # lf
-    ~/.config/lf/lfrc: config/lf/lfrc
+    ~/.config/lf:
+      path: config/lf/*
+      glob: true
     # liquidprompt
     ~/.liquidpromptrc: config/liquidprompt/liquidpromptrc
     # mackup
