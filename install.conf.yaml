@@ -37,7 +37,7 @@
 
 - link:
     # alacritty
-    ~/.config/alacritty/alacritty.yml: config/alacritty/alacritty.yml
+    ~/.config/alacritty/alacritty.toml: config/alacritty/alacritty.toml
     # bash
     ~/.bash_aliases: config/bash/bash_aliases
     ~/.bash_functions: config/bash/bash_functions
