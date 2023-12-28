@@ -200,10 +200,6 @@ alias nnn='joshuto' # joshuto file manager
   alias openports='sudo lsof -PiTCP -sTCP:LISTEN'
 }
 
-# Enable stin for atom editor until fixed
-#    see https://github.com/atom/atom/issues/1729 until https://github.com/atom/atom/pull/11184 is accepted
-# $ npm install --global tmpin
-#has tmpin && alias atom='tmpin atom'   #this is ok if you pipe but it opens tmp folder when not piping
 
 # HTTPie aliases (https://github.com/jkbrzt/httpie)
 alias GET="http"
