@@ -151,7 +151,7 @@ __select_global_alias_widget() {
   LBUFFER+="${alias} "
 }
 zle -N select-global-alias __select_global_alias_widget
-bindkey '^G^G' select-global-alias
+bindkey '^G' select-global-alias
 # better ^z, press twice = suspend + bg (https://superuser.com/a/378045)
 __better_ctrl_z_widget () {
   if [[ $#BUFFER -eq 0 ]]; then

@@ -37,7 +37,7 @@ github = 'spaceship-prompt/spaceship-prompt'
 [plugins.jq-repl]
 github = 'reegnz/jq-zsh-plugin'
 
-[plugins.fzf-git]
-github = 'junegunn/fzf-git.sh'
-use = ["*.sh"]
+# [plugins.fzf-git]
+# github = 'junegunn/fzf-git.sh'
+# use = ["*.sh"]
 
