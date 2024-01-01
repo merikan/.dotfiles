@@ -4,7 +4,7 @@ return {
   opts = {
     setup = {
       jdtls = function(_, opts)
-        return true  -- don't load with nvim-lspconfig
+        return true  -- don't load with nvim-lspconfig since we use ftplugin
       end,
     },
   },
