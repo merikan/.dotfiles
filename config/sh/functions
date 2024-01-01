@@ -2,18 +2,40 @@
 #
 # Functions that are nice to have with you
 #
-# I prefer to alias all my functions too so that I can easily find them 
+# I prefer to alias all my functions too so that I can easily find them
 # with the alias command. Check out my alias file(s)
 
 # easy create and cd into a directory (mcd myproject/src)
-function mcd() { mkdir -p "$*" && cd "$_"; }
+mcd() { mkdir -p "$*" && cd "$" || exit; }
+
+# smart cd
+cd() {
+    if [[ "$1" == "" ]]; then
+      if command -v git >/dev/null 2>&1 && [ -e "$(git rev-parse --show-toplevel 2>/dev/null)" ]; then
+        if [[ "$(git rev-parse --show-toplevel 2>/dev/null)" != "$(pwd)" ]]; then
+            builtin cd "$(git rev-parse --show-toplevel 2>/dev/null)"; #toplevel of git repository
+        elif [ -e "$(builtin cd ..; git rev-parse --show-toplevel 2>/dev/null)" ]; then
+          builtin cd "$(builtin cd ..; git rev-parse --show-toplevel 2>/dev/null)"; #toplevel of parent git repository
+        else
+          builtin cd; # normal cd behaviour
+        fi
+      else
+        builtin cd; # normal cd behaviour
+      fi
+    elif [[ -f "$1" ]]; then # is it a file?
+      builtin cd "$(dirname "$1")"; #cd into enclosing directory
+    else
+      builtin cd "$1"; # normal cd behaviour
+    fi
+}
+
 
 # uses mvn dependency plugin to show why a certain dependency or dependencies are used
 # https://gist.github.com/meistermeier/b506d225e6ce4b54b904028b767789e8
-function mvnwhy() {
+mvnwhy() {
   CANDIDATES=(`mvn dependency:list | grep $1 | awk '{print $2}'`)
 
-  for CANDIDATE in ${CANDIDATES[@]}; do
+  for CANDIDATE in "${CANDIDATES[@]}"; do
     echo "Why $CANDIDATE?"
     declare -a CANDIDATE_SEGMENTS
     CANDIDATE_SEGMENTS=(`echo $CANDIDATE | awk 'BEGIN{FS=":"}{for (i=1; i<=2; i++) print $i}'`)
@@ -21,57 +43,57 @@ function mvnwhy() {
     DEPENDENCY=${CANDIDATE_SEGMENTS[1]}:${CANDIDATE_SEGMENTS[2]}
     # scans and shows dependency tree for every dep (this might get optimized later)
     # background: no way found to get always the right line before the pattern matches
-    mvn dependency:tree -Dincludes=$DEPENDENCY | grep -B 1 "\\\-"
+    mvn dependency:tree -Dincludes="$DEPENDENCY" | grep -B 1 "\\\-"
   done
 
 }
 
-function mvn_print_version() {
+mvn_print_version() {
   printf 'VERSION=${project.version}\n0\n' | mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate | grep '^VERSION' | sed 's/^.*=//'
 }
 
-function idea {
+idea() {
   open -na "IntelliJ IDEA.app" --args "$@"
 }
 
-# run maven wrapper in git toplevel directory or current/parent directories if found, else run native mvn. 
-function mvn {
+# run maven wrapper in git toplevel directory or current/parent directories if found, else run native mvn.
+mvn() {
     local dir=`pwd`
     if command -v git >/dev/null 2>&1 && [ -e "$(git rev-parse --show-toplevel 2>/dev/null)" ]; then
         dir=$(git rev-parse --show-toplevel 2>/dev/null);
-    else 
-         while [ -e "$dir" ] && [ -e $dir/pom.xml ] && ! [ -e $dir/mvnw ] ; do dir=${dir%/*}; done
+    else
+         while [ -e "$dir" ] && [ -e "$dir"/pom.xml ] && ! [ -e "$dir"/mvnw ] ; do dir=${dir%/*}; done
     fi
 
-    if [ -e $dir/mvnw ]; then
+    if [ -e "$dir"/mvnw ]; then
         #echo "Running wrapper at $dir"
-        $dir/mvnw $@
+        "$dir"/mvnw "$@"
         return $?
     fi
     #echo "No wrapper found, running native Maven"
-    command mvn $@
+    command mvn "$@"
 }
 
-# run gradle wrapper in git toplevel directory or current/parent directories if found, else run native gradle. 
-function gradle {
-    local dir=`pwd`
+# run gradle wrapper in git toplevel directory or current/parent directories if found, else run native gradle.
+gradle() {
+  local dir="$(pwd)"
     if command -v git >/dev/null 2>&1 && [ -e "$(git rev-parse --show-toplevel 2>/dev/null)" ]; then
         dir=$(git rev-parse --show-toplevel 2>/dev/null);
-    else 
-        while [ -e "$dir" ] && ! [ -e $dir/gradlew ] && [ -n $(find $dir -maxdepth 1 -name '*.gradle' -print -quit) ]; do dir=${dir%/*}; done
+    else
+        while [ -e "$dir" ] && ! [ -e "$dir"/gradlew ] && [ -n "$(find "$dir" -maxdepth 1 -name '*.gradle' -print -quit)" ]; do dir=${dir%/*}; done
     fi
 
-    if [ -e $dir/gradlew ]; then
+    if [ -e "$dir"/gradlew ]; then
         #echo "Running wrapper at $dir"
-        $dir/gradlew $@
+        "$dir"/gradlew "$@"
         return $?
     fi
     #echo "No wrapper found, running native Gradle"
-    command gradle $@
+    command gradle "$@"
 }
 
 # SSH
-function ssh-addkeys {
+ssh_addkeys() {
 #  if ps | grep -v grep | grep ssh-agent > /dev/null
 #  then
 #  echo "ssh-agent already running, everything is fine"
@@ -100,8 +122,7 @@ sssh (){ ssh -t "$1" 'tmux attach || tmux new || screen -DR'; }
 
 # Print machine details
 # http://www.thegeekstuff.com/2010/04/unix-bash-function-examples/
-function machine()
-{
+machine() {
     echo -e "\nCurrent date :" ; date
     echo -e "\nMachine information:" ; uname -a
     echo -e "\nMachine status :" ; uptime
@@ -112,8 +133,7 @@ function machine()
 
 # Display Total, Used and Free Memory
 # http://www.thegeekstuff.com/2010/07/3-shell-scripts/
-function memory()
-{
+memory() {
     echo "Memory Space Details"
     free -t -m | grep "Total" | awk '{ print "Total Memory space : "$2 " MB";
     print "Used Memory Space : "$3" MB";
@@ -129,8 +149,7 @@ function memory()
 
 # List Processes based on %CPU and Memory Usage
 # http://www.thegeekstuff.com/2010/07/3-shell-scripts/
-function process()
-{
+process() {
     #List processes based on %cpu and memory usage
 
     echo "Start Time" `date`
@@ -164,42 +183,21 @@ function process()
     echo "End Time" `date`
 }
 
-# extended cd funtionality
-cd() {
-    if [[ "$1" == "" ]]; then
-      if command -v git >/dev/null 2>&1 && [ -e "$(git rev-parse --show-toplevel 2>/dev/null)" ]; then 
-        if [[ "$(git rev-parse --show-toplevel 2>/dev/null)" != "$(pwd)" ]]; then
-            builtin cd "$(git rev-parse --show-toplevel 2>/dev/null)"; #toplevel of git repository
-        elif [ -e "$(builtin cd ..; git rev-parse --show-toplevel 2>/dev/null)" ]; then
-          builtin cd "$(builtin cd ..; git rev-parse --show-toplevel 2>/dev/null)"; #toplevel of parent git repository
-        else 
-          builtin cd; # normal cd behaviour  
-        fi
-      else 
-        builtin cd; # normal cd behaviour
-      fi
-    elif [[ -f "$1" ]]; then # is it a file?
-      builtin cd "$(dirname "$1")"; #cd into enclosing directory
-    else
-      builtin cd "$1"; # normal cd behaviour
-    fi
-}
-
 # eval a docker machine
-_docker-machine-eval() { 
+_docker-machine-eval() {
   if [ -z "$1" ]; then
-    echo "Need a machine name to evaluate!" 
+    echo "Need a machine name to evaluate!"
   else
     eval "$(docker-machine env "$1")"
     export DOCKER_MACHINE_IP=$(docker-machine ip "$1")
     echo "Docker environment variables ar set."
     echo "$(printenv | grep ^DOCKER)"
   fi
-} 
+}
 # handle prompt string as command
 __prompt_string_() {
-  shift; # get rid of promt string 
+  shift; # get rid of promt string
   local command=$1
   shift;
   eval $command "$@"  # run the command
-} 
+}
