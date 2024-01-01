@@ -115,6 +115,10 @@
     ~/.inputrc: config/sh/inputrc
     ~/.profile: config/sh/profile
     ~/.shrc: config/sh/shrc
+    # sketchybar
+    ~/.config/sketchybar:
+      path: config/sketchybar/*
+      glob: true
     # spaceship-prompt
     ~/.config/spaceship/spaceship.zsh: config/spaceship-prompt/spaceship-promptrc
     ~/.config/spaceship/sections: config/spaceship-prompt/sections

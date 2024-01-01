@@ -177,6 +177,9 @@ defaults write NSGlobalDomain AppleInterfaceStyle -string "Light"
 defaults write -g NSRequiresAquaSystemAppearance -bool true
 defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
 echo "  ✔"
+echo -n "Always hide menu bar"
+defaults write NSGlobalDomain _HIHideMenuBar -bool true
+echo "  ✔"
 
 ###############################################################################
 # Finder                                                                      #

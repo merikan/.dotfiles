@@ -255,6 +255,7 @@ cask "raycast"                                      # supercharged productivity
 cask "rancher"                                      # OSS alternative to Docker Desktop
 cask "responsively"                                 # modified web browser for responsive web development
 cask "skype"                                        # video conf
+cask "sketchybar"                                   # macOS status bar
 cask "sketch"                                       # sketchapp - design tool
 cask "sketch-toolbox"                               # some useful plugins for sketchapp
 cask "skitch"                                       # take screenshots of all or part of your screen
