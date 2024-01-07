@@ -17,6 +17,7 @@ return {
     },
   },
   keys = {
-    { "<M-o>", "<cmd>Tfm<CR>", desc = "TFM" },
+    { "<M-o>", "<cmd>Tfm<CR>", desc = "File Manager" },
+    { "<leader>fm", "<cmd>Tfm<CR>", desc = "File Manager" },
   },
 }
