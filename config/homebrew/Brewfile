@@ -157,6 +157,7 @@ brew "scrcpy"                                       # android screen mirror
 brew "sheldon"                                      # fast, configurable, shell plugin manager
 brew "shellcheck"                                   # a static analysis tool for shell scripts
 brew "skaffold"                                     # local k8s development
+brew "felixkratz/formulae/sketchybar"               # macOS status bar
 brew "skopeo"                                       # work with container registry and images
 brew "ssh-copy-id"                                  # ssh copy
 brew "starship"                                     # blazing-fast cross-shell prompt
@@ -255,7 +256,6 @@ cask "raycast"                                      # supercharged productivity
 cask "rancher"                                      # OSS alternative to Docker Desktop
 cask "responsively"                                 # modified web browser for responsive web development
 cask "skype"                                        # video conf
-cask "sketchybar"                                   # macOS status bar
 cask "sketch"                                       # sketchapp - design tool
 cask "sketch-toolbox"                               # some useful plugins for sketchapp
 cask "skitch"                                       # take screenshots of all or part of your screen
