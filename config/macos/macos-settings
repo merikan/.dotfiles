@@ -342,14 +342,15 @@ echo "  ✔"
 # # Top right screen corner → Desktop
 # defaults write com.apple.dock wvous-tr-corner -int 4
 # defaults write com.apple.dock wvous-tr-modifier -int 0
-echo -n "Bottom left screen corner → Start screen saver"
-defaults write com.apple.dock wvous-bl-corner -int 5
-defaults write com.apple.dock wvous-bl-modifier -int 0
-echo "  ✔"
-echo -n "Bottom right screen corner → SLock screen"
-defaults write com.apple.dock wvous-br-corner -int 13
-defaults write com.apple.dock wvous-br-modifier -int 0
-echo "  ✔"
+
+# echo -n "Bottom left screen corner → Start screen saver"
+# defaults write com.apple.dock wvous-bl-corner -int 5
+# defaults write com.apple.dock wvous-bl-modifier -int 0
+# echo "  ✔"
+# echo -n "Bottom right screen corner → SLock screen"
+# defaults write com.apple.dock wvous-br-corner -int 13
+# defaults write com.apple.dock wvous-br-modifier -int 0
+# echo "  ✔"
 
 echo -n "Always show function keys in touchbar"
 defaults write com.apple.touchbar.agent PresentationModeGlobal -string "functionKeys"
