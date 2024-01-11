@@ -10,8 +10,7 @@ set drawbox
 # Bindings
 #
 # Basic Functions
-map a mkfile
-map A mkdir
+map a add
 map J go-parent down
 map K go-parent up
 map . set hidden!
@@ -88,16 +87,13 @@ cmd yank-pathname ${{
   esac
 }}
 
-cmd mkdir ${{
-  printf "Directory Name: "
+cmd add ${{
+  printf "Enter Name (dir ends with /): "
   read ans
-  mkdir $ans
-}}
-
-cmd mkfile ${{
-  printf "File Name: "
-  read ans
-  $EDITOR $ans
+  case "$ans" in
+    *"/")  mkdir -p $ans;;
+    *)     touch $ans;;
+  esac
 }}
 
 cmd open ${{
