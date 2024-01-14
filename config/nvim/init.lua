@@ -26,11 +26,6 @@ require("util.autocmds")
 -- bootstrap LazyVim, lazy.nvim and plugins
 require("config.lazy")    -- load lazyVim, because I'm lazy
 
--- additional filetypes
--- print("I am here")
--- vim.filetype.add({ extension = { templ = "templ", }, })
--- print("I am leaving")
-
 -- require "user.core.globals"         -- load global functions
 -- require "user.core.keymaps"         -- load keybindings
 -- require "user.core.autocommands"    -- register autocommands
