@@ -168,7 +168,9 @@ alias dc='docker-compose'
 ! [ -n "$ZSH_VERSION" ] && complete -F _docker_compose dc
 alias dm='docker-machine'
 ! [ -n "$ZSH_VERSION" ] && complete -F _docker_machine dm
-alias nnn='joshuto' # joshuto file manager
+
+# nnn, because it's in my muscle memory
+alias nnn='yazi' # yazi file manager
 
 [ $OSX ] && { # OS X specific aliases
   # Java (using jenv instead)

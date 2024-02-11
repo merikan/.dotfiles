@@ -1,0 +1,27 @@
+"$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
+
+[manager]
+
+prepend_keymap = [
+  { on = [ "e", ], exec = "open", desc = "Open the selected files" },
+  { on = [ "E", ], exec = "open --interactive", desc = "Open the selected files interactively" },
+  { on = [ "g", ".", ], exec = "cd ~/.dotfiles", desc = "Go to .dotfiles directory" },
+  { on = [ "g", "/" ], exec = '''shell "$SHELL" --block --confirm''', desc = "Open shell here" },
+  { on = [ "g", "?" ], exec = "help", desc = "Open help" },
+  { on = [ "g", "c", ], exec = "cd ~/.config", desc = "Go to the .config directory" },
+  { on = [ "g", "d", ], exec = "cd ~/Downloads", desc = "Go to the Downloads directory" },
+  { on = [ "g", "l", ], exec = "cd ~/.local", desc = "Go to the .local directory" },
+  { on = [ "g", "n", ], exec = "cd ~/.config/nvim", desc = "Go to the nvim directory" },
+  { on = [ "g", "p", ], exec = "cd ~/Pictures", desc = "Go to the Pictures directory" },
+  { on = [ "g", "s", ], exec = "cd ~/src", desc = "Go to the ~/src directory" },
+  { on = [ "g", "D", ], exec = "cd ~/Documents", desc = "Go to the Documents directory" },
+  { on = [ "g", "o", ], exec = "cd ~/Documents/Obsidian", desc = "Go to the Obsidian directory" },
+  { on = [ "g", "x", "c" ], exec = "cd $XDG_CONFIG_HOME", desc = "Go to the $XDG_CONFIG_HOME directory" },
+  { on = [ "g", "x", "C" ], exec = "cd $XDG_CACHE_HOME", desc = "Go to the $XDG_CACHE_HOME directory" },
+  { on = [ "g", "x", "d" ], exec = "cd $XDG_DATA_HOME", desc = "Go to the $XDG_DATA_HOME directory" },
+  { on = [ "g", "x", "s" ], exec = "cd $XDG_STATE_HOME", desc = "Go to the $XDG_STATE_HOME directory" },
+]
+
+[input]
+
+prepend_keymap = [{ on = ["<Esc>"], exec = "close", desc = "Cancel input" }]

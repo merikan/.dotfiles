@@ -134,6 +134,10 @@
     ~/.config/tut/config.ini: config/tut/config.ini
     # vim
     ~/.vimrc: config/vim/vimrc
+    # yazi
+    ~/.config/yazi:
+      path: config/yazi/*
+      glob: true
     # zellij
     ~/.config/zellij:
       path: config/zellij/*

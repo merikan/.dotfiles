@@ -32,7 +32,6 @@ tap "merikan/tools"                    # my personal tap
 ### ---------------------------------------------------- ###
 ### Formulae                                             ###
 ### ---------------------------------------------------- ###
-
 brew "act"                                          # run your github actions locally
 brew "ansible"                                      # IaC provision and configure
 brew "apktool"                                      # reverse engineering Android apk files
@@ -66,6 +65,7 @@ brew "doxygen"                                      # Generate documentation fro
 brew "docker"                                       # docker client
 brew "docker-credential-helper"                     # keystore credential helper for Docker
 brew "ffmpeg"                                       # record, convert and stream audio and video
+brew "ffmpegthumbnailer"                            # create thumbnails for your video files
 brew "flake8"                                       # lint python
 brew "fzf"                                          # a command-line fuzzy finder
 brew "ffmpeg"                                       # to record, convert and stream audio and video
@@ -142,6 +142,7 @@ brew "packer-completion"
 brew "php"                                          # php
 brew "plantuml"                                     # draw UML diagrams
 brew "pip-completion"
+brew "poppler"                                      # pdf rendering library (based on the xpdf-3.0 code base)
 brew "potrace"                                      # transforming bitmaps into vector graphics
 brew "pv"                                           # a terminal-based tool for monitoring the progress of data through a pipeline.
 brew "pyenv"                                        # simple python version management
@@ -174,12 +175,14 @@ brew "toot"                                         # mastodon tui client
 brew "tree"                                         # list contents of directories in a tree-like format
 brew "aquasecurity/trivy/trivy"                     # scanner for vulnerabilities in images, filesystems, git repos and config files
 brew "tut"                                          # mastodon tui client
+brew "unar"                                         # command-line unarchiving tools supporting multiple formats
 brew "vim"                                          # highly configurable text editor
 brew "watch"                                        # execute a program periodically and watch the output
 brew "wget"                                         # non-interactive network downloader
 brew "xdg-ninja"                                    # xdg checks your $HOME for unwanted files and directories.
 brew "xsv"                                          # A fast csv command line toolkit written in Rust.
 brew "yarn"                                         # JavaScript package manager
+brew "yazi"                                         # blazing fast terminal file manager
 brew "yt-dlp"                                       # download videos from youtube and many more sites
 brew "yq"                                           # fast yaml processor
 brew "vmware-tanzu/carvel/ytt"                      # YAML templating tool, structure instead of text

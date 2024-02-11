@@ -181,11 +181,24 @@ if [[ -v $HOMEBREW_PREFIX && "${UNAME_SYSTEM}" == "Darwin" ]]; then
 fi
 
 # Use lf to cd and bind it to ctrl-o
-command -v lf >/dev/null 2>&1  && {
-  lfcd () {
-    cd "$(command lf -print-last-dir "$@")"
+# command -v lf >/dev/null 2>&1  && {
+#   lfcd () {
+#     cd "$(command lf -print-last-dir "$@")"
+#   }
+#   bindkey -s '^o' 'lfcd\n'
+# }
+
+# Use yazi to cd and bind it to ctrl-o
+command -v yazi >/dev/null 2>&1  && {
+  function __yazicd() {
+    tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+    yazi --cwd-file="$tmp"
+    if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+      builtin cd -- "$cwd"
+    fi
+    rm -f -- "$tmp"
   }
-  bindkey -s '^o' 'lfcd\n'
+  bindkey -s '^o' '__yazicd\n'
 }
 
 # load direnv

@@ -2,7 +2,7 @@ return {
   "rolv-apneseth/tfm.nvim",
   lazy = false,
   opts = {
-    file_manager = "lf",
+    file_manager = "yazi",
     enable_cmds = true,
     replace_netrw = true,
     keybindings = {
