@@ -4,7 +4,7 @@ return {
   "stevearc/aerial.nvim",
   opts = {
     layout = {
-      default_direction = "prefer_left",
+      default_direction = "prefer_right",
       resize_to_content = true,
     },
   },

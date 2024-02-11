@@ -5,6 +5,7 @@
 -- Add any additional options here
 
 local o = vim.opt
+local g = vim.g
 
 --------------------------------------------------------------------------------
 -- Core
@@ -13,7 +14,7 @@ o.clipboard:prepend { "unnamed", "unnamedplus" } -- use system buffer (cross-pla
 o.fileencoding = "utf-8" -- the encoding written to a file
 o.mouse = "a" -- allow the mouse to be used in neovim
 o.autoread = true -- automatically reload a file
-vim.g.autoformat = false -- disable LazyVim auto format
+g.autoformat = false -- disable LazyVim auto format
 
 --------------------------------------------------------------------------------
 -- Display
@@ -32,6 +33,8 @@ o.showtabline = 0 -- always show tabs
 o.showcmd = false -- hide (partial) command in the last line of the screen (for performance)
 o.cmdheight = 1 -- more space in the neovim command line for displaying messages
 o.shortmess:append("c") -- hide all the completion messages, e.g. "-- XXX completion (YYY)", "match 1 of 2", "The only match", "Pattern not found"
+-- Font
+o.guifont = "JetBrainsMono Nerd Font"
 
 --------------------------------------------------------------------------------
 -- Lines
@@ -85,12 +88,10 @@ o.writebackup = false -- if a file is being edited by another program (or was wr
 --------------------------------------------------------------------------------
 o.path:append { "**" } -- gf jump to file under cursor, CTRL-^ to jump back
 o.grepprg = "rg --vimgrep --smart-case --follow" -- use ripgrep instead of grep
-o.guifont = "JetBrainsMono Nerd Font"
 
 if vim.g.neovide then
   vim.g.neovide_cursor_trail_legnth = 0
   vim.g.neovide_cursor_animation_length = 0
   --vim.o.guifont = "Jetbrains Mono"
 end
-
 

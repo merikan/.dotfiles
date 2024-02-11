@@ -15,18 +15,15 @@ local preferred_packages = {
     "drools-lsp",
     "emmet-ls",
     "eslint-lsp",
-    "gopls",
     "gradle-language-server",
     "graphql-language-service-cli",
     "groovy-language-server",
     "html-lsp",
     "htmx-lsp",
-    "jdtls",
     "json-lsp",
     "kotlin-language-server",
     "lemminx",
     "lua-language-server",
-    "marksman",
     "nil",
     "python-lsp-server",
     "rust-analyzer",
@@ -42,15 +39,11 @@ local preferred_packages = {
     },
     dap = {
     "codelldb",
-    "dart-debug-adapter",
     "go-debug-adapter",
-    "java-debug-adapter",
-    "java-test",
     "kotlin-debug-adapter",
     },
     linter = {
     "ansible-lint",
-    "checkstyle",
     "eslint_d",
     "flake8",
     "gitleaks",
@@ -69,7 +62,6 @@ local preferred_packages = {
     "beautysh",
     "black",
     "goimports",
-    "google-java-format",
     "gotests",
     "isort",
     "jq",
@@ -88,7 +80,7 @@ local preferred_packages = {
 }
 
 local install_list = {}
-for k, v in pairs(preferred_packages) do
+for _, v in pairs(preferred_packages) do
   vim.list_extend(install_list, v)
 end
 

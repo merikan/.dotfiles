@@ -5,18 +5,16 @@
 return {
   "rcarriga/nvim-notify",
   keys = {
-    {
-      "<leader>sN",
-      function()
-        require("telescope").extensions.notify.notify()
-      end,
-      desc = "Show Notifications",
-    },
+    -- stylua: ignore
+    { "<leader>sN", function() require("telescope").extensions.notify.notify() end, desc = "Show Notifications", },
   },
   config = function()
     require("telescope").load_extension("notify")
   end,
-  -- opts = {
-  --   stages = "no_animation",
-  -- },
+  opts = {
+    fps = 75,
+    stages = "slide",
+    render = "wrapped-compact",
+    timeout = 2000,
+  },
 }

@@ -9,12 +9,12 @@ vim.filetype.add {
   },
 }
 
-return {
+return
+  {
   "nvim-treesitter/nvim-treesitter",
   opts = {
     ensure_installed = {
       "bash",
-      "dart",
       "html",
       "java",
       "javascript",
@@ -23,8 +23,6 @@ return {
       "lua",
       "luadoc",
       "luap",
-      "markdown",
-      "markdown_inline",
       "python",
       "query",
       "regex",
