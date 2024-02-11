@@ -24,6 +24,12 @@ tasks:
     cmds:
       - cmd: "mvn biz.lermitage.oga:oga-maven-plugin:check --fail-never"
 
+  mvn:dependency:tree:
+    desc: print dependency tree 
+    dir: '{{.USER_WORKING_DIR}}'
+    cmds:
+      - cmd: "mvn dependency:tree -X"
+
   mvn:effective-pom:
     desc: print effective pom
     dir: '{{.USER_WORKING_DIR}}'
@@ -35,3 +41,4 @@ tasks:
     dir: '{{.USER_WORKING_DIR}}'
     cmds:
       - cmd: "mvn fr.jcgay.maven.plugins:buildplan-maven-plugin:list"
+
