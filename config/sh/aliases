@@ -112,7 +112,7 @@ alias lzg='lazygit'
 alias lzd='lazydocker'
 command -v gdu-go >/dev/null 2>&1 && alias gdu="gdu-go"
 # ghq
-alias ghg='ghq get -l '
+alias ghg='__ghg(){ ghq get -l "${1}" && cd .; }; __ghg'
 #kubernetes aliase(s)
 alias k='kubectl'
 alias kim="kubectl get pods -o jsonpath=\"{.items[*].spec.containers[*].image}\" |\
@@ -128,7 +128,7 @@ alias zja="zellij a"
 alias zjs="zellij -s"
 alias zjr="zellij run -f --"
 
-#maven aliases
+# maven
 alias mct='mvn clean test'
 alias mcv='mvn clean verify'
 alias mcp='mvn clean package'
