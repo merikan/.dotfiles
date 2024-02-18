@@ -172,7 +172,7 @@
   gr = grep -Ii
   grep = grep -Ii
   # init a new repository
-  i0 = !git init && git commit --allow-empty -m \"initial commit\"
+  init0 = !git init && git commit --allow-empty -m \"initial commit\"
   # incoming changes > param: remote (optional)
   incoming = "!f() { \
                 REMOTE="@{u}"; \
