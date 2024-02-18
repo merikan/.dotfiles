@@ -161,6 +161,7 @@ brew "skaffold"                                     # local k8s development
 brew "felixkratz/formulae/sketchybar"               # macOS status bar
 brew "skopeo"                                       # work with container registry and images
 brew "ssh-copy-id"                                  # ssh copy
+brew "statix"                                       # linter for nix
 brew "starship"                                     # blazing-fast cross-shell prompt
 brew "stern"                                        # log tailing for Kubernetes
 brew "stunnel"                                      # SSL tunneling program
