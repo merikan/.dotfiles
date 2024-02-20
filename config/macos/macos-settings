@@ -179,6 +179,7 @@ defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
 echo "  ✔"
 echo -n "Always hide menu bar"
 defaults write NSGlobalDomain _HIHideMenuBar -bool true
+defaults write -g AppleMenuBarVisibleInFullscreen -bool false
 echo "  ✔"
 
 ###############################################################################
