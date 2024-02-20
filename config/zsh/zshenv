@@ -58,3 +58,5 @@ export ZIM_HOME=${HOME}/.local/zim
 
 # teaaldeer and XDG https://github.com/dbrgn/tealdeer/issues/311
 export TEALDEER_CONFIG_DIR="${XDG_CONFIG_HOME}/tealdeer"
+# use gojq in jq-repl (https://github.com/reegnz/jq-zsh-plugin)
+JQ_REPL_JQ=gojq
