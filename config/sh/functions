@@ -29,6 +29,11 @@ cd() {
     fi
 }
 
+# https://medium.com/@GroundControl/better-git-diffs-with-fzf-89083739a9cb
+fd() {
+  preview="git diff $@ --color=always -- {-1}"
+  git diff $@ --name-only | fzf -m --ansi --preview $preview
+}
 
 # uses mvn dependency plugin to show why a certain dependency or dependencies are used
 # https://gist.github.com/meistermeier/b506d225e6ce4b54b904028b767789e8
