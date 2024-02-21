@@ -1,10 +1,11 @@
 return {
+  -- https://github.com/debugloop/telescope-undo.nvim
   {
     "debugloop/telescope-undo.nvim",
     opts = {},
     config = function()
       require("lazyvim.util").on_load("telescope.nvim", function()
-        require("telescope").setup({
+        require("telescope").setup {
           extensions = {
             undo = {
               use_delta = true,
@@ -15,12 +16,24 @@ return {
               },
             },
           },
-        })
+        }
         require("telescope").load_extension("undo")
       end)
     end,
     keys = {
       { "<leader>su", "<cmd>Telescope undo<cr>", desc = "Undos" },
+    },
+  },
+  -- https://github.com/tsakirist/telescope-lazy.nvim
+  {
+    "tsakirist/telescope-lazy.nvim",
+    config = function()
+      require("lazyvim.util").on_load("telescope.nvim", function()
+        require("telescope").load_extension("lazy")
+      end)
+    end,
+    keys = {
+      { "<leader>sp", "<cmd>Telescope lazy<CR>", desc = "Plugins (Lazy)" },
     },
   },
 }
