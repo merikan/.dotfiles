@@ -1,4 +1,5 @@
 return {
+  -- A telescope extension to view and search your undo tree
   -- https://github.com/debugloop/telescope-undo.nvim
   {
     "debugloop/telescope-undo.nvim",
@@ -24,6 +25,7 @@ return {
       { "<leader>su", "<cmd>Telescope undo<cr>", desc = "Undos" },
     },
   },
+  -- A telescope extension to handle lazy plugins
   -- https://github.com/tsakirist/telescope-lazy.nvim
   {
     "tsakirist/telescope-lazy.nvim",
@@ -36,5 +38,25 @@ return {
       { "<leader>sp", "<cmd>Telescope lazy<CR>", desc = "Plugins (Lazy)" },
     },
   },
+  -- A telescope extension to add import statement
+  -- https://github.com/piersolenski/telescope-import.nvim
+  {
+    "piersolenski/telescope-import.nvim",
+    opts = {},
+    config = function()
+      require("lazyvim.util").on_load("telescope.nvim", function()
+        require("telescope").setup {
+          extensions = {
+            import = {
+              insert_at_top = true,
+            },
+          },
+        }
+        require("telescope").load_extension("import")
+      end)
+    end,
+    keys = {
+      { "<leader>sI", "<cmd>Telescope import<CR>", desc = "Imports" },
+    },
+  },
 }
--- A telescope extension to view and search your undo tree
