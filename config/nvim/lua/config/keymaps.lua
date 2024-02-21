@@ -75,52 +75,27 @@ end
 -- grmagatti/goto-preview
 local wk = require("which-key")
 wk.register { ["<leader>gp"] = { name = "+preview" } }
-keymap(
-  "n",
-  "<leader>gpd",
-  "<cmd>lua require('goto-preview').goto_preview_definition()<cr>",
-  { desc = "Preview Definition" }
-)
-keymap(
-  "n",
-  "<leader>gpy",
-  "<cmd>lua require('goto-preview').goto_preview_type_definition()<cr>",
-  { desc = "Preview T[y]pe Definition" }
-)
-keymap(
-  "n",
-  "<leader>gpi",
-  "<cmd>lua require('goto-preview').goto_preview_implementation()<cr>",
-  { desc = "Preview Implementation" }
-)
-keymap(
-  "n",
-  "<leader>gpD",
-  "<cmd>lua require('goto-preview').goto_preview_declaration()<cr>",
-  { desc = "Preview Declaration" }
-)
+-- stylua: ignore
+keymap( "n", "<leader>gpd", "<cmd>lua require('goto-preview').goto_preview_definition()<cr>", { desc = "Preview Definition" })
+-- stylua: ignore
+keymap( "n", "<leader>gpy", "<cmd>lua require('goto-preview').goto_preview_type_definition()<cr>", { desc = "Preview T[y]pe Definition" })
+-- stylua: ignore
+keymap( "n", "<leader>gpi", "<cmd>lua require('goto-preview').goto_preview_implementation()<cr>", { desc = "Preview Implementation" })
+-- stylua: ignore
+keymap( "n", "<leader>gpD", "<cmd>lua require('goto-preview').goto_preview_declaration()<cr>", { desc = "Preview Declaration" })
+-- stylua: ignore
 keymap("n", "<leader>gpc", "<cmd>lua require('goto-preview').close_all_win()<cr>", { desc = "Close All Preview Win" })
-keymap(
-  "n",
-  "<leader>gpr",
-  "<cmd>lua require('goto-preview').goto_preview_references()<cr>",
-  { desc = "Preview References" }
-)
+-- stylua: ignore
+keymap( "n", "<leader>gpr", "<cmd>lua require('goto-preview').goto_preview_references()<cr>", { desc = "Preview References" })
 
-keymap("n", "<leader>B", function()
-  require("telescope.builtin").buffers {
-    sort_mru = true,
-    ignore_current_buffer = true,
-    show_all_buffers = false,
-  } { desc = "Switch Buffers" }
-end)
+-- stylua: ignore
+keymap("n", "<leader>B", function() require("telescope.builtin").buffers { sort_mru = true, ignore_current_buffer = true, show_all_buffers = false, } { desc = "Switch Buffers" } end)
 --------------------------------------------------------------------------------
 -- TUI applications
 --------------------------------------------------------------------------------
 -- gitui
-keymap("n", "<leader>gu", function()
-  util.float_term({ "gitui" }, { cwd = util.get_root(), esc_esc = false, ctrl_hjkl = false })
-end, { desc = "Gitui" })
+-- stylua: ignore
+keymap("n", "<leader>gu", function() util.float_term({ "gitui" }, { cwd = util.get_root(), esc_esc = false, ctrl_hjkl = false }) end, { desc = "Gitui" })
 
 -- make command+v (paste) work in Neovide
 if vim.g.neovide then
