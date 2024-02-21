@@ -76,6 +76,7 @@
   "obsidian.nvim": { "branch": "main", "commit": "b5945fb94db35220b85c7e3ea7bc58a0b11c2ebc" },
   "onedark.vim": { "branch": "main", "commit": "57b77747694ea5676c3ca0eeaf9567dc499730c0" },
   "persistence.nvim": { "branch": "main", "commit": "4982499c1636eac254b72923ab826ee7827b3084" },
+  "pkl-neovim": { "branch": "main", "commit": "f08e1da038d7dcb4a44aa8cdf50a7278ad3bded1" },
   "plenary.nvim": { "branch": "master", "commit": "4f71c0c4a196ceb656c824a70792f3df3ce6bb6d" },
   "rasmus.nvim": { "branch": "main", "commit": "f824de95d446686e479781c0c2b778c177da528f" },
   "rust-tools.nvim": { "branch": "master", "commit": "676187908a1ce35ffcd727c654ed68d851299d3e" },
