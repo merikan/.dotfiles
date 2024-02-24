@@ -10,10 +10,12 @@ return {
   {
     -- one plugin to accomodate many different filetypes
     "sheerun/vim-polyglot",
+    enabled = false,
     lazy = false,
     init = function()
       -- turn off sensible as I don't agree with it - https://github.com/sheerun/vim-polyglot/tree/master#default-settings
-      vim.g.polyglot_disabled = { "sensible" }
+      -- turn off ftdetect since it interferes with neovim's ftdetect
+      vim.g.polyglot_disabled = { "sensible", "ftdetect" }
     end,
   },
 }
