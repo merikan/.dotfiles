@@ -3,6 +3,8 @@ return {
   {
     import = "lazyvim.plugins.extras.lang.markdown",
   },
+  -- disable headlines
+  { "lukas-reineke/headlines.nvim", enabled = false },
   --  Visualize your Markdown as mindmaps with markmap
   --  https://github.com/Zeioth/markmap.nvim
   {
