@@ -61,6 +61,13 @@ keymap("n", "<leader>uB", function() util.toggle("background", false, { "light",
 -- write with sudo
 keymap("c", "w!!", "<esc>:lua require'utils'.sudo_write()<CR>", { silent = true })
 
+-- make gx work again
+if vim.fn.has('macunix') == 1 then
+  keymap("n", "gx", "<cmd>silent execute '!open ' . shellescape('<cWORD>')<CR>", { silent = true })
+else
+  keymap("n", "gx", "<cmd>silent execute '!xdg-open ' . shellescape('<cWORD>')<CR>", { silent = true })
+end
+
 --------------------------------------------------------------------------------
 -- Plugins
 --------------------------------------------------------------------------------
