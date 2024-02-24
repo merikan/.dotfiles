@@ -3,11 +3,11 @@ gui:
   theme:
     selectedLineBgColor:
       - reverse
-# git:
-#   paging:
-#     colorArg: always
-#     # useConfig: true
-#     pager: delta --dark --paging=never
+git:
+  paging:
+    # colorArg: always
+    # useConfig: true
+    pager: delta --dark --paging=never
     # pager: diff-so-fancy
     # colorArg: never
     # pager: ydiff -p cat -s --wrap --width={{columnWidth}}
