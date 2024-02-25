@@ -6,6 +6,8 @@
 local util = require("lazyvim.util")
 local set = vim.keymap.set
 local del = vim.keymap.del
+local wk = require("which-key")
+
 -- Delete LazyVim default bindings for meta information
 del("n", "<leader>l")
 del("n", "<leader>L")
@@ -80,7 +82,6 @@ if vim.env.TMUX ~= nil then
 end
 
 -- grmagatti/goto-preview
-local wk = require("which-key")
 wk.register { ["<leader>gp"] = { name = "+preview" } }
 -- stylua: ignore
 keymap( "n", "<leader>gpd", "<cmd>lua require('goto-preview').goto_preview_definition()<cr>", { desc = "Preview Definition" })
@@ -97,6 +98,29 @@ keymap( "n", "<leader>gpr", "<cmd>lua require('goto-preview').goto_preview_refer
 
 -- stylua: ignore
 keymap("n", "<leader>B", function() require("telescope.builtin").buffers { sort_mru = true, ignore_current_buffer = true, show_all_buffers = false, } { desc = "Switch Buffers" } end)
+-- Plugin Info
+keymap("n", "<leader>cif", "<cmd>LazyFormatInfo<cr>", { desc = "Formatting" })
+keymap("n", "<leader>cic", "<cmd>ConformInfo<cr>", { desc = "Conform" })
+local linters = function()
+  local linters_attached = require("lint").linters_by_ft[vim.bo.filetype]
+  local buf_linters = {}
+
+  if not linters_attached then
+    vim.notify("No linters attached", vim.log.levels.WARN, { title = "Linter" })
+    return
+  end
+
+  for _, linter in pairs(linters_attached) do
+    table.insert(buf_linters, linter)
+  end
+
+  local unique_client_names = table.concat(buf_linters, ", ")
+  local linters = string.format("%s", unique_client_names)
+
+  vim.notify(linters, vim.log.levels.INFO, { title = "Linter" })
+end
+keymap("n", "<leader>ciL", linters, { desc = "Lint" })
+
 --------------------------------------------------------------------------------
 -- TUI applications
 --------------------------------------------------------------------------------
