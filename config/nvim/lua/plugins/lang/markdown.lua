@@ -1,10 +1,26 @@
 return {
-  -- https://www.lazyvim.org/extras/lang/markdown
   {
-    import = "lazyvim.plugins.extras.lang.markdown",
+    -- lazyvim axtras lag:markdown
+    -- https://www.lazyvim.org/extras/lang/markdown
+    {
+      import = "lazyvim.plugins.extras.lang.markdown",
+    },
+    {
+      -- disable headlines
+      "lukas-reineke/headlines.nvim",
+      enabled = false,
+    },
+    {
+      "mfussenegger/nvim-lint",
+      opts = {
+        linters = {
+          markdownlint = {
+            args = { "--disable", "MD013", "--" },
+          },
+        },
+      },
+    },
   },
-  -- disable headlines
-  { "lukas-reineke/headlines.nvim", enabled = false },
   --  Visualize your Markdown as mindmaps with markmap
   --  https://github.com/Zeioth/markmap.nvim
   {
@@ -28,8 +44,8 @@ return {
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     cmd = "EditMarkdownTable",
   },
-    --  DevDocs documentations
-    --  https://github.com/luckasRanarison/nvim-devdocs
+  --  DevDocs documentations
+  --  https://github.com/luckasRanarison/nvim-devdocs
   {
     "luckasRanarison/nvim-devdocs",
     optional = true,
