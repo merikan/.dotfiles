@@ -207,6 +207,7 @@ cask "balenaetcher"                                 # Burn images to SD cards & 
 cask "bartender"                                    # organize your menu bar icons
 cask "bitwarden"                                    # open source password management
 cask "brave-browser"                                # privacy focused, performance oriented browser
+cask "bruno"                                        # opensource ide for exploring and testing api's
 cask "calibre"                                      # e-book reader and library management application
 cask "clementine"                                   # music player and radio streamer
 cask "chromium"                                     # open-source browser
