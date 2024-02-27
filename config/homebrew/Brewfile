@@ -167,6 +167,7 @@ brew "stern"                                        # log tailing for Kubernetes
 brew "stunnel"                                      # SSL tunneling program
 brew "structurizr-cli"                              # cli for Structurizr DSL
 brew "stylua"                                       # lua formatter
+brew "subfinder"                                    # fast passive subdomain enumeration tool.
 brew "go-task/tap/go-task"                          # a task runner / build tool, like Make but ....
 brew "tealdeer"                                     # a fast tldr impl in rust with custom pages and patches
 brew "the_silver_searcher"                          # ag a code searching tool similar to ack
