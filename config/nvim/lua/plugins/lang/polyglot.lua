@@ -19,7 +19,7 @@ return {
   {
     -- one plugin to accomodate many different filetypes
     "sheerun/vim-polyglot",
-    enabled = false,
+    enabled = true,
     lazy = false,
     init = function()
       -- turn off sensible as I don't agree with it - https://github.com/sheerun/vim-polyglot/tree/master#default-settings
