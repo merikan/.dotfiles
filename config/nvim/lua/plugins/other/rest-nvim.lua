@@ -1,6 +1,8 @@
 return {
   --  REST Client to send HTTP request and view the response
   --  https://github.com/rest-nvim/rest.nvim
+  --  see https://github.com/rest-nvim/rest.nvim/blob/main/tests/script_vars/script_vars.http
+  --  don't forget to crate a `.env` file before using scripts
   {
     "rest-nvim/rest.nvim",
     dependencies = {
