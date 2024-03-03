@@ -251,6 +251,7 @@ cask "messenger"                                    # facebook messenger
 cask "minishift"                                    # openshift mini
 cask "mitmproxy"                                    # a free and open source interactive HTTPS proxy
 cask "obs"                                          # foss for video recording and live streaming
+cask "obsidian"                                     # awesome notetaking application
 cask "opera"                                        # browser
 cask "mysqlworkbench"                               # gui tool for mysql
 cask "paintbrush"                                   # clean and simple paint program
