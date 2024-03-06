@@ -42,3 +42,9 @@ tasks:
     cmds:
       - cmd: "mvn fr.jcgay.maven.plugins:buildplan-maven-plugin:list"
 
+  mvn:openrewrite:deprecated:
+    desc: find uses of deprecated classes, methods, and fields
+    dir: '{{.USER_WORKING_DIR}}'
+    cmds:
+      - cmd: mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.java.search.FindDeprecatedUses {{.CLI_ARGS}}
+
