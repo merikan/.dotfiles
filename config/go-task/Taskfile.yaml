@@ -22,25 +22,25 @@ tasks:
     desc: check for relocated dependencies with 'oga-maven-plugin'
     dir: '{{.USER_WORKING_DIR}}'
     cmds:
-      - cmd: "mvn biz.lermitage.oga:oga-maven-plugin:check --fail-never"
+      - cmd: mvn -U biz.lermitage.oga:oga-maven-plugin:check --fail-never {{.CLI_ARGS}}
 
   mvn:dependency:tree:
     desc: print dependency tree 
     dir: '{{.USER_WORKING_DIR}}'
     cmds:
-      - cmd: "mvn dependency:tree -X"
+      - cmd: mvn -U dependency:tree -X {{.CLI_ARGS}}
 
   mvn:effective-pom:
     desc: print effective pom
     dir: '{{.USER_WORKING_DIR}}'
     cmds:
-      - cmd: "mvn help:effective-pom"
+      - cmd: mvn -U help:effective-pom {{.CLI_ARGS}}
 
   mvn:build-plan:
     desc: print lifecycles, phaces and goals  
     dir: '{{.USER_WORKING_DIR}}'
     cmds:
-      - cmd: "mvn fr.jcgay.maven.plugins:buildplan-maven-plugin:list"
+      - cmd: mvn -U fr.jcgay.maven.plugins:buildplan-maven-plugin:list {{.CLI_ARGS}}
 
   mvn:openrewrite:deprecated:
     desc: find uses of deprecated classes, methods, and fields
