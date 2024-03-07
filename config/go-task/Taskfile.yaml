@@ -45,6 +45,7 @@ tasks:
   mvn:openrewrite:deprecated:
     desc: find uses of deprecated classes, methods, and fields
     dir: '{{.USER_WORKING_DIR}}'
+    prompt: This action will update source code with markers. Make sure your repository is clean before running this task.
     cmds:
       - cmd: mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.java.search.FindDeprecatedUses {{.CLI_ARGS}}
 
