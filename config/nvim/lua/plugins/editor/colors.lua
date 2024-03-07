@@ -17,7 +17,7 @@ return {
     keys = {
       { "<leader>up", "<cmd>CccHighlighterToggle<cr>", desc = "Toggle Paint/Colorizer" },
       { "<A-C>", "<cmd>CccConvert<cr>", desc = "Convert color" },
-      { "<S-c>", "<cmd>CccPick<cr>", desc = "Pick Color" },
+      { "<A-c>", "<cmd>CccPick<cr>", desc = "Pick Color" },
     },
     opts = {
       highlighter = {
