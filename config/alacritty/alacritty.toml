@@ -1,3 +1,5 @@
+# https://alacritty.org/config-alacritty.html
+#
 [font]
 size = 14
 
@@ -12,6 +14,13 @@ style = "Italic"
 [font.normal]
 family = "JetBrainsMono Nerd Font"
 style = "Regular"
+
+[colors.cursor]
+cursor = '#FFFFFF'
+
+[cursor.style]
+shape = "Block"
+blinking = "On"
 
 [[keyboard.bindings]]
 action = "CreateNewWindow"
