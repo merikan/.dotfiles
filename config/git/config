@@ -308,6 +308,6 @@
 # http://nuclearsquid.com/writings/git-tricks-tips-workflows/
 
 [ghq]
-	root = ~/src
+	root = ~/Repos
 [branch]
 	sort = -committerdate
