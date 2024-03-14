@@ -88,6 +88,7 @@ brew "go-task/tap/go-task"                          # task runner / build tool
 brew "gron"                                         # make JSON greppable!
 brew "anchore/grype/grype"                          # vulnerability scanner for container images and filesystems
 brew "htop"                                         # an interactive process viewer for Unix
+brew "helix"                                        # neovim inspired text editor written in rust
 brew "httpie"                                       # HTTP command-line client
 brew "hugo"                                         # open-source static site generator
 brew "icdiff"                                       # improved colored diff
