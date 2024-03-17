@@ -231,9 +231,10 @@ alias "${global}" M='| more '                 # more
 alias "${global}" C='| wc -l '                # count number of lines
 alias "${global}" H='| head '                 # head
 alias "${global}" T='| tail '                 # tail
-alias "${global}" G='| grep -i'                 # grep
+alias "${global}" G='| grep -i'               # grep
 alias "${global}" X='| xargs '                # xargs
 alias "${global}" Z='| fzf '                  # fzf
+alias "${global}" ZP="| fzf --ansi --preview 'bat {-1} --color=always'"  # fzf with preview
 alias "${global}" V='| vim '                  # vim
 alias "${global}" TEE='| tee >( grep -i 'filter' > filter.log ) output.log'  # tee with filter
 alias "${global}" LL='2>&1 | less '           # pipe stderr and stdout to less
