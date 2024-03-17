@@ -94,6 +94,8 @@
     ~/.config/nvim:
       path: config/nvim/*
       glob: true
+    # obsidian
+    ~/Notes/.obsidian.vimrc: config/obsidian/obsidian.vimrc
     # powerline
     ~/.config/powerline: config/powerline
     # python
