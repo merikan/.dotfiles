@@ -18,6 +18,9 @@ set hlsearch incsearch ignorecase smartcase
 let mapleader=" "
 imap hh <Esc>
 cmap hh <Esc>
+" paste without yank
+nmap p "_dP
+vmap p "_dP
 " zoom editor
 nmap <leader>Z <Action>(HideAllWindows)
 " duplicate
@@ -33,11 +36,13 @@ nmap gy <Action>(GotoTypeDeclaration)
 nmap gI <Action>(GotoImplementation)
 nmap <Leader>ca <Action>(GotoAction)
 nmap <leader>cf <Action>(ReformatCode)
+nmap <leader>cs <Action>(ActivateStructureToolWindow)
 nmap <leader>F <Action>(ReformatCode)
 nmap <Leader>cr <Action>(RenameElement)
 nmap [e <Action>(GotoPreviousError)
 nmap ]e <Action>(GotoNextError)
 nmap <leader>fr <Action>(RecentFiles)
+nmap <leader><leader><Action(GotoClass)
 " test
 nmap <Leader>tr <Action>(RunClass)
 nmap <Leader>tg :action GotoTest<CR>
