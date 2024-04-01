@@ -47,7 +47,6 @@ brew "ccat"                                         # colorizing cat
 brew "merikan/tools/clair-scanner"                  # scan local docker images
 brew "cloc"                                         # count lines of code
 brew "cmake"                                        # cross-platform make
-brew "cowsay"                                       # the cow says
 brew "csvkit"                                       # tools for working with CSV
 brew "ctop"                                         # top-like interface for container metrics
 brew "cosign"                                       #
