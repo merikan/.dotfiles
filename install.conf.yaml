@@ -48,6 +48,8 @@
     ~/.local/bin:
       path: config/bin/*
       glob: true
+    # direnv
+    ~/.config/direnv/direnv.toml: config/direnv/direnv.toml
     # editorconfig
     ~/.editorconfig: config/editorconfig/editorconfig
     # fzf
