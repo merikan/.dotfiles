@@ -41,6 +41,7 @@ brew "asciinema"                                    # record and share terminal 
 brew "bash"
 brew "bash-completion"
 brew "bat"                                          # a cat clone with syntax highlighting and git integration
+brew "oven-sh/bun/bun"                              # fast JavaScript runtime, bundler, test runner, and package manager
 brew "bitwarden-cli"                                # open source password management
 brew "brew-cask-completion"
 brew "ccat"                                         # colorizing cat
