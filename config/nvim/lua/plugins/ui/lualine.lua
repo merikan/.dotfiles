@@ -35,6 +35,7 @@ return {
     table.insert(opts.sections.lualine_x, 2, formatter)
     table.insert(opts.sections.lualine_x, 2, linter)
     opts.sections.lualine_a = { { "mode", icon = "" } }
+    opts.sections.lualine_x = { "rest" }
     opts.sections.lualine_y = { { "progress", icon = "", separator = " ", padding = { left = 1, right = 1 } } }
     opts.sections.lualine_z = { { "location", icon = "", padding = { left = 1, right = 1 } } }
     opts.extensions = {
