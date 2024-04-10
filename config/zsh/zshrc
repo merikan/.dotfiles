@@ -261,6 +261,12 @@ export GEM_HOME="${XDG_DATA_HOME}"/gem
   rustup completions zsh > $HOME/.zfunc/_rustup
 }
 
+# bun
+[[ -s "$HOME/.bun" ]] && {
+  [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+  export BUN_INSTALL="$HOME/.bun"
+  export PATH="$BUN_INSTALL/bin:$PATH"
+}
 # rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && {
   source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
