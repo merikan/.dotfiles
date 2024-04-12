@@ -28,9 +28,10 @@
 - shell:
     - [git submodule update --init --recursive,                                     Installing/Updating submodules]
     - ["mkdir -p $HOME/{.config,.cache,.local/{share,state,bin}}",                  Creating XDG_* directories]
-    - ["mkdir -p $HOME/{tmp,src,projects}",                                         Creating default directories]
+    - ["mkdir -p $HOME/{tmp,Repos,Projects}",                                       Creating default directories]
     - ["mkdir -p $HOME/.ssh/control; chmod 700 $HOME/.ssh",                         Creating ssh directory]
-    - ["ln -s ~/Dropbox/Notes ~/Notes",                                             Symlink notes]
+    # - ["test -L ~/Dropbox/Notes || ln -s ~/Dropbox/Notes ~/Notes",                  Symlink notes]
+    - ["test -L ~/src || ln -s ~/Repos ~/src",                                      Symlink repos]
 
 # ---------------------------------------------------------------------------------------------
 # --  Link configs
