@@ -16,7 +16,8 @@ family = "JetBrainsMono Nerd Font"
 style = "Regular"
 
 [colors.cursor]
-cursor = '#FFFFFF'
+# cursor = '#ffffff'
+cursor = '#eb8d00'
 
 [cursor.style]
 shape = "Block"
