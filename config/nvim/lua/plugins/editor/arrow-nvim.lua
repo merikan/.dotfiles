@@ -8,15 +8,17 @@ return {
       show_icons = true,
       hide_handbook = false, -- set to true to hide the shortcuts on menu.
       mappings = {
+        toggle = "a", -- this is 'add' aka 'save'
+        remove = "x",
         edit = "e",
         delete_mode = "D",
-        clear_all_items = "C",
-        toggle = "a",
+        clear_all_items = "X",
         open_vertical = "s",
         open_horizontal = "-",
         quit = "q",
       },
       leader_key = ";",
+      separate_save_and_remove = true,
     },
     keys = {
      -- stylua: ignore
@@ -26,7 +28,7 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     opts = function(_, opts)
-      table.insert(opts.sections.lualine_c, require("arrow.statusline").text_for_statusline_with_icons())
+      table.insert(opts.sections.lualine_y, require("arrow.statusline").text_for_statusline_with_icons())
     end,
   },
 }
