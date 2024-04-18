@@ -24,7 +24,10 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "kanagawa-wave",
+      colorscheme = "kanagawa-wave", -- wave the default heart-warming theme,
+      -- colorscheme = "kanagawa-dragon",-- dragon for those late-night sessions
+      -- colorscheme = "kanagawa-lotus",-- lotus for when you're out in the open.
+
       -- colorscheme = "gruvbox",
       -- colorscheme = "base16-darcula",
       -- colorscheme = "catppuccin-macchiato",
