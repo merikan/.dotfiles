@@ -1,5 +1,6 @@
 return {
   "gbprod/substitute.nvim",
+  enabled= false,
   keys = {
     { mode = "n", "gr", "<cmd>lua require('substitute').operator()<cr>", desc = "substitute" },
     { mode = "n", "grr", "<cmd>lua require('substitute').line()<cr>", desc = "substitute-line" },
