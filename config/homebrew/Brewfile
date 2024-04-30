@@ -27,7 +27,6 @@ end
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"              # fonts
 tap "homebrew/cask-versions"           # alternate versions of Casks
-tap "merikan/tools"                    # my personal tap
 
 ### ---------------------------------------------------- ###
 ### Formulae                                             ###
@@ -248,7 +247,6 @@ cask "keycastr"                                     # keystroke visualizer
 cask "kui"                                          # a Framework for Enhancing CLIs with Graphics
 cask "love"                                         # LÖVE - make 2D games in Lua
 cask "markright"                                    # a markdown editor
-cask "merikan/casks/maconomy"                       # nativefied maconomy
 cask "messenger"                                    # facebook messenger
 cask "minishift"                                    # openshift mini
 cask "mitmproxy"                                    # a free and open source interactive HTTPS proxy
