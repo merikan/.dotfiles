@@ -23,7 +23,11 @@ local cache_dir = vim.env.XDG_CACHE_HOME or util.path.join(vim.env.HOME, ".cache
 local jdtls_cache_dir = util.path.join(cache_dir, "jdtls")
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 local workspace_dir = util.path.join(jdtls_cache_dir, "workspace", project_name)
-local lombok_jar = util.path.join(jdtls_package_dir, "lombok.jar")
+--  work-around for 'lombok.eclipse.handlers.HandleBuilder failed'
+--  https://github.com/projectlombok/lombok/issues/3648
+--  downloaded lombok-edge from https://projectlombok.org/download-edge
+local lombok_jar = util.path.join(jdtls_package_dir,"lombok-1.18.33", "lombok-edge.jar")
+-- local lombok_jar = util.path.join(jdtls_package_dir, "lombok.jar")
 
 -- bundles for debugging etc provided by mason package 'java-test'
 local bundles = {}
