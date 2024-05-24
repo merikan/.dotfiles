@@ -3,6 +3,11 @@
 [manager]
 
 prepend_keymap = [
+
+
+  { on = [ "J" ], run = "plugin --sync parent-arrow --args=1" },
+  { on = [ "K" ], run = "plugin --sync parent-arrow --args=-1" },
+
   { on = [ "e", ], exec = "open", desc = "Open the selected files" },
   { on = [ "E", ], exec = "open --interactive", desc = "Open the selected files interactively" },
   { on = [ "g", ".", ], exec = "cd ~/.dotfiles", desc = "Go to .dotfiles directory" },
