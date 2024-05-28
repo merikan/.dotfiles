@@ -20,18 +20,21 @@ return {
           vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarjava.jar"),
           vim.fn.expand("$MASON/share/sonarlint-analyzers/sonargo.jar"),
           vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarpython.jar"),
-          vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarcfamily.jar"),
           vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarhtml.jar"),
           vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarxml.jar"),
           vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarjs.jar"),
           vim.fn.expand("$MASON/share/sonarlint-analyzers/sonariac.jar"), -- docker, k8s, terraform
+        },
+        settings = {
+          sonarlint = {
+            test = "test",
+          },
         },
       },
       filetypes = {
         "java",
         "go",
         "python",
-        "cpp",
         "html",
         "xml",
         "js",
