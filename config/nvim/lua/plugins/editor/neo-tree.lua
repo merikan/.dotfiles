@@ -57,14 +57,18 @@ return {
       },
     },
     filesystem = {
-      follow_current_file = true,
+      follow_current_file = {
+        enabled = true,
+      },
       hijack_netrw_behavior = "open_current",
       use_libuv_file_watcher = true,
     },
     event_handlers = {
       {
         event = "neo_tree_buffer_enter",
-        handler = function(_) vim.opt_local.signcolumn = "auto" end,
+        handler = function(_)
+          vim.opt_local.signcolumn = "auto"
+        end,
       },
     },
   },
