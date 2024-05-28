@@ -88,7 +88,7 @@ o.writebackup = false -- if a file is being edited by another program (or was wr
 --------------------------------------------------------------------------------
 o.path:append { "**" } -- gf jump to file under cursor, CTRL-^ to jump back
 o.grepprg = "rg --vimgrep --smart-case --follow" -- use ripgrep instead of grep
-o.spelllang = "en_us,sv"
+o.spelllang = {"en","sv"}
 
 if vim.g.neovide then
   vim.g.neovide_cursor_trail_legnth = 0
