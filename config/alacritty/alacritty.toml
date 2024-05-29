@@ -2,7 +2,6 @@
 #
 [font]
 size = 14
-
 [font.bold]
 family = "JetBrainsMono Nerd Font"
 style = "Bold"
@@ -18,10 +17,15 @@ style = "Regular"
 [colors.cursor]
 # cursor = '#ffffff'
 cursor = '#eb8d00'
+[colors.vi_mode_cursor]
+	cursor = "#f5ef42"
 
 [cursor.style]
 shape = "Block"
 blinking = "On"
+
+[cursor.vi_mode_style]
+shape = "Block"
 
 [[keyboard.bindings]]
 action = "CreateNewWindow"
