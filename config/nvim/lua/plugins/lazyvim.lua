@@ -1,6 +1,6 @@
 return {
   -- import any extras modules here
-  { import = "lazyvim.plugins.extras.editor.aerial" },
+  { import = "lazyvim.plugins.extras.editor.outline" },
   { import = "lazyvim.plugins.extras.dap.core" },
   { import = "lazyvim.plugins.extras.test.core" },
   --
