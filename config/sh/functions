@@ -6,7 +6,7 @@
 # with the alias command. Check out my alias file(s)
 
 # easy create and cd into a directory (mcd myproject/src)
-mcd() { mkdir -p "$*" && cd "$" || exit; }
+mcd() { [ -n "$1" ] && mkdir -p "$*" && cd "$_"; }
 
 # smart cd
 cd() {
