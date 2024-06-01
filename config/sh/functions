@@ -25,7 +25,7 @@ cd() {
     elif [[ -f "$1" ]]; then # is it a file?
       builtin cd "$(dirname "$1")"; #cd into enclosing directory
     else
-      builtin cd "$1"; # normal cd behaviour
+      builtin cd $@; # normal cd behaviour
     fi
 }
 
