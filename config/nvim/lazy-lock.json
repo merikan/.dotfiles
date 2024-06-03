@@ -35,6 +35,7 @@
   "kanagawa.nvim": { "branch": "master", "commit": "860e4f80df71221d18bf2cd9ef1deb4d364274d2" },
   "kustomize.nvim": { "branch": "main", "commit": "bf6f7a81dbb123953ac6154ca79d5e017ddb45ec" },
   "lazy.nvim": { "branch": "main", "commit": "758bb5de98b805acc5eeed8cdc8ac7f0bc4b0b86" },
+  "log-highlight.nvim": { "branch": "main", "commit": "c18d1fd20c411f9fd9702d6d0d09edf3faa2bb96" },
   "lualine.nvim": { "branch": "master", "commit": "0a5a66803c7407767b799067986b4dc3036e1983" },
   "luarocks.nvim": { "branch": "main", "commit": "d3dda396d66e484590f253d1ac6d8980e3130807" },
   "markdown-preview.nvim": { "branch": "master", "commit": "a923f5fc5ba36a3b17e289dc35dc17f66d0548ee" },
