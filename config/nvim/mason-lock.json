@@ -1,6 +1,6 @@
 {
   "ansible-language-server": "1.2.3",
-  "ansible-lint": "24.5.0",
+  "ansible-lint": "24.6.0",
   "bash-language-server": "5.3.4",
   "beautysh": "6.2.1",
   "black": "24.4.2",
@@ -23,7 +23,7 @@
   "gitleaks": "v8.18.3",
   "go-debug-adapter": "v0.41.4",
   "gofumpt": "v0.6.0",
-  "goimports": "v0.21.0",
+  "goimports": "v0.22.0",
   "golangci-lint": "v1.59.0",
   "google-java-format": "v1.22.0",
   "gopls": "v0.15.3",
@@ -55,7 +55,6 @@
   "python-lsp-server": "1.11.0",
   "rust-analyzer": "2024-06-03",
   "selene": "0.27.1",
-  "semgrep": "1.74.0",
   "shellcheck": "v0.10.0",
   "shfmt": "v3.8.0",
   "snyk": "v1.1291.1",
@@ -74,5 +73,6 @@
   "xmlformatter": "0.2.6",
   "yaml-language-server": "1.14.0",
   "yamlfmt": "v0.12.1",
-  "yamllint": "1.35.1"
+  "yamllint": "1.35.1",
+
 }
