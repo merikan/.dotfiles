@@ -12,13 +12,13 @@ local wk = require("which-key")
 del("n", "<leader>l")
 del("n", "<leader>L")
 
-set("n", "<leader>;P", "<cmd>Mason<CR>", { desc = "Package Manager - [Mason]" })
-set("n", "<leader>;p", "<cmd>Lazy<CR>", { desc = "Plugin Manager - [LazyVim]" })
-set("n", "<leader>;e", "<cmd>LazyExtras<CR>", { desc = "Extras Manager - [LazyVim]" })
-set("n", "<leader>;i", "<cmd>LspInfo<CR>", { desc = "Lsp Info" })
-set("n", "<leader>;c", util.news.changelog, { desc = "Changelog [LazyVim]" })
-set("n", "<leader>;r", util.root.info, { desc = "Root Info [LazyVim]" })
-set("n", "<leader>;M", vim.cmd.messages, { desc = "Display messages" })
+set("n", "<leader>LP", "<cmd>Mason<CR>", { desc = "Package Manager - [Mason]" })
+set("n", "<leader>Lp", "<cmd>Lazy<CR>", { desc = "Plugin Manager - [LazyVim]" })
+set("n", "<leader>Le", "<cmd>LazyExtras<CR>", { desc = "Extras Manager - [LazyVim]" })
+set("n", "<leader>Li", "<cmd>LspInfo<CR>", { desc = "Lsp Info" })
+set("n", "<leader>Lc", util.news.changelog, { desc = "Changelog [LazyVim]" })
+set("n", "<leader>Lr", util.root.info, { desc = "Root Info [LazyVim]" })
+set("n", "<leader>LM", vim.cmd.messages, { desc = "Display messages" })
 
 -- My additional keymaps
 
