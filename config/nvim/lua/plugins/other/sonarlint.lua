@@ -11,6 +11,16 @@ return {
   {
     "schrieveslaach/sonarlint.nvim",
     url = "https://gitlab.com/schrieveslaach/sonarlint.nvim.git",
+    lazy = true,
+    ft = {
+      "java",
+      "go",
+      "html",
+      "xml",
+      "js",
+      "docker",
+      "yaml",
+    },
     opts = {
       server = {
         cmd = {
@@ -19,7 +29,6 @@ return {
           "-analyzers",
           vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarjava.jar"),
           vim.fn.expand("$MASON/share/sonarlint-analyzers/sonargo.jar"),
-          vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarpython.jar"),
           vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarhtml.jar"),
           vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarxml.jar"),
           vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarjs.jar"),
