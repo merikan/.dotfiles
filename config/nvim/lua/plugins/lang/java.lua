@@ -1,65 +1,63 @@
 return {
-  { import = "lazyvim.plugins.extras.lang.java" },
-  -- {
-  --   "williamboman/mason.nvim",
-  --   opts = function(_, opts)
-  --     opts.ensure_installed = opts.ensure_installed or {}
-  --     vim.list_extend(opts.ensure_installed, {
-  --       "google-java-format",
-  --       "checkstyle",
-  --     })
-  --   end,
-  -- },
-  -- {
-  --   "nvim-treesitter/nvim-treesitter",
-  --   opts = {
-  --     ensure_installed = {
-  --       "java",
-  --     },
-  --   },},
-  -- {
-  --   "mfussenegger/nvim-jdtls",
-  --   opts = {
-  --     jdtls = function(opts)
-  --       local install_path = require("mason-registry").get_package("jdtls"):get_install_path()
-  --       --  work-around for 'lombok.eclipse.handlers.HandleBuilder failed'
-  --       --  https://github.com/projectlombok/lombok/issues/3648
-  --       --  downloaded lombok-edge from https://projectlombok.org/download-edge
-  --       -- vim.notify("install path is " .. install_path)
-  --       local lombok_jar = install_path .. "/lombok-1.18.33/lombok-edge.jar"
-  --       -- vim.notify("lombok_jar path is " .. lombok_jar)
-  --       table.insert(opts.cmd, "--jvm-arg=-javaagent:" .. lombok_jar)
-  --       return opts
-  --     end,
-  --   },
-  -- },
-  -- {
-  --   "nvim-neotest/neotest",
-  --   optional = true,
-  --   dependencies = {
-  --     "rcasia/neotest-java",
-  --   },
-  --   opts = {
-  --     adapters = {
-  --       ["neotest-java"] = {},
-  --     },
-  --   },
-  -- },
-  -- {
-  --   "stevearc/conform.nvim",
-  --   optional = true,
-  --   opts = {
-  --     formatters_by_ft = {
-  --       -- java = { "google-java-format" },
-  --     },
-  --   },
-  -- },
-  -- {
-  --   "mfussenegger/nvim-lint",
-  --   opts = {
-  --     linters_by_ft = {
-  --       -- java = { "checkstyle" },
-  --     },
-  --   },
-  -- },
+  {
+    "williamboman/mason.nvim",
+    opts = function(_, opts)
+      opts.ensure_installed = opts.ensure_installed or {}
+      vim.list_extend(opts.ensure_installed, {
+        "jdtls",
+        "java-debug-adapter",
+        "java-test",
+        "google-java-format",
+        "checkstyle",
+      })
+    end,
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "java",
+      },
+    },
+  },
+  {
+    "neovim/nvim-lspconfig",
+    dependencies = { "mfussenegger/nvim-jdtls" },
+    opts = {
+      setup = {
+        jdtls = function()
+          return true -- don't load with nvim-lspconfig since we use ftplugin
+        end,
+      },
+    },
+  },
+  {
+    "nvim-neotest/neotest",
+    optional = true,
+    dependencies = {
+      "rcasia/neotest-java",
+    },
+    opts = {
+      adapters = {
+        ["neotest-java"] = {},
+      },
+    },
+  },
+  {
+    "stevearc/conform.nvim",
+    optional = true,
+    opts = {
+      formatters_by_ft = {
+        -- java = { "google-java-format" },
+      },
+    },
+  },
+  {
+    "mfussenegger/nvim-lint",
+    opts = {
+      linters_by_ft = {
+        -- java = { "checkstyle" },
+      },
+    },
+  },
 }
