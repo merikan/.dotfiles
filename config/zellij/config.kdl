@@ -33,6 +33,8 @@ keybinds {
         bind "X" { CloseTab; SwitchToMode "Normal"; }
         bind "H" "p" { GoToPreviousTab; }
         bind "L" "n" "Tab" { GoToNextTab; }
+        bind "<" { MoveTab "Left"; }
+        bind ">" { MoveTab "Right"; }
         bind "1" { GoToTab 1; SwitchToMode "Normal"; }
         bind "2" { GoToTab 2; SwitchToMode "Normal"; }
         bind "3" { GoToTab 3; SwitchToMode "Normal"; }

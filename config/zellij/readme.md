@@ -68,6 +68,8 @@ My `Tmux` mode is more like `Normal` mode in `Vim`. My first try in `Zellij` was
 * `X` - Close current `Tab`
 * `Shift h`, `p` - Switch to previous `Tab`
 * `Shift l`, `n`,`Tab` - Switch to next `Tab`
+* `<` - Move `Tab` to left
+* `>` - Move `Tab` to right
 * `1` - Goto `Tab` #1
 * `2` - Goto `Tab` #2
 * `3` - Goto `Tab` #3
