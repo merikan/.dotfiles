@@ -1,4 +1,13 @@
 return {
+  {
+    -- plugin helping you establish good command workflow and habit
+    -- https://github.com/m4xshen/hardtime.nvim
+    "m4xshen/hardtime.nvim",
+    enabled = false,
+    opts = {
+      disabled_filetypes = { "neo-tree", "lazy" },
+    },
+  },
   -- uses virtual text and gutter signs to show available motions.
   -- https://github.com/tris203/precognition.nvim
   {
