@@ -59,6 +59,8 @@ keymap("n", "<A-s>", "<cmd>noautocmd w<CR>", { desc = "Save without formatting" 
 -- Toggle background
 -- stylua: ignore
 keymap("n", "<leader>uB", function() util.toggle("background", false, { "light", "dark" }) end, { desc = "Toggle Background" })
+-- stylua: ignore
+keymap("n", "<leader>z", function() LazyVim.toggle.maximize() end, { desc = "Maximize Toggle" })
 
 -- write with sudo
 keymap("c", "w!!", "<esc>:lua require'utils'.sudo_write()<CR>", { silent = true })
