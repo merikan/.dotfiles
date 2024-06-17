@@ -17,7 +17,7 @@ local util = require("lspconfig.util")
 local jdtls_package_dir = require("mason-registry").get_package("jdtls"):get_install_path()
 local jdtls_bin = util.path.join(jdtls_package_dir, "bin", "jdtls") -- wrapper script
 
-local share_dir = vim.env.XDG_SHARE_HOME or util.path.join(vim.env.HOME, ".local/share")
+local data_dir = vim.env.XDG_DATA_HOME or util.path.join(vim.env.HOME, ".local/share")
 local cache_dir = vim.env.XDG_CACHE_HOME or util.path.join(vim.env.HOME, ".cache")
 
 local jdtls_cache_dir = util.path.join(cache_dir, "jdtls")
@@ -25,8 +25,10 @@ local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 local workspace_dir = util.path.join(jdtls_cache_dir, "workspace", project_name)
 --  work-around for 'lombok.eclipse.handlers.HandleBuilder failed'
 --  https://github.com/projectlombok/lombok/issues/3648
---  downloaded lombok-edge from https://projectlombok.org/download-edge
-local lombok_jar = util.path.join(jdtls_package_dir,"lombok-1.18.33", "lombok-edge.jar")
+--  download lombok-edge from https://projectlombok.org/download-edge and use it in JDTLS settings
+--  mkdir -p $XDG_DATA_HOME/lombok-1.18.33
+--  curl -Lo $XDG_DATA_HOME/lombok-1.18.33/lombok-edge.jar https://projectlombok.org/lombok-edge.jar
+local lombok_jar = util.path.join(data_dir,"lombok-1.18.33", "lombok-edge.jar")
 -- local lombok_jar = util.path.join(jdtls_package_dir, "lombok.jar")
 
 -- bundles for debugging etc provided by mason package 'java-test'
