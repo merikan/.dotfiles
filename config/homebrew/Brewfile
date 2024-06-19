@@ -297,6 +297,7 @@ cask "whalebird"                                    # mastodon client
 cask "xbar"                                         # put the output from any script or program in your Mac OS X Menu Bar
 cask "xquartz"                                      # X windows on Mac
 cask "yed"                                          # graph editor
+cask "zap"                                          # Zed Attack Proxy (web scanner)
 cask "zed"                                          # multiplayer code editor
 cask "zoom"                                         # video communications
 
