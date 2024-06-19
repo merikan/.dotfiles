@@ -129,6 +129,7 @@ brew "mas"                                          # Mac App Store command-line
 brew "midnight-commander"                           # visual file manager
 brew "minikube"                                     # kubernetes mini
 brew "charmbracelet/tap/mods"                       # AI on the command line
+brew "mise"                                         # handle dev environment
 brew "mplayer"                                      # UNIX movie player
 brew "mysql-client"                                 # mysql client
 brew "ncdu"                                         # a disk usage analyzer with an ncurses interface
