@@ -285,7 +285,7 @@ if arch_amd?
   cask "virtualbox"                                   # virtualizer for x86 hardware
 end
 if arch_arm?
-  cask "virtualbox-beta"                            # virtualizer for arm hardware
+  cask "virtualbox@beta"                            # virtualizer for arm hardware
 end
 cask "visual-paradigm-ce"                           # software modelling tool
 cask "visual-studio-code"                           # a great editor
