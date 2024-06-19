@@ -346,8 +346,8 @@ export PATH=$HOME/bin:$HOME/.local/bin:$PATH
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 
-# print system info with neofetch
-# command -v neofetch >/dev/null 2>&1  && clear; neofetch
+# print system info with fastfetch
+# command -v fastfetch >/dev/null 2>&1  && clear; neofetch
 
 
 # render profiling

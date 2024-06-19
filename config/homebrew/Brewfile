@@ -63,6 +63,7 @@ brew "wagoodman/dive/dive"                          # exploring a docker image, 
 brew "doxygen"                                      # Generate documentation from source code
 brew "docker"                                       # docker client
 brew "docker-credential-helper"                     # keystore credential helper for Docker
+brew "fastfetch"                                    # A fast, highly customizable system info script
 brew "ffmpeg"                                       # record, convert and stream audio and video
 brew "ffmpegthumbnailer"                            # create thumbnails for your video files
 brew "flake8"                                       # lint python
@@ -132,7 +133,6 @@ brew "mplayer"                                      # UNIX movie player
 brew "mysql-client"                                 # mysql client
 brew "ncdu"                                         # a disk usage analyzer with an ncurses interface
 brew "nmap"                                         # port scanning utility for large networks
-brew "neofetch"                                     # A fast, highly customizable system info script
 brew "neovim"                                       # neovim
 brew "nvm"                                          # manage multiple Node.js versions
 brew "openconnect"                                  # open client for cisco anyconnect vpn
