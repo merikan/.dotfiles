@@ -59,7 +59,7 @@ brew "wvanlint/twf/twf"                             # tree view file explorer
 brew "dfc"                                          # displays file system space usage using graphs and colors
 brew "diff-pdf"                                     # visually compare two PDF files
 brew "direnv"                                       # load/unload env variables
-brew "wagoodman/dive/dive"                          # exploring a docker image, layer contents, and discovering ways to shrink your Docker image size.
+brew "dive"                                         # exploring a docker image, layer contents, and discovering ways to shrink your Docker image size.
 brew "doxygen"                                      # Generate documentation from source code
 brew "docker"                                       # docker client
 brew "docker-credential-helper"                     # keystore credential helper for Docker
