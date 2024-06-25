@@ -38,6 +38,8 @@
 # ---------------------------------------------------------------------------------------------
 
 - link:
+    # aerospace
+    ~/.config/aerospace/aerospace.toml: config/aerospace/aerospace.toml
     # alacritty
     ~/.config/alacritty/alacritty.toml: config/alacritty/alacritty.toml
     # bash

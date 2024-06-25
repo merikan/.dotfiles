@@ -199,6 +199,7 @@ brew "zsh"                                          # shell
 ### ---------------------------------------------------- ###
 # Note: Casks with version 'latest' will not be updated due to no checksum change
 cask "adium"                                        # instant messaging
+cask "nikitabobko/tap/aerospace"                    # tiling window manager
 cask "alacritty"                                    # the GPU enhanced terminal emulator
 cask "alt-tab"                                      # awesome keyboard window switcher for Mac
 cask "alfred"                                       # a must have for boost productivity
