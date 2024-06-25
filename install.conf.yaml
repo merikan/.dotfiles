@@ -51,6 +51,8 @@
     ~/.local/bin:
       path: config/bin/*
       glob: true
+    # borders
+    ~/.config/borders/bordersrc: config/borders/bordersrc
     # direnv
     ~/.config/direnv/direnv.toml: config/direnv/direnv.toml
     # editorconfig
