@@ -83,6 +83,10 @@
     ~/.ideavimrc: config/ideavim/ideavimrc
     # k9s
     ~/.config/k9s/skin.yml: config/k9s/skins/dracula.yml
+    # kitty
+    ~/.config/kitty:
+      path: config/kitty/*
+      glob: true
     # lazygit
     ~/.config/lazygit/config.yaml: config/lazygit/config.yaml
     # lf
