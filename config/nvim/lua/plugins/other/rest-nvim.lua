@@ -1,3 +1,9 @@
+
+-- disable this plugin since we have a problem Houston and it is no longer maintained
+-- `lua` version `5.1` needed, but found `Lua 5.4.6  Copyright (C) 1994-2023 Lua.org, PUC-Rio`
+if true then return {} end
+
+
 return {
   --  REST Client to send HTTP request and view the response
   --  https://github.com/rest-nvim/rest.nvim
