@@ -2,7 +2,8 @@
 default_layout "terminal"
 
 // set the theme
-theme "nord"
+//theme "catppuccin-mocha"
+theme "catppuccin-frappe"
 ui {
     pane_frames {
         rounded_corners true
@@ -126,6 +127,52 @@ plugins {
         cwd "/"
     }
     // extra plugins
+    zjstatus_catppuccin location="file:~/.config/zellij/plugins/zjstatus.wasm" {
+        format_left   "#[fg=#cba6f7]#[bg=#cba6f7,fg=#11111b,bold]{session}#[fg=#cba6f7] {mode} | {tabs}"
+        format_right  "{notifications} #[fg=#74c7ec] #[fg=#a6e3a1]#[fg=#11111b,bg=#a6e3a1] #[fg=#cdd6f4,bg=#313244] {command_user}@{command_host}#[fg=#313244] #[fg=#f38ba8]#[fg=#11111b,bg=#f38ba8]󰃭 {datetime}#[fg=#313244]"
+
+        format_hide_on_overlength "true"
+        format_precedence         "lrc"
+
+        border_enabled  "true"
+        border_char     "─"
+        border_format   "#[fg=#313244]{char}"
+        border_position "bottom"
+
+        mode_normal       "#[bg=#89b4fa,fg=#11111b,bold] {name}#[fg=#89b4fa]"
+        mode_tmux         "#[bg=#a6e3a1,fg=#11111b,bold] {name}#[fg=#a6e3a1]"
+        mode_tab          "#[bg=#fab387,fg=#11111b,bold] {name}#[fg=#fab387]"
+        mode_pane         "#[bg=#fab387,fg=#11111b,bold] {name}#[fg=#fab387]"
+        mode_rename_tab   "#[bg=#f9e2af,fg=#11111b,bold] {name}#[fg=#f9e2af]"
+        mode_rename_pane  "#[bg=#f9e2af,fg=#11111b,bold] {name}#[fg=#f9e2af]"
+        mode_scroll       "#[bg=#eba0ac,fg=#11111b,bold] {name}#[fg=#eba0ac]"
+        mode_enter_search "#[bg=#eba0ac,fg=#11111b,bold] {name}#[fg=#eba0ac]"
+        mode_resize       "#[bg=#cba6f7,fg=#11111b,bold] {name}#[fg=#cba6f7]"
+
+        tab_normal "#[fg=#585b70,italic] {name} #[bg=#89b4fa,fg=#11111b,bold] {index}#[fg=#89b4fa]"
+        tab_active "#[fg=#fab387,italic,bold] {name} #[fg=#94e2d5]{floating_indicator}{fullscreen_indicator}{sync_indicator} #[bg=#fab387,fg=#11111b,bold] {index}#[fg=#fab387] "
+        tab_sync_indicator       "󰓦 "
+        tab_fullscreen_indicator "󰊓 "
+        tab_floating_indicator   "󰖲 "
+
+        notification_format_unread           "#[fg=#f9e2af]#[fg=#11111b,bg=#f9e2af] #[fg=#cdd6f4,bg=#313244] {message}#[fg=#313244]"
+        notification_format_no_notifications ""
+        notification_show_interval           "10"
+
+        command_host_command    "uname -n"
+        command_host_format     "{stdout}"
+        command_host_interval   "10"
+        command_host_rendermode "static"
+
+        command_user_command    "whoami"
+        command_user_format     "{stdout}"
+        command_user_interval   "10"
+        command_user_rendermode "static"
+
+        datetime          "#[fg=#cdd6f4,bg=#313244] {format}"
+        datetime_format   "%Y-%m-%d  󰅐 %H:%M"
+        datetime_timezone "Europe/Stockholm"
+    }
 //    autolock location="https://github.com/fresh2dev/zellij-autolock/releases/latest/download/zellij-autolock.wasm" {
 //        triggers "nvim|vim"  // Lock when any open these programs open. They are expected to unlock themselves when closed (e.g., using zellij.vim plugin).
 //        watch_triggers "fzf|zoxide|atuin"  // Lock when any of these open and monitor until closed.
@@ -135,52 +182,6 @@ plugins {
 //        tab-finder location="https://github.com/rvcas/room/releases/download/v1.0.0/room.wasm" {
 //            floating true
 //            ignore_case true
-//        }
-//        // status-bar location="zellij:status-bar"
-//        status-bar location="https://github.com/dj95/zjstatus/releases/download/v0.14.1/zjstatus.wasm" {
-//            format_left "{tabs}"
-//            format_right  "#[fg=#89B4FA,bold]{session} | {mode} "
-//            // format_center "{tabs}"
-//            // format_right  "{command_git_branch} {datetime}"
-//            // format_right  "{datetime}"
-//            format_space  ""
-//
-//            border_enabled  "true"
-//            border_char     "─"
-//            border_format   "#[fg=#6C7086]{char}"
-//            border_position "bottom"
-//
-//            hide_frame_for_single_pane "false"
-//
-//            mode_normal        "#[fg=green,bold]{name}"
-//            mode_locked        "#[fg=orange,bold]{name}"
-//
-//            // formatting for inactive tabs
-//            tab_normal              "#[fg=#6C7086] [{index}] {name} "
-//            tab_normal_fullscreen   "#[fg=#6C7086] [{index}] {name} [] "
-//            tab_normal_sync         "#[fg=#6C7086] [{index}] {name} <> "
-//
-//            // formatting for the current active tab
-//            tab_active              "#[fg=#9399B2,bold] [{index}] {name} {floating_indicator}"
-//            tab_active_fullscreen   "#[fg=#9399B2,bold] [{index}] {name} {fullscreen_indicator}"
-//            tab_active_sync         "#[fg=#9399B2,bold] [{index}] {name} {sync_indicator}"
-//
-//            // separator between the tabs
-//            tab_separator           "#[fg=#6C7086,bg=#181825] | "
-//
-//            // indicators
-//            tab_sync_indicator       "<> "
-//            tab_fullscreen_indicator "[] "
-//            tab_floating_indicator   "⬚ "
-//
-//            // command_git_branch_command     "git rev-parse --abbrev-ref HEAD"
-//            // command_git_branch_format      "#[fg=blue] {stdout} "
-//            // command_git_branch_interval    "10"
-//            // command_git_branch_rendermode  "static"
-//
-//            // datetime        "#[fg=#6C7086,bold] {format} "
-//            // datetime_format "%A, %d %b %Y %H:%M"
-//            // datetime_timezone "America/Chicago"
 //        }
 //        forgot-plugin location="https://github.com/karimould/zellij-forgot/releases/download/0.4.0/zellij_forgot.wasm" {
 //            "LOAD_ZELLIJ_BINDINGS" "true"
