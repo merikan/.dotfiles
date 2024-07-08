@@ -156,6 +156,10 @@
     ~/.config/zellij:
       path: config/zellij/*
       glob: true
+    # keeping plugins in git until we have a plugin manager ;-) 
+    ~/.local/share/zellij/plugins:
+        path: config/zellij/plugins/*
+        glob: true
     # zim
     ~/.zimrc: config/zim/zimrc
     # zsh

@@ -114,9 +114,11 @@ keybinds {
 }
 
 plugins {
-    // use aliases for plugins instead of direct reference in layout
-    //
-    // default plugins
+    // Good practise: use aliases for plugins instead of direct reference in layout
+
+    // -----------------------
+    // built-in plugins
+    // -----------------------
     tab-bar location="zellij:tab-bar"
     status-bar location="zellij:status-bar"
     strider location="zellij:strider"
@@ -129,10 +131,13 @@ plugins {
         cwd "/"
     }
 
+    // -----------------------
     // extra plugins
+    // -----------------------
 
-    // zjstatus (Catppuccin: Mocha)
-    zjstatus location="file:~/.config/zellij/plugins/zjstatus.wasm" {
+    // zjstatus
+    zjstatus location="file:~/.local/share/zellij/plugins/zjstatus.wasm" {
+        // theme: Catppuccin Mocha
         format_left   "#[bg=#313244,fg=#eba0ac]#[bg=#eba0ac,fg=#181926,bold] {session} {mode}#[bg=#282828] {tabs}"
         format_center "{notifications}"
         format_right  "#[fg=#89dceb]#[fg=#11111b,bg=#89dceb] #[fg=#89dceb,bg=#313244] {command_user}@{command_host}#[fg=#313244]#[fg=#74c7ec]#[fg=#11111b,bg=#74c7ec]󰃭 #[fg=#74c7ec,bg=#313244] {datetime}#[fg=#313244] "
