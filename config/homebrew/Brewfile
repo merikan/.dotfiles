@@ -54,8 +54,9 @@ brew "cosign"                                       #
 brew "curl"                                         # curl
 brew "util-linux"                                   # linux utilities
 brew "dasel"                                        # query and modify data structures in json/toml/yaml/xml/csv/plain format
-brew "devcontainer"                                 # create and configure a dev container from a devcontainer.json
 brew "git-delta"                                    # syntax-highlighting pager for git, diff, and grep output
+brew "devcontainer"                                 # devcontainer cli
+brew "devpod"                                       # an implementation of devcontainers
 brew "joshuto"                                      # ranger-like terminal file manager written in Rust
 brew "wvanlint/twf/twf"                             # tree view file explorer
 brew "dfc"                                          # displays file system space usage using graphs and colors
