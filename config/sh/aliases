@@ -119,15 +119,14 @@ alias k='kubectl'
 alias kim="kubectl get pods -o jsonpath=\"{.items[*].spec.containers[*].image}\" |\
           tr -s '[[:space:]]' '\\n' | sort | uniq -c" #list images in current ns
 alias kpf='kubectl port-forward '
-# kustomize
 alias kz='kustomize'
-# skaffold
 alias sk=skaffold
 alias mk='minikube'
 alias zj="zellij"
 alias zja="zellij a"
 alias zjs="zellij -s"
 alias zjr="zellij run -f --"
+alias devcon="devcontainer"
 
 # maven
 alias mct='mvn clean test'
