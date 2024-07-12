@@ -92,6 +92,7 @@
   "telescope-undo.nvim": { "branch": "main", "commit": "51be9ae7c42fc27c0b05505e3a0162e0f05fbb6a" },
   "telescope.nvim": { "branch": "master", "commit": "bfcc7d5c6f12209139f175e6123a7b7de6d9c18a" },
   "tfm.nvim": { "branch": "main", "commit": "fb0de2c96bf303216ac5d91ce9bdb7f430030f8b" },
+  "tiny-inline-diagnostic.nvim": { "branch": "main", "commit": "f35ebcad3722cdbd7a4de1a7d41426a41a15f593" },
   "todo-comments.nvim": { "branch": "main", "commit": "313b04e5b02d29ab9275c9295ff5e2b73921b0eb" },
   "tokyonight.nvim": { "branch": "main", "commit": "66a272ba6cf93bf303c4b7a91b100ca0dd3ec7bd" },
   "trouble.nvim": { "branch": "main", "commit": "4453fea6bb597830fbd58d2c484612f37b97bd8c" },
