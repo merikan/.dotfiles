@@ -1,14 +1,15 @@
 -- https://github.com/ThePrimeagen/harpoon
+local prefix = "<leader>h"
 local keys = {}
 
 -- stylua: ignore start
 for i = 1, 9 do
-  table.insert(keys, { "<leader>h" .. i, function() require("harpoon"):list():select(i) end, desc = "File " .. i })
+  table.insert(keys, { prefix .. i, function() require("harpoon"):list():select(i) end, desc = "File " .. i })
 end
 
-table.insert(keys, { "<leader>ha", function() require("harpoon"):list():append() end, desc = "Add Mark" })
-table.insert(keys, { "<leader>hh", function() require("harpoon").ui:toggle_quick_menu(require("harpoon"):list()) end, desc = "Menu" })
-table.insert(keys, { "<leader>hf", "<cmd>Telescope harpoon marks<CR>", desc = "Files" })
+table.insert(keys, { prefix .. "a", function() require("harpoon"):list():append() end, desc = "Add Mark" })
+table.insert(keys, { prefix .. "h", function() require("harpoon").ui:toggle_quick_menu(require("harpoon"):list()) end, desc = "Menu" })
+table.insert(keys, { prefix .. "f", "<cmd>Telescope harpoon marks<CR>", desc = "Files" })
 
 table.insert(keys, { "]H", function() require("harpoon"):list():next() end, desc = "Next Harpoon File" })
 table.insert(keys, { "[H", function() require("harpoon"):list():prev() end, desc = "Prev Harpoon File" })
@@ -48,11 +49,12 @@ return {
       end)
     end,
   },
+  -- add menu
   {
     "folke/which-key.nvim",
     opts = {
-      defaults = {
-        ["<leader>h"] = { name = "harpoon" },
+      spec = {
+        { prefix, group = "harpoon" },
       },
     },
   },

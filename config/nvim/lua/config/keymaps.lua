@@ -4,21 +4,6 @@
 --     (2) https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 
 local util = require("lazyvim.util")
-local set = vim.keymap.set
-local del = vim.keymap.del
-local wk = require("which-key")
-
--- Delete LazyVim default bindings for meta information
-del("n", "<leader>l")
-del("n", "<leader>L")
-
-set("n", "<leader>LP", "<cmd>Mason<CR>", { desc = "Package Manager - [Mason]" })
-set("n", "<leader>Lp", "<cmd>Lazy<CR>", { desc = "Plugin Manager - [LazyVim]" })
-set("n", "<leader>Le", "<cmd>LazyExtras<CR>", { desc = "Extras Manager - [LazyVim]" })
-set("n", "<leader>Li", "<cmd>LspInfo<CR>", { desc = "Lsp Info" })
-set("n", "<leader>Lc", util.news.changelog, { desc = "Changelog [LazyVim]" })
-set("n", "<leader>Lr", util.root.info, { desc = "Root Info [LazyVim]" })
-set("n", "<leader>LM", vim.cmd.messages, { desc = "Display messages" })
 
 -- My additional keymaps
 
@@ -83,23 +68,8 @@ if vim.env.TMUX ~= nil then
   keymap("n", "<C-l>", ":NvimTmuxNavigateRight<CR>", { desc = "Go to right window (tmux-aware)", remap = true })
 end
 
--- grmagatti/goto-preview
-wk.register { ["<leader>gp"] = { name = "+preview" } }
 -- stylua: ignore
-keymap( "n", "<leader>gpd", "<cmd>lua require('goto-preview').goto_preview_definition()<cr>", { desc = "Preview Definition" })
--- stylua: ignore
-keymap( "n", "<leader>gpy", "<cmd>lua require('goto-preview').goto_preview_type_definition()<cr>", { desc = "Preview T[y]pe Definition" })
--- stylua: ignore
-keymap( "n", "<leader>gpi", "<cmd>lua require('goto-preview').goto_preview_implementation()<cr>", { desc = "Preview Implementation" })
--- stylua: ignore
-keymap( "n", "<leader>gpD", "<cmd>lua require('goto-preview').goto_preview_declaration()<cr>", { desc = "Preview Declaration" })
--- stylua: ignore
-keymap("n", "<leader>gpc", "<cmd>lua require('goto-preview').close_all_win()<cr>", { desc = "Close All Preview Win" })
--- stylua: ignore
-keymap( "n", "<leader>gpr", "<cmd>lua require('goto-preview').goto_preview_references()<cr>", { desc = "Preview References" })
-
--- stylua: ignore
-keymap("n", "<leader>B", function() require("telescope.builtin").buffers { sort_mru = true, ignore_current_buffer = true, show_all_buffers = false, } { desc = "Switch Buffers" } end)
+keymap("n", "<leader>B", function() require("telescope.builtin").buffers { sort_mru = true, ignore_current_buffer = true, show_all_buffers = false, } end, { desc = "Switch Buffers" })
 -- Plugin Info
 keymap("n", "<leader>cif", "<cmd>LazyFormatInfo<cr>", { desc = "Formatting" })
 keymap("n", "<leader>cic", "<cmd>ConformInfo<cr>", { desc = "Conform" })
