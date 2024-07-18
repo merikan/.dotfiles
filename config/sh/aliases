@@ -127,6 +127,7 @@ alias zja="zellij a"
 alias zjs="zellij -s"
 alias zjr="zellij run -f --"
 alias devcon="devcontainer"
+alias psme='pstree -p $$'
 
 # maven
 alias mct='mvn clean test'
