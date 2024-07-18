@@ -11,6 +11,7 @@ return {
   { import = "plugins.editor" },
   { import = "plugins.ui" },
   { import = "plugins.lang" },
+  { import = "plugins.coding" },
   { import = "plugins.misc" },
   {
     -- make our own Lazy menu
