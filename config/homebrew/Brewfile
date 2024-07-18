@@ -56,7 +56,6 @@ brew "util-linux"                                   # linux utilities
 brew "dasel"                                        # query and modify data structures in json/toml/yaml/xml/csv/plain format
 brew "git-delta"                                    # syntax-highlighting pager for git, diff, and grep output
 brew "devcontainer"                                 # devcontainer cli
-brew "devpod"                                       # an implementation of devcontainers
 brew "joshuto"                                      # ranger-like terminal file manager written in Rust
 brew "wvanlint/twf/twf"                             # tree view file explorer
 brew "dfc"                                          # displays file system space usage using graphs and colors
@@ -221,6 +220,7 @@ cask "chromium"                                     # open-source browser
 cask "cyberduck"                                    # client for FTP and SFTP, WebDAV, and cloud storage
 cask "dash"                                         # API documentation browser
 cask "dbeaver-community"                            # universal database tool
+cask "devpod"                                       # an implementation of devcontainers
 cask "discord"                                      # group-chatting platform
 cask "dropbox"                                      # personal cloud storage service
 cask "eclipse-java"                                 # eclipse ide for java developers
