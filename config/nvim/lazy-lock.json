@@ -33,6 +33,7 @@
   "harpoon": { "branch": "harpoon2", "commit": "0378a6c428a0bed6a2781d459d7943843f374bce" },
   "indent-blankline.nvim": { "branch": "master", "commit": "65e20ab94a26d0e14acac5049b8641336819dfc7" },
   "kanagawa.nvim": { "branch": "master", "commit": "e5f7b8a804360f0a48e40d0083a97193ee4fcc87" },
+  "kitty-scrollback.nvim": { "branch": "main", "commit": "dc101d0a8356db9c7290dfbfa82c27ec35e3b55a" },
   "kustomize.nvim": { "branch": "main", "commit": "e63937aa0f2f1d74f6a1ba3af6ea05aa82343c3e" },
   "lazy.nvim": { "branch": "main", "commit": "8f6225751138329da339eb6554d40158768d23ff" },
   "lazydev.nvim": { "branch": "main", "commit": "02f1055a777264d4b65896051ec28d0f322f7932" },
