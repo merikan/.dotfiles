@@ -57,7 +57,7 @@
   "python-lsp-server": "1.11.0",
   "rust-analyzer": "2024-07-15",
   "selene": "0.27.1",
-  "semgrep": "1.79.0",
+  "semgrep": "1.80.0",
   "shellcheck": "v0.10.0",
   "shfmt": "v3.8.0",
   "snyk": "v1.1292.1",
