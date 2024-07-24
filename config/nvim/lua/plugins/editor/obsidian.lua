@@ -13,11 +13,6 @@ return {
     },
     dependencies = {
       "nvim-lua/plenary.nvim", -- Required.
-      { -- adds horizontal highlights for text filetypesinit.lua
-        "lukas-reineke/headlines.nvim",
-        dependencies = "nvim-treesitter/nvim-treesitter",
-        config = true,
-      },
     },
     keys = {
       { prefix .. "o", "<cmd>ObsidianOpen<CR>", desc = "Open on App" },
