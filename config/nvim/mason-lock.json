@@ -11,7 +11,7 @@
   "cucumber-language-server": "1.6.0",
   "dart-debug-adapter": "v3.92.0",
   "delve": "v1.23.0",
-  "deno": "v1.45.3",
+  "deno": "v1.45.4",
   "diagnostic-languageserver": "1.15.0",
   "docker-compose-language-service": "0.2.0",
   "dockerfile-language-server": "0.13.0",
