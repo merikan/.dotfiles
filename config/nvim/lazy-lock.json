@@ -90,6 +90,7 @@
   "precognition.nvim": { "branch": "main", "commit": "2a566f03eb06859298eff837f3a6686dfa5304a5" },
   "rasmus.nvim": { "branch": "main", "commit": "86d608bd1d12a53b39d9b4b2847cd7c3ea81d473" },
   "rustaceanvim": { "branch": "master", "commit": "047f9c9d8cd2861745eb9de6c1570ee0875aa795" },
+  "snipe.nvim": { "branch": "main", "commit": "2bcf5e4c78c5cffd4a0fd4dd57058ac549eb3621" },
   "sonarlint.nvim": { "branch": "main", "commit": "e2a44717af984114fd7da0d5e084240ef269f088" },
   "specs.nvim": { "branch": "main", "commit": "2743e412bbe21c9d73954c403d01e8de7377890d" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "cf48d4dfce44e0b9a2e19a008d6ec6ea6f01a83b" },
