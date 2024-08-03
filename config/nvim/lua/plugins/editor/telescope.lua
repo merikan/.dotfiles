@@ -1,4 +1,5 @@
 return {
+  { import = "lazyvim.plugins.extras.editor.telescope" },
   -- A telescope extension to view and search your undo tree
   -- https://github.com/debugloop/telescope-undo.nvim
   {
