@@ -5,7 +5,12 @@ return {
     optional = true,
   },
   opts = {
-    columns = { "icon" },
+    columns = {
+      "icon",
+      --   "permissions",
+      --   "size",
+      -- "mtime",
+    },
     delete_to_trash = true,
     float = {
       max_height = 45,
@@ -13,8 +18,11 @@ return {
     },
     keymaps = {
       ["q"] = "actions.close",
+      -- Make split mappings consistent with Telescope.
       ["<C-h>"] = false,
-      ["<M-h>"] = "actions.select_split",
+      ["<C-s>"] = false,
+      ["<C-v>"] = { "actions.select", opts = { vertical = true }, desc = "Open the entry in a vertical split" },
+      ["<C-x>"] = { "actions.select", opts = { horizontal = true }, desc = "Open the entry in a horizontal split" },
     },
     view_options = {
       show_hidden = true,
