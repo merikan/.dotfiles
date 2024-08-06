@@ -148,10 +148,14 @@
     ~/.config/tut/config.ini: config/tut/config.ini
     # vim
     ~/.vimrc: config/vim/vimrc
+    # wezterm
+    ~/.config/wezterm:
+      path: config/wezterm/*
+      glob: true
     # yazi
     ~/.config/yazi:
-      path: config/yazi/*
-      glob: true
+        path: config/yazi/*
+        glob: true
     # zellij
     ~/.config/zellij:
       path: config/zellij/*
