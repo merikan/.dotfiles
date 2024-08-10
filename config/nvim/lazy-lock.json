@@ -5,6 +5,7 @@
   "SchemaStore.nvim": { "branch": "main", "commit": "6eb8cee613518fb065d23a81d01eeb42365d59c1" },
   "animation.nvim": { "branch": "main", "commit": "fb77091ab72ec9971aee0562e7081182527aaa6a" },
   "arrow.nvim": { "branch": "master", "commit": "0b0191d967d9fd837a850f2ccaa95d5917239404" },
+  "bigfile.nvim": { "branch": "main", "commit": "33eb067e3d7029ac77e081cfe7c45361887a311a" },
   "blame.nvim": { "branch": "main", "commit": "dedbcdce857f708c63f261287ac7491a893912d0" },
   "bufferline.nvim": { "branch": "main", "commit": "0b2fd861eee7595015b6561dade52fb060be10c4" },
   "catppuccin": { "branch": "main", "commit": "10eda02ea4faa7d1f94e77a3410a4ae91c25c5f5" },
