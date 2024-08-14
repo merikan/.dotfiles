@@ -43,6 +43,15 @@ return {
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     cmd = "EditMarkdownTable",
   },
+  -- Markdown like keymaps for toggling text formatting
+  -- https://github.com/antonk52/markdowny.nvim
+  {
+    "antonk52/markdowny.nvim",
+    ft = { "markdown", "txt" },
+    opts = {
+      filetypes = { "markdown", "txt" },
+    },
+  },
   --  DevDocs documentations
   --  https://github.com/luckasRanarison/nvim-devdocs
   {
