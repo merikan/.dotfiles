@@ -25,6 +25,21 @@ if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
+# Editors
+#
+export EDITOR='nvim'
+export VISUAL='nvim'
+export PAGER='less'
+
+
+# file names to ignore
+zstyle ':completion:*:*files' ignored-patterns '.DS_Store'
+# Typing EOF (CTRL+D) will not exit interactive sessions
+setopt ignoreeof
+
+# Applications
+
+# homebrew
 if [[ "${UNAME_SYSTEM}" == "Darwin" ]]; then
   if [[ "${UNAME_MACHINE}" == "arm64" ]]; then
     export HOMEBREW_PREFIX="/opt/homebrew"
@@ -33,30 +48,21 @@ if [[ "${UNAME_SYSTEM}" == "Darwin" ]]; then
   fi
   [[ -s "${HOMEBREW_PREFIX}/bin/brew" ]] && {
     export HOMEBREW_CELLAR="${HOMEBREW_PREFIX}/Cellar"
-    export HOMEBREW_REPOSITORY="${HOMEBREW_PREFIX}/Homebrew"
-    export PATH="${HOMEBREW_PREFIX}/bin:${HOMEBREW_PREFIX}/sbin${PATH+:$PATH}"
-    export MANPATH="${HOMEBREW_PREFIX}/share/man${MANPATH+:$MANPATH}:"
-    export INFOPATH="${HOMEBREW_PREFIX}/share/info:${INFOPATH:-}"
-    export FPATH="${HOMEBREW_PREFIX}/share/zsh/site-functions:${FPATH}"
+      export HOMEBREW_REPOSITORY="${HOMEBREW_PREFIX}/Homebrew"
+      export PATH="${HOMEBREW_PREFIX}/bin:${HOMEBREW_PREFIX}/sbin${PATH+:$PATH}"
+      export MANPATH="${HOMEBREW_PREFIX}/share/man${MANPATH+:$MANPATH}:"
+      export INFOPATH="${HOMEBREW_PREFIX}/share/info:${INFOPATH:-}"
+      export FPATH="${HOMEBREW_PREFIX}/share/zsh/site-functions:${FPATH}"
 
-  }
+    }
 fi
-
-# Editors
-#
-export EDITOR='nvim'
-export VISUAL='nvim'
-export PAGER='less'
-
-# file names to ignore
-zstyle ':completion:*:*files' ignored-patterns '.DS_Store'
-# Typing EOF (CTRL+D) will not exit interactive sessions
-setopt ignoreeof
-
-# define Zim location
+# zim
 export ZIM_HOME=${HOME}/.local/zim
-
 # teaaldeer and XDG https://github.com/dbrgn/tealdeer/issues/311
 export TEALDEER_CONFIG_DIR="${XDG_CONFIG_HOME}/tealdeer"
+# Docker
+export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
+# Ruby gems
+export GEM_HOME="${XDG_DATA_HOME}"/gem
 # use gojq in jq-repl (https://github.com/reegnz/jq-zsh-plugin)
 JQ_REPL_JQ=gojq

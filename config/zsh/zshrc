@@ -244,10 +244,6 @@ esac
 [ -d "$ANDROID_SDK" ] && {
   export PATH="${PATH}:$ANDROID_SDK/cmdline-tools/latest/bin:$ANDROID_SDK/platform-tools:$ANDROID_SDK/emulator"
 }
-# Docker
-export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
-# Ruby gems
-export GEM_HOME="${XDG_DATA_HOME}"/gem
 
 # Golang
 [ -f "$XDG_CONFIG_HOME"/go/golangrc ] && source "$XDG_CONFIG_HOME"/go/golangrc
