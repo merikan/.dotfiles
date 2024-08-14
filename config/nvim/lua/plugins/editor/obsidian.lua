@@ -57,6 +57,7 @@ return {
       end,
     },
     config = function(_, opts)
+      opts.ui = { enable = false } -- use ui from markdown.nvim
       require("obsidian").setup(opts)
       -- if cursor is on a link in an obsidian file, gf will follow the reference, otherwise it will behave normally
       vim.keymap.set("n", "gf", function()
