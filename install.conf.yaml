@@ -92,6 +92,10 @@
     ~/.config/lf:
       path: config/lf/*
       glob: true
+    # lf
+    ~/.config/lsd:
+        path: config/lsd/*
+        glob: true
     # liquidprompt
     ~/.liquidpromptrc: config/liquidprompt/liquidpromptrc
     # mackup

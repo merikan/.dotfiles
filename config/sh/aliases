@@ -59,18 +59,21 @@ alias tma='tmux a -t '   # tmux attach a target session
 # alias $='__prompt_string_'
 # alias #='__prompt_string_'
 
-alias ls="ls -aF --color"    # show hidden and type suffix
-alias ll='ls -la'               # show hidden and sort by modified
+# alias ls='ls -aF --color'    # show hidden and type suffix
 alias l.="ls -dl --color .*" # show only hidden files
-alias lx='ls -lXB'                # sort by extension
-alias lk='ls -lSr'                # sort by size
-alias lc='ls -lcr'		            # sort by change time
-alias lu='ls -lur'		            # sort by access time
-alias lr='ls -lR'                 # recursive ls
-alias lt='ls -ltr'                # sort by date
-alias lm='ls -al |more'           # pipe through 'more'
 alias la='ls -ltraFh'             # show all
+alias lc='ls -lcr'		            # sort by change time
+alias lk='ls -lSr'                # sort by size
+alias ll='ls -la'               # show hidden and sort by modified
 alias lla='ls -lah'               # list all and human readable
+alias lr='ls -lR'                 # recursive ls
+alias lt='\ls -ltr'                # sort by date
+alias lu='ls -lur'		            # sort by access time
+alias lx='ls -lXB'                # sort by extension
+command -v lsd >/dev/null 2>&1 && {
+   alias ls='lsd'
+   alias lt='ls --tree'
+}
 alias g='grep -i'  # Case insensitive grep
 alias f='find . -iname'
 alias m='more'

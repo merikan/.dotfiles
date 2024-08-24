@@ -123,6 +123,7 @@ brew "k6"                                           # open-source load testing t
 brew "kubeaudit"                                    # audit k8s clusters and manifests
 brew "lf"                                           # file manager for the terminal
 brew "lnav"                                         # watch and analyze your log files from a terminal.
+brew "lsd"                                          # a clone of ls with more features
 brew "lua"                                          # a powerful, efficient, lightweight, embeddable scripting language
 brew "luarocks"                                     # lua package manager
 brew "mackup"                                       # keep application settings in sync

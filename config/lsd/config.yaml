@@ -1,0 +1,19 @@
+# https://github.com/lsd-rs/lsd#config-file-content
+color:
+    when: auto
+    theme: custom
+size: short
+indicators: true
+icons: # When to use icons
+    when: never
+#  possible values: date, locale, relative, '+<date_format>'
+date: locale
+# Possible values: permission, user, group, context, size, date, name, inode, links, git
+blocks: 
+  - permission
+  - user
+  - group
+  - size
+  - date
+  - name
+symlink-arrow: ->
