@@ -59,18 +59,9 @@ alias tma='tmux a -t '   # tmux attach a target session
 # alias $='__prompt_string_'
 # alias #='__prompt_string_'
 
-# Alias to multiple ls commands
-# Detect which `ls` flavor is in use
-if ls --color > /dev/null 2>&1; then
-	colorflag="--color" # GNU `ls`
-else
-	colorflag="-G"      # OS X `ls`
-fi
-# shellcheck disable=SC2139
-alias ls="ls -aF ${colorflag}"    # show hidden and type suffix
+alias ls="ls -aF --color"    # show hidden and type suffix
 alias ll='ls -la'               # show hidden and sort by modified
-# shellcheck disable=SC2139
-alias l.="ls -dl ${colorflag} .*" # show only hidden files
+alias l.="ls -dl --color .*" # show only hidden files
 alias lx='ls -lXB'                # sort by extension
 alias lk='ls -lSr'                # sort by size
 alias lc='ls -lcr'		            # sort by change time
