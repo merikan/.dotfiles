@@ -30,6 +30,7 @@
     - ["mkdir -p $HOME/{.config,.cache,.local/{share,state,bin}}",                  Creating XDG_* directories]
     - ["mkdir -p $HOME/{tmp,Repos,Projects}",                                       Creating default directories]
     - ["mkdir -p $HOME/.ssh/control; chmod 700 $HOME/.ssh",                         Creating ssh directory]
+    - ["mkdir -p $HOME/.ssl/{certs,private}; chmod 700 $HOME/.ssl",                 Creating ssl directory]
     # - ["test -L ~/Dropbox/Notes || ln -s ~/Dropbox/Notes ~/Notes",                  Symlink notes]
     - ["test -L ~/src || ln -s ~/Repos ~/src",                                      Symlink repos]
 
