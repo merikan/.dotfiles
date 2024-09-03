@@ -93,6 +93,10 @@ o.grepprg = "rg --vimgrep --smart-case --follow" -- use ripgrep instead of grep
 if vim.g.neovide then
   vim.g.neovide_cursor_trail_legnth = 0
   vim.g.neovide_cursor_animation_length = 0
+  vim.g.neovide_input_macos_option_key_is_meta = 'only_left'
+  vim.opt.title = true
+  vim.opt.titlelen = 0 -- do not shorten title
+  vim.opt.titlestring = '%{expand("%:p")}'
   --vim.o.guifont = "Jetbrains Mono"
 end
 
