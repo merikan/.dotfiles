@@ -43,11 +43,6 @@ fpath=($HOME/.nix-profile/share/zsh/site-functions $fpath)
 if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
   . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
 fi
-# End Nix
-# install and load plugins with sheldon
-command -v sheldon >/dev/null 2>&1  && {
-  eval "$(sheldon source)"
-}
 
 # load shared shell configuration
 [ -f ~/.shrc ] && source ~/.shrc
@@ -129,7 +124,7 @@ bindkey '^x^e' edit-command-line     # Ctrl+x, Ctrl+e to open command line in ed
 bindkey -a '^x^e' edit-command-line  # Ctrl+x, Ctrl+e to open command line in editor
 
 # # vi mode
-# loade via jeffreytse/zsh-vi-mode with sheldon
+# loaded via woefe/vi-mode.zsh with zim
 
 #Use up key to search backward in the history for a line beginning with the current line up to the cursor.
 bindkey '\e[A' history-beginning-search-backward

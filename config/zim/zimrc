@@ -32,3 +32,21 @@ zmodule zsh-users/zsh-syntax-highlighting
 # Fish-like history search (up arrow) for Zsh.
 # zsh-users/zsh-history-substring-search must be sourced after zsh-users/zsh-syntax-highlighting
 zmodule zsh-users/zsh-history-substring-search
+
+# Base16 for Shells
+zmodule chriskempson/base16-shell
+
+# vi-mode
+zmodule woefe/vi-mode.zsh --source vi-mode.plugin.zsh
+
+# System clipboard key bindings for Zsh Line Editor
+# similar to what `set clipboard=unnamed` does for vim
+zmodule kutsan/zsh-system-clipboard
+
+# Minimalistic, powerful and extremely customizable Zsh prompt
+zmodule spaceship-prompt/spaceship-flutter
+zmodule spaceship-prompt/spaceship-prompt --name spaceship --no-submodules
+
+# interactive jq expressions
+zmodule reegnz/jq-zsh-plugin
+
