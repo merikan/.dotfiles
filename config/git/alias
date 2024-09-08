@@ -113,10 +113,12 @@
 
   # stash
   sta = stash
-  # stash, including untracked files
-  stau = stash -u
-  # stash, only non-indexd and untracked files
+  # stash all, including untracked files
+  staa = stash -u
+  # stash non-staged, only non-indexd and untracked files
   stak = stash -uk
+# stash staged files
+  stas = stash --staged
   # apply and pop a stash entry
   stap = stash pop
   # stage the changes for a given file.
