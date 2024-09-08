@@ -37,7 +37,7 @@ zmodule zsh-users/zsh-history-substring-search
 zmodule chriskempson/base16-shell
 
 # vi-mode
-zmodule woefe/vi-mode.zsh --source vi-mode.plugin.zsh
+zmodule jeffreytse/zsh-vi-mode
 
 # System clipboard key bindings for Zsh Line Editor
 # similar to what `set clipboard=unnamed` does for vim
