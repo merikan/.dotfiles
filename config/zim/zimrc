@@ -3,50 +3,31 @@
 # Modules
 # -------
 
-# Sets sane Zsh built-in environment options.
+# sets sane zsh built-in environment options.
 zmodule environment
-# Provides handy git aliases and functions.
-#zmodule git
-# Applies correct bindkeys for input events.
+# applies correct bindkeys for input events.
 zmodule input
-# Sets a custom terminal title.
-#zmodule termtitle
-# Utility aliases and functions. Adds colour to ls, grep and less.
-#zmodule utility
-
-# Exposes git repository status information to prompts.
-#zmodule git-info
-# A customizable version of steeef's prompt theme.
-#zmodule steeef
-
-# Additional completion definitions for Zsh.
+# additional completion definitions for zsh.
 zmodule zsh-users/zsh-completions
-# Enables and configures smart and extensive tab completion.
-# completion must be sourced after zsh-users/zsh-completions
-# zmodule completion
-# Fish-like autosuggestions for Zsh.
+# fish-like autosuggestions for zsh.
 zmodule zsh-users/zsh-autosuggestions
-# Fish-like syntax highlighting for Zsh.
+# fish-like syntax highlighting for zsh.
 # zsh-users/zsh-syntax-highlighting must be sourced after completion
 zmodule zsh-users/zsh-syntax-highlighting
-# Fish-like history search (up arrow) for Zsh.
+# fish-like history search (up arrow) for zsh.
 # zsh-users/zsh-history-substring-search must be sourced after zsh-users/zsh-syntax-highlighting
 zmodule zsh-users/zsh-history-substring-search
-
-# Base16 for Shells
+# base16 for shells
 zmodule chriskempson/base16-shell
-
 # vi-mode
 zmodule jeffreytse/zsh-vi-mode
-
-# System clipboard key bindings for Zsh Line Editor
+# system clipboard key bindings for zsh line editor
 # similar to what `set clipboard=unnamed` does for vim
 zmodule kutsan/zsh-system-clipboard
-
 # Minimalistic, powerful and extremely customizable Zsh prompt
 zmodule spaceship-prompt/spaceship-flutter
 zmodule spaceship-prompt/spaceship-prompt --name spaceship --no-submodules
-
 # interactive jq expressions
 zmodule reegnz/jq-zsh-plugin
-
+# replace zsh's default completion selection menu with fzf
+zmodule Aloxaf/fzf-tab
