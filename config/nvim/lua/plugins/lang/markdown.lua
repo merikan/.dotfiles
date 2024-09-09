@@ -9,6 +9,12 @@ return {
     opts = {
       preset = "lazy", -- play nicely with LazyVim
     },
+    config = function()
+      require('render-markdown').disable()
+    end,
+    keys = {
+      { "<leader>uR", "<cmd>RenderMarkdown toggle<cr>", mode = { "n" }, desc = "Toggle Render Markdown" },
+    },
   },
   {
     "mfussenegger/nvim-lint",
