@@ -99,7 +99,6 @@
   "telescope-lazy.nvim": { "branch": "main", "commit": "7b87a3bc80443849e29bd871f00d41dfd8d90e41" },
   "telescope-undo.nvim": { "branch": "main", "commit": "51be9ae7c42fc27c0b05505e3a0162e0f05fbb6a" },
   "telescope.nvim": { "branch": "master", "commit": "5972437de807c3bc101565175da66a1aa4f8707a" },
-  "tfm.nvim": { "branch": "main", "commit": "fb0de2c96bf303216ac5d91ce9bdb7f430030f8b" },
   "tiny-inline-diagnostic.nvim": { "branch": "main", "commit": "c0543b2980251a7a2024e936ef724dcdfb07bb87" },
   "todo-comments.nvim": { "branch": "main", "commit": "319c01b99b7a8c9ac2066bf0efd4d6ec68fef444" },
   "tokyonight.nvim": { "branch": "main", "commit": "4b386e66a9599057587c30538d5e6192e3d1c181" },
@@ -112,5 +111,6 @@
   "which-key.nvim": { "branch": "main", "commit": "bfec3d6bc0a9b0b2cb11644642f78c2c3915eef0" },
   "windows.nvim": { "branch": "main", "commit": "c7492552b23d0ab30325e90b56066ec51242adc8" },
   "yanky.nvim": { "branch": "main", "commit": "73215b77d22ebb179cef98e7e1235825431d10e4" },
+  "yazi.nvim": { "branch": "main", "commit": "6050c5b25dc4b35d5015306e8a32f19059475f78" },
   "zellij.nvim": { "branch": "master", "commit": "99659823e2ee81e4ba5a2579093776ee39a93b15" }
 }
