@@ -1,10 +1,12 @@
-#
+# /* vim: set filetype=conf : */
+
 # NOTE: git does not resolve $XDG_CONFIG_HOME, use absolute path with tilde instead
 #
 [include]
-  # Load private config, not to be pushed to repo
-  path = ~/.config/git/config.local
+  path = ~/.config/git/themes/catppuccin.gitconfig
   path = ~/.config/git/alias
+  path = ~/.config/git/config.local
+# Load private config, not to be pushed to repo
 [init]
 	defaultBranch = main
 [user]
@@ -95,10 +97,12 @@
     cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3
     trustExitCode = false
 [delta]
+    features = catppuccin-macchiato
     navigate = true
     line-numbers = true
     side-by-side = true
-
+    true-color = always
+    hyperlinks = true
 
 # credits:
 # http://haacked.com/archive/2014/07/28/github-flow-aliases/
