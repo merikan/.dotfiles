@@ -1,13 +1,38 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/jesseduffield/lazygit/master/schema/config.json
 # see https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
 gui:
   theme:
+    activeBorderColor:
+      - "#a6da95"
+      - bold
+    inactiveBorderColor:
+      - "#a5adcb"
+    optionsTextColor:
+      - "#8aadf4"
     selectedLineBgColor:
-      - reverse
+      - "#363a4f"
+    cherryPickedCommitBgColor:
+      - "#494d64"
+    cherryPickedCommitFgColor:
+      - "#b7bdf8"
+    unstagedChangesColor:
+      - "#ed8796"
+    defaultFgColor:
+      - "#cad3f5"
+    searchingActiveBorderColor:
+      - "#eed49f"
+  branchColors:
+    "release": "#eed49f"
+    "hotfix": "#ed8796"
+    "feature": "#a6da95"
 git:
   paging:
-    # colorArg: always
-    # useConfig: true
-    pager: delta --dark --paging=never
-    # pager: diff-so-fancy
-    # colorArg: never
-    # pager: ydiff -p cat -s --wrap --width={{columnWidth}}
+    colorArg: always
+    pager: delta --paging=never --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
+  branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' {{branchName}} --"
+  allBranchesLogCmd: "git log --graph --all --color=always --abbrev-commit --date-relative --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'"
+  parseEmoji: true
+
+keybinding:
+  universal:
+    quit: "<c-c>"
