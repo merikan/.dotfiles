@@ -48,10 +48,14 @@
     ~/.bash_functions: config/bash/bash_functions
     ~/.bash_profile: config/bash/bash_profile
     ~/.bashrc: config/bash/bashrc
+    # bat
+    ~/.config/bat:
+      path: config/bat/*
+      glob: true
     # bin
     ~/.local/bin:
-      path: config/bin/*
-      glob: true
+        path: config/bin/*
+        glob: true
     # borders
     ~/.config/borders/bordersrc: config/borders/bordersrc
     # direnv

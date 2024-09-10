@@ -1,0 +1,9 @@
+# /* vim: set filetype=conf : */
+
+# https://github.com/sharkdp/bat
+# set the theme
+--theme="Catppuccin Macchiato"
+
+
+# Use ".gitignore"-style highlighting for ".ignore" files
+--map-syntax ".ignore:Git Ignore"
