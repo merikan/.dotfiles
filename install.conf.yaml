@@ -58,6 +58,10 @@
         glob: true
     # borders
     ~/.config/borders/bordersrc: config/borders/bordersrc
+    # delta
+    ~/.config/delta:
+        path: config/delta/*
+        glob: true
     # direnv
     ~/.config/direnv/direnv.toml: config/direnv/direnv.toml
     # editorconfig

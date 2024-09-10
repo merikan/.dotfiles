@@ -3,7 +3,7 @@
 # NOTE: git does not resolve $XDG_CONFIG_HOME, use absolute path with tilde instead
 #
 [include]
-  path = ~/.config/git/themes/catppuccin.gitconfig
+  path = ~/.config/delta/themes/catppuccin.gitconfig
   path = ~/.config/git/alias
   path = ~/.config/git/config.local
 # Load private config, not to be pushed to repo
