@@ -90,7 +90,9 @@
     # ideavim
     ~/.ideavimrc: config/ideavim/ideavimrc
     # k9s
-    ~/.config/k9s/skin.yml: config/k9s/skins/dracula.yml
+    ~/.config/k9s:
+      path: config/k9s/*
+      glob: true
     # kitty
     ~/.config/kitty:
       path: config/kitty/*

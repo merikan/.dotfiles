@@ -1,0 +1,4 @@
+# ref: https://k9scli.io/topics/config/
+k9s:
+  ui:
+    skin: catppuccin-macchiato

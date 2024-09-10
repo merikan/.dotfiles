@@ -1,0 +1,47 @@
+plugins:
+  # Sends logs over to jq
+  jqlogs:
+    shortCut: Ctrl-J
+    confirm: false
+    description: "Logs (jq)"
+    scopes:
+      - po
+    command: sh
+    background: false
+    args:
+      - -c
+      - "kubectl logs $NAME -n $NAMESPACE --context $CONTEXT | jq -r . | bat"
+  watch-events:
+    shortCut: Shift-E
+    confirm: false
+    description: "Watch events"
+    scopes:
+      - all
+    command: sh
+    background: false
+    args:
+      - -c
+      - "watch -n 5 kubectl get events --context $CONTEXT --namespace $NAMESPACE --field-selector involvedObject.name=$NAME"
+  # images:
+  #   shortCut: Shift-E 
+  #   confirm: false
+  #   description: "Show images"
+  #   scopes:
+  #     - po
+  #   command: sh
+  #   background: false
+  #   args:
+  #     - -c
+  #     # - kubectl get pods
+  #     - kubectl get pods --context $CONTEXT -n $NAMESPACE -o jsonpath='{.items[*].spec.containers[*].image}' | tr -s '[[:space:]]' '\n' | sort | uniq -c | bat
+  secret-tls:
+    shortCut: Shift-C
+    confirm: false
+    description: "View TLS certificate"
+    scopes:
+      - secrets
+    command: sh
+    background: false
+    args:
+      - -c
+      - kubectl get secret --context $CONTEXT -n $NAMESPACE $NAME -o jsonpath='{.data.tls\.crt}' | base64 -d | openssl storeutl -noout -text -certs /dev/stdin |& nvim -R
