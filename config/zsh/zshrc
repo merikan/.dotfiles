@@ -165,7 +165,6 @@ type -f $base16_theme >/dev/null 2>&1 && eval $base16_theme
 
 # fast cd jumping
 command -v zoxide >/dev/null 2>&1 && {
-  export _ZO_DATA_DIR="$HOME/.local/share"
   eval "$(zoxide init zsh)"
 }
 

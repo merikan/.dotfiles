@@ -56,6 +56,8 @@ if [[ "${UNAME_SYSTEM}" == "Darwin" ]]; then
 
     }
 fi
+# zoxide
+export _ZO_DATA_DIR="${XDG_DATA_HOME}/zoxide"
 # zim
 export ZIM_HOME=${HOME}/.local/zim
 # teaaldeer and XDG https://github.com/dbrgn/tealdeer/issues/311
