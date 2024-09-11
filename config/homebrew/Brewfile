@@ -71,6 +71,7 @@ brew "ffmpegthumbnailer"                            # create thumbnails for your
 brew "flake8"                                       # lint python
 brew "fzf"                                          # a command-line fuzzy finder
 brew "ffmpeg"                                       # to record, convert and stream audio and video
+brew "fx"                                           # JSON/YAML viewer & processor
 brew "merikan/tools/gdu-go"                         # go disk usage
 brew "go"                                           # golang sdk
 brew "gojq"                                         # jq written in go
