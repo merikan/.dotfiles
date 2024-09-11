@@ -281,14 +281,14 @@ cask "sonos"                                        # controller for sonos speak
 cask "sourcetree"                                   # awesome git client
 cask "spotify"                                      # music for everyone
 cask "merikan/casks/sr"                             # nativefied sveriges radio
-cask "sublime-text"                                # text editor
+cask "sublime-text"                                 # text editor
 cask "thunderbird"                                  # free email application from Mozilla
 cask "tomatobar"                                    # another pomodoro app
 cask "tunnelblick"                                  # free, open source graphic user interface for OpenVPN
 cask "vagrant"                                      # vm management
 brew "vagrant-completion"
 if arch_amd?
-  cask "virtualbox"                                   # virtualizer for x86 hardware
+  cask "virtualbox"                                 # virtualizer for x86 hardware
 end
 if arch_arm?
   cask "virtualbox@beta"                            # virtualizer for arm hardware
@@ -303,6 +303,7 @@ cask "wavebox"                                      # desktop app for web (gmail
 cask "whalebird"                                    # mastodon client
 cask "xbar"                                         # put the output from any script or program in your Mac OS X Menu Bar
 cask "xquartz"                                      # X windows on Mac
+cask "yaak"                                         # rest/graphql api client
 cask "yed"                                          # graph editor
 cask "zap"                                          # Zed Attack Proxy (web scanner)
 cask "zed"                                          # multiplayer code editor
