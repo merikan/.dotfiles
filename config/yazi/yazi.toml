@@ -13,3 +13,8 @@ tab_size = 2
 max_width = 600
 max_height = 900
 
+[plugin]
+prepend_previewers = [
+  { name = "*.md", run = "glow" }
+  # { name = "*.md", run = "sh -c \"CLICOLOR_FORCE=1 glow\")" },
+]

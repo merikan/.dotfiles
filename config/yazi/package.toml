@@ -1,0 +1,5 @@
+[plugin]
+deps = [{ use = "yazi-rs/plugins:max-preview", rev = "0b9f325" }, { use = "Reledia/glow", rev = "4e016fa" }]
+
+[flavor]
+deps = []
