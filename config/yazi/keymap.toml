@@ -8,7 +8,7 @@ prepend_keymap = [
   { on = [ "J" ], run = "plugin --sync parent-arrow --args=1" },
   { on = [ "K" ], run = "plugin --sync parent-arrow --args=-1" },
 
-  { on  = [ "Z" ], run = "plugin --sync max-preview" },
+  { on  = [ "\\", "z" ], run = "plugin --sync max-preview" },
 
   { on = [ "e", ], run = "open", desc = "Open the selected files" },
   { on = [ "E", ], run = "open --interactive", desc = "Open the selected files interactively" },
