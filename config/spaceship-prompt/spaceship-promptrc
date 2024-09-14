@@ -13,7 +13,8 @@ spaceship remove ansible
 spaceship remove docker
 spaceship remove docker_compose
 
-spaceship add --before git wip  # add custom section
+spaceship add --before git wip  # add wip section
+spaceship add yazi  # add yazi section
 spaceship add flutter           # add flutter external section
 
 
@@ -176,6 +177,13 @@ SPACESHIP_NIX_SHELL_PREFIX="nix:("
 SPACESHIP_NIX_SHELL_SUFFIX=") "
 SPACESHIP_NIX_SHELL_SYMBOL=""
 SPACESHIP_NIX_SHELL_COLOR="${COLOR_PRIMARY}"
+
+# Inside
+SPACESHIP_YAZI_SHOW=true
+SPACESHIP_YAZI_PREFIX="inside:("
+SPACESHIP_YAZI_SUFFIX=") "
+SPACESHIP_YAZI_SYMBOL=""
+SPACESHIP_YAZI_COLOR="${COLOR_PRIMARY}"
 
 SPACESHIP_VI_MODE_SHOW=false
 SPACESHIP_VI_MODE_INSERT=[INSERT]
