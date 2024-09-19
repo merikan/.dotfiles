@@ -20,7 +20,7 @@ zmodule zsh-users/zsh-history-substring-search
 # base16 for shells
 zmodule chriskempson/base16-shell
 # vi-mode
-zmodule jeffreytse/zsh-vi-mode
+zmodule woefe/vi-mode.zsh --source vi-mode.plugin.zsh
 # system clipboard key bindings for zsh line editor
 # similar to what `set clipboard=unnamed` does for vim
 zmodule kutsan/zsh-system-clipboard
