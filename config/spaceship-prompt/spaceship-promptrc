@@ -14,7 +14,7 @@ spaceship remove docker
 spaceship remove docker_compose
 
 spaceship add --before git wip  # add wip section
-spaceship add inside  # add inside section
+spaceship add --before git inside  # add inside section
 spaceship add flutter           # add flutter external section
 
 
