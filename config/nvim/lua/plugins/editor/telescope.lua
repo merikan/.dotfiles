@@ -3,6 +3,19 @@ return {
   -- A telescope extension to view and search your undo tree
   -- https://github.com/debugloop/telescope-undo.nvim
   {
+    "nvim-telescope/telescope.nvim",
+    -- stylua: ignore
+    opts = {
+      defaults = {
+        path_display = {
+          filename_first = {
+            reverse_directories = true,
+          },
+        },
+      },
+    },
+  },
+  {
     "debugloop/telescope-undo.nvim",
     opts = {},
     config = function()
