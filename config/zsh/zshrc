@@ -200,7 +200,7 @@ command -v direnv >/dev/null 2>&1  && {
   eval "$(direnv hook zsh)"
 }
 
-[[ ! $OSX ]] && {
+if [[ "${UNAME_SYSTEM}" != "Darwin" ]]; then
   # source kubectl tab completion
   command -v kubectl >/dev/null 2>&1 && source <(kubectl completion zsh)
   # source k3d tab completion
@@ -211,7 +211,7 @@ command -v direnv >/dev/null 2>&1  && {
   command -v kustomize >/dev/null 2>&1 && source <(kustomize completion zsh)
   # source argocd tab completion
   command -v argocd >/dev/null 2>&1 && source <(argocd completion zsh)
-}
+fi
 
 # fzf for fuzzy file mathing. (https://github.com/junegunn/fzf)
 command -v fzf >/dev/null 2>&1  && {
@@ -299,9 +299,14 @@ command -v pyenv >/dev/null 2>&1 && {
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # load nvm
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-# [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+export NVM_DIR="$XDG_CONFIG_HOME/nvm"
+if [[ "${UNAME_SYSTEM}" == "Darwin" ]]; then
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && source "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && source "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+else
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fi
 
 # rancher desktop
 [[ -d "$HOME/.rd/bin" ]] && {
