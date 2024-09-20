@@ -215,15 +215,15 @@ fi
 
 # fzf for fuzzy file mathing. (https://github.com/junegunn/fzf)
 command -v fzf >/dev/null 2>&1  && {
-  for file in "$XDG_CONFIG_HOME"/fzf/*.zsh; do
-      source "$file"
-  done
-  # Setting ag as the default source for fzf
+  [[ -d "$XDG_CONFIG_HOME"/fzf/shell ]] && {
+    for file in "$XDG_CONFIG_HOME"/fzf/shell/*.sh(N); do
+        source "$file"
+    done
+  }
+  # Set up fzf key bindings and fuzzy completion
+  source <(fzf --zsh)
+  # Setting ag as the default command for fzf
   command -v ag >/dev/null 2>&1 && export FZF_DEFAULT_COMMAND='ag -g ""'
-  # if [[ $OSX ]]; then
-  #   bindkey "ç" fzf-cd-widget  # emulate Alt+c
-  # fi
-
 }
 
 # Android Studio doesn't honour XDG though it support symlinks
