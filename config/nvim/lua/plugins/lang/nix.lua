@@ -1,38 +1,6 @@
-
+-- nix language
 return {
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = function(_, opts)
-      vim.list_extend(opts.ensure_installed, {
-        "nix",
-      })
-    end,
-  },
-  {
-    "williamboman/mason.nvim",
-    opts = function(_, opts)
-      vim.list_extend(opts.ensure_installed, {
-        "nil",
-      })
-    end,
-  },
-  {
-    "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
-        nil_ls = {},
-      },
-    },
-  },
-  {
-    "stevearc/conform.nvim",
-    opts = function(_, opts)
-      opts.formatters_by_ft.nix = opts.formatters_by_ft.nix or {}
-      -- TODO install via nix https://github.com/kamadorueda/alejandra
-      -- table.insert(opts.formatters_by_ft.nix, "alejandra")
-      return opts
-    end,
-  },
+  { import = "lazyvim.plugins.extras.lang.nix" },
   {
     "mfussenegger/nvim-lint",
     opts = function(_, opts)
@@ -43,7 +11,6 @@ return {
   },
   {
     "luckasRanarison/nvim-devdocs",
-    optional = true,
     ensure_installed = {
       "nix",
     },
