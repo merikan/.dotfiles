@@ -1,12 +1,45 @@
 # zim
+
+## About
 [Zim Framework](https://zimfw.sh/), or just `zim` is a Zsh configuration framework with blazing speed and modular extensions.
 
-## why
-Over the years I have used many different zsh frameworks, such as [prezto](https://github.com/sorin-ionescu/prezto), [oh-my-zsh](https://ohmyz.sh/), but finally settled for `zim` because it's small, fast and easy to use.
+Over the years I have used many different zsh frameworks, such as [prezto](https://github.com/sorin-ionescu/prezto), [oh-my-zsh](https://ohmyz.sh/),
+but finally settled for `zim` because it's small, fast and easy to use. So I have for several years now I have used zim exclusively and it has worked flawlessly.
 
-I used to jump between `zsh` and `bash` but since a number of years I use `zsh` exclusively. I then use `zim` as the plugin manager for all my zsh plugins instead of using [Sheldon](https://sheldon.cli.rs/b), which I now only use for bash.
+I used to jump between `zsh` and `bash` but since a number of years I use `zsh` exclusively. I then use `zim` as the plugin manager 
+for all my zsh plugins instead of using [Sheldon](https://sheldon.cli.rs/b), which I now only use for bash.
 
-## Usage
+I am using the following plugins 
+- zmodule environment
+  sets sane zsh built-in environment options.
+- zmodule input
+  applies correct bindkeys for input events.
+- zmodule zsh-users/zsh-completions
+  additional completion definitions for zsh.
+- zmodule zsh-users/zsh-autosuggestions
+  fish-like autosuggestions for zsh.
+- zmodule zsh-users/zsh-syntax-highlighting
+  fish-like syntax highlighting for zsh.
+  zsh-users/zsh-syntax-highlighting must be sourced after completion
+- zmodule zsh-users/zsh-history-substring-search
+  fish-like history search (up arrow) for zsh.
+  zsh-users/zsh-history-substring-search must be sourced after zsh-users/zsh-syntax-highlighting
+- zmodule chriskempson/base16-shell
+  base16 for shells
+- zmodule jeffreytse/zsh-vi-mode
+  vi-mode
+- zmodule kutsan/zsh-system-clipboard
+  system clipboard key bindings for zsh line editor
+  similar to what `set clipboard=unnamed` does for vim
+- zmodule spaceship-prompt/spaceship-prompt --name spaceship --no-submodules
+  Minimalistic, powerful and extremely customizable Zsh prompt
+  - zmodule spaceship-prompt/spaceship-flutter
+- zmodule reegnz/jq-zsh-plugin
+  interactive jq expressions
+- zmodule Aloxaf/fzf-tab
+  replace zsh's default completion selection menu with fzf
+
+# Usage
 
 ### Commands
 ```bash
@@ -43,3 +76,4 @@ zimfw install
 ```
 
 You can of course use the built-in modules but also load from local directory or external git repositories. It can then of course be a free plugin or a plugin found in oh-my-zsh.
+
