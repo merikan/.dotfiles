@@ -139,6 +139,7 @@ brew "mysql-client"                                 # mysql client
 brew "ncdu"                                         # a disk usage analyzer with an ncurses interface
 brew "nmap"                                         # port scanning utility for large networks
 brew "neovim"                                       # neovim
+brew "peterldowns/tap/nix-search-cli"               # search nix packages
 brew "nvm"                                          # manage multiple Node.js versions
 brew "openconnect"                                  # open client for cisco anyconnect vpn
 brew "openshift-cli"                                # openshift cli
