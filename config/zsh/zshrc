@@ -158,6 +158,17 @@ __better_ctrl_z_widget () {
 }
 zle -N better-ctrl-z __better_ctrl_z_widget
 bindkey '^Z' better-ctrl-z
+# cd in to git repo
+__fzf-ghq-cd_widget() {
+  local GHQ_LIST=$(ghq list | sort -u | fzf +m)
+  if [ -n "${GHQ_LIST}" ]; then
+      BUFFER="cd $(ghq root)/${GHQ_LIST}"
+  fi
+  zle accept-line
+}
+
+zle -N cd-into-ghq-repo __fzf-ghq-cd_widget
+bindkey '^y' cd-into-ghq-repo
 
 # Using Base16 for Shells https://github.com/chriskempson/base16-shell
 local base16_theme="base16_gruvbox-dark-medium"
