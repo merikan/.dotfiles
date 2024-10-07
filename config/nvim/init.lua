@@ -14,7 +14,7 @@
 --  https://merikan.com
 --
 -- to reset all the shit
--- $ rm -rf ~/.local/share/nvim && rm -rf ~/.config/nvim/plugin && rm -rf ~/.cache/nvim
+-- $ rm -rf ~/.local/share/nvim  && rm -rf ~/.cache/nvim
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 -------------------------------------------------------------------------------------------
@@ -24,7 +24,5 @@
 -- vim.lsp.set_log_level('debug')
 
 require("util.globals")
-require("util.autocmds")
 -- bootstrap LazyVim, lazy.nvim and plugins
-require("config.lazy")    -- load lazyVim, because I'm lazy
-
+require("config.lazy") -- load lazyVim, because I'm lazy

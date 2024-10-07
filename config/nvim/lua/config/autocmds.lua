@@ -2,7 +2,6 @@
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
 
-
 -- autocommand to keep a history of lockfiles
 -- https://github.com/folke/lazy.nvim/issues/234
 vim.api.nvim_create_autocmd("User", {
