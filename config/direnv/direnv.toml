@@ -1,2 +1,5 @@
 [global]
+# hide the diff of the environment variables
 hide_env_diff = true
+# time before warning that the command is taking too long to execute.
+warn_timeout = "10s"
