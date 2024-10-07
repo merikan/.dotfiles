@@ -1,2 +1,2 @@
 vim.opt_local.conceallevel = 0
-vim.diagnostic.disable()
+vim.diagnostic.enable(false) --- TODO funkar denna??
