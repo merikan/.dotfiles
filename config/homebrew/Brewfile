@@ -316,7 +316,6 @@ cask "qlcolorcode"                                  # preview source code files 
 cask "qlstephen"                                    # preview plain text files without or with unknown file extension.
 cask "qlmarkdown"                                   # preview Markdown files
 cask "quicklook-json"                               # preview JSON files
-cask "betterzip"                                    # preview archives
 cask "quicklook-csv"                                # preview CSV files
 cask "qlimagesize"                                  # display image size and resolution
 cask "webpquicklook"                                # preview WebP images
