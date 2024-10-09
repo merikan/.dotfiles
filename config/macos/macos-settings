@@ -323,6 +323,10 @@ echo -n "Always show date in Dock"
 defaults write com.apple.menuextra.clock.plist ShowDate -int 1
 echo "  ✔"
 
+echo -n "Only show running application in Dock"
+defaults write com.apple.dock static-only -bool true
+echo "  ✔"
+
 # Hot corners
 # Possible values:
 #  0: no-op
