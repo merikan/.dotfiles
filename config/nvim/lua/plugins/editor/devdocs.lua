@@ -1,5 +1,7 @@
 return {
+  -- DevDocs documentations in neovim
   {
+    ---@deprecated
     "luckasRanarison/nvim-devdocs",
     dependencies = {
       "nvim-lua/plenary.nvim",

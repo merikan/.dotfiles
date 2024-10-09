@@ -1,6 +1,5 @@
 -- nix language
 return {
-  { import = "lazyvim.plugins.extras.lang.nix" },
   {
     "mfussenegger/nvim-lint",
     opts = function(_, opts)

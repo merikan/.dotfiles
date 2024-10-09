@@ -1,13 +1,11 @@
 return {
-  { import = "lazyvim.plugins.extras.editor.telescope" },
-  -- A telescope extension to view and search your undo tree
-  -- https://github.com/debugloop/telescope-undo.nvim
   {
     "nvim-telescope/telescope.nvim",
     -- stylua: ignore
     opts = {
       defaults = {
         path_display = {
+          -- file name first in list
           filename_first = {
             reverse_directories = true,
           },
@@ -15,6 +13,8 @@ return {
       },
     },
   },
+  -- A telescope extension to view and search your undo tree
+  -- https://github.com/debugloop/telescope-undo.nvim
   {
     "debugloop/telescope-undo.nvim",
     opts = {},

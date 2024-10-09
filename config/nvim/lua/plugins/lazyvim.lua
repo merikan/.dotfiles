@@ -3,18 +3,7 @@ local prefix = "<leader>L"
 
 
 return {
-  -- import any extras modules here
-  { import = "lazyvim.plugins.extras.dap.core" },
-  { import = "lazyvim.plugins.extras.test.core" },
-  --
-  -- import/override with your plugins
-  { import = "plugins.editor" },
-  { import = "plugins.ui" },
-  { import = "plugins.lang" },
-  { import = "plugins.coding" },
-  { import = "plugins.misc" },
-  {
-    -- make our own Lazy menu
+  { -- make our own Lazy menu
     "folke/which-key.nvim",
     opts = function(_, opts)
       local util = require("lazyvim.util")

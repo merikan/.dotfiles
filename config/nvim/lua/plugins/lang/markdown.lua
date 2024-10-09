@@ -2,9 +2,6 @@ return {
   -- lazyvim axtras lag:markdown
   -- https://www.lazyvim.org/extras/lang/markdown
   {
-    import = "lazyvim.plugins.extras.lang.markdown",
-  },
-  {
     "MeanderingProgrammer/markdown.nvim",
     opts = {
       preset = "lazy", -- play nicely with LazyVim

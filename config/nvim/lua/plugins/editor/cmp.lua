@@ -6,7 +6,7 @@ return {
     opts = {
       view = {
         entries = {
-          follow_cursor = true,
+          follow_cursor = true, -- pmenu should follow cursor
         },
       },
     },

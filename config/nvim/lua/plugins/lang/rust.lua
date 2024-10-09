@@ -1,5 +1,4 @@
 return {
-  { import = "lazyvim.plugins.extras.lang.rust" },
   {
     "nvim-neotest/neotest",
     dependencies = {

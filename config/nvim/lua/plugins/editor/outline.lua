@@ -1,5 +1,4 @@
 return {
-  { import = "lazyvim.plugins.extras.editor.outline" },
   {
     "hedyhli/outline.nvim",
     opts = {
