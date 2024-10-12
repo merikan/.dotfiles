@@ -11,13 +11,9 @@ config.font_size = 14.0
 config.color_scheme = 'Gruvbox dark, soft (base16)'
 
 config.hide_tab_bar_if_only_one_tab = true
+-- left-alt is option when macos
+config.send_composed_key_when_left_alt_is_pressed = true
+-- right-alt is always alt
+config.send_composed_key_when_right_alt_is_pressed = false
 
--- you don't have to dribble with the alt key for macos like you have
--- to do with alacritty and kitty
--- this is the truth, alt != option
---    https://wezfurlong.org/wezterm/config/keyboard-concepts.html#macos-left-and-right-option-key
---    The default behavior is to treat the left Option key as the Alt modifier with no composition
---    effects, while the right Option key performs composition (making it approximately equivalent
---    to AltGr on other operating systems).
---
 return config
