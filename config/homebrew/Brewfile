@@ -136,6 +136,7 @@ brew "charmbracelet/tap/mods"                       # AI on the command line
 brew "mise"                                         # handle dev environment
 brew "mplayer"                                      # UNIX movie player
 brew "mysql-client"                                 # mysql client
+brew "install mthmulders/tap/mcs"                   # search maven central cli
 brew "ncdu"                                         # a disk usage analyzer with an ncurses interface
 brew "nmap"                                         # port scanning utility for large networks
 brew "neovim"                                       # neovim
