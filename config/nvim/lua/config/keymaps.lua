@@ -3,6 +3,7 @@
 -- see (1) https://www.lazyvim.org/keymaps
 --     (2) https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 
+local map = vim.keymap.set
 local util = require("lazyvim.util")
 
 -- My additional keymaps
@@ -69,7 +70,8 @@ if vim.env.TMUX ~= nil then
 end
 
 -- stylua: ignore
-keymap("n", "<leader>B", function() require("telescope.builtin").buffers { sort_mru = true, ignore_current_buffer = true, show_all_buffers = false, } end, { desc = "Switch Buffers" })
+map( "n", "<leader>bb", "<cmd>Telescope buffers sort_mru=true sort_lastused=true initial_mode=normal<cr>", { desc = "List open buffers" })
+
 -- Plugin Info
 keymap("n", "<leader>cif", "<cmd>LazyFormatInfo<cr>", { desc = "Formatting" })
 keymap("n", "<leader>cic", "<cmd>ConformInfo<cr>", { desc = "Conform" })
