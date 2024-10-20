@@ -4,6 +4,8 @@
 --     (2) https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 
 local map = vim.keymap.set
+wk = require("which-key")
+local lazy = require("lazy")
 local util = require("lazyvim.util")
 
 -- My additional keymaps
@@ -69,31 +71,56 @@ if vim.env.TMUX ~= nil then
   keymap("n", "<C-l>", ":NvimTmuxNavigateRight<CR>", { desc = "Go to right window (tmux-aware)", remap = true })
 end
 
+-- show open buffers
 -- stylua: ignore
 map( "n", "<leader>bb", "<cmd>Telescope buffers sort_mru=true sort_lastused=true initial_mode=normal<cr>", { desc = "List open buffers" })
 
--- Plugin Info
-keymap("n", "<leader>cif", "<cmd>LazyFormatInfo<cr>", { desc = "Formatting" })
-keymap("n", "<leader>cic", "<cmd>ConformInfo<cr>", { desc = "Conform" })
+-- Disable LazyVim bindings
+map("n", "<leader>l", "<Nop>")
+map("n", "<leader>L", "<Nop>")
+map("n", "<leader>fT", "<Nop>")
+-- Lazyvim menu
+wk.add {
+  -- stylua: ignore start
+  { "<leader>l", group = "Lazyvim Settings" },
+  { "<leader>lc", function() LazyVim.news.changelog() end, desc = "LazyVim Changelog" },
+  { "<leader>lC", function() lazy.check() end, desc = "Lazy Check" },
+  { "<leader>ld", function() vim.fn.system({ "open", "https://lazyvim.org" }) end,  desc = "LazyVim Docs" },
+  { "<leader>ll", "<cmd>Lazy<cr>", desc = "Lazy plugins" },
+  { "<leader>lL", "<cmd>LspInfo<CR>", desc = "Lsp Info" },
+  { "<leader>lM", vim.cmd.messages, desc = "Display messages" },
+  { "<leader>lp", "<cmd>Mason<CR>", desc = "Package Manager - [Mason]" },
+  { "<leader>lr", function() vim.fn.system({ "open", "https://github.com/LazyVim/LazyVim" }) end, desc = "LazyVim Repo" },
+  { "<leader>lr", util.root.info,  desc = "Root Info [LazyVim]" },
+  { "<leader>ls", function() lazy.sync() end, desc = "Lazy Sync" },
+  { "<leader>lu", function() lazy.update() end, desc = "Lazy Update" },
+  { "<leader>lx", "<cmd>LazyExtras<cr>", desc = "Extras" },
+  -- stylua: ignore end
+}
+
+-- Coding Info
 local linters = function()
   local linters_attached = require("lint").linters_by_ft[vim.bo.filetype]
   local buf_linters = {}
-
   if not linters_attached then
     vim.notify("No linters attached", vim.log.levels.WARN, { title = "Linter" })
     return
   end
-
   for _, linter in pairs(linters_attached) do
     table.insert(buf_linters, linter)
   end
-
   local unique_client_names = table.concat(buf_linters, ", ")
   local linters = string.format("%s", unique_client_names)
-
   vim.notify(linters, vim.log.levels.INFO, { title = "Linter" })
 end
-keymap("n", "<leader>ciL", linters, { desc = "Lint" })
+wk.add {
+  -- stylua: ignore start
+  { "<leader>c?", group = "Information" },
+  { "<leader>c?f", "<cmd>LazyFormatInfo<cr>", desc = "Formatting" },
+  { "<leader>c?c", "<cmd>ConformInfo<cr>", desc = "Conform" },
+  { "<leader>c?l", linters, desc = "Linter" },
+  { "<leader>c?L", "<cmd>LspInfo<CR>", desc = "Lsp Info" },
+  }
 
 --------------------------------------------------------------------------------
 -- TUI applications
