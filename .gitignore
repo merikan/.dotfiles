@@ -26,3 +26,5 @@ __pycache__/
 config/yazi/plugins/git.yazi
 config/yazi/plugins/hide-preview.yazi
 config/yazi/plugins/smart-filter.yazi
+config/yazi/plugins/yatline-githead.yazi
+config/yazi/plugins/yatline.yazi
