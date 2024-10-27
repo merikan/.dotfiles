@@ -129,9 +129,6 @@
     ~/Notes/.obsidian.vimrc: config/obsidian/obsidian.vimrc
     # powerline
     ~/.config/powerline: config/powerline
-    # python
-    ~/.config/python/requirement.txt: config/python/requirement.txt
-    ~/bin/pyit: config/python/pyit
     #rustup
     ~/bin/rustit: config/rust/rustit
     # scripts
@@ -234,11 +231,6 @@
     - 
       description: Install Rust toolchain
       command: $HOME/bin/rustit""
-
-- shell:
-    -
-      description: Installing Python packages
-      command: $HOME/bin/pyit
 
 - shell:
     -
