@@ -23,3 +23,4 @@ tags
 
 ### Python (dotbot)
 __pycache__/
+config/yazi/plugins/git.yazi
