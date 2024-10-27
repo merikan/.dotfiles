@@ -3,6 +3,7 @@ deps = [
   { use = "yazi-rs/plugins:max-preview", rev = "0b9f325" },
   { use = "Reledia/glow", rev = "4e016fa" },
   { use = "yazi-rs/plugins:git", rev = "ad52adf" },
+  { use = "yazi-rs/plugins:hide-preview", rev = "ad52adf" },
 ]
 
 [flavor]

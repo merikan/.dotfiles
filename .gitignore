@@ -24,3 +24,4 @@ tags
 ### Python (dotbot)
 __pycache__/
 config/yazi/plugins/git.yazi
+config/yazi/plugins/hide-preview.yazi
