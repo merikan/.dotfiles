@@ -25,3 +25,4 @@ tags
 __pycache__/
 config/yazi/plugins/git.yazi
 config/yazi/plugins/hide-preview.yazi
+config/yazi/plugins/smart-filter.yazi
