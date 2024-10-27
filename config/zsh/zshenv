@@ -63,7 +63,8 @@ export ZIM_HOME=${HOME}/.local/zim
 # teaaldeer and XDG https://github.com/dbrgn/tealdeer/issues/311
 export TEALDEER_CONFIG_DIR="${XDG_CONFIG_HOME}/tealdeer"
 # Docker
-export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
+# disbale since it is not picked up by docker nat installation nor by rancher
+# export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 # Ruby gems
 export GEM_HOME="${XDG_DATA_HOME}"/gem
 # use gojq in jq-repl (https://github.com/reegnz/jq-zsh-plugin)
