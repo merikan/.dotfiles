@@ -1,28 +1,20 @@
-
--- disable this plugin since we have a problem Houston and it is no longer maintained
--- `lua` version `5.1` needed, but found `Lua 5.4.6  Copyright (C) 1994-2023 Lua.org, PUC-Rio`
-if true then return {} end
-
-
 return {
   --  REST Client to send HTTP request and view the response
   --  https://github.com/rest-nvim/rest.nvim
-  --  see https://github.com/rest-nvim/rest.nvim/tree/main/tests for examples
-  --   don't forget to create a `.env` file before using scripts
+  --  see https://github.com/rest-nvim/rest.nvim/tree/main/spec/examples
   {
     "rest-nvim/rest.nvim",
     ft = { "http" },
     event = "VeryLazy",
     dependencies = {
-      {
-        "vhyrro/luarocks.nvim",
-      },
+      { "vhyrro/luarocks.nvim", },
+      { "j-hui/fidget.nvim", },
     },
     opts = {
       -- see :h rest-nvim.config for options
     },
     config = function(_, opts)
-      require("rest-nvim").setup(opts)
+      -- require("rest-nvim").setup(opts)
       require("lazyvim.util").on_load("telescope.nvim", function()
         require("telescope").load_extension("rest")
       end)
@@ -50,8 +42,8 @@ return {
   {
     "folke/which-key.nvim",
     opts = {
-      defaults = {
-        ["<leader>th"] = { name = "http" },
+      spec = {
+        { "<leader>th", group = "run rest command" },
       },
     },
   },
