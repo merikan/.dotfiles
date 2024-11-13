@@ -173,6 +173,9 @@
     ~/.config/yazi:
         path: config/yazi/*
         glob: true
+    ~/.config/yazi/plugins:
+        path: config/yazi/plugins.local/*
+        glob: true
     # zellij
     ~/.config/zellij:
       path: config/zellij/*
