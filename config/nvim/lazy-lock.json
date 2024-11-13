@@ -110,6 +110,7 @@
   "ts-vimdoc.nvim": { "branch": "master", "commit": "b4dab978dc28340457f68ab715500538e1aa6213" },
   "twilight.nvim": { "branch": "main", "commit": "1584c0b0a979b71fd86b18d302ba84e9aba85b1b" },
   "vgit.nvim": { "branch": "main", "commit": "9afe79a3ae65594ca483c2e6161690ff9b85123b" },
+  "vim-antlr4": { "branch": "master", "commit": "f8c57956be08598ecf30229cbaa4addf0d2901d4" },
   "vim-dadbod": { "branch": "master", "commit": "fe5a55e92b2dded7c404006147ef97fb073d8b1b" },
   "vim-dadbod-completion": { "branch": "master", "commit": "da0e75c09c27a82aad078d993bb1b2f4afd43427" },
   "vim-dadbod-ui": { "branch": "master", "commit": "f29c85ab42861c6ef683289b0c6a51e0d436dcf6" },
