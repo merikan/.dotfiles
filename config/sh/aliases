@@ -164,6 +164,8 @@ alias dc='docker-compose'
 alias dm='docker-machine'
 ! [ -n "$ZSH_VERSION" ] && complete -F _docker_machine dm
 
+# yazi
+alias y='yazi' # yazi file manager
 # nnn, because it's in my muscle memory
 alias nnn='yazi' # yazi file manager
 
