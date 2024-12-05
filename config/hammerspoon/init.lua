@@ -80,5 +80,10 @@ Install:andUse("MiroWindowsManager",
                 }
 )
 
+-- local EnhancedSpaces = hs.loadSpoon('EnhancedSpaces')
+-- EnhancedSpaces:new({
+--   mSpaces = { '1', '2', '3', '4', '5' }, -- default { '1', '2', '3' }
+--   startmSpace = '2', -- default 2
+-- })
 
 hs.notify.show("Hammerspoon", "Configuration (re)loaded", '')
