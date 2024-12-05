@@ -303,6 +303,7 @@ cask "vivaldi"                                      # another great browser
 cask "vlc"                                          # media player
 cask "vscodium"                                     # open source version of VSCode
 cask "wavebox"                                      # desktop app for web (gmail)
+cask "wezterm"                                      # cross-platform terminal emulator
 cask "whalebird"                                    # mastodon client
 cask "xbar"                                         # put the output from any script or program in your Mac OS X Menu Bar
 cask "xquartz"                                      # X windows on Mac
