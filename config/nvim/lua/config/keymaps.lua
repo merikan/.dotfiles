@@ -125,9 +125,6 @@ wk.add {
 --------------------------------------------------------------------------------
 -- TUI applications
 --------------------------------------------------------------------------------
--- gitui
--- stylua: ignore
-keymap("n", "<leader>gu", function() util.float_term({ "gitui" }, { cwd = util.get_root(), esc_esc = false, ctrl_hjkl = false }) end, { desc = "Gitui" })
 
 -- make command+v (paste) work in Neovide
 if vim.g.neovide then
