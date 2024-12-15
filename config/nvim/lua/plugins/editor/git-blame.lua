@@ -7,6 +7,6 @@ return {
     },
   },
   keys = {
-    { "<leader>gB", "<cmd>BlameToggle<cr>", desc = "Blame View" },
+    { "<leader>g+B", "<cmd>BlameToggle<cr>", desc = "Blame View" },
   },
 }
