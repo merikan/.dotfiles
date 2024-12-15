@@ -149,6 +149,7 @@ brew "packer-completion"
 brew "php"                                          # php
 brew "plantuml"                                     # draw UML diagrams
 brew "pip-completion"
+brew "podman"                                       # tool for managing oci containers and pods
 brew "poppler"                                      # pdf rendering library (based on the xpdf-3.0 code base)
 brew "potrace"                                      # transforming bitmaps into vector graphics
 brew "procs"                                        # replacement for ps written by Rust
@@ -267,6 +268,7 @@ cask "mysqlworkbench"                               # gui tool for mysql
 cask "neovide"                                      # a gui for neovim
 cask "paintbrush"                                   # clean and simple paint program
 cask "pencil"                                       # open-source GUI prototyping tool
+cask "podman-desktop"                               # Browse, manage, inspect containers and images
 cask "phoenix-slides"                               # image viewer
 cask "postman"                                      # nice rest client
 cask "qownnotes"                                    # nice rest client
