@@ -24,6 +24,7 @@ mouse-hide-while-typing = true
 # background-opacity = 0.9
 
 # keybindings
+macos-option-as-alt = left
 keybind = clear
 keybind = ctrl+h=goto_split:left
 keybind = ctrl+j=goto_split:bottom
