@@ -71,9 +71,13 @@
       path: config/fzf/*
       glob: true
     # git
-    ~/.config/git:
-      path: config/git/*
+    ~/.config/ghostty:
+      path: config/ghostty/*
       glob: true
+        # git
+    ~/.config/git:
+        path: config/git/*
+        glob: true
     # gitui
     ~/.config/gitui/key_bindings.ron: config/gitui/key_bindings.ron
     # golang

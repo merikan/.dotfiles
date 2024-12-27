@@ -1,0 +1,56 @@
+#/* vim: set filetype=jproperties : */
+
+# ghostty config https://ghostty.org/docs/config
+# we can also use the ghostty cli i.e. ghostty <tab>
+# $ ghostty +version
+# $ ghostty +list-keybinds
+# $ ghostty +list-actions
+# $ ghostty +list-fonts
+
+# Fonts
+font-family = "JetBrains Mono"
+# font-family = "Fira Code"
+# font-family-bold = "Fira Code"
+font-size = 14
+# adjust-underline-position = 4
+
+# Mouse
+mouse-hide-while-typing = true
+# mouse-scroll-multiplier = 1
+
+# Theme
+# cursor-invert-fg-bg = true
+# window-theme = ghostty
+# background-opacity = 0.9
+
+# keybindings
+keybind = clear
+keybind = ctrl+h=goto_split:left
+keybind = ctrl+j=goto_split:bottom
+keybind = ctrl+k=goto_split:top
+keybind = ctrl+l=goto_split:right
+keybind = super+shift+t=new_tab
+keybind = super+shift+h=previous_tab
+keybind = super+shift+l=next_tab
+keybind = super+shift+comma=move_tab:-1
+keybind = super+shift+period=move_tab:1
+keybind = super+shift+c=copy_to_clipboard
+keybind = super+shift+v=paste_from_clipboard
+keybind = super+shift+enter=new_split:auto
+keybind = super+shift+i=inspector:toggle
+keybind = super+shift+m=toggle_split_zoom
+keybind = super+shift+r=reload_config
+keybind = super+shift+s=write_screen_file:open
+keybind = super+shift+w=close_surface
+
+# Window
+# gtk-single-instance = true
+# gtk-tabs-location = bottom
+# gtk-wide-tabs = false
+# window-padding-y = 2,0
+# window-padding-balance = true
+# window-decoration = false
+
+# Other
+copy-on-select = clipboard
+shell-integration-features = cursor,sudo,no-title
