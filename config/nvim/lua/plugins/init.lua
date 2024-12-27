@@ -25,4 +25,6 @@ return {
   { import = "plugins.lang" },
   { import = "plugins.misc" },
   { import = "plugins.ui" },
+  { import = "plugins.lazyvim.util" },
+
 }

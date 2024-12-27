@@ -1,6 +1,7 @@
 {
   "extras": [
-    "lazyvim.plugins.extras.lang.sql"
+    "lazyvim.plugins.extras.lang.sql",
+    "lazyvim.plugins.extras.util.rest"
   ],
   "news": {
     "NEWS.md": "7429"
