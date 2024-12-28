@@ -26,10 +26,11 @@ mouse-hide-while-typing = true
 # keybindings
 macos-option-as-alt = left
 keybind = clear
-keybind = ctrl+h=goto_split:left
-keybind = ctrl+j=goto_split:bottom
-keybind = ctrl+k=goto_split:top
-keybind = ctrl+l=goto_split:right
+# keybind = ctrl+h=goto_split:left
+# keybind = ctrl+j=goto_split:bottom
+# keybind = ctrl+k=goto_split:top
+# keybind = ctrl+l=goto_split:right
+keybind = super+n=new_window
 keybind = super+shift+t=new_tab
 keybind = super+shift+h=previous_tab
 keybind = super+shift+l=next_tab
@@ -53,5 +54,4 @@ keybind = super+shift+w=close_surface
 # window-decoration = false
 
 # Other
-copy-on-select = clipboard
-shell-integration-features = cursor,sudo,no-title
+# copy-on-select = clipboard
