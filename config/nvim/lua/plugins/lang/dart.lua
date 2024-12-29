@@ -39,7 +39,7 @@ return {
   --  DevDocs documentations
   --  https://github.com/luckasRanarison/nvim-devdocs
   {
-    "luckasRanarison/nvim-devdocs",
+    "warpaint9299/nvim-devdocs",
     optional = true,
     ensure_installed = {
       "dart-2",

@@ -9,7 +9,7 @@ return {
     end,
   },
   {
-    "luckasRanarison/nvim-devdocs",
+    "warpaint9299/nvim-devdocs",
     ensure_installed = {
       "nix",
     },
