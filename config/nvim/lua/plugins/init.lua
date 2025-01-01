@@ -7,7 +7,6 @@ return {
   -- -- import any extras modules here
   -- see ../../lazyvim.json for added extras
 
-  { import = "lazyvim.plugins.extras.coding.luasnip" },
   { import = "lazyvim.plugins.extras.coding.mini-surround" },
   { import = "lazyvim.plugins.extras.dap.core" },
   { import = "lazyvim.plugins.extras.editor.outline" },
