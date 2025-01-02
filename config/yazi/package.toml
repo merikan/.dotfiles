@@ -5,7 +5,7 @@ deps = [
   { use = "yazi-rs/plugins:git", rev = "71c4fc2" },
   { use = "yazi-rs/plugins:hide-preview", rev = "71c4fc2" },
   { use = "yazi-rs/plugins:smart-filter", rev = "71c4fc2" },
-  { use = "imsi32/yatline", rev = "600ed1f" },
+  { use = "imsi32/yatline", rev = "9328205" },
   { use = "imsi32/yatline-githead", rev = "a6377a8" },
   { use = "yazi-rs/plugins:chmod", rev = "71c4fc2" },
 ]
