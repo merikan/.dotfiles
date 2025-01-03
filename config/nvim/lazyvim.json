@@ -1,6 +1,7 @@
 {
   "extras": [
     "lazyvim.plugins.extras.lang.sql",
+    "lazyvim.plugins.extras.lsp.neoconf",
     "lazyvim.plugins.extras.util.rest"
   ],
   "news": {
