@@ -237,6 +237,21 @@ command -v fzf >/dev/null 2>&1  && {
   command -v ag >/dev/null 2>&1 && export FZF_DEFAULT_COMMAND='ag -g ""'
 }
 
+# zellij
+autoload bashcompinit
+bashcompinit
+_zellij_session_autocomplete() {
+    local cur prev opts
+    cur="${COMP_WORDS[COMP_CWORD]}"  # The word being completed
+    prev="${COMP_WORDS[COMP_CWORD-1]}"  # The previous word
+
+    if [[ "$prev" == "d" || "$prev" == "a" || "$prev" == "k" ]]; then
+        opts=$(zellij ls -ns 2>/dev/null)  # Get available sessions
+        COMPREPLY=( $(compgen -W "${opts}" -- "${cur}") )  # Generate suggestions
+    fi
+}
+complete -F _zellij_session_autocomplete zellij
+
 # Android Studio doesn't honour XDG though it support symlinks
 # create directory if not exists and thensymlink
 [[ ! -d "$HOME"/.android ]] && mkdir -p "$HOME/.android"
