@@ -71,11 +71,11 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 echo "  ✔"
 
 echo -n "Set computer name (as done via System Preferences → Sharing)"
-read -p "Do you want to set the computer name ? (y/N) " choice;
+read -r -p "Do you want to set the computer name ? (y/N) " choice;
 choice=${choice:-n};
 [[ "$choice" =~ ^([Yy])$ ]] && {
-	read -p "Enter the new computer name. Press Ctrl+c to cancel.  " computer_name;
-	read -p "Do you want use computer name '${computer_name}'? (Y/n) " choice2;
+	read -r -p "Enter the new computer name. Press Ctrl+c to cancel.  " computer_name;
+	read -r -p "Do you want use computer name '${computer_name}'? (Y/n) " choice2;
 	choice2=${choice2:-Y};
 	[[ "$choice2" =~ ^([Yy])$ ]] && {
 		sudo scutil --set ComputerName "${computer_name}"
@@ -111,7 +111,7 @@ echo -n "Automatically quit printer app once the print jobs complete"
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 echo "  ✔"
 
-echo -n "Disable the “Are you sure you want to open this application?” dialog"
+echo -n 'Disable the “Are you sure you want to open this application?” dialog'
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 echo "  ✔"
 
