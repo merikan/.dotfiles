@@ -142,6 +142,7 @@ brew "nmap"                                         # port scanning utility for 
 brew "neovim"                                       # neovim
 brew "peterldowns/tap/nix-search-cli"               # search nix packages
 brew "nvm"                                          # manage multiple Node.js versions
+brew "onefetch"                                     # git project information tool
 brew "openconnect"                                  # open client for cisco anyconnect vpn
 brew "openshift-cli"                                # openshift cli
 brew "packer"                                       # package VMs
