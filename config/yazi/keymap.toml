@@ -5,8 +5,8 @@
 prepend_keymap = [
 
 
-  { on = [ "J" ], run = "plugin --sync parent-arrow --args=1" },
-  { on = [ "K" ], run = "plugin --sync parent-arrow --args=-1" },
+  { on = [ "J" ], run = "plugin parent-arrow --args=1" },
+  { on = [ "K" ], run = "plugin parent-arrow --args=-1" },
   # using \ as my localleader
   { on  = [ "\\", "z" ], run = "plugin --sync max-preview", desc = "Zoom in/out preview" },
   { on   = ["\\", "p"], run  = "plugin --sync hide-preview", desc = "Hide or show preview" },
