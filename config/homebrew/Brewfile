@@ -186,6 +186,7 @@ brew "tig"                                          # text-mode interface for gi
 brew "tmux"                                         # terminal multiplexer
 brew "toot"                                         # mastodon tui client
 brew "tree"                                         # list contents of directories in a tree-like format
+brew "truffelhog"                                   # find and verify credentials #security #git
 brew "aquasecurity/trivy/trivy"                     # scanner for vulnerabilities in images, filesystems, git repos and config files
 brew "tut"                                          # mastodon tui client
 brew "unar"                                         # command-line unarchiving tools supporting multiple formats
