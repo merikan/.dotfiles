@@ -55,6 +55,7 @@ else
   map("n", "gx", "<cmd>silent execute '!xdg-open ' . shellescape('<cWORD>')<CR>", { silent = true })
 end
 
+map("n", "<leader>gf", function() Snacks.lazygit.log_file() end, { desc = "Lazygit Current File History" })
 --------------------------------------------------------------------------------
 -- Plugins
 --------------------------------------------------------------------------------
