@@ -31,6 +31,7 @@ tap "homebrew/cask-versions"           # alternate versions of Casks
 ### ---------------------------------------------------- ###
 ### Formulae                                             ###
 ### ---------------------------------------------------- ###
+brew "7zip"                                         # file archiver with a high compression ratio
 brew "act"                                          # run your github actions locally
 brew "ansible"                                      # IaC provision and configure
 brew "apktool"                                      # reverse engineering Android apk files
