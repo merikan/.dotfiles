@@ -296,12 +296,7 @@ cask "tomatobar"                                    # another pomodoro app
 cask "tunnelblick"                                  # free, open source graphic user interface for OpenVPN
 cask "vagrant"                                      # vm management
 brew "vagrant-completion"
-if arch_amd?
-  cask "virtualbox"                                 # virtualizer for x86 hardware
-end
-if arch_arm?
-  cask "virtualbox@beta"                            # virtualizer for arm hardware
-end
+cask "virtualbox"                                 # virtualizer for x86/arm hardware
 cask "visual-paradigm-ce"                           # software modelling tool
 cask "visual-studio-code"                           # a great editor
 cask "visualvm"                                     # visual profiling tool for the Java VM
