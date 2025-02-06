@@ -33,6 +33,8 @@ keybinds {
       bind "Alt j" { MoveFocus "Down"; }
       bind "Alt k" { MoveFocus "Up"; }
       bind "Alt l" { MoveFocus "Right"; }
+      bind "Alt m" { ToggleFloatingPanes; }
+
     }
     tmux clear-defaults=true {
         // add my preferred tmux bindings
@@ -92,28 +94,6 @@ keybinds {
     shared_except "tmux" {
         bind "Ctrl a" { SwitchToMode "Tmux"; }
     }
-    shared_except "locked" {
-        /* Put keybindings here if they conflict with Vim or others. */
-
-//        bind "Alt z" { SwitchToMode "Locked"; }
-//
-        bind "Alt m" { ToggleFloatingPanes; }
-//        bind "Alt t" { NewPane "Down"; }
-//        bind "Alt v" { NewPane "Right"; }
-
-        bind "Ctrl h" { MoveFocus "Left"; }
-        bind "Ctrl j" { MoveFocus "Down"; }
-        bind "Ctrl k" { MoveFocus "Up"; }
-        bind "Ctrl l" { MoveFocus "Right"; }
-
-//        bind "Ctrl d" { HalfPageScrollDown; }
-//        bind "Ctrl u" { HalfPageScrollUp; }
-//
-//        bind "Ctrl f" { PageScrollDown; }
-//        bind "Ctrl b" { PageScrollUp; }
-
-    }
-
 }
 
 plugins {
