@@ -1,4 +1,3 @@
-
 # To keep this file in sync I'm avoiding to install with the `brew install` command,
 # instead I'm adding a row to this file and run 'brew bundle --global' to make sure it's working.
 
@@ -122,7 +121,6 @@ brew "jesseduffield/lazydocker/lazydocker"          # the lazier way to manage e
 brew "jesseduffield/lazygit/lazygit"                # simple terminal UI for git commands
 brew "k3d"                                          # k3d is a lightweight wrapper to run k3s
 brew "k6"                                           # open-source load testing tool
-brew "kubeaudit"                                    # audit k8s clusters and manifests
 brew "lf"                                           # file manager for the terminal
 brew "lnav"                                         # watch and analyze your log files from a terminal.
 brew "lsd"                                          # a clone of ls with more features
@@ -146,8 +144,6 @@ brew "nvm"                                          # manage multiple Node.js ve
 brew "onefetch"                                     # git project information tool
 brew "openconnect"                                  # open client for cisco anyconnect vpn
 brew "openshift-cli"                                # openshift cli
-brew "packer"                                       # package VMs
-brew "packer-completion"
 brew "php"                                          # php
 brew "plantuml"                                     # draw UML diagrams
 brew "pip-completion"
@@ -224,7 +220,6 @@ cask "bitwarden"                                    # open source password manag
 cask "brave-browser"                                # privacy focused, performance oriented browser
 cask "bruno"                                        # opensource ide for exploring and testing api's
 cask "calibre"                                      # e-book reader and library management application
-cask "clementine"                                   # music player and radio streamer
 cask "chromium"                                     # open-source browser
 cask "cyberduck"                                    # client for FTP and SFTP, WebDAV, and cloud storage
 cask "dash"                                         # API documentation browser
@@ -251,7 +246,6 @@ cask "inkscape"                                     # A powerful, free design to
 cask "insomnia"                                     # superduper rest client
 cask "intellij-idea"                                # awesome java IDE
 cask "iterm2"                                       # Terminal emulator for macOS
-cask "jdiskreport"                                  # analyses your disk drives and shows charts and details tables
 cask "joplin"                                       # a FOSS note taking and to-do application
 cask "karabiner-elements"                           # keyboard customizer for macOS
 cask "kdiff3"                                       # utility for comparing and merging files and directories
@@ -261,7 +255,6 @@ cask "keybase"                                      # crypto for everyone!
 cask "keycastr"                                     # keystroke visualizer
 cask "kui"                                          # a Framework for Enhancing CLIs with Graphics
 cask "love"                                         # LÖVE - make 2D games in Lua
-cask "markright"                                    # a markdown editor
 cask "messenger"                                    # facebook messenger
 cask "minishift"                                    # openshift mini
 cask "mitmproxy"                                    # a free and open source interactive HTTPS proxy
@@ -281,8 +274,6 @@ cask "rancher"                                      # OSS alternative to Docker 
 cask "responsively"                                 # modified web browser for responsive web development
 cask "skype"                                        # video conf
 cask "sketch"                                       # sketchapp - design tool
-cask "sketch-toolbox"                               # some useful plugins for sketchapp
-cask "skitch"                                       # take screenshots of all or part of your screen
 cask "sloth"                                        # shows all open files and sockets
 cask "sonos"                                        # Sonos controller
 cask "soapui"                                       # soap and rest testing tool
@@ -295,8 +286,7 @@ cask "thunderbird"                                  # free email application fro
 cask "tomatobar"                                    # another pomodoro app
 cask "tunnelblick"                                  # free, open source graphic user interface for OpenVPN
 cask "vagrant"                                      # vm management
-brew "vagrant-completion"
-cask "virtualbox"                                 # virtualizer for x86/arm hardware
+cask "virtualbox"                                   # virtualizer for x86/arm hardware
 cask "visual-paradigm-ce"                           # software modelling tool
 cask "visual-studio-code"                           # a great editor
 cask "visualvm"                                     # visual profiling tool for the Java VM
@@ -320,7 +310,6 @@ cask "qlstephen"                                    # preview plain text files w
 cask "qlmarkdown"                                   # preview Markdown files
 cask "quicklook-json"                               # preview JSON files
 cask "quicklook-csv"                                # preview CSV files
-cask "qlimagesize"                                  # display image size and resolution
 cask "webpquicklook"                                # preview WebP images
 cask "suspicious-package"                           # preview the contents of a standard Apple installer package
 cask "qlvideo"                                      # display thumbnails, static previews, cover art and metadata for video files
