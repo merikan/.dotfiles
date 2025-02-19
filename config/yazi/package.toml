@@ -1,14 +1,42 @@
-[plugin]
-deps = [
-  { use = "yazi-rs/plugins:max-preview", rev = "71c4fc2" },
-  { use = "Reledia/glow", rev = "5ce76dc" },
-  { use = "yazi-rs/plugins:git", rev = "71c4fc2" },
-  { use = "yazi-rs/plugins:hide-preview", rev = "71c4fc2" },
-  { use = "yazi-rs/plugins:smart-filter", rev = "71c4fc2" },
-  { use = "imsi32/yatline", rev = "9328205" },
-  { use = "imsi32/yatline-githead", rev = "a6377a8" },
-  { use = "yazi-rs/plugins:chmod", rev = "71c4fc2" },
-]
+[[plugin.deps]]
+use = "yazi-rs/plugins:max-preview"
+rev = "71c4fc2"
+hash = "9bc26d10d2f6e2aa93b10905b1b76979"
+
+[[plugin.deps]]
+use = "Reledia/glow"
+rev = "5ce76dc"
+hash = "52e5f5c602962e7cbf874da28f52ba45"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "71c4fc2"
+hash = "e9cf1bfc03de7fee0f1d4260da0d1dfd"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:hide-preview"
+rev = "71c4fc2"
+hash = "5be5885898ca9df783bdec0d402bf4b0"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-filter"
+rev = "71c4fc2"
+hash = "ea24edab4a62c94dbd205adfb6f2c08d"
+
+[[plugin.deps]]
+use = "imsi32/yatline"
+rev = "9328205"
+hash = "3e51d1fd8a2e481fcfa8eab1251d1c5f"
+
+[[plugin.deps]]
+use = "imsi32/yatline-githead"
+rev = "a6377a8"
+hash = "4f1a71eff1dd8f245ae2e3985e3e2f91"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:chmod"
+rev = "71c4fc2"
+hash = "4c7e8fd0266eedee7b619d966bd2d025"
 
 [flavor]
 deps = []
