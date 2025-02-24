@@ -302,6 +302,7 @@ cask "yaak"                                         # rest/graphql api client
 cask "yed"                                          # graph editor
 cask "zap"                                          # Zed Attack Proxy (web scanner)
 cask "zed"                                          # multiplayer code editor
+cask "zen-browser"                                  # a gecko based community driven browser
 cask "zoom"                                         # video communications
 
 ## quick-look-plugins see:https://github.com/sindresorhus/quick-look-plugins
