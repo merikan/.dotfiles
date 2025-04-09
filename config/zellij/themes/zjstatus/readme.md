@@ -47,8 +47,8 @@ Here is the template for Gruvbox > [gruvbox.kdl](./gruvbox.kdl)
 
 ## How to use plugins
 
-The best and concise way to use a plugin in Zellij is to declare it as an alias in `config.kdl` and
- then use the alias in your layout file.
+The best and concise way to use a plugin in Zellij is to declare it as an alias in `config.kdl` and then use the alias in your layout file.   
+Since we don't have a proper plugin manager today, I always download the wasm file manually from the [releases page](https://github.com/dj95/zjstatus/releases) and place it under the `~/.local/share/zellij/plugins/` directory. 
 
 **config.kdl**
 ```kdl
