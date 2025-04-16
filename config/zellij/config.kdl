@@ -35,6 +35,17 @@ keybinds {
       bind "Alt l" { MoveFocus "Right"; }
       bind "Alt m" { ToggleFloatingPanes; }
 
+      bind "Ctrl g" {
+        Run "lazygit" {
+            close_on_exit true
+            floating true
+            x "10%"
+            y "15%"
+            width "80%"
+            height "70%"
+        }
+      }
+
     }
     tmux clear-defaults=true {
         // add my preferred tmux bindings
@@ -46,11 +57,15 @@ keybinds {
         bind "s"  "|" "\\" { NewPane "Right"; SwitchToMode "Normal"; }
         bind "x" { CloseFocus; SwitchToMode "Normal"; }
         bind "z" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
+        bind "f" { ToggleFloatingPanes; SwitchToMode "Normal"; }
         bind "h" { MoveFocus "Left"; }
         bind "j" { MoveFocus "Down"; }
         bind "k" { MoveFocus "Up"; }
         bind "l" { MoveFocus "Right"; }
         bind "o" { FocusNextPane; }
+        bind "i" { TogglePanePinned; SwitchToMode "Normal"; }
+        bind "Alt =" "Alt +" { Resize "Increase"; }
+        bind "Alt -" { Resize "Decrease"; }
         // tab
         bind "c" { NewTab; SwitchToMode "Normal"; SwitchToMode "RenameTab"; TabNameInput 0; }
         bind "r" { SwitchToMode "RenameTab"; TabNameInput 0; }
