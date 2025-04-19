@@ -24,7 +24,3 @@ id   = "git"
 name = "*"
 run  = "git"
 
-[[plugin.prepend_fetchers]]
-id   = "git"
-name = "*/"
-run  = "git"
