@@ -4,7 +4,7 @@
 local prefix = "<leader>O"
 return {
   {
-    "epwalsh/obsidian.nvim",
+    "obsidian-nvim/obsidian.nvim",
     version = "*", -- recommended, use latest release instead of latest commit
     lazy = true,
     ft = "markdown",
@@ -55,6 +55,13 @@ return {
       note_id_func = function(title)
         return tostring(title)
       end,
+      completion = {
+        nvim_cmp = false,
+        blink = true,
+      },
+      picker = {
+        name = "snacks.pick",
+      },
     },
     config = function(_, opts)
       opts.ui = { enable = false } -- use ui from markdown.nvim
