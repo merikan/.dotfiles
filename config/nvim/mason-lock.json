@@ -20,11 +20,11 @@
   "eslint-lsp": "4.10.0",
   "eslint_d": "14.3.0",
   "flake8": "7.2.0",
-  "gitleaks": "v8.24.3",
+  "gitleaks": "v8.25.1",
   "go-debug-adapter": "v0.46.1",
   "gofumpt": "v0.8.0",
   "goimports": "v0.32.0",
-  "golangci-lint": "v2.1.2",
+  "golangci-lint": "v2.1.6",
   "google-java-format": "v1.26.0",
   "gopls": "v0.18.1",
   "gotests": "v1.6.0",
@@ -55,9 +55,8 @@
   "nixpkgs-fmt": "1.3.0",
   "prettierd": "0.26.1",
   "python-lsp-server": "1.12.2",
-  "rust-analyzer": "2025-04-14",
+  "rust-analyzer": "2025-05-05",
   "selene": "0.28.0",
-  "semgrep": "1.119.0",
   "shellcheck": "v0.10.0",
   "shfmt": "v3.11.0",
   "snyk": "v1.1296.2",
@@ -77,5 +76,6 @@
   "xmlformatter": "0.2.8",
   "yaml-language-server": "1.17.0",
   "yamlfmt": "v0.16.0",
-  "yamllint": "1.37.0"
+  "yamllint": "1.37.0",
+
 }
