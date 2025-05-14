@@ -257,7 +257,6 @@ cask "keycastr"                                     # keystroke visualizer
 cask "kui"                                          # a Framework for Enhancing CLIs with Graphics
 cask "love"                                         # LÖVE - make 2D games in Lua
 cask "messenger"                                    # facebook messenger
-cask "minishift"                                    # openshift mini
 cask "mitmproxy"                                    # a free and open source interactive HTTPS proxy
 cask "obs"                                          # foss for video recording and live streaming
 cask "obsidian"                                     # awesome notetaking application
