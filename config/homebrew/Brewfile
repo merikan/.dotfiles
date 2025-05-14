@@ -272,7 +272,6 @@ cask "qownnotes"                                    # nice rest client
 cask "raycast"                                      # supercharged productivity
 cask "rancher"                                      # OSS alternative to Docker Desktop
 cask "responsively"                                 # modified web browser for responsive web development
-cask "skype"                                        # video conf
 cask "sketch"                                       # sketchapp - design tool
 cask "sloth"                                        # shows all open files and sockets
 cask "sonos"                                        # Sonos controller
