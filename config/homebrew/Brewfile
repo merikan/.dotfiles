@@ -23,10 +23,6 @@ def arch_arm?
   RUBY_PLATFORM =~ /arm/
 end
 
-tap "homebrew/bundle"
-tap "homebrew/cask-fonts"              # fonts
-tap "homebrew/cask-versions"           # alternate versions of Casks
-
 ### ---------------------------------------------------- ###
 ### Formulae                                             ###
 ### ---------------------------------------------------- ###
