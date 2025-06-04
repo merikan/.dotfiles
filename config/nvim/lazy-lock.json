@@ -10,6 +10,7 @@
   "bufferline.nvim": { "branch": "main", "commit": "0b2fd861eee7595015b6561dade52fb060be10c4" },
   "catppuccin": { "branch": "main", "commit": "387b4b19568cbda82c1d6def9ded31fd6ae7fb99" },
   "ccc.nvim": { "branch": "main", "commit": "9d1a256e006decc574789dfc7d628ca11644d4c2" },
+  "checkmate.nvim": { "branch": "main", "commit": "7a987d1983b45c21e6137b338dd8b7d67243ead7" },
   "conform.nvim": { "branch": "master", "commit": "6feb2f28f9a9385e401857b21eeac3c1b66dd628" },
   "crates.nvim": { "branch": "main", "commit": "fc59684a10706cce85e356d03b07fda535bec533" },
   "darcula": { "branch": "master", "commit": "faf8dbab27bee0f27e4f1c3ca7e9695af9b1242b" },
