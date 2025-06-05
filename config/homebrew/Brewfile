@@ -146,6 +146,7 @@ brew "pip-completion"
 brew "podman"                                       # tool for managing oci containers and pods
 brew "poppler"                                      # pdf rendering library (based on the xpdf-3.0 code base)
 brew "potrace"                                      # transforming bitmaps into vector graphics
+brew "presenterm"                                   # presentations in markdown and run in termainl
 brew "procs"                                        # replacement for ps written by Rust
 brew "pstree"                                       # pstree
 brew "pv"                                           # a terminal-based tool for monitoring the progress of data through a pipeline.
