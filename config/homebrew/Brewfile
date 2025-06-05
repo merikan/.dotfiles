@@ -140,6 +140,7 @@ brew "nvm"                                          # manage multiple Node.js ve
 brew "onefetch"                                     # git project information tool
 brew "openconnect"                                  # open client for cisco anyconnect vpn
 brew "openshift-cli"                                # openshift cli
+brew "doganarif/tap/pf"                             # find open ports
 brew "php"                                          # php
 brew "plantuml"                                     # draw UML diagrams
 brew "pip-completion"
