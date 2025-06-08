@@ -82,6 +82,9 @@ else
   touch "$_comp_path"
 fi
 unset _comp_path
+# compinit for bash
+autoload bashcompinit
+bashcompinit
 
 _comp_options+=(globdots) # include hidden files
 zstyle ':completion:*' menu select # autocompletion with an arrow-key driven interface
@@ -211,6 +214,9 @@ command -v direnv >/dev/null 2>&1  && {
   eval "$(direnv hook zsh)"
 }
 
+# source procs completion (using bash since zsh didn't work)
+command -v procs >/dev/null 2>&1 && source <(procs --gen-completion-out bash)
+
 if [[ "${UNAME_SYSTEM}" != "Darwin" ]]; then
   # source kubectl tab completion
   command -v kubectl >/dev/null 2>&1 && source <(kubectl completion zsh)
@@ -238,8 +244,6 @@ command -v fzf >/dev/null 2>&1  && {
 }
 
 # zellij
-autoload bashcompinit
-bashcompinit
 _zellij_session_autocomplete() {
     local cur prev opts
     cur="${COMP_WORDS[COMP_CWORD]}"  # The word being completed
