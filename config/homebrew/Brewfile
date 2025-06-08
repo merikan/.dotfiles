@@ -28,6 +28,7 @@ end
 ### ---------------------------------------------------- ###
 brew "7zip"                                         # file archiver with a high compression ratio
 brew "act"                                          # run your github actions locally
+brew "aider"                                        # ai, vibe-coding
 brew "ansible"                                      # IaC provision and configure
 brew "apktool"                                      # reverse engineering Android apk files
 brew "argocd"                                       # GitOps continuous delivery tool for Kubernetes
