@@ -1,0 +1,60 @@
+{
+  "data": {
+    "directory": ".local/share/opencode"
+  },
+  "providers": {
+    "openai": {
+      "apiKey": "your-api-key",
+      "disabled": true
+    },
+    "anthropic": {
+      "apiKey": "your-api-key",
+      "disabled": true
+    },
+    "groq": {
+      "apiKey": "your-api-key",
+      "disabled": true
+    },
+    "openrouter": {
+      "apiKey": "your-api-key",
+      "disabled": false
+    }
+  },
+  "agents": {
+    "primary": {
+      "model": "anthropic/claude-3.7-sonnet",
+      "maxTokens": 5000
+    },
+    "task": {
+      "model": "anthropic/claude-3.7-sonnet",
+      "maxTokens": 5000
+    },
+    "title": {
+      "model": "anthropic/claude-3.7-sonnet",
+      "maxTokens": 80
+    }
+  },
+  "mcpServers": {
+    "example": {
+      "type": "stdio",
+      "command": "path/to/mcp-server",
+      "env": [],
+      "args": []
+    }
+  },
+  "lsp": {
+    "go": {
+      "disabled": false,
+      "command": "gopls"
+    },
+    "php": {
+      "disabled": false,
+      "command": "phpactor"
+    }
+  },
+  "tui": {
+    "theme": "gruvbox"
+  },
+  "debug": false,
+  "debugLSP": false
+}
