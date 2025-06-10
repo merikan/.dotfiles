@@ -97,6 +97,26 @@ gradle() {
     command gradle "$@"
 }
 
+# ghq clone with cd into the repository
+ghg() {
+  result=$(ghq clone "$1" 2>&1)
+  error=$?
+  echo "$result"
+  [[ $error -eq 1 ]] && return $error
+  dir=$(echo "$result" | awk -F"'" '/Cloning into/ {print $2}')
+  if [[ -z "$dir" ]]; then
+    dir=$(echo "$result" | awk '/exists/{ print $3 }')
+  fi
+
+  if [[ -n "$dir" ]]; then
+    echo "cd into $dir"
+    builtin cd "$dir" || return 1
+  else
+    echo "$result"
+  fi
+
+}
+
 # SSH
 ssh_addkeys() {
 #  if ps | grep -v grep | grep ssh-agent > /dev/null
