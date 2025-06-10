@@ -1,3 +1,4 @@
+// https://zellij.dev/documentation/keybindings.html
 
 default_layout "terminal"
 
@@ -57,6 +58,7 @@ keybinds {
         bind "N" { NewPane "stacked"; SwitchToMode "Normal"; }
         bind "-" "_" { NewPane "Down"; SwitchToMode "Normal"; }
         bind "s"  "|" "\\" { NewPane "Right"; SwitchToMode "Normal"; }
+        bind "r" { SwitchToMode "RenamePane"; PaneNameInput 0;}
         bind "x" { CloseFocus; SwitchToMode "Normal"; }
         bind "z" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
         bind "f" { ToggleFloatingPanes; SwitchToMode "Normal"; }
@@ -71,13 +73,10 @@ keybinds {
         bind "Alt -" { Resize "Decrease"; }
         // tab
         bind "c" { NewTab; SwitchToMode "Normal"; SwitchToMode "RenameTab"; TabNameInput 0; }
-        bind "r" { SwitchToMode "RenameTab"; TabNameInput 0; }
+        bind "R" { SwitchToMode "RenameTab"; }
         bind "X" { CloseTab; SwitchToMode "Normal"; }
         bind "H" { GoToPreviousTab; }
         bind "L" { GoToNextTab; }
-        bind "<" { MoveTab "Left"; }
-        bind ">" { MoveTab "Right"; }
-
         bind "1" { GoToTab 1; SwitchToMode "Normal"; }
         bind "2" { GoToTab 2; SwitchToMode "Normal"; }
         bind "3" { GoToTab 3; SwitchToMode "Normal"; }
@@ -87,6 +86,8 @@ keybinds {
         bind "7" { GoToTab 7; SwitchToMode "Normal"; }
         bind "8" { GoToTab 8; SwitchToMode "Normal"; }
         bind "9" { GoToTab 9; SwitchToMode "Normal"; }
+        bind "<" { MoveTab "Left"; }
+        bind ">" { MoveTab "Right"; }
         // session
         bind "d" { Detach; }
         bind "w" {
@@ -109,8 +110,36 @@ keybinds {
         bind "Ctrl m" { SwitchToMode "Move"; }
         bind "Ctrl g" { SwitchToMode "Locked"; }
     }
+    // modify Move Mode
+    move clear-defaults=true {
+        bind "b" { MovePaneBackwards; }
+        bind "h" "Left" { MovePane "Left"; }
+        bind "j" "Down" { MovePane "Down"; }
+        bind "k" "Up" { MovePane "Up"; }
+        bind "l" "Right" { MovePane "Right"; }
+        bind "]" { BreakPaneRight; SwitchToMode "Normal"; }
+        bind "[" { BreakPaneLeft; SwitchToMode "Normal"; }
+        bind "<" { MoveTab "Left"; }
+        bind ">" { MoveTab "Right"; }
+    }
+    // modify Resize Mode
+    resize {
+        bind "h" "Left" { Resize "Increase Left"; }
+        bind "j" "Down" { Resize "Increase Down"; }
+        bind "k" "Up" { Resize "Increase Up"; }
+        bind "l" "Right" { Resize "Increase Right"; }
+        bind "H" { Resize "Decrease Left"; }
+        bind "J" { Resize "Decrease Down"; }
+        bind "K" { Resize "Decrease Up"; }
+        bind "L" { Resize "Decrease Right"; }
+        bind "=" "+" { Resize "Increase"; }
+        bind "-" { Resize "Decrease"; }
+    }
     shared_except "tmux" {
         bind "Ctrl a" { SwitchToMode "Tmux"; }
+    }
+    shared_except "normal" "locked" {
+        bind "Enter" "Esc" { SwitchToMode "Normal"; }
     }
 }
 

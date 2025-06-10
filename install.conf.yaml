@@ -135,6 +135,10 @@
     ~/.local/bin/nvims:  config/nvims/bin/nvims
     # obsidian
     ~/Notes/.obsidian.vimrc: config/obsidian/obsidian.vimrc
+    # opencode
+    ~/.config/opencode:
+        path: config/opencode/*
+        glob: true
     # powerline
     ~/.config/powerline: config/powerline
     #rustup
