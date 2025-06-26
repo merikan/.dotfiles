@@ -63,6 +63,7 @@ brew "doxygen"                                      # Generate documentation fro
 brew "docker"                                       # docker client
 brew "docker-credential-helper"                     # keystore credential helper for Docker
 brew "fastfetch"                                    # A fast, highly customizable system info script
+brew "fd"                                           # fast and user-friendly alternative to find
 brew "ffmpeg"                                       # record, convert and stream audio and video
 brew "ffmpegthumbnailer"                            # create thumbnails for your video files
 brew "flake8"                                       # lint python
