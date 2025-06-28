@@ -5,13 +5,13 @@ hash = "92b5c58159a51c567f82b618cee2b78"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "5eea960"
-hash = "e01006bfb38951ea89031bd918b20dbb"
+rev = "de53d90"
+hash = "63b6c222bf2103b3023389dde5e2ecfe"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:smart-filter"
-rev = "5eea960"
-hash = "f660384d7ed12ecd456efed313453310"
+rev = "de53d90"
+hash = "e56b7abf3c06e8ce496eadcca168c093"
 
 [[plugin.deps]]
 use = "imsi32/yatline"
@@ -25,8 +25,8 @@ hash = "4d441b38138ce6492a4e10fa349fd65"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:chmod"
-rev = "5eea960"
-hash = "a030fe48d91b04341ad2fba9be957df"
+rev = "de53d90"
+hash = "1adc12c2b2b025411ab61eb8f0879574"
 
 [flavor]
 deps = []
