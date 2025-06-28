@@ -28,6 +28,7 @@ end
 ### ---------------------------------------------------- ###
 brew "7zip"                                         # file archiver with a high compression ratio
 brew "act"                                          # run your github actions locally
+brew "aerc"                                         # a tui email client in the terminal
 brew "aider"                                        # ai, vibe-coding
 brew "ansible"                                      # IaC provision and configure
 brew "apktool"                                      # reverse engineering Android apk files
@@ -191,6 +192,7 @@ brew "aquasecurity/trivy/trivy"                     # scanner for vulnerabilitie
 brew "tut"                                          # mastodon tui client
 brew "unar"                                         # command-line unarchiving tools supporting multiple formats
 brew "vim"                                          # highly configurable text editor
+brew "w3m"                                          # text base browser in the terminal
 brew "watch"                                        # execute a program periodically and watch the output
 brew "wget"                                         # non-interactive network downloader
 brew "xan"                                          # A fast csv command line toolkit written in Rust.
