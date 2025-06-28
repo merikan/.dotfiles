@@ -39,6 +39,10 @@
 # ---------------------------------------------------------------------------------------------
 
 - link:
+    # aerc
+    ~/.config/aerc:
+      path: config/aerc/*
+      glob: true
     # aerospace
     ~/.config/aerospace/aerospace.toml: config/aerospace/aerospace.toml
     # alacritty
