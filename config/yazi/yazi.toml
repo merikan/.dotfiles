@@ -16,12 +16,10 @@ max_height = 900
 
 [plugin]
 prepend_previewers = [
-  { name = "*.md", run = "glow" }
-  # { name = "*.md", run = "sh -c \"CLICOLOR_FORCE=1 glow\")" },
+  { name = "*.md", run = 'piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"' }, # force color due to https://github.com/charmbracelet/glow/issues/654
 ]
 
 [[plugin.prepend_fetchers]]
-id   = "git"
+id = "git"
 name = "*"
-run  = "git"
-
+run = "git"
