@@ -1,4 +1,5 @@
 "$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
+# defaul keymaps https://github.com/sxyazi/yazi/blob/shipped/yazi-config/preset/keymap-default.toml
 
 [mgr]
 
@@ -21,8 +22,8 @@ prepend_keymap = [
   { on  = [ "\\", "z" ], run = "plugin --sync max-preview", desc = "Zoom in/out preview" },
   { on   = ["\\", "p"], run  = "plugin --sync hide-preview", desc = "Hide or show preview" },
 
-  { on = "e", run = "open", desc = "Open the selected files" },
-  { on = "E", run = "open --interactive", desc = "Open the selected files interactively" },
+  { on = "e", run = "open --mode=edit", desc = "Edit the selected files" },   # Press 'e' to explicitly edit
+  { on = "E", run = "open --mode=edit --interactive", desc = "Edit the selected files interactively" },
   { on = "F", run  = "plugin smart-filter", desc = "Smart filter" },
   { on = [ "g", ".", ], run = "cd ~/.dotfiles", desc = "Go to .dotfiles directory" },
   { on = [ "g", "/" ], run = '''shell "$SHELL" --block --confirm''', desc = "Open shell here" },

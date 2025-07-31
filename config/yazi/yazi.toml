@@ -1,4 +1,5 @@
 "$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
+# default setting https://github.com/sxyazi/yazi/blob/shipped/yazi-config/preset/yazi-default.toml
 
 [mgr]
 ratio = [1, 4, 3]
