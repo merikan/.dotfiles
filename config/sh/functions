@@ -103,9 +103,9 @@ ghg() {
   error=$?
   echo "$result"
   [[ $error -eq 1 ]] && return $error
-  dir=$(echo "$result" | awk -F"'" '/Cloning into/ {print $2}')
+  dir=$(echo "$result" | awk -F"'" '/Cloning into/ {print $2}' | head -n 1)
   if [[ -z "$dir" ]]; then
-    dir=$(echo "$result" | awk '/exists/{ print $3 }')
+    dir=$(echo "$result" | awk '/exists/{ print $3 }' | head -n 1)
   fi
 
   if [[ -n "$dir" ]]; then
