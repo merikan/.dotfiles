@@ -145,6 +145,7 @@ brew "peterldowns/tap/nix-search-cli"               # search nix packages
 brew "nvm"                                          # manage multiple Node.js versions
 brew "onefetch"                                     # git project information tool
 brew "openconnect"                                  # open client for cisco anyconnect vpn
+brew "sst/tap/opencode"                             # AI agent for the terminal
 brew "openshift-cli"                                # openshift cli
 brew "doganarif/tap/pf"                             # find open ports
 brew "php"                                          # php
