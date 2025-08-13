@@ -49,6 +49,7 @@ brew "cmake"                                        # cross-platform make
 brew "csvkit"                                       # tools for working with CSV
 brew "ctop"                                         # top-like interface for container metrics
 brew "cosign"                                       #
+brew "charmbracelet/tap/crush"                      # AI coding agent for your terminal f.k.a opencode
 brew "curl"                                         # curl
 brew "util-linux"                                   # linux utilities
 brew "dasel"                                        # query and modify data structures in json/toml/yaml/xml/csv/plain format
@@ -143,7 +144,6 @@ brew "neovim"                                       # neovim
 brew "peterldowns/tap/nix-search-cli"               # search nix packages
 brew "nvm"                                          # manage multiple Node.js versions
 brew "onefetch"                                     # git project information tool
-brew "opencode-ai/tap/opencode"                     # AI assistance in the  terminal
 brew "openconnect"                                  # open client for cisco anyconnect vpn
 brew "openshift-cli"                                # openshift cli
 brew "doganarif/tap/pf"                             # find open ports
