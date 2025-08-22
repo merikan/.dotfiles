@@ -53,6 +53,7 @@ keybinds {
         bind "[" { SwitchToMode "Scroll"; }
         bind "]" { EditScrollback; SwitchToMode "Normal"; }
         // pane
+        bind "n" { NewPane; SwitchToMode "Normal"; }
         bind "-" "_" { NewPane "Down"; SwitchToMode "Normal"; }
         bind "s"  "|" "\\" { NewPane "Right"; SwitchToMode "Normal"; }
         bind "x" { CloseFocus; SwitchToMode "Normal"; }
@@ -70,8 +71,8 @@ keybinds {
         bind "c" { NewTab; SwitchToMode "Normal"; SwitchToMode "RenameTab"; TabNameInput 0; }
         bind "r" { SwitchToMode "RenameTab"; TabNameInput 0; }
         bind "X" { CloseTab; SwitchToMode "Normal"; }
-        bind "H" "p" { GoToPreviousTab; }
-        bind "L" "n" "Tab" { GoToNextTab; }
+        bind "H" { GoToPreviousTab; }
+        bind "L" { GoToNextTab; }
         bind "<" { MoveTab "Left"; }
         bind ">" { MoveTab "Right"; }
 
@@ -257,3 +258,4 @@ plugins {
 //        floating true
 //    }
 }
+
