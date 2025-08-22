@@ -2,3 +2,10 @@
 k9s:
   ui:
     skin: catppuccin-macchiato
+  logger:
+    tail: 10000
+    buffer: 10000
+    sinceSeconds: -1
+    textWrap: false
+    disableAutoscroll: false
+    showTime: false
