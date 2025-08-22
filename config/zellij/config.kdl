@@ -54,6 +54,7 @@ keybinds {
         bind "]" { EditScrollback; SwitchToMode "Normal"; }
         // pane
         bind "n" { NewPane; SwitchToMode "Normal"; }
+        bind "N" { NewPane "stacked"; SwitchToMode "Normal"; }
         bind "-" "_" { NewPane "Down"; SwitchToMode "Normal"; }
         bind "s"  "|" "\\" { NewPane "Right"; SwitchToMode "Normal"; }
         bind "x" { CloseFocus; SwitchToMode "Normal"; }
