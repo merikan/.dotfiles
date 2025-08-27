@@ -114,6 +114,7 @@ brew "krew"                                         # package manager for kubect
 brew "kubectl"                                      # kubernetes controller
 brew "kubectx"                                      # kubectx: manage and switch between kubectl contexts, kubens: switch between Kubernetes namespaces.
 brew "kubeconform"                                  # lint k8s manifests
+brew "kubeseal"                                     # Kubernetes tool for one-way encrypted Secrets
 brew "kube-linter"                                  # lint k8s and helm manifests
 brew "helm"                                         # helm packagemanager for kubernetes
 brew "kustomize"                                    # kustomize: template-free customization of application configuration
