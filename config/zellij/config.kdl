@@ -51,8 +51,6 @@ keybinds {
     tmux clear-defaults=true {
         // add my preferred tmux bindings
         bind "Ctrl a" { SwitchToMode "Normal"; }
-        bind "[" { SwitchToMode "Scroll"; }
-        bind "]" { EditScrollback; SwitchToMode "Normal"; }
         // pane
         bind "n" { NewPane; SwitchToMode "Normal"; }
         bind "N" { NewPane "stacked"; SwitchToMode "Normal"; }
@@ -99,6 +97,10 @@ keybinds {
         }
         bind "Ctrl q" { Quit; }
         // other
+        bind "[" { SwitchToMode "Scroll"; }
+        bind "]" { EditScrollback; SwitchToMode "Normal"; }
+        bind "m" { SwitchToMode "Move"; }
+        bind "M" { SwitchToMode "Resize"; }
         bind "Space" { NextSwapLayout; }
         // switch to other modes
         bind "Enter" "Esc" { SwitchToMode "Normal"; }
@@ -112,6 +114,7 @@ keybinds {
     }
     // modify Move Mode
     move clear-defaults=true {
+        bind "Enter" "Esc" { SwitchToMode "Normal"; }
         bind "b" { MovePaneBackwards; }
         bind "h" "Left" { MovePane "Left"; }
         bind "j" "Down" { MovePane "Down"; }
@@ -124,6 +127,7 @@ keybinds {
     }
     // modify Resize Mode
     resize {
+        bind "Enter" "Esc" { SwitchToMode "Normal"; }
         bind "h" "Left" { Resize "Increase Left"; }
         bind "j" "Down" { Resize "Increase Down"; }
         bind "k" "Up" { Resize "Increase Up"; }
