@@ -157,18 +157,22 @@ SPACESHIP_KUBECTL_CONTEXT_SYMBOL=""
 # SPACESHIP_KUBECTL_VERSION_SHOW=false # disable to speed up prompt when no remote server is available
 SPACESHIP_KUBECTL_CONTEXT_SHOW=true
 SPACESHIP_KUBECTL_CONTEXT_COLOR_GROUPS=(
+  # https://spaceship-prompt.sh/sections/kubectl/#Kubernetes-context-kubectl_context
   # https://upload.wikimedia.org/wikipedia/commons/1/15/Xterm_256color_chart.svg
+  # 100 = #878700, 214 = #ffaf00, 196 = #ff0000
   100  minikube
-  # namespace: environment
   100  '\(.*-dev\)$'
   100  '\(.*-utv\)$'
-  228  '\(.*-sys\)$'
-  228  '\(.*-qa\)$'
-  228  '\(.*-acc\)$'
-  228  '\(.*-at\)$'
+  214  '\(.*-sys\)$'
+  214  '\(.*-qa\)$'
+  214 '\(.*-acc\)$'
+  214  '\(.*-at\)$'
   202  '\(.*-sit\)$'
   196  '\(.*-prod\)$'
   196  '^.*-prod-.*\(.*\)$'
+  100  icc-local
+  214  icc-qa
+  196  icc-prod
 )
 
 # NIX
