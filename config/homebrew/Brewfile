@@ -292,6 +292,7 @@ cask "sublime-text"                                 # text editor
 cask "thunderbird"                                  # free email application from Mozilla
 cask "tomatobar"                                    # another pomodoro app
 cask "tunnelblick"                                  # free, open source graphic user interface for OpenVPN
+cask "utm"                                          # virtual machines ui using qemu
 cask "vagrant"                                      # vm management
 cask "virtualbox"                                   # virtualizer for x86/arm hardware
 cask "visual-paradigm-ce"                           # software modelling tool
