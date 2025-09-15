@@ -26,6 +26,7 @@ gui:
     "hotfix": "#ed8796"
     "feature": "#a6da95"
 git:
+  overrideGpg: true
   paging:
     colorArg: always
     pager: delta --paging=never --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
