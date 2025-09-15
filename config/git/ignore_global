@@ -1,8 +1,10 @@
+# my local stuff
+.mise.local.toml
 merikan.todo.md
-
+merikan.todo
+.gitignore.d
 *~
 .DS_Store
-.gitignore.d
 
 
 # vscode-java
