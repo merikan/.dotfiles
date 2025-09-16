@@ -1,18 +1,18 @@
 # /* vim: set filetype=conf : */
 
-# NOTE: git does not resolve $XDG_CONFIG_HOME, use tilde instead
+# NOTE: git does not resolve $XDG_CONFIG_HOME, use absolute path with tilde instead
 #
 [include]
   path = ~/.config/delta/themes/catppuccin.gitconfig
   path = ~/.config/git/alias
-  # Load private config, not to be pushed to repo
   path = ~/.config/git/config.local
+# Load private config, not to be pushed to repo
 [init]
 	defaultBranch = main
 [user]
 	name = Peter Merikan
 	email = peter@merikan.com
-  signingkey = ~/.ssh/id_ed25519.pub
+	signingkey = A93D728B0D0028A71C47EB106F86D20024CE1D22
 [core]
   pager = delta
 	excludesfile = ~/.config/git/ignore_global
@@ -48,12 +48,6 @@
 [commit]
   template = ~/.config/git/commit_msg
 	gpgsign = true
-
-[gpg]
-    format = ssh             # use SSH for signing
-
-[gpg "ssh"]
-    allowedSignersFile = ~/.ssh/allowed_signers # ssh signature verification
 
 [tag]
 	forceSignAnnotated = true
