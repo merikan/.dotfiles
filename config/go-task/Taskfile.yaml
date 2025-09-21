@@ -49,3 +49,9 @@ tasks:
     cmds:
       - cmd: mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.java.search.FindDeprecatedUses {{.CLI_ARGS}}
 
+  mvn:enforcer:requireReleaseDeps:
+    desc: checks the dependencies and fails if any snapshots are found.
+    dir: '{{.USER_WORKING_DIR}}'
+    cmds:
+      - cmd: mvn -U enforcer:enforce -Drules=requireReleaseDeps {{.CLI_ARGS}}
+
