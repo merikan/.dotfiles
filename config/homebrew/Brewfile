@@ -106,6 +106,7 @@ brew "jless"                                        # a command-line JSON viewer
 brew "jq"                                           # command-line JSON processor, like sed
 brew "jo"                                           # small utility to create JSON objects
 brew "joplin-cli"                                   # note taking and to-do application
+brew "jmespath/jmespath/jp"                         # cli for jmespath
 brew "boz/repo/kail"                                # kubernetes log viewer
 brew "k9s"                                          # awesome tui for k8s
 brew "kind"                                         # k8s in docker
