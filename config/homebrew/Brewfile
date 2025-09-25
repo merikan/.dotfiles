@@ -247,7 +247,7 @@ cask "flutter"                                      # ui toolkit for flutter
 cask "ghostty"                                      # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "gimp"                                         # an Image Editor (I probably never be able to learn)
 cask "gitkraken"                                    # Git GUI client for Windows, Mac and Linux
-cask "gitup"                                        # awesome Git Gui Client
+cask "gitup-app"                                    # awesome Git Gui Client
 cask "google-chrome"                                # a browser
 cask "hammerspoon"                                  # powerful automation of MacOS, actions and wm
 cask "handbrake"                                    # open source video transcoder
