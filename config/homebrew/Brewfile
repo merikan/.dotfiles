@@ -75,7 +75,7 @@ brew "fx"                                           # JSON/YAML viewer & process
 brew "merikan/tools/gdu-go"                         # go disk usage
 brew "go"                                           # golang sdk
 brew "gojq"                                         # jq written in go
-brew "goreleaser/tap/goreleaser"                    # release automation tool for Go projects
+brew "goreleaser"                                   # release automation tool for Go projects
 brew "golangci-lint"                                # Go linters aggregator
 brew "gh"                                           # github cli
 brew "ghq"                                          # git remote repository management made easy
