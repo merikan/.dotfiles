@@ -250,7 +250,7 @@ cask "gitkraken"                                    # Git GUI client for Windows
 cask "gitup-app"                                    # awesome Git Gui Client
 cask "google-chrome"                                # a browser
 cask "hammerspoon"                                  # powerful automation of MacOS, actions and wm
-cask "handbrake"                                    # open source video transcoder
+cask "handbrake-app"                                # open source video transcoder
 cask "horos"                                        # a free, open source medical image viewer
 cask "inkscape"                                     # A powerful, free design tool
 cask "insomnia"                                     # superduper rest client
