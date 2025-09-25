@@ -271,7 +271,7 @@ cask "obs"                                          # foss for video recording a
 cask "obsidian"                                     # awesome notetaking application
 cask "opera"                                        # browser
 cask "mysqlworkbench"                               # gui tool for mysql
-cask "neovide"                                      # a gui for neovim
+cask "neovide-app"                                  # a gui for neovim
 cask "paintbrush"                                   # clean and simple paint program
 cask "pencil"                                       # open-source GUI prototyping tool
 cask "podman-desktop"                               # Browse, manage, inspect containers and images
