@@ -2,9 +2,7 @@
 
 default_layout "terminal"
 
-// set the theme
-theme "catppuccin-mocha"
-//theme "gruvbox-dark"
+theme "gruvbox-dark"
 ui {
     pane_frames {
         rounded_corners true
