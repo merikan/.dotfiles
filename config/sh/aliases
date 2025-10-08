@@ -146,6 +146,13 @@ alias got='go test'
 alias gotv='go test -v'
 alias gob='go build'
 
+# nix aliases
+alias nix:daemons="sudo pkill -9 nix-daemon"
+alias nix:gc="sudo nix-collect-garbage --delete-old"
+alias nix:tree="nix-store -q --tree"
+alias nix:upgrade="sudo -i sh -c 'nix-channel --update && nix-env --install --attr nixpkgs.nix --fallback && launchctl remove org.nixos.nix-daemon && launchctl load /Library/LaunchDaemons/org.nixos.nix-daemon.plist'"
+alias nix-cli:upgrade="nix upgrade-nix"
+
 #docker aliases and functions
 alias d='docker'
 ! [ -n "$ZSH_VERSION" ] && complete -F _docker d
