@@ -81,8 +81,8 @@ keybinds {
         // other
         bind "[" { SwitchToMode "Scroll"; }
         bind "]" { EditScrollback; SwitchToMode "Normal"; }
-        bind "m" { SwitchToMode "Move"; }
-        bind "M" { SwitchToMode "Resize"; }
+        bind "m" { SwitchToMode "Resize"; }
+        bind "M" { SwitchToMode "Move"; }
         bind "Space" { NextSwapLayout; }
         // switch to other modes
         bind "Enter" "Esc" { SwitchToMode "Normal"; }
