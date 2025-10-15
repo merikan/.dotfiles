@@ -142,6 +142,7 @@ __expand_alias_widget() {
 }
 zle -N expand-alias-widget __expand_alias_widget
 bindkey "^ " expand-alias-widget
+
 # select global_alias, ^g^g
 __select_global_alias_widget() {
   local alias=$(alias | awk -F "=" '{print $1}' | tr -d "\'" | grep -E '\b[[:upper:]]+\b' \
@@ -150,6 +151,7 @@ __select_global_alias_widget() {
 }
 zle -N select-global-alias __select_global_alias_widget
 bindkey '^G' select-global-alias
+
 # better ^z, press twice = suspend + bg (https://superuser.com/a/378045)
 __better_ctrl_z_widget () {
   if [[ $#BUFFER -eq 0 ]]; then
@@ -161,6 +163,7 @@ __better_ctrl_z_widget () {
 }
 zle -N better-ctrl-z __better_ctrl_z_widget
 bindkey '^Z' better-ctrl-z
+
 # cd in to git repo
 __fzf-ghq-cd_widget() {
   local GHQ_LIST=$(ghq list | sort -u | fzf +m)
@@ -169,9 +172,9 @@ __fzf-ghq-cd_widget() {
   fi
   zle accept-line
 }
-
 zle -N cd-into-ghq-repo __fzf-ghq-cd_widget
 bindkey '^y' cd-into-ghq-repo
+bindkey -a '^y' cd-into-ghq-repo
 
 # Using Base16 for Shells https://github.com/chriskempson/base16-shell
 local base16_theme="base16_gruvbox-dark-medium"
