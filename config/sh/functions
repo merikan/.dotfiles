@@ -29,6 +29,7 @@ cd() {
     fi
 }
 
+# git diff with fzf
 # https://medium.com/@GroundControl/better-git-diffs-with-fzf-89083739a9cb
 gdiff() {
   preview="git diff $@ --color=always -- {-1}"

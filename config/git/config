@@ -5,8 +5,8 @@
 [include]
   path = ~/.config/delta/themes/catppuccin.gitconfig
   path = ~/.config/git/alias
+  # Load private config, not to be pushed to repo
   path = ~/.config/git/config.local
-# Load private config, not to be pushed to repo
 [init]
 	defaultBranch = main
 [user]
