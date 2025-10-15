@@ -127,12 +127,6 @@
     ~/.config/nvim:
       path: config/nvim/*
       glob: true
-    # nvims
-    ~/.config/nvims:
-        path: config/nvims/*
-        glob: true
-        exclude: ["config/nvims/bin"]
-    ~/.local/bin/nvims:  config/nvims/bin/nvims
     # obsidian
     ~/Notes/.obsidian.vimrc: config/obsidian/obsidian.vimrc
     # opencode
