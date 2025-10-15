@@ -128,6 +128,9 @@
       path: config/nvim/*
       glob: true
     # obsidian
+    ~/Notes/.obsidian/: 
+        path: config/obsidian/obsidian/*
+        glob: true
     ~/Notes/.obsidian.vimrc: config/obsidian/obsidian.vimrc
     # opencode
     ~/.config/opencode:
