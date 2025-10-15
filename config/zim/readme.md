@@ -4,7 +4,7 @@
 [Zim Framework](https://zimfw.sh/), or just `zim` is a Zsh configuration framework with blazing speed and modular extensions.
 
 Over the years I have used many different zsh frameworks, such as [prezto](https://github.com/sorin-ionescu/prezto), [oh-my-zsh](https://ohmyz.sh/),
-but finally settled for `zim` because it's small, fast and easy to use. So I have for several years now I have used zim exclusively and it has worked flawlessly.
+but finally settled for `zim` because it's small, fast and easy to use. So I have used it for several years now and it has worked flawlessly.
 
 I used to jump between `zsh` and `bash` but since a number of years I use `zsh` exclusively. I then use `zim` as the plugin manager 
 for all my zsh plugins instead of using [Sheldon](https://sheldon.cli.rs/b), which I now only use for bash.
