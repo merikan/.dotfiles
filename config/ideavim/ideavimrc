@@ -16,8 +16,6 @@ set hlsearch incsearch ignorecase smartcase
 " set command menu
 "set wildmenu
 let mapleader=" "
-imap hh <Esc>
-cmap hh <Esc>
 " paste without yank
 xnoremap p "_dP
 " zoom editor
