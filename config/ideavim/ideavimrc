@@ -9,6 +9,7 @@ set number relativenumber
 " idea
 command! Restart action RestartIde
 command! ReloadVim action IdeaVim.ReloadVimRc.reload
+command! TrackAction <action>(VimFindActionIdAction)
 
 " search options
 set hlsearch incsearch ignorecase smartcase
@@ -26,7 +27,7 @@ vmap <M-d> <Action>(EditorDuplicate)
 " jump tabs
 nmap H <Action>(PreviousTab)
 nmap L <Action>(NextTab)
-nmap <leader>qq <Action>(CloseAllEditors)
+nmap <leader>ba <Action>(CloseAllEditors)
 " coding
 nmap gD <Action>(GotoDeclaration)
 nmap gy <Action>(GotoTypeDeclaration)
@@ -43,7 +44,7 @@ nmap <leader>fr <Action>(RecentFiles)
 nmap <leader><leader> <Action>(GotoClass)
 " test
 nmap <Leader>tr <Action>(RunClass)
-nmap <Leader>tg :action GotoTest<CR>
+nmap <Leader>tg <Action>(GotoTest)
 
 
 """"""""""""""""""""""
