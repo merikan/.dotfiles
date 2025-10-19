@@ -475,4 +475,12 @@ for app in "Activity Monitor" \
 	echo "Killing app ${app}"
 	killall "${app}" &> /dev/null
 done
+
+
+## Touch ID for sudo
+echo -n "Enable Touch ID for sudo"
+sudo sed 's/^#auth/auth/' /etc/pam.d/sudo_local.template | sudo tee /etc/pam.d/sudo_local > /dev/null
+sudo chown root:wheel /etc/pam.d/sudo_local && sudo chmod 444 /etc/pam.d/sudo_local
+echo "  ✔"
+
 echo "Done. Note that some of these changes require a logout/restart to take effect."
