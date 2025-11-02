@@ -232,7 +232,6 @@ cask "bruno"                                        # opensource ide for explori
 cask "calibre"                                      # e-book reader and library management application
 cask "chromium"                                     # open-source browser
 cask "cyberduck"                                    # client for FTP and SFTP, WebDAV, and cloud storage
-cask "dash"                                         # API documentation browser
 cask "dbeaver-community"                            # universal database tool
 cask "devpod"                                       # an implementation of devcontainers
 cask "docker-desktop"                               # docker desktop
