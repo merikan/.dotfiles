@@ -235,6 +235,7 @@ cask "cyberduck"                                    # client for FTP and SFTP, W
 cask "dash"                                         # API documentation browser
 cask "dbeaver-community"                            # universal database tool
 cask "devpod"                                       # an implementation of devcontainers
+cask "docker-desktop"                               # docker desktop
 cask "discord"                                      # group-chatting platform
 cask "dropbox"                                      # personal cloud storage service
 cask "eclipse-java"                                 # eclipse ide for java developers
