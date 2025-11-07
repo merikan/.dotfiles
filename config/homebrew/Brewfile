@@ -55,6 +55,7 @@ brew "util-linux"                                   # linux utilities
 brew "dasel"                                        # query and modify data structures in json/toml/yaml/xml/csv/plain format
 brew "git-delta"                                    # syntax-highlighting pager for git, diff, and grep output
 brew "devcontainer"                                 # devcontainer cli
+brew "dust"                                         # a better du built in rust
 brew "joshuto"                                      # ranger-like terminal file manager written in Rust
 brew "wvanlint/twf/twf"                             # tree view file explorer
 brew "dfc"                                          # displays file system space usage using graphs and colors
@@ -223,6 +224,7 @@ cask "alfred"                                       # a must have for boost prod
 cask "android-studio"                               # android IDE
 cask "android-file-transfer"                        # transfer files from Android device
 cask "arq"                                          # backup for mac
+cask "asciidocfx"                                   # asciidoc editor
 cask "backuploupe"                                  # browse your timemachine backups
 cask "balenaetcher"                                 # Burn images to SD cards & USB drives, safely and easily.
 cask "bartender"                                    # organize your menu bar icons
@@ -249,6 +251,7 @@ cask "gimp"                                         # an Image Editor (I probabl
 cask "gitkraken"                                    # Git GUI client for Windows, Mac and Linux
 cask "gitup-app"                                    # awesome Git Gui Client
 cask "google-chrome"                                # a browser
+cask "google-drive"                                 # client for the google drive storage service
 cask "hammerspoon"                                  # powerful automation of MacOS, actions and wm
 cask "handbrake-app"                                # open source video transcoder
 cask "horos"                                        # a free, open source medical image viewer
@@ -263,6 +266,7 @@ cask "keepassxc"                                    # a great FOSS Password Mana
 cask "keystore-explorer"                            # open source GUI replacement for the keytool and jarsignerbrewfilbrewfil
 cask "keybase"                                      # crypto for everyone!
 cask "keycastr"                                     # keystroke visualizer
+cask "kitty"                                        # kitty terminal emulator
 cask "kui"                                          # a Framework for Enhancing CLIs with Graphics
 cask "love"                                         # LÖVE - make 2D games in Lua
 cask "messenger"                                    # facebook messenger
@@ -330,6 +334,7 @@ cask "font-fira-code"                               # monospaced font with progr
 cask "font-fira-code-nerd-font"                     # nerd patched 'fire-code' font
 cask "font-go"                                      # golang fonts
 cask "font-go-mono-nerd-font"                       # nerd patched 'go-mono' font
+cask "font-hack-nerd-font"                          # Hack Nerd Font (Hack)
 cask "font-hasklig"                                 # a code font with monospaced ligatures
 cask "font-hasklug-nerd-font"                       # nerd patched 'hasklig' font
 cask "font-inconsolata"                             # a great programmers font
