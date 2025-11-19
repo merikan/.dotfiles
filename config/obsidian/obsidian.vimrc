@@ -11,6 +11,8 @@ set clipboard=unnamed
 " unset to use as leader key
 unmap <Space>
 
+nnoremap Y y$ " Make Y behave like C and D
+
 " navigate visual lines rather than logical ones
 nnoremap j gj
 nnoremap k gk
@@ -23,9 +25,11 @@ nnoremap <C-u> <C-u>zz
 
 exmap tabnext obcommand workspace:next-tab
 nmap gt :tabnext<CR>
+nmap L :tabnext<CR>
 nmap ]b :tabnext<CR>
 exmap tabprev obcommand workspace:previous-tab
 nmap gT :tabprev<CR>
+nmap H :tabprev<CR>
 nmap ]b :tabprev<CR>
 " Quickly remove search highlights
 nmap <F9> :nohl<CR>
