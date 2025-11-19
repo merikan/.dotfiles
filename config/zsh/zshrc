@@ -180,6 +180,15 @@ bindkey -a '^y' cd-into-ghq-repo
 local base16_theme="base16_gruvbox-dark-medium"
 type -f $base16_theme >/dev/null 2>&1 && eval $base16_theme
 
+# ssh
+ssh-add -l >/dev/null 2>&1 || {
+  # start agent
+  eval $(ssh-agent -s) >/dev/null
+  # add all keys
+  [[ "$(uname)" == Darwin* ]] && { keychain='--apple-use-keychain'; }
+  find ~/.ssh -type f -name 'id_*' ! -name '*.pub' -exec ssh-add "${keychain}" -q {} \;
+}
+
 # fast cd jumping
 command -v zoxide >/dev/null 2>&1 && {
   eval "$(zoxide init zsh)"
