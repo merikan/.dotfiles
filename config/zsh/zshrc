@@ -324,7 +324,7 @@ command -v pyenv >/dev/null 2>&1 && {
 }
 
 # mise
-command -v pyenv >/dev/null 2>&1 && {
+command -v mise >/dev/null 2>&1 && {
   eval "$(mise activate zsh)"
 }
 # ruby on macos
