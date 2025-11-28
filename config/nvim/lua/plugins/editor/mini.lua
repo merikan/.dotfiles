@@ -1,2 +1,2 @@
--- https://github.com/echasnovski/mini.nvim
-return { "echasnovski/mini.nvim", version = false }
+-- https://github.com/nvim-mini/mini.nvim
+return { "nvim-mini/mini.nvim", version = false }

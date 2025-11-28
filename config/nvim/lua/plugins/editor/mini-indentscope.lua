@@ -2,7 +2,7 @@
 
 -- active indent guide and indent text objects
 return {
-  "echasnovski/mini.indentscope",
+  "nvim-mini/mini.indentscope",
   opts = {
     draw = {
       -- turn of blingbling
