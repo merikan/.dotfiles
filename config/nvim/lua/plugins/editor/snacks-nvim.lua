@@ -24,11 +24,11 @@ return {
     notifier = {
       style = "fancy",
     },
-    terminal = {
-      win = {
-        position = "float",
-      },
-    },
+    -- terminal = {
+    --   win = {
+    --     position = "float",
+    --   },
+    -- },
   },
   keys = {
     { "<leader>fz", function() Snacks.picker.zoxide() end, desc = "Zoxide" },
