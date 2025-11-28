@@ -70,6 +70,7 @@ brew "fd"                                           # fast and user-friendly alt
 brew "ffmpeg"                                       # record, convert and stream audio and video
 brew "ffmpegthumbnailer"                            # create thumbnails for your video files
 brew "flake8"                                       # lint python
+brew "fnox"                                         # cli secret manager
 brew "fzf"                                          # a command-line fuzzy finder
 brew "ffmpeg"                                       # to record, convert and stream audio and video
 brew "fx"                                           # JSON/YAML viewer & processor

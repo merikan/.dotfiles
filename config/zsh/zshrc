@@ -327,6 +327,11 @@ command -v pyenv >/dev/null 2>&1 && {
 command -v mise >/dev/null 2>&1 && {
   eval "$(mise activate zsh)"
 }
+
+# fnox https://github.com/jdx/fnox
+command -v fnox >/dev/null 2>&1 && {
+  eval "$(fnox activate zsh)"
+}
 # ruby on macos
 [[ -s "${HOMEBREW_PREFIX}/ruby/bin" ]] && {
   export PATH="${HOMEBREW_PREFIX}/ruby/bin:$PATH"
