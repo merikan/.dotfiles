@@ -310,6 +310,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 # kubectl krew
 command -v kubectl >/dev/null 2>&1 && export PATH="${PATH}:${HOME}/.krew/bin"
+
 # dart
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
@@ -354,7 +355,7 @@ fi
   source <(rdctl completion zsh)
 }
 
-# fzf for fuzzy file mathing. (https://github.com/junegunn/fzf)
+# gitlab cli
 command -v glab >/dev/null 2>&1  && {
   source <(glab completion -s zsh); compdef _glab glab
 }
