@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 #
 # Functions that are nice to have with you
 #
@@ -6,27 +6,35 @@
 # with the alias command. Check out my alias file(s)
 
 # easy create and cd into a directory (mcd myproject/src)
+
+# shellcheck disable=SC2164
 mcd() { [ -n "$1" ] && mkdir -p "$*" && cd "$_"; }
 
 # smart cd
 cd() {
-    if [[ "$1" == "" ]]; then
-      if command -v git >/dev/null 2>&1 && [ -e "$(git rev-parse --show-toplevel 2>/dev/null)" ]; then
-        if [[ "$(git rev-parse --show-toplevel 2>/dev/null)" != "$(pwd)" ]]; then
-            builtin cd "$(git rev-parse --show-toplevel 2>/dev/null)"; #toplevel of git repository
-        elif [ -e "$(builtin cd ..; git rev-parse --show-toplevel 2>/dev/null)" ]; then
-          builtin cd "$(builtin cd ..; git rev-parse --show-toplevel 2>/dev/null)"; #toplevel of parent git repository
-        else
-          builtin cd; # normal cd behaviour
-        fi
+  if [[ "$1" == "" ]]; then
+    if command -v git >/dev/null 2>&1 && [ -e "$(git rev-parse --show-toplevel 2>/dev/null)" ]; then
+      if [[ "$(git rev-parse --show-toplevel 2>/dev/null)" != "$(pwd)" ]]; then
+        builtin cd "$(git rev-parse --show-toplevel 2>/dev/null)" #toplevel of git repository
+      elif [ -e "$(
+        builtin cd ..
+        git rev-parse --show-toplevel 2>/dev/null
+      )" ]; then
+        builtin cd "$(
+          builtin cd ..
+          git rev-parse --show-toplevel 2>/dev/null
+        )" #toplevel of parent git repository
       else
-        builtin cd; # normal cd behaviour
+        builtin cd # normal cd behaviour
       fi
-    elif [[ -f "$1" ]]; then # is it a file?
-      builtin cd "$(dirname "$1")"; #cd into enclosing directory
     else
-      builtin cd $@; # normal cd behaviour
+      builtin cd # normal cd behaviour
     fi
+  elif [[ -f "$1" ]]; then       # is it a file?
+    builtin cd "$(dirname "$1")" #cd into enclosing directory
+  else
+    builtin cd "$@" # normal cd behaviour
+  fi
 }
 
 # git diff with fzf
@@ -39,12 +47,12 @@ gdiff() {
 # uses mvn dependency plugin to show why a certain dependency or dependencies are used
 # https://gist.github.com/meistermeier/b506d225e6ce4b54b904028b767789e8
 mvnwhy() {
-  CANDIDATES=(`mvn dependency:list | grep $1 | awk '{print $2}'`)
+  CANDIDATES=($(mvn dependency:list | grep $1 | awk '{print $2}'))
 
   for CANDIDATE in "${CANDIDATES[@]}"; do
     echo "Why $CANDIDATE?"
     declare -a CANDIDATE_SEGMENTS
-    CANDIDATE_SEGMENTS=(`echo $CANDIDATE | awk 'BEGIN{FS=":"}{for (i=1; i<=2; i++) print $i}'`)
+    CANDIDATE_SEGMENTS=($(echo $CANDIDATE | awk 'BEGIN{FS=":"}{for (i=1; i<=2; i++) print $i}'))
     # this just works in zsh for bash use: DEPENDENCY=${CANDIDATE_SEGMENTS[0]}:${CANDIDATE_SEGMENTS[1]}
     DEPENDENCY=${CANDIDATE_SEGMENTS[1]}:${CANDIDATE_SEGMENTS[2]}
     # scans and shows dependency tree for every dep (this might get optimized later)
@@ -64,38 +72,38 @@ idea() {
 
 # run maven wrapper in git toplevel directory or current/parent directories if found, else run native mvn.
 mvn() {
-    local dir=`pwd`
-    if command -v git >/dev/null 2>&1 && [ -e "$(git rev-parse --show-toplevel 2>/dev/null)" ]; then
-        dir=$(git rev-parse --show-toplevel 2>/dev/null);
-    else
-         while [ -e "$dir" ] && [ -e "$dir"/pom.xml ] && ! [ -e "$dir"/mvnw ] ; do dir=${dir%/*}; done
-    fi
+  local dir=$(pwd)
+  if command -v git >/dev/null 2>&1 && [ -e "$(git rev-parse --show-toplevel 2>/dev/null)" ]; then
+    dir=$(git rev-parse --show-toplevel 2>/dev/null)
+  else
+    while [ -e "$dir" ] && [ -e "$dir"/pom.xml ] && ! [ -e "$dir"/mvnw ]; do dir=${dir%/*}; done
+  fi
 
-    if [ -e "$dir"/mvnw ]; then
-        #echo "Running wrapper at $dir"
-        "$dir"/mvnw "$@"
-        return $?
-    fi
-    #echo "No wrapper found, running native Maven"
-    command mvn "$@"
+  if [ -e "$dir"/mvnw ]; then
+    #echo "Running wrapper at $dir"
+    "$dir"/mvnw "$@"
+    return $?
+  fi
+  #echo "No wrapper found, running native Maven"
+  command mvn "$@"
 }
 
 # run gradle wrapper in git toplevel directory or current/parent directories if found, else run native gradle.
 gradle() {
   local dir="$(pwd)"
-    if command -v git >/dev/null 2>&1 && [ -e "$(git rev-parse --show-toplevel 2>/dev/null)" ]; then
-        dir=$(git rev-parse --show-toplevel 2>/dev/null);
-    else
-        while [ -e "$dir" ] && ! [ -e "$dir"/gradlew ] && [ -n "$(find "$dir" -maxdepth 1 -name '*.gradle' -print -quit)" ]; do dir=${dir%/*}; done
-    fi
+  if command -v git >/dev/null 2>&1 && [ -e "$(git rev-parse --show-toplevel 2>/dev/null)" ]; then
+    dir=$(git rev-parse --show-toplevel 2>/dev/null)
+  else
+    while [ -e "$dir" ] && ! [ -e "$dir"/gradlew ] && [ -n "$(find "$dir" -maxdepth 1 -name '*.gradle' -print -quit)" ]; do dir=${dir%/*}; done
+  fi
 
-    if [ -e "$dir"/gradlew ]; then
-        #echo "Running wrapper at $dir"
-        "$dir"/gradlew "$@"
-        return $?
-    fi
-    #echo "No wrapper found, running native Gradle"
-    command gradle "$@"
+  if [ -e "$dir"/gradlew ]; then
+    #echo "Running wrapper at $dir"
+    "$dir"/gradlew "$@"
+    return $?
+  fi
+  #echo "No wrapper found, running native Gradle"
+  command gradle "$@"
 }
 
 # ghq clone with cd into the repository
@@ -120,54 +128,48 @@ ghg() {
 
 # SSH
 ssh_addkeys() {
-#  if ps | grep -v grep | grep ssh-agent > /dev/null
-#  then
-#  echo "ssh-agent already running, everything is fine"
-#  else
-#  eval `ssh-agent` > /dev/null
-#  fi
-#  ssh-add ~/.ssh/id*
 
-  if [ -f ~/.agent.env ] ; then
-    . ~/.agent.env > /dev/null
-  if ! kill -0 $SSH_AGENT_PID > /dev/null 2>&1; then
-    echo "Stale agent file found. Spawning new agent� "
-    eval `ssh-agent | tee ~/.agent.env`
-    ssh-add
-  fi
-  else
-    echo "Starting ssh-agent"
-    eval `ssh-agent | tee ~/.agent.env`
-    ssh-add
-  fi
+  ssh-add -l >/dev/null 2>&1 || {
+    # start agent
+    eval $(ssh-agent -s) >/dev/null
+    # add all keys
+    [[ "$(uname)" == Darwin* ]] && { keychain='--apple-use-keychain'; }
+    find ~/.ssh -type f -name 'id_*' ! -name '*.pub' -exec ssh-add "${keychain}" -q {} \;
+  }
 }
 
 #Reconnect or start a tmux or screen session over ssh
 # http://alias.sh/reconnect-or-start-tmux-or-screen-session-over-ssh
-sssh (){ ssh -t "$1" 'tmux attach || tmux new || screen -DR'; }
+sssh() { ssh -t "$1" 'tmux attach || tmux new || screen -DR'; }
 
 # Print machine details
 # http://www.thegeekstuff.com/2010/04/unix-bash-function-examples/
 machine() {
-    echo -e "\nCurrent date :" ; date
-    echo -e "\nMachine information:" ; uname -a
-    echo -e "\nMachine status :" ; uptime
-    echo -e "\nMemory status :" ; free
-    echo -e "\nFilesystem status :"; df -h
-    echo -e "\nUsers logged on:" ; w -h
+  echo -e "\nCurrent date :"
+  date
+  echo -e "\nMachine information:"
+  uname -a
+  echo -e "\nMachine status :"
+  uptime
+  echo -e "\nMemory status :"
+  free
+  echo -e "\nFilesystem status :"
+  df -h
+  echo -e "\nUsers logged on:"
+  w -h
 }
 
 # Display Total, Used and Free Memory
 # http://www.thegeekstuff.com/2010/07/3-shell-scripts/
 memory() {
-    echo "Memory Space Details"
-    free -t -m | grep "Total" | awk '{ print "Total Memory space : "$2 " MB";
+  echo "Memory Space Details"
+  free -t -m | grep "Total" | awk '{ print "Total Memory space : "$2 " MB";
     print "Used Memory Space : "$3" MB";
     print "Free Memory : "$4" MB";
     }'
 
-    echo "Swap memory Details"
-    free -t -m | grep "Swap" | awk '{ print "Total Swap space : "$2 " MB";
+  echo "Swap memory Details"
+  free -t -m | grep "Swap" | awk '{ print "Total Swap space : "$2 " MB";
     print "Used Swap Space : "$3" MB";
     print "Free Swap : "$4" MB";
     }'
@@ -176,37 +178,37 @@ memory() {
 # List Processes based on %CPU and Memory Usage
 # http://www.thegeekstuff.com/2010/07/3-shell-scripts/
 process() {
-    #List processes based on %cpu and memory usage
+  #List processes based on %cpu and memory usage
 
-    echo "Start Time" `date`
-    # By default, it display the list of processes based on the cpu and memory usage #
-    if [ $# -eq 0 ]
-    then
+  echo "Start Time" $(date)
+  # By default, it display the list of processes based on the cpu and memory usage #
+  if [ $# -eq 0 ]; then
 
-        echo "List of processes based on the %cpu Usage"
-        ps -e -o pcpu,cpu,nice,state,cputime,args --sort pcpu  # sorted based on %cpu
-        echo "List of processes based on the memory Usage"
-        ps -e -orss=,args= | sort -b -k1,1n # sorted bases rss value
+    echo "List of processes based on the %cpu Usage"
+    ps -e -o pcpu,cpu,nice,state,cputime,args --sort pcpu # sorted based on %cpu
+    echo "List of processes based on the memory Usage"
+    ps -e -orss=,args= | sort -b -k1,1n # sorted bases rss value
 
-    # If arguements are given (mem/cpu)
-    else
-        case "$1" in
-        mem)
-         echo "List of processes based on the memory Usage"
-         ps -e -orss=,args= | sort -b -k1,1n
-         ;;
-        cpu)
-         echo "List of processes based on the %cpu Usage"
-         ps -e -o pcpu,cpu,nice,state,cputime,args --sort pcpu
-         ;;
-        *)
-            echo "Invalid Argument Given \n"
-            echo "Usage : $0 mem/cpu"
-            exit 1
-        esac
+  # If arguements are given (mem/cpu)
+  else
+    case "$1" in
+    mem)
+      echo "List of processes based on the memory Usage"
+      ps -e -orss=,args= | sort -b -k1,1n
+      ;;
+    cpu)
+      echo "List of processes based on the %cpu Usage"
+      ps -e -o pcpu,cpu,nice,state,cputime,args --sort pcpu
+      ;;
+    *)
+      echo "Invalid Argument Given \n"
+      echo "Usage : $0 mem/cpu"
+      exit 1
+      ;;
+    esac
 
-    fi
-    echo "End Time" `date`
+  fi
+  echo "End Time" $(date)
 }
 
 # eval a docker machine
@@ -222,8 +224,8 @@ _docker-machine-eval() {
 }
 # handle prompt string as command
 __prompt_string_() {
-  shift; # get rid of promt string
+  shift # get rid of promt string
   local command=$1
-  shift;
-  eval $command "$@"  # run the command
+  shift
+  eval $command "$@" # run the command
 }
