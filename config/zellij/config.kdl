@@ -150,7 +150,10 @@ plugins {
     // -----------------------
     // extra plugins
     // -----------------------
-    // zjstatus
+
+
+    // zjstatus A nice status bar
+    // https://github.com/dj95/zjstatus
     zjstatus location="file:~/.local/share/zellij/plugins/zjstatus.wasm" {
 
         // -- Gruvbox Dark mode
