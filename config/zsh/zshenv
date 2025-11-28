@@ -48,12 +48,10 @@ if [[ "${UNAME_SYSTEM}" == "Darwin" ]]; then
   fi
   [[ -s "${HOMEBREW_PREFIX}/bin/brew" ]] && {
     export HOMEBREW_CELLAR="${HOMEBREW_PREFIX}/Cellar"
-      export HOMEBREW_REPOSITORY="${HOMEBREW_PREFIX}/Homebrew"
-      export PATH="${HOMEBREW_PREFIX}/bin:${HOMEBREW_PREFIX}/sbin${PATH+:$PATH}"
-      export MANPATH="${HOMEBREW_PREFIX}/share/man${MANPATH+:$MANPATH}:"
-      export INFOPATH="${HOMEBREW_PREFIX}/share/info:${INFOPATH:-}"
-      export FPATH="${HOMEBREW_PREFIX}/share/zsh/site-functions:${FPATH}"
-
+    export HOMEBREW_REPOSITORY="${HOMEBREW_PREFIX}/Homebrew"
+    export MANPATH="${HOMEBREW_PREFIX}/share/man${MANPATH+:$MANPATH}:"
+    export INFOPATH="${HOMEBREW_PREFIX}/share/info:${INFOPATH:-}"
+    export FPATH="${HOMEBREW_PREFIX}/share/zsh/site-functions:${FPATH}"
     }
 fi
 # zoxide

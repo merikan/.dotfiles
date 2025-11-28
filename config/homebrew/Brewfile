@@ -101,6 +101,7 @@ brew "icdiff"                                       # improved colored diff
 brew "imagemagick"                                  # create, edit, compose, or convert bitmap images
 brew "java"                                         # java
 brew "jaq"                                          # like jq but better, faster and more correct
+brew "jc"                                           # convert command output to json
 brew "jenv"                                         # manage your java environment
 brew "jid"                                          # drill down JSON interactively by using filtering queries like jq.
 brew "jless"                                        # a command-line JSON viewer

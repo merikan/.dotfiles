@@ -255,6 +255,10 @@ command -v fzf >/dev/null 2>&1  && {
   command -v ag >/dev/null 2>&1 && export FZF_DEFAULT_COMMAND='ag -g ""'
 }
 
+# Homebrew
+[[ -s "${HOMEBREW_PREFIX}/bin/brew" ]] && {
+  export PATH="${HOMEBREW_PREFIX}/bin:${HOMEBREW_PREFIX}/sbin${PATH+:$PATH}"
+  }
 # Android Studio doesn't honour XDG though it support symlinks
 # create directory, if not exists, and then symlink
 [[ ! -d "$HOME"/.android ]] && mkdir -p "$HOME/.android"
