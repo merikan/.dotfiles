@@ -6,7 +6,7 @@ return
   event = "VeryLazy",
   keys = {
     { "<M-o>", "<cmd>Yazi<CR>", desc = "Open file in File Manager" },
-    { "<leader>fm", "<cmd>Yazi cwd<CR>", desc = "File Manager" },
+    { "<leader>Y", "<cmd>Yazi cwd<CR>", desc = "File Manager" },
   },
   opts = {
     open_for_directories = false,
