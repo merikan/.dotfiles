@@ -44,6 +44,12 @@ gdiff() {
   git diff $@ --name-only | fzf -m --ansi --preview $preview
 }
 
+# print path splitted
+path() {
+  echo -e "${PATH//:/\\n}"
+}
+
+
 # uses mvn dependency plugin to show why a certain dependency or dependencies are used
 # https://gist.github.com/meistermeier/b506d225e6ce4b54b904028b767789e8
 mvnwhy() {
