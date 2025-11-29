@@ -5,6 +5,7 @@ merikan.todo
 .gitignore.d
 *~
 .DS_Store
+lefthook-local.yaml
 
 
 # vscode-java
