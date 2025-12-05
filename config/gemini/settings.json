@@ -1,0 +1,11 @@
+{
+  "security": {
+    "auth": {
+      "selectedType": "gemini-api-key"
+    }
+  },
+  "general": {
+    "previewFeatures": true,
+    "vimMode": true
+  }
+}

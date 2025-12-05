@@ -74,11 +74,15 @@
     ~/.config/fzf:
       path: config/fzf/*
       glob: true
-    # git
+    # gemini
+    ~/.gemini: # xdg https://github.com/google-gemini/gemini-cli/issues/1825
+      path: config/gemini/*
+      glob: true
+    # ghosty
     ~/.config/ghostty:
       path: config/ghostty/*
       glob: true
-        # git
+    # git
     ~/.config/git:
         path: config/git/*
         glob: true
