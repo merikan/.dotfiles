@@ -39,21 +39,6 @@ setopt ignoreeof
 
 # Applications
 
-# homebrew
-if [[ "${UNAME_SYSTEM}" == "Darwin" ]]; then
-  if [[ "${UNAME_MACHINE}" == "arm64" ]]; then
-    export HOMEBREW_PREFIX="/opt/homebrew"
-  else
-    export HOMEBREW_PREFIX="/usr/local"
-  fi
-  [[ -s "${HOMEBREW_PREFIX}/bin/brew" ]] && {
-    export HOMEBREW_CELLAR="${HOMEBREW_PREFIX}/Cellar"
-    export HOMEBREW_REPOSITORY="${HOMEBREW_PREFIX}/Homebrew"
-    export MANPATH="${HOMEBREW_PREFIX}/share/man${MANPATH+:$MANPATH}:"
-    export INFOPATH="${HOMEBREW_PREFIX}/share/info:${INFOPATH:-}"
-    export FPATH="${HOMEBREW_PREFIX}/share/zsh/site-functions:${FPATH}"
-    }
-fi
 # zoxide
 export _ZO_DATA_DIR="${XDG_DATA_HOME}/zoxide"
 # zim
@@ -61,7 +46,7 @@ export ZIM_HOME=${HOME}/.local/zim
 # teaaldeer and XDG https://github.com/dbrgn/tealdeer/issues/311
 export TEALDEER_CONFIG_DIR="${XDG_CONFIG_HOME}/tealdeer"
 # Docker
-# disbale since it is not picked up by docker nat installation nor by rancher
+# disable since it is not picked up by docker at installation nor by rancher
 # export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 # Ruby gems
 export GEM_HOME="${XDG_DATA_HOME}"/gem

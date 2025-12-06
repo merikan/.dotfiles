@@ -255,10 +255,23 @@ command -v fzf >/dev/null 2>&1  && {
   command -v ag >/dev/null 2>&1 && export FZF_DEFAULT_COMMAND='ag -g ""'
 }
 
-# Homebrew
-[[ -s "${HOMEBREW_PREFIX}/bin/brew" ]] && {
-  export PATH="${HOMEBREW_PREFIX}/bin:${HOMEBREW_PREFIX}/sbin${PATH+:$PATH}"
-  }
+# homebrew
+if [[ "${UNAME_SYSTEM}" == "Darwin" ]]; then
+  if [[ "${UNAME_MACHINE}" == "arm64" ]]; then
+    export HOMEBREW_PREFIX="/opt/homebrew"
+  else
+    export HOMEBREW_PREFIX="/usr/local"
+  fi
+  [[ -s "${HOMEBREW_PREFIX}/bin/brew" ]] && {
+    export PATH="${HOMEBREW_PREFIX}/bin:${HOMEBREW_PREFIX}/sbin${PATH+:$PATH}"
+    export HOMEBREW_CELLAR="${HOMEBREW_PREFIX}/Cellar"
+    export HOMEBREW_REPOSITORY="${HOMEBREW_PREFIX}/Homebrew"
+    export MANPATH="${HOMEBREW_PREFIX}/share/man${MANPATH+:$MANPATH}:"
+    export INFOPATH="${HOMEBREW_PREFIX}/share/info:${INFOPATH:-}"
+    export FPATH="${HOMEBREW_PREFIX}/share/zsh/site-functions:${FPATH}"
+    }
+fi
+
 # Android Studio doesn't honour XDG though it support symlinks
 # create directory, if not exists, and then symlink
 [[ ! -d "$HOME"/.android ]] && mkdir -p "$HOME/.android"
