@@ -1,0 +1,31 @@
+# See here for schema https://github.com/DavidAnson/markdownlint/blob/main/schema/.markdownlint.yaml
+# See https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md for explanations of each rule
+# also see https://gitlab.com/gitlab-org/cli/-/blob/main/.markdownlint-cli2.yaml
+
+# By default, enable all rules provided by the linter
+default: true
+
+# MD013: Line length
+MD013:
+  # Set the maximum allowed line length to 120 characters
+  line_length: 120
+  # You can disable the check for specific elements if they frequently exceed the limit
+  code_blocks: false
+  tables: false
+  headings: false
+
+# MD004: Unordered list style (Forces a consistent bullet style, e.g., using hyphens)
+MD004:
+  style: "dash"
+
+# MD025: Multiple top-level headings in the same document
+# Disable this rule, allowing for multiple H1s in certain documentation styles.
+MD025: false
+
+# MD041: First line in a file should be a top-level heading
+# Ensures every document starts with a title.
+MD041: true
+
+# MD046: Code block style (Forces use of triple backticks ` for fenced code blocks)
+MD046:
+  style: "fenced" 

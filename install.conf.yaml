@@ -125,6 +125,8 @@
     ~/.mackup.cfg: config/mackup/mackup.cfg
     # macos
     ~/bin/macos-settings: config/macos/macos-settings
+    # markdownlint
+    ~/.config/markdownlint/.markdownlint.yaml: config/markdownlint/markdownlint.yaml
     # nix
     ~/.config/nix/nix.conf: config/nix/nix.conf
     # nvim
