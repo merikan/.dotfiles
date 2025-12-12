@@ -1,8 +1,7 @@
 # my local stuff
 .mise.local.toml
-merikan.todo.md
-merikan.todo
 .gitignore.d
+todo.local.md
 *~
 .DS_Store
 lefthook-local.yaml
