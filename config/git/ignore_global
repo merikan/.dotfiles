@@ -2,9 +2,9 @@
 .mise.local.toml
 .gitignore.d
 todo.local.md
+lefthook-local.yaml
 *~
 .DS_Store
-lefthook-local.yaml
 
 
 # vscode-java
