@@ -100,7 +100,8 @@ alias veewee='bundle exec veewee'  # do the veewee
 alias g='git'
 alias gg='lazygit'
 command -v nvim >/dev/null 2>&1 && alias vim="nvim"
-alias v="vim"
+# alias v="vim"
+alias v='NVIM_APPNAME="nvim-2026" nvim'
 alias j=z   # fasd z with better key location
 alias jj=zz # fasd zz with better key location
 alias rtfm='tldr'

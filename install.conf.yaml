@@ -133,6 +133,10 @@
     ~/.config/nvim:
       path: config/nvim/*
       glob: true
+    # nvim-2026
+    ~/.config/nvim-2026:
+      path: config/nvim-2026/*
+      glob: true
     # obsidian
     ~/Notes/.obsidian/: 
         path: config/obsidian/obsidian/*
