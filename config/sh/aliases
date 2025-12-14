@@ -59,22 +59,23 @@ alias tma='tmux a -t '   # tmux attach a target session
 # alias $='__prompt_string_'
 # alias #='__prompt_string_'
 
+# use lsd if installed
+command -v lsd >/dev/null 2>&1 && {
+  alias ls='lsd'
+  alias lt='ls --tree'
+}
 # alias ls='ls -aF --color'    # show hidden and type suffix
 alias l.="ls -dl --color .*" # show only hidden files
-alias la='ls -ltraFh'             # show all
-alias lc='ls -lcr'		            # sort by change time
-alias lk='ls -lSr'                # sort by size
-alias ll='ls -la'               # show hidden and sort by modified
-alias lla='ls -lah'               # list all and human readable
-alias lr='ls -lR'                 # recursive ls
-alias lt='\ls -ltr'                # sort by date
-alias lu='ls -lur'		            # sort by access time
-alias lx='ls -lXB'                # sort by extension
-command -v lsd >/dev/null 2>&1 && {
-   alias ls='lsd'
-   alias lt='ls --tree'
-}
-alias g='grep -i'  # Case insensitive grep
+alias la='ls -ltraFh'        # show all
+alias lc='ls -lcr'           # sort by change time
+alias lk='ls -lSr'           # sort by size
+alias ll='ls -la'            # show hidden and sort by modified
+alias lla='ls -lah'          # list all and human readable
+alias lr='ls -lR'            # recursive ls
+alias lt='\ls -ltr'          # sort by date
+alias lu='ls -lur'           # sort by access time
+alias lx='ls -lXB'           # sort by extension
+alias g='grep -i'            # Case insensitive grep
 alias f='find . -iname'
 alias m='more'
 alias mi='mise'
@@ -100,8 +101,8 @@ alias g='git'
 alias gg='lazygit'
 command -v nvim >/dev/null 2>&1 && alias vim="nvim"
 alias v="vim"
-alias j=z         # fasd z with better key location
-alias jj=zz       # fasd zz with better key location
+alias j=z   # fasd z with better key location
+alias jj=zz # fasd zz with better key location
 alias rtfm='tldr'
 alias lazygit='LG_CONFIG_FILE="$HOME/.config/lazygit/config.yaml" lazygit'
 alias lzg='lazygit'
@@ -199,7 +200,6 @@ alias nnn='yazi' # yazi file manager
   alias openports='sudo lsof -PiTCP -sTCP:LISTEN'
 }
 
-
 # HTTPie aliases (https://github.com/jkbrzt/httpie)
 alias GET="http"
 alias POST="http POST"
@@ -221,27 +221,26 @@ alias weather='__weather(){ curl -4 wttr.in/"${1:=gothenburg}"; }; __weather'
 
 # shortcuts to be expanded
 [ -n "$ZSH_VERSION" ] && { global='-g'; }
-alias "${global}" L='| less '                 # less
-alias "${global}" M='| more '                 # more
-alias "${global}" C='| wc -l '                # count number of lines
-alias "${global}" H='| head '                 # head
-alias "${global}" T='| tail '                 # tail
-alias "${global}" G='| grep -i'               # grep
-alias "${global}" X='| xargs '                # xargs
-alias "${global}" Z='| fzf '                  # fzf
-alias "${global}" ZP="| fzf --ansi --preview 'bat {-1} --color=always'"  # fzf with preview
-alias "${global}" V='| vim '                  # vim
-alias "${global}" TEE='| tee >( grep -i 'filter' > filter.log ) output.log'  # tee with filter
-alias "${global}" LL='2>&1 | less '           # pipe stderr and stdout to less
-alias "${global}" NE='2> /dev/null'           # stderr to devnull
-alias "${global}" NUL='> /dev/null 2>&1'      # send all output to dev/null
-alias "${global}" JQ="| jq -Rrc '. as \$line | fromjson? // \$line'"          #output: json and non-json
-alias "${global}" JQO="| jq -R 'fromjson? | .'"                               #output: only json
-alias "${global}" JQP="| jq -R -r '. as \$line | try fromjson catch \$line'"  #output: json pretty print and non-json
-alias "${global}" JQPP="| tr \"\\n\" \"\n\" | jq -R -r '. as \$line | try fromjson catch \$line'"  #output: json pretty print and non-json
-alias "${global}" PF="8080:8080 8081:8081"                            #port-forward
-alias "${global}" FORF="for f in ./*; do echo \$f; done"              #loop over files
-alias "${global}" FORD="for d in */; do echo \$d; done"               #loop over dirs
-alias "${global}" MT!=' -DskipTests'          # skip tests in Maven
-alias "${global}" MD=' -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"'  # spring-boot debug properties
-
+alias "${global}" L='| less '                                                                                                  # less
+alias "${global}" M='| more '                                                                                                  # more
+alias "${global}" C='| wc -l '                                                                                                 # count number of lines
+alias "${global}" H='| head '                                                                                                  # head
+alias "${global}" T='| tail '                                                                                                  # tail
+alias "${global}" G='| grep -i'                                                                                                # grep
+alias "${global}" X='| xargs '                                                                                                 # xargs
+alias "${global}" Z='| fzf '                                                                                                   # fzf
+alias "${global}" ZP="| fzf --ansi --preview 'bat {-1} --color=always'"                                                        # fzf with preview
+alias "${global}" V='| vim '                                                                                                   # vim
+alias "${global}" TEE='| tee >( grep -i 'filter' > filter.log ) output.log'                                                    # tee with filter
+alias "${global}" LL='2>&1 | less '                                                                                            # pipe stderr and stdout to less
+alias "${global}" NE='2> /dev/null'                                                                                            # stderr to devnull
+alias "${global}" NUL='> /dev/null 2>&1'                                                                                       # send all output to dev/null
+alias "${global}" JQ="| jq -Rrc '. as \$line | fromjson? // \$line'"                                                           #output: json and non-json
+alias "${global}" JQO="| jq -R 'fromjson? | .'"                                                                                #output: only json
+alias "${global}" JQP="| jq -R -r '. as \$line | try fromjson catch \$line'"                                                   #output: json pretty print and non-json
+alias "${global}" JQPP="| tr \"\\n\" \"\n\" | jq -R -r '. as \$line | try fromjson catch \$line'"                              #output: json pretty print and non-json
+alias "${global}" PF="8080:8080 8081:8081"                                                                                     #port-forward
+alias "${global}" FORF="for f in ./*; do echo \$f; done"                                                                       #loop over files
+alias "${global}" FORD="for d in */; do echo \$d; done"                                                                        #loop over dirs
+alias "${global}" MT!=' -DskipTests'                                                                                           # skip tests in Maven
+alias "${global}" MD=' -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"' # spring-boot debug properties
