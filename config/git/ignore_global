@@ -6,21 +6,6 @@ lefthook-local.yaml
 *~
 .DS_Store
 
-
-# vscode-java
-.vscode
-.classpath
-.project
-out
-server
-node_modules
-*.vsix
-.DS_Store
-.vscode-test
-undefined
-target
-dist
-
 ### https://raw.github.com/github/gitignore/6c87d249af5f2b3f8ab65ae0a2648682ee4e8a2d/Global/Eclipse.gitignore
 
 .metadata
