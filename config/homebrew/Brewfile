@@ -236,7 +236,7 @@ cask "bitwarden"                                    # open source password manag
 cask "brave-browser"                                # privacy focused, performance oriented browser
 cask "bruno"                                        # opensource ide for exploring and testing api's
 cask "calibre"                                      # e-book reader and library management application
-cask "chromium"                                     # open-source browser
+cask "ungoogled-chromium"                           # open-source browser
 cask "cyberduck"                                    # client for FTP and SFTP, WebDAV, and cloud storage
 cask "dbeaver-community"                            # universal database tool
 cask "devpod"                                       # an implementation of devcontainers
