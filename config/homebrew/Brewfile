@@ -322,6 +322,7 @@ cask "zap"                                          # Zed Attack Proxy (web scan
 cask "zed"                                          # multiplayer code editor
 cask "zen"                                          # a gecko based community driven browser
 cask "zoom"                                         # video communications
+cask "tonisives/tap/ovim"                           # system wide vim mode
 
 ## quick-look-plugins see:https://github.com/sindresorhus/quick-look-plugins
 cask "qlcolorcode"                                  # preview source code files with syntax highlighting
