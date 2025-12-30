@@ -1,7 +1,7 @@
 local XDG_CONFIG_DIR = os.getenv("XDG_CONFIG_HOME") or os.getenv("HOME") .. "/.config"
 
 return {
-  -- lazyvim axtras lang:markdown
+  -- lazyvim extras lang:markdown
   -- https://www.lazyvim.org/extras/lang/markdown
   {
     "mfussenegger/nvim-lint",

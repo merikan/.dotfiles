@@ -8,6 +8,7 @@ return {
   -- { import = "plugins.coding" },
   { import = "plugins.editor" },
   { import = "plugins.lang" },
+  { import = "plugins.util" },
   -- { import = "plugins.ui" },
   -- { import = "plugins.misc" },
 }
