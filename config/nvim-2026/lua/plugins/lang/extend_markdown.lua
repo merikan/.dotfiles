@@ -58,4 +58,13 @@ return {
       },
     },
   },
+  -- add group
+  {
+    "folke/which-key.nvim",
+    opts = {
+      spec = {
+        { "<leader>T", group = "todo" },
+      },
+    },
+  },
 }
