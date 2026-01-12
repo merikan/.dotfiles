@@ -18,6 +18,10 @@ MD013:
 MD004:
   style: "dash"
 
+# MD024 - Multiple headings with the same content
+MD024:
+  siblings_only: true
+
 # MD025: Multiple top-level headings in the same document
 # Disable this rule, allowing for multiple H1s in certain documentation styles.
 MD025: false
