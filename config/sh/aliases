@@ -77,8 +77,6 @@ alias lu='ls -lur'           # sort by access time
 alias lx='ls -lXB'           # sort by extension
 alias g='grep -i'            # Case insensitive grep
 alias f='find . -iname'
-alias m='more'
-alias mi='mise'
 alias t='task'
 # shellcheck disable=SC2139
 alias tt="task --taskfile $XDG_CONFIG_HOME/go-task/Taskfile.yaml"
@@ -124,6 +122,10 @@ alias zjr="zellij run -f --"
 alias devcon="devcontainer"
 alias psme='pstree -p $$'
 
+# mise
+alias m='mise'
+alias mr='mise run'
+
 # maven
 alias mct='mvn clean test'
 alias mcv='mvn clean verify'
@@ -140,7 +142,6 @@ alias mtc7='mvn tomcat7:run'
 alias mci='mvn clean install'
 alias mvnpv='mvn_print_version'
 
-alias mk='minikube'
 # golang aliases
 alias gof='gofmt'
 alias gofl='gofmt -s -l'
