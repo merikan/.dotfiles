@@ -212,6 +212,7 @@ brew "yt-dlp"                                       # download videos from youtu
 brew "yq"                                           # fast yaml processor
 brew "vmware-tanzu/carvel/ytt"                      # YAML templating tool, structure instead of text
 brew "zellij"                                       # an awesome terminal multiplexer
+brew "zimfw"                                        # the zsh configuration framework
 brew "zoxide"                                       # a smarter cd command
 brew "zsh"                                          # shell
 

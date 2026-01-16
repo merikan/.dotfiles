@@ -133,10 +133,6 @@
     ~/.config/nvim:
       path: config/nvim/*
       glob: true
-    # nvim-2026
-    ~/.config/nvim-2026:
-      path: config/nvim-2026/*
-      glob: true
     # obsidian
     ~/Notes/.obsidian/: 
         path: config/obsidian/obsidian/*
@@ -199,7 +195,9 @@
         path: config/zellij/plugins/*
         glob: true
     # zim
-    ~/.zimrc: config/zim/zimrc
+    ~/.config/zim:
+      path: config/zim/*
+      glob: true
     # zsh
     ~/.zlogin: config/zsh/zlogin
     ~/.zlogout: config/zsh/zlogout
@@ -232,12 +230,9 @@
       command: "[ -s $HOME/.sheldon/plugins.toml ] && command -v sheldon >/dev/null 2>&1 && sheldon lock --update || exit 0"
 
 - shell:
-    - 
-      description: Downloading zimfw.zsh file 
-      command : "curl -fsSL -o ${ZIM_HOME}/zimfw.zsh https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh"
     -
-      description: Installing zim modules if needed
-      command: "[[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]] && source ${ZIM_HOME}/zimfw.zsh init -q || exit 0"
+      description: Update zim modules
+      command: "zimfw update"
 
 - shell:
     -
@@ -253,3 +248,4 @@
     -
       description: create vim unddo directory
       command: "mkdir -p ~/.local/share/nvim/undodir"
+

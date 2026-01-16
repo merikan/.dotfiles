@@ -49,10 +49,14 @@ fi
 
 # init zimfw
 if [[ -s "${ZIM_HOME}/init.zsh" ]]; then
-  # Update static initialization script if it's outdated, before sourcing it
-  # source ${ZIM_HOME}/zimfw.zsh init -q
+  # Install missing modules and update ${ZIM_HOME}/init.zsh if missing or outdated.
+  if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZIM_CONFIG_FILE:-${ZDOTDIR:-${HOME}}/.zimrc} ]]; then
+    source "${HOMEBREW_PREFIX}"/opt/zimfw/share/zimfw.zsh init
+  fi
+  # Initialize modules.
   source ${ZIM_HOME}/init.zsh
 fi
+
 
 
 # Personal settings below  -------------------------------------------------------
@@ -256,21 +260,14 @@ command -v fzf >/dev/null 2>&1  && {
 }
 
 # homebrew
-if [[ "${UNAME_SYSTEM}" == "Darwin" ]]; then
-  if [[ "${UNAME_MACHINE}" == "arm64" ]]; then
-    export HOMEBREW_PREFIX="/opt/homebrew"
-  else
-    export HOMEBREW_PREFIX="/usr/local"
-  fi
-  [[ -s "${HOMEBREW_PREFIX}/bin/brew" ]] && {
-    export PATH="${HOMEBREW_PREFIX}/bin:${HOMEBREW_PREFIX}/sbin${PATH+:$PATH}"
-    export HOMEBREW_CELLAR="${HOMEBREW_PREFIX}/Cellar"
-    export HOMEBREW_REPOSITORY="${HOMEBREW_PREFIX}/Homebrew"
-    export MANPATH="${HOMEBREW_PREFIX}/share/man${MANPATH+:$MANPATH}:"
-    export INFOPATH="${HOMEBREW_PREFIX}/share/info:${INFOPATH:-}"
-    export FPATH="${HOMEBREW_PREFIX}/share/zsh/site-functions:${FPATH}"
-    }
-fi
+[[ -s "${HOMEBREW_PREFIX}/bin/brew" ]] && {
+  export PATH="${HOMEBREW_PREFIX}/bin:${HOMEBREW_PREFIX}/sbin${PATH+:$PATH}"
+  export HOMEBREW_CELLAR="${HOMEBREW_PREFIX}/Cellar"
+  export HOMEBREW_REPOSITORY="${HOMEBREW_PREFIX}/Homebrew"
+  export MANPATH="${HOMEBREW_PREFIX}/share/man${MANPATH+:$MANPATH}:"
+  export INFOPATH="${HOMEBREW_PREFIX}/share/info:${INFOPATH:-}"
+  export FPATH="${HOMEBREW_PREFIX}/share/zsh/site-functions:${FPATH}"
+}
 
 # Android Studio doesn't honour XDG though it support symlinks
 # create directory, if not exists, and then symlink
