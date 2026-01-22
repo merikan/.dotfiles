@@ -278,7 +278,6 @@ cask "mitmproxy"                                    # a free and open source int
 cask "obs"                                          # foss for video recording and live streaming
 cask "obsidian"                                     # awesome notetaking application
 cask "opera"                                        # browser
-cask "mysqlworkbench"                               # gui tool for mysql
 cask "neovide-app"                                  # a gui for neovim
 cask "paintbrush"                                   # clean and simple paint program
 cask "pencil"                                       # open-source GUI prototyping tool
