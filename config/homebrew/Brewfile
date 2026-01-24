@@ -140,6 +140,7 @@ brew "mas"                                          # Mac App Store command-line
 brew "midnight-commander"                           # visual file manager
 brew "minikube"                                     # kubernetes mini
 brew "charmbracelet/tap/mods"                       # AI on the command line
+brew "arimxyer/tap/models"                          # tui for browsing ai models
 brew "mise"                                         # handle dev environment
 brew "mplayer"                                      # UNIX movie player
 brew "mpv"                                          # Media player based on MPlayer and mplayer2
