@@ -181,6 +181,7 @@
   ldd = log --pretty=format:"%C(yellow)%h%C(green)%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
   # Show commit log using graph notation (append -p to show diff)
   lg = log --graph --abbrev-commit --date=relative --all --pretty=format:%'C(yellow)%h%Creset -%C(green)%d%Creset %s %C(blue)(%ar) %C(bold blue)<%an>%Creset'
+  lG = ! keifu
   # log all branches (verbose)
   lb = log --graph --all --decorate --stat --date=iso --abbrev-commit
   ll = !git l -30
