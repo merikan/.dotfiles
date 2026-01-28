@@ -9,7 +9,7 @@ return {
     opts = {
       linters = {
         ["markdownlint-cli2"] = {
-          args = {
+          prepend_args = {
             "--config",
             XDG_CONFIG_DIR .. "/markdownlint/.markdownlint.yaml",
             "--",
