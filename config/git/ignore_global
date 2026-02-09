@@ -1,7 +1,9 @@
 # my local stuff
+.gitignore.d # ignore my personal stuff
 .mise.local.toml
-.gitignore.d
+mise.local.toml
 todo.local.md
+.todo.local.md
 lefthook-local.yaml
 *~
 .DS_Store
