@@ -83,6 +83,7 @@ brew "gh"                                           # github cli
 brew "ghq"                                          # git remote repository management made easy
 brew "gibo"                                         # easily accessing gitignore boilerplates
 brew "git"                                          # cli client for git
+brew "git-graph"                                    # nixe git graph
 brew "git-branchless"                               # some nice git commands
 brew "CJ-Systems/homebrew-gitflow-cjs/git-flow-cjs" # git-flow addon for git client
 brew "gitleaks"                                     # audit git repos for secrets
