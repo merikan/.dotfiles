@@ -24,97 +24,82 @@ def arch_arm?
 end
 
 ### ---------------------------------------------------- ###
-### Formulae                                             ###
+### Taps
 ### ---------------------------------------------------- ###
-brew "7zip"                                         # file archiver with a high compression ratio
-brew "act"                                          # run your github actions locally
-brew "aerc"                                         # a tui email client in the terminal
-brew "aider"                                        # ai, vibe-coding
-brew "ansible"                                      # IaC provision and configure
-brew "apktool"                                      # reverse engineering Android apk files
-brew "argocd"                                       # GitOps continuous delivery tool for Kubernetes
-brew "aria2"                                        # multi-protocol & multi-source command-line download utility
-brew "asciinema"                                    # record and share terminal sessions
-brew "bash"
-brew "bash-completion"
-brew "bat"                                          # a cat clone with syntax highlighting and git integration
-brew "FelixKratz/formulae/borders", restart_service: :changed # add colored borders to user windows
+
+### ---------------------------------------------------- ###
+### Development Runtimes & SDKs
+### ---------------------------------------------------- ###
+brew "go"                                           # golang sdk
+brew "java"                                         # java
+brew "lua"                                          # a powerful, efficient, lightweight, embeddable scripting language
+brew "nvm"                                          # manage multiple Node.js versions
+brew "php"                                          # php
+brew "python"                                       # python programming
+brew "pip-completion"
+brew "ruby"                                         # ruby environment
+brew "rustup-init"                                  # rustup installer
 brew "oven-sh/bun/bun"                              # fast JavaScript runtime, bundler, test runner, and package manager
-brew "bitwarden-cli"                                # open source password management
-brew "ccat"                                         # colorizing cat
-brew "merikan/tools/clair-scanner"                  # scan local docker images
-brew "cloc"                                         # count lines of code
+cask "flutter"                                      # ui toolkit for flutter
+
+### ---------------------------------------------------- ###
+### Build Tools, Analysis & Linters
+### ---------------------------------------------------- ###
 brew "cmake"                                        # cross-platform make
-brew "csvkit"                                       # tools for working with CSV
-brew "ctop"                                         # top-like interface for container metrics
-brew "cosign"                                       #
-brew "charmbracelet/tap/crush"                      # AI coding agent for your terminal f.k.a opencode
-brew "curl"                                         # curl
-brew "util-linux"                                   # linux utilities
-brew "dasel"                                        # query and modify data structures in json/toml/yaml/xml/csv/plain format
-brew "git-delta"                                    # syntax-highlighting pager for git, diff, and grep output
-brew "devcontainer"                                 # devcontainer cli
-brew "dust"                                         # a better du built in rust
-brew "joshuto"                                      # ranger-like terminal file manager written in Rust
-brew "wvanlint/twf/twf"                             # tree view file explorer
-brew "dfc"                                          # displays file system space usage using graphs and colors
-brew "diff-pdf"                                     # visually compare two PDF files
-brew "direnv"                                       # load/unload env variables
-brew "dive"                                         # exploring a docker image, layer contents, and discovering ways to shrink your Docker image size.
+brew "cloc"                                         # count lines of code
 brew "doxygen"                                      # Generate documentation from source code
+brew "flake8"                                       # lint python
+brew "go-task/tap/go-task"                          # task runner / build tool
+brew "golangci-lint"                                # Go linters aggregator
+brew "goreleaser"                                   # release automation tool for Go projects
+brew "luarocks"                                     # lua package manager
+brew "maven-completion"                             # maven-completion
+brew "mthmulders/tap/mcs"                           # search maven central cli
+brew "semgrep"                                      # static analysis, find bugs and enforce code standards
+brew "shellcheck"                                   # a static analysis tool for shell scripts
+brew "statix"                                       # linter for nix
+brew "stylua"                                       # lua formatter
+brew "yarn"                                         # JavaScript package manager
+
+### ---------------------------------------------------- ###
+### HTTP/REST/GrapgQL Clients
+### ---------------------------------------------------- ###
+cask "bruno"                                        # opensource ide for exploring and testing api's
+cask "insomnia"                                     # superduper rest client
+cask "postman"                                      # nice rest client
+cask "soapui"                                       # soap and rest testing tool
+cask "yaak"                                         # rest/graphql api client
+brew "k6"                                           # open-source load testing tool
+
+### ---------------------------------------------------- ###
+### AI & Machine Learning Tools
+### ---------------------------------------------------- ###
+brew "aider"                                        # ai, vibe-coding
+brew "charmbracelet/tap/crush"                      # AI coding agent for your terminal f.k.a opencode
+brew "charmbracelet/tap/mods"                       # AI on the command line
+brew "arimxyer/tap/models"                          # tui for browsing ai models
+brew "gemini-cli"                                   # gemini prompt in the terminal
+brew "sst/tap/opencode"                             # AI agent for the terminal
+
+### ---------------------------------------------------- ###
+### DevOps, Containers & Kubernetes
+### ---------------------------------------------------- ###
+brew "act"                                          # run your github actions locally
+brew "ansible"                                      # IaC provision and configure
+brew "argocd"                                       # GitOps continuous delivery tool for Kubernetes
+brew "boz/repo/kail"                                # kubernetes log viewer
+brew "ctop"                                         # top-like interface for container metrics
+brew "merikan/tools/clair-scanner"                  # scan local docker images
+brew "dive"                                         # exploring a docker image, layer contents, and discovering ways to shrink your Docker image size.
 brew "docker"                                       # docker client
 brew "docker-credential-helper"                     # keystore credential helper for Docker
-brew "fastfetch"                                    # A fast, highly customizable system info script
-brew "fd"                                           # fast and user-friendly alternative to find
-brew "ffmpeg"                                       # record, convert and stream audio and video
-brew "ffmpegthumbnailer"                            # create thumbnails for your video files
-brew "flake8"                                       # lint python
-brew "fnox"                                         # cli secret manager
-brew "fzf"                                          # a command-line fuzzy finder
-brew "ffmpeg"                                       # to record, convert and stream audio and video
-brew "fx"                                           # JSON/YAML viewer & processor
-brew "gemini-cli"                                   # gemini prompt in the terminal
-brew "merikan/tools/gdu-go"                         # go disk usage
-brew "go"                                           # golang sdk
-brew "gojq"                                         # jq written in go
-brew "goreleaser"                                   # release automation tool for Go projects
-brew "golangci-lint"                                # Go linters aggregator
-brew "gh"                                           # github cli
-brew "ghq"                                          # git remote repository management made easy
-brew "gibo"                                         # easily accessing gitignore boilerplates
-brew "git"                                          # cli client for git
-brew "git-graph"                                    # nixe git graph
-brew "git-branchless"                               # some nice git commands
-brew "CJ-Systems/homebrew-gitflow-cjs/git-flow-cjs" # git-flow addon for git client
-brew "gitleaks"                                     # audit git repos for secrets
-brew "git-secrets"                                  # prevents you from committing passwords and other sensitive information to a git repository.
-brew "sigstore/tap/gitsign"                         # keyless sigstore to sign git commits
-brew "gitui"                                        # an awesome tui for git
-brew "glab"                                         # gitlab cli
-brew "gnupg"                                        # gpg
-brew "go-task/tap/go-task"                          # task runner / build tool
-brew "gron"                                         # make JSON greppable!
-brew "anchore/grype/grype"                          # vulnerability scanner for container images and filesystems
-brew "htop"                                         # an interactive process viewer for Unix
-brew "helix"                                        # neovim inspired text editor written in rust
-brew "httpie"                                       # HTTP command-line client
-brew "hugo"                                         # open-source static site generator
-brew "icdiff"                                       # improved colored diff
-brew "imagemagick"                                  # create, edit, compose, or convert bitmap images
-brew "java"                                         # java
-brew "jaq"                                          # like jq but better, faster and more correct
-brew "jc"                                           # convert command output to json
-brew "jenv"                                         # manage your java environment
-brew "jid"                                          # drill down JSON interactively by using filtering queries like jq.
-brew "jless"                                        # a command-line JSON viewer
-brew "jq"                                           # command-line JSON processor, like sed
-brew "jo"                                           # small utility to create JSON objects
-brew "joplin-cli"                                   # note taking and to-do application
-brew "jmespath/jmespath/jp"                         # cli for jmespath
-brew "boz/repo/kail"                                # kubernetes log viewer
+brew "helm"                                         # helm packagemanager for kubernetes
+brew "jesseduffield/lazydocker/lazydocker"          # the lazier way to manage everything docker
+brew "johanhaleby/kubetail/kubetail"                # tail Kubernetes logs from multiple pods
+brew "k3d"                                          # k3d is a lightweight wrapper to run k3s
 brew "k9s"                                          # awesome tui for k8s
-brew "trasta298/tap/keifu"                          # A TUI for navigating commit graphs
 brew "kind"                                         # k8s in docker
+cask "rancher"                                      # OSS alternative to Docker Desktop
 brew "kompose"                                      # a conversion tool to go from Docker Compose to Kubernetes
 brew "krew"                                         # package manager for kubectl plugins
 brew "kubectl"                                      # kubernetes controller
@@ -122,210 +107,247 @@ brew "kubectx"                                      # kubectx: manage and switch
 brew "kubeconform"                                  # lint k8s manifests
 brew "kubeseal"                                     # Kubernetes tool for one-way encrypted Secrets
 brew "kube-linter"                                  # lint k8s and helm manifests
-brew "helm"                                         # helm packagemanager for kubernetes
-brew "kustomize"                                    # kustomize: template-free customization of application configuration
 brew "kubespy"                                      # observing Kubernetes resources in real time
-brew "johanhaleby/kubetail/kubetail"                # tail Kubernetes logs from multiple pods
-brew "jesseduffield/lazydocker/lazydocker"          # the lazier way to manage everything docker
-brew "jesseduffield/lazygit/lazygit"                # simple terminal UI for git commands
-brew "k3d"                                          # k3d is a lightweight wrapper to run k3s
-brew "k6"                                           # open-source load testing tool
-brew "lefthook"                                     # a fast git hook manager
-brew "lf"                                           # file manager for the terminal
-brew "lnav"                                         # watch and analyze your log files from a terminal.
-brew "lsd"                                          # a clone of ls with more features
-brew "lua"                                          # a powerful, efficient, lightweight, embeddable scripting language
-brew "luarocks"                                     # lua package manager
-brew "mackup"                                       # keep application settings in sync
-brew "maven-completion"
-brew "mas"                                          # Mac App Store command-line interface
-brew "midnight-commander"                           # visual file manager
+brew "kustomize"                                    # kustomize: template-free customization of application configuration
 brew "minikube"                                     # kubernetes mini
-brew "charmbracelet/tap/mods"                       # AI on the command line
-brew "arimxyer/tap/models"                          # tui for browsing ai models
-brew "mise"                                         # handle dev environment
-brew "mplayer"                                      # UNIX movie player
-brew "mpv"                                          # Media player based on MPlayer and mplayer2
-brew "mysql-client"                                 # mysql client
-brew "mthmulders/tap/mcs"                           # search maven central cli
-brew "ncdu"                                         # a disk usage analyzer with an ncurses interface
-brew "nmap"                                         # port scanning utility for large networks
-brew "neovim"                                       # neovim
-brew "peterldowns/tap/nix-search-cli"               # search nix packages
-brew "nvm"                                          # manage multiple Node.js versions
-brew "onefetch"                                     # git project information tool
-brew "openconnect"                                  # open client for cisco anyconnect vpn
-brew "sst/tap/opencode"                             # AI agent for the terminal
 brew "openshift-cli"                                # openshift cli
-brew "doganarif/tap/pf"                             # find open ports
-brew "php"                                          # php
-brew "plantuml"                                     # draw UML diagrams
-brew "pip-completion"
 brew "podman"                                       # tool for managing oci containers and pods
-brew "poppler"                                      # pdf rendering library (based on the xpdf-3.0 code base)
-brew "potrace"                                      # transforming bitmaps into vector graphics
-brew "presenterm"                                   # presentations in markdown and run in termainl
-brew "procs"                                        # replacement for ps written by Rust
-brew "pstree"                                       # pstree
-brew "pv"                                           # a terminal-based tool for monitoring the progress of data through a pipeline.
-brew "pyenv"                                        # simple python version management
-brew "python"                                       # python programming
-brew "reattach-to-user-namespace"                   # Reattach process (e.g., tmux) to background
-brew "ripgrep"                                      # recursively searches directories for a regex pattern
-brew "rsync"                                        # provides fast incremental file transfer.
-brew "ruby"                                         # ruby environment
-brew "rustup-init"                                  # rustup installer
-brew "semgrep"                                      # static analysis, find bugs and enforce code standards
-brew "scorecard"                                    # check OSS security health
-brew "scrcpy"                                       # android screen mirror
-brew "sheldon"                                      # fast, configurable, shell plugin manager
-brew "shellcheck"                                   # a static analysis tool for shell scripts
 brew "skaffold"                                     # local k8s development
-brew "felixkratz/formulae/sketchybar"               # macOS status bar
 brew "skopeo"                                       # work with container registry and images
-brew "ssh-copy-id"                                  # ssh copy
-brew "statix"                                       # linter for nix
-brew "starship"                                     # blazing-fast cross-shell prompt
 brew "stern"                                        # log tailing for Kubernetes
-brew "stunnel"                                      # SSL tunneling program
-brew "structurizr-cli"                              # cli for Structurizr DSL
-brew "stylua"                                       # lua formatter
-brew "subfinder"                                    # fast passive subdomain enumeration tool.
-brew "superfile"                                    # another awesome tui filemanager
-brew "go-task/tap/go-task"                          # a task runner / build tool, like Make but ....
-brew "tealdeer"                                     # a fast tldr impl in rust with custom pages and patches
-brew "the_silver_searcher"                          # ag a code searching tool similar to ack
-brew "tig"                                          # text-mode interface for git
-brew "tmux"                                         # terminal multiplexer
-brew "toot"                                         # mastodon tui client
-brew "tree"                                         # list contents of directories in a tree-like format
-brew "trufflehog"                                   # find and verify credentials #security #git
-brew "aquasecurity/trivy/trivy"                     # scanner for vulnerabilities in images, filesystems, git repos and config files
-brew "tut"                                          # mastodon tui client
-brew "unar"                                         # command-line unarchiving tools supporting multiple formats
-brew "vim"                                          # highly configurable text editor
-brew "w3m"                                          # text base browser in the terminal
-brew "watch"                                        # execute a program periodically and watch the output
-brew "wget"                                         # non-interactive network downloader
-brew "xan"                                          # A fast csv command line toolkit written in Rust.
-brew "xdg-ninja"                                    # xdg checks your $HOME for unwanted files and directories.
-brew "yarn"                                         # JavaScript package manager
-brew "yazi"                                         # blazing fast terminal file manager
-brew "yt-dlp"                                       # download videos from youtube and many more sites
-brew "yq"                                           # fast yaml processor
 brew "vmware-tanzu/carvel/ytt"                      # YAML templating tool, structure instead of text
-brew "zellij"                                       # an awesome terminal multiplexer
-brew "zimfw"                                        # the zsh configuration framework
-brew "zoxide"                                       # a smarter cd command
-brew "zsh"                                          # shell
-
-### ---------------------------------------------------- ###
-### Casks (https://formulae.brew.sh/cask/)               ###
-### ---------------------------------------------------- ###
-# Note: Casks with version 'latest' will not be updated due to no checksum change
-cask "adium"                                        # instant messaging
-cask "nikitabobko/tap/aerospace"                    # tiling window manager
-cask "alacritty"                                    # the GPU enhanced terminal emulator
-cask "alt-tab"                                      # awesome keyboard window switcher for Mac
-cask "alfred"                                       # a must have for boost productivity
-cask "android-studio"                               # android IDE
-cask "android-file-transfer"                        # transfer files from Android device
-cask "arq"                                          # backup for mac
-cask "asciidocfx"                                   # asciidoc editor
-cask "backuploupe"                                  # browse your timemachine backups
-cask "balenaetcher"                                 # Burn images to SD cards & USB drives, safely and easily.
-cask "bartender"                                    # organize your menu bar icons
-cask "bitwarden"                                    # open source password management
-cask "brave-browser"                                # privacy focused, performance oriented browser
-cask "bruno"                                        # opensource ide for exploring and testing api's
-cask "calibre"                                      # e-book reader and library management application
-cask "ungoogled-chromium"                           # open-source browser
-cask "cyberduck"                                    # client for FTP and SFTP, WebDAV, and cloud storage
-cask "dbeaver-community"                            # universal database tool
+brew "devcontainer"                                 # devcontainer cli
 cask "devpod"                                       # an implementation of devcontainers
 cask "docker-desktop"                               # docker desktop
-cask "discord"                                      # group-chatting platform
-cask "dropbox"                                      # personal cloud storage service
+cask "podman-desktop"                               # Browse, manage, inspect containers and images
+
+### ---------------------------------------------------- ###
+### Editors & IDEs
+### ---------------------------------------------------- ###
+brew "neovim"                                       # neovim
+brew "vim"                                          # highly configurable text editor
+brew "helix"                                        # neovim inspired text editor written in rust
+cask "android-studio"                               # android IDE
 cask "eclipse-java"                                 # eclipse ide for java developers
-cask "evernote"                                     # taking notes
-cask "expandrive"                                   # map a drive to any cloud
-cask "flux-app"                                     # get rid of the blue light
-cask "firefox"                                      # firefox browser
-cask "firefox@developer-edition"                    # firefox browser
-cask "flutter"                                      # ui toolkit for flutter
-cask "ghostty"                                      # Terminal emulator that uses platform-native UI and GPU acceleration
-cask "gimp"                                         # an Image Editor (I probably never be able to learn)
+cask "intellij-idea"                                # awesome java IDE
+cask "neovide-app"                                  # a gui for neovim
+cask "sublime-text"                                 # text editor
+cask "visual-studio-code"                           # a great editor
+cask "vscodium"                                     # open source version of VSCode
+cask "zed"                                          # multiplayer code editor
+
+### ---------------------------------------------------- ###
+### Git & Source Control
+### ---------------------------------------------------- ###
+brew "CJ-Systems/homebrew-gitflow-cjs/git-flow-cjs" # git-flow addon for git client
+brew "gh"                                           # github cli
+brew "ghq"                                          # git remote repository management made easy
+brew "gibo"                                         # easily accessing gitignore boilerplates
+brew "git"                                          # cli client for git
+brew "git-branchless"                               # some nice git commands
+brew "git-delta"                                    # syntax-highlighting pager for git, diff, and grep output
+brew "git-graph"                                    # nixe git graph
+brew "gitui"                                        # an awesome tui for git
+brew "glab"                                         # gitlab cli
+brew "jesseduffield/lazygit/lazygit"                # simple terminal UI for git commands
+brew "lefthook"                                     # a fast git hook manager
+brew "onefetch"                                     # git project information tool
+brew "sigstore/tap/gitsign"                         # keyless sigstore to sign git commits
+brew "tig"                                          # text-mode interface for git
+brew "trasta298/tap/keifu"                          # A TUI for navigating commit graphs
 cask "gitkraken"                                    # Git GUI client for Windows, Mac and Linux
 cask "gitup-app"                                    # awesome Git Gui Client
-cask "google-chrome"                                # a browser
-cask "google-drive"                                 # client for the google drive storage service
+cask "sourcetree"                                   # awesome git client
+
+### ---------------------------------------------------- ###
+### Terminal & Shell Environment
+### ---------------------------------------------------- ###
+brew "asciinema"                                    # record and share terminal sessions
+brew "bash"                                         # bash
+brew "bash-completion"                              # bash-completion
+brew "reattach-to-user-namespace"                   # Reattach process (e.g., tmux) to background
+brew "sheldon"                                      # fast, configurable, shell plugin manager
+brew "starship"                                     # blazing-fast cross-shell prompt
+brew "tmux"                                         # terminal multiplexer
+brew "zellij"                                       # an awesome terminal multiplexer
+brew "zimfw"                                        # the zsh configuration framework
+brew "zsh"                                          # shell
+cask "alacritty"                                    # the GPU enhanced terminal emulator
+cask "ghostty"                                      # Terminal emulator that uses platform-native UI and GPU acceleration
+cask "iterm2"                                       # Terminal emulator for macOS
+cask "kitty"                                        # kitty terminal emulator
+cask "wezterm"                                      # cross-platform terminal emulator
+
+### ---------------------------------------------------- ###
+### Security & Networking
+### ---------------------------------------------------- ###
+brew "aria2"                                        # multi-protocol & multi-source command-line download utility
+brew "doganarif/tap/pf"                             # find open ports
+brew "httpie"                                       # HTTP command-line client
+brew "curl"                                         # curl
+brew "openconnect"                                  # open client for cisco anyconnect vpn
+brew "stunnel"                                      # SSL tunneling program
+brew "subfinder"                                    # fast passive subdomain enumeration tool.
+cask "tunnelblick"                                  # free, open source graphic user interface for OpenVPN
+mas "Bredbandskollen", id: 1147976909
+
+brew "anchore/grype/grype"                          # vulnerability scanner for container images and filesystems
+brew "aquasecurity/trivy/trivy"                     # scanner for vulnerabilities in images, filesystems, git repos and config files
+brew "bitwarden-cli"                                # open source password management
+brew "cosign"                                       # code signing and transparency for containers and binaries
+brew "fnox"                                         # cli secret manager
+brew "gitleaks"                                     # audit git repos for secrets
+brew "git-secrets"                                  # prevents you from committing passwords and other sensitive information to a git repository.
+brew "gnupg"                                        # gpg
+brew "nmap"                                         # port scanning utility for large networks
+brew "scorecard"                                    # check OSS security health
+brew "ssh-copy-id"                                  # ssh copy
+brew "trufflehog"                                   # find and verify credentials #security #git
+cask "bitwarden"                                    # open source password management
+cask "keepassxc"                                    # a great FOSS Password Manager
+cask "mitmproxy"                                    # a free and open source interactive HTTPS proxy
+cask "zap"                                          # Zed Attack Proxy (web scanner)
+
+### ---------------------------------------------------- ###
+### File & Data Management
+### ---------------------------------------------------- ###
+brew "7zip"                                         # file archiver with a high compression ratio
+brew "csvkit"                                       # tools for working with CSV
+brew "dasel"                                        # query and modify data structures in json/toml/yaml/xml/csv/plain format
+brew "dfc"                                          # displays file system space usage using graphs and colors
+brew "dust"                                         # a better du built in rust
+brew "fd"                                           # fast and user-friendly alternative to find
+brew "fx"                                           # JSON/YAML viewer & processor
+brew "fzf"                                          # a command-line fuzzy finder
+brew "gojq"                                         # jq written in go
+brew "gron"                                         # make JSON greppable!
+brew "jaq"                                          # like jq but better, faster and more correct
+brew "jc"                                           # convert command output to json
+brew "jid"                                          # drill down JSON interactively by using filtering queries like jq.
+brew "jless"                                        # a command-line JSON viewer
+brew "jmespath/jmespath/jp"                         # cli for jmespath
+brew "jo"                                           # small utility to create JSON objects
+brew "jq"                                           # command-line JSON processor, like sed
+brew "joshuto"                                      # ranger-like terminal file manager written in Rust
+brew "lf"                                           # file manager for the terminal
+brew "lsd"                                          # a clone of ls with more features
+brew "merikan/tools/gdu-go"                         # go disk usage
+brew "midnight-commander"                           # visual file manager
+brew "ncdu"                                         # a disk usage analyzer with an ncurses interface
+brew "ripgrep"                                      # recursively searches directories for a regex pattern
+brew "rsync"                                        # provides fast incremental file transfer.
+brew "superfile"                                    # another awesome tui filemanager
+brew "tree"                                         # list contents of directories in a tree-like format
+brew "unar"                                         # command-line unarchiving tools supporting multiple formats
+brew "util-linux"                                   # linux utilities
+brew "wget"                                         # non-interactive network downloader
+brew "wvanlint/twf/twf"                             # tree view file explorer
+brew "xan"                                          # A fast csv command line toolkit written in Rust.
+brew "yazi"                                         # blazing fast terminal file manager
+brew "yq"                                           # fast yaml processor
+brew "zoxide"                                       # a smarter cd command
+cask "android-file-transfer"                        # transfer files from Android device
+cask "balenaetcher"                                 # Burn images to SD cards & USB drives, safely and easily.
+cask "cyberduck"                                    # client for FTP and SFTP, WebDAV, and cloud storage
+
+### ---------------------------------------------------- ###
+### OS Productivity & Utilities
+### ---------------------------------------------------- ###
+brew "FelixKratz/formulae/borders", restart_service: :changed # add colored borders to user windows
+brew "felixkratz/formulae/sketchybar"               # macOS status bar
+brew "htop"                                         # an interactive process viewer for Unix
+brew "mackup"                                       # keep application settings in sync
+brew "mas"                                          # Mac App Store command-line interface
+brew "procs"                                        # replacement for ps written by Rust
+brew "pstree"                                       # pstree
+brew "watch"                                        # execute a program periodically and watch the output
+brew "xdg-ninja"                                    # xdg checks your $HOME for unwanted files and directories.
+cask "nikitabobko/tap/aerospace"                    # tiling window manager
+cask "alfred"                                       # a must have for boost productivity
+cask "alt-tab"                                      # awesome keyboard window switcher for Mac
+cask "bartender"                                    # organize your menu bar icons
 cask "hammerspoon"                                  # powerful automation of MacOS, actions and wm
+cask "karabiner-elements"                           # keyboard customizer for macOS
+cask "leader-key"                                   # a launcher for macos
+cask "raycast"                                      # supercharged productivity
+cask "sloth"                                        # shows all open files and sockets
+cask "tomatobar"                                    # another pomodoro app
+cask "tonisives/tap/ovim"                           # system wide vim mode
+cask "xbar"                                         # put the output from any script or program in your Mac OS X Menu Bar
+
+### ---------------------------------------------------- ###
+### Media & Design
+### ---------------------------------------------------- ###
+brew "ffmpeg"                                       # record, convert and stream audio and video
+brew "ffmpegthumbnailer"                            # create thumbnails for your video files
+brew "imagemagick"                                  # create, edit, compose, or convert bitmap images
+brew "mplayer"                                      # UNIX movie player
+brew "mpv"                                          # Media player based on MPlayer and mplayer2
+brew "plantuml"                                     # draw UML diagrams
+brew "potrace"                                      # transforming bitmaps into vector graphics
+brew "scrcpy"                                       # android screen mirror
+brew "structurizr-cli"                              # cli for Structurizr DSL
+brew "yt-dlp"                                       # download videos from youtube and many more sites
+cask "gimp"                                         # an Image Editor (I probably never be able to learn)
 cask "handbrake-app"                                # open source video transcoder
 cask "horos"                                        # a free, open source medical image viewer
 cask "inkscape"                                     # A powerful, free design tool
-cask "insomnia"                                     # superduper rest client
-cask "intellij-idea"                                # awesome java IDE
-cask "iterm2"                                       # Terminal emulator for macOS
-cask "joplin"                                       # a FOSS note taking and to-do application
-cask "karabiner-elements"                           # keyboard customizer for macOS
-cask "kdiff3"                                       # utility for comparing and merging files and directories
-cask "keepassxc"                                    # a great FOSS Password Manager
-cask "keystore-explorer"                            # open source GUI replacement for the keytool and jarsignerbrewfilbrewfil
-cask "keybase"                                      # crypto for everyone!
-cask "keycastr"                                     # keystroke visualizer
-cask "kitty"                                        # kitty terminal emulator
-cask "kui"                                          # a Framework for Enhancing CLIs with Graphics
-cask "leader-key"                                   # a launcher for macos
-cask "love"                                         # LÖVE - make 2D games in Lua
-cask "mitmproxy"                                    # a free and open source interactive HTTPS proxy
 cask "obs"                                          # foss for video recording and live streaming
-cask "obsidian"                                     # awesome notetaking application
-cask "opera"                                        # browser
-cask "neovide-app"                                  # a gui for neovim
 cask "paintbrush"                                   # clean and simple paint program
 cask "pencil"                                       # open-source GUI prototyping tool
-cask "podman-desktop"                               # Browse, manage, inspect containers and images
 cask "phoenix-slides"                               # image viewer
-cask "postman"                                      # nice rest client
-cask "qownnotes"                                    # nice rest client
-cask "raycast"                                      # supercharged productivity
-cask "rancher"                                      # OSS alternative to Docker Desktop
-cask "responsively"                                 # modified web browser for responsive web development
 cask "sketch"                                       # sketchapp - design tool
-cask "sloth"                                        # shows all open files and sockets
-cask "sonos"                                        # Sonos controller
-cask "soapui"                                       # soap and rest testing tool
 cask "sonos"                                        # controller for sonos speakers
-cask "sourcetree"                                   # awesome git client
 cask "spotify"                                      # music for everyone
+cask "vlc"                                          # media player
 cask "merikan/casks/sr"                             # nativefied sveriges radio
-cask "sublime-text"                                 # text editor
+
+### ---------------------------------------------------- ###
+### Browsers, Communication & Notes
+### ---------------------------------------------------- ###
+# e-mail
+brew "aerc"                                         # a tui email client in the terminal
+cask "wavebox"                                      # desktop app for web (gmail)
 cask "thunderbird"                                  # free email application from Mozilla
-cask "tomatobar"                                    # another pomodoro app
-cask "tunnelblick"                                  # free, open source graphic user interface for OpenVPN
+# mastodon
+brew "toot"                                         # mastodon tui client
+brew "tut"                                          # mastodon tui client
+cask "whalebird"                                    # mastodon client
+# note taking
+cask "obsidian"                                     # awesome notetaking application
+brew "joplin-cli"                                   # note taking and to-do application
+cask "evernote"                                     # taking notes
+cask "joplin"                                       # a FOSS note taking and to-do application
+cask "qownnotes"                                    # nice rest client
+# browser
+brew "w3m"                                          # text base browser in the terminal
+cask "brave-browser"                                # privacy focused, performance oriented browser
+cask "firefox"                                      # firefox browser
+cask "firefox@developer-edition"                    # firefox browser
+cask "google-chrome"                                # a browser
+cask "opera"                                        # browser
+cask "responsively"                                 # modified web browser for responsive web development
+cask "ungoogled-chromium"                           # open-source browser
+cask "vivaldi"                                      # another great browser
+cask "zen"                                          # a gecko based community driven browser
+# other
+cask "zoom"                                         # video communications
+cask "adium"                                        # instant messaging
+cask "discord"                                      # group-chatting platform
+
+### ---------------------------------------------------- ###
+### Virtualization & Databases
+### ---------------------------------------------------- ###
+brew "mysql-client"                                 # mysql client
+cask "dbeaver-community"                            # universal database tool
+
 cask "utm"                                          # virtual machines ui using qemu
 cask "vagrant"                                      # vm management
 cask "virtualbox"                                   # virtualizer for x86/arm hardware
-cask "visual-paradigm-ce"                           # software modelling tool
-cask "visual-studio-code"                           # a great editor
-cask "visualvm"                                     # visual profiling tool for the Java VM
-cask "vivaldi"                                      # another great browser
-cask "vlc"                                          # media player
-cask "vscodium"                                     # open source version of VSCode
-cask "wavebox"                                      # desktop app for web (gmail)
-cask "wezterm"                                      # cross-platform terminal emulator
-cask "whalebird"                                    # mastodon client
-cask "xbar"                                         # put the output from any script or program in your Mac OS X Menu Bar
-cask "xquartz"                                      # X windows on Mac
-cask "yaak"                                         # rest/graphql api client
-cask "yed"                                          # graph editor
-cask "zap"                                          # Zed Attack Proxy (web scanner)
-cask "zed"                                          # multiplayer code editor
-cask "zen"                                          # a gecko based community driven browser
-cask "zoom"                                         # video communications
-cask "tonisives/tap/ovim"                           # system wide vim mode
 
-## quick-look-plugins see:https://github.com/sindresorhus/quick-look-plugins
+### ---------------------------------------------------- ###
+### Quick Look Plugins
+### ---------------------------------------------------- ###
 cask "qlcolorcode"                                  # preview source code files with syntax highlighting
 cask "qlstephen"                                    # preview plain text files without or with unknown file extension.
 cask "qlmarkdown"                                   # preview Markdown files
@@ -334,7 +356,10 @@ cask "quicklook-csv"                                # preview CSV files
 cask "webpquicklook"                                # preview WebP images
 cask "suspicious-package"                           # preview the contents of a standard Apple installer package
 cask "qlvideo"                                      # display thumbnails, static previews, cover art and metadata for video files
-## -- fonts
+
+### ---------------------------------------------------- ###
+### Fonts
+### ---------------------------------------------------- ###
 cask "font-3270"                                    # a font for the nostalgic
 cask "font-3270-nerd-font"                          # nerd patched '3270' font
 cask "font-fira-code"                               # monospaced font with programming ligatures
@@ -345,7 +370,7 @@ cask "font-hack-nerd-font"                          # Hack Nerd Font (Hack)
 cask "font-hasklig"                                 # a code font with monospaced ligatures
 cask "font-hasklug-nerd-font"                       # nerd patched 'hasklig' font
 cask "font-inconsolata"                             # a great programmers font
-cask "font-inconsolata-nerd-font"                   # nerd patched 'inconsolata' font
+cask "font-inconsolata-nerd-font"                    # nerd patched 'inconsolata' font
 cask "font-jetbrains-mono"                          # a typeface made for developers.
 cask "font-jetbrains-mono-nerd-font"                # nerd patched 'jetbrains-mono' font
 cask "font-monoid"                                  # a ppen source coding font with ligatures
@@ -353,11 +378,48 @@ cask "font-monoid-nerd-font"                        # nerd patched 'monoid' font
 cask "font-monoisome"                               # monoid with Font Awesome support
 
 ### ---------------------------------------------------- ###
-### Mac App Store command line interface                 ###
-### https://github.com/mas-cli/mas                       ###
+### Miscellaneous Tools
 ### ---------------------------------------------------- ###
+brew "apktool"                                      # reverse engineering Android apk files
+brew "bat"                                          # a cat clone with syntax highlighting and git integration
+brew "ccat"                                         # colorizing cat
+brew "diff-pdf"                                     # visually compare two PDF files
+brew "direnv"                                       # load/unload env variables
+brew "fastfetch"                                    # A fast, highly customizable system info script
+brew "hugo"                                         # open-source static site generator
+brew "icdiff"                                       # improved colored diff
+brew "jenv"                                         # manage your java environment
+brew "lnav"                                         # watch and analyze your log files from a terminal.
+brew "mise"                                         # handle dev environment
+brew "peterldowns/tap/nix-search-cli"               # search nix packages
+brew "poppler"                                      # pdf rendering library (based on the xpdf-3.0 code base)
+brew "presenterm"                                   # presentations in markdown and run in termainl
+brew "pv"                                           # a terminal-based tool for monitoring the progress of data through a pipeline.
+brew "pyenv"                                        # simple python version management
+brew "tealdeer"                                     # a fast tldr impl in rust with custom pages and patches
+brew "the_silver_searcher"                          # ag a code searching tool similar to ack
+cask "arq"                                          # backup for mac
+cask "asciidocfx"                                   # asciidoc fx editor
+cask "backuploupe"                                  # browse your timemachine backups
+cask "calibre"                                      # e-book reader and library management application
+cask "dropbox"                                      # personal cloud storage service
+cask "expandrive"                                   # map a drive to any cloud
+cask "flux-app"                                     # get rid of the blue light
+cask "google-drive"                                 # client for the google drive storage service
+cask "kdiff3"                                       # utility for comparing and merging files and directories
+cask "keystore-explorer"                            # open source GUI replacement for the keytool and jarsigner
+cask "keybase"                                      # crypto for everyone!
+cask "keycastr"                                     # keystroke visualizer
+cask "kui"                                          # a Framework for Enhancing CLIs with Graphics
+cask "love"                                         # LÖVE - make 2D games in Lua
+cask "visual-paradigm-ce"                           # software modelling tool
+cask "visualvm"                                     # visual profiling tool for the Java VM
+cask "xquartz"                                      # X windows on Mac
+cask "yed"                                          # graph editor
 
-mas "Bredbandskollen", id: 1147976909
+### ---------------------------------------------------- ###
+### Mac App Store (MAS)
+### ---------------------------------------------------- ###
 mas "Keynote", id: 409183694
 mas "Kindle", id: 405399194
 mas "Numbers", id: 409203825
