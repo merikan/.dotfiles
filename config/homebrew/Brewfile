@@ -146,7 +146,8 @@ brew "gibo"                                         # easily accessing gitignore
 brew "git"                                          # cli client for git
 brew "git-branchless"                               # some nice git commands
 brew "git-delta"                                    # syntax-highlighting pager for git, diff, and grep output
-brew "git-graph"                                    # nixe git graph
+brew "git-graph"                                    # nice git graph
+brew "k1LoW/tap/git-wt"                             # git worktrees like a pro
 brew "gitui"                                        # an awesome tui for git
 brew "glab"                                         # gitlab cli
 brew "jesseduffield/lazygit/lazygit"                # simple terminal UI for git commands

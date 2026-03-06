@@ -5,6 +5,7 @@ mise.local.toml
 todo.local.md
 .todo.local.md
 lefthook-local.yaml
+.wt
 *~
 .DS_Store
 
