@@ -197,6 +197,7 @@ brew "aquasecurity/trivy/trivy"                     # scanner for vulnerabilitie
 brew "bitwarden-cli"                                # open source password management
 brew "cosign"                                       # code signing and transparency for containers and binaries
 brew "fnox"                                         # cli secret manager
+brew "betterleaks"                                  # a better secrets scanner
 brew "gitleaks"                                     # audit git repos for secrets
 brew "git-secrets"                                  # prevents you from committing passwords and other sensitive information to a git repository.
 brew "gnupg"                                        # gpg
