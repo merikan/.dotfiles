@@ -339,6 +339,7 @@ command -v pyenv >/dev/null 2>&1 && {
 
 # mise
 command -v mise >/dev/null 2>&1 && {
+  source <(mise completion zsh)
   eval "$(mise activate zsh)"
 }
 
