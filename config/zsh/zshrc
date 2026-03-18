@@ -246,6 +246,9 @@ if [[ "${UNAME_SYSTEM}" != "Darwin" ]]; then
   command -v argocd >/dev/null 2>&1 && source <(argocd completion zsh)
 fi
 
+# git-wt
+command -v git-wt >/dev/null 2>&1 && source <(git wt --init zsh --nocd)
+
 # fzf for fuzzy file mathing. (https://github.com/junegunn/fzf)
 command -v fzf >/dev/null 2>&1  && {
   [[ -d "$XDG_CONFIG_HOME"/fzf/shell ]] && {

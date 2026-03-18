@@ -107,6 +107,13 @@
 	root = ~/Repos
 [branch]
 	sort = -committerdate
+
+[wt]
+	basedir = ./.wt
+	copyignored = true
+	copyuntracked = true
+	copymodified = true
+
 [include]
   path = ~/.config/delta/themes/catppuccin.gitconfig
   path = ~/.config/git/alias
