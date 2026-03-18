@@ -2,11 +2,6 @@
 
 # NOTE: git does not resolve $XDG_CONFIG_HOME, use absolute path with tilde instead
 #
-[include]
-  path = ~/.config/delta/themes/catppuccin.gitconfig
-  path = ~/.config/git/alias
-  # Load private config, not to be pushed to repo
-  path = ~/.config/git/config.local
 [init]
 	defaultBranch = main
 [user]
@@ -112,3 +107,9 @@
 	root = ~/Repos
 [branch]
 	sort = -committerdate
+[include]
+  path = ~/.config/delta/themes/catppuccin.gitconfig
+  path = ~/.config/git/alias
+  # Load local config last
+  path = ~/.config/git/config.local
+
