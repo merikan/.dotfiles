@@ -213,14 +213,32 @@ cask "zap"                                          # Zed Attack Proxy (web scan
 ### ---------------------------------------------------- ###
 ### File & Data Management
 ### ---------------------------------------------------- ###
+
+brew "util-linux"                                   # linux utilities
+brew "zoxide"                                       # a smarter cd command
+brew "lsd"                                          # a clone of ls with more features
+brew "tree"                                         # list contents of directories in a tree-like format
+brew "fd"                                           # fast and user-friendly alternative to find
+brew "ripgrep"                                      # recursively searches directories for a regex pattern
+brew "fzf"                                          # a command-line fuzzy finder
+# filemangaer
+brew "yazi"                                         # blazing fast terminal file manager
+brew "superfile"                                    # another awesome tui filemanager
+brew "joshuto"                                      # ranger-like terminal file manager written in Rust
+brew "lf"                                           # file manager for the terminal
+brew "midnight-commander"                           # visual file manager
+# disk
+brew "merikan/tools/gdu-go"                         # go disk usage
+brew "ncdu"                                         # a disk usage analyzer with an ncurses interface
+brew "dust"                                         # a better du built in rust
+brew "dfc"                                          # displays file system space usage using graphs and colors
+# compression
 brew "7zip"                                         # file archiver with a high compression ratio
+brew "unar"                                         # command-line unarchiving tools supporting multiple formats
+# data-formats
 brew "csvkit"                                       # tools for working with CSV
 brew "dasel"                                        # query and modify data structures in json/toml/yaml/xml/csv/plain format
-brew "dfc"                                          # displays file system space usage using graphs and colors
-brew "dust"                                         # a better du built in rust
-brew "fd"                                           # fast and user-friendly alternative to find
 brew "fx"                                           # JSON/YAML viewer & processor
-brew "fzf"                                          # a command-line fuzzy finder
 brew "gojq"                                         # jq written in go
 brew "gron"                                         # make JSON greppable!
 brew "jaq"                                          # like jq but better, faster and more correct
@@ -230,24 +248,13 @@ brew "jless"                                        # a command-line JSON viewer
 brew "jmespath/jmespath/jp"                         # cli for jmespath
 brew "jo"                                           # small utility to create JSON objects
 brew "jq"                                           # command-line JSON processor, like sed
-brew "joshuto"                                      # ranger-like terminal file manager written in Rust
-brew "lf"                                           # file manager for the terminal
-brew "lsd"                                          # a clone of ls with more features
-brew "merikan/tools/gdu-go"                         # go disk usage
-brew "midnight-commander"                           # visual file manager
-brew "ncdu"                                         # a disk usage analyzer with an ncurses interface
-brew "ripgrep"                                      # recursively searches directories for a regex pattern
-brew "rsync"                                        # provides fast incremental file transfer.
-brew "superfile"                                    # another awesome tui filemanager
-brew "tree"                                         # list contents of directories in a tree-like format
-brew "unar"                                         # command-line unarchiving tools supporting multiple formats
-brew "util-linux"                                   # linux utilities
-brew "wget"                                         # non-interactive network downloader
 brew "wvanlint/twf/twf"                             # tree view file explorer
 brew "xan"                                          # A fast csv command line toolkit written in Rust.
-brew "yazi"                                         # blazing fast terminal file manager
 brew "yq"                                           # fast yaml processor
-brew "zoxide"                                       # a smarter cd command
+# other
+brew "wget"                                         # non-interactive network downloader
+brew "rsync"                                        # provides fast incremental file transfer.
+brew "yt-dlp"                                       # download videos from youtube and many more sites
 cask "android-file-transfer"                        # transfer files from Android device
 cask "balenaetcher"                                 # Burn images to SD cards & USB drives, safely and easily.
 cask "cyberduck"                                    # client for FTP and SFTP, WebDAV, and cloud storage
@@ -261,6 +268,7 @@ brew "htop"                                         # an interactive process vie
 brew "mackup"                                       # keep application settings in sync
 brew "mas"                                          # Mac App Store command-line interface
 brew "procs"                                        # replacement for ps written by Rust
+cask "sloth"                                        # shows all open files and sockets
 brew "pstree"                                       # pstree
 brew "watch"                                        # execute a program periodically and watch the output
 brew "xdg-ninja"                                    # xdg checks your $HOME for unwanted files and directories.
@@ -272,7 +280,6 @@ cask "hammerspoon"                                  # powerful automation of Mac
 cask "karabiner-elements"                           # keyboard customizer for macOS
 cask "leader-key"                                   # a launcher for macos
 cask "raycast"                                      # supercharged productivity
-cask "sloth"                                        # shows all open files and sockets
 cask "tomatobar"                                    # another pomodoro app
 cask "tonisives/tap/ovim"                           # system wide vim mode
 cask "xbar"                                         # put the output from any script or program in your Mac OS X Menu Bar
@@ -280,16 +287,15 @@ cask "xbar"                                         # put the output from any sc
 ### ---------------------------------------------------- ###
 ### Media & Design
 ### ---------------------------------------------------- ###
+brew "mpv"                                          # Media player based on MPlayer and mplayer2
 brew "ffmpeg"                                       # record, convert and stream audio and video
 brew "ffmpegthumbnailer"                            # create thumbnails for your video files
 brew "imagemagick"                                  # create, edit, compose, or convert bitmap images
 brew "mplayer"                                      # UNIX movie player
-brew "mpv"                                          # Media player based on MPlayer and mplayer2
 brew "plantuml"                                     # draw UML diagrams
 brew "potrace"                                      # transforming bitmaps into vector graphics
 brew "scrcpy"                                       # android screen mirror
 brew "structurizr-cli"                              # cli for Structurizr DSL
-brew "yt-dlp"                                       # download videos from youtube and many more sites
 cask "gimp"                                         # an Image Editor (I probably never be able to learn)
 cask "handbrake-app"                                # open source video transcoder
 cask "horos"                                        # a free, open source medical image viewer
