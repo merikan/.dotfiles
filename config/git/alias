@@ -86,7 +86,8 @@
               }; f"
 
   in = !git incoming
-  ms = !git merge --squash
+  ms = merge --squash
+  mff= merge --ff-only
   # outgoing changes > param: remote (optional)
   outgoing = "!f() { \
                 REMOTE="@{u}"; \
