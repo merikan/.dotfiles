@@ -1,5 +1,5 @@
 # my local stuff
-.gitignore.d # ignore my personal stuff
+.gitignore.d/
 .mise.local.toml
 mise.local.toml
 todo.local.md
