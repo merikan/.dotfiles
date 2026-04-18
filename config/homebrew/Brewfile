@@ -155,7 +155,6 @@ brew "lefthook"                                     # a fast git hook manager
 brew "onefetch"                                     # git project information tool
 brew "sigstore/tap/gitsign"                         # keyless sigstore to sign git commits
 brew "tig"                                          # text-mode interface for git
-brew "trasta298/tap/keifu"                          # A TUI for navigating commit graphs
 cask "gitkraken"                                    # Git GUI client for Windows, Mac and Linux
 cask "gitup-app"                                    # awesome Git Gui Client
 cask "sourcetree"                                   # awesome git client
