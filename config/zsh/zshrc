@@ -184,6 +184,25 @@ bindkey -a '^y' cd-into-ghq-repo
 local base16_theme="base16_gruvbox-dark-medium"
 type -f $base16_theme >/dev/null 2>&1 && eval $base16_theme
 
+# colorize manpages
+# https://gist.github.com/bahamas10/542875bb47990933638d2b7dfaa501bf
+set -a
+LESS_TERMCAP_mb=$'\e[1;31m'
+LESS_TERMCAP_md=$'\e[1;31m'
+LESS_TERMCAP_me=$'\e[0m'
+LESS_TERMCAP_se=$'\e[0m'
+LESS_TERMCAP_so=$'\e[1;33;44m'
+LESS_TERMCAP_ue=$'\e[0m'
+LESS_TERMCAP_us=$'\e[4;1;32m'
+LESS_TERMCAP_mr=$'\e[7m'
+LESS_TERMCAP_mh=$'\e[2m'
+LESS_TERMCAP_ZN=$'\e[74m'
+LESS_TERMCAP_ZV=$'\e[75m'
+LESS_TERMCAP_ZO=$'\e[73m'
+LESS_TERMCAP_ZW=$'\e[75m'
+MANPAGER='less'
+set +a
+
 # ssh
 ssh-add -l >/dev/null 2>&1 || {
   # start agent
