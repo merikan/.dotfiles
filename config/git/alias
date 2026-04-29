@@ -26,6 +26,8 @@
   adc = add .
   # print aliases
   aliases = "!git config -l | grep alias | cut -c 7- | sort "
+  # run command on all repos, i.e. git all pull
+	all = "!f() { ls -R -d */.git | xargs -I{} bash -c \"echo {} && git -C {}/../ $1\"; }; f"
   # Change last commit comment
   amend = commit --amend -m
   # list assumed files
