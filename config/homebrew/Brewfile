@@ -99,6 +99,7 @@ brew "johanhaleby/kubetail/kubetail"                # tail Kubernetes logs from 
 brew "k3d"                                          # k3d is a lightweight wrapper to run k3s
 brew "k9s"                                          # awesome tui for k8s
 brew "kind"                                         # k8s in docker
+brew "janosmiko/tap/lfk"                            # yazi-inspired tui for k8s
 cask "rancher"                                      # OSS alternative to Docker Desktop
 brew "kompose"                                      # a conversion tool to go from Docker Compose to Kubernetes
 brew "krew"                                         # package manager for kubectl plugins
