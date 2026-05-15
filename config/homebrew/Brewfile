@@ -80,6 +80,7 @@ brew "charmbracelet/tap/mods"                       # AI on the command line
 brew "arimxyer/tap/models"                          # tui for browsing ai models
 brew "gemini-cli"                                   # gemini prompt in the terminal
 brew "sst/tap/opencode"                             # AI agent for the terminal
+brew "mostlygeek/llama-swap/llama-swap"             # model swapping for any local llm-server
 
 ### ---------------------------------------------------- ###
 ### DevOps, Containers & Kubernetes
