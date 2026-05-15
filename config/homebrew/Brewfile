@@ -192,6 +192,7 @@ brew "stunnel"                                      # SSL tunneling program
 brew "subfinder"                                    # fast passive subdomain enumeration tool.
 cask "tunnelblick"                                  # free, open source graphic user interface for OpenVPN
 mas "Bredbandskollen", id: 1147976909
+brew "ssh-copy-id"                                  # ssh copy
 
 brew "anchore/grype/grype"                          # vulnerability scanner for container images and filesystems
 brew "aquasecurity/trivy/trivy"                     # scanner for vulnerabilities in images, filesystems, git repos and config files
@@ -204,7 +205,6 @@ brew "git-secrets"                                  # prevents you from committi
 brew "gnupg"                                        # gpg
 brew "nmap"                                         # port scanning utility for large networks
 brew "scorecard"                                    # check OSS security health
-brew "ssh-copy-id"                                  # ssh copy
 brew "trufflehog"                                   # find and verify credentials #security #git
 cask "bitwarden"                                    # open source password management
 cask "keepassxc"                                    # a great FOSS Password Manager
