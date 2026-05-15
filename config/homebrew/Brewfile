@@ -210,6 +210,7 @@ cask "bitwarden"                                    # open source password manag
 cask "keepassxc"                                    # a great FOSS Password Manager
 cask "mitmproxy"                                    # a free and open source interactive HTTPS proxy
 cask "zap"                                          # Zed Attack Proxy (web scanner)
+brew "domcyrus/rustnet/rustnet"                     # per-process network monitoring
 
 ### ---------------------------------------------------- ###
 ### File & Data Management
