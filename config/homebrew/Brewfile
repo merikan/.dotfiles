@@ -145,6 +145,7 @@ cask "zed"                                          # multiplayer code editor
 ### Git & Source Control
 ### ---------------------------------------------------- ###
 brew "difi"                                         # a nice diff viewe
+brew "diffnav"                                      # a git diff pager based on delta but with a file tree
 brew "CJ-Systems/homebrew-gitflow-cjs/git-flow-cjs" # git-flow addon for git client
 brew "gh"                                           # github cli
 brew "ghq"                                          # git remote repository management made easy

@@ -66,6 +66,10 @@
     ~/.config/delta:
         path: config/delta/*
         glob: true
+    # diffnav
+    ~/.config/diffnav:
+        path: config/diffnav/*
+        glob: true
     # direnv
     ~/.config/direnv/direnv.toml: config/direnv/direnv.toml
     # editorconfig
