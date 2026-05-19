@@ -81,6 +81,9 @@ brew "arimxyer/tap/models"                          # tui for browsing ai models
 brew "gemini-cli"                                   # gemini prompt in the terminal
 brew "sst/tap/opencode"                             # AI agent for the terminal
 brew "mostlygeek/llama-swap/llama-swap"             # model swapping for any local llm-server
+brew "ollama"                                       # create, run, and share large language models (llms)
+brew "alexsjones/llmserve/llmserve"                 # simple tui for serving local llm models
+brew "llmfit"                                       # find wich llm models runs on your hardware
 
 ### ---------------------------------------------------- ###
 ### DevOps, Containers & Kubernetes
@@ -141,6 +144,7 @@ cask "zed"                                          # multiplayer code editor
 ### ---------------------------------------------------- ###
 ### Git & Source Control
 ### ---------------------------------------------------- ###
+brew "difi"                                         # a nice diff viewe
 brew "CJ-Systems/homebrew-gitflow-cjs/git-flow-cjs" # git-flow addon for git client
 brew "gh"                                           # github cli
 brew "ghq"                                          # git remote repository management made easy
