@@ -55,3 +55,15 @@ tasks:
     cmds:
       - cmd: mvn -U enforcer:enforce -Drules=requireReleaseDeps {{.CLI_ARGS}}
 
+  mvn:pilot:pilot:
+    desc: browse the dependency tree
+    dir: '{{.USER_WORKING_DIR}}'
+    cmds:
+      - cmd: mvn -U eu.maveniverse.maven.plugins:pilot:pilot {{.CLI_ARGS}}
+
+  mvn:pilot:tree:
+    desc: browse the dependency tree
+    dir: '{{.USER_WORKING_DIR}}'
+    cmds:
+      - cmd: mvn -U eu.maveniverse.maven.plugins:pilot:tree {{.CLI_ARGS}}
+
