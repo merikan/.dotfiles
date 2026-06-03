@@ -72,7 +72,7 @@ cask "yaak"                                         # rest/graphql api client
 brew "k6"                                           # open-source load testing tool
 
 ### ---------------------------------------------------- ###
-### AI & Machine Learning Tools
+### AI & Agentic coding
 ### ---------------------------------------------------- ###
 brew "aider"                                        # ai, vibe-coding
 brew "charmbracelet/tap/crush"                      # AI coding agent for your terminal f.k.a opencode
@@ -84,6 +84,7 @@ brew "mostlygeek/llama-swap/llama-swap"             # model swapping for any loc
 brew "ollama"                                       # create, run, and share large language models (llms)
 brew "alexsjones/llmserve/llmserve"                 # simple tui for serving local llm models
 brew "llmfit"                                       # find wich llm models runs on your hardware
+brew "herdr"                                        # agent multiplexer that lives in your terminal
 
 ### ---------------------------------------------------- ###
 ### DevOps, Containers & Kubernetes
