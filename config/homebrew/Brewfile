@@ -74,12 +74,14 @@ brew "k6"                                           # open-source load testing t
 ### ---------------------------------------------------- ###
 ### AI & Agentic coding
 ### ---------------------------------------------------- ###
-brew "aider"                                        # ai, vibe-coding
-brew "charmbracelet/tap/crush"                      # AI coding agent for your terminal f.k.a opencode
-brew "charmbracelet/tap/mods"                       # AI on the command line
-brew "arimxyer/tap/models"                          # tui for browsing ai models
+brew "sst/tap/opencode"                             # ai agent for the terminal
+brew "antigravity-cli"                              # terminal interface for antigravity agents
 brew "gemini-cli"                                   # gemini prompt in the terminal
-brew "sst/tap/opencode"                             # AI agent for the terminal
+brew "aider"                                        # ai, vibe-coding
+brew "charmbracelet/tap/crush"                      # ai coding agent for your terminal f.k.a opencode
+brew "charmbracelet/tap/mods"                       # ai on the command line
+
+brew "arimxyer/tap/models"                          # tui for browsing ai models
 brew "mostlygeek/llama-swap/llama-swap"             # model swapping for any local llm-server
 brew "ollama"                                       # create, run, and share large language models (llms)
 brew "alexsjones/llmserve/llmserve"                 # simple tui for serving local llm models
