@@ -80,6 +80,7 @@ brew "gemini-cli"                                   # gemini prompt in the termi
 brew "aider"                                        # ai, vibe-coding
 brew "charmbracelet/tap/crush"                      # ai coding agent for your terminal f.k.a opencode
 brew "charmbracelet/tap/mods"                       # ai on the command line
+brew "fabric-ai"                                    # an open-source framework for augmenting humans using ai
 
 brew "arimxyer/tap/models"                          # tui for browsing ai models
 brew "mostlygeek/llama-swap/llama-swap"             # model swapping for any local llm-server
