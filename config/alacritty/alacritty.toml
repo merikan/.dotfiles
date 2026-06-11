@@ -32,8 +32,11 @@ action = "CreateNewWindow"
 key = "N"
 mods = "Command"
 
-[shell]
+[terminal.shell]
 program = "zsh"
 
 [window]
 option_as_alt = "Both"
+
+[terminal]
+
