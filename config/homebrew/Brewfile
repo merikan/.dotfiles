@@ -157,6 +157,7 @@ brew "ghq"                                          # git remote repository mana
 brew "gibo"                                         # easily accessing gitignore boilerplates
 brew "git"                                          # cli client for git
 brew "git-branchless"                               # some nice git commands
+brew "git-cliff"                                    # changelog generator that follows conventional commit specifications
 brew "git-delta"                                    # syntax-highlighting pager for git, diff, and grep output
 brew "git-graph"                                    # nice git graph
 brew "k1LoW/tap/git-wt"                             # git worktrees like a pro
