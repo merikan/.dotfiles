@@ -129,6 +129,7 @@ brew "devcontainer"                                 # devcontainer cli
 cask "devpod"                                       # an implementation of devcontainers
 cask "docker-desktop"                               # docker desktop
 cask "podman-desktop"                               # Browse, manage, inspect containers and images
+brew "deveshctl/tap/layerx"                         # terminal-based docker image layer inspector
 
 ### ---------------------------------------------------- ###
 ### Editors & IDEs
