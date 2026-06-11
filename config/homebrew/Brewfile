@@ -165,6 +165,7 @@ brew "gitui"                                        # an awesome tui for git
 brew "glab"                                         # gitlab cli
 brew "jesseduffield/lazygit/lazygit"                # simple terminal UI for git commands
 brew "lefthook"                                     # a fast git hook manager
+brew "hk"                                           # a git-hook manager by jdx
 brew "onefetch"                                     # git project information tool
 brew "sigstore/tap/gitsign"                         # keyless sigstore to sign git commits
 brew "tig"                                          # text-mode interface for git
