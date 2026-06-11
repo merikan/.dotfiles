@@ -99,6 +99,9 @@
     # hammerspoon
     ~/.hammerspoon/init.lua: config/hammerspoon/init.lua
     ~/.hammerspoon/Spoons/SpoonInstall.spoon: config/hammerspoon/Spoons/SpoonInstall.spoon
+    ~/.config/hk:
+        path: config/hk/*
+        glob: true
     # homebrew
     ~/.Brewfile: config/homebrew/Brewfile
     ~/.config/homebrew/config: config/homebrew/config

@@ -1,0 +1,45 @@
+///https://hk.jdx.dev/builtins.html
+
+amends "package://github.com/jdx/hk/releases/download/v1.47.0/hk@1.47.0#/Config.pkl"
+import "package://github.com/jdx/hk/releases/download/v1.47.0/hk@1.47.0#/Builtins.pkl"
+
+local check_leaks = new Mapping<String, Step> {
+  ["betterleaks"] = Builtins.betterleaks
+  ["detect_private_key"] = Builtins.detect_private_key
+  // ["global-echo-test"] {
+  //   check = "echo 'running my global echo git-hook'"
+  //   batch = true
+  // }
+}
+local linters = new Mapping<String, Step> {
+  ["bom"] = Builtins.byte_order_marker
+  ["check_add_large_files"] = Builtins.check_added_large_files
+  ["check_case_conflict"] = Builtins.check_case_conflict
+  ["check_executables_have_shebangs"] = Builtins.check_executables_have_shebangs
+  ["check_symlinks"] = Builtins.check_symlinks
+  ["editorconfig_checker"] = Builtins.editorconfig_checker
+  ["shellcheck"] = Builtins.shellcheck
+  ["shfmt"] = Builtins.shfmt
+}
+hooks {
+  ["leaks"] {
+    steps = check_leaks
+  }
+  ["lint"] {
+    steps = linters
+  }
+  ["fix"] {
+    fix = true
+    steps = linters
+  }
+  ["pre-commit"] {
+    fix = false
+    stash = "git"
+    steps = check_leaks
+  }
+  ["pre-push"] {
+    fix = false
+      stash = "git"
+      steps = check_leaks
+  }
+}

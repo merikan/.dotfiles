@@ -7,7 +7,7 @@
 [user]
 	name = Peter Merikan
 	email = peter@merikan.com
-	signingkey = A93D728B0D0028A71C47EB106F86D20024CE1D22
+	signingkey = A93D728B0D0028A71C47EB106F86D20024CE1D22 # betterleaks:allow
 [core]
   pager = delta
 	excludesfile = ~/.config/git/ignore_global
@@ -114,9 +114,20 @@
 	copyuntracked = true
 	copymodified = true
 
+[hook "hk-commit-msg"]
+	command = test \"${HK:-1}\" = \"0\" || hk run commit-msg --from-hook \"$@\"
+	event = commit-msg
+[hook "hk-pre-commit"]
+	command = test \"${HK:-1}\" = \"0\" || hk run pre-commit \"$@\"
+	# command = test \"${HK:-1}\" = \"0\" || hk run pre-commit --from-hook \"$@\"
+	event = pre-commit
+[hook "hk-pre-push"]
+	command = test \"${HK:-1}\" = \"0\" || hk run pre-push \"$@\"
+	# command = test \"${HK:-1}\" = \"0\" || hk run pre-push --from-hook \"$@\"
+	event = pre-push
+
 [include]
   path = ~/.config/delta/themes/catppuccin.gitconfig
   path = ~/.config/git/alias
   # Load local config last
   path = ~/.config/git/config.local
-
