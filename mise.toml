@@ -1,0 +1,11 @@
+[tools]
+editorconfig-checker = "latest"
+betterleaks = "latest"
+shfmt = "latest"
+shellcheck = "latest"
+
+[settings]
+lockfile = true
+slsa = true
+gpg_verify = true
+minimum_release_age = "3d"
