@@ -1,14 +1,8 @@
 # To keep this file in sync I'm avoiding to install with the `brew install` command,
 # instead I'm adding a row to this file and run 'brew bundle --global' to make sure it's working.
 
-# https://github.com/Homebrew/homebrew-bundle
-# Always run 'brew update' before running 'brew bundle'
+# https://docs.brew.sh/Brew-Bundle-and-Brewfile
 
-#
-# It's not always easy to understand how the dsl for bundle is constructed without reading the code.
-# I know people have asked for clarification in the documentation but it has not been
-# well received by {noname}. Haven't found any changelog either but heck, it's open source ;-)
-#
 
 def macos?
   RUBY_PLATFORM =~ /darwin/
@@ -49,12 +43,12 @@ brew "cmake"                                        # cross-platform make
 brew "cloc"                                         # count lines of code
 brew "doxygen"                                      # Generate documentation from source code
 brew "flake8"                                       # lint python
-brew "go-task/tap/go-task"                          # task runner / build tool
+brew "go-task/tap/go-task", trusted: true           # task runner / build tool
 brew "golangci-lint"                                # Go linters aggregator
 brew "goreleaser"                                   # release automation tool for Go projects
 brew "luarocks"                                     # lua package manager
 brew "maven-completion"                             # maven-completion
-brew "mthmulders/tap/mcs"                           # search maven central cli
+brew "mthmulders/tap/mcs", trusted: true            # search maven central cli
 brew "semgrep"                                      # static analysis, find bugs and enforce code standards
 brew "shellcheck"                                   # a static analysis tool for shell scripts
 brew "statix"                                       # linter for nix
@@ -74,18 +68,18 @@ brew "k6"                                           # open-source load testing t
 ### ---------------------------------------------------- ###
 ### AI & Agentic coding
 ### ---------------------------------------------------- ###
-brew "sst/tap/opencode"                             # ai agent for the terminal
+brew "sst/tap/opencode", trusted: true              # ai agent for the terminal
 cask "antigravity-cli"                              # terminal interface for antigravity agents
 brew "gemini-cli"                                   # gemini prompt in the terminal
 brew "aider"                                        # ai, vibe-coding
-brew "charmbracelet/tap/crush"                      # ai coding agent for your terminal f.k.a opencode
-brew "charmbracelet/tap/mods"                       # ai on the command line
+brew "charmbracelet/tap/crush", trusted: true       # ai coding agent for your terminal f.k.a opencode
+brew "charmbracelet/tap/mods", trusted: true        # ai on the command line
 brew "fabric-ai"                                    # an open-source framework for augmenting humans using ai
 
-brew "arimxyer/tap/models"                          # tui for browsing ai models
-brew "mostlygeek/llama-swap/llama-swap"             # model swapping for any local llm-server
+brew "arimxyer/tap/models", trusted: true           # tui for browsing ai models
+brew "mostlygeek/llama-swap/llama-swap", trusted: true # model swapping for any local llm-server
 brew "ollama"                                       # create, run, and share large language models (llms)
-brew "alexsjones/llmserve/llmserve"                 # simple tui for serving local llm models
+brew "alexsjones/llmserve/llmserve", trusted: true  # simple tui for serving local llm models
 brew "llmfit"                                       # find wich llm models runs on your hardware
 brew "herdr"                                        # agent multiplexer that lives in your terminal
 
@@ -97,13 +91,13 @@ brew "ansible"                                      # IaC provision and configur
 brew "argocd"                                       # GitOps continuous delivery tool for Kubernetes
 brew "boz/repo/kail"                                # kubernetes log viewer
 brew "ctop"                                         # top-like interface for container metrics
-brew "merikan/tools/clair-scanner"                  # scan local docker images
+brew "merikan/tools/clair-scanner", trusted: true   # scan local docker images
 brew "dive"                                         # exploring a docker image, layer contents, and discovering ways to shrink your Docker image size.
 brew "docker"                                       # docker client
 brew "docker-credential-helper"                     # keystore credential helper for Docker
 brew "helm"                                         # helm packagemanager for kubernetes
-brew "jesseduffield/lazydocker/lazydocker"          # the lazier way to manage everything docker
-brew "johanhaleby/kubetail/kubetail"                # tail Kubernetes logs from multiple pods
+brew "jesseduffield/lazydocker/lazydocker", trusted: true # the lazier way to manage everything docker
+brew "johanhaleby/kubetail/kubetail", trusted: true # tail Kubernetes logs from multiple pods
 brew "k3d"                                          # k3d is a lightweight wrapper to run k3s
 brew "k9s"                                          # awesome tui for k8s
 brew "kind"                                         # k8s in docker
@@ -124,12 +118,12 @@ brew "podman"                                       # tool for managing oci cont
 brew "skaffold"                                     # local k8s development
 brew "skopeo"                                       # work with container registry and images
 brew "stern"                                        # log tailing for Kubernetes
-brew "vmware-tanzu/carvel/ytt"                      # YAML templating tool, structure instead of text
+brew "vmware-tanzu/carvel/ytt", trusted: true       # YAML templating tool, structure instead of text
 brew "devcontainer"                                 # devcontainer cli
 cask "devpod"                                       # an implementation of devcontainers
 cask "docker-desktop"                               # docker desktop
 cask "podman-desktop"                               # Browse, manage, inspect containers and images
-brew "deveshctl/tap/layerx"                         # terminal-based docker image layer inspector
+brew "deveshctl/tap/layerx", trusted: true          # terminal-based docker image layer inspector
 
 ### ---------------------------------------------------- ###
 ### Editors & IDEs
@@ -151,7 +145,7 @@ cask "zed"                                          # multiplayer code editor
 ### ---------------------------------------------------- ###
 brew "difi"                                         # a nice diff viewe
 brew "diffnav"                                      # a git diff pager based on delta but with a file tree
-brew "CJ-Systems/homebrew-gitflow-cjs/git-flow-cjs" # git-flow addon for git client
+brew "CJ-Systems/homebrew-gitflow-cjs/git-flow-cjs", trusted: true # git-flow addon for git client
 brew "gh"                                           # github cli
 brew "ghq"                                          # git remote repository management made easy
 brew "gibo"                                         # easily accessing gitignore boilerplates
@@ -160,14 +154,14 @@ brew "git-branchless"                               # some nice git commands
 brew "git-cliff"                                    # changelog generator that follows conventional commit specifications
 brew "git-delta"                                    # syntax-highlighting pager for git, diff, and grep output
 brew "git-graph"                                    # nice git graph
-brew "k1LoW/tap/git-wt"                             # git worktrees like a pro
+brew "k1LoW/tap/git-wt", trusted: true              # git worktrees like a pro
 brew "gitui"                                        # an awesome tui for git
 brew "glab"                                         # gitlab cli
-brew "jesseduffield/lazygit/lazygit"                # simple terminal UI for git commands
+brew "jesseduffield/lazygit/lazygit", trusted: true # simple terminal UI for git commands
 brew "lefthook"                                     # a fast git hook manager
 brew "hk"                                           # a git-hook manager by jdx
 brew "onefetch"                                     # git project information tool
-brew "sigstore/tap/gitsign"                         # keyless sigstore to sign git commits
+brew "sigstore/tap/gitsign", trusted: true          # keyless sigstore to sign git commits
 brew "tig"                                          # text-mode interface for git
 cask "gitkraken"                                    # Git GUI client for Windows, Mac and Linux
 cask "gitup-app"                                    # awesome Git Gui Client
@@ -196,7 +190,7 @@ cask "wezterm"                                      # cross-platform terminal em
 ### Security & Networking
 ### ---------------------------------------------------- ###
 brew "aria2"                                        # multi-protocol & multi-source command-line download utility
-brew "doganarif/tap/pf"                             # find open ports
+brew "doganarif/tap/pf", trusted: true              # find open ports
 brew "httpie"                                       # HTTP command-line client
 brew "curl"                                         # curl
 brew "openconnect"                                  # open client for cisco anyconnect vpn
@@ -206,8 +200,8 @@ cask "tunnelblick"                                  # free, open source graphic 
 mas "Bredbandskollen", id: 1147976909
 brew "ssh-copy-id"                                  # ssh copy
 
-brew "anchore/grype/grype"                          # vulnerability scanner for container images and filesystems
-brew "aquasecurity/trivy/trivy"                     # scanner for vulnerabilities in images, filesystems, git repos and config files
+brew "anchore/grype/grype", trusted: true           # vulnerability scanner for container images and filesystems
+brew "aquasecurity/trivy/trivy", trusted: true      # scanner for vulnerabilities in images, filesystems, git repos and config files
 brew "bitwarden-cli"                                # open source password management
 brew "cosign"                                       # code signing and transparency for containers and binaries
 brew "fnox"                                         # cli secret manager
@@ -222,7 +216,7 @@ cask "bitwarden"                                    # open source password manag
 cask "keepassxc"                                    # a great FOSS Password Manager
 cask "mitmproxy"                                    # a free and open source interactive HTTPS proxy
 cask "zap"                                          # Zed Attack Proxy (web scanner)
-brew "domcyrus/rustnet/rustnet"                     # per-process network monitoring
+brew "domcyrus/rustnet/rustnet", trusted: true      # per-process network monitoring
 
 ### ---------------------------------------------------- ###
 ### File & Data Management
@@ -242,7 +236,7 @@ brew "joshuto"                                      # ranger-like terminal file 
 brew "lf"                                           # file manager for the terminal
 brew "midnight-commander"                           # visual file manager
 # disk
-brew "merikan/tools/gdu-go"                         # go disk usage
+brew "merikan/tools/gdu-go", trusted: true          # go disk usage
 brew "ncdu"                                         # a disk usage analyzer with an ncurses interface
 brew "dust"                                         # a better du built in rust
 brew "dfc"                                          # displays file system space usage using graphs and colors
@@ -259,10 +253,10 @@ brew "jaq"                                          # like jq but better, faster
 brew "jc"                                           # convert command output to json
 brew "jid"                                          # drill down JSON interactively by using filtering queries like jq.
 brew "jless"                                        # a command-line JSON viewer
-brew "jmespath/jmespath/jp"                         # cli for jmespath
+brew "jmespath/jmespath/jp", trusted: true          # cli for jmespath
 brew "jo"                                           # small utility to create JSON objects
 brew "jq"                                           # command-line JSON processor, like sed
-brew "wvanlint/twf/twf"                             # tree view file explorer
+brew "wvanlint/twf/twf", trusted: true              # tree view file explorer
 brew "xan"                                          # A fast csv command line toolkit written in Rust.
 brew "yq"                                           # fast yaml processor
 # other
@@ -276,8 +270,8 @@ cask "cyberduck"                                    # client for FTP and SFTP, W
 ### ---------------------------------------------------- ###
 ### OS Productivity & Utilities
 ### ---------------------------------------------------- ###
-brew "FelixKratz/formulae/borders", restart_service: :changed # add colored borders to user windows
-brew "felixkratz/formulae/sketchybar"               # macOS status bar
+brew "FelixKratz/formulae/borders", trusted: true, restart_service: :changed # add colored borders to user windows
+brew "felixkratz/formulae/sketchybar", trusted: true # macOS status bar
 brew "htop"                                         # an interactive process viewer for Unix
 brew "mackup"                                       # keep application settings in sync
 brew "mas"                                          # Mac App Store command-line interface
@@ -286,7 +280,7 @@ cask "sloth"                                        # shows all open files and s
 brew "pstree"                                       # pstree
 brew "watch"                                        # execute a program periodically and watch the output
 brew "xdg-ninja"                                    # xdg checks your $HOME for unwanted files and directories.
-cask "nikitabobko/tap/aerospace"                    # tiling window manager
+cask "nikitabobko/tap/aerospace", trusted: true     # tiling window manager
 cask "alfred"                                       # a must have for boost productivity
 cask "alt-tab"                                      # awesome keyboard window switcher for Mac
 cask "bartender"                                    # organize your menu bar icons
@@ -413,7 +407,7 @@ brew "icdiff"                                       # improved colored diff
 brew "jenv"                                         # manage your java environment
 brew "lnav"                                         # watch and analyze your log files from a terminal.
 brew "mise"                                         # handle dev environment
-brew "peterldowns/tap/nix-search-cli"               # search nix packages
+brew "peterldowns/tap/nix-search-cli", trusted: true # search nix packages
 brew "poppler"                                      # pdf rendering library (based on the xpdf-3.0 code base)
 brew "presenterm"                                   # presentations in markdown and run in termainl
 brew "pv"                                           # a terminal-based tool for monitoring the progress of data through a pipeline.
