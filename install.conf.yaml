@@ -134,6 +134,10 @@
     ~/bin/macos-settings: config/macos/macos-settings
     # markdownlint
     ~/.config/markdownlint/.markdownlint.yaml: config/markdownlint/markdownlint.yaml
+    # mise
+    ~/.config/mise:
+      path: config/mise/*
+      glob: true
     # nix
     ~/.config/nix/nix.conf: config/nix/nix.conf
     # nvim

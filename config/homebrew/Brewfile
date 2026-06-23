@@ -377,7 +377,7 @@ cask "quicklook-json"                               # preview JSON files
 cask "quicklook-csv"                                # preview CSV files
 cask "webpquicklook"                                # preview WebP images
 cask "suspicious-package"                           # preview the contents of a standard Apple installer package
-cask "qlvideo"                                      # display thumbnails, static previews, cover art and metadata for video files
+cask "quicklook-video"                              # display thumbnails, static previews, cover art and metadata for video files
 
 ### ---------------------------------------------------- ###
 ### Fonts

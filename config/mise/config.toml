@@ -1,0 +1,30 @@
+[tools]
+aqua = "latest"
+editorconfig-checker = "latest"
+gradle = "latest"
+java = "latest"
+kotlin = { version = "latest", asset_pattern = "kotlin-compiler-*.zip", bin_path = "kotlinc/bin" }
+kscript = "latest"
+maven = "3"
+micronaut = "latest"
+spring-boot = "latest"
+
+[settings]
+experimental = true
+lockfile = true
+slsa = true
+gpg_verify = true
+minimum_release_age = "3d"
+java.shorthand_vendor = "temurin"
+idiomatic_version_file_enable_tools = [
+    "java",
+    "ruby",
+    "node",
+    "npm",
+    "pnpm",
+    "yarn",
+    "python",
+]
+# disable_backends = ["asdf"]   # used for spring-boot
+color_theme = "auto"
+status.missing_tools = "always"
