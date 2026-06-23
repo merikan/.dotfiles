@@ -30,4 +30,4 @@ zmodule spaceship-prompt/spaceship-prompt --name spaceship --no-submodules
 # interactive jq expressions
 zmodule reegnz/jq-zsh-plugin
 # replace zsh's default completion selection menu with fzf
-zmodule Aloxaf/fzf-tab
+# zmodule Aloxaf/fzf-tab
