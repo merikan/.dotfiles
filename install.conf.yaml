@@ -43,6 +43,9 @@
     ~/.config/aerc:
       path: config/aerc/*
       glob: true
+    ~/.config/agents:
+      path: config/agents/*
+      glob: true
     # aerospace
     ~/.config/aerospace/aerospace.toml: config/aerospace/aerospace.toml
     # alacritty
@@ -259,4 +262,10 @@
     -
       description: create vim unddo directory
       command: "mkdir -p ~/.local/share/nvim/undodir"
+
+- shell:
+  -
+    description: symlink agents
+    command: "test -L ~/.agents || ln -s ~/.config/agents ~/.agents"
+
 
