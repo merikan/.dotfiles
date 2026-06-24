@@ -240,6 +240,11 @@
 
 - shell:
     -
+      description: Installing/updating mise tools 
+      command: "mise install && mise upgrade"
+
+- shell:
+    -
       description: Installing/updating sheldon plugins
       command: "[ -s $HOME/.sheldon/plugins.toml ] && command -v sheldon >/dev/null 2>&1 && sheldon lock --update || exit 0"
 
