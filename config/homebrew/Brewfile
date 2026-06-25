@@ -282,7 +282,7 @@ brew "watch"                                        # execute a program periodic
 brew "xdg-ninja"                                    # xdg checks your $HOME for unwanted files and directories.
 cask "nikitabobko/tap/aerospace", trusted: true     # tiling window manager
 cask "alfred"                                       # a must have for boost productivity
-cask "Sanyam-G/switch/switch", trusted: true        # awesome keyboard window switcher for Mac
+cask "bettercmdtab"                                 # awesome keyboard window switcher for Mac
 cask "bartender"                                    # organize your menu bar icons
 cask "hammerspoon"                                  # powerful automation of MacOS, actions and wm
 cask "karabiner-elements"                           # keyboard customizer for macOS
