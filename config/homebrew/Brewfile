@@ -157,6 +157,7 @@ brew "git-graph"                                    # nice git graph
 brew "k1LoW/tap/git-wt", trusted: true              # git worktrees like a pro
 brew "gitui"                                        # an awesome tui for git
 brew "glab"                                         # gitlab cli
+brew "jj"                                           # git-compatible distributed version control system
 brew "jesseduffield/lazygit/lazygit", trusted: true # simple terminal UI for git commands
 brew "lefthook"                                     # a fast git hook manager
 brew "hk"                                           # a git-hook manager by jdx
