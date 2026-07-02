@@ -70,6 +70,7 @@ brew "k6"                                           # open-source load testing t
 ### ---------------------------------------------------- ###
 brew "sst/tap/opencode", trusted: true              # ai agent for the terminal
 cask "antigravity-cli"                              # terminal interface for antigravity agents
+cask "claude-code"                                  # terminal-based ai coding assistant
 brew "gemini-cli"                                   # gemini prompt in the terminal
 brew "aider"                                        # ai, vibe-coding
 brew "charmbracelet/tap/crush", trusted: true       # ai coding agent for your terminal f.k.a opencode
@@ -87,43 +88,48 @@ brew "herdr"                                        # agent multiplexer that liv
 ### DevOps, Containers & Kubernetes
 ### ---------------------------------------------------- ###
 brew "act"                                          # run your github actions locally
-brew "ansible"                                      # IaC provision and configure
+brew "ansible"                                      # iac provision and configure
+brew "opentofu"                                     # iac, drop-in replacement for terraform
+
 brew "argocd"                                       # GitOps continuous delivery tool for Kubernetes
-brew "boz/repo/kail"                                # kubernetes log viewer
-brew "ctop"                                         # top-like interface for container metrics
-brew "merikan/tools/clair-scanner", trusted: true   # scan local docker images
-brew "dive"                                         # exploring a docker image, layer contents, and discovering ways to shrink your Docker image size.
-brew "docker"                                       # docker client
-brew "docker-credential-helper"                     # keystore credential helper for Docker
 brew "helm"                                         # helm packagemanager for kubernetes
+brew "kustomize"                                    # kustomize: template-free customization of application configuration
+
+brew "ctop"                                         # top-like interface for container metrics
+brew "boz/repo/kail"                                # kubernetes log viewer
+brew "dive"                                         # exploring a docker image, layer contents, and discovering ways to shrink your Docker image size.
+brew "deveshctl/tap/layerx", trusted: true          # terminal-based docker image layer inspector
 brew "jesseduffield/lazydocker/lazydocker", trusted: true # the lazier way to manage everything docker
-brew "johanhaleby/kubetail/kubetail", trusted: true # tail Kubernetes logs from multiple pods
-brew "k3d"                                          # k3d is a lightweight wrapper to run k3s
 brew "k9s"                                          # awesome tui for k8s
-brew "kind"                                         # k8s in docker
 brew "janosmiko/tap/lfk"                            # yazi-inspired tui for k8s
-cask "rancher"                                      # OSS alternative to Docker Desktop
 brew "kompose"                                      # a conversion tool to go from Docker Compose to Kubernetes
 brew "krew"                                         # package manager for kubectl plugins
 brew "kubectl"                                      # kubernetes controller
+brew "openshift-cli"                                # openshift cli
+brew "kubeseal"                                     # Kubernetes tool for one-way encrypted Secrets
+brew "skaffold"                                     # local k8s development
 brew "kubectx"                                      # kubectx: manage and switch between kubectl contexts, kubens: switch between Kubernetes namespaces.
 brew "kubeconform"                                  # lint k8s manifests
-brew "kubeseal"                                     # Kubernetes tool for one-way encrypted Secrets
+brew "vmware-tanzu/carvel/ytt", trusted: true       # YAML templating tool, structure instead of text
 brew "kube-linter"                                  # lint k8s and helm manifests
 brew "kubespy"                                      # observing Kubernetes resources in real time
-brew "kustomize"                                    # kustomize: template-free customization of application configuration
-brew "minikube"                                     # kubernetes mini
-brew "openshift-cli"                                # openshift cli
-brew "podman"                                       # tool for managing oci containers and pods
-brew "skaffold"                                     # local k8s development
 brew "skopeo"                                       # work with container registry and images
+brew "johanhaleby/kubetail/kubetail", trusted: true # tail Kubernetes logs from multiple pods
 brew "stern"                                        # log tailing for Kubernetes
-brew "vmware-tanzu/carvel/ytt", trusted: true       # YAML templating tool, structure instead of text
+
 brew "devcontainer"                                 # devcontainer cli
 cask "devpod"                                       # an implementation of devcontainers
+
+brew "k3d"                                          # k3d is a lightweight wrapper to run k3s
+brew "minikube"                                     # kubernetes mini
+brew "kind"                                         # k8s in docker
+
+cask "rancher"                                      # OSS alternative to Docker Desktop
+brew "docker"                                       # docker client
+brew "docker-credential-helper"                     # keystore credential helper for Docker
 cask "docker-desktop"                               # docker desktop
+brew "podman"                                       # tool for managing oci containers and pods
 cask "podman-desktop"                               # Browse, manage, inspect containers and images
-brew "deveshctl/tap/layerx", trusted: true          # terminal-based docker image layer inspector
 
 ### ---------------------------------------------------- ###
 ### Editors & IDEs
@@ -191,16 +197,23 @@ cask "wezterm"                                      # cross-platform terminal em
 ### Security & Networking
 ### ---------------------------------------------------- ###
 brew "aria2"                                        # multi-protocol & multi-source command-line download utility
-brew "doganarif/tap/pf", trusted: true              # find open ports
 brew "httpie"                                       # HTTP command-line client
 brew "curl"                                         # curl
 brew "openconnect"                                  # open client for cisco anyconnect vpn
-brew "stunnel"                                      # SSL tunneling program
-brew "subfinder"                                    # fast passive subdomain enumeration tool.
 cask "tunnelblick"                                  # free, open source graphic user interface for OpenVPN
 mas "Bredbandskollen", id: 1147976909
 brew "ssh-copy-id"                                  # ssh copy
 
+brew "doganarif/tap/pf", trusted: true              # find open ports
+brew "stunnel"                                      # SSL tunneling program
+brew "subfinder"                                    # fast passive subdomain enumeration tool.
+brew "sniffnet"                                     # monitor your network traffic
+brew "domcyrus/rustnet/rustnet", trusted: true      # per-process network monitoring
+cask "ngrok"                                        # reverse proxy, secure introspectable tunnels to localhost
+cask "mitmproxy"                                    # a free and open source interactive HTTPS proxy
+brew "nmap"                                         # port scanning utility for large networks
+
+brew "merikan/tools/clair-scanner", trusted: true   # scan local docker images
 brew "anchore/grype/grype", trusted: true           # vulnerability scanner for container images and filesystems
 brew "aquasecurity/trivy/trivy", trusted: true      # scanner for vulnerabilities in images, filesystems, git repos and config files
 brew "bitwarden-cli"                                # open source password management
@@ -210,14 +223,11 @@ brew "betterleaks"                                  # a better secrets scanner
 brew "gitleaks"                                     # audit git repos for secrets
 brew "git-secrets"                                  # prevents you from committing passwords and other sensitive information to a git repository.
 brew "gnupg"                                        # gpg
-brew "nmap"                                         # port scanning utility for large networks
 brew "scorecard"                                    # check OSS security health
 brew "trufflehog"                                   # find and verify credentials #security #git
 cask "bitwarden"                                    # open source password management
 cask "keepassxc"                                    # a great FOSS Password Manager
-cask "mitmproxy"                                    # a free and open source interactive HTTPS proxy
 cask "zap"                                          # Zed Attack Proxy (web scanner)
-brew "domcyrus/rustnet/rustnet", trusted: true      # per-process network monitoring
 
 ### ---------------------------------------------------- ###
 ### File & Data Management
@@ -265,6 +275,9 @@ brew "wget"                                         # non-interactive network do
 brew "rsync"                                        # provides fast incremental file transfer.
 brew "yt-dlp"                                       # download videos from youtube and many more sites
 cask "android-file-transfer"                        # transfer files from Android device
+cask "localsend"                                    # cross-platform alternative to airdrop
+cask "openmtp"                                      # a better file-transfer app for endroid
+
 cask "balenaetcher"                                 # Burn images to SD cards & USB drives, safely and easily.
 cask "cyberduck"                                    # client for FTP and SFTP, WebDAV, and cloud storage
 
@@ -342,6 +355,7 @@ cask "brave-browser"                                # privacy focused, performan
 cask "firefox"                                      # firefox browser
 cask "firefox@developer-edition"                    # firefox browser
 cask "google-chrome"                                # a browser
+cask "mullvad-browser"                              # a secure browser
 cask "opera"                                        # browser
 cask "responsively"                                 # modified web browser for responsive web development
 cask "ungoogled-chromium"                           # open-source browser
