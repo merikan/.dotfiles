@@ -39,6 +39,8 @@ setopt ignoreeof
 
 # Applications
 
+# opencode
+export OPENCODE_DISABLE_CLAUDE_CODE=1
 # homebrew
 if [[ "${UNAME_SYSTEM}" == "Darwin" ]]; then
   if [[ "${UNAME_MACHINE}" == "arm64" ]]; then

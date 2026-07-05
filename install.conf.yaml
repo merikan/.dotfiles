@@ -220,6 +220,30 @@
     ~/.zshenv: config/zsh/zshenv
     ~/.zshrc: config/zsh/zshrc
 
+
+# symlink to all agent harness
+- link:
+    # opencode
+    ~/.config/opencode/AGENTS.md:
+      path: config/agents/AGENTS.md
+      glob: true
+    ~/.config/opencode/skills:
+      path: config/agents/skills/*
+      glob: true
+    # gemini
+    ~/.gemini/config/AGENTS.md:
+      path: config/agents/AGENTS.md
+      glob: true
+    ~/.gemini/config/skills:
+      path: config/agents/skills/*
+      glob: true
+    # claude code
+    ~/.claude/CLAUDE.md:
+      path: config/agents/AGENTS.md
+      glob: true
+    ~/.claude/skills:
+      path: config/agents/skills/*
+      glob: true
 # ---------------------------------------------------------------------------------------------
 # --  Install
 # ---------------------------------------------------------------------------------------------
