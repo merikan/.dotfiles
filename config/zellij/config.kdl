@@ -224,7 +224,7 @@ plugins {
         border_format   "#[fg=$bg1]{char}"
         border_position "top"
 
-        hide_frame_for_single_pane "true"
+        hide_frame_for_single_pane "false"
 
         mode_normal        "#[bg=$bg3,fg=$bg2]#[bg=$bg3,fg=$fg3,bold] NORMAL#[bg=$bg1,fg=$bg3]"
         mode_tmux          "#[bg=$green,fg=$bg2]#[bg=$green,fg=$bg0,bold] TMUX#[bg=$bg1,fg=$green]"
