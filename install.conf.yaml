@@ -278,11 +278,6 @@
       command: "zimfw update"
 
 - shell:
-    -
-      description: Installing/Updating Sdkman and candidates
-      command: $HOME/bin/sdkit
-
-- shell:
     - 
       description: Install Rust toolchain
       command: $HOME/bin/rustit""
