@@ -77,6 +77,10 @@
     ~/.config/direnv/direnv.toml: config/direnv/direnv.toml
     # editorconfig
     ~/.editorconfig: config/editorconfig/editorconfig
+    # fnox
+    ~/.config/fnox:
+      path: config/fnox/*
+      glob: true
     # fzf
     ~/.config/fzf:
       path: config/fzf/*

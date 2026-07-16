@@ -1,0 +1,8 @@
+#:schema https://fnox.jdx.dev/schema.json
+if_missing = "error"
+
+[providers]
+keychain = { type = "keychain", service = "fnox" }
+
+[secrets]
+MISE_GITHUB_TOKEN= { provider = "keychain", value = "MISE_GITHUB_TOKEN" }
