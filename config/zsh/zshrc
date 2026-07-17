@@ -231,6 +231,15 @@ fi
 #   bindkey -s '^o' 'lfcd\n'
 # }
 
+# set dropbox path
+if [ ! -f "$HOME/.dropbox/info.json" ]; then
+    echo "Dropbox config file does not exist." >&2
+elif RESULT=$(jq -r ".personal.path" "$HOME/.dropbox/info.json" 2>/dev/null); [ -z "$RESULT" ] || [ "$RESULT" == "null" ]; then
+    echo "Error: Dropbox personal.path not found." >&2
+else
+    export DROPBOX_PERSONAL="$RESULT"
+fi
+
 # Use yazi to cd and bind it to ctrl-o
 command -v yazi >/dev/null 2>&1  && {
   function __yazicd() {
