@@ -298,6 +298,7 @@ command -v fzf >/dev/null 2>&1  && {
   export MANPATH="${HOMEBREW_PREFIX}/share/man${MANPATH+:$MANPATH}:"
   export INFOPATH="${HOMEBREW_PREFIX}/share/info:${INFOPATH:-}"
   export FPATH="${HOMEBREW_PREFIX}/share/zsh/site-functions:${FPATH}"
+  export MAS_NO_AUTO_INDEX=1 # ignore "found app that is not indexed in Spotlight"
 }
 
 # Android Studio doesn't honour XDG though it support symlinks
