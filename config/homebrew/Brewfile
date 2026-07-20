@@ -76,6 +76,7 @@ brew "aider"                                        # ai, vibe-coding
 brew "charmbracelet/tap/crush", trusted: true       # ai coding agent for your terminal f.k.a opencode
 brew "charmbracelet/tap/mods", trusted: true        # ai on the command line
 brew "fabric-ai"                                    # an open-source framework for augmenting humans using ai
+brew "pi-coding-agent"                              # a minimal agent harness
 
 brew "arimxyer/tap/models", trusted: true           # tui for browsing ai models
 brew "mostlygeek/llama-swap/llama-swap", trusted: true # model swapping for any local llm-server
