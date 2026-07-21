@@ -209,6 +209,7 @@ brew "ssh-copy-id"                                  # ssh copy
 brew "doganarif/tap/pf", trusted: true              # find open ports
 brew "stunnel"                                      # SSL tunneling program
 brew "subfinder"                                    # fast passive subdomain enumeration tool.
+brew "quien"                                        # a better whois and domain intelligence toolkit
 brew "sniffnet"                                     # monitor your network traffic
 brew "domcyrus/rustnet/rustnet", trusted: true      # per-process network monitoring
 cask "ngrok"                                        # reverse proxy, secure introspectable tunnels to localhost
@@ -226,7 +227,7 @@ brew "gitleaks"                                     # audit git repos for secret
 brew "git-secrets"                                  # prevents you from committing passwords and other sensitive information to a git repository.
 brew "gnupg"                                        # gpg
 brew "scorecard"                                    # check OSS security health
-brew "trufflehog"                                   # find and verify credentials #security #git
+brew "trufflehog"                                   # find and verify credentials
 cask "bitwarden"                                    # open source password management
 cask "keepassxc"                                    # a great FOSS Password Manager
 cask "zap"                                          # Zed Attack Proxy (web scanner)
