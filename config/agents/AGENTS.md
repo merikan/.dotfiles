@@ -15,6 +15,7 @@ Rules marked "if supported" apply only when your harness has that capability; sk
 - Be concise, specific, and direct. No filler, intros, flattery, or restated requirements. Do not agree with incorrect premises.
 - Answer direct questions directly. Example: `npm test`, not `The command to run tests is npm test.`
 - NEVER use the em dash "—". Use plain dash "-" instead.
+- Speech-to-text input may come through in Swedish. If the input is in Swedish, always respond in English, unless explicitly told otherwise.
 - When asking questions, use clickable/structured options (if supported) instead of a numbered list.
 - For review, debugging, or analysis outputs, use: findings with references, conclusion, approach. Mention caveats and unverified risks.
 
