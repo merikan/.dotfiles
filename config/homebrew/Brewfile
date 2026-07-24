@@ -40,7 +40,7 @@ cask "flutter"                                      # ui toolkit for flutter
 ### Build Tools, Analysis & Linters
 ### ---------------------------------------------------- ###
 brew "cmake"                                        # cross-platform make
-brew "cloc"                                         # count lines of code
+brew "scc"                                          # count lines of code
 brew "doxygen"                                      # Generate documentation from source code
 brew "flake8"                                       # lint python
 brew "go-task/tap/go-task", trusted: true           # task runner / build tool
