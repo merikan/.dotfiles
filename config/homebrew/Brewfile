@@ -58,6 +58,11 @@ brew "yarn"                                         # JavaScript package manager
 ### ---------------------------------------------------- ###
 ### HTTP/REST/GrapgQL Clients
 ### ---------------------------------------------------- ###
+
+brew "xh"                                           # friendly and fast tool for sending http requests
+brew "httpie"                                       # http command-line client
+
+brew "curl"                                         # curl
 cask "bruno"                                        # opensource ide for exploring and testing api's
 cask "insomnia"                                     # superduper rest client
 cask "postman"                                      # nice rest client
@@ -199,8 +204,6 @@ cask "wezterm"                                      # cross-platform terminal em
 ### Security & Networking
 ### ---------------------------------------------------- ###
 brew "aria2"                                        # multi-protocol & multi-source command-line download utility
-brew "httpie"                                       # HTTP command-line client
-brew "curl"                                         # curl
 brew "openconnect"                                  # open client for cisco anyconnect vpn
 cask "tunnelblick"                                  # free, open source graphic user interface for OpenVPN
 mas "Bredbandskollen", id: 1147976909
