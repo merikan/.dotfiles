@@ -210,6 +210,7 @@ brew "doganarif/tap/pf", trusted: true              # find open ports
 brew "stunnel"                                      # SSL tunneling program
 brew "subfinder"                                    # fast passive subdomain enumeration tool.
 brew "quien"                                        # a better whois and domain intelligence toolkit
+brew "514-labs/tap/dnsglobe", trusted: true         # global dns propagation checker f
 brew "sniffnet"                                     # monitor your network traffic
 brew "domcyrus/rustnet/rustnet", trusted: true      # per-process network monitoring
 cask "ngrok"                                        # reverse proxy, secure introspectable tunnels to localhost
