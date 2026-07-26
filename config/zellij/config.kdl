@@ -146,6 +146,10 @@ plugins {
     filepicker location="zellij:strider" {
         cwd "/"
     }
+    compact-bar location="zellij:compact-bar" {
+        //  F1, \, ?, etc. If using backslash like below this needs to be escaped with a second slash
+        tooltip "F1"
+    }
 
     // -----------------------
     // extra plugins
@@ -271,6 +275,11 @@ plugins {
         datetime_format   "%Y-%m-%d %H:%M"
         datetime_timezone "Europe/Stockholm"
 
+    }
+    load_plugins {
+      // Force load the compact-bar plugin which allows hover tooltips
+      // https://github.com/dj95/zjstatus/discussions/123#discussioncomment-15323526
+      compact-bar
     }
 }
 
