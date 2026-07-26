@@ -1,0 +1,205 @@
+[metadata]
+name = "Everforest Dark Hard"
+description = "Comfortable green-tinted dark palette (Hard contrast)"
+author = "Peter Merikan"
+version = "1.0.0"
+tags = ["dark", "everforest", "hard", "nature"]
+
+[styles.header_title]
+foreground = "#7fbbb3"
+bold = true
+
+[styles.header_value]
+foreground = "#d3c6aa"
+
+[styles.header_separator]
+foreground = "#83c092"
+
+[styles.browser_border]
+border_color = "#374145"
+
+[styles.command_bar]
+foreground = "#d3c6aa"
+background = "#1e2326"
+
+[styles.command_bar_hint]
+foreground = "#a7c080"
+bold = true
+
+[styles.status_bar]
+foreground = "#d3c6aa"
+background = "#272e33"
+
+[styles.status_bar_info]
+foreground = "#9da9a0"
+
+[styles.status_bar_key]
+foreground = "#e69875"
+bold = true
+
+[styles.status_bar_value]
+foreground = "#859289"
+
+[status_bar]
+base = "#1e2326"
+
+[status_bar.info]
+foreground = "#272e33"
+background = "#7fbbb3"
+
+[status_bar.warn]
+foreground = "#272e33"
+background = "#dbbc7f"
+
+[status_bar.error]
+foreground = "#272e33"
+background = "#e67e80"
+
+[status_bar.success]
+foreground = "#272e33"
+background = "#a7c080"
+
+[status_bar.tests_pass]
+foreground = "#272e33"
+background = "#83c092"
+
+[status_bar.tests_fail]
+foreground = "#272e33"
+background = "#e67e80"
+
+[status_bar.tests_error]
+foreground = "#272e33"
+background = "#d699b6"
+
+[status_bar.file]
+foreground = "#d3c6aa"
+background = "#2e383c"
+
+[status_bar.focus]
+foreground = "#d3c6aa"
+background = "#374145"
+
+[status_bar.mode]
+foreground = "#d3c6aa"
+background = "#414b50"
+
+[status_bar.zoom]
+foreground = "#272e33"
+background = "#83c092"
+
+[status_bar.minimized]
+foreground = "#272e33"
+background = "#a7c080"
+
+[status_bar.version]
+foreground = "#d3c6aa"
+background = "#2e383c"
+
+[status_bar.user]
+foreground = "#d3c6aa"
+background = "#374145"
+
+[status_bar.host]
+foreground = "#859289"
+background = "#1e2326"
+
+[styles.tab_active]
+background = "#7fbbb3"
+foreground = "#272e33"
+
+[styles.tab_inactive]
+foreground = "#7a8478"
+
+[styles.notification]
+background = "#2e383c"
+foreground = "#d3c6aa"
+
+[styles.error]
+background = "#e67e80"
+foreground = "#272e33"
+
+[styles.success]
+background = "#a7c080"
+foreground = "#272e33"
+
+[styles.list_item_title]
+foreground = "#d3c6aa"
+
+[styles.list_item_description]
+foreground = "#7fbbb3"
+
+[styles.list_item_selected_title]
+foreground = "#272e33"
+background = "#7fbbb3"
+bold = false
+
+[styles.list_item_selected_description]
+foreground = "#272e33"
+background = "#83c092"
+
+[styles.list_item_dimmed_title]
+foreground = "#7a8478"
+
+[styles.list_item_dimmed_description]
+foreground = "#859289"
+
+[styles.list_item_filter_match]
+foreground = "#e69875"
+underline = true
+
+[styles.response_content]
+foreground = "#a7c080"
+
+[styles.response_content_raw]
+foreground = "#83c092"
+
+[styles.response_content_headers]
+foreground = "#7fbbb3"
+
+[styles.response_selection]
+background = "#374145"
+
+[styles.response_cursor]
+foreground = "#dbbc7f"
+bold = true
+
+[colors]
+pane_border_focus_file = "#7fbbb3"
+pane_border_focus_requests = "#a7c080"
+pane_active_foreground = "#d3c6aa"
+modal_backdrop = "#1e2326"
+modal_input_background = "#272e33"
+modal_option = "#2e383c"
+
+[editor_metadata]
+comment_marker = "#7a8478"
+value = "#83c092"
+directive_default = "#d699b6"
+request_line = "#dbbc7f"
+request_separator = "#7fbbb3"
+
+[editor_metadata.directive_colors]
+graphql = "#d699b6"
+workflow = "#a7c080"
+custom = "#7a8478"
+
+[[header_segments]]
+background = "#7fbbb3"
+foreground = "#272e33"
+border = "#7fbbb3"
+accent = "#d3c6aa"
+
+[[header_segments]]
+background = "#dbbc7f"
+foreground = "#272e33"
+border = "#7fbbb3"
+
+[[command_segments]]
+background = "#1e2326"
+key = "#a7c080"
+text = "#d3c6aa"
+
+[[command_segments]]
+background = "#272e33"
+key = "#e69875"
+text = "#859289"

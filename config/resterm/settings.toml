@@ -1,0 +1,9 @@
+default_theme = 'gruvbox-dark'
+
+[layout]
+sidebar_width = 0.2
+editor_split = 0.6
+main_split = 'vertical'
+response_split = false
+response_split_ratio = 0.5
+response_orientation = 'vertical'

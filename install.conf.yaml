@@ -162,6 +162,10 @@
         glob: true
     # powerline
     ~/.config/powerline: config/powerline
+    # resterm
+    ~/.config/resterm:
+      path: config/resterm/*
+      glob: true
     #rustup
     ~/bin/rustit: config/rust/rustit
     # scripts

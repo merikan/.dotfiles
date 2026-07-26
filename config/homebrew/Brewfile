@@ -59,10 +59,11 @@ brew "yarn"                                         # JavaScript package manager
 ### HTTP/REST/GrapgQL Clients
 ### ---------------------------------------------------- ###
 
+brew "curl"                                         # curl
 brew "xh"                                           # friendly and fast tool for sending http requests
 brew "httpie"                                       # http command-line client
+brew "resterm"                                      #
 
-brew "curl"                                         # curl
 cask "bruno"                                        # opensource ide for exploring and testing api's
 cask "insomnia"                                     # superduper rest client
 cask "postman"                                      # nice rest client

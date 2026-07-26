@@ -1,0 +1,205 @@
+[metadata]
+name = "Catppuccin Frappé"
+description = "Soothing pastel theme for resterm (Frappé flavour)"
+author = "Peter Merikan"
+version = "1.0.0"
+tags = ["dark", "catppuccin", "frappe", "pastel"]
+
+[styles.header_title]
+foreground = "#8caaee"
+bold = true
+
+[styles.header_value]
+foreground = "#c6d0f5"
+
+[styles.header_separator]
+foreground = "#85c1dc"
+
+[styles.browser_border]
+border_color = "#51576d"
+
+[styles.command_bar]
+foreground = "#c6d0f5"
+background = "#292c3c"
+
+[styles.command_bar_hint]
+foreground = "#a6d189"
+bold = true
+
+[styles.status_bar]
+foreground = "#c6d0f5"
+background = "#232634"
+
+[styles.status_bar_info]
+foreground = "#b5bfe2"
+
+[styles.status_bar_key]
+foreground = "#ef9f76"
+bold = true
+
+[styles.status_bar_value]
+foreground = "#a5adce"
+
+[status_bar]
+base = "#303446"
+
+[status_bar.info]
+foreground = "#303446"
+background = "#8caaee"
+
+[status_bar.warn]
+foreground = "#303446"
+background = "#e5c890"
+
+[status_bar.error]
+foreground = "#303446"
+background = "#e78284"
+
+[status_bar.success]
+foreground = "#303446"
+background = "#a6d189"
+
+[status_bar.tests_pass]
+foreground = "#303446"
+background = "#81c8be"
+
+[status_bar.tests_fail]
+foreground = "#303446"
+background = "#ea999c"
+
+[status_bar.tests_error]
+foreground = "#303446"
+background = "#ca9ee6"
+
+[status_bar.file]
+foreground = "#c6d0f5"
+background = "#51576d"
+
+[status_bar.focus]
+foreground = "#c6d0f5"
+background = "#626880"
+
+[status_bar.mode]
+foreground = "#c6d0f5"
+background = "#737994"
+
+[status_bar.zoom]
+foreground = "#303446"
+background = "#99d1db"
+
+[status_bar.minimized]
+foreground = "#303446"
+background = "#a6d189"
+
+[status_bar.version]
+foreground = "#c6d0f5"
+background = "#414559"
+
+[status_bar.user]
+foreground = "#c6d0f5"
+background = "#51576d"
+
+[status_bar.host]
+foreground = "#b5bfe2"
+background = "#292c3c"
+
+[styles.tab_active]
+background = "#8caaee"
+foreground = "#303446"
+
+[styles.tab_inactive]
+foreground = "#838ba7"
+
+[styles.notification]
+background = "#292c3c"
+foreground = "#c6d0f5"
+
+[styles.error]
+background = "#e78284"
+foreground = "#303446"
+
+[styles.success]
+background = "#a6d189"
+foreground = "#303446"
+
+[styles.list_item_title]
+foreground = "#c6d0f5"
+
+[styles.list_item_description]
+foreground = "#8caaee"
+
+[styles.list_item_selected_title]
+foreground = "#303446"
+background = "#8caaee"
+bold = false
+
+[styles.list_item_selected_description]
+foreground = "#303446"
+background = "#81c8be"
+
+[styles.list_item_dimmed_title]
+foreground = "#838ba7"
+
+[styles.list_item_dimmed_description]
+foreground = "#737994"
+
+[styles.list_item_filter_match]
+foreground = "#ef9f76"
+underline = true
+
+[styles.response_content]
+foreground = "#a6d189"
+
+[styles.response_content_raw]
+foreground = "#81c8be"
+
+[styles.response_content_headers]
+foreground = "#8caaee"
+
+[styles.response_selection]
+background = "#414559"
+
+[styles.response_cursor]
+foreground = "#e5c890"
+bold = true
+
+[colors]
+pane_border_focus_file = "#8caaee"
+pane_border_focus_requests = "#a6d189"
+pane_active_foreground = "#c6d0f5"
+modal_backdrop = "#232634"
+modal_input_background = "#303446"
+modal_option = "#292c3c"
+
+[editor_metadata]
+comment_marker = "#838ba7"
+value = "#81c8be"
+directive_default = "#ca9ee6"
+request_line = "#e5c890"
+request_separator = "#8caaee"
+
+[editor_metadata.directive_colors]
+graphql = "#ca9ee6"
+workflow = "#a6d189"
+custom = "#838ba7"
+
+[[header_segments]]
+background = "#8caaee"
+foreground = "#303446"
+border = "#8caaee"
+accent = "#c6d0f5"
+
+[[header_segments]]
+background = "#e5c890"
+foreground = "#303446"
+border = "#8caaee"
+
+[[command_segments]]
+background = "#292c3c"
+key = "#a6d189"
+text = "#c6d0f5"
+
+[[command_segments]]
+background = "#232634"
+key = "#ef9f76"
+text = "#b5bfe2"

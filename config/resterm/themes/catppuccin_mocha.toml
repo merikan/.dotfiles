@@ -1,0 +1,205 @@
+[metadata]
+name = "Catppuccin Mocha"
+description = "Soothing pastel theme for resterm (Mocha flavour)"
+author = "Peter Merikan"
+version = "1.0.0"
+tags = ["dark", "catppuccin", "mocha", "pastel"]
+
+[styles.header_title]
+foreground = "#89b4fa"
+bold = true
+
+[styles.header_value]
+foreground = "#cdd6f4"
+
+[styles.header_separator]
+foreground = "#74c7ec"
+
+[styles.browser_border]
+border_color = "#45475a"
+
+[styles.command_bar]
+foreground = "#cdd6f4"
+background = "#181825"
+
+[styles.command_bar_hint]
+foreground = "#a6e3a1"
+bold = true
+
+[styles.status_bar]
+foreground = "#cdd6f4"
+background = "#11111b"
+
+[styles.status_bar_info]
+foreground = "#bac2de"
+
+[styles.status_bar_key]
+foreground = "#fab387"
+bold = true
+
+[styles.status_bar_value]
+foreground = "#a6adc8"
+
+[status_bar]
+base = "#1e1e2e"
+
+[status_bar.info]
+foreground = "#1e1e2e"
+background = "#89b4fa"
+
+[status_bar.warn]
+foreground = "#1e1e2e"
+background = "#f9e2af"
+
+[status_bar.error]
+foreground = "#1e1e2e"
+background = "#f38ba8"
+
+[status_bar.success]
+foreground = "#1e1e2e"
+background = "#a6e3a1"
+
+[status_bar.tests_pass]
+foreground = "#1e1e2e"
+background = "#94e2d5"
+
+[status_bar.tests_fail]
+foreground = "#1e1e2e"
+background = "#eba0ac"
+
+[status_bar.tests_error]
+foreground = "#1e1e2e"
+background = "#cba6f7"
+
+[status_bar.file]
+foreground = "#cdd6f4"
+background = "#45475a"
+
+[status_bar.focus]
+foreground = "#cdd6f4"
+background = "#585b70"
+
+[status_bar.mode]
+foreground = "#cdd6f4"
+background = "#6c7086"
+
+[status_bar.zoom]
+foreground = "#1e1e2e"
+background = "#89dceb"
+
+[status_bar.minimized]
+foreground = "#1e1e2e"
+background = "#a6e3a1"
+
+[status_bar.version]
+foreground = "#cdd6f4"
+background = "#313244"
+
+[status_bar.user]
+foreground = "#cdd6f4"
+background = "#45475a"
+
+[status_bar.host]
+foreground = "#bac2de"
+background = "#181825"
+
+[styles.tab_active]
+background = "#89b4fa"
+foreground = "#1e1e2e"
+
+[styles.tab_inactive]
+foreground = "#7f849c"
+
+[styles.notification]
+background = "#181825"
+foreground = "#cdd6f4"
+
+[styles.error]
+background = "#f38ba8"
+foreground = "#1e1e2e"
+
+[styles.success]
+background = "#a6e3a1"
+foreground = "#1e1e2e"
+
+[styles.list_item_title]
+foreground = "#cdd6f4"
+
+[styles.list_item_description]
+foreground = "#89b4fa"
+
+[styles.list_item_selected_title]
+foreground = "#1e1e2e"
+background = "#89b4fa"
+bold = false
+
+[styles.list_item_selected_description]
+foreground = "#1e1e2e"
+background = "#94e2d5"
+
+[styles.list_item_dimmed_title]
+foreground = "#7f849c"
+
+[styles.list_item_dimmed_description]
+foreground = "#6c7086"
+
+[styles.list_item_filter_match]
+foreground = "#fab387"
+underline = true
+
+[styles.response_content]
+foreground = "#a6e3a1"
+
+[styles.response_content_raw]
+foreground = "#94e2d5"
+
+[styles.response_content_headers]
+foreground = "#89b4fa"
+
+[styles.response_selection]
+background = "#313244"
+
+[styles.response_cursor]
+foreground = "#f9e2af"
+bold = true
+
+[colors]
+pane_border_focus_file = "#89b4fa"
+pane_border_focus_requests = "#a6e3a1"
+pane_active_foreground = "#cdd6f4"
+modal_backdrop = "#11111b"
+modal_input_background = "#1e1e2e"
+modal_option = "#181825"
+
+[editor_metadata]
+comment_marker = "#7f849c"
+value = "#94e2d5"
+directive_default = "#cba6f7"
+request_line = "#f9e2af"
+request_separator = "#89b4fa"
+
+[editor_metadata.directive_colors]
+graphql = "#cba6f7"
+workflow = "#a6e3a1"
+custom = "#7f849c"
+
+[[header_segments]]
+background = "#89b4fa"
+foreground = "#1e1e2e"
+border = "#89b4fa"
+accent = "#cdd6f4"
+
+[[header_segments]]
+background = "#f9e2af"
+foreground = "#1e1e2e"
+border = "#89b4fa"
+
+[[command_segments]]
+background = "#181825"
+key = "#a6e3a1"
+text = "#cdd6f4"
+
+[[command_segments]]
+background = "#11111b"
+key = "#fab387"
+text = "#bac2de"

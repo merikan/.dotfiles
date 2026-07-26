@@ -397,6 +397,8 @@ fi
   export PATH=$PATH:$HOME/.rd/bin  # put it last in the path
   source <(rdctl completion zsh)
 }
+# resterm
+export RESTERM_CONFIG_DIR="$XDG_CONFIG_HOME/resterm"
 
 # gitlab cli
 command -v glab >/dev/null 2>&1  && {

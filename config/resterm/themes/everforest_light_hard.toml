@@ -1,0 +1,205 @@
+[metadata]
+name = "Everforest Light Hard"
+description = "Comfortable green-tinted light palette (Hard contrast)"
+author = "Peter Merikan"
+version = "1.0.0"
+tags = ["light", "everforest", "hard", "nature"]
+
+[styles.header_title]
+foreground = "#3a94c5"
+bold = true
+
+[styles.header_value]
+foreground = "#5c6a72"
+
+[styles.header_separator]
+foreground = "#35a77c"
+
+[styles.browser_border]
+border_color = "#f2efdf"
+
+[styles.command_bar]
+foreground = "#5c6a72"
+background = "#f2efdf"
+
+[styles.command_bar_hint]
+foreground = "#8da101"
+bold = true
+
+[styles.status_bar]
+foreground = "#5c6a72"
+background = "#fffbef"
+
+[styles.status_bar_info]
+foreground = "#708089"
+
+[styles.status_bar_key]
+foreground = "#f57d26"
+bold = true
+
+[styles.status_bar_value]
+foreground = "#829181"
+
+[status_bar]
+base = "#f2efdf"
+
+[status_bar.info]
+foreground = "#fffbef"
+background = "#3a94c5"
+
+[status_bar.warn]
+foreground = "#fffbef"
+background = "#dfa000"
+
+[status_bar.error]
+foreground = "#fffbef"
+background = "#f85552"
+
+[status_bar.success]
+foreground = "#fffbef"
+background = "#8da101"
+
+[status_bar.tests_pass]
+foreground = "#fffbef"
+background = "#35a77c"
+
+[status_bar.tests_fail]
+foreground = "#fffbef"
+background = "#f85552"
+
+[status_bar.tests_error]
+foreground = "#fffbef"
+background = "#df69ba"
+
+[status_bar.file]
+foreground = "#5c6a72"
+background = "#f8f5e4"
+
+[status_bar.focus]
+foreground = "#5c6a72"
+background = "#f2efdf"
+
+[status_bar.mode]
+foreground = "#5c6a72"
+background = "#edeada"
+
+[status_bar.zoom]
+foreground = "#fffbef"
+background = "#35a77c"
+
+[status_bar.minimized]
+foreground = "#fffbef"
+background = "#8da101"
+
+[status_bar.version]
+foreground = "#5c6a72"
+background = "#f8f5e4"
+
+[status_bar.user]
+foreground = "#5c6a72"
+background = "#f2efdf"
+
+[status_bar.host]
+foreground = "#829181"
+background = "#f2efdf"
+
+[styles.tab_active]
+background = "#3a94c5"
+foreground = "#fffbef"
+
+[styles.tab_inactive]
+foreground = "#939f91"
+
+[styles.notification]
+background = "#f8f5e4"
+foreground = "#5c6a72"
+
+[styles.error]
+background = "#f85552"
+foreground = "#fffbef"
+
+[styles.success]
+background = "#8da101"
+foreground = "#fffbef"
+
+[styles.list_item_title]
+foreground = "#5c6a72"
+
+[styles.list_item_description]
+foreground = "#3a94c5"
+
+[styles.list_item_selected_title]
+foreground = "#fffbef"
+background = "#3a94c5"
+bold = false
+
+[styles.list_item_selected_description]
+foreground = "#fffbef"
+background = "#35a77c"
+
+[styles.list_item_dimmed_title]
+foreground = "#939f91"
+
+[styles.list_item_dimmed_description]
+foreground = "#a6b0a0"
+
+[styles.list_item_filter_match]
+foreground = "#f57d26"
+underline = true
+
+[styles.response_content]
+foreground = "#8da101"
+
+[styles.response_content_raw]
+foreground = "#35a77c"
+
+[styles.response_content_headers]
+foreground = "#3a94c5"
+
+[styles.response_selection]
+background = "#f2efdf"
+
+[styles.response_cursor]
+foreground = "#dfa000"
+bold = true
+
+[colors]
+pane_border_focus_file = "#3a94c5"
+pane_border_focus_requests = "#8da101"
+pane_active_foreground = "#5c6a72"
+modal_backdrop = "#f2efdf"
+modal_input_background = "#fffbef"
+modal_option = "#f8f5e4"
+
+[editor_metadata]
+comment_marker = "#939f91"
+value = "#35a77c"
+directive_default = "#df69ba"
+request_line = "#dfa000"
+request_separator = "#3a94c5"
+
+[editor_metadata.directive_colors]
+graphql = "#df69ba"
+workflow = "#8da101"
+custom = "#939f91"
+
+[[header_segments]]
+background = "#3a94c5"
+foreground = "#fffbef"
+border = "#3a94c5"
+accent = "#5c6a72"
+
+[[header_segments]]
+background = "#dfa000"
+foreground = "#fffbef"
+border = "#3a94c5"
+
+[[command_segments]]
+background = "#f2efdf"
+key = "#8da101"
+text = "#5c6a72"
+
+[[command_segments]]
+background = "#fffbef"
+key = "#f57d26"
+text = "#829181"

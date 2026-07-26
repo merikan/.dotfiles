@@ -1,0 +1,205 @@
+[metadata]
+name = "Gruvbox Light"
+description = "Retro light color scheme for resterm HTTP client"
+author = "Peter Merikan"
+version = "1.0.0"
+tags = ["light", "gruvbox", "retro"]
+
+[styles.header_title]
+foreground = "#076678"
+bold = true
+
+[styles.header_value]
+foreground = "#282828"
+
+[styles.header_separator]
+foreground = "#076678"
+
+[styles.browser_border]
+border_color = "#d5c4a1"
+
+[styles.command_bar]
+foreground = "#282828"
+background = "#f9f5d7"
+
+[styles.command_bar_hint]
+foreground = "#79740e"
+bold = true
+
+[styles.status_bar]
+foreground = "#282828"
+background = "#fbf1c7"
+
+[styles.status_bar_info]
+foreground = "#504945"
+
+[styles.status_bar_key]
+foreground = "#af3a03"
+bold = true
+
+[styles.status_bar_value]
+foreground = "#3c3836"
+
+[status_bar]
+base = "#f9f5d7"
+
+[status_bar.info]
+foreground = "#fbf1c7"
+background = "#076678"
+
+[status_bar.warn]
+foreground = "#fbf1c7"
+background = "#b57614"
+
+[status_bar.error]
+foreground = "#fbf1c7"
+background = "#9d0006"
+
+[status_bar.success]
+foreground = "#fbf1c7"
+background = "#79740e"
+
+[status_bar.tests_pass]
+foreground = "#fbf1c7"
+background = "#427b58"
+
+[status_bar.tests_fail]
+foreground = "#fbf1c7"
+background = "#9d0006"
+
+[status_bar.tests_error]
+foreground = "#fbf1c7"
+background = "#8f3f71"
+
+[status_bar.file]
+foreground = "#282828"
+background = "#ebdbb2"
+
+[status_bar.focus]
+foreground = "#282828"
+background = "#d5c4a1"
+
+[status_bar.mode]
+foreground = "#282828"
+background = "#bdae93"
+
+[status_bar.zoom]
+foreground = "#fbf1c7"
+background = "#427b58"
+
+[status_bar.minimized]
+foreground = "#fbf1c7"
+background = "#79740e"
+
+[status_bar.version]
+foreground = "#282828"
+background = "#ebdbb2"
+
+[status_bar.user]
+foreground = "#282828"
+background = "#d5c4a1"
+
+[status_bar.host]
+foreground = "#3c3836"
+background = "#f9f5d7"
+
+[styles.tab_active]
+background = "#076678"
+foreground = "#fbf1c7"
+
+[styles.tab_inactive]
+foreground = "#928374"
+
+[styles.notification]
+background = "#ebdbb2"
+foreground = "#282828"
+
+[styles.error]
+background = "#9d0006"
+foreground = "#fbf1c7"
+
+[styles.success]
+background = "#79740e"
+foreground = "#fbf1c7"
+
+[styles.list_item_title]
+foreground = "#282828"
+
+[styles.list_item_description]
+foreground = "#076678"
+
+[styles.list_item_selected_title]
+foreground = "#fbf1c7"
+background = "#076678"
+bold = false
+
+[styles.list_item_selected_description]
+foreground = "#fbf1c7"
+background = "#427b58"
+
+[styles.list_item_dimmed_title]
+foreground = "#928374"
+
+[styles.list_item_dimmed_description]
+foreground = "#a89984"
+
+[styles.list_item_filter_match]
+foreground = "#af3a03"
+underline = true
+
+[styles.response_content]
+foreground = "#79740e"
+
+[styles.response_content_raw]
+foreground = "#427b58"
+
+[styles.response_content_headers]
+foreground = "#076678"
+
+[styles.response_selection]
+background = "#d5c4a1"
+
+[styles.response_cursor]
+foreground = "#b57614"
+bold = true
+
+[colors]
+pane_border_focus_file = "#076678"
+pane_border_focus_requests = "#79740e"
+pane_active_foreground = "#282828"
+modal_backdrop = "#f9f5d7"
+modal_input_background = "#fbf1c7"
+modal_option = "#ebdbb2"
+
+[editor_metadata]
+comment_marker = "#928374"
+value = "#427b58"
+directive_default = "#8f3f71"
+request_line = "#b57614"
+request_separator = "#076678"
+
+[editor_metadata.directive_colors]
+graphql = "#8f3f71"
+workflow = "#79740e"
+custom = "#928374"
+
+[[header_segments]]
+background = "#076678"
+foreground = "#fbf1c7"
+border = "#076678"
+accent = "#282828"
+
+[[header_segments]]
+background = "#b57614"
+foreground = "#fbf1c7"
+border = "#076678"
+
+[[command_segments]]
+background = "#f9f5d7"
+key = "#79740e"
+text = "#282828"
+
+[[command_segments]]
+background = "#fbf1c7"
+key = "#af3a03"
+text = "#3c3836"
