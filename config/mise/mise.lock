@@ -50,6 +50,10 @@ provenance = "github-attestations"
 version = "1.0.1"
 backend = "dmg:Magnus-Gille/sagascript"
 
+[[tools."dmg:block/buzz"]]
+version = "0.5.0"
+backend = "dmg:block/buzz"
+
 [[tools.editorconfig-checker]]
 version = "3.8.0"
 backend = "aqua:editorconfig-checker/editorconfig-checker"
