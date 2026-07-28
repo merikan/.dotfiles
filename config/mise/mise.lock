@@ -46,6 +46,10 @@ url = "https://github.com/aquaproj/aqua/releases/download/v2.62.1/aqua_windows_a
 url_api = "https://api.github.com/repos/aquaproj/aqua/releases/assets/484796775"
 provenance = "github-attestations"
 
+[[tools."dmg:Magnus-Gille/sagascript"]]
+version = "1.0.1"
+backend = "dmg:Magnus-Gille/sagascript"
+
 [[tools.editorconfig-checker]]
 version = "3.8.0"
 backend = "aqua:editorconfig-checker/editorconfig-checker"

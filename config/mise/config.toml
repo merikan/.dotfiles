@@ -1,5 +1,6 @@
 [tools]
 aqua = "latest"
+"dmg:Magnus-Gille/sagascript" = "latest"
 editorconfig-checker = "latest"
 gradle = "latest"
 java = "latest"
