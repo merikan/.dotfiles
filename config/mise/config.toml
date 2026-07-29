@@ -3,6 +3,7 @@ aqua = "latest"
 "dmg:Magnus-Gille/sagascript" = "latest"
 "dmg:block/buzz" = "latest"
 editorconfig-checker = "latest"
+"github:versenilvis/iris" = "latest"
 gradle = "latest"
 java = "latest"
 kotlin = { version = "latest", asset_pattern = "kotlin-compiler-*.zip", bin_path = "kotlinc/bin" }

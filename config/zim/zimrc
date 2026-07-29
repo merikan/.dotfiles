@@ -8,9 +8,9 @@ zmodule environment
 # applies correct bindkeys for input events.
 zmodule input
 # additional completion definitions for zsh.
-zmodule zsh-users/zsh-completions
+# zmodule zsh-users/zsh-completions
 # fish-like autosuggestions for zsh.
-zmodule zsh-users/zsh-autosuggestions
+# zmodule zsh-users/zsh-autosuggestions
 # fish-like syntax highlighting for zsh.
 # zsh-users/zsh-syntax-highlighting must be sourced after completion
 zmodule zsh-users/zsh-syntax-highlighting
