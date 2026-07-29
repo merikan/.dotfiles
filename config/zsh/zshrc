@@ -212,11 +212,11 @@ ssh-add -l >/dev/null 2>&1 || {
   find ~/.ssh -type f -name 'id_*' ! -name '*.pub' -exec ssh-add "${keychain}" -q {} \;
 }
 
-# Iris Autocomplete
-command -v iris >/dev/null 2>&1 && {
-  alias i="iris"
-  eval "$(iris init zsh)"
-}
+# # Iris Autocomplete
+# command -v iris >/dev/null 2>&1 && {
+#   alias i="iris"
+#   eval "$(iris init zsh)"
+# }
 
 # fast cd jumping
 command -v zoxide >/dev/null 2>&1 && {
