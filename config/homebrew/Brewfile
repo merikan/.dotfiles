@@ -32,7 +32,7 @@ brew "php"                                          # php
 brew "python"                                       # python programming
 brew "pip-completion"
 brew "ruby"                                         # ruby environment
-brew "rustup-init"                                  # rustup installer
+brew "rustup"                                       # rust toolchain
 brew "oven-sh/bun/bun"                              # fast JavaScript runtime, bundler, test runner, and package manager
 cask "flutter"                                      # ui toolkit for flutter
 
