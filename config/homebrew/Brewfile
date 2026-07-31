@@ -166,6 +166,7 @@ brew "git"                                          # cli client for git
 brew "git-branchless"                               # some nice git commands
 brew "git-cliff"                                    # changelog generator that follows conventional commit specifications
 brew "git-delta"                                    # syntax-highlighting pager for git, diff, and grep output
+brew "git-filter-repo"                              # clean up git repositories
 brew "git-graph"                                    # nice git graph
 brew "k1LoW/tap/git-wt", trusted: true              # git worktrees like a pro
 brew "gitui"                                        # an awesome tui for git
