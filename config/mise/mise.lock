@@ -47,11 +47,11 @@ url_api = "https://api.github.com/repos/aquaproj/aqua/releases/assets/484796775"
 provenance = "github-attestations"
 
 [[tools."dmg:Magnus-Gille/sagascript"]]
-version = "1.0.1"
+version = "1.0.2"
 backend = "dmg:Magnus-Gille/sagascript"
 
 [[tools."dmg:block/buzz"]]
-version = "0.5.0"
+version = "0.5.2"
 backend = "dmg:block/buzz"
 
 [[tools.editorconfig-checker]]
@@ -172,6 +172,14 @@ backend = "core:java"
 
 [tools.java.options]
 shorthand_vendor = "temurin"
+
+[tools.java."platforms.linux-arm64"]
+checksum = "sha256:f82aeb1d5b0ddb93d3bd81c20948bc560c0758993157202424c17e805e2effbb"
+url = "https://github.com/adoptium/temurin26-binaries/releases/download/jdk-26.0.2%2B10/OpenJDK26U-jdk_aarch64_linux_hotspot_26.0.2_10.tar.gz"
+
+[tools.java."platforms.linux-x64"]
+checksum = "sha256:56f768372f6ca1e2eb4c5f46b78f627949e8dcfe9c9723926cf45a45faf35802"
+url = "https://github.com/adoptium/temurin26-binaries/releases/download/jdk-26.0.2%2B10/OpenJDK26U-jdk_x64_linux_hotspot_26.0.2_10.tar.gz"
 
 [tools.java."platforms.macos-arm64"]
 checksum = "sha256:4c9255ed5a9fa84ad6e25675bac6ba6a4906fc7878169d7369a1424157b50256"
