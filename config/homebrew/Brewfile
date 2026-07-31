@@ -349,6 +349,7 @@ brew "aerc"                                         # a tui email client in the 
 cask "wavebox"                                      # desktop app for web (gmail)
 cask "thunderbird"                                  # free email application from Mozilla
 # mastodon
+mas "Flare", id:6476077738                          # multi-protocol client
 brew "toot"                                         # mastodon tui client
 brew "tut"                                          # mastodon tui client
 cask "whalebird"                                    # mastodon client
