@@ -83,7 +83,7 @@ brew "charmbracelet/tap/crush", trusted: true       # ai coding agent for your t
 brew "charmbracelet/tap/mods", trusted: true        # ai on the command line
 brew "fabric-ai"                                    # an open-source framework for augmenting humans using ai
 brew "pi-coding-agent"                              # a minimal agent harness
-
+cask "handy"                                        # a foss speech-to-text application, works completely offline
 brew "arimxyer/tap/models", trusted: true           # tui for browsing ai models
 brew "mostlygeek/llama-swap/llama-swap", trusted: true # model swapping for any local llm-server
 brew "ollama"                                       # create, run, and share large language models (llms)
