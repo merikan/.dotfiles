@@ -69,3 +69,5 @@ local.properties
 .worksheet
 
 
+
+**/.claude/settings.local.json
