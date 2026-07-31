@@ -9,6 +9,7 @@ Rules marked "if supported" apply only when your harness has that capability; sk
 - Begin your FIRST response of each session with the phrase '[Global AGENTS.md Active]'. Do not repeat it in later responses.
 - Before writing code for a task, check whether an available skill matches it; if one does, invoke it (if supported).
 - On long tasks, periodically re-check the plan and these instructions. After compaction, interruption, or resuming a session, re-state the active constraints before continuing.
+- When the `/grill-me` skill is invoked, before running it ask whether `/grill-with-docs` fits better instead (same grilling session, but also produces ADRs and a glossary via `/domain-modeling` as it goes). If the user says yes, run `/grill-with-docs` in place of `/grill-me` for that invocation. Otherwise proceed with `/grill-me` as invoked.
 
 ## Response Style
 
