@@ -182,6 +182,7 @@ brew "tig"                                          # text-mode interface for gi
 cask "gitkraken"                                    # Git GUI client for Windows, Mac and Linux
 cask "gitup-app"                                    # awesome Git Gui Client
 cask "sourcetree"                                   # awesome git client
+brew "agavra/tap/tuicr", trusted: true              # a code review tui with vim keybindings
 
 ### ---------------------------------------------------- ###
 ### Terminal & Shell Environment
