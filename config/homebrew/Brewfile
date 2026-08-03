@@ -260,6 +260,7 @@ brew "merikan/tools/gdu-go", trusted: true          # go disk usage
 brew "ncdu"                                         # a disk usage analyzer with an ncurses interface
 brew "dust"                                         # a better du built in rust
 brew "dfc"                                          # displays file system space usage using graphs and colors
+brew "mole"                                         # clean, analyze, optimize macos
 # compression
 brew "7zip"                                         # file archiver with a high compression ratio
 brew "unar"                                         # command-line unarchiving tools supporting multiple formats
