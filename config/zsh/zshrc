@@ -203,6 +203,17 @@ LESS_TERMCAP_ZW=$'\e[75m'
 MANPAGER='less'
 set +a
 
+# homebrew
+[[ -s "${HOMEBREW_PREFIX}/bin/brew" ]] && {
+  export PATH="${HOMEBREW_PREFIX}/bin:${HOMEBREW_PREFIX}/sbin${PATH+:$PATH}"
+  export HOMEBREW_CELLAR="${HOMEBREW_PREFIX}/Cellar"
+  export HOMEBREW_REPOSITORY="${HOMEBREW_PREFIX}/Homebrew"
+  export MANPATH="${HOMEBREW_PREFIX}/share/man${MANPATH+:$MANPATH}:"
+  export INFOPATH="${HOMEBREW_PREFIX}/share/info:${INFOPATH:-}"
+  export FPATH="${HOMEBREW_PREFIX}/share/zsh/site-functions:${FPATH}"
+  export MAS_NO_AUTO_INDEX=1 # ignore "found app that is not indexed in Spotlight"
+}
+
 # ssh
 ssh-add -l >/dev/null 2>&1 || {
   # start agent
@@ -290,16 +301,6 @@ command -v fzf >/dev/null 2>&1  && {
   command -v ag >/dev/null 2>&1 && export FZF_DEFAULT_COMMAND='ag -g ""'
 }
 
-# homebrew
-[[ -s "${HOMEBREW_PREFIX}/bin/brew" ]] && {
-  export PATH="${HOMEBREW_PREFIX}/bin:${HOMEBREW_PREFIX}/sbin${PATH+:$PATH}"
-  export HOMEBREW_CELLAR="${HOMEBREW_PREFIX}/Cellar"
-  export HOMEBREW_REPOSITORY="${HOMEBREW_PREFIX}/Homebrew"
-  export MANPATH="${HOMEBREW_PREFIX}/share/man${MANPATH+:$MANPATH}:"
-  export INFOPATH="${HOMEBREW_PREFIX}/share/info:${INFOPATH:-}"
-  export FPATH="${HOMEBREW_PREFIX}/share/zsh/site-functions:${FPATH}"
-  export MAS_NO_AUTO_INDEX=1 # ignore "found app that is not indexed in Spotlight"
-}
 
 # Android Studio doesn't honour XDG though it support symlinks
 # create directory, if not exists, and then symlink
