@@ -131,7 +131,7 @@ cask "ngrok"                                        # reverse proxy, secure intr
 cask "mitmproxy"                                    # a free and open source interactive HTTPS proxy
 brew "nmap"                                         # port scanning utility for large networks
 brew "naabu"                                        # a fast port scanner
-brew "heymaikol/tap/network-doctor"                 # tui that pinpoints dns, tcp, tls, http, and proxy failures
+cask "heymaikol/tap/network-doctor", trusted: true  # tui that pinpoints dns, tcp, tls, http, and proxy failures
 
 brew "merikan/tools/clair-scanner", trusted: true   # scan local docker images
 brew "grype"                                        # vulnerability scanner for container images and filesystems
@@ -157,11 +157,11 @@ cask "keepassxc"                                    # a great FOSS Password Mana
 brew "rustup"                                       # rust toolchain
 brew "go"                                           # golang sdk
 brew "java"                                         # java
-brew "wimdeblauwe/ttcli/ttcli"                      # cli interface to make working with thymeleaf projects easier
+brew "wimdeblauwe/ttcli/ttcli", trusted: true       # cli interface to make working with thymeleaf projects easier
 cask "flutter"                                      # ui toolkit for flutter
 brew "fvm"                                          # manage flutter sdk versions per project
 brew "lua"                                          # a powerful, efficient, lightweight, embeddable scripting language
-brew "oven-sh/bun/bun"                              # fast JavaScript runtime, bundler, test runner, and package manager
+brew "bun"                                          # fast JavaScript runtime, bundler, test runner, and package manager
 brew "nvm"                                          # manage multiple Node.js versions
 brew "php"                                          # php
 brew "python"                                       # python programming
@@ -247,12 +247,12 @@ brew "helm"                                         # helm packagemanager for ku
 brew "kustomize"                                    # kustomize: template-free customization of application configuration
 
 brew "ctop"                                         # top-like interface for container metrics
-brew "boz/repo/kail"                                # kubernetes log viewer
+brew "boz/repo/kail", trusted: true                 # kubernetes log viewer
 brew "dive"                                         # exploring a docker image, layer contents, and discovering ways to shrink your Docker image size.
 brew "deveshctl/tap/layerx", trusted: true          # terminal-based docker image layer inspector
 brew "jesseduffield/lazydocker/lazydocker", trusted: true # the lazier way to manage everything docker
 brew "k9s"                                          # awesome tui for k8s
-brew "janosmiko/tap/lfk"                            # yazi-inspired tui for k8s
+brew "janosmiko/tap/lfk", trusted: true             # yazi-inspired tui for k8s
 brew "kompose"                                      # a conversion tool to go from Docker Compose to Kubernetes
 brew "krew"                                         # package manager for kubectl plugins
 brew "kubectl"                                      # kubernetes controller
@@ -268,7 +268,7 @@ brew "skopeo"                                       # work with container regist
 brew "johanhaleby/kubetail/kubetail", trusted: true # tail Kubernetes logs from multiple pods
 brew "stern"                                        # log tailing for Kubernetes
 brew "ytt"                                          # yaml templating tool that works on yaml structure instead of text
-brew "buildpacks/tap/pack"                          # a cli for building apps using cloud native buildpacks
+brew "buildpacks/tap/pack", trusted: true           # a cli for building apps using cloud native buildpacks
 
 brew "devcontainer"                                 # devcontainer cli
 cask "devpod"                                       # an implementation of devcontainers
@@ -340,7 +340,7 @@ brew "pre-commit"                                   # a framework for managing a
 
 brew "git-cliff"                                    # changelog generator that follows conventional commit specifications
 brew "onefetch"                                     # git project information tool
-brew "sigstore/tap/gitsign", trusted: true          # keyless sigstore to sign git commits
+brew "gitsign"                                      # keyless sigstore to sign git commits
 
 ### ---------------------------------------------------- ###
 ### OS Productivity & Utilities
@@ -361,7 +361,7 @@ cask "karabiner-elements"                           # keyboard customizer for ma
 cask "leader-key"                                   # a launcher for macos
 cask "raycast"                                      # supercharged productivity
 cask "tomatobar"                                    # another pomodoro app
-cask "tonisives/tap/ovim"                           # system wide vim mode
+cask "tonisives/tap/ovim", trusted: true            # system wide vim mode
 cask "xbar"                                         # put the output from any script or program in your Mac OS X Menu Bar
 
 ### ---------------------------------------------------- ###
