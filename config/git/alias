@@ -195,7 +195,7 @@
   lazy = !lazygit
   rb = rebase
   rbi = rebase -i --committer-date-is-author-date
-  rbc = rebase --contintue
+  rbc = rebase --continue
   rba = rebase --abort
   rbd = rebase develop
   rbm = rebase main
