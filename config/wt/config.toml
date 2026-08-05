@@ -1,0 +1,40 @@
+# wt configuration file
+# See: https://github.com/timvw/wt#configuration
+
+# Root directory for worktrees (default: ~/dev/worktrees)
+root = "~/src/worktrees"
+
+# Worktree placement strategy
+# Options: global, sibling-repo, parent-branches, parent-worktrees,
+#          parent-dotdir, inside-dotdir, custom
+strategy = "inside-dotdir"
+
+# Custom pattern (used when strategy = "custom", or to override any strategy's default)
+# Available variables: {.worktreeRoot}, {.repo.Name}, {.repo.Main},
+#                      {.repo.Owner}, {.repo.Host}, {.branch},
+#                      {.env.VARNAME} (access environment variables, e.g. {.env.USER})
+# inside-dotdir defaults to {.repo.Main}/.worktrees/{.branch}; override the
+# folder name to ".wt" instead of ".worktrees":
+pattern = "{.repo.Main}/.wt/{.branch}"
+
+# Separator replaces "/" and "\" in template value variables ({.branch}, {.repo.Owner}, {.env.*})
+# Default is "/" (no transformation — slashes create subdirectories).
+# Set to "-" or "_" for flat paths (e.g. feat/foo -> feat-foo).
+# Does NOT affect path variables ({.repo.Main}, {.worktreeRoot}).
+# separator = "/"
+
+# Example: group worktrees by a FEATURE environment variable
+# strategy = "custom"
+# pattern = "{.worktreeRoot}/{.env.FEATURE}/{.repo.Name}"
+
+# Hooks — run commands before/after wt operations
+# Available env vars in hooks: $WT_PATH, $WT_BRANCH, $WT_MAIN,
+#                              $WT_REPO_NAME, $WT_REPO_HOST, $WT_REPO_OWNER
+# Pre-hooks abort on failure; post-hooks warn only.
+# Set WT_HOOKS_DISABLED=1 to skip all hooks.
+# NOTE: Always quote path variables ("$WT_PATH") to handle spaces in paths.
+#
+# [hooks]
+# post_create = ["test -f \"$WT_MAIN/.env\" && cp \"$WT_MAIN/.env\" \"$WT_PATH/.env\" || true"]
+# post_checkout = ["cd \"$WT_PATH\" && npm install"]
+# pre_remove = ["echo \"Removing $WT_PATH\""]

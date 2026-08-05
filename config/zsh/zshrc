@@ -288,6 +288,9 @@ fi
 # git-wt
 command -v git-wt >/dev/null 2>&1 && source <(git wt --init zsh --nocd)
 
+# wt
+command -v wt >/dev/null 2>&1 && eval "$(wt shellenv)"
+
 # fzf for fuzzy file mathing. (https://github.com/junegunn/fzf)
 command -v fzf >/dev/null 2>&1  && {
   [[ -d "$XDG_CONFIG_HOME"/fzf/shell ]] && {
@@ -441,4 +444,5 @@ export PATH=$HOME/bin:$HOME/.local/bin:$PATH
 if [[ "$PROFILE_STARTUP" == true ]]; then
   zprof > $HOME/zprofile.log
 fi
+
 

@@ -201,6 +201,10 @@
     ~/.config/wezterm:
       path: config/wezterm/*
       glob: true
+    # wt
+    ~/.config/wt:
+        path: config/wt/*
+        glob: true
     # yazi
     ~/.config/yazi:
         path: config/yazi/*
