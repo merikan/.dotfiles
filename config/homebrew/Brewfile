@@ -131,6 +131,7 @@ cask "ngrok"                                        # reverse proxy, secure intr
 cask "mitmproxy"                                    # a free and open source interactive HTTPS proxy
 brew "nmap"                                         # port scanning utility for large networks
 brew "naabu"                                        # a fast port scanner
+brew "heymaikol/tap/network-doctor"                 # tui that pinpoints dns, tcp, tls, http, and proxy failures
 
 brew "merikan/tools/clair-scanner", trusted: true   # scan local docker images
 brew "grype"                                        # vulnerability scanner for container images and filesystems
@@ -201,7 +202,6 @@ brew "xh"                                           # friendly and fast tool for
 brew "httpie"                                       # http command-line client
 
 brew "resterm"                                      # http terminal api client for http/graphql/grpc
-
 cask "bruno"                                        # opensource ide for exploring and testing api's
 cask "insomnia"                                     # superduper rest client
 cask "postman"                                      # nice rest client
@@ -223,6 +223,7 @@ brew "aider"                                        # ai, vibe-coding
 brew "charmbracelet/tap/crush", trusted: true       # ai coding agent for your terminal f.k.a opencode
 # other
 brew "herdr"                                        # agent multiplexer that lives in your terminal
+brew "llm"                                          # access large language models from the command-line
 brew "charmbracelet/tap/mods", trusted: true        # ai on the command line
 brew "fabric-ai"                                    # an open-source framework for augmenting humans using ai
 # speech-to-text
@@ -346,7 +347,7 @@ brew "sigstore/tap/gitsign", trusted: true          # keyless sigstore to sign g
 ### ---------------------------------------------------- ###
 brew "FelixKratz/formulae/borders", trusted: true, restart_service: :changed # add colored borders to user windows
 brew "felixkratz/formulae/sketchybar", trusted: true # macOS status bar
-brew "jackielii/tap/skhd-zig", trusted: true        # simple hotkey daemon for macos
+cask "jackielii/tap/skhd-zig", trusted: true        # simple hotkey daemon for macos
 brew "mackup"                                       # keep application settings in sync
 brew "mas"                                          # Mac App Store command-line interface
 brew "watch"                                        # execute a program periodically and watch the output
@@ -435,6 +436,7 @@ cask "discord"                                      # group-chatting platform
 ### ---------------------------------------------------- ###
 brew "mysql-client"                                 # mysql client
 cask "dbeaver-community"                            # universal database tool
+cask "tabularisdb/tabularis/tabularis", trusted: true # desktop sql workspace most databases
 
 cask "utm"                                          # virtual machines ui using qemu
 cask "vagrant"                                      # vm management
