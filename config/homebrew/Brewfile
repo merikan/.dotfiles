@@ -321,6 +321,7 @@ brew "agavra/tap/tuicr", trusted: true              # a code review tui with vim
 brew "hunk"                                         # review-first terminal diff viewer for agent-authored changesets
 
 brew "lazygit"                                      # simple terminal UI for git commands
+brew "tareqmy/tap/gitwig", trusted: true            # a rust based tui an alternative to sourcetree
 brew "gitui"                                        # an awesome tui for git
 brew "tig"                                          # text-mode interface for git
 cask "gitup-app"                                    # awesome Git Gui Client
