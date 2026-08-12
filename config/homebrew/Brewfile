@@ -229,9 +229,10 @@ brew "fabric-ai"                                    # an open-source framework f
 # speech-to-text
 cask "handy"                                        # a foss speech-to-text application, works completely offline
 # local llm models
+brew "ollama"                                       # create, run, and share large language models (llms)
+brew "llama.cpp"                                    # run local models with speed
 brew "arimxyer/tap/models", trusted: true           # tui for browsing ai models
 brew "mostlygeek/llama-swap/llama-swap", trusted: true # model swapping for any local llm-server
-brew "ollama"                                       # create, run, and share large language models (llms)
 brew "alexsjones/llmserve/llmserve", trusted: true  # simple tui for serving local llm models
 brew "llmfit"                                       # find wich llm models runs on your hardware
 
