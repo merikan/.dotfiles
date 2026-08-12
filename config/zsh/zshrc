@@ -223,6 +223,12 @@ ssh-add -l >/dev/null 2>&1 || {
   find ~/.ssh -type f -name 'id_*' ! -name '*.pub' -exec ssh-add "${keychain}" -q {} \;
 }
 
+# Rust
+[[ -d "$HOME/.cargo/bin" ]] && {
+  source "$HOME/.cargo/env"
+  rustup completions zsh > $HOME/.zfunc/_rustup
+}
+
 # fast cd jumping
 command -v zoxide >/dev/null 2>&1 && {
   eval "$(zoxide init zsh)"
@@ -323,12 +329,6 @@ export ANDROID_SDK="$ANDROID_HOME"
 # Installing go with homebrew instead of gvm
 # use gvm - Go Version Manager
 #[[ -s "$HOME/.gvm/scripts/gvm" ]]  && source "$HOME/.gvm/scripts/gvm"
-
-# Rust
-[[ -d "$HOME/.cargo/bin" ]] && {
-  source "$HOME/.cargo/env"
-  rustup completions zsh > $HOME/.zfunc/_rustup
-}
 
 # bun
 [[ -s "$HOME/.bun" ]] && {
