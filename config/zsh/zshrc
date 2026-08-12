@@ -285,9 +285,6 @@ if [[ "${UNAME_SYSTEM}" != "Darwin" ]]; then
   command -v argocd >/dev/null 2>&1 && source <(argocd completion zsh)
 fi
 
-# git-wt
-command -v git-wt >/dev/null 2>&1 && source <(git wt --init zsh --nocd)
-
 # wt
 command -v wt >/dev/null 2>&1 && eval "$(wt shellenv)"
 

@@ -335,7 +335,6 @@ brew "git-branchless"                               # some nice git commands
 brew "git-filter-repo"                              # clean up git repositories
 brew "git-graph"                                    # nice git graph
 brew "timvw/tap/wt", trusted: true                  # a fast, simple git worktree helper
-brew "k1LoW/tap/git-wt", trusted: true              # git worktrees like a pro
 
 brew "lefthook"                                     # a fast git hook manager
 brew "hk"                                           # a git-hook manager by jdx
