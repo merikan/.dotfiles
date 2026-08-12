@@ -103,6 +103,18 @@
 # http://haacked.com/archive/2014/07/28/github-flow-aliases/
 # http://nuclearsquid.com/writings/git-tricks-tips-workflows/
 
+[gig]
+  root-dir = ~/src/
+[gig "category.oss"]
+  default = true
+  pattern =
+[gig "category.personal"]
+  pattern = ^github\\.com/merikan/
+[gig "category.mycompany"]
+  pattern = ^git\\.mycompany\\.se/
+[gig "category.tryit"]
+  pattern =
+
 [ghq]
 	root = ~/Repos
 [branch]

@@ -287,6 +287,11 @@ fi
 
 # wt
 command -v wt >/dev/null 2>&1 && eval "$(wt shellenv)"
+# gig
+command -v gig >/dev/null 2>&1  && {
+  source <(gig completion zsh)
+  eval "$(gig shellenv zsh)"
+}
 
 # fzf for fuzzy file mathing. (https://github.com/junegunn/fzf)
 command -v fzf >/dev/null 2>&1  && {
