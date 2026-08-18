@@ -1,0 +1,25 @@
+{
+  "extends": [
+    "nolabs-ai/pi",
+    "local"
+  ],
+  "meta": {
+    "name": "pi-local"
+    "version": "1.0.0",
+    "description": "local pi profile",
+    "author": "Peter Merikan"
+  },
+  "meta": {
+    "name": "pi-local"
+  },
+  "groups": {
+    "include": []
+  },
+  "workdir": {
+    "access": "readwrite"
+  },
+  "filesystem": {
+    "allow": [],
+    "read": []
+  }
+}

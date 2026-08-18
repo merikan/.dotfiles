@@ -48,7 +48,10 @@ alias ln='ln -i'
 alias ncdu='ncdu --color dark' # NCurses Disk Usage
 command -v ccat >/dev/null 2>&1 && alias cat='ccat' # colorizing cat
 command -v dfc >/dev/null 2>&1 && alias df='dfc' # colorized df
-
+# nono
+alias nono-claude='nono run --allow-cwd --profile claude-local -- claude'
+alias nono-opencode='nono run --allow-cwd --profile claude-local -- opencode'
+alias nono-pi='nono run --allow-cwd --profile claude-local -- pi'
 #tmux
 alias tm='tmux'
 #tmux start; attach to an existing session or restore resurrect https://github.com/tmux-plugins/tmux-resurrect/issues/139#issuecomment-241715139

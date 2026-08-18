@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "name": "java-tools",
+    "version": "1.0.0",
+    "description": "Java tools (maven,gradle)",
+    "author": "Peter Merikan"
+  },
+  "filesystem": {
+    "allow": [
+      "~/.m2/repository",
+      "~/.gradle"  // excessively elevated privileges
+      // "~/.gradle/wrapper/dists"
+
+
+    ],
+    "read": [
+      "~/.config/jgit"
+    ],
+    "read_file": [
+      "~/.m2/settings.xml"
+    ]
+  }
+}

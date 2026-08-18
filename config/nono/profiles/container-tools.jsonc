@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "name": "container-tools",
+    "version": "1.0.0",
+    "description": "Container tools",
+    "author": "Peter Merikan"
+  },
+  "filesystem": {
+    "read": [
+      "~/.docker"
+    ],
+    "unix_socket": [
+      "var/run/docker.sock",
+      "$HOME/.docker/run/docker.sock",
+      "$HOME/.colima/default/docker.sock",
+      "$HOME/.rd/docker.sock"
+    ],
+    "bypass_protection": [
+      "~/.docker"
+    ]
+  },
+  "environment": {
+    "set_vars": {
+      //docker context inspect | jq -r '.[0].Endpoints.docker.Host'
+      "DOCKER_HOST": "unix:///$HOME/.docker/run/docker.sock"
+      // "DOCKER_HOST": "unix://$HOME/.colima/default/docker.sock"
+    }
+  }
+}

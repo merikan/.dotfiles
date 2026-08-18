@@ -147,6 +147,10 @@
       glob: true
     # nix
     ~/.config/nix/nix.conf: config/nix/nix.conf
+    # nono
+    ~/.config/nono:
+      path: config/nono/*
+      glob: true
     # nvim
     ~/.config/nvim:
       path: config/nvim/*

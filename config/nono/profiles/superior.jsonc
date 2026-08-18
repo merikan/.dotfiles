@@ -1,0 +1,11 @@
+{
+  "extends": [
+    "claude-local"
+  ],
+  "meta": {
+    "name": "claude-local",
+    "version": "1.0.0",
+    "description": "only used when extending other profiles",
+    "author": "Peter Merikan"
+  }
+}
