@@ -213,12 +213,11 @@ brew "k6"                                           # open-source load testing t
 ### AI & Agentic coding
 ### ---------------------------------------------------- ###
 
-# ai codeing agents
+# coding agents
 brew "anomalyco/tap/opencode", trusted: true        # ai agent for the terminal
 brew "pi-coding-agent"                              # a minimal agent harness
 cask "antigravity-cli"                              # terminal interface for antigravity agents
 cask "claude-code"                                  # terminal-based ai coding assistant
-brew "gemini-cli"                                   # gemini prompt in the terminal
 brew "aider"                                        # ai, vibe-coding
 brew "charmbracelet/tap/crush", trusted: true       # ai coding agent for your terminal f.k.a opencode
 # other
