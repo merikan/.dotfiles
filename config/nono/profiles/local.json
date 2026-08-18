@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "name": "local",
+    "version": "1.0.0",
+    "description": "default local profile to be extended",
+    "author": "Peter Merikan"
+  },
+  "groups": {
+    "include": []
+  },
+  "workdir": {
+    "access": "readwrite"
+  },
+  "filesystem": {
+    "allow": [],
+    "read": [
+      "~/.agents",
+      "~/.config/agents",
+      "~/.dotfiles/config/agents",
+      "~/.bun/bin",
+      "~/.cargo/bin",
+      "~/.local/share/go/bin",
+      "~/.local/share/mise/installs",
+      "~/.sdkman/candidates",
+      "~/bin"
+    ]
+  }
+}

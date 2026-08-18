@@ -1,0 +1,22 @@
+{
+  "extends": [
+    "nolabs-ai/opencode",
+    "local"
+  ]
+  "meta": {
+    "name": "opencode-local"
+    "version": "1.0.0",
+    "description": "local opencode profile",
+    "author": "Peter Merikan"
+  },
+  "groups": {
+    "include": []
+  },
+  "workdir": {
+    "access": "readwrite"
+  },
+  "filesystem": {
+    "allow": [],
+    "read": []
+  }
+}

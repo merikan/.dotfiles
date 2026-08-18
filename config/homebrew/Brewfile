@@ -220,6 +220,8 @@ cask "antigravity-cli"                              # terminal interface for ant
 cask "claude-code"                                  # terminal-based ai coding assistant
 brew "aider"                                        # ai, vibe-coding
 brew "charmbracelet/tap/crush", trusted: true       # ai coding agent for your terminal f.k.a opencode
+# sandboxes
+brew "nono"                                         # safe execution paths for agents - zero trust
 # other
 brew "herdr"                                        # agent multiplexer that lives in your terminal
 brew "llm"                                          # access large language models from the command-line
