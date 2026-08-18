@@ -168,7 +168,7 @@
   uncommit = reset HEAD~1
   uc = uncommit
   # work in progress, a quick save before swithing branch
-  wip = !git add -A :/ && git commit -m 'WIP - Undo this temporary commit.'
+  wip = !git add -A :/ && git commit --no-verify -m 'WIP - Undo this temporary commit.'
   # list al ignored files
   ignored = ls-files -o -i --exclude-standard
   # list frequently used git commands
