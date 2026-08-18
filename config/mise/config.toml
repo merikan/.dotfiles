@@ -1,7 +1,5 @@
 [tools]
 aqua = "latest"
-"dmg:Magnus-Gille/sagascript" = "latest"
-"dmg:block/buzz" = "latest"
 editorconfig-checker = "latest"
 gradle = "latest"
 java = "latest"
@@ -10,6 +8,9 @@ kscript = "latest"
 maven = "3"
 micronaut = "latest"
 spring-boot = "latest"
+"dmg:Magnus-Gille/sagascript" = "latest"
+"dmg:block/buzz" = "latest"
+"github:jyjeanne/okf-rs" = "latest"
 
 [settings]
 experimental = true
@@ -30,3 +31,4 @@ idiomatic_version_file_enable_tools = [
 # disable_backends = ["asdf"]   # used for spring-boot
 color_theme = "auto"
 status.missing_tools = "always"
+

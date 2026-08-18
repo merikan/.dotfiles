@@ -94,6 +94,34 @@ checksum = "sha256:6f81f034bbaf77d7ea73274aa7d33995baf9e0d91bc4d4caa8eccff4645f8
 url = "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.11.1/ec-windows-amd64.zip"
 url_api = "https://api.github.com/repos/editorconfig-checker/editorconfig-checker/releases/assets/506306105"
 
+[[tools."github:jyjeanne/okf-rs"]]
+version = "0.4.0"
+backend = "github:jyjeanne/okf-rs"
+
+[tools."github:jyjeanne/okf-rs"."platforms.linux-x64"]
+checksum = "sha256:63458ee8a4bf9bc1432d763d0a65f7e5a9b4f0b7dda03e76abf82651aca9a587"
+url = "https://github.com/jyjeanne/okf-rs/releases/download/0.4.0/okf-rs-x86_64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/jyjeanne/okf-rs/releases/assets/505615003"
+
+[tools."github:jyjeanne/okf-rs"."platforms.linux-x64-musl"]
+checksum = "sha256:ad86636f61952081af3bd786fad6fe6b33cedec4c65f736b3ad035ebcdbfdfde"
+url = "https://github.com/jyjeanne/okf-rs/releases/download/0.4.0/okf-rs-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/jyjeanne/okf-rs/releases/assets/505615005"
+
+[tools."github:jyjeanne/okf-rs"."platforms.macos-arm64"]
+checksum = "sha256:8a510b2d4cfb8e6a9eba90ae60132a1c76fe531de575cb728c9b79f33804ac55"
+url = "https://github.com/jyjeanne/okf-rs/releases/download/0.4.0/okf-rs-aarch64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/jyjeanne/okf-rs/releases/assets/505615004"
+
+[tools."github:jyjeanne/okf-rs"."platforms.macos-x64"]
+checksum = "sha256:19f5eb5619b52ac52686afde4736329e805caa76c6714337dd9537c386e38ea2"
+url = "https://github.com/jyjeanne/okf-rs/releases/download/0.4.0/okf-rs-x86_64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/jyjeanne/okf-rs/releases/assets/505615010"
+
+[tools."github:jyjeanne/okf-rs"."platforms.windows-x64"]
+checksum = "sha256:2f74c88eb996ad905e6fe501303e0f12abb90fc0ffbc246d4d881a70b7618701"
+url = "https://github.com/jyjeanne/okf-rs/releases/download/0.4.0/okf-rs-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/jyjeanne/okf-rs/releases/assets/505615011"
 
 [[tools.gradle]]
 version = "9.7.0"
