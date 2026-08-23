@@ -21,7 +21,7 @@ mouse-hide-while-typing = true
 
 # Theme
 # $ ghostty +list-themes
-theme = gruvbox-material
+theme = Gruvbox Material Dark
 
 # Keybindings
 # $ ghostty +list-keybinds
