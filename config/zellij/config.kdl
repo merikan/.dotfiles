@@ -3,6 +3,7 @@
 default_layout "terminal"
 
 theme "gruvbox-dark"
+pane_frame_style "full"
 ui {
     pane_frames {
         rounded_corners true
@@ -41,6 +42,7 @@ keybinds {
         bind "r" { SwitchToMode "RenamePane"; PaneNameInput 0;}
         bind "x" { CloseFocus; SwitchToMode "Normal"; }
         bind "z" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
+        bind "Shift z" { ToggleFocusNoUiFullscreen; SwitchToMode "Normal"; } // zen mode
         bind "f" { ToggleFloatingPanes; SwitchToMode "Normal"; }
         bind "F" { TogglePaneEmbedOrFloating; SwitchToMode "Normal"; }
         bind "h" { MoveFocus "Left"; }
