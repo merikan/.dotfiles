@@ -33,7 +33,8 @@ keybinds {
     }
     tmux clear-defaults=true {
         // add my preferred tmux bindings
-        bind "Ctrl a" { SwitchToMode "Normal"; }
+        // Pressing Ctrl-a again sends Ctrl-a to the inner app and exits tmux mode
+        bind "Ctrl a" { WriteChars "\u{1}"; SwitchToMode "Normal"; }
         // pane
         bind "n" { NewPane; SwitchToMode "Normal"; }
         bind "N" { NewPane "stacked"; SwitchToMode "Normal"; }
