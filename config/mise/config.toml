@@ -8,8 +8,6 @@ kscript = "latest"
 maven = "3"
 micronaut = "latest"
 spring-boot = "latest"
-"dmg:Magnus-Gille/sagascript" = "latest"
-"dmg:block/buzz" = "latest"
 "github:jyjeanne/okf-rs" = "latest"
 
 [settings]
