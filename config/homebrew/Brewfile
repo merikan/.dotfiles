@@ -3,13 +3,14 @@
 
 # https://docs.brew.sh/Brew-Bundle-and-Brewfile
 
-
 def macos?
   RUBY_PLATFORM =~ /darwin/
 end
+
 def linux?
   RUBY_PLATFORM =~ /linux/
 end
+
 def arch_amd?
   RUBY_PLATFORM =~ /amd/
 end
@@ -68,6 +69,7 @@ brew "dust"                                         # a better du built in rust
 brew "dfc"                                          # displays file system space usage using graphs and colors
 brew "dua-cli"                                      # view disk space usage and delete unwanted data, fast
 brew "mole"                                         # clean, analyze, optimize. macos only
+brew "harry0703/tap/mangodisk-cli"                  # safety-first disk cleaner and disk space analyzer for macos and windows
 # compression
 brew "7zip"                                         # file archiver with a high compression ratio
 brew "unar"                                         # command-line unarchiving tools supporting multiple formats
