@@ -69,7 +69,7 @@ brew "dust"                                         # a better du built in rust
 brew "dfc"                                          # displays file system space usage using graphs and colors
 brew "dua-cli"                                      # view disk space usage and delete unwanted data, fast
 brew "mole"                                         # clean, analyze, optimize. macos only
-brew "harry0703/tap/mangodisk-cli"                  # safety-first disk cleaner and disk space analyzer for macos and windows
+brew "harry0703/tap/mangodisk-cli"                  # Safety-first disk cleaner and disk space analyzer for macOS and Windows
 # compression
 brew "7zip"                                         # file archiver with a high compression ratio
 brew "unar"                                         # command-line unarchiving tools supporting multiple formats
@@ -299,14 +299,17 @@ cask "podman-desktop"                               # Browse, manage, inspect co
 brew "neovim"                                       # neovim
 brew "vim"                                          # highly configurable text editor
 brew "helix"                                        # neovim inspired text editor written in rust
-cask "android-studio"                               # android IDE
-cask "eclipse-java"                                 # eclipse ide for java developers
+
 cask "intellij-idea"                                # awesome java IDE
-cask "neovide-app"                                  # a gui for neovim
-cask "sublime-text"                                 # text editor
 cask "visual-studio-code"                           # a great editor
 cask "vscodium"                                     # open source version of VSCode
+
+brew "gram"                                         # zed fork without the bloat
 cask "zed"                                          # multiplayer code editor
+cask "android-studio"                               # android IDE
+cask "eclipse-java"                                 # eclipse ide for java developers
+cask "neovide-app"                                  # a gui for neovim
+cask "sublime-text"                                 # text editor
 
 ### ---------------------------------------------------- ###
 ### Git & Source Control
