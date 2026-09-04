@@ -282,6 +282,7 @@ brew "minikube"                                     # kubernetes mini
 brew "kind"                                         # k8s in docker
 brew "istioctl"                                     # istio configuration command-line utility
 
+brew "container"                                    # create and run linux containers using lightweight virtual machines
 brew "lima"                                         # linux virtual machines
 brew "lima-additional-guestagents"                  # guest agents for non-native architectures
 brew "colima"                                       # container runtimes on macos (and linux)
