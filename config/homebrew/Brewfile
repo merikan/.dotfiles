@@ -424,6 +424,7 @@ cask "joplin"                                       # a FOSS note taking and to-
 cask "qownnotes"                                    # nice rest client
 # browser
 brew "w3m"                                          # text base browser in the terminal
+cask "librewolf"                                    # a custom version of firefox, focused on privacy, security and freedom.
 cask "brave-browser"                                # privacy focused, performance oriented browser
 cask "firefox"                                      # firefox browser
 cask "firefox@developer-edition"                    # firefox browser
