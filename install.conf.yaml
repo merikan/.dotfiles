@@ -145,6 +145,10 @@
     ~/.config/mise:
       path: config/mise/*
       glob: true
+    # neru
+    ~/.config/neru:
+      path: config/neru/*
+      glob: true
     # nix
     ~/.config/nix/nix.conf: config/nix/nix.conf
     # nono

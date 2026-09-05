@@ -371,6 +371,7 @@ cask "leader-key"                                   # a launcher for macos
 cask "raycast"                                      # supercharged productivity
 cask "tomatobar"                                    # another pomodoro app
 cask "tonisives/tap/ovim", trusted: true            # system wide vim mode
+cask "y3owk1n/tap/neru", trusted: true              # navigate your entire screen without touching the mouse.
 cask "xbar"                                         # put the output from any script or program in your Mac OS X Menu Bar
 
 ### ---------------------------------------------------- ###
