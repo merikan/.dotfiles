@@ -117,6 +117,7 @@ brew "pstree"                                       # pstree
 
 brew "aria2"                                        # multi-protocol & multi-source command-line download utility
 brew "openconnect"                                  # open client for cisco anyconnect vpn
+mas "WireGuard", id: 1451685025                     # wiregurad client
 cask "tunnelblick"                                  # free, open source graphic user interface for OpenVPN
 brew "openvpn"                                      # ssl/tls vpn implementing osi layer 2 or 3
 mas "Bredbandskollen", id: 1147976909
