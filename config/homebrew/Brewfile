@@ -96,6 +96,7 @@ brew "pandoc"                                       # swiss-army knife of markup
 brew "jp"                                           # dead simple terminal plots from json data
 
 # other
+brew "aria2"                                        # multi-protocol & multi-source command-line download utility
 brew "wget"                                         # non-interactive network downloader
 brew "rsync"                                        # provides fast incremental file transfer.
 brew "yt-dlp"                                       # download videos from youtube and many more sites
@@ -104,7 +105,6 @@ cask "localsend"                                    # cross-platform alternative
 cask "openmtp"                                      # a better file-transfer app for endroid
 
 cask "balenaetcher"                                 # Burn images to SD cards & USB drives, safely and easily.
-cask "cyberduck"                                    # client for FTP and SFTP, WebDAV, and cloud storage
 
 ### ---------------------------------------------------- ###
 ### Security & Networking
@@ -115,10 +115,10 @@ brew "procs"                                        # replacement for ps written
 cask "sloth"                                        # shows all open files and sockets
 brew "pstree"                                       # pstree
 
-brew "aria2"                                        # multi-protocol & multi-source command-line download utility
 brew "openconnect"                                  # open client for cisco anyconnect vpn
 mas "WireGuard", id: 1451685025                     # wiregurad client
 cask "tunnelblick"                                  # free, open source graphic user interface for OpenVPN
+cask "cyberduck"                                    # client for FTP and SFTP, WebDAV, and cloud storage
 brew "openvpn"                                      # ssl/tls vpn implementing osi layer 2 or 3
 mas "Bredbandskollen", id: 1147976909
 brew "ssh-copy-id"                                  # ssh copy
@@ -355,24 +355,31 @@ brew "gitsign"                                      # keyless sigstore to sign g
 ### ---------------------------------------------------- ###
 ### OS Productivity & Utilities
 ### ---------------------------------------------------- ###
-brew "FelixKratz/formulae/borders", trusted: true, restart_service: :changed # add colored borders to user windows
-brew "felixkratz/formulae/sketchybar", trusted: true # macOS status bar
-cask "jackielii/tap/skhd-zig", trusted: true        # simple hotkey daemon for macos
+
+
+cask "uhk-agent"                                    # ultimate hacking keyboard configurator
 brew "mackup"                                       # keep application settings in sync
 brew "mas"                                          # Mac App Store command-line interface
 brew "watch"                                        # execute a program periodically and watch the output
 brew "xdg-ninja"                                    # xdg checks your $HOME for unwanted files and directories.
+
+# vimify
+brew "FelixKratz/formulae/borders", trusted: true, restart_service: :changed # add colored borders to user windows
+brew "felixkratz/formulae/sketchybar", trusted: true # macOS status bar
+cask "jackielii/tap/skhd-zig", trusted: true        # simple hotkey daemon for macos
 cask "nikitabobko/tap/aerospace", trusted: true     # tiling window manager
-cask "alfred"                                       # a must have for boost productivity
 cask "bettercmdtab"                                 # awesome keyboard window switcher for Mac
-cask "bartender"                                    # organize your menu bar icons
-cask "hammerspoon"                                  # powerful automation of MacOS, actions and wm
 cask "karabiner-elements"                           # keyboard customizer for macOS
-cask "leader-key"                                   # a launcher for macos
-cask "raycast"                                      # supercharged productivity
-cask "tomatobar"                                    # another pomodoro app
 cask "tonisives/tap/ovim", trusted: true            # system wide vim mode
 cask "y3owk1n/tap/neru", trusted: true              # navigate your entire screen without touching the mouse.
+cask "hammerspoon"                                  # powerful automation of MacOS, actions and wm
+cask "raycast"                                      # supercharged productivity
+
+cask "leader-key"                                   # a launcher for macos
+cask "alfred"                                       # a must have for boost productivity
+cask "bartender"                                    # organize your menu bar icons
+cask "tomatobar"                                    # another pomodoro app
+
 cask "xbar"                                         # put the output from any script or program in your Mac OS X Menu Bar
 
 ### ---------------------------------------------------- ###
