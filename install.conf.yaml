@@ -178,6 +178,10 @@
     ~/bin/rustit: config/rust/rustit
     # scripts
     ~/bin/$: config/scripts/$
+    # sagascript
+    ~/.config/sagascript:
+        path: config/sagascript/*
+        glob: true
     # sdkman
     ~/bin/sdkit: config/sdkman/sdkit
     # shell
