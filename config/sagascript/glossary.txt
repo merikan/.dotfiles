@@ -1,0 +1,4 @@
+zellij = Celish | Cellish | Selish | cellages | zellich | Celich
+tmux = Temux | T-mux | Timux
+.gitignore = GIT ignore | Gittingore | Gittiggnor
+kubectl = nQp, CTL | QCTL

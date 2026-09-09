@@ -1,0 +1,27 @@
+{
+  "auto_paste": true,
+  "auto_select_model": false,
+  "beam_size": 0,
+  "has_completed_onboarding": true,
+  "hotkey": "Control+Shift+Space",
+  "hotkey_mode": "push",
+  "hotkey_profiles": [
+    {
+      "id": "default",
+      "language": "sv",
+      "name": "Default",
+      "shortcut": "Control+Shift+Space"
+    },
+    {
+      "id": "profile-2",
+      "language": "en",
+      "name": "Profile 2",
+      "shortcut": "Control+Shift+L"
+    }
+  ],
+  "language": "sv",
+  "show_overlay": true,
+  "temperature_fallback": true,
+  "vad_enabled": false,
+  "whisper_model": "medium.en"
+}
