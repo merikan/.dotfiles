@@ -48,7 +48,7 @@ url_api = "https://api.github.com/repos/aquaproj/aqua/releases/assets/498541919"
 provenance = "github-attestations"
 
 [[tools."dmg:Magnus-Gille/sagascript"]]
-version = "1.0.8"
+version = "1.0.9"
 backend = "dmg:Magnus-Gille/sagascript"
 
 [[tools."dmg:block/buzz"]]
@@ -95,72 +95,72 @@ url = "https://github.com/editorconfig-checker/editorconfig-checker/releases/dow
 url_api = "https://api.github.com/repos/editorconfig-checker/editorconfig-checker/releases/assets/506306105"
 
 [[tools."github:jyjeanne/okf-rs"]]
-version = "0.4.0"
+version = "0.7.0"
 backend = "github:jyjeanne/okf-rs"
 
 [tools."github:jyjeanne/okf-rs"."platforms.linux-x64"]
-checksum = "sha256:63458ee8a4bf9bc1432d763d0a65f7e5a9b4f0b7dda03e76abf82651aca9a587"
-url = "https://github.com/jyjeanne/okf-rs/releases/download/0.4.0/okf-rs-x86_64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/jyjeanne/okf-rs/releases/assets/505615003"
+checksum = "sha256:ca6fdbe6fe9129daf678248e663bd71bf77905cd31304889883e07410d14cdb9"
+url = "https://github.com/jyjeanne/okf-rs/releases/download/0.7.0/okf-rs-x86_64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/jyjeanne/okf-rs/releases/assets/522551610"
 
 [tools."github:jyjeanne/okf-rs"."platforms.linux-x64-musl"]
-checksum = "sha256:ad86636f61952081af3bd786fad6fe6b33cedec4c65f736b3ad035ebcdbfdfde"
-url = "https://github.com/jyjeanne/okf-rs/releases/download/0.4.0/okf-rs-x86_64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/jyjeanne/okf-rs/releases/assets/505615005"
+checksum = "sha256:46351fa67f005dcde5f93f445e9f96538c09876e4602062a2ee186576727421b"
+url = "https://github.com/jyjeanne/okf-rs/releases/download/0.7.0/okf-rs-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/jyjeanne/okf-rs/releases/assets/522551611"
 
 [tools."github:jyjeanne/okf-rs"."platforms.macos-arm64"]
-checksum = "sha256:8a510b2d4cfb8e6a9eba90ae60132a1c76fe531de575cb728c9b79f33804ac55"
-url = "https://github.com/jyjeanne/okf-rs/releases/download/0.4.0/okf-rs-aarch64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/jyjeanne/okf-rs/releases/assets/505615004"
+checksum = "sha256:4b6bad65d22c514fcedc5e7399d9ca2e8342bdff3e02c9faddd5de19e30e1be6"
+url = "https://github.com/jyjeanne/okf-rs/releases/download/0.7.0/okf-rs-aarch64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/jyjeanne/okf-rs/releases/assets/522551612"
 
 [tools."github:jyjeanne/okf-rs"."platforms.macos-x64"]
-checksum = "sha256:19f5eb5619b52ac52686afde4736329e805caa76c6714337dd9537c386e38ea2"
-url = "https://github.com/jyjeanne/okf-rs/releases/download/0.4.0/okf-rs-x86_64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/jyjeanne/okf-rs/releases/assets/505615010"
+checksum = "sha256:06734e422e213cf99443c8b1ab347c1a2b897a9fdc72dce0dbd2a76f752fc8b7"
+url = "https://github.com/jyjeanne/okf-rs/releases/download/0.7.0/okf-rs-x86_64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/jyjeanne/okf-rs/releases/assets/522551613"
 
 [tools."github:jyjeanne/okf-rs"."platforms.windows-x64"]
-checksum = "sha256:2f74c88eb996ad905e6fe501303e0f12abb90fc0ffbc246d4d881a70b7618701"
-url = "https://github.com/jyjeanne/okf-rs/releases/download/0.4.0/okf-rs-x86_64-pc-windows-msvc.zip"
-url_api = "https://api.github.com/repos/jyjeanne/okf-rs/releases/assets/505615011"
+checksum = "sha256:372539967de9425c3a9eaedb648c57b5c6526d9bb3f9dd3a248c8c81baa98194"
+url = "https://github.com/jyjeanne/okf-rs/releases/download/0.7.0/okf-rs-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/jyjeanne/okf-rs/releases/assets/522551614"
 
 [[tools.gradle]]
-version = "9.7.0"
+version = "9.7.1"
 backend = "aqua:gradle/gradle"
 
 [tools.gradle."platforms.linux-arm64"]
-checksum = "sha256:84fbba45c7f4c64abc77460e1c00f541e9f960e3c7ed2538f1ede19eacd873ae"
-url = "https://github.com/gradle/gradle-distributions/releases/download/v9.7.0/gradle-9.7.0-bin.zip"
-url_api = "https://api.github.com/repos/gradle/gradle-distributions/releases/assets/504018983"
+checksum = "sha256:acd53f1edaf02f1a8ff99879f8a34b302661a057d9b063ae9e35b552f804d20a"
+url = "https://github.com/gradle/gradle-distributions/releases/download/v9.7.1/gradle-9.7.1-bin.zip"
+url_api = "https://api.github.com/repos/gradle/gradle-distributions/releases/assets/520945879"
 
 [tools.gradle."platforms.linux-arm64-musl"]
-checksum = "sha256:84fbba45c7f4c64abc77460e1c00f541e9f960e3c7ed2538f1ede19eacd873ae"
-url = "https://github.com/gradle/gradle-distributions/releases/download/v9.7.0/gradle-9.7.0-bin.zip"
-url_api = "https://api.github.com/repos/gradle/gradle-distributions/releases/assets/504018983"
+checksum = "sha256:acd53f1edaf02f1a8ff99879f8a34b302661a057d9b063ae9e35b552f804d20a"
+url = "https://github.com/gradle/gradle-distributions/releases/download/v9.7.1/gradle-9.7.1-bin.zip"
+url_api = "https://api.github.com/repos/gradle/gradle-distributions/releases/assets/520945879"
 
 [tools.gradle."platforms.linux-x64"]
-checksum = "sha256:84fbba45c7f4c64abc77460e1c00f541e9f960e3c7ed2538f1ede19eacd873ae"
-url = "https://github.com/gradle/gradle-distributions/releases/download/v9.7.0/gradle-9.7.0-bin.zip"
-url_api = "https://api.github.com/repos/gradle/gradle-distributions/releases/assets/504018983"
+checksum = "sha256:acd53f1edaf02f1a8ff99879f8a34b302661a057d9b063ae9e35b552f804d20a"
+url = "https://github.com/gradle/gradle-distributions/releases/download/v9.7.1/gradle-9.7.1-bin.zip"
+url_api = "https://api.github.com/repos/gradle/gradle-distributions/releases/assets/520945879"
 
 [tools.gradle."platforms.linux-x64-musl"]
-checksum = "sha256:84fbba45c7f4c64abc77460e1c00f541e9f960e3c7ed2538f1ede19eacd873ae"
-url = "https://github.com/gradle/gradle-distributions/releases/download/v9.7.0/gradle-9.7.0-bin.zip"
-url_api = "https://api.github.com/repos/gradle/gradle-distributions/releases/assets/504018983"
+checksum = "sha256:acd53f1edaf02f1a8ff99879f8a34b302661a057d9b063ae9e35b552f804d20a"
+url = "https://github.com/gradle/gradle-distributions/releases/download/v9.7.1/gradle-9.7.1-bin.zip"
+url_api = "https://api.github.com/repos/gradle/gradle-distributions/releases/assets/520945879"
 
 [tools.gradle."platforms.macos-arm64"]
-checksum = "sha256:84fbba45c7f4c64abc77460e1c00f541e9f960e3c7ed2538f1ede19eacd873ae"
-url = "https://github.com/gradle/gradle-distributions/releases/download/v9.7.0/gradle-9.7.0-bin.zip"
-url_api = "https://api.github.com/repos/gradle/gradle-distributions/releases/assets/504018983"
+checksum = "sha256:acd53f1edaf02f1a8ff99879f8a34b302661a057d9b063ae9e35b552f804d20a"
+url = "https://github.com/gradle/gradle-distributions/releases/download/v9.7.1/gradle-9.7.1-bin.zip"
+url_api = "https://api.github.com/repos/gradle/gradle-distributions/releases/assets/520945879"
 
 [tools.gradle."platforms.macos-x64"]
-checksum = "sha256:84fbba45c7f4c64abc77460e1c00f541e9f960e3c7ed2538f1ede19eacd873ae"
-url = "https://github.com/gradle/gradle-distributions/releases/download/v9.7.0/gradle-9.7.0-bin.zip"
-url_api = "https://api.github.com/repos/gradle/gradle-distributions/releases/assets/504018983"
+checksum = "sha256:acd53f1edaf02f1a8ff99879f8a34b302661a057d9b063ae9e35b552f804d20a"
+url = "https://github.com/gradle/gradle-distributions/releases/download/v9.7.1/gradle-9.7.1-bin.zip"
+url_api = "https://api.github.com/repos/gradle/gradle-distributions/releases/assets/520945879"
 
 [tools.gradle."platforms.windows-x64"]
-checksum = "sha256:84fbba45c7f4c64abc77460e1c00f541e9f960e3c7ed2538f1ede19eacd873ae"
-url = "https://github.com/gradle/gradle-distributions/releases/download/v9.7.0/gradle-9.7.0-bin.zip"
-url_api = "https://api.github.com/repos/gradle/gradle-distributions/releases/assets/504018983"
+checksum = "sha256:acd53f1edaf02f1a8ff99879f8a34b302661a057d9b063ae9e35b552f804d20a"
+url = "https://github.com/gradle/gradle-distributions/releases/download/v9.7.1/gradle-9.7.1-bin.zip"
+url_api = "https://api.github.com/repos/gradle/gradle-distributions/releases/assets/520945879"
 
 [[tools.java]]
 version = "26.0.2+10"
@@ -198,46 +198,46 @@ checksum = "sha256:0b532502e29a5d2babe608069f6df2423ae5e1aa714b715b560217cf8c6ce
 url = "https://github.com/adoptium/temurin26-binaries/releases/download/jdk-26.0.2%2B10/OpenJDK26U-jdk_x64_windows_hotspot_26.0.2_10.zip"
 
 [[tools.kotlin]]
-version = "2.4.10"
+version = "2.4.20"
 backend = "github:JetBrains/kotlin"
 
 [tools.kotlin.options]
 asset_pattern = "kotlin-compiler-*.zip"
 
 [tools.kotlin."platforms.linux-arm64"]
-checksum = "sha256:473dd66c7a3ef4b182065b3da670466c1bf2773a9dbb0ed8b33a39fe9d4f876d"
-url = "https://github.com/JetBrains/kotlin/releases/download/v2.4.10/kotlin-compiler-2.4.10.zip"
-url_api = "https://api.github.com/repos/JetBrains/kotlin/releases/assets/476575537"
+checksum = "sha256:59e9ca74c7904ef2c122b12114937673ccce68de820a663f0ed66ccf8799e0b7"
+url = "https://github.com/JetBrains/kotlin/releases/download/v2.4.20/kotlin-compiler-2.4.20.zip"
+url_api = "https://api.github.com/repos/JetBrains/kotlin/releases/assets/548578778"
 
 [tools.kotlin."platforms.linux-arm64-musl"]
-checksum = "sha256:473dd66c7a3ef4b182065b3da670466c1bf2773a9dbb0ed8b33a39fe9d4f876d"
-url = "https://github.com/JetBrains/kotlin/releases/download/v2.4.10/kotlin-compiler-2.4.10.zip"
-url_api = "https://api.github.com/repos/JetBrains/kotlin/releases/assets/476575537"
+checksum = "sha256:59e9ca74c7904ef2c122b12114937673ccce68de820a663f0ed66ccf8799e0b7"
+url = "https://github.com/JetBrains/kotlin/releases/download/v2.4.20/kotlin-compiler-2.4.20.zip"
+url_api = "https://api.github.com/repos/JetBrains/kotlin/releases/assets/548578778"
 
 [tools.kotlin."platforms.linux-x64"]
-checksum = "sha256:473dd66c7a3ef4b182065b3da670466c1bf2773a9dbb0ed8b33a39fe9d4f876d"
-url = "https://github.com/JetBrains/kotlin/releases/download/v2.4.10/kotlin-compiler-2.4.10.zip"
-url_api = "https://api.github.com/repos/JetBrains/kotlin/releases/assets/476575537"
+checksum = "sha256:59e9ca74c7904ef2c122b12114937673ccce68de820a663f0ed66ccf8799e0b7"
+url = "https://github.com/JetBrains/kotlin/releases/download/v2.4.20/kotlin-compiler-2.4.20.zip"
+url_api = "https://api.github.com/repos/JetBrains/kotlin/releases/assets/548578778"
 
 [tools.kotlin."platforms.linux-x64-musl"]
-checksum = "sha256:473dd66c7a3ef4b182065b3da670466c1bf2773a9dbb0ed8b33a39fe9d4f876d"
-url = "https://github.com/JetBrains/kotlin/releases/download/v2.4.10/kotlin-compiler-2.4.10.zip"
-url_api = "https://api.github.com/repos/JetBrains/kotlin/releases/assets/476575537"
+checksum = "sha256:59e9ca74c7904ef2c122b12114937673ccce68de820a663f0ed66ccf8799e0b7"
+url = "https://github.com/JetBrains/kotlin/releases/download/v2.4.20/kotlin-compiler-2.4.20.zip"
+url_api = "https://api.github.com/repos/JetBrains/kotlin/releases/assets/548578778"
 
 [tools.kotlin."platforms.macos-arm64"]
-checksum = "sha256:473dd66c7a3ef4b182065b3da670466c1bf2773a9dbb0ed8b33a39fe9d4f876d"
-url = "https://github.com/JetBrains/kotlin/releases/download/v2.4.10/kotlin-compiler-2.4.10.zip"
-url_api = "https://api.github.com/repos/JetBrains/kotlin/releases/assets/476575537"
+checksum = "sha256:59e9ca74c7904ef2c122b12114937673ccce68de820a663f0ed66ccf8799e0b7"
+url = "https://github.com/JetBrains/kotlin/releases/download/v2.4.20/kotlin-compiler-2.4.20.zip"
+url_api = "https://api.github.com/repos/JetBrains/kotlin/releases/assets/548578778"
 
 [tools.kotlin."platforms.macos-x64"]
-checksum = "sha256:473dd66c7a3ef4b182065b3da670466c1bf2773a9dbb0ed8b33a39fe9d4f876d"
-url = "https://github.com/JetBrains/kotlin/releases/download/v2.4.10/kotlin-compiler-2.4.10.zip"
-url_api = "https://api.github.com/repos/JetBrains/kotlin/releases/assets/476575537"
+checksum = "sha256:59e9ca74c7904ef2c122b12114937673ccce68de820a663f0ed66ccf8799e0b7"
+url = "https://github.com/JetBrains/kotlin/releases/download/v2.4.20/kotlin-compiler-2.4.20.zip"
+url_api = "https://api.github.com/repos/JetBrains/kotlin/releases/assets/548578778"
 
 [tools.kotlin."platforms.windows-x64"]
-checksum = "sha256:473dd66c7a3ef4b182065b3da670466c1bf2773a9dbb0ed8b33a39fe9d4f876d"
-url = "https://github.com/JetBrains/kotlin/releases/download/v2.4.10/kotlin-compiler-2.4.10.zip"
-url_api = "https://api.github.com/repos/JetBrains/kotlin/releases/assets/476575537"
+checksum = "sha256:59e9ca74c7904ef2c122b12114937673ccce68de820a663f0ed66ccf8799e0b7"
+url = "https://github.com/JetBrains/kotlin/releases/download/v2.4.20/kotlin-compiler-2.4.20.zip"
+url_api = "https://api.github.com/repos/JetBrains/kotlin/releases/assets/548578778"
 
 [[tools.kscript]]
 version = "4.2.3"
@@ -304,44 +304,89 @@ checksum = "sha512:831a8591fe20c8243b1dbe7d71e3244f31d1665b0804b2e825e38cbbe5ce0
 url = "https://archive.apache.org/dist/maven/maven-3/3.9.16/binaries/apache-maven-3.9.16-bin.tar.gz"
 
 [[tools.micronaut]]
-version = "5.1.0"
+version = "5.1.3"
 backend = "github:micronaut-projects/micronaut-starter"
 
 [tools.micronaut."platforms.linux-arm64"]
-checksum = "sha256:60fedaa14daca22a9e4d24498510076923344294ad1f60ed9438fb5572ae23ef"
-url = "https://github.com/micronaut-projects/micronaut-starter/releases/download/v5.1.0/micronaut-cli-5.1.0.zip"
-url_api = "https://api.github.com/repos/micronaut-projects/micronaut-starter/releases/assets/491823191"
+checksum = "sha256:aa78e4846c1dcd12acb1ece46042a60544f280d25cfb64e729049e88e1c772c6"
+url = "https://github.com/micronaut-projects/micronaut-starter/releases/download/v5.1.3/micronaut-cli-5.1.3.zip"
+url_api = "https://api.github.com/repos/micronaut-projects/micronaut-starter/releases/assets/538339708"
 
 [tools.micronaut."platforms.linux-arm64-musl"]
-checksum = "sha256:60fedaa14daca22a9e4d24498510076923344294ad1f60ed9438fb5572ae23ef"
-url = "https://github.com/micronaut-projects/micronaut-starter/releases/download/v5.1.0/micronaut-cli-5.1.0.zip"
-url_api = "https://api.github.com/repos/micronaut-projects/micronaut-starter/releases/assets/491823191"
+checksum = "sha256:aa78e4846c1dcd12acb1ece46042a60544f280d25cfb64e729049e88e1c772c6"
+url = "https://github.com/micronaut-projects/micronaut-starter/releases/download/v5.1.3/micronaut-cli-5.1.3.zip"
+url_api = "https://api.github.com/repos/micronaut-projects/micronaut-starter/releases/assets/538339708"
 
 [tools.micronaut."platforms.linux-x64"]
-checksum = "sha256:275c6813a7c854edb6f1d27dfbad608a3ad269e6104ad80eed525e70c4cc1086"
-url = "https://github.com/micronaut-projects/micronaut-starter/releases/download/v5.1.0/mn-linux-amd64-v5.1.0.zip"
-url_api = "https://api.github.com/repos/micronaut-projects/micronaut-starter/releases/assets/491832086"
+checksum = "sha256:edb6efe09b84ed0f922632d90dc059e48a6d381ee04f48fa44fce176aa867f84"
+url = "https://github.com/micronaut-projects/micronaut-starter/releases/download/v5.1.3/mn-linux-amd64-v5.1.3.zip"
+url_api = "https://api.github.com/repos/micronaut-projects/micronaut-starter/releases/assets/538359964"
 
 [tools.micronaut."platforms.linux-x64-musl"]
-checksum = "sha256:275c6813a7c854edb6f1d27dfbad608a3ad269e6104ad80eed525e70c4cc1086"
-url = "https://github.com/micronaut-projects/micronaut-starter/releases/download/v5.1.0/mn-linux-amd64-v5.1.0.zip"
-url_api = "https://api.github.com/repos/micronaut-projects/micronaut-starter/releases/assets/491832086"
+checksum = "sha256:edb6efe09b84ed0f922632d90dc059e48a6d381ee04f48fa44fce176aa867f84"
+url = "https://github.com/micronaut-projects/micronaut-starter/releases/download/v5.1.3/mn-linux-amd64-v5.1.3.zip"
+url_api = "https://api.github.com/repos/micronaut-projects/micronaut-starter/releases/assets/538359964"
 
 [tools.micronaut."platforms.macos-arm64"]
-checksum = "sha256:a76fd1185379727bb7e6d8085524911838443e6c6ce8d1d727d439b31154dd61"
-url = "https://github.com/micronaut-projects/micronaut-starter/releases/download/v5.1.0/mn-darwin-aarch64-v5.1.0.zip"
-url_api = "https://api.github.com/repos/micronaut-projects/micronaut-starter/releases/assets/491846718"
+checksum = "sha256:31a42a2a82c4f6277f71f45ad588f3e2c3237cf8cbbade136b5785a82a8c8a89"
+url = "https://github.com/micronaut-projects/micronaut-starter/releases/download/v5.1.3/mn-darwin-aarch64-v5.1.3.zip"
+url_api = "https://api.github.com/repos/micronaut-projects/micronaut-starter/releases/assets/538375189"
 
 [tools.micronaut."platforms.macos-x64"]
-checksum = "sha256:cb2569db41a58c3927d56efacc59a409d876c8d4a8dfc990d0ae7a57737d3578"
-url = "https://github.com/micronaut-projects/micronaut-starter/releases/download/v5.1.0/mn-darwin-amd64-v5.1.0.zip"
-url_api = "https://api.github.com/repos/micronaut-projects/micronaut-starter/releases/assets/491832186"
+checksum = "sha256:5bfd7aee1161f9a915bba748eee4e0d38027adc02375f8f3d7609fd2c33a1f23"
+url = "https://github.com/micronaut-projects/micronaut-starter/releases/download/v5.1.3/mn-darwin-amd64-v5.1.3.zip"
+url_api = "https://api.github.com/repos/micronaut-projects/micronaut-starter/releases/assets/538366305"
 
 [tools.micronaut."platforms.windows-x64"]
-checksum = "sha256:f5b2ef899fdcd9ff8a3e53f5ba558c5b6f0cdc3bd8a3e949e91f8e0b2343b6fc"
-url = "https://github.com/micronaut-projects/micronaut-starter/releases/download/v5.1.0/mn-win-amd64-v5.1.0.zip"
-url_api = "https://api.github.com/repos/micronaut-projects/micronaut-starter/releases/assets/491837375"
+checksum = "sha256:a16e7a2cf0258c2ac531172dffa3273909a9f8960bbed7b044a589fe83b36875"
+url = "https://github.com/micronaut-projects/micronaut-starter/releases/download/v5.1.3/mn-win-amd64-v5.1.3.zip"
+url_api = "https://api.github.com/repos/micronaut-projects/micronaut-starter/releases/assets/538353079"
+
+[[tools.ruby]]
+version = "3.3.10"
+backend = "core:ruby"
+
+[tools.ruby."platforms.windows-x64"]
+checksum = "sha256:80203102617b216dc0bcdcc8c21cc3889aa3fde7f15860e2e22ee5487480f694"
+url = "https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-3.3.10-1/rubyinstaller-3.3.10-1-x64.7z"
+
+[[tools.ruby]]
+version = "3.3.10"
+backend = "core:ruby"
+
+[tools.ruby.options]
+compile = "false"
+precompiled_url = "jdx/ruby"
+ruby_build_repo = "https://github.com/rbenv/ruby-build.git"
+ruby_install = "false"
+
+[tools.ruby."platforms.linux-arm64"]
+checksum = "sha256:982d8df48b923561ceb0a8c64df5f403328cead310ad4a4bfbdac3d2b254cd1c"
+url = "https://github.com/jdx/ruby/releases/download/3.3.10-4/ruby-3.3.10.arm64_linux.tar.gz"
+provenance = "github-attestations"
+
+[tools.ruby."platforms.linux-arm64-musl"]
+checksum = "sha256:b555baa467a306cfc8e6c6ed24d0d27b27e9a1bed1d91d95509859eac6b0e928"
+url = "https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.10.tar.gz"
+
+[tools.ruby."platforms.linux-x64"]
+checksum = "sha256:0050e0ed55f1c2b98cd488008d36d7ccfddab86ba3f165f13e76a2398b6116d2"
+url = "https://github.com/jdx/ruby/releases/download/3.3.10-4/ruby-3.3.10.x86_64_linux.tar.gz"
+provenance = "github-attestations"
+
+[tools.ruby."platforms.linux-x64-musl"]
+checksum = "sha256:b555baa467a306cfc8e6c6ed24d0d27b27e9a1bed1d91d95509859eac6b0e928"
+url = "https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.10.tar.gz"
+
+[tools.ruby."platforms.macos-arm64"]
+checksum = "sha256:4c2de8c0ea3ba222578bd5d5f9b6a4d88bef23050c79e1347b63252bcdf64584"
+url = "https://github.com/jdx/ruby/releases/download/3.3.10-4/ruby-3.3.10.macos.tar.gz"
+provenance = "github-attestations"
+
+[tools.ruby."platforms.macos-x64"]
+checksum = "sha256:b555baa467a306cfc8e6c6ed24d0d27b27e9a1bed1d91d95509859eac6b0e928"
+url = "https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.10.tar.gz"
 
 [[tools.spring-boot]]
-version = "4.1.0"
+version = "4.2.0-M1"
 backend = "asdf:spring-boot"
