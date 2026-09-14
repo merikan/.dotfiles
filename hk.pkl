@@ -1,5 +1,6 @@
-amends "package://github.com/jdx/hk/releases/download/v1.47.0/hk@1.47.0#/Config.pkl"
-import "package://github.com/jdx/hk/releases/download/v1.47.0/hk@1.47.0#/Builtins.pkl"
+///https://hk.jdx.dev/builtins.html
+amends "package://github.com/jdx/hk/releases/download/v2.0.0/hk@2.0.0#/Config.pkl"
+import "package://github.com/jdx/hk/releases/download/v2.0.0/hk@2.0.0#/Builtins.pkl"
 
 local check_leaks = new Mapping<String, Step> {
   ["betterleaks"] = Builtins.betterleaks
@@ -15,7 +16,7 @@ local linters = new Mapping<String, Step> {
   // ["shellcheck"] = Builtins.shellcheck
   // ["shfmt"] = Builtins.shfmt
 }
-
+//dummy
 hooks {
     ["pre-commit"] {
         fix = true
