@@ -306,7 +306,7 @@ cask "intellij-idea"                                # awesome java IDE
 cask "visual-studio-code"                           # a great editor
 cask "vscodium"                                     # open source version of VSCode
 
-brew "gram"                                         # zed fork without the bloat
+cask "gram"                                         # zed fork without the bloat
 cask "zed"                                          # multiplayer code editor
 cask "android-studio"                               # android IDE
 cask "eclipse-java"                                 # eclipse ide for java developers
