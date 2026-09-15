@@ -3,6 +3,10 @@
 
 # https://docs.brew.sh/Brew-Bundle-and-Brewfile
 
+# To find missmatch with what is in the bundle and what is installed run the
+# command `brew bundle cleanup -g`. It does not have "--dry-run" but we will
+# be prompted if we want to continue to clean up. Just press "n".
+#
 def macos?
   RUBY_PLATFORM =~ /darwin/
 end
@@ -69,7 +73,7 @@ brew "dust"                                         # a better du built in rust
 brew "dfc"                                          # displays file system space usage using graphs and colors
 brew "dua-cli"                                      # view disk space usage and delete unwanted data, fast
 brew "mole"                                         # clean, analyze, optimize. macos only
-brew "harry0703/tap/mangodisk-cli"                  # Safety-first disk cleaner and disk space analyzer for macOS and Windows
+brew "harry0703/tap/mangodisk-cli", trusted: true   # Safety-first disk cleaner and disk space analyzer for macOS and Windows
 # compression
 brew "7zip"                                         # file archiver with a high compression ratio
 brew "unar"                                         # command-line unarchiving tools supporting multiple formats
@@ -179,7 +183,7 @@ brew "jbang"                                         # tool to create, edit and 
 brew "scc"                                          # count lines of code
 brew "doxygen"                                      # Generate documentation from source code
 brew "flake8"                                       # lint python
-brew "go-task/tap/go-task", trusted: true           # task runner / build tool
+brew "go-task"                                      # task runner / build tool
 brew "cmake"                                        # cross-platform make
 brew "automake"                                     # tool for generating gnu standards-compliant makefiles
 brew "golangci-lint"                                # Go linters aggregator
@@ -219,6 +223,7 @@ brew "k6"                                           # open-source load testing t
 # coding agents
 brew "anomalyco/tap/opencode", trusted: true        # ai agent for the terminal
 brew "pi-coding-agent"                              # a minimal agent harness
+brew "can1357/tap/omp", trusted: true               # pi coding agent with the ide wired in
 cask "antigravity-cli"                              # terminal interface for antigravity agents
 cask "claude-code"                                  # terminal-based ai coding assistant
 brew "aider"                                        # ai, vibe-coding
@@ -230,11 +235,14 @@ brew "herdr"                                        # agent multiplexer that liv
 brew "llm"                                          # access large language models from the command-line
 brew "charmbracelet/tap/mods", trusted: true        # ai on the command line
 brew "fabric-ai"                                    # an open-source framework for augmenting humans using ai
+brew "merikan/tools/buzz", trust: true              # a workspace where humans and agents build together.
 # speech-to-text
+cask "merikan/tools/sagascript", trust: true        #a low-latency, privacy-first dictation with local Whisper models
 cask "handy"                                        # a foss speech-to-text application, works completely offline
 # local llm models
 brew "ollama"                                       # create, run, and share large language models (llms)
 brew "llama.cpp"                                    # run local models with speed
+cask "alexsjones/llama-panel/llama-panel"           # desktop app for managing and interacting with llama-server instances.
 brew "arimxyer/tap/models", trusted: true           # tui for browsing ai models
 brew "mostlygeek/llama-swap/llama-swap", trusted: true # model swapping for any local llm-server
 brew "alexsjones/llmserve/llmserve", trusted: true  # simple tui for serving local llm models
@@ -322,15 +330,17 @@ brew "jj"                                           # git-compatible distributed
 brew "gh"                                           # github cli
 brew "glab"                                         # gitlab cli
 
+brew "lazygit"                                      # simple terminal UI for git commands
+brew "tareqmy/tap/gitwig", trusted: true            # a rust based tui an alternative to sourcetree
+brew "hunk"                                         # review-first terminal diff viewer for agent-authored changesets
+
 brew "ghq"                                          # git remote repository management made easy
-brew "difi"                                         # a nice diff viewe
+brew "difi"                                         # a nice diff viewer
 brew "git-delta"                                    # syntax-highlighting pager for git, diff, and grep output
 brew "diffnav"                                      # a git diff pager based on delta but with a file tree
 brew "agavra/tap/tuicr", trusted: true              # a code review tui with vim keybindings
-brew "hunk"                                         # review-first terminal diff viewer for agent-authored changesets
+cask "merikan/tools/guitar", trusted: true          # git client with fast topological & chronological graph rendering
 
-brew "lazygit"                                      # simple terminal UI for git commands
-brew "tareqmy/tap/gitwig", trusted: true            # a rust based tui an alternative to sourcetree
 brew "gitui"                                        # an awesome tui for git
 brew "tig"                                          # text-mode interface for git
 cask "gitup-app"                                    # awesome Git Gui Client
