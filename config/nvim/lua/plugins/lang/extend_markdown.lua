@@ -1,8 +1,31 @@
+-- lazyvim extras lang:markdown
+-- https://www.lazyvim.org/extras/lang/markdown
+
 local XDG_CONFIG_DIR = os.getenv("XDG_CONFIG_HOME") or os.getenv("HOME") .. "/.config"
 
 return {
-  -- lazyvim extras lang:markdown
-  -- https://www.lazyvim.org/extras/lang/markdown
+  {
+    -- Keep touchup.nvim active in regular editing buffers across all modes
+    -- https://github.com/noisesfromspace/touchup.nvim/
+    {
+      "noisesfromspace/touchup.nvim",
+      ft = { "markdown" },
+      opts = {},
+    },
+
+    -- https://github.com/MeanderingProgrammer/render-markdown.nvim
+    {
+      "MeanderingProgrammer/render-markdown.nvim",
+      opts = {
+        -- Disable automatic rendering on normal buffers so touchup.nvim operates freely
+        -- enabled = false,
+        file_types = {},
+      },
+      keys = {
+        { "<leader>mp", ft = "markdown", "<cmd>RenderMarkdown preview<cr>", desc = "Markdown Preview (side by side)" },
+      },
+    },
+  },
   {
     "mfussenegger/nvim-lint",
     optional = true,
@@ -22,19 +45,45 @@ return {
     -- https://github.com/MeanderingProgrammer/render-markdown.nvim
     "MeanderingProgrammer/render-markdown.nvim",
     opts = {
-      -- enabled = false,
+      enabled = false,
     },
     keys = {
       { "<leader>cp", ft = "markdown", "<cmd>RenderMarkdown preview<cr>", desc = "Markdown Preview (side by side)" },
     },
   },
   {
-    "iamcco/markdown-preview.nvim",
-    keys = {
-      -- { "<leader>cp", false },
-      { "<leader>cP", ft = "markdown", "<cmd>MarkdownPreviewToggle<cr>", desc = "Markdown Preview (in browser)" },
+    "brianhuster/live-preview.nvim",
+    dependencies = {
+      -- You can choose one of the following pickers
+      -- 'nvim-telescope/telescope.nvim',
+      -- 'ibhagwan/fzf-lua',
+      -- 'echasnovski/mini.pick',
+      "folke/snacks.nvim",
     },
+    keys = function(plugin)
+      return {
+        {
+          "<leader>cP",
+          function()
+            if require("livepreview").is_running() then
+              vim.cmd.LivePreview("close")
+            else
+              vim.cmd.LivePreview("start")
+            end
+          end,
+          ft = "markdown",
+          desc = "Toggle live preview",
+        },
+      }
+    end,
   },
+  -- {
+  --   "iamcco/markdown-preview.nvim",
+  --   keys = {
+  --     -- { "<leader>cp", false },
+  --     { "<leader>cP", ft = "markdown", "<cmd>MarkdownPreviewToggle<cr>", desc = "Markdown Preview (in browser)" },
+  --   },
+  -- },
   -- a markdown table editor
   -- https://github.com/SCJangra/table-nvim
   {

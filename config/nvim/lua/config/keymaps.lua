@@ -1,35 +1,18 @@
 -- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set by LazyVim:
--- see (1) https://www.lazyvim.org/keymaps
---     (2) https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
---     (3) ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/config/keymaps.lua
+-- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
+-- Add any additional keymaps here
 
 local map = vim.keymap.set
 local wk = require("which-key")
 local lazy = require("lazy")
 
--- My additional keymaps
-
--- Previous end of word
-map("n", "E", "ge", { desc = "Previous end of word" })
--- make Y behave like C and D
-map("n", "Y", "y$", { desc = "Yank to end of line" })
 -- paste without yank
 map("v", "p", '"_dP', { desc = "Paste without yank" })
--- delete without yanking
-map({ "n", "x" }, "<leader>d", '"_d', { desc = "Delete without yank" })
 -- delete char without yanking
 map({ "n", "v" }, "x", '"_x', { desc = "Delete char without yank" })
 map({ "n", "v" }, "X", '"_X', { desc = "Delete char without yank" })
 -- reselect pasted text
 map("n", "gp", "[v`]", { desc = "Reselect pasted text" })
-
--- keep current line centered when jumping
-map("n", "n", "nzzzv", { desc = "Next search result" })
-map("n", "<C-d>", "<C-d>zz", { desc = "Halfpage down" })
-map("n", "<C-u>", "<C-u>zz", { desc = "Halfpage up" })
--- keep cursor in position when joining
-map({ "n", "v" }, "J", "mzJ`z", { desc = "Join lines and keep position" })
 -- duplicate line(s) with Alt+d
 map("i", "<A-d>", "<Esc>yypi", { desc = "Duplicate line(s)" })
 map("n", "<A-d>", "<Esc>yyp", { desc = "Duplicate line(s)" })
@@ -44,17 +27,17 @@ map("v", "<A-S-k>", ":m '<-2<CR>gv=gv", { desc = "Move line(s) up" })
 
 -- Save without formatting
 map("n", "<A-s>", "<cmd>noautocmd w<CR>", { desc = "Save without formatting" })
-
 -- write with sudo
 map("c", "w!!", "<esc>:lua require'utils'.sudo_write()<CR>", { silent = true })
+-- use lazygit for git file history
+-- stylua: ignore
+map("n", "<leader>gf", function() Snacks.lazygit.log_file() end, { desc = "Lazygit Current File History" })
 
--- make gx work again
-if vim.fn.has('macunix') == 1 then
-  map("n", "gx", "<cmd>silent execute '!open ' . shellescape('<cWORD>')<CR>", { silent = true })
-else
-  map("n", "gx", "<cmd>silent execute '!xdg-open ' . shellescape('<cWORD>')<CR>", { silent = true })
-end
+-- buffers
+-- stylua: ignore
+map("n", "<leader>ba", function() Snacks.bufdelete.all() end, {desc = "Delete all buffers"})
 
+-- other
 map("n", "<leader>gf", function() Snacks.lazygit.log_file() end, { desc = "Lazygit Current File History" })
 --------------------------------------------------------------------------------
 -- Plugins
@@ -67,28 +50,21 @@ if vim.env.TMUX ~= nil then
   map("n", "<C-l>", ":NvimTmuxNavigateRight<CR>", { desc = "Go to right window (tmux-aware)", remap = true })
 end
 
--- show open buffers
--- stylua: ignore
-map( "n", "<leader>bb", "<cmd>Telescope buffers sort_mru=true sort_lastused=true initial_mode=normal<cr>", { desc = "List open buffers" })
-
--- Disable LazyVim bindings
-map("n", "<leader>l", "<Nop>")
-map("n", "<leader>L", "<Nop>")
 -- Lazyvim menu
 wk.add {
   -- stylua: ignore start
-  { "<leader>l", group = "Lazyvim Settings" },
-  { "<leader>lc", function() LazyVim.news.changelog() end, desc = "LazyVim Changelog" },
-  { "<leader>lC", function() lazy.check() end, desc = "Lazy Check" },
-  { "<leader>ld", function() vim.fn.system({ "open", "https://lazyvim.org" }) end,  desc = "LazyVim Docs" },
-  { "<leader>ll", "<cmd>Lazy<cr>", desc = "Lazy plugins" },
-  { "<leader>lL", "<cmd>LspInfo<CR>", desc = "Lsp Info" },
-  { "<leader>lM", vim.cmd.messages, desc = "Display messages" },
-  { "<leader>lp", "<cmd>Mason<CR>", desc = "Package Manager - [Mason]" },
-  { "<leader>lr", function() vim.fn.system({ "open", "https://github.com/LazyVim/LazyVim" }) end, desc = "LazyVim Repo" },
-  { "<leader>ls", function() lazy.sync() end, desc = "Lazy Sync" },
-  { "<leader>lu", function() lazy.update() end, desc = "Lazy Update" },
-  { "<leader>lx", "<cmd>LazyExtras<cr>", desc = "Extras" },
+  { "<leader>$", group = "Lazyvim Settings" },
+  { "<leader>$c", function() LazyVim.news.changelog() end, desc = "LazyVim Changelog" },
+  { "<leader>$C", function() lazy.check() end, desc = "Lazy Check" },
+  { "<leader>$d", function() vim.fn.system({ "open", "https://lazyvim.org" }) end,  desc = "LazyVim Docs" },
+  { "<leader>$l", "<cmd>Lazy<cr>", desc = "Lazy plugins" },
+  { "<leader>$L", "<cmd>LspInfo<CR>", desc = "Lsp Info" },
+  { "<leader>$M", vim.cmd.messages, desc = "Display messages" },
+  { "<leader>$p", "<cmd>Mason<CR>", desc = "Package Manager - [Mason]" },
+  { "<leader>$r", function() vim.fn.system({ "open", "https://github.com/LazyVim/LazyVim" }) end, desc = "LazyVim Repo" },
+  { "<leader>$s", function() lazy.sync() end, desc = "Lazy Sync" },
+  { "<leader>$u", function() lazy.update() end, desc = "Lazy Update" },
+  { "<leader>$x", "<cmd>LazyExtras<cr>", desc = "Extras" },
   -- stylua: ignore end
 }
 
@@ -112,11 +88,16 @@ wk.add {
   { "<leader>c?", group = "Information" },
   { "<leader>c?f", "<cmd>LazyFormatInfo<cr>", desc = "Formatting" },
   { "<leader>c?c", "<cmd>ConformInfo<cr>", desc = "Conform" },
-  { "<leader>c?l", linters, desc = "Linter" },
+  { "<leader>c?l", linters, desc = "Linter(s)" },
   { "<leader>c?L", "<cmd>LspInfo<CR>", desc = "Lsp Info" },
   }
 
---------------------------------------------------------------------------------
+-- k9s
+if vim.fn.executable("k9s") == 1 then
+  vim.keymap.set("n", "<leader>k9", function()
+    Snacks.terminal("k9s")
+  end, { desc = "K9s (kubernetes)" })
+end--------------------------------------------------------------------------------
 -- TUI applications
 --------------------------------------------------------------------------------
 
@@ -130,19 +111,3 @@ if vim.g.neovide then
   map("n", "<C-u>", "<C-u>zz") -- halfpage up
   map("v", "<D-v>", "<C-R>+")
 end
-
--- ====================================================
---  map     : root of all recursive mappings
---  noremap : no recursive map
---  {m}{nore}map
---
---  Mode letters:
---    n: normal only
---    v: visual and select
---    o: operator-pending
---    x: visual only
---    s: select only
---    i: insert
---    c: command-line
---    t: terminal window
---    l: insert, command-line, regexp-search (and others. Collectively called "Lang-Arg" pseudo-mode)

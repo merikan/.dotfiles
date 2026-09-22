@@ -23,6 +23,6 @@
 
 -- vim.lsp.set_log_level('debug')
 
-require("util.globals")
 -- bootstrap LazyVim, lazy.nvim and plugins
 require("config.lazy") -- load lazyVim, because I'm lazy
+
