@@ -104,7 +104,7 @@
 # http://nuclearsquid.com/writings/git-tricks-tips-workflows/
 
 [gig]
-  root-dir = ~/src/
+  root-dir = ~/code/
 [gig "category.oss"]
   default = true
   pattern =
@@ -113,6 +113,8 @@
 [gig "category.mycompany"]
   pattern = ^git\\.mycompany\\.se/
 [gig "category.tryit"]
+  pattern =
+[gig "category.temp"]
   pattern =
 
 [ghq]
