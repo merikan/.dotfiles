@@ -1,12 +1,12 @@
 {
   "extends": [
     "nolabs-ai/opencode",
-    "local"
-  ]
+    "default-local"
+  ],
   "meta": {
-    "name": "opencode-local"
+    "name": "opencode-local",
     "version": "1.0.0",
-    "description": "local opencode profile",
+    "description": "local opencode harness profile",
     "author": "Peter Merikan"
   },
   "groups": {

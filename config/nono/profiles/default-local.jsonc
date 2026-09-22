@@ -5,7 +5,7 @@
     "container-tools"
   ],
   "meta": {
-    "name": "local",
+    "name": "default-local",
     "version": "1.0.0",
     "description": "default local profile to be extended",
     "author": "Peter Merikan"
@@ -22,6 +22,10 @@
       "~/.agents",
       "~/.config/agents",
       "~/.dotfiles/config/agents",
+      "~/.config/git",
+      "~/.dotfiles/config/git",
+      "~/.config/delta",
+      "~/.dotfiles/config/delta",
       "~/.bun/bin",
       "~/.cargo/bin",
       "~/.local/share/go/bin",
@@ -34,3 +38,4 @@
     ]
   }
 }
+

@@ -1,12 +1,12 @@
 {
   "extends": [
-    "nolabs-ai/claude",
-    "local"
+    "nolabs-ai/pi",
+    "default-local"
   ],
   "meta": {
-    "name": "claude-local",
+    "name": "pi-local",
     "version": "1.0.0",
-    "description": "local claude code profile",
+    "description": "local pi-code harness profile",
     "author": "Peter Merikan"
   },
   "groups": {
@@ -20,4 +20,3 @@
     "read": []
   }
 }
-

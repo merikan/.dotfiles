@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "name": "git-tools",
+    "version": "1.1.0",
+    "description": "Git filesystem access, including the real git-dir a worktree's .git file redirects to.",
+    "author": "Peter Merikan"
+  },
+  "extends": "default",
+  "groups": { "include": ["git_config"] },
+  "command_policies": {
+    "commands": {
+      "git": {
+        // Fix: the sandbox rules below were previously set directly on "git" (no "from" wrapper).
+        // `nono why --command git -- ...` resolves session-invoked commands via
+        // command_policies.commands.git.from.session specifically; without it the edge doesn't
+        // exist, git gets no per-command grants at all, and falls back to the outer agent-level
+        // sandbox only - which is why `git commit` couldn't exec .git/hooks/pre-commit even
+        // though this profile's fs_read already listed @git:common-dir. Verified via
+        // `nono why --profile claude-local --command git -- commit -m test`: DENIED,
+        // "missing from.session" before this fix; `nono profile validate` never flagged it
+        // because the flat form is syntactically valid, just not authoritative for session calls.
+        "from": {
+          "session": {
+            "sandbox": {
+              "fs_read": [
+                "$WORKDIR",
+                "@git:common-dir", // real git-dir: ".git" normally, or the main repo's ".git/worktrees/<name>" when $WORKDIR is a worktree
+                "@git:worktree", // main worktree root (empty outside a worktree)
+                "@git:hooks-path", // trusted global/system core.hooksPath directories
+                // git's own shared-library deps (libpcre2, libintl, ...) live wherever your package
+                // manager put git, not necessarily /usr - listed unconditionally rather than pinned to
+                // one manager; a path that doesn't exist on your machine is silently harmless (verified:
+                // nono's own built-in groups already list /nix and /opt unconditionally for this reason).
+                "/opt", // Homebrew on Apple Silicon (/opt/homebrew), MacPorts (/opt/local)
+                "/usr/local", // Homebrew on Intel Mac, Linuxbrew, generic ./configure --prefix=/usr/local installs
+                "/nix", // Nix package manager (macOS and Linux)
+                "/usr/lib", // Linux distro package managers (apt, dnf, pacman, ...)
+                "/lib", // Linux: same as /usr/lib
+                "/System/Volumes/Data", // macOS: APFS data volume backing $HOME etc., git stats through it
+                "/dev" // macOS: dtracehelper/autofs_nowait device nodes touched on process exec
+              ],
+              "fs_read_file": [
+                "@git:config-files", // trusted config FILES (global/system gitconfig, attributes/excludes/commit-template, include(If) targets) - files, not dirs, so fs_read_file not fs_read
+                "$HOME/.CFUserTextEncoding" // macOS: read by CoreFoundation for locale setup
+              ],
+              "fs_write": [
+                "$WORKDIR",
+                "@git:common-dir", // write-side of the real git-dir above - git needs both read and write here
+                "@git:toplevel-parent" // parent-directory operations `git worktree add/remove/prune` performs on the checkout itself
+              ],
+              "fs_write_file": [
+                "/dev/dtracehelper" // macOS registers a DTrace probe on every new process exec, needing a write handle to this device
+              ],
+              // Omitting this field entirely (or omitting allow_vars within it) strips ALL env vars from
+              // git's child process - verified via GIT_TRACE=1: with no allow_vars, GIT_TRACE never reached
+              // git even though it's set in the parent shell. This is the opposite default from the
+              // session-level environment.allow_vars (which passes everything through when omitted) - here
+              // it's an authoritative allow-list, deny-by-default.
+              "environment": {
+                "allow_vars": [
+                  "PATH", // git-core helpers and external tools (sed, basename, uname, ...) are found via PATH
+                  "HOME", // needed for git to locate ~/.gitconfig and other home-relative config/state
+                  "USER", // commit-author-identity fallback when user.name isn't configured (see LOGNAME)
+                  "LOGNAME", // same fallback path as USER; verified together - without both HOME+USER/LOGNAME,
+                             // an unconfigured `git commit` falls back to an OS user-database lookup that trips
+                             // an unrelated macOS CFPreferences sandbox gate we haven't granted (user-preference-read)
+                  "LANG", // locale: message language and encoding-sensitive (e.g. non-ASCII filename) behavior
+                  "LC_*", // same as LANG, for the finer-grained locale categories (LC_CTYPE, LC_COLLATE, ...)
+                  "GIT_*", // lets caller-set overrides reach git (GIT_AUTHOR_*, GIT_SSH_COMMAND, GIT_TRACE, GIT_DIR, ...) - verified via GIT_TRACE=1
+                  "TMPDIR" // scratch-file location for operations like apply/stash/gc
+                ]
+              },
+              "unsafe_macos_seatbelt_rules": [
+                // git execs its own git-core helpers (e.g. git-submodule) by absolute path, not via PATH lookup,
+                // so tool-sandbox can't intercept-and-wrap them as chainable "can_use" commands; fs_read above only
+                // grants file READ, Seatbelt gates process-exec separately. macOS only - unverified whether Linux/
+                // Landlock needs an equivalent (it ties execute rights to the fs_read grant, so likely not).
+                "(allow process-exec* (subpath \"/opt\"))", // exec git-core helpers wherever git is installed (Homebrew, MacPorts, ...)
+                "(allow process-exec* (subpath \"/usr/local\"))", // same, for Homebrew-on-Intel/Linuxbrew/generic /usr/local installs
+                "(allow process-exec* (subpath \"/nix\"))", // same, for Nix
+                "(allow process-exec-interpreter (path \"/bin/sh\"))", // git-submodule (and others) are "#!/bin/sh" scripts, not binaries
+                "(allow process-exec* (path \"/bin/bash\"))" // macOS's /bin/sh internally re-execs /bin/bash as a variant
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

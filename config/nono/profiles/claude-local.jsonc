@@ -1,0 +1,16 @@
+{
+  "extends": [
+    "nolabs-ai/claude",
+    "default-local"
+  ],
+  "meta": {
+    "name": "claude-local",
+    "version": "1.0.0",
+    "description": "local claude-code harness profile",
+    "author": "Peter Merikan"
+  },
+  "filesystem": {
+    "allow": [],
+    "read": []
+  }
+}
