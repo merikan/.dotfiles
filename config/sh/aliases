@@ -51,9 +51,9 @@ command -v dfc >/dev/null 2>&1 && alias df='dfc' # colorized df
 # nono
 alias nn='nono'
 alias nnc='nono run --allow-cwd --allow $( git rev-parse --git-common-dir) --profile claude-local -- claude'
-alias nno='nono run --allow-cwd --profile opencode-local -- opencode'
-alias nnp='nono run --allow-cwd --profile pi-local -- pi'
-alias nno='nono run --allow-cwd --profile omp-local -- omp'
+alias nno='nono run --allow-cwd --allow $( git rev-parse --git-common-dir) --profile opencode-local -- opencode'
+alias nnp='nono run --allow-cwd --allow $( git rev-parse --git-common-dir) --profile pi-local -- pi'
+alias nnm='nono run --allow-cwd --allow $( git rev-parse --git-common-dir) --profile omp-local -- omp'
 #tmux
 alias tm='tmux'
 #tmux start; attach to an existing session or restore resurrect https://github.com/tmux-plugins/tmux-resurrect/issues/139#issuecomment-241715139
