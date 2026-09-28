@@ -6,7 +6,6 @@
 # with the alias command. Check out my alias file(s)
 
 # easy create and cd into a directory (mcd myproject/src)
-
 # shellcheck disable=SC2164
 mcd() { [ -n "$1" ] && mkdir -p "$*" && cd "$_"; }
 
@@ -235,3 +234,10 @@ __prompt_string_() {
   shift
   eval $command "$@" # run the command
 }
+__git_dir_arg() {
+    local git_dir
+    if git_dir=$(git rev-parse --git-common-dir 2>/dev/null); then
+        echo --allow "$git_dir"
+    fi
+}
+
