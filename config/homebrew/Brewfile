@@ -44,6 +44,7 @@ cask "kitty"                                        # kitty terminal emulator
 cask "wezterm"                                      # cross-platform terminal emulator
 # multiplexor
 brew "zellij"                                       # an awesome terminal multiplexer
+brew "tuios"                                        # a terminal window manager
 brew "tmux"                                         # terminal multiplexer
 
 brew "asciinema"                                    # record and share terminal sessions
