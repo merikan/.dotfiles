@@ -2,6 +2,7 @@
   "auto_paste": true,
   "auto_select_model": false,
   "beam_size": 0,
+  "file_transcription_model": "auto",
   "has_completed_onboarding": true,
   "hotkey": "Control+Shift+Space",
   "hotkey_mode": "push",
