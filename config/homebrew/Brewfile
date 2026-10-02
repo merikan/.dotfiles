@@ -243,11 +243,13 @@ cask "handy"                                        # a foss speech-to-text appl
 # local llm models
 brew "ollama"                                       # create, run, and share large language models (llms)
 brew "llama.cpp"                                    # run local models with speed
-cask "alexsjones/llama-panel/llama-panel"           # desktop app for managing and interacting with llama-server instances.
+brew "llmfit"                                       # find wich llm models runs on your hardware
+brew "theiskaa/tap/hedos", trust: true              # find, download, run and serve local models headlessly
+cask "unsloth"                                      # desktop application for unsloth studiovu
+cask "alexsjones/llama-panel/llama-panel", trusted: true # desktop app for managing and interacting with llama-server instances.
 brew "arimxyer/tap/models", trusted: true           # tui for browsing ai models
 brew "mostlygeek/llama-swap/llama-swap", trusted: true # model swapping for any local llm-server
 brew "alexsjones/llmserve/llmserve", trusted: true  # simple tui for serving local llm models
-brew "llmfit"                                       # find wich llm models runs on your hardware
 
 ### ---------------------------------------------------- ###
 ### DevOps, Containers & Kubernetes
