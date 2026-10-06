@@ -297,12 +297,11 @@ brew "istioctl"                                     # istio configuration comman
 brew "container"                                    # create and run linux containers using lightweight virtual machines
 brew "lima"                                         # linux virtual machines
 brew "lima-additional-guestagents"                  # guest agents for non-native architectures
-brew "colima"                                       # container runtimes on macos (and linux)
 brew "qemu"                                         # a generic and open source machine emulator and virtualizer
-cask "rancher"                                      # OSS alternative to Docker Desktop
 brew "docker"                                       # docker client
+brew "docker-compose"                               #
 brew "docker-credential-helper"                     # keystore credential helper for Docker
-cask "docker-desktop"                               # docker desktop
+brew "docker-buildx"                                # extended build capabilities with buildkit
 brew "podman"                                       # tool for managing oci containers and pods
 cask "podman-desktop"                               # Browse, manage, inspect containers and images
 
