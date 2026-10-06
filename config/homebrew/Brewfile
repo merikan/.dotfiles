@@ -85,7 +85,7 @@ brew "csvkit"                                       # tools for working with CSV
 brew "dasel"                                        # query and modify data structures in json/toml/yaml/xml/csv/plain format
 brew "fx"                                           # JSON/YAML viewer & processor
 brew "gojq"                                         # jq written in go
-brew "kiki-ki/tap/qo", trusted: true                # query json data with sql
+brew "qo"                                           # query json data with sql
 brew "gron"                                         # make JSON greppable!
 brew "jaq"                                          # like jq but better, faster and more correct
 brew "jc"                                           # convert command output to json
