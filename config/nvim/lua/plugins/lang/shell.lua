@@ -3,6 +3,8 @@ return {
   opts = {
     linters_by_ft = {
       sh = { "shellcheck" },
+      bash = { "shellcheck" },
+      zsh = { "shellcheck" },
     },
   },
 }
