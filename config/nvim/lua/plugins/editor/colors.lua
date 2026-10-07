@@ -5,6 +5,9 @@ return {
     event = "BufReadPre",
     opts = { -- set to setup table
     },
+    keys = {
+      { "<leader>u+c", "<cmd>ColorizerToggle<cr>", desc = "Toggle Colorizer" },
+    },
   },
   -- {
   --   "brenoprata10/nvim-highlight-colors",
