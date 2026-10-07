@@ -30,6 +30,9 @@ return {
     notifier = {
       style = "fancy",
     },
+    picker = {
+      hidden = true,
+    },
     -- terminal = {
     --   win = {
     --     position = "float",
