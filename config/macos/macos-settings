@@ -115,6 +115,10 @@ echo -n 'Disable the “Are you sure you want to open this application?” dialo
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 echo "  ✔"
 
+echo -n ' Disable reopen windows when logging back'
+defaults write com.apple.loginwindow TALLogoutSavesState -bool false
+echo "  ✔"
+
 ###############################################################################
 # Keyboard                                                                    #
 ###############################################################################
