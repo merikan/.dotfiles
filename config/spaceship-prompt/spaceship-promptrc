@@ -5,17 +5,18 @@
 # Load local custom sections
 # ------------------------------------------------------------------------------
 script_path=${0:a:h}
-for file in "$script_path"/sections/*.zsh; do
-  source "$file"
+for section in "$script_path"/sections/*.zsh; do
+  source "$section"
 done
 
 spaceship remove ansible
 spaceship remove docker
 spaceship remove docker_compose
 
-spaceship add --before git wip  # add wip section
-spaceship add --before git inside  # add inside section
-spaceship add flutter           # add flutter external section
+spaceship add --before git wip        # add wip section
+spaceship add --before git inside     # add inside section
+spaceship add lima                    # add lima section
+spaceship add flutter                 # add flutter external section
 
 
 # ------------------------------------------------------------------------------
@@ -155,8 +156,8 @@ SPACESHIP_KUBECTL_COLOR="${COLOR_PRIMARY}"
 # KUBECTL_VERSION
 SPACESHIP_KUBECTL_VERSION_SHOW=false
 # KUBECONTEXT
-SPACESHIP_KUBECTL_CONTEXT_PREFIX=" ["
-SPACESHIP_KUBECTL_CONTEXT_SUFFIX="]"
+SPACESHIP_KUBECTL_CONTEXT_PREFIX=""
+SPACESHIP_KUBECTL_CONTEXT_SUFFIX=""
 SPACESHIP_KUBECTL_CONTEXT_SYMBOL=""
 
 # SPACESHIP_KUBECTL_VERSION_SHOW=false # disable to speed up prompt when no remote server is available
@@ -194,7 +195,15 @@ SPACESHIP_INSIDE_SUFFIX=") "
 SPACESHIP_INSIDE_SYMBOL=""
 SPACESHIP_INSIDE_COLOR="${COLOR_PRIMARY}"
 SPACESHIP_INSIDE_TEXT=""
+# Inside
+SPACESHIP_LIMA_SHOW=true
+SPACESHIP_LIMA_PREFIX="lima:("
+SPACESHIP_LIMA_SUFFIX=") "
+SPACESHIP_LIMA_SYMBOL=""
+SPACESHIP_LIMA_COLOR="${COLOR_PRIMARY}"
+SPACESHIP_LIMA_TEXT=""
 
+# vi-mode
 SPACESHIP_VI_MODE_SHOW=false
 SPACESHIP_VI_MODE_INSERT=[INSERT]
 SPACESHIP_VI_MODE_NORMAL=[NORMAL]
