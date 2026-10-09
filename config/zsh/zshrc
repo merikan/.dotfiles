@@ -402,6 +402,13 @@ else
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
 
+# lima
+command -v limactl >/dev/null 2>&1 && {
+  local vm_name="docker"
+  if [[ -n $(limactl ls --quiet "$vm_name" 2>/dev/null) ]]; then
+   export DOCKER_HOST=$(limactl list "$vm_name" --format 'unix://{{.Dir}}/sock/docker.sock')
+  fi
+}
 # rancher desktop
 [[ -d "$HOME/.rd/bin" ]] && {
   export PATH=$PATH:$HOME/.rd/bin  # put it last in the path
