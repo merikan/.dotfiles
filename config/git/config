@@ -10,7 +10,7 @@
 	signingkey = A93D728B0D0028A71C47EB106F86D20024CE1D22 # betterleaks:allow
 [core]
   pager = delta
-	excludesfile = ~/.config/git/ignore_global
+	excludesfile = ~/.config/git/ignore
 [color]
   diff = auto
   status = auto
