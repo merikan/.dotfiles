@@ -375,7 +375,7 @@ brew "mas"                                          # Mac App Store command-line
 brew "watch"                                        # execute a program periodically and watch the output
 brew "xdg-ninja"                                    # xdg checks your $HOME for unwanted files and directories.
 
-# vimify
+# vimify all the things
 brew "FelixKratz/formulae/borders", trusted: true, restart_service: :changed # add colored borders to user windows
 brew "felixkratz/formulae/sketchybar", trusted: true # macOS status bar
 cask "jackielii/tap/skhd-zig", trusted: true        # simple hotkey daemon for macos
@@ -386,6 +386,7 @@ cask "tonisives/tap/ovim", trusted: true            # system wide vim mode
 cask "y3owk1n/tap/neru", trusted: true              # navigate your entire screen without touching the mouse.
 cask "hammerspoon"                                  # powerful automation of MacOS, actions and wm
 cask "abue-ammar/tinycast/tinycast", trusted: true  # tiny, fully native macOS launcher, hotkeys, and clipboard history.
+cask "mikker/tap/dinky", trusted: true              # tiling wm for macos by mikkel
 
 cask "leader-key"                                   # a launcher for macos
 cask "alfred"                                       # a must have for boost productivity
