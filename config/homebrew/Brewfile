@@ -232,6 +232,7 @@ brew "charmbracelet/tap/crush", trusted: true       # ai coding agent for your t
 # sandboxes
 brew "nono"                                         # safe execution paths for agents - zero trust
 # other
+brew "lightpanda-io/browser/lightpanda", trusted: true # a headless browser
 brew "herdr"                                        # agent multiplexer that lives in your terminal
 brew "llm"                                          # access large language models from the command-line
 brew "charmbracelet/tap/mods", trusted: true        # ai on the command line
