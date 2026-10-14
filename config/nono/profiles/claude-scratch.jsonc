@@ -1,0 +1,11 @@
+{
+  "extends": [
+    "claude-local"
+  ],
+  "meta": {
+    "name": "claude-scratch",
+    "version": "1.0.0",
+    "description": "Ad-hoc scratch profile layered on claude-local; tweaked per task to loosen or tighten permissions",
+    "author": "Peter Merikan"
+  }
+}

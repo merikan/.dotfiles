@@ -155,6 +155,7 @@
     ~/.config/nono:
       path: config/nono/*
       glob: true
+    ~/bin/sandboxed-docker: config/nono/scripts/sandboxed-docker.sh
     # nvim
     ~/.config/nvim:
       path: config/nvim/*

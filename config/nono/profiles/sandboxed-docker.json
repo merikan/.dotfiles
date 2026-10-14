@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "name": "sandboxed-docker",
+    "version": "1.0.0",
+    "description": "Per-project sandboxed Docker engine (Lima): grants the project's forwarded socket and starts its VM via a before-hook",
+    "author": "Peter Merikan"
+  },
+  "filesystem": {
+    "unix_socket_dir": [
+      "$WORKDIR/.nono/d"
+    ]
+  },
+  "session_hooks": {
+    "before": {
+      "script": "~/.config/nono/scripts/start-sandboxed-docker.sh",
+      "timeout_secs": 30
+    }
+  }
+}

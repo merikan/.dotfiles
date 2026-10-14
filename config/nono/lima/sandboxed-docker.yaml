@@ -1,0 +1,37 @@
+# Rootless Docker in a per-project Lima VM, for use with nono.
+#
+# Extends Lima's template:docker with:
+# - A Docker socket forward to the path in param.DockerSocket, which
+#   sandboxed-docker.sh sets to <project>/.nono/d/s. Lima appends the base
+#   template's forward to {{.Dir}}/sock/docker.sock after this one, so that
+#   socket exists too. No nono profile grants it.
+# - Fixed VM size.
+#
+# Mounts are not set here: list entries from the base can't be removed.
+# sandboxed-docker.sh overrides them with --mount-only and checks the result.
+#
+# Create VMs through sandboxed-docker.sh, not with limactl directly.
+
+minimumLimaVersion: 2.0.0
+
+base:
+- template:docker
+
+cpus: 2
+memory: 4GiB
+disk: 50GiB
+
+provision:
+# Records the project path in the guest. It also makes Lima accept the
+# ProjectPath param, which sandboxed-docker.sh list-orphans reads.
+- mode: data
+  path: /etc/sandboxed-docker-project
+  content: |
+    {{.Param.ProjectPath}}
+portForwards:
+- guestSocket: "/run/user/{{.UID}}/docker.sock"
+  hostSocket: "{{.Param.DockerSocket}}"
+param:
+  # Set by sandboxed-docker.sh at creation
+  DockerSocket: ""
+  ProjectPath: ""

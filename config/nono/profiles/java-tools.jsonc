@@ -1,4 +1,5 @@
 {
+  "$schema": "https://raw.githubusercontent.com/nolabs-ai/nono/refs/heads/main/crates/nono-cli/data/nono-profile.schema.json",
   "meta": {
     "name": "java-tools",
     "version": "1.0.0",
@@ -8,13 +9,12 @@
   "filesystem": {
     "allow": [
       "~/.m2/repository",
-      "~/.gradle"  // excessively elevated privileges
+      "~/.gradle" // excessively elevated privileges
       // "~/.gradle/wrapper/dists"
-
-
     ],
     "read": [
-      "~/.config/jgit"
+      "~/.config/jgit",
+      "~/.m2/wrapper"
     ],
     "read_file": [
       "~/.m2/settings.xml"

@@ -1,8 +1,9 @@
 {
+  "$schema": "https://raw.githubusercontent.com/nolabs-ai/nono/refs/heads/main/crates/nono-cli/data/nono-profile.schema.json",
   "extends": [
     "default",
     "java-tools",
-    "container-tools"
+    "sandboxed-docker"
   ],
   "meta": {
     "name": "default-local",
@@ -10,32 +11,28 @@
     "description": "default local profile to be extended",
     "author": "Peter Merikan"
   },
-  "groups": {
-    "include": []
-  },
-  "workdir": {
-    "access": "readwrite"
-  },
   "filesystem": {
-    "allow": [],
     "read": [
-      "~/.agents",
-      "~/.config/agents",
-      "~/.dotfiles/config/agents",
-      "~/.config/git",
-      "~/.dotfiles/config/git",
-      "~/.config/delta",
-      "~/.dotfiles/config/delta",
-      "~/.bun/bin",
-      "~/.cargo/bin",
-      "~/.local/share/go/bin",
-      "~/.local/share/mise/installs",
-      "~/.sdkman/candidates",
-      "~/bin"
+      // agents
+      "$HOME/.agents",
+      "$HOME/.config/agents",
+      "$HOME/.dotfiles/config/agents",
+      // git
+      "$HOME/.config/git",
+      "$HOME/.dotfiles/config/git",
+      "$HOME/.config/delta",
+      "$HOME/.dotfiles/config/delta",
+
+      // executables.
+      "$HOME/.bun/bin",
+      "$HOME/.cargo/bin",
+      "$HOME/.local/share/go/bin",
+      "$HOME/.local/share/mise/installs",
+      "$HOME/.sdkman/candidates",
+      "$HOME/bin"
     ],
     "read_file": [
-      "~/.CFUserTextEncoding"
+      "$HOME/.CFUserTextEncoding" // macOS: read by CoreFoundation for locale setup
     ]
   }
 }
-
