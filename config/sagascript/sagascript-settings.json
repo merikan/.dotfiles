@@ -2,6 +2,9 @@
   "auto_paste": true,
   "auto_select_model": false,
   "beam_size": 0,
+  "engine_defaults_version": 1,
+  "engine_idle_unload_minutes": 60,
+  "engine_prewarm": "on_app_start",
   "file_transcription_model": "auto",
   "has_completed_onboarding": true,
   "hotkey": "Control+Shift+Space",
@@ -21,6 +24,13 @@
     }
   ],
   "language": "sv",
+  "model_lineup_version": 1,
+  "pianissimo_dictation": false,
+  "profile_glossary_migrated": true,
+  "profile_models": {
+    "default": "kb-whisper-base",
+    "profile-2": "medium.en"
+  },
   "show_overlay": true,
   "temperature_fallback": true,
   "vad_enabled": false,
