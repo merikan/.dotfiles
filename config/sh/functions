@@ -241,3 +241,66 @@ __git_dir_arg() {
     fi
 }
 
+__get_agent_docker_host() {
+  if [ -n "$AGENT_DOCKER_HOST" ]; then
+    echo "--env-credential-map env://AGENT_DOCKER_HOST DOCKER_HOST"
+  fi
+}
+__get_path_slug() {
+  # Enable 1-based indexing if running under Zsh
+  [ -n "$ZSH_VERSION" ] && setopt LOCAL_OPTIONS KSH_ARRAYS 2>/dev/null
+
+  local max_len=104
+  local rel_path dir slug=""
+  local dirs=() parts=()
+
+  # Strip home directory
+  rel_path="${PWD#"$HOME"/}"
+  [ "$rel_path" = "$PWD" ] && rel_path="${PWD#/}"
+
+  # Split path into array
+  while [ -n "$rel_path" ]; do
+    dir="${rel_path%%/*}"
+    [ -n "$dir" ] && dirs+=("$dir")
+    case "$rel_path" in
+      */*) rel_path="${rel_path#*/}" ;;
+      *) break ;;
+    esac
+  done
+
+  local count=${#dirs[@]}
+  [ "$count" -eq 0 ] && echo "" && return
+
+  # Collapse all parent directories to 1 character as initial baseline
+  for (( i=0; i<count-1; i++ )); do
+    parts+=("${dirs[i]:0:1}")
+  done
+  # Add last directory in full
+  parts+=("${dirs[count-1]}")
+
+  # Expand parents from right to left if remaining character budget allows
+  for (( i=count-2; i>=0; i-- )); do
+    # Temporarily try expanding directory i
+    parts[i]="${dirs[i]}"
+
+    # Calculate hypothetical total length with underscores
+    local test_slug=""
+    for p in "${parts[@]}"; do
+      [ -n "$test_slug" ] && test_slug="${test_slug}_$p" || test_slug="$p"
+    done
+
+    # If expanding exceeds 104 chars, revert to 1 character and stop expanding
+    if [ ${#test_slug} -gt $max_len ]; then
+      parts[i]="${dirs[i]:0:1}"
+      break
+    fi
+  done
+
+  # Build final slug
+  for p in "${parts[@]}"; do
+    [ -n "$slug" ] && slug="${slug}_$p" || slug="$p"
+  done
+
+  # Safety net: Truncate if total length exceeds limit
+  echo "${slug:0:$max_len}"
+}
