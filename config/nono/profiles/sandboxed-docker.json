@@ -1,4 +1,5 @@
 {
+  "$schema": "https://raw.githubusercontent.com/nolabs-ai/nono/refs/heads/main/crates/nono-cli/data/nono-profile.schema.json",
   "meta": {
     "name": "sandboxed-docker",
     "version": "1.0.0",
