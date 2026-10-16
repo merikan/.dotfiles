@@ -391,7 +391,6 @@ cask "mikker/tap/dinky", trusted: true              # tiling wm for macos by mik
 
 cask "leader-key"                                   # a launcher for macos
 cask "alfred"                                       # a must have for boost productivity
-cask "raycast"                                      # supercharged productivity
 cask "bartender"                                    # organize your menu bar icons
 cask "tomatobar"                                    # another pomodoro app
 
