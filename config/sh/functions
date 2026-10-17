@@ -234,13 +234,6 @@ __prompt_string_() {
   shift
   eval $command "$@" # run the command
 }
-__git_dir_arg() {
-    local git_dir
-    if git_dir=$(git rev-parse --git-common-dir 2>/dev/null); then
-        echo --allow "$git_dir"
-    fi
-}
-
 __get_agent_docker_host() {
   if [ -n "$AGENT_DOCKER_HOST" ]; then
     echo "--env-credential-map env://AGENT_DOCKER_HOST DOCKER_HOST"

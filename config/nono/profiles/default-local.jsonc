@@ -12,6 +12,9 @@
     "author": "Peter Merikan"
   },
   "filesystem": {
+    "read_file": [
+      "$HOME/.CFUserTextEncoding" // macOS: read by CoreFoundation for locale setup
+    ],
     "read": [
       // agents
       "$HOME/.agents",
@@ -33,8 +36,8 @@
       "$HOME/.sdkman/candidates",
       "$HOME/bin"
     ],
-    "read_file": [
-      "$HOME/.CFUserTextEncoding" // macOS: read by CoreFoundation for locale setup
+    "allow": [
+      "@git:common-dir" // worktree shared (main) .git directory
     ]
   }
 }
