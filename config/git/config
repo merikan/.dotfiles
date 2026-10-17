@@ -129,7 +129,7 @@
 	copymodified = true
 
 [hook "hk-commit-msg"]
-	command = test \"${HK:-1}\" = \"0\" || hk run commit-msg --from-hook \"$@\"
+	command = test \"${HK:-1}\" = \"0\" || hk run commit-msg  \"$@\"
 	event = commit-msg
 [hook "hk-pre-commit"]
 	command = test \"${HK:-1}\" = \"0\" || hk run pre-commit \"$@\"
