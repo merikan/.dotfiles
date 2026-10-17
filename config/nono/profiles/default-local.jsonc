@@ -22,7 +22,9 @@
       "$HOME/.dotfiles/config/git",
       "$HOME/.config/delta",
       "$HOME/.dotfiles/config/delta",
-
+      // git hooks with hk
+      "$HOME/.config/hk",
+      "$HOME/.dotfiles/config/hk",
       // executables.
       "$HOME/.bun/bin",
       "$HOME/.cargo/bin",
