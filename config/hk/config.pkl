@@ -1,7 +1,7 @@
 ///https://hk.jdx.dev/builtins.html
 
-amends "package://github.com/jdx/hk/releases/download/v2.0.0/hk@2.0.0#/Config.pkl"
-import "package://github.com/jdx/hk/releases/download/v2.0.0/hk@2.0.0#/Builtins.pkl"
+amends "package://github.com/jdx/hk/releases/download/v2.5.0/hk@2.5.0#/Config.pkl"
+import "package://github.com/jdx/hk/releases/download/v2.5.0/hk@2.5.0#/Builtins.pkl"
 
 local check_leaks = new Mapping<String, Step> {
   ["betterleaks"] = Builtins.betterleaks
@@ -21,9 +21,37 @@ local linters = new Mapping<String, Step> {
   ["shellcheck"] = Builtins.shellcheck
   ["shfmt"] = Builtins.shfmt
 }
+// Block pushes containing commits whose subject has the word WIP (any case)
+local check_wip = new Mapping<String, Step> {
+  ["no_wip"] {
+    check = """
+      bad=$(while read -r lref lsha rref rsha; do
+        case "$lsha" in *[!0]*) ;; *) continue ;; esac
+        case "$rsha" in *[!0]*) git cat-file -e "$rsha^{commit}" 2>/dev/null || rsha= ;; *) rsha= ;; esac
+        if [ -n "$rsha" ]; then
+          git log --format='%h %s' "$rsha..$lsha"
+        else
+          git log --format='%h %s' "$lsha" --not --remotes
+        fi
+      done <<'HK_PUSH_EOF' | grep -iwF wip
+      {{hook_stdin}}
+      HK_PUSH_EOF
+      ) || true
+      [ -z "$bad" ] && exit 0
+      printf 'refusing to push commits with WIP in the subject:\n%s\n' "$bad" >&2
+      exit 1
+      """
+  }
+}
 hooks {
   ["leaks"] {
     steps = check_leaks
+  }
+  ["check"] {
+    steps {
+      ...linters
+      ...check_leaks
+    }
   }
   ["lint"] {
     steps = linters
@@ -39,7 +67,10 @@ hooks {
   }
   ["pre-push"] {
     fix = false
-      stash = "git"
-      steps = check_leaks
+    stash = "git"
+    steps {
+      ...check_leaks
+      ...check_wip
+    }
   }
 }
