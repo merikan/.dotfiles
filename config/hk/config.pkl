@@ -3,6 +3,7 @@
 amends "package://github.com/jdx/hk/releases/download/v2.5.0/hk@2.5.0#/Config.pkl"
 import "package://github.com/jdx/hk/releases/download/v2.5.0/hk@2.5.0#/Builtins.pkl"
 
+// Detect secrets and private keys
 local check_leaks = new Mapping<String, Step> {
   ["betterleaks"] = Builtins.betterleaks
   ["detect_private_key"] = Builtins.detect_private_key
@@ -11,6 +12,7 @@ local check_leaks = new Mapping<String, Step> {
   //   batch = true
   // }
 }
+// File hygiene checks, shell script linting and formatting
 local linters = new Mapping<String, Step> {
   ["bom"] = Builtins.byte_order_marker
   ["check_add_large_files"] = Builtins.check_added_large_files
