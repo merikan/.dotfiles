@@ -21,6 +21,19 @@ local linters = new Mapping<String, Step> {
   ["shellcheck"] = Builtins.shellcheck
   ["shfmt"] = Builtins.shfmt
 }
+// Require your Signed-off-by trailer on commits
+// Opt in per repo with: git config hk.requireSignoff true
+local check_signoff = new Mapping<String, Step> {
+  ["signoff"] {
+    check = """
+      [ "$(git config --type=bool --default=false hk.requireSignoff)" = true ] || exit 0
+      want="Signed-off-by: $(git config user.name) <$(git config user.email)>"
+      git interpret-trailers --parse "{{commit_msg_file}}" | grep -qxF "$want" && exit 0
+      echo "missing '$want' trailer (use git commit -s)" >&2
+      exit 1
+      """
+  }
+}
 // Block pushes containing commits whose subject has the word WIP (any case)
 local check_wip = new Mapping<String, Step> {
   ["no_wip"] {
@@ -44,6 +57,9 @@ local check_wip = new Mapping<String, Step> {
   }
 }
 hooks {
+  ["commit-msg"] {
+    steps = check_signoff
+  }
   ["leaks"] {
     steps = check_leaks
   }
