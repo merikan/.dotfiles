@@ -1,52 +1,61 @@
-# `hk` Configuration & Agent Instructions
+# hk global config: agent notes
 
-This directory (`~/.config/hk`) contains the global configuration for
-[hk](https://hk.jdx.dev/), which acts as the default/global Git hook manager
-across all repositories on this machine.
+This directory is the machine-wide [hk](https://hk.jdx.dev/) config. Every
+repo on the machine runs its git hooks through it, so a broken `config.pkl`
+breaks commits and pushes everywhere.
 
-## Architecture & Global Setup
+- [`README.md`](README.md): the setup, every hook and step group, and how hk
+  config works. Read it before changing `config.pkl`.
+- [`signoff-hook.md`](signoff-hook.md): the `signoff` step (`commit-msg`).
+- [`wip-hook.md`](wip-hook.md): the `no_wip` step (`pre-push`).
 
-- **Global Hook Execution:** Git hooks are globally configured via
-  `~/.config/git/hook.gitconfig` (which sets `hook.hk-<event>.command`). This
-  intercepts git events across _all_ repositories and runs them using
-  `mise x -- hk run <event> --from-hook "$@"`.
-- **Global `hkrc`:** The file `config.pkl` in this directory is written in
-  Apple's [Pkl](https://pkl-lang.org/) language. It acts as the global `hkrc`,
-  defining a standard set of linters, formatters, and steps (e.g., `pre-commit`,
-  `commit-msg`).
-- **Universal Application:** Even when hooks aren't explicitly configured
-  per-repo (via a local `hk.pkl`), this global hook setup and `config.pkl` serve
-  as the default git hook handler.
+## Editing
 
-## Bypassing & Troubleshooting
+- Edit `~/.dotfiles/config/hk/config.pkl`. `~/.config/hk/config.pkl` is a
+  symlink to it.
+- Run `hk` directly. The binary in use is Homebrew's
+  (`/opt/homebrew/bin/hk`); the mise-installed hk is an older, unused version.
+- Keep steps in the `local` step-group mappings and assign or spread them
+  into `hooks`. A top-level `steps` block makes hk v2 create `check`, `fix`
+  and `pre-commit` hooks implicitly, which would add fixing and staging to
+  every commit.
+- When a step's script consumes `{{hook_stdin}}` or another template value
+  that can hold shell metacharacters, feed it through a quoted heredoc, as
+  `no_wip` does. hk pastes template values into the script text.
+- hk runs step scripts with `errexit`. End a pipeline that may legitimately
+  exit non-zero (such as a `grep` with no match) with `|| true`.
 
-- **Bypassing Hooks:** To bypass hooks for a single git command, prefix it with
-  `HK=0` (e.g., `HK=0 git commit` in bash, or `$env:HK=0; git commit` in
-  PowerShell).
-- **Pkl Version Panics / Eval Errors:** `config.pkl` imports specific versions
-  of `hk`'s standard library (e.g., `@1.44.2`). If the `hk` binary is upgraded
-  via `mise` (e.g., to `1.47.0`), you may encounter Pkl evaluation errors (like
-  `key not found` or panics). When encountering these, update the version
-  strings in `config.pkl`'s `amends` and `import` lines to match
-  `mise x -- hk --version`.
+## Verifying
 
-## Key Commands
+Test a changed config before it reaches the real location, by pointing
+`HK_CONFIG_DIR` at a directory holding the new `config.pkl`:
 
-Always execute `hk` through `mise` (`mise x -- hk ...`) to ensure the correct
-tool environment:
+```sh
+HK_CONFIG_DIR=/path/to/dir hk check --plan          # evaluates the config, lists steps
+HK_CONFIG_DIR=/path/to/dir hk run pre-commit --plan
+```
 
-- `mise x -- hk check`: Run checks (linters) against modified files.
-- `mise x -- hk fix`: Run fixes (formatters & autofixers) against modified
-  files.
-- `mise x -- hk check --all`: Lint all files in the current repository.
-- `mise x -- hk run <hook-name>`: Explicitly test a hook (e.g., `pre-commit`)
-  without going through Git.
-- `mise x -- hk init`: Initialize a new local `hk.pkl` in a repository if local
-  overrides are needed.
+Run it inside a throwaway git repo that has no `hk.pkl`, since a project
+`hk.pkl` wins over the global config for same-named hooks and steps.
 
-## Modifying Global Rules
+## Git wiring
 
-- **Adding/Editing Linters:** Update the `linters` mapping inside `config.pkl`.
-  Standard linters can be referenced from `Builtins` (e.g., `Builtins.ruff`).
-- **Hook Mapping:** The `hooks` block in `config.pkl` ties linters to specific
-  git events or custom run steps (like the `fix` and `check` commands).
+Git events reach hk through `hook.hk-<event>.command` entries in the global
+git config (`~/.dotfiles/config/git/config`). Hooks defined in config need
+Git 2.54 or later; older Git ignores them and no checks run. Those commands run
+`hk run <event> "$@"` without `--from-hook`; with that flag hk skips every
+repo that lacks a project `hk.pkl`, which silently disables these global
+checks. `hk install --global` adds the flag back, so check after running it:
+
+```sh
+git config --get-regexp '^hook\.hk-.*\.command'
+```
+
+A hook for a new git event needs both a `hooks` entry in `config.pkl` and a
+matching `hook.hk-<event>.command` / `.event` pair in the git config.
+
+## Upgrading hk
+
+`config.pkl` pins hk's Pkl schema in its `amends` and `import` lines. When a
+new binary rejects the config, set both lines to the version from
+`hk --version` and re-run the `--plan` checks above.
