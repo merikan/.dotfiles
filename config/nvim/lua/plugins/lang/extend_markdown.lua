@@ -4,26 +4,16 @@
 local XDG_CONFIG_DIR = os.getenv("XDG_CONFIG_HOME") or os.getenv("HOME") .. "/.config"
 
 return {
+  -- https://github.com/MeanderingProgrammer/render-markdown.nvim
   {
-    -- Keep touchup.nvim active in regular editing buffers across all modes
-    -- https://github.com/noisesfromspace/touchup.nvim/
-    {
-      "noisesfromspace/touchup.nvim",
-      ft = { "markdown" },
-      opts = {},
+    "MeanderingProgrammer/render-markdown.nvim",
+    opts = {
+      -- Disable automatic rendering on normal buffers so touchup.nvim operates freely
+      -- enabled = false,
+      file_types = {},
     },
-
-    -- https://github.com/MeanderingProgrammer/render-markdown.nvim
-    {
-      "MeanderingProgrammer/render-markdown.nvim",
-      opts = {
-        -- Disable automatic rendering on normal buffers so touchup.nvim operates freely
-        -- enabled = false,
-        file_types = {},
-      },
-      keys = {
-        { "<leader>mp", ft = "markdown", "<cmd>RenderMarkdown preview<cr>", desc = "Markdown Preview (side by side)" },
-      },
+    keys = {
+      { "<leader>mp", ft = "markdown", "<cmd>RenderMarkdown preview<cr>", desc = "Markdown Preview (side by side)" },
     },
   },
   {
@@ -51,6 +41,20 @@ return {
       { "<leader>cp", ft = "markdown", "<cmd>RenderMarkdown preview<cr>", desc = "Markdown Preview (side by side)" },
     },
   },
+  -- {
+  --   "iamcco/markdown-preview.nvim",
+  --   keys = {
+  --     -- { "<leader>cp", false },
+  --     { "<leader>cP", ft = "markdown", "<cmd>MarkdownPreviewToggle<cr>", desc = "Markdown Preview (in browser)" },
+  --   },
+  -- },
+  -- Keep touchup.nvim active in regular editing buffers across all modes
+  -- https://github.com/noisesfromspace/touchup.nvim/
+  {
+    "noisesfromspace/touchup.nvim",
+    ft = { "markdown" },
+    opts = {},
+  },
   {
     "brianhuster/live-preview.nvim",
     dependencies = {
@@ -77,13 +81,6 @@ return {
       }
     end,
   },
-  -- {
-  --   "iamcco/markdown-preview.nvim",
-  --   keys = {
-  --     -- { "<leader>cp", false },
-  --     { "<leader>cP", ft = "markdown", "<cmd>MarkdownPreviewToggle<cr>", desc = "Markdown Preview (in browser)" },
-  --   },
-  -- },
   -- a markdown table editor
   -- https://github.com/SCJangra/table-nvim
   {

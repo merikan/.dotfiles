@@ -27,8 +27,6 @@ map("v", "<A-S-k>", ":m '<-2<CR>gv=gv", { desc = "Move line(s) up" })
 
 -- Save without formatting
 map("n", "<A-s>", "<cmd>noautocmd w<CR>", { desc = "Save without formatting" })
--- write with sudo
-map("c", "w!!", "<esc>:lua require'utils'.sudo_write()<CR>", { silent = true })
 -- use lazygit for git file history
 -- stylua: ignore
 map("n", "<leader>gf", function() Snacks.lazygit.log_file() end, { desc = "Lazygit Current File History" })
@@ -37,19 +35,9 @@ map("n", "<leader>gf", function() Snacks.lazygit.log_file() end, { desc = "Lazyg
 -- stylua: ignore
 map("n", "<leader>ba", function() Snacks.bufdelete.all() end, {desc = "Delete all buffers"})
 
--- other
-map("n", "<leader>gf", function() Snacks.lazygit.log_file() end, { desc = "Lazygit Current File History" })
 --------------------------------------------------------------------------------
 -- Plugins
 --------------------------------------------------------------------------------
--- tmux-navigator
-if vim.env.TMUX ~= nil then
-  map("n", "<C-h>", ":NvimTmuxNavigateLeft<CR>", { desc = "Go to left window (tmux-aware)", remap = true })
-  map("n", "<C-j>", ":NvimTmuxNavigateDown<CR>", { desc = "Go to lower window (tmux-aware)", remap = true })
-  map("n", "<C-k>", ":NvimTmuxNavigateUp<CR>", { desc = "Go to upper window (tmux-aware)", remap = true })
-  map("n", "<C-l>", ":NvimTmuxNavigateRight<CR>", { desc = "Go to right window (tmux-aware)", remap = true })
-end
-
 -- Lazyvim menu
 wk.add {
   -- stylua: ignore start
