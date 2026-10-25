@@ -104,7 +104,7 @@ Rows marked *(extended)* ship with LazyVim. I only override their config.
 
 | Plugin | Purpose |
 | --- | --- |
-| [blink.cmp](https://github.com/Saghen/blink.cmp) *(extended)* | Completion, buffer source removed, signature help on (see [Completion](#completion)) |
+| [blink.cmp](https://github.com/Saghen/blink.cmp) *(extended)* | Completion with Neovim-style keys, buffer source removed, signature help on (see [Completion](#completion)) |
 | [auto-save.nvim](https://github.com/okuuva/auto-save.nvim) | Auto save |
 
 ### Files and buffers
@@ -155,28 +155,34 @@ rm -rf ~/.local/share/nvim ~/.cache/nvim
 
 ### Completion
 
-[blink.cmp](https://github.com/Saghen/blink.cmp) with the `enter` keymap
-preset, configured in `lua/plugins/editor/extend_blink.lua`. Sources are LSP,
+[blink.cmp](https://github.com/Saghen/blink.cmp) with keys kept close to
+Neovim's built-in completion (`default` preset), configured in
+`lua/plugins/editor/extend_blink.lua`. Sources are LSP,
 path, and snippets (no buffer words). The menu opens while typing, the first
 item is preselected and inserted as you move through the list, docs open after
 200 ms, and the signature popup is on.
+
+Typical flow, in insert mode:
+
+1. Type, e.g. `list.`, and the menu opens. Or press `<C-n>` to open it at the cursor.
+2. Move with `<C-n>` / `<C-p>`. The selected item is inserted as you go.
+3. Accept with `<C-y>`. `<Tab>` jumps through placeholders such as arguments.
+4. Changed your mind? `<C-e>` closes the menu and undoes the insert.
 
 #### Insert mode
 
 | Key | Action |
 | --- | --- |
-| `<C-Space>` | Open menu, press again to toggle docs |
-| `<C-n>` / `<Down>` | Next item |
-| `<C-p>` / `<Up>` | Previous item |
-| `<CR>` | Accept selected item, normal Enter without a menu |
-| `<C-y>` | Select and accept |
+| `<C-n>` / `<C-p>` | Open menu if needed, insert next / previous item |
+| `<Down>` / `<Up>` | Next / previous item |
+| `<C-y>` | Accept |
 | `<C-e>` | Close menu and undo the inserted item |
+| `<CR>` | Always a new line |
+| `<C-Space>` | Open menu without inserting, press again to toggle docs |
 | `<C-b>` / `<C-f>` | Scroll docs up / down |
-| `<C-k>` | Toggle signature help |
+| `<C-s>` | Toggle signature help (saves the file when there is none) |
+| `<C-k>` | Digraph, as in Neovim |
 | `<Tab>` / `<S-Tab>` | Next / previous snippet placeholder, otherwise a normal Tab |
-
-The first item is always preselected, so `<CR>` at the end of a line with the
-menu open accepts it. Press `<C-e>` first to get a new line.
 
 #### Command line (`:` only, not `/` search)
 
@@ -192,28 +198,78 @@ Nothing is preselected, and ghost text shows the top match.
 
 #### Compared to Neovim and LazyVim
 
-"Neovim" is plain Neovim 0.12 with no completion plugin. My config differs
-from LazyVim only in `<C-k>` and the sources.
+"Neovim" is plain Neovim 0.12 with no completion plugin. In insert mode my
+keys follow Neovim (`<C-n>`, `<C-y>`, `<CR>`, `<C-k>`, `<C-s>`), with blink's
+sources, auto menu, and docs on top. The command line is unchanged from
+LazyVim.
 
 | Insert mode key | Neovim | LazyVim | Mine |
 | --- | --- | --- | --- |
-| Menu opens | On demand (`<C-n>`, `<C-x>...`) | While typing | Same as LazyVim |
-| `<C-Space>` | Nothing, or as `<C-@>`: insert last text and leave insert | Open menu, toggle docs | Same |
-| `<C-n>` / `<C-p>` | Start word completion, next / previous | Next / previous item | Same |
-| `<Down>` / `<Up>` | Next / previous in menu, else move cursor | Next / previous item | Same |
-| `<CR>` | Insert item only if picked with arrows, else line break | Accept selected item | Same |
-| `<C-y>` | Accept item, else copy char above | Select and accept | Same |
-| `<C-e>` | Close menu, else copy char below | Cancel and undo inserted item | Same |
-| `<C-b>` / `<C-f>` | - | Scroll docs | Same |
-| `<Tab>` / `<S-Tab>` | Snippet jump when active, else Tab | Same, through blink | Same |
-| `<C-k>` | Digraph | Digraph (signature help off) | Toggle signature help |
-| `<C-s>` | LSP signature help | Save file | Same as LazyVim |
-| `<C-x><C-o>` | LSP completion via omnifunc | Still works | Same |
+| Menu opens | On demand (`<C-n>`, `<C-x>...`) | While typing | While typing, or on `<C-n>` / `<C-p>` |
+| `<C-Space>` | Nothing, or as `<C-@>`: insert last text and leave insert | Open menu, toggle docs | Open menu, toggle docs |
+| `<C-n>` / `<C-p>` | Start completion, next / previous | Next / previous item | Open menu if needed, next / previous |
+| `<Down>` / `<Up>` | Next / previous in menu, else move cursor | Next / previous item | Next / previous item |
+| `<CR>` | Insert item only if picked with arrows, else line break | Accept selected item | Always a new line |
+| `<C-y>` | Accept item, else copy char above | Select and accept | Select and accept |
+| `<C-e>` | Close menu, else copy char below | Cancel and undo inserted item | Cancel and undo inserted item |
+| `<C-b>` / `<C-f>` | - | Scroll docs | Scroll docs |
+| `<Tab>` / `<S-Tab>` | Snippet jump when active, else Tab | Snippet jump, else Tab | Snippet jump, else Tab |
+| `<C-k>` | Digraph | Digraph (signature help off) | Digraph |
+| `<C-s>` | LSP signature help | Save file | Toggle signature help, else save file |
+| `<C-x><C-o>` | LSP completion via omnifunc | LSP completion via omnifunc | LSP completion via omnifunc |
 | Sources | Buffer words, LSP via omnifunc | LSP, path, snippets, buffer | LSP, path, snippets |
 
 | Command line key | Neovim | LazyVim | Mine |
 | --- | --- | --- | --- |
-| Menu opens | On `<Tab>` (wildmenu) | While typing, `:` only | Same |
-| `<Tab>` / `<S-Tab>` | Next / previous match | Open menu, insert next / previous | Same |
-| `<C-n>` / `<C-p>` | Next / previous match, else history | Next / previous item | Same |
-| `<C-y>` / `<C-e>` | Accept / cancel match | Accept / cancel | Same |
+| Menu opens | On `<Tab>` (wildmenu) | While typing, `:` only | While typing, `:` only |
+| `<Tab>` / `<S-Tab>` | Next / previous match | Open menu, insert next / previous | Open menu, insert next / previous |
+| `<C-n>` / `<C-p>` | Next / previous match, else history | Next / previous item | Next / previous item |
+| `<C-y>` / `<C-e>` | Accept / cancel match | Accept / cancel | Accept / cancel |
+
+#### Neovim built-in completion
+
+Plain Neovim keys (`:help ins-completion`, `:help cmdline-completion`). Nothing
+opens automatically by default.
+
+Insert mode. `<C-x>` starts a sub-mode, the second key picks the source:
+
+| Keys | Completes |
+| --- | --- |
+| `<C-n>` / `<C-p>` | Words from the sources in `'complete'` |
+| `<C-x><C-o>` | Omni completion, LSP when a server is attached |
+| `<C-x><C-n>` | Words in the current file |
+| `<C-x><C-l>` | Whole lines |
+| `<C-x><C-f>` | File names |
+| `<C-x><C-i>` | Words in the current and included files |
+| `<C-x><C-]>` | Tags |
+| `<C-x><C-d>` | Definitions or macros |
+| `<C-x><C-k>` / `<C-x><C-t>` | `'dictionary'` / `'thesaurus'` |
+| `<C-x><C-v>` | Vim command line |
+| `<C-x><C-u>` | User-defined (`'completefunc'`) |
+| `<C-x>s` | Spelling suggestions |
+| `<C-x><C-r>` | Register contents |
+
+In the menu, `<C-n>`/`<C-p>` move, `<C-y>` accepts, `<C-e>` cancels, and
+`<C-x><C-z>` stops without changing the text. `:set autocomplete` (0.12) opens
+the menu while typing.
+
+Command line (`:`, `/`, `?`):
+
+| Key | Action |
+| --- | --- |
+| `<Tab>` / `<S-Tab>` | Complete, then next / previous match |
+| `<C-n>` / `<C-p>` | Next / previous match after `<Tab>`, else history |
+| `<C-d>` | List all matches |
+| `<C-l>` | Insert the longest common part |
+| `<C-a>` | Insert all matches |
+
+`<Tab>` also completes search patterns in `/`, `?`, `:s`, `:g`, `:v`, and
+`:vim`. Type `<C-v><Tab>` for a literal tab.
+
+Normal and visual mode have no completion, except in the `q:` command-line
+window, which is a normal buffer.
+
+In my config, blink.cmp takes over `<C-n>`, `<C-p>`, `<C-y>`, and `<C-e>` in
+insert mode and on the `:` line. The `<C-x>` sub-modes still work, e.g.
+`<C-x><C-l>` for whole lines. `/` and `?` search use the built-in `<Tab>`
+completion.

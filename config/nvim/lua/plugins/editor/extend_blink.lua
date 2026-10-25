@@ -10,9 +10,13 @@ return {
     return vim.tbl_deep_extend("force", opts, {
       signature = { enabled = true },
 
+      -- close to Neovim's built-in completion keys (:help ins-completion)
       keymap = {
-        preset = "enter",
-        ["<C-y>"] = { "select_and_accept" },
+        preset = "default", -- <C-y> accepts, <CR> is always a new line
+        ["<C-n>"] = { "insert_next" }, -- opens the menu if needed, like Neovim
+        ["<C-p>"] = { "insert_prev" },
+        ["<C-k>"] = false, -- keep digraphs
+        ["<C-s>"] = { "show_signature", "hide_signature", "fallback" }, -- :help i_CTRL-S
       },
     })
   end,
