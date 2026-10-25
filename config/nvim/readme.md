@@ -177,7 +177,7 @@ Typical flow, in insert mode:
 | `<Down>` / `<Up>` | Next / previous item |
 | `<C-y>` | Accept |
 | `<C-e>` | Close menu and undo the inserted item |
-| `<CR>` | Always a new line |
+| `<CR>` | Accept an item you picked with `<C-n>` / `<C-p>` / arrows, else a new line |
 | `<C-Space>` | Open menu without inserting, press again to toggle docs |
 | `<C-b>` / `<C-f>` | Scroll docs up / down |
 | `<C-s>` | Toggle signature help (saves the file when there is none) |
@@ -199,7 +199,7 @@ Nothing is preselected, and ghost text shows the top match.
 #### Compared to Neovim and LazyVim
 
 "Neovim" is plain Neovim 0.12 with no completion plugin. In insert mode my
-keys follow Neovim (`<C-n>`, `<C-y>`, `<CR>`, `<C-k>`, `<C-s>`), with blink's
+keys follow Neovim (`<C-n>`, `<C-y>`, `<C-k>`, `<C-s>`, and roughly `<CR>`), with blink's
 sources, auto menu, and docs on top. The command line is unchanged from
 LazyVim.
 
@@ -209,7 +209,7 @@ LazyVim.
 | `<C-Space>` | Nothing, or as `<C-@>`: insert last text and leave insert | Open menu, toggle docs | Open menu, toggle docs |
 | `<C-n>` / `<C-p>` | Start completion, next / previous | Next / previous item | Open menu if needed, next / previous |
 | `<Down>` / `<Up>` | Next / previous in menu, else move cursor | Next / previous item | Next / previous item |
-| `<CR>` | Insert item only if picked with arrows, else line break | Accept selected item | Always a new line |
+| `<CR>` | Insert item only if picked with arrows, else line break | Accept selected item | Accept only an item you picked, else line break |
 | `<C-y>` | Accept item, else copy char above | Select and accept | Select and accept |
 | `<C-e>` | Close menu, else copy char below | Cancel and undo inserted item | Cancel and undo inserted item |
 | `<C-b>` / `<C-f>` | - | Scroll docs | Scroll docs |
