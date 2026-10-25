@@ -6,6 +6,7 @@ return {
   opts = {
     dashboard = {
       preset = {
+        -- my own ascii banner and quote on the start screen
         header = [[
         ███╗   ███╗███████╗██████╗ ██╗██╗  ██╗ █████╗ ███╗   ██╗
         ████╗ ████║██╔════╝██╔══██╗██║██║ ██╔╝██╔══██╗████╗  ██║
@@ -26,10 +27,10 @@ return {
       },
     },
     lazygit = {
-      configure = false,
+      configure = false, -- use my own lazygit config, don't inject colorscheme/editor settings
     },
     notifier = {
-      style = "fancy",
+      style = "fancy", -- nvim-notify like notifications (default is compact)
     },
     styles = {
       notification = {
@@ -39,12 +40,13 @@ return {
       },
     },
     picker = {
-      hidden = true,
+      hidden = true, -- include dotfiles in pickers that support it (files, grep, ...)
       sources = {
         explorer = {
-          show_empty = true,
-          hidden = true,
-          ignored = true,
+          show_empty = true, -- keep the explorer open with no items (empty dir, no matches)
+          hidden = true, -- show dotfiles
+          ignored = true, -- show git-ignored files
+          jump = { close = true }, -- close the explorer after opening a file
         },
       },
     },

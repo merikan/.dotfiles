@@ -97,7 +97,7 @@ Rows marked *(extended)* ship with LazyVim. I only override their config.
 | Plugin | Purpose |
 | --- | --- |
 | [everforest-nvim](https://github.com/neanias/everforest-nvim) | Active colorscheme (tokyonight, kanagawa, kanso, gruvbox also installed) |
-| [snacks.nvim](https://github.com/folke/snacks.nvim) *(extended)* | Custom dashboard header, picker shows hidden files, fancy notifier, zoxide (`<leader>fz`) |
+| [snacks.nvim](https://github.com/folke/snacks.nvim) *(extended)* | Custom dashboard header, picker shows hidden files, explorer closes after opening a file, fancy notifier, zoxide (`<leader>fz`) |
 | [nvim-colorizer.lua](https://github.com/catgoose/nvim-colorizer.lua) | Highlight color codes (`<leader>u+c`) |
 
 ### Editing
