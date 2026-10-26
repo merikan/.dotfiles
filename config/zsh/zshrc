@@ -407,6 +407,7 @@ command -v limactl >/dev/null 2>&1 && {
   local vm_name="docker"
   if [[ -n $(limactl ls --quiet "$vm_name" 2>/dev/null) ]]; then
    export DOCKER_HOST=$(limactl list "$vm_name" --format 'unix://{{.Dir}}/sock/docker.sock')
+   export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock
   fi
 }
 # rancher desktop
