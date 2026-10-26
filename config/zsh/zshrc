@@ -57,8 +57,6 @@ if [[ -s "${ZIM_HOME}/init.zsh" ]]; then
   source ${ZIM_HOME}/init.zsh
 fi
 
-
-
 # Personal settings below  -------------------------------------------------------
 
 ## show current dir in terminal title
@@ -68,7 +66,7 @@ _set_terminal_title() {
 precmd_functions+=(_set_terminal_title)
 # add zfunc to fpath
 [ -d "$HOME/.zfunc" ] || mkdir "$HOME/.zfunc"
-fpath=( "$HOME/.zfunc" $fpath )
+fpath=("$HOME/.zfunc" $fpath)
 
 # # Load and initialize the completion system ignoring insecure directories with a
 # cache time of 20 hours, so it should almost always regenerate the first time a
@@ -90,7 +88,7 @@ unset _comp_path
 autoload bashcompinit
 bashcompinit
 
-_comp_options+=(globdots) # include hidden files
+_comp_options+=(globdots)          # include hidden files
 zstyle ':completion:*' menu select # autocompletion with an arrow-key driven interface
 zmodload zsh/complist
 #Change directories with variable names
@@ -125,10 +123,10 @@ unalias run-help 2>/dev/null
 autoload run-help
 # Enable edit command line
 autoload -U edit-command-line && zle -N edit-command-line
-bindkey '^xe' edit-command-line      # Ctrl+xe to open command line in editor
-bindkey -a '^xe' edit-command-line   # Ctrl+xe to open command line in editor
-bindkey '^x^e' edit-command-line     # Ctrl+x, Ctrl+e to open command line in editor
-bindkey -a '^x^e' edit-command-line  # Ctrl+x, Ctrl+e to open command line in editor
+bindkey '^xe' edit-command-line     # Ctrl+xe to open command line in editor
+bindkey -a '^xe' edit-command-line  # Ctrl+xe to open command line in editor
+bindkey '^x^e' edit-command-line    # Ctrl+x, Ctrl+e to open command line in editor
+bindkey -a '^x^e' edit-command-line # Ctrl+x, Ctrl+e to open command line in editor
 
 # # vi mode
 # loaded via woefe/vi-mode.zsh with zim
@@ -141,23 +139,23 @@ bindkey '\e[B' history-beginning-search-forward
 # expand aliases with ^space
 # idea from https://blog.patshead.com/2012/11/automatically-expaning-zsh-global-aliases---simplified.html
 __expand_alias_widget() {
-    zle _expand_alias
-    zle expand-word
+  zle _expand_alias
+  zle expand-word
 }
 zle -N expand-alias-widget __expand_alias_widget
 bindkey "^ " expand-alias-widget
 
 # select global_alias, ^g^g
 __select_global_alias_widget() {
-  local alias=$(alias | awk -F "=" '{print $1}' | tr -d "\'" | grep -E '\b[[:upper:]]+\b' \
-                | fzf  --layout=reverse)
+  local alias=$(alias | awk -F "=" '{print $1}' | tr -d "\'" | grep -E '\b[[:upper:]]+\b' |
+    fzf --layout=reverse)
   LBUFFER+="${alias} "
 }
 zle -N select-global-alias __select_global_alias_widget
 bindkey '^G' select-global-alias
 
 # better ^z, press twice = suspend + bg (https://superuser.com/a/378045)
-__better_ctrl_z_widget () {
+__better_ctrl_z_widget() {
   if [[ $#BUFFER -eq 0 ]]; then
     bg
     zle redisplay
@@ -172,7 +170,7 @@ bindkey '^Z' better-ctrl-z
 __fzf-ghq-cd_widget() {
   local GHQ_LIST=$(ghq list | sort -u | fzf +m)
   if [ -n "${GHQ_LIST}" ]; then
-      BUFFER="cd $(ghq root)/${GHQ_LIST}"
+    BUFFER="cd $(ghq root)/${GHQ_LIST}"
   fi
   zle accept-line
 }
@@ -226,7 +224,7 @@ ssh-add -l >/dev/null 2>&1 || {
 # Rust
 [[ -d "$HOME/.cargo/bin" ]] && {
   source "$HOME/.cargo/env"
-  rustup completions zsh > $HOME/.zfunc/_rustup
+  rustup completions zsh >$HOME/.zfunc/_rustup
 }
 
 # fast cd jumping
@@ -250,15 +248,18 @@ fi
 
 # set dropbox path
 if [ ! -f "$HOME/.dropbox/info.json" ]; then
-    echo "Dropbox config file does not exist." >&2
-elif RESULT=$(jq -r ".personal.path" "$HOME/.dropbox/info.json" 2>/dev/null); [ -z "$RESULT" ] || [ "$RESULT" == "null" ]; then
-    echo "Error: Dropbox personal.path not found." >&2
+  echo "Dropbox config file does not exist." >&2
+elif
+  RESULT=$(jq -r ".personal.path" "$HOME/.dropbox/info.json" 2>/dev/null)
+  [ -z "$RESULT" ] || [ "$RESULT" == "null" ]
+then
+  echo "Error: Dropbox personal.path not found." >&2
 else
-    export DROPBOX_PERSONAL="$RESULT"
+  export DROPBOX_PERSONAL="$RESULT"
 fi
 
 # Use yazi to cd and bind it to ctrl-o
-command -v yazi >/dev/null 2>&1  && {
+command -v yazi >/dev/null 2>&1 && {
   function __yazicd() {
     tmp="$(mktemp -t "yazi-cwd.XXXXX")"
     yazi --cwd-file="$tmp"
@@ -271,11 +272,11 @@ command -v yazi >/dev/null 2>&1  && {
 }
 
 # load devenv
-command -v devenv >/dev/null 2>&1  && {
+command -v devenv >/dev/null 2>&1 && {
   eval "$(devenv hook zsh)"
 }
 # load direnv
-command -v direnv >/dev/null 2>&1  && {
+command -v direnv >/dev/null 2>&1 && {
   eval "$(direnv hook zsh)"
 }
 
@@ -298,16 +299,16 @@ fi
 # wt
 command -v wt >/dev/null 2>&1 && eval "$(wt shellenv)"
 # gig
-command -v gig >/dev/null 2>&1  && {
+command -v gig >/dev/null 2>&1 && {
   source <(gig completion zsh)
   eval "$(gig shellenv zsh)"
 }
 
 # fzf for fuzzy file mathing. (https://github.com/junegunn/fzf)
-command -v fzf >/dev/null 2>&1  && {
+command -v fzf >/dev/null 2>&1 && {
   [[ -d "$XDG_CONFIG_HOME"/fzf/shell ]] && {
     for file in "$XDG_CONFIG_HOME"/fzf/shell/*.sh(N); do
-        source "$file"
+      source "$file"
     done
   }
   # Set up fzf key bindings and fuzzy completion
@@ -315,7 +316,6 @@ command -v fzf >/dev/null 2>&1  && {
   # Setting ag as the default command for fzf
   command -v ag >/dev/null 2>&1 && export FZF_DEFAULT_COMMAND='ag -g ""'
 }
-
 
 # Android Studio doesn't honour XDG though it support symlinks
 # create directory, if not exists, and then symlink
@@ -342,13 +342,13 @@ export ANDROID_SDK="$ANDROID_HOME"
 }
 # rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && {
-  source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+  source "$HOME/.rvm/scripts/rvm"  # Load RVM into a shell session *as a function*
   export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 }
 
 # mysql client
 if [ -d "/usr/local/opt/mysql-client/bin" ]; then
-    export PATH=/usr/local/opt/mysql-client/bin:$PATH
+  export PATH=/usr/local/opt/mysql-client/bin:$PATH
 fi
 
 # sdkman
@@ -373,7 +373,7 @@ command -v python3 >/dev/null 2>&1 && {
 }
 # pyenv
 command -v pyenv >/dev/null 2>&1 && {
-  #eval (pyenv init -)
+
 }
 
 # mise
@@ -395,37 +395,37 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 # load nvm
 export NVM_DIR="$XDG_CONFIG_HOME/nvm"
 if [[ "${UNAME_SYSTEM}" == "Darwin" ]]; then
-  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && source "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && source "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && source "/opt/homebrew/opt/nvm/nvm.sh"                                       # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && source "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
 else
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 fi
 
 # lima
 command -v limactl >/dev/null 2>&1 && {
   local vm_name="docker"
   if [[ -n $(limactl ls --quiet "$vm_name" 2>/dev/null) ]]; then
-   export DOCKER_HOST=$(limactl list "$vm_name" --format 'unix://{{.Dir}}/sock/docker.sock')
-   export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock
+    export DOCKER_HOST=$(limactl list "$vm_name" --format 'unix://{{.Dir}}/sock/docker.sock')
+    export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock
   fi
 }
 # rancher desktop
 [[ -d "$HOME/.rd/bin" ]] && {
-  export PATH=$PATH:$HOME/.rd/bin  # put it last in the path
+  export PATH=$PATH:$HOME/.rd/bin # put it last in the path
   source <(rdctl completion zsh)
 }
 # resterm
 export RESTERM_CONFIG_DIR="$XDG_CONFIG_HOME/resterm"
 
 # gitlab cli
-command -v glab >/dev/null 2>&1  && {
-  source <(glab completion -s zsh); compdef _glab glab
+command -v glab >/dev/null 2>&1 && {
+  source <(glab completion -s zsh)
+  compdef _glab glab
 }
 
-
 # Functions  -------------------------------------------------------
-source_sh () {
+source_sh() {
   emulate -LR sh
   . "$@"
 }
@@ -449,14 +449,10 @@ export PATH=$HOME/bin:$HOME/.local/bin:$PATH
 # use .zshrc.local for settings specific to local system
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
-
 # print system info with fastfetch
 # command -v fastfetch >/dev/null 2>&1  && clear; neofetch
 
-
 # render profiling
 if [[ "$PROFILE_STARTUP" == true ]]; then
-  zprof > $HOME/zprofile.log
+  zprof >$HOME/zprofile.log
 fi
-
-
