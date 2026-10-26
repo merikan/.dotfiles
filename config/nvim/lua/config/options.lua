@@ -20,6 +20,7 @@ o.mouse = "" -- disable mouse
 o.autoread = true -- automatically reload a file
 g.autoformat = false -- disable LazyVim auto format
 o.winborder = "rounded" -- default border for floating windows
+o.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20,t:block-TermCursor,a:blinkwait700-blinkoff400-blinkon250" -- blinking cursor in all modes
 --------------------------------------------------------------------------------
 -- Lines
 --------------------------------------------------------------------------------
