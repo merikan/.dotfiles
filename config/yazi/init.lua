@@ -10,6 +10,8 @@ require("session"):setup({
 
 require("git"):setup()
 
+require("start-tab"):setup()
+
 
 -- require("yatline"):setup({
 -- 	section_separator = { open = "", close = "" },

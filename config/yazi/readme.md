@@ -21,7 +21,8 @@ Neovide via a keyboard shortcut.
 
 I am using the following plugins:
 
-- [parent-arrow.yazi](plugins/parent-arrow-yazi) - Navigate parent directory up/down with `Shift+[j/k]`
+- [parent-arrow.yazi](plugins.local/parent-arrow.yazi) - Navigate parent directory up/down with `Shift+[j/k]`
+- [start-tab.yazi](plugins.local/start-tab.yazi) - Open new tabs in the directory Yazi was started in (the path argument, or the shell's directory). `T` / `tT` creates a tab, `1`-`9` switches tab and creates any missing tabs up to it.
 - [Reledia/glow.yazi: Glow preview plugin for yazi](https://github.com/Reledia/glow.yazi)
 - [yazi-rs/max-preview.yazi](https://github.com/yazi-rs/plugins/blob/main/max-preview.yazi) - Maximize or restore the preview pane.
 - [yazi-rs/hide-preview.yazi](https://github.com/yazi-rs/plugins/blob/main/hide-preview.yazi) - Switch the preview pane between hidden and shown.
