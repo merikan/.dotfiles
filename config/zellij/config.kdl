@@ -2,7 +2,7 @@
 
 default_layout "terminal"
 
-theme "gruvbox-dark"
+theme "gruvbox-dark-focused"
 pane_frame_style "full"
 ui {
     pane_frames {

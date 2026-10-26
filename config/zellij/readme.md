@@ -29,7 +29,11 @@ My `Tmux` mode is more like `Normal` mode in `Vim`. My first try in `Zellij` was
   - switch tabs (left/right)
   - open scrollback buffer
   - and more
-- Using `Nord` theme
+- Using `gruvbox-dark-focused` theme (`themes/gruvbox-dark-focused.kdl`)
+  - a copy of the built-in `gruvbox-dark` theme (Zellij v0.45.1), since Zellij can't override parts of a theme
+  - orange frame on the focused `Pane` in `Normal` and `Locked` mode, so it's easy to spot
+  - yellow frame on the focused `Pane` in all other modes (`Tmux`, `Pane`, `Resize`, etc.)
+  - changed lines are marked with `// changed:` comments
 - Changed `default` layout.
   - moved down tab bar
 
