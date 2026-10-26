@@ -19,6 +19,7 @@ o.mouse = "" -- disable mouse
 -- o.mouse = "a" -- allow the mouse to be used in neovim
 o.autoread = true -- automatically reload a file
 g.autoformat = false -- disable LazyVim auto format
+o.winborder = "rounded" -- default border for floating windows
 --------------------------------------------------------------------------------
 -- Lines
 --------------------------------------------------------------------------------
