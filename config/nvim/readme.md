@@ -273,3 +273,23 @@ In my config, blink.cmp takes over `<C-n>`, `<C-p>`, `<C-y>`, and `<C-e>` in
 insert mode and on the `:` line. The `<C-x>` sub-modes still work, e.g.
 `<C-x><C-l>` for whole lines. `/` and `?` search use the built-in `<Tab>`
 completion.
+
+### Messages and notifications
+
+Notifications (`vim.notify`) are shown by the Snacks notifier. Messages
+(`:echo`, errors, command output) are shown as popups by noice.nvim.
+
+| Key | Shows |
+| --- | --- |
+| `<leader>n` | Notification history in a picker, `<CR>` opens one in full |
+| `<leader>un` | Dismiss all notifications |
+| `<leader>snl` | Last message in full |
+| `<leader>snh` | Message history |
+| `<leader>sna` | Everything noice has seen |
+| `<leader>snd` | Dismiss all noice popups |
+| `<leader>snt` | Noice history in a picker |
+| `<S-Enter>` on the `:` line | Run the command, show its output in a popup |
+| `<leader>$M` | `:messages` |
+
+Plain Neovim, works here too: `:messages` (history), `:messages clear`, `g<`
+(output of the last command again), `:checkhealth`.
