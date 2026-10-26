@@ -26,9 +26,9 @@ return {
         ]],
       },
     },
-    lazygit = {
-      configure = false, -- use my own lazygit config, don't inject colorscheme/editor settings
-    },
+    -- lazygit = {
+    --   configure = false, -- use my own lazygit config, don't inject colorscheme/editor settings
+    -- },
     notifier = {
       style = "fancy", -- nvim-notify like notifications (default is compact)
     },
@@ -47,6 +47,7 @@ return {
           hidden = true, -- show dotfiles
           ignored = true, -- show git-ignored files
           jump = { close = true }, -- close the explorer after opening a file
+          auto_close = true, -- close the explorer when focus leaves it
         },
       },
     },
