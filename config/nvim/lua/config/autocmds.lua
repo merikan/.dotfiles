@@ -21,18 +21,37 @@ vim.api.nvim_create_autocmd("FileType", {
 	command = "wincmd L",
 })
 
--- show cursorline only in active window enable
-vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter" }, {
+-- show cursorline only in active window, restoring each window's own setting
+-- https://github.com/TheLeoP/nvim-config/blob/master/plugin/autocmd.lua
+vim.api.nvim_create_autocmd("WinEnter", {
 	group = vim.api.nvim_create_augroup("active_cursorline", { clear = true }),
 	callback = function()
-		vim.opt_local.cursorline = true
+		local win = vim.api.nvim_get_current_win()
+		-- schedule to keep event order when switching windows quickly (e.g. <c-w>t)
+		vim.schedule(function()
+			if not vim.api.nvim_win_is_valid(win) then
+				return
+			end
+			if not vim.w[win].cached_cursorline then
+				return
+			end
+			vim.wo[win].cursorline = vim.w[win].cached_cursorline
+			vim.w[win].cached_cursorline = nil
+		end)
 	end,
 })
 
--- show cursorline only in active window disable
-vim.api.nvim_create_autocmd({ "WinLeave", "BufLeave" }, {
+vim.api.nvim_create_autocmd("WinLeave", {
 	group = "active_cursorline",
 	callback = function()
-		vim.opt_local.cursorline = false
+		local win = vim.api.nvim_get_current_win()
+		-- schedule so a new tab copies window options before cursorline is disabled
+		vim.schedule(function()
+			if not vim.api.nvim_win_is_valid(win) then
+				return
+			end
+			vim.w[win].cached_cursorline = vim.wo[win].cursorline
+			vim.wo[win].cursorline = false
+		end)
 	end,
 })
