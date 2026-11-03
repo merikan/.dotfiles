@@ -290,7 +290,7 @@ verify_mount_location() {
     die
   fi
 
-    info "Mount point path is corect."
+    info "Mount point path is correct."
     info "  mount-path:  $single_mount"
 }
 

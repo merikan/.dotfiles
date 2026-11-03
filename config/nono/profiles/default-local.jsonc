@@ -3,7 +3,7 @@
   "extends": [
     "default",
     "java-tools",
-    "sandboxed-docker"
+    "docker"
   ],
   "meta": {
     "name": "default-local",

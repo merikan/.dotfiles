@@ -11,10 +11,9 @@ Install location: `~/.config/nono/` (kept in dotfiles at `~/.dotfiles/config/non
 | Folder | What's in it |
 |---|---|
 | `profiles/` | Active profiles nono loads. Hand-edited `.jsonc` (and promoted `.json`). Selected with `--profile` or `NONO_PROFILE`. |
-| `profile-drafts/` | Staging area. Draft `.json` files are edited here, then `nono profile promote <name>` copies them into `profiles/`. Sandboxed agents may write here but never directly to `profiles/`. |
-| `scripts/` | Hook and management scripts. `sandboxed-docker.sh` (run by hand to manage VMs) and `start-sandboxed-docker.sh` (the nono before-hook). |
+| `profile-drafts/` | Staging area. Lives only in `~/.config/nono/profile-drafts/`, not in dotfiles. Draft `.json` files are edited here, then `nono profile promote <name>` copies them into `profiles/`. Sandboxed agents may write here but never directly to `profiles/`. |
+| `scripts/` | Hook and management scripts. `sandboxed-docker.sh` (run by hand to manage VMs) and `start-sandboxed-docker.sh` (the nono before-hook), plus `ping-docker-socks.sh` (debug helper that pings `/_ping` on each `docker.sock` under `~/.lima`). |
 | `lima/` | Lima VM templates. `sandboxed-docker.yaml` (rootless Docker, one VM per project). |
-| `docs/` | Design docs. `sandboxed-docker.md` covers the Docker setup end to end. |
 
 In `profile-drafts/` you'll also see:
 - `*.base` - a sha256 checksum of the last-promoted version, used to detect drift between a draft and the profile it was promoted to.
@@ -24,27 +23,27 @@ In `profile-drafts/` you'll also see:
 
 | Profile | Purpose | Extends |
 |---|---|---|
-| `default-local` | Shared base every harness profile builds on. Workdir read-write and the common filesystem grants. Not run directly. | `default`, `java-tools`, `sandboxed-docker` |
+| `default-local` | Shared base every harness profile builds on. Common filesystem grants, including the worktree's shared git directory (`@git:common-dir`). Not run directly. | `default`, `java-tools`, `docker` |
 | `claude-local` | Claude Code harness. | `nolabs-ai/claude`, `default-local` |
 | `omp-local` | omp harness. | `nolabs-ai/omp`, `default-local` |
 | `opencode-local` | opencode harness. | `nolabs-ai/opencode`, `default-local` |
 | `pi-local` | pi-code harness. | `nolabs-ai/pi`, `default-local` |
-| `claude-scratch` | Ad-hoc scratch profile layered on `claude-local`. Tweaked per task to loosen or tighten permissions. | `claude-local` |
+| `scratch` | Ad-hoc scratch profile layered on `claude-local`. Tweaked per task to loosen or tighten permissions. | `claude-local` |
 | `java-tools` | Mixin: Java build tools (`~/.m2/repository`, `~/.gradle`). No `extends` of its own. | - |
-| `sandboxed-docker` | Mixin: grants the project's forwarded Docker socket (`$WORKDIR/.nono/d`) and starts its VM via a before-hook. See `docs/sandboxed-docker.md`. | - |
+| `docker` | Mixin: Docker access for agents. By default it points `DOCKER_HOST` at the shared `docker-nomount` Lima VM (`~/.lima/docker-nomount/sock/docker.sock`). If the project has its own sandboxed Docker VM, the before-hook starts it and injects `DOCKER_HOST` for the project's forwarded socket (`$WORKDIR/.nono/d`). Also grants read-write access to `~/.docker/config.json`. See [Sandboxed Docker](#sandboxed-docker). | - |
 
 `nolabs-ai/<name>` entries are registry packs; `default` is nono's built-in base.
 
 ## Who extends who
 
 ```
-claude-scratch
+scratch
 └─ claude-local
    ├─ nolabs-ai/claude          · registry pack
    └─ default-local
       ├─ default                · built-in base
       ├─ java-tools             · mixin
-      └─ sandboxed-docker       · mixin
+      └─ docker                 · mixin
 
 omp-local       ─┐
 opencode-local  ─┼─ each: nolabs-ai/<harness> (pack) + default-local (as above)
@@ -52,7 +51,7 @@ pi-local        ─┘
 ```
 
 `default-local` is the shared base that every harness profile extends, and
-through it they pull in `java-tools` and `sandboxed-docker`.
+through it they pull in `java-tools` and `docker`.
 
 ## Selecting a profile
 
@@ -64,9 +63,10 @@ work with no arguments.
 ### Aliases
 
 Shell aliases launch each agent harness under its matching `*-local` profile.
-Every `nn<x>` runs `nono run --allow-cwd $(__git_dir_arg) --profile <profile> -- <harness>`,
-where `--allow-cwd` grants the working directory and `$(__git_dir_arg)` grants
-the repo's shared git directory (see below).
+Every `nn<x>` runs `nono run --allow-cwd --profile <profile> -- <harness>`,
+where `--allow-cwd` grants the working directory. In a git worktree, the
+object store and refs live in the main repo's `.git`, outside the working
+directory. `default-local` grants that shared directory with `@git:common-dir`.
 
 | Alias | Harness | Profile |
 |---|---|---|
@@ -76,30 +76,12 @@ the repo's shared git directory (see below).
 | `nnp` | `pi` | `pi-local` |
 | `nnm` | `omp` | `omp-local` |
 
-### `__git_dir_arg`
-
-```sh
-__git_dir_arg() {
-    local git_dir
-    if git_dir=$(git rev-parse --git-common-dir 2>/dev/null); then
-        echo --allow "$git_dir"
-    fi
-}
-```
-
-Emits `--allow <git-common-dir>` so nono grants the repo's real git directory,
-or nothing when run outside a repo (leaving the alias unchanged). It matters in
-a git worktree: the worktree's own `.git` is just a pointer, while the object
-store and refs live in the main repo's `.git` (the common dir), outside the
-worktree directory that `--allow-cwd` covers. Without this grant, git commands
-inside a sandboxed worktree would be denied access to that shared directory.
-
 ## Editing profiles
 
 Two ways in, depending on who's editing:
 
 - **By hand (the usual case).** The `.jsonc` profiles (`default-local`, the
-  `*-local` harness profiles and `claude-scratch`) are edited directly in
+  `*-local` harness profiles and `scratch`) are edited directly in
   `profiles/`. Rather than editing the shared profiles blind, I collect changes
   through the scratch-profile workflow below, then move each grant into the
   right `.jsonc`.
@@ -117,18 +99,18 @@ hand-merge the draft's changes into the `.jsonc`.
 
 ### Scratch-profile workflow
 
-When a session needs grants the base profiles don't have, use `claude-scratch`
+When a session needs grants the base profiles don't have, use `scratch`
 as a capture surface instead of editing a real profile directly:
 
-1. Run the harness under `claude-scratch`, which extends the profile you'd
-   normally use (`claude-scratch` -> `claude-local`).
+1. Run the harness under `scratch`, which extends the profile you'd
+   normally use (`scratch` -> `claude-local`).
 2. Grant what you need during the session (capability elevation). On exit, nono
    prompts to update the active profile with the rules it suggests from that
-   session. The active profile is `claude-scratch`, so the grants collect there
+   session. The active profile is `scratch`, so the grants collect there
    and the base profiles stay untouched.
-3. Review what landed in `claude-scratch`, then move each grant to where it
+3. Review what landed in `scratch`, then move each grant to where it
    belongs: a tool-specific one to `java-tools`, a shared one to
-   `default-local`, and so on. Clear `claude-scratch` afterward.
+   `default-local`, and so on. Clear `scratch` afterward.
 
 Experimental grants stay out of the shared profiles until you've decided where
 they belong.
@@ -140,9 +122,16 @@ exit prompt.
 
 ## Sandboxed Docker
 
-The `sandboxed-docker` profile, the `scripts/` and the `lima/` template give a
+The `docker` profile, the `scripts/` and the `lima/` template give a
 project its own rootless Docker engine in a dedicated Lima VM, so an agent can
 build and test with containers without touching the host's Docker.
+
+| File | Purpose |
+|---|---|
+| `scripts/sandboxed-docker.sh` | Command you run on the host, outside the sandbox. It manages one rootless Docker Lima VM per project: `start`, `stop`, `upgrade`, `recreate`, `delete`, `status`, `list-orphans` and `print-env`. It puts the real socket under a short path in `$XDG_RUNTIME_DIR` or `/tmp`, symlinks `.nono/d` to it, and checks that the VM mounts only the project directory. |
+| `scripts/start-sandboxed-docker.sh` | nono before-hook. If the project's VM exists, it starts it (it never creates one) and writes `DOCKER_HOST`, `DOCKER_CONFIG`, `DOCKER_CERT_PATH` and `TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE` to `NONO_ENV_FILE`. |
+| `profiles/docker.jsonc` | nono profile mixin. It grants `unix_socket_dir` on `$WORKDIR/.nono/d` (connect only), the shared `docker-nomount` socket with `DOCKER_HOST` pointing at it, and read-write `~/.docker/config.json`, and registers the before-hook with a 30 s timeout. |
+| `lima/sandboxed-docker.yaml` | Lima template that extends `template:docker`. It sets a fixed size of 2 CPU, 4 GiB RAM and 50 GiB disk, forwards the rootless socket to `param.DockerSocket`, and records `ProjectPath` so `list-orphans` can find VMs whose project is gone. |
 
 How it works:
 
@@ -151,13 +140,15 @@ How it works:
   directory.
 - **Socket wiring.** The VM's Docker socket is forwarded to a short path under
   `$XDG_RUNTIME_DIR` (or `/tmp`), and the project's `.nono/d` is a symlink to
-  it. The `sandboxed-docker` profile grants `unix_socket_dir` on
+  it. The `docker` profile grants `unix_socket_dir` on
   `$WORKDIR/.nono/d`. The short path keeps the socket within the macOS
   `sun_path` limit no matter how deep the project path is.
 - **In a session**, the before-hook starts the project's VM if it exists and
-  injects `DOCKER_HOST` and related variables. No VM means no Docker and no
-  variables. The hook never creates a VM, and the agent can't opt itself in
-  (it has no `limactl` or `~/.lima` access).
+  injects `DOCKER_HOST` and related variables. With no project VM, the
+  profile's default `DOCKER_HOST` (the shared `docker-nomount` VM) applies
+  instead. The hook never creates a VM, and the agent can't opt itself in
+  (it has no `limactl`, and its only `~/.lima` access is the `docker-nomount`
+  socket).
 
 Commands (`sandboxed-docker.sh <cmd>`, run outside the sandbox): `start`,
 `stop`, `status`, `upgrade` (guest OS + Docker packages), `recreate` (fresh
@@ -171,7 +162,9 @@ other side. What contains it:
   hypervisor, a much higher bar than defeating the sandbox.
 - The VM mounts only the project directory (enforced by the script), so a
   container's blast radius is that directory. Never broaden the mount.
-- Opt-in per project: a project with no VM has no socket and no grant.
+- Opt-in per project: a project with no VM has no project socket. It falls
+  back to the shared `docker-nomount` VM, which is shared across projects and
+  so isn't isolated per project.
 - Rootless Docker keeps the agent off guest root.
 
 Keep VMs patched (`upgrade`) and recreate them periodically; if a project
@@ -191,16 +184,16 @@ limactl ls
 # stop all running VMs
 limactl list -q --filter '.status == "Running"' | xargs -I {} limactl stop {}
 
-# stop all running VMs except default and docker
+# stop all running VMs except default and docker*
 limactl list -q --filter '.status == "Running"' \
-  --filter '.name != "default"' --filter '.name != "docker"' \
+  --filter '.name != "default"' --filter '.name != "docker*"' \
   | xargs -I {} limactl stop {}
 
 # delete all stopped VMs
 limactl list -q --filter '.status == "Stopped"' | xargs -I {} limactl delete --force {}
 
-# delete all VMs except default and docker
+# delete all VMs except default and docker*
 # (no status filter, and --force also deletes running ones)
-limactl list -q --filter '.name != "default"' --filter '.name != "docker"' \
+limactl list -q --filter '.name != "default"' --filter '.name != "docker*"' \
   | xargs -I {} limactl delete --force {}
 ```

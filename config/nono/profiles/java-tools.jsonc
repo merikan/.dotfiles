@@ -8,16 +8,26 @@
   },
   "filesystem": {
     "allow": [
-      "~/.m2/repository",
-      "~/.gradle" // excessively elevated privileges
-      // "~/.gradle/wrapper/dists"
+      "$HOME/.m2/repository",
+      "$HOME/.m2/wrapper/dists",
+      // gradle
+      "$HOME/.gradle/caches",
+      "$HOME/.gradle/daemon",
+      "$HOME/.gradle/native",
+      "$HOME/.gradle/jdks",
+      "$HOME/.gradle/wrapper/dists",
+      "$HOME/.gradle/notifications",
+      "$HOME/.gradle/.tmp",
+      "$HOME/.gradle/android"
     ],
     "read": [
-      "~/.config/jgit",
-      "~/.m2/wrapper"
+      "$HOME/.config/jgit"
     ],
     "read_file": [
-      "~/.m2/settings.xml"
+      "$HOME/.m2/settings.xml"
+    ],
+    "write": [
+      "$HOME/.m2/repository/.locks"
     ]
   }
 }

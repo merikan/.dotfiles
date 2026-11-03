@@ -11,7 +11,7 @@
 
 set -euo pipefail
 
-hook_msg() { printf '[nono hook] %s\n' "$*" 2>/dev/null >/dev/tty || true; }
+hook_msg() { printf '[nono hook] %b\n' "$*" 2>/dev/null >/dev/tty || true; }
 
 script_name=$(basename "$0")
 hook_msg "Running hook: $script_name"
@@ -34,5 +34,6 @@ printf '%s\n' "$output" 2>/dev/null >/dev/tty || true
 env_lines="$("$script_dir/sandboxed-docker.sh" print-env)"
 if [[ -n "$env_lines" ]]; then
   # inject DOCKER variables to the sandbox
+  hook_msg "Variables injected to the sandbox: \n$env_lines"
   printf '%s\n' "$env_lines" >>"$NONO_ENV_FILE"
 fi
