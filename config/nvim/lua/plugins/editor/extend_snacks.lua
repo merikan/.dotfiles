@@ -26,9 +26,9 @@ return {
         ]],
       },
     },
-    -- lazygit = {
-    --   configure = false, -- use my own lazygit config, don't inject colorscheme/editor settings
-    -- },
+    lazygit = {
+      configure = false, -- use my own lazygit config, don't inject colorscheme/editor settings
+    },
     notifier = {
       style = "fancy", -- nvim-notify like notifications (default is compact)
     },
