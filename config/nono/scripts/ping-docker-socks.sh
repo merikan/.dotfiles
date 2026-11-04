@@ -7,7 +7,7 @@ set -euo pipefail
 socks=()
 while IFS= read -r -d '' s; do
   socks+=("$s")
-done < <(find "$HOME/.colima" -type s -name docker.sock -print0 2>/dev/null)
+done < <(find "$HOME/.lima" -type s -name docker.sock -print0 2>/dev/null)
 
 if [ "${#socks[@]}" -eq 0 ]; then
   echo "No docker.sock found under $HOME/.lima" >&2
