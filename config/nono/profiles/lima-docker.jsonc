@@ -1,0 +1,94 @@
+
+{
+  "$schema": "https://raw.githubusercontent.com/nolabs-ai/nono/refs/heads/main/crates/nono-cli/data/nono-profile.schema.json",
+  "extends": [
+    "nolabs-ai/claude"
+  ],
+  "meta": {
+    "name": "lima-docker",
+    "description": "Lima Docker"
+  },
+  "filesystem": {
+    "read": [
+      "$HOME/.local/share/mise/installs",
+      "~/.m2/wrapper/dists",
+      "~/.m2/repository"
+    ],
+    "write": [
+      "~/.m2/repository/.locks"
+    ],
+    "allow_file": [
+      "~/.m2/repository/.meta/resolver-status.properties"
+    ],
+    "read_file": [
+      "~/.docker/config.json",
+      "~/.m2/settings.xml"
+    ],
+    "bypass_protection": [
+      "~/.docker/config.json"
+    ],
+    "unix_socket": [
+      "$HOME/.lima/docker-nomount/sock/docker.sock"
+    ]
+  },
+  "environment": {
+    "set_vars": {
+      "DOCKER_HOST": "unix://$HOME/.lima/docker-nomount/sock/docker.sock",
+      "TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE": "/run/user/501/docker.sock"
+    }
+  }
+}
+
+// {
+//   "$schema": "https://raw.githubusercontent.com/nolabs-ai/nono/refs/heads/main/crates/nono-cli/data/nono-profile.schema.json",
+//   "extends": [
+//     "nolabs-ai/claude"
+//   ],
+//   "meta": {
+//     "name": "lima-docker",
+//     "description": "Lima Docker"
+//   },
+//   "filesystem": {
+//     "read_file": [
+//       "~/.docker/config.json"
+//     ],
+//     "bypass_protection": [
+//       "~/.docker/config.json"
+//     ],
+//     "unix_socket": [
+//       "$HOME/.lima/docker-nomount/sock/docker.sock"
+//     ]
+//   },
+//   "environment": {
+//     "set_vars": {
+//       "DOCKER_HOST": "unix://$HOME/.lima/docker-nomount/sock/docker.sock"
+//     }
+//   }
+// }
+
+// {
+//   "$schema": "https://raw.githubusercontent.com/nolabs-ai/nono/refs/heads/main/crates/nono-cli/data/nono-profile.schema.json",
+//   "extends": [
+//     "nolabs-ai/claude"
+//   ],
+//   "meta": {
+//     "name": "lima-docker",
+//     "description": "Lima Docker"
+//   },
+//   "filesystem": {
+//     "read_file": [
+//       "~/.docker/config.json"
+//     ],
+//     "bypass_protection": [
+//       "~/.docker/config.json"
+//     ],
+//     "unix_socket": [
+//       "$HOME/.lima/docker/sock/docker.sock"
+//     ]
+//   },
+//   "environment": {
+//     "set_vars": {
+//       "DOCKER_HOST": "unix://$HOME/.lima/docker/sock/docker.sock"
+//     }
+//   }
+// }

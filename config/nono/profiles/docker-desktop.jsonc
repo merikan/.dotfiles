@@ -1,0 +1,26 @@
+{
+  "$schema": "https://raw.githubusercontent.com/nolabs-ai/nono/refs/heads/main/crates/nono-cli/data/nono-profile.schema.json",
+  "meta": {
+    "name": "docker-desktop",
+    "version": "1.0.0",
+    "description": "only to showcase how to escape via docker socket",
+    "author": "Peter Merikan"
+  },
+  "filesystem": {
+    "allow_file": [
+      "$HOME/.docker/config.json"
+    ],
+    "unix_socket": [
+      "$HOME/.docker/run/docker.sock"
+    ],
+    "bypass_protection": [
+      "$HOME/.docker/config.json",
+      "$HOME/.docker/run/docker.sock"
+    ]
+  },
+  "environment": {
+    "set_vars": {
+      "DOCKER_HOST": "unix://$HOME/.docker/run/docker.sock"
+    }
+  }
+}
