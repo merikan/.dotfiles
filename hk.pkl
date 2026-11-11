@@ -28,7 +28,6 @@ hooks {
         steps = check_leaks.toMap() + linters.toMap()
     }
     ["check"] {
-        steps = linters
         steps = check_leaks.toMap() + linters.toMap()
     }
 }
