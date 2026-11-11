@@ -1,6 +1,6 @@
 {
   "auto_paste": true,
-  "auto_select_model": false,
+  "auto_select_model": true,
   "beam_size": 0,
   "engine_defaults_version": 1,
   "engine_idle_unload_minutes": 60,
@@ -28,11 +28,12 @@
   "pianissimo_dictation": false,
   "profile_glossary_migrated": true,
   "profile_models": {
-    "default": "kb-whisper-base",
-    "profile-2": "medium.en"
+    "default": "auto",
+    "profile-2": "auto"
   },
+  "schema_version": 6,
   "show_overlay": true,
   "temperature_fallback": true,
   "vad_enabled": false,
-  "whisper_model": "medium.en"
+  "whisper_model": "kb-whisper-medium"
 }
