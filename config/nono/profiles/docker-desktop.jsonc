@@ -7,7 +7,7 @@
     "author": "Peter Merikan"
   },
   "filesystem": {
-    "allow_file": [
+    "read_file": [
       "$HOME/.docker/config.json"
     ],
     "unix_socket": [
