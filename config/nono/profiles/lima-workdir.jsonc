@@ -1,0 +1,23 @@
+{
+  "$schema": "https://raw.githubusercontent.com/nolabs-ai/nono/refs/heads/main/crates/nono-cli/data/nono-profile.schema.json",
+  "extends": [
+    "nolabs-ai/claude",
+    "sandboxed-docker"
+  ],
+  "meta": {
+    "name": "lima-workdir",
+    "description": "Lima workdir Docker"
+  },
+  "filesystem": {
+    "read": [
+      "$HOME/.local/share/mise/installs"
+    ],
+    "allow": [
+      "~/.m2/wrapper/dists",
+      "~/.m2/repository"
+    ],
+    "read_file": [
+      "~/.m2/settings.xml"
+    ]
+  }
+}
