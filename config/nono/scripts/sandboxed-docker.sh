@@ -57,6 +57,7 @@ usage() {
     status              Check status for the sandboxed VM named from CWD
     upgrade             Upgrade OS and Docker packages in the sandboxed VM and restart it
     recreate            Delete the sandboxed VM and create a fresh one (loses images and volumes)
+    list, ls            List sandboxed VMs with status and project path
     list-orphans        List sandboxed VMs whose project directory no longer exists
     print-env           Print docker environment variables as KEY=VALUE, if the VM is running
 
@@ -412,17 +413,37 @@ recreate_existing() {
   create_and_start "$vm_name"
 }
 
+list_vms() {
+  # Assigned separately from `local` so a limactl/jq failure aborts the
+  # script instead of looking like an empty list
+  local rows
+  rows=$(
+    limactl list --all-fields --format json |
+      jq -r 'select((.config.param.ProjectPath // "") != "") | [.name, .status, .config.param.ProjectPath] | @tsv'
+  )
+  if [[ -n "$rows" ]]; then
+    echo "$rows"
+  else
+    info "No sandboxed VMs."
+  fi
+}
+
 list_orphans() {
-  local name path found=false
+  # Captured first, not read from process substitution, so a limactl/jq
+  # failure aborts the script instead of looking like no orphans
+  local name path rows found=false
+  rows=$(
+    limactl list --all-fields --format json |
+      jq -r 'select((.config.param.ProjectPath // "") != "") | [.name, .config.param.ProjectPath] | @tsv'
+  )
   while IFS=$'\t' read -r name path; do
+    # An empty $rows still yields one empty line
+    [[ -n "$name" ]] || continue
     if [[ ! -d "$path" ]]; then
       found=true
       echo -e "$name\t$path"
     fi
-  done < <(
-    limactl list --all-fields --format json 2>/dev/null |
-      jq -r 'select((.config.param.ProjectPath // "") != "") | [.name, .config.param.ProjectPath] | @tsv'
-  )
+  done <<<"$rows"
   [[ "$found" == true ]] || info "No orphaned sandboxed VMs."
 }
 
@@ -446,11 +467,17 @@ main() {
   prereq
   parse_args "$@"
 
-  # Action is not on a specific VM.
-  if [[ "$ACTION" == "list-orphans" ]]; then
+  # Actions not on a specific VM.
+  case "$ACTION" in
+  list | ls)
+    list_vms
+    return
+    ;;
+  list-orphans)
     list_orphans
     return
-  fi
+    ;;
+  esac
 
   local vm_name
   vm_name=$(get_path_slug)
