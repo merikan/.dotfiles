@@ -1,6 +1,6 @@
 ---
 name: writing-review
-description: Review a blog post or article draft, including on-page SEO, and write numbered findings to a review file, then track the author's fixes across rounds. Use when the user asks to review, give feedback on, suggest improvements to, or check the SEO of a blog post or article.
+description: Review a blog post or article draft, including on-page SEO and accessibility, and write numbered findings to a review file, then track the author's fixes across rounds. Use when the user asks to review, give feedback on, suggest improvements to, or check the SEO or accessibility of a blog post or article.
 ---
 
 # Writing review
@@ -18,7 +18,7 @@ You are the author's first reader and technical editor. The author keeps the pen
 7. **Write the review file** at the chosen path, in the format below. Leave it uncommitted.
 8. **Report in chat.** The file path and the three findings that matter most, by number, one line each. Stop there and let the author decide what to fix.
 
-For an SEO-only request, skip steps 3 and 4 and write only the SEO section.
+For an SEO-only request, skip steps 3 and 4 and write only the SEO section. For an accessibility-only request, skip steps 3-5 and write only the Accessibility section.
 
 ## Review file format
 
@@ -37,6 +37,7 @@ Status: `[x]` fixed, `[ ]` open.
 
 ### Things readers will hit that the post doesn't cover
 ### Factual accuracy
+### Accessibility
 ### SEO
 Target phrase: <inferred phrase; author corrects if wrong>
 Title (<n> chars): <title>
@@ -71,13 +72,22 @@ Each typo is its own finding, one line: `- [ ] **14.** L<n> \`wrong\` → \`righ
 - **Accuracy.** Wrong names, outdated facts, claims that need a source, links pointing somewhere other than their text says.
 - **Proof.** When the post claims something works, check that the shown output actually proves it.
 - **Language.** Typos, grammar, inconsistent spelling of product names, code blocks missing a language tag, prompts shown inconsistently.
+- **Accessibility.** For readers on screen readers, keyboards, or zoom, checked from the source:
+  - Every image has alt text saying what it shows for this post; decorative images get `alt=""`. Screenshots of code, commands, or terminal output become text blocks.
+  - Link text names its target ("the Caddy docs", not "here").
+  - Heading levels step down one at a time (H2, then H3).
+  - Tables have a header row.
+  - Meaning carried by colour or emoji alone ("the red line") is also stated in words.
+  - Video and audio have captions or a transcript.
+  - Abbreviations are spelled out on first use.
+
+  These fixes also help search, so SEO leaves them here.
 - **SEO.** The reader wins every conflict: propose an SEO fix only when it helps the reader or costs them nothing, so no keyword stuffing or clickbait. One exception: a clear title nobody would search for is flagged as a trade-off, with an alternative.
   - Title about 60 characters, description about 150-160, important words first. Flag only clear overruns and show where the cut falls.
   - Target phrase in the title, H1, slug, first paragraph, and description, reading naturally.
   - Exactly one H1, and each H2 makes sense out of context. Structure owns heading order.
   - Up to three internal links to clearly related posts, each tied to the sentence where it fits.
   - Another post on the site with a near-identical title or the same target phrase: suggest a distinct angle or a cross-link.
-  - Descriptive alt text on images, and link text that names its target ("the Caddy docs", not "here").
   - A field the templates read but the post leaves empty is a finding. A field they ignore goes under caveats.
 - **Front matter.** Date, tags, draft flag, and other site mechanics.
 
