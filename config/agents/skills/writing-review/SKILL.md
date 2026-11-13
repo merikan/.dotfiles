@@ -1,6 +1,6 @@
 ---
 name: writing-review
-description: Review a blog post or article draft and write numbered findings to a review file, then track the author's fixes across rounds. Use when the user asks to review, give feedback on, or suggest improvements to a blog post or article.
+description: Review a blog post or article draft, including on-page SEO, and write numbered findings to a review file, then track the author's fixes across rounds. Use when the user asks to review, give feedback on, suggest improvements to, or check the SEO of a blog post or article.
 ---
 
 # Writing review
@@ -13,9 +13,12 @@ You are the author's first reader and technical editor. The author keeps the pen
 2. **Settle the job.** Know who the reader is and what they should be able to do or believe afterwards. If the draft does not make this clear, ask one question before reviewing.
 3. **Verify.** Check every command, flag, path, URL, version, date, and factual claim against something outside the draft: `--help` output, upstream docs, the source of a referenced project, the official announcement. Run read-only checks only; ask before running anything that changes the system. Done when each claim is either confirmed or listed under caveats as unverified.
 4. **Run the follow-along test.** Walk the post as a reader who types every command in order on a clean machine. Every step that fails, assumes an unstated install, or uses something before it is introduced is a finding.
-5. **Propose the review file.** Suggest saving the findings to `.gitignore.d/REVIEW-<post-slug>.md` in the repo root, offered as a clickable choice next to "other path". Run `git check-ignore <path>` first; if the path is not ignored, say so in the same question. Done when the author has picked a path.
-6. **Write the review file** at the chosen path, in the format below. Leave it uncommitted.
-7. **Report in chat.** The file path and the three findings that matter most, by number, one line each. Stop there and let the author decide what to fix.
+5. **SEO pass.** Infer the target search phrase from the draft. List the title and slug of every post in the directory (tags too, if cheap) to find internal-link candidates and posts competing for the same phrase. Grep the site's templates for the front matter fields they read (`description`, `summary`, `image`); when none supplies a description, the first paragraph stands in. Done when the phrase is stated and every SEO check below has been applied.
+6. **Propose the review file.** Suggest saving the findings to `.gitignore.d/REVIEW-<post-slug>.md` in the repo root, offered as a clickable choice next to "other path". Run `git check-ignore <path>` first; if the path is not ignored, say so in the same question. Done when the author has picked a path.
+7. **Write the review file** at the chosen path, in the format below. Leave it uncommitted.
+8. **Report in chat.** The file path and the three findings that matter most, by number, one line each. Stop there and let the author decide what to fix.
+
+For an SEO-only request, skip steps 3 and 4 and write only the SEO section.
 
 ## Review file format
 
@@ -34,6 +37,12 @@ Status: `[x]` fixed, `[ ]` open.
 
 ### Things readers will hit that the post doesn't cover
 ### Factual accuracy
+### SEO
+Target phrase: <inferred phrase; author corrects if wrong>
+Title (<n> chars): <title>
+Description (<n> chars): <description, or first paragraph when the site reads none>
+
+- [ ] **N. <one-line claim>.** <...>
 ### Language and typos
 ### Front matter
 
@@ -62,7 +71,15 @@ Each typo is its own finding, one line: `- [ ] **14.** L<n> \`wrong\` → \`righ
 - **Accuracy.** Wrong names, outdated facts, claims that need a source, links pointing somewhere other than their text says.
 - **Proof.** When the post claims something works, check that the shown output actually proves it.
 - **Language.** Typos, grammar, inconsistent spelling of product names, code blocks missing a language tag, prompts shown inconsistently.
-- **Front matter.** Title vs slug, date, tags, links to related posts on the same site.
+- **SEO.** The reader wins every conflict: propose an SEO fix only when it helps the reader or costs them nothing, so no keyword stuffing or clickbait. One exception: a clear title nobody would search for is flagged as a trade-off, with an alternative.
+  - Title about 60 characters, description about 150-160, important words first. Flag only clear overruns and show where the cut falls.
+  - Target phrase in the title, H1, slug, first paragraph, and description, reading naturally.
+  - Exactly one H1, and each H2 makes sense out of context. Structure owns heading order.
+  - Up to three internal links to clearly related posts, each tied to the sentence where it fits.
+  - Another post on the site with a near-identical title or the same target phrase: suggest a distinct angle or a cross-link.
+  - Descriptive alt text on images, and link text that names its target ("the Caddy docs", not "here").
+  - A field the templates read but the post leaves empty is a finding. A field they ignore goes under caveats.
+- **Front matter.** Date, tags, draft flag, and other site mechanics.
 
 Each finding cites the line, quotes or names the problem, and gives a concrete fix. Rank sections and findings within them by how much they hurt the reader. Preserve the author's voice: suggest rewording only where the meaning is unclear or wrong.
 
