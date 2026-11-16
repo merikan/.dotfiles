@@ -512,6 +512,7 @@ cask "font-monoisome"                               # monoid with Font Awesome s
 ### Miscellaneous Tools
 ### ---------------------------------------------------- ###
 brew "apktool"                                      # reverse engineering Android apk files
+brew "aabolfazl/tap/adbtop", trusted: true          # live performance for android apps
 brew "bat"                                          # a cat clone with syntax highlighting and git integration
 brew "ccat"                                         # colorizing cat
 brew "diff-pdf"                                     # visually compare two PDF files
