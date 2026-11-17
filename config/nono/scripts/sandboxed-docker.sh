@@ -38,7 +38,7 @@ usage() {
   $0: Manage sandboxed docker engine using Lima
 
   Start and stop sandboxed docker engine.
-  The name of the VM will be a shorted variant of the full path to CWD.
+  The name of the VM will be a shortened variant of the full path to CWD.
   The CWD will be mounted to docker volume.
   The docker socket is forwarded to a short path under \$XDG_RUNTIME_DIR
   (or /tmp), and CWD/.nono/d is a symlink to it.
@@ -406,7 +406,7 @@ delete_existing() {
 
 recreate_existing() {
   # Deletes the VM and creates a fresh one. Clears any persistence an agent
-  # left in the VM (D32) and is the way to pick up a new OS image or template
+  # left in the VM and is the way to pick up a new OS image or template
   # changes.
   local vm_name="$1"
   delete_existing "$vm_name"

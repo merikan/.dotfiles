@@ -2,7 +2,8 @@
 #
 # Extends Lima's template:docker with:
 # - A Docker socket forward to the path in param.DockerSocket, which
-#   sandboxed-docker.sh sets to <project>/.nono/d/s. Lima appends the base
+#   sandboxed-docker.sh sets to a short path under $XDG_RUNTIME_DIR (or
+#   /tmp), linked from <project>/.nono/d. Lima appends the base
 #   template's forward to {{.Dir}}/sock/docker.sock after this one, so that
 #   socket exists too. No nono profile grants it.
 # - Fixed VM size.
