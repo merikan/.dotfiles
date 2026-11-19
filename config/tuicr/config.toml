@@ -1,0 +1,13 @@
+# https://github.com/agavra/tuicr/blob/main/docs/CONFIG.md
+theme = "catppuccin-mocha"
+comment_vim = true
+leader = " "
+diff_view = "side-by-side"
+
+# comment_types = [
+#   { id = "note", definition = "ask for clarification", color = "yellow" },
+#   { id = "suggestion", definition = "possible improvements" },
+#   { id = "issue", definition = "problems to fix", color = "red" },
+#   { id = "praise", definition = "positive feedback", color = "green" },
+#   { id = "nitpick", definition = "small optional tweaks", color = "#d19a66" },
+# ]

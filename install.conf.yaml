@@ -208,6 +208,10 @@
     ~/.tmux.conf: config/tmux/tmux.conf
     # tut
     ~/.config/tut/config.ini: config/tut/config.ini
+  # tuicr
+    ~/.config/tuicr:
+      path: config/tuicr/*
+      glob: true
     # vim
     ~/.vimrc: config/vim/vimrc
     # wezterm
