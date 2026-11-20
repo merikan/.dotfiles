@@ -75,6 +75,7 @@ brew "dfc"                                          # displays file system space
 brew "dua-cli"                                      # view disk space usage and delete unwanted data, fast
 brew "mole"                                         # clean, analyze, optimize. macos only
 brew "harry0703/tap/mangodisk-cli", trusted: true   # Safety-first disk cleaner and disk space analyzer for macOS and Windows
+cask "harry0703/tap/mangodisk", trusted: true       # gui: Safety-first disk cleaner and disk space analyzer for macOS and Windows
 # compression
 brew "7zip"                                         # file archiver with a high compression ratio
 brew "unar"                                         # command-line unarchiving tools supporting multiple formats
