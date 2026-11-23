@@ -277,6 +277,9 @@ command -v devenv >/dev/null 2>&1 && {
 command -v direnv >/dev/null 2>&1 && {
   eval "$(direnv hook zsh)"
 }
+# completion for processes (fg,bg,disown,kill,etc.)
+autoload -Uz compinit && compinit
+zstyle ':completion:*:*:*:*:jobs' numbers true
 
 # source procs completion (using bash since zsh didn't work)
 command -v procs >/dev/null 2>&1 && source <(procs --gen-completion-out bash)
