@@ -154,17 +154,15 @@ __select_global_alias_widget() {
 zle -N select-global-alias __select_global_alias_widget
 bindkey '^G' select-global-alias
 
-# better ^z, press twice = suspend + bg (https://superuser.com/a/378045)
-__better_ctrl_z_widget() {
-  if [[ $#BUFFER -eq 0 ]]; then
-    bg
-    zle redisplay
-  else
-    zle push-input
+# ctrl-z, automatically resume any suspended job in the background
+autoload -Uz add-zsh-hook
+__auto_resume_suspended() {
+  # If the current/most recent job (+) is suspended, resume it in the background
+  if [[ ${(v)jobstates[(r)*:+:*]} == suspended* ]]; then
+    bg >/dev/null 2>&1
   fi
 }
-zle -N better-ctrl-z __better_ctrl_z_widget
-bindkey '^Z' better-ctrl-z
+add-zsh-hook precmd __auto_resume_suspended
 
 # cd in to git repo
 __fzf-ghq-cd_widget() {
