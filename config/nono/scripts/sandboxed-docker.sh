@@ -233,7 +233,9 @@ ensure_socket_link() {
   fi
   if [[ -e "$REAL_SOCKET_DIR" ]]; then
     local owner
-    owner=$(stat -f '%u' "$REAL_SOCKET_DIR" 2>/dev/null || echo)
+    # GNU stat (Linux) takes -c, BSD stat (macOS) takes -f.
+    owner=$(stat -c '%u' "$REAL_SOCKET_DIR" 2>/dev/null ||
+      stat -f '%u' "$REAL_SOCKET_DIR" 2>/dev/null || echo)
     [[ "$owner" == "$(id -u)" ]] ||
       die "Refusing to use socket dir (not owned by current user): $REAL_SOCKET_DIR"
   fi
