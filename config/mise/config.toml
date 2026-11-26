@@ -30,3 +30,6 @@ idiomatic_version_file_enable_tools = [
 color_theme = "auto"
 status.missing_tools = "always"
 
+[task_config]
+# global tasks; a relative path is not resolved for the global config, so use ~
+includes = ["~/.config/mise/tasks.toml"]

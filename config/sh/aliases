@@ -129,6 +129,11 @@ alias psme='pstree -p $$'
 # mise
 alias m='mise'
 alias mr='mise run'
+# global tasks only (config/mise/tasks.toml): ignore project configs, like tt
+# a function, not an alias, so zsh can complete it with global tasks only (see
+# _mm in zshrc); mise's own completer breaks on the leading env assignment
+unalias mm 2>/dev/null
+mm() { MISE_OVERRIDE_CONFIG_FILENAMES=none mise run "$@"; }
 
 # maven
 alias mct='mvn clean test'

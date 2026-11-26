@@ -1,0 +1,47 @@
+# Global tasks, available in every project (migrated from go-task Taskfile)
+# `mise tasks` lists them, `mise run` opens a picker. Extra args are appended,
+# e.g. `mise run mvn:dependency:tree -pl my-module`
+#
+# Included from config.toml via [task_config] includes; task names are top-level
+# here (no "tasks." prefix).
+
+["mvn:dependency:relocated"]
+description = "check for relocated dependencies with 'oga-maven-plugin'"
+dir = "{{cwd}}"
+run = "mvn -U biz.lermitage.oga:oga-maven-plugin:check --fail-never"
+
+["mvn:dependency:tree"]
+description = "print dependency tree"
+dir = "{{cwd}}"
+run = "mvn -U dependency:tree -X"
+
+["mvn:effective-pom"]
+description = "print effective pom"
+dir = "{{cwd}}"
+run = "mvn -U help:effective-pom"
+
+["mvn:build-plan"]
+description = "print lifecycles, phases and goals"
+dir = "{{cwd}}"
+run = "mvn -U fr.jcgay.maven.plugins:buildplan-maven-plugin:list"
+
+["mvn:openrewrite:deprecated"]
+description = "find uses of deprecated classes, methods, and fields"
+dir = "{{cwd}}"
+confirm = "This action will update source code with markers. Make sure your repository is clean before running this task."
+run = "mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.java.search.FindDeprecatedUses"
+
+["mvn:enforcer:requireReleaseDeps"]
+description = "checks the dependencies and fails if any snapshots are found"
+dir = "{{cwd}}"
+run = "mvn -U enforcer:enforce -Drules=requireReleaseDeps"
+
+["mvn:pilot:pilot"]
+description = "browse the dependency tree"
+dir = "{{cwd}}"
+run = "mvn -U eu.maveniverse.maven.plugins:pilot:pilot"
+
+["mvn:pilot:tree"]
+description = "browse the dependency tree"
+dir = "{{cwd}}"
+run = "mvn -U eu.maveniverse.maven.plugins:pilot:tree"

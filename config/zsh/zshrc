@@ -381,6 +381,21 @@ command -v pyenv >/dev/null 2>&1 && {
 command -v mise >/dev/null 2>&1 && {
   source <(mise completion zsh)
   eval "$(mise activate zsh)"
+  # mm (see ~/.aliases): complete global task names, then files for extra args
+  _mm() {
+    local -a tasks
+    local line name desc
+    if (( CURRENT == 2 )); then
+      for line in ${(f)"$(mise tasks ls --global --no-header 2>/dev/null)"}; do
+        read -r name desc <<<"$line"
+        tasks+=("${name//:/\\:}:$desc")
+      done
+      _describe -t tasks 'global task' tasks
+    else
+      _files
+    fi
+  }
+  compdef _mm mm
 }
 
 # fnox https://github.com/jdx/fnox
