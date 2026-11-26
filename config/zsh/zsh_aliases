@@ -4,3 +4,18 @@
 
 alias '$'=''
 alias help='run-help'
+
+# Complete session names for zellij attach/kill-session/delete-session.
+# The generated _zellij only offers files there. Aliases (zja, zj a, ...)
+# expand before completion, so this covers them too.
+_zellij_with_sessions() {
+  if [[ ${words[2]} == (a|attach|k|kill-session|d|delete-session) && $PREFIX != -* ]]; then
+    local -a args=(${${words[3,CURRENT-1]}:#-*})
+    if (( ${#args} == 0 )); then
+      local -a sessions=(${(f)"$(zellij list-sessions --short --no-formatting 2>/dev/null)"})
+      _describe 'zellij session' sessions && return
+    fi
+  fi
+  _zellij "$@"
+}
+compdef _zellij_with_sessions zellij
