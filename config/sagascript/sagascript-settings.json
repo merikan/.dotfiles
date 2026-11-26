@@ -29,7 +29,7 @@
   "profile_glossary_migrated": true,
   "profile_models": {
     "default": "auto",
-    "profile-2": "auto"
+    "profile-2": "medium.en"
   },
   "schema_version": 6,
   "show_overlay": true,
